@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { ingredients, concerns } from '@/lib/data'
 
-const BASE_URL = 'https://agescience.jp'
+const BASE_URL = 'https://scibase.jp'
 
 const COMPARE_PAIRS = [
   ['retinol', 'bakuchiol'],

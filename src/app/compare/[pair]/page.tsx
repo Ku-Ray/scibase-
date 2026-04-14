@@ -56,7 +56,7 @@ const usageLabel: Record<string, string> = {
   topical: '外用', oral: '経口', both: '外用・経口',
 }
 
-const BASE_URL = 'https://agescience.jp'
+const BASE_URL = 'https://scibase.jp'
 
 export default async function ComparePage({ params }: Props) {
   const { pair } = await params

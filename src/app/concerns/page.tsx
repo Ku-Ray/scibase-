@@ -3,7 +3,7 @@ import { concerns } from '@/lib/data'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '悩みから探す | Agescience — エビデンスで成分を選ぶ',
+  title: '悩みから探す | SciBase — エビデンスで成分を選ぶ',
   description: '悩み別に、論文エビデンスが確認されている成分を科学的に紹介。シミ・乾燥・ニキビ・老化・睡眠など全カテゴリ対応。',
 }
 

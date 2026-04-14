@@ -33,7 +33,7 @@ export function Header() {
               </svg>
             </div>
             <span className="font-semibold text-[15px] tracking-tight text-foreground">
-              Agescience
+              SciBase
             </span>
           </Link>
 

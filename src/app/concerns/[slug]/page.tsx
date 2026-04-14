@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const BASE_URL = 'https://agescience.jp'
+const BASE_URL = 'https://scibase.jp'
 
 export default async function ConcernPage({ params }: Props) {
   const { slug } = await params

@@ -53,7 +53,7 @@ function calcScores(selected: Ingredient[]): Record<AnalysisAxis, number> {
   return out
 }
 
-const STORAGE_KEY = 'agescience_analyzer_slugs'
+const STORAGE_KEY = 'scibase_analyzer_slugs'
 
 export function AnalyzerClient() {
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([])

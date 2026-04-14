@@ -22,9 +22,9 @@ export function Footer() {
         <div className="pt-6 border-t border-border flex flex-col sm:flex-row
           items-start sm:items-center justify-between gap-4">
           <div>
-            <p className="font-semibold text-[15px] text-foreground">Agescience</p>
+            <p className="font-semibold text-[15px] text-foreground">SciBase</p>
             <p className="text-[13px] text-muted-foreground mt-0.5">
-              サプリの「本当に効く」を、論文で確かめる
+              論文で選ぶ、成分データベース。
             </p>
           </div>
           <nav className="flex gap-5 text-[13px] text-muted-foreground">
@@ -33,7 +33,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="text-[12px] text-muted-foreground/60">© 2026 Agescience</p>
+        <p className="text-[12px] text-muted-foreground/60">© 2026 SciBase</p>
       </div>
     </footer>
   )

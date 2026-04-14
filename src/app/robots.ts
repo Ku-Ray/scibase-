@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://agescience.jp/sitemap.xml',
-    host:    'https://agescience.jp',
+    sitemap: 'https://scibase.jp/sitemap.xml',
+    host:    'https://scibase.jp',
   }
 }

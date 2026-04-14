@@ -78,7 +78,7 @@ const rankDesc: Record<EvidenceRank, string> = {
   C: 'ヒトデータ不十分',
 }
 
-const BASE_URL = 'https://agescience.jp'
+const BASE_URL = 'https://scibase.jp'
 
 export default async function IngredientPage({ params }: Props) {
   const { slug } = await params
@@ -103,8 +103,8 @@ export default async function IngredientPage({ params }: Props) {
     description:       ing.tagline,
     url:               `${BASE_URL}/ingredients/${slug}`,
     dateModified:      ing.updatedAt,
-    author:            { '@type': 'Organization', name: 'Agescience' },
-    publisher:         { '@type': 'Organization', name: 'Agescience', url: BASE_URL },
+    author:            { '@type': 'Organization', name: 'SciBase' },
+    publisher:         { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
     mainEntityOfPage:  { '@type': 'WebPage', '@id': `${BASE_URL}/ingredients/${slug}` },
   }
 
@@ -418,7 +418,7 @@ export default async function IngredientPage({ params }: Props) {
                         {isTop && (
                           <span className="bg-accent text-accent-foreground text-[11px]
                             font-bold rounded-full px-2.5 py-0.5">
-                            Agescience推奨
+                            SciBase推奨
                           </span>
                         )}
                         {prod.highlight && (

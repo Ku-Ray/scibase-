@@ -7,7 +7,7 @@ import { HeroSearch } from '@/components/HeroSearch'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Agescience — 美容・健康成分を論文エビデンスで評価するデータベース',
+  title: 'SciBase — 美容・健康成分を論文エビデンスで評価するデータベース',
   description: '成分名や悩みを選ぶだけで、論文に基づいたエビデンス評価が分かる。メタ解析・RCT・コホート研究をもとにスキンケア成分・サプリ成分を科学的に評価。',
 }
 
@@ -246,7 +246,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
             text-muted-foreground text-center mb-12">
-            Why Agescience
+            Why SciBase
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
             {[

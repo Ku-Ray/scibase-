@@ -12,30 +12,30 @@ const notoSansJP = Noto_Sans_JP({
   variable: '--font-noto',
 })
 
-const BASE_URL = 'https://agescience.jp'
+const BASE_URL = 'https://scibase.jp'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Agescience — サプリの「本当に効く」を、論文で確かめる',
-    template: '%s | Agescience',
+    default: 'SciBase — 論文で選ぶ、成分データベース',
+    template: '%s | SciBase',
   },
   description:
-    '悩みを選ぶだけで、論文に基づいたサプリメント推薦が分かる。メタ解析・RCT・コホート研究のエビデンスレベルを透明に示す、科学的サプリ推薦データベース。',
+    '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。メタ解析・RCT・コホート研究のエビデンスレベルを透明に示す、科学的成分データベース。',
   openGraph: {
     type:        'website',
     locale:      'ja_JP',
     url:         BASE_URL,
-    siteName:    'Agescience',
-    title:       'Agescience — サプリの「本当に効く」を、論文で確かめる',
-    description: '悩みを選ぶだけで、論文に基づいたサプリメント推薦が分かる。エビデンスレベルを透明に示す科学的サプリ推薦データベース。',
+    siteName:    'SciBase',
+    title:       'SciBase — 論文で選ぶ、成分データベース',
+    description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   twitter: {
     card:        'summary_large_image',
-    site:        '@agescience_jp',
-    title:       'Agescience — サプリの「本当に効く」を、論文で確かめる',
-    description: '悩みを選ぶだけで、論文に基づいたサプリメント推薦が分かる。エビデンスレベルを透明に示す科学的サプリ推薦データベース。',
+    site:        '@scibase_jp',
+    title:       'SciBase — 論文で選ぶ、成分データベース',
+    description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
     images:      ['/og-default.png'],
   },
   alternates: { canonical: BASE_URL },
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type':    'WebSite',
-  name:       'Agescience',
+  name:       'SciBase',
   url:        BASE_URL,
-  description: '査読済み論文に基づいてサプリメントのエビデンスを評価・解説するデータベース',
+  description: '査読済み論文に基づいて美容・健康成分のエビデンスを評価・解説するデータベース',
   potentialAction: {
     '@type':       'SearchAction',
     target:        `${BASE_URL}/ingredients?q={search_term_string}`,
