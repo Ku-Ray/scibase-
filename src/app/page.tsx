@@ -1,64 +1,100 @@
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { concerns, ingredients } from '@/lib/data'
+import { ArrowRight, Trophy, FlaskConical } from 'lucide-react'
+import { concerns, ingredients, getIngredientsByConcern } from '@/lib/data'
 import { IngredientCard } from '@/components/IngredientCard'
+import { EvidenceBadge } from '@/components/EvidenceBadge'
+import { HeroSearch } from '@/components/HeroSearch'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Agescience — サプリの「本当に効く」を、論文で確かめる',
+  title: 'Agescience — 美容・健康成分を論文エビデンスで評価するデータベース',
+  description: '成分名や悩みを選ぶだけで、論文に基づいたエビデンス評価が分かる。メタ解析・RCT・コホート研究をもとにスキンケア成分・サプリ成分を科学的に評価。',
 }
+
+const TOP_CONCERNS = ['spots', 'wrinkles', 'dry-skin', 'acne', 'pores', 'skin-aging', 'sleep', 'stress']
 
 export default function Home() {
   const topIngredients = [...ingredients]
-    .sort((a, b) => ({ S: 0, A: 1, B: 2, C: 3 }[a.evidenceRank] - { S: 0, A: 1, B: 2, C: 3 }[b.evidenceRank]))
+    .sort((a, b) =>
+      ({ S: 0, A: 1, B: 2, C: 3 }[a.evidenceRank] - { S: 0, A: 1, B: 2, C: 3 }[b.evidenceRank])
+    )
     .slice(0, 6)
 
-  return (
-    <div>
+  const featuredConcerns = concerns.filter(c => TOP_CONCERNS.includes(c.slug))
 
-      {/* ───────── Hero ───────── */}
-      <section style={{ background: 'var(--bg-base)' }} className="px-5 pt-16 pb-14 sm:pt-20 sm:pb-18">
+  /* ランキングプレビュー用：悩み上位3件 × 各1位成分 */
+  const rankingPreviews = ['spots', 'wrinkles', 'acne', 'dry-skin', 'pores', 'sleep'].map(slug => {
+    const c = concerns.find(c => c.slug === slug)
+    const top = getIngredientsByConcern(slug)[0]
+    return c && top ? { concern: c, top } : null
+  }).filter(Boolean) as { concern: typeof concerns[0]; top: typeof ingredients[0] }[]
+
+  return (
+    <>
+      {/* ── Hero ───────────────────────────────────── */}
+      <section className="hero-pattern px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
         <div className="max-w-2xl mx-auto text-center">
 
-          {/* Label */}
-          <p style={{ color: 'var(--text-tertiary)', letterSpacing: '0.08em' }}
-            className="text-[11px] font-medium uppercase mb-6">
-            論文ベース・サプリ推薦データベース
+          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+            text-muted-foreground mb-6">
+            Evidence-Based · Beauty &amp; Supplement Database
           </p>
 
-          {/* H1 */}
-          <h1 style={{ color: 'var(--text-primary)', lineHeight: 1.2 }}
-            className="text-[36px] sm:text-[48px] font-bold tracking-tight mb-5">
-            サプリの「本当に効く」を、<br />
-            論文で確かめる。
+          <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
+            leading-[1.15] tracking-tight mb-5">
+            その成分、本当に<br className="hidden sm:block" />
+            効きますか。
           </h1>
 
-          {/* Sub */}
-          <p style={{ color: 'var(--text-secondary)' }}
-            className="text-[15px] sm:text-[16px] leading-relaxed max-w-lg mx-auto mb-10">
-            メーカーの宣伝ではなく、査読済み論文のエビデンスで成分を評価。
-            気になる悩みを選ぶだけで、科学的根拠のある推薦が分かります。
+          <p className="text-[15px] sm:text-[16px] text-muted-foreground leading-[1.85]
+            max-w-lg mx-auto mb-8">
+            口コミでも広告でもなく、査読済み論文で成分を評価。
+            スキンケアもサプリも、根拠で選べるようになる。
           </p>
+
+          {/* インライン検索 */}
+          <div className="max-w-md mx-auto mb-5">
+            <HeroSearch />
+          </div>
+
+          {/* サプリ診断CTA */}
+          <div className="mb-8">
+            <Link
+              href="/analyzer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground
+                text-[13px] font-medium rounded-xl px-5 py-2.5
+                hover:opacity-90 transition-opacity"
+            >
+              🔬 今のサプリを7軸で診断する
+            </Link>
+          </div>
+
+          {/* 統計 */}
+          <div className="flex items-center justify-center gap-6 mb-10
+            text-[12px] text-muted-foreground">
+            <span><strong className="text-foreground font-semibold">{ingredients.length}</strong> 成分</span>
+            <span className="w-px h-3 bg-border" />
+            <span><strong className="text-foreground font-semibold">{concerns.length}</strong> 悩みカテゴリ</span>
+            <span className="w-px h-3 bg-border" />
+            <span><strong className="text-foreground font-semibold">100+</strong> 論文</span>
+          </div>
 
           {/* 悩みタグ */}
           <div>
-            <p style={{ color: 'var(--text-tertiary)' }} className="text-[13px] mb-3">
-              気になる悩みを選ぶ
+            <p className="text-[11px] text-muted-foreground/60 mb-3 tracking-wider uppercase font-medium">
+              悩みから探す
             </p>
             <div className="flex flex-wrap justify-center gap-2">
-              {concerns.map((c) => (
-                <Link key={c.slug} href={`/concerns/${c.slug}`}
-                  style={{
-                    background: 'var(--bg-card)',
-                    border: '1px solid var(--border)',
-                    color: 'var(--text-secondary)',
-                  }}
-                  className="group inline-flex items-center gap-1.5 rounded-full px-4 py-2
-                    text-[13px] font-medium hover:border-[var(--accent)]
-                    hover:text-[var(--accent)] hover:bg-[var(--accent-light)]
-                    transition-all duration-150">
+              {featuredConcerns.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/concerns/${c.slug}`}
+                  className={`group inline-flex items-center gap-1.5 border
+                    text-[13px] font-medium rounded-full px-4 py-2
+                    hover:scale-105 hover:shadow-sm transition-all duration-150 cat-${c.category}`}
+                >
+                  <span>{c.emoji}</span>
                   {c.nameJa}
-                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                 </Link>
               ))}
             </div>
@@ -66,77 +102,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───────── How it works ───────── */}
-      <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-card)' }}
-        className="px-5 py-14">
-        <div className="max-w-3xl mx-auto">
-          <p style={{ color: 'var(--text-tertiary)', letterSpacing: '0.08em' }}
-            className="text-[11px] font-medium uppercase text-center mb-10">
-            How it works
+      {/* ── ランキングプレビュー ────────────────────── */}
+      <section className="border-t border-border bg-card px-5 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-baseline justify-between mb-8">
+            <div className="flex items-center gap-2.5">
+              <Trophy className="w-5 h-5 text-amber-500" />
+              <h2 className="font-semibold text-[20px] text-foreground">悩み別ランキング</h2>
+            </div>
+            <Link href="/ranking"
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <p className="text-[13px] text-muted-foreground mb-8 -mt-4">
+            論文エビデンスの強さで成分をランキング
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[
-              {
-                step: '01',
-                title: '悩みを選ぶ',
-                desc: '肌の老化・睡眠・疲れなど、気になる悩みのタグをタップするだけ。',
-              },
-              {
-                step: '02',
-                title: '論文で比較する',
-                desc: 'その悩みに関連するエビデンスが確認されている成分を、研究の質順に表示。',
-              },
-              {
-                step: '03',
-                title: '信頼できる商品を選ぶ',
-                desc: '論文が示す有効量・摂取タイミングに基づいたおすすめ商品を紹介。',
-              },
-            ].map(({ step, title, desc }) => (
-              <div key={step} className="flex flex-col">
-                <span style={{ color: 'var(--accent)', fontVariantNumeric: 'tabular-nums' }}
-                  className="text-[13px] font-bold mb-3 font-mono">
-                  {step}
-                </span>
-                <h3 style={{ color: 'var(--text-primary)' }}
-                  className="font-semibold text-[16px] mb-2">
-                  {title}
-                </h3>
-                <p style={{ color: 'var(--text-secondary)' }}
-                  className="text-[14px] leading-relaxed">
-                  {desc}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {rankingPreviews.map(({ concern, top }) => (
+              <Link
+                key={concern.slug}
+                href={`/ranking/${concern.slug}`}
+                className="group bg-background border border-border rounded-2xl p-5
+                  hover:border-accent/50 hover:shadow-md transition-all duration-200
+                  hover:-translate-y-0.5"
+              >
+                <p className="text-[12px] text-muted-foreground mb-1">
+                  {concern.nameJa}ランキング
                 </p>
-              </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-6 h-6 rounded-full bg-amber-400 text-white
+                    text-[11px] font-black flex items-center justify-center flex-shrink-0">
+                    1
+                  </span>
+                  <span className="font-semibold text-[15px] text-foreground
+                    group-hover:text-accent transition-colors truncate">
+                    {top.nameJa}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <EvidenceBadge rank={top.evidenceRank} variant="dot" />
+                  <span className="text-[12px] text-muted-foreground line-clamp-1">
+                    {top.tagline}
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───────── 悩みカテゴリ ───────── */}
-      <section className="px-5 py-14">
-        <div className="max-w-4xl mx-auto">
+      {/* ── 悩みカテゴリ ─────────────────────────── */}
+      <section className="px-5 py-16">
+        <div className="max-w-5xl mx-auto">
           <div className="flex items-baseline justify-between mb-8">
-            <h2 style={{ color: 'var(--text-primary)' }}
-              className="font-semibold text-[20px]">
-              悩みから探す
-            </h2>
+            <h2 className="font-semibold text-[20px] text-foreground">悩みから探す</h2>
             <Link href="/concerns"
-              style={{ color: 'var(--accent)' }}
-              className="text-[13px] flex items-center gap-1 hover:underline">
-              すべて見る <ArrowRight className="w-3.5 h-3.5" />
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5">
             {concerns.map((c) => (
-              <Link key={c.slug} href={`/concerns/${c.slug}`}
-                style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-                className="group rounded-xl px-4 py-4 hover:border-[var(--accent)]
-                  hover:shadow-sm transition-all duration-150">
-                <p style={{ color: 'var(--text-primary)' }}
-                  className="font-medium text-[14px] group-hover:text-[var(--accent)] transition-colors mb-1">
-                  {c.nameJa}
-                </p>
-                <p style={{ color: 'var(--text-tertiary)' }} className="text-[12px]">
+              <Link
+                key={c.slug}
+                href={`/concerns/${c.slug}`}
+                className={`group border rounded-xl px-4 py-3.5
+                  hover:-translate-y-0.5 hover:shadow-md transition-all duration-150
+                  cat-${c.category}`}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[18px] leading-none">{c.emoji}</span>
+                  <p className="font-semibold text-[13px] truncate">
+                    {c.nameJa}
+                  </p>
+                </div>
+                <p className="text-[11px] opacity-70 ml-7">
                   {c.ingredientSlugs.length}成分
                 </p>
               </Link>
@@ -145,25 +186,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───────── 人気成分 ───────── */}
-      <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-card)' }}
-        className="px-5 py-14">
-        <div className="max-w-4xl mx-auto">
+      {/* ── エビデンスが強い成分 ─────────────────── */}
+      <section className="border-t border-border bg-card px-5 py-16">
+        <div className="max-w-5xl mx-auto">
           <div className="flex items-baseline justify-between mb-3">
-            <h2 style={{ color: 'var(--text-primary)' }}
-              className="font-semibold text-[20px]">
-              エビデンスが確認されている成分
-            </h2>
+            <div className="flex items-center gap-2.5">
+              <FlaskConical className="w-5 h-5 text-accent" />
+              <h2 className="font-semibold text-[20px] text-foreground">
+                エビデンスSランク成分
+              </h2>
+            </div>
             <Link href="/ingredients"
-              style={{ color: 'var(--accent)' }}
-              className="text-[13px] flex items-center gap-1 hover:underline">
-              すべて見る <ArrowRight className="w-3.5 h-3.5" />
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-          <p style={{ color: 'var(--text-tertiary)' }} className="text-[13px] mb-8">
-            メタ解析・RCTで効果が確認されている成分を優先表示
+          <p className="text-[13px] text-muted-foreground mb-8">
+            メタ解析・複数RCTで効果が確認されている成分
           </p>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {topIngredients.map((ing, i) => (
               <IngredientCard key={ing.slug} ingredient={ing} rank={i + 1} />
@@ -172,47 +212,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───────── Trust section ───────── */}
-      <section className="px-5 py-14">
+      {/* ── エビデンスの見方 ─────────────────────── */}
+      <section className="px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <p style={{ color: 'var(--text-tertiary)', letterSpacing: '0.08em' }}
-            className="text-[11px] font-medium uppercase text-center mb-10">
-            Why Agescience
+          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+            text-muted-foreground text-center mb-12">
+            How we evaluate
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              {
-                icon: '📄',
-                title: '根拠は論文だけ',
-                desc: 'メーカーの自社試験は使わない。査読済み論文のみを根拠にし、研究の質（S/A/B/C）を全成分で透明に示します。',
-              },
-              {
-                icon: '✗',
-                title: '「効かない」も正直に',
-                desc: 'NMNなど話題の成分も「動物実験では有望だがヒトRCTなし」と正直に表示。バズっているかどうかで評価しません。',
-              },
-              {
-                icon: '→',
-                title: '悩みから3ステップ',
-                desc: '「何を飲めばいいか分からない」を解消するため、悩みタグ → 成分比較 → 商品推薦の流れをシンプルに設計。',
-              },
-            ].map(({ icon, title, desc }) => (
-              <div key={title}>
-                <span className="text-2xl mb-4 block">{icon}</span>
-                <h3 style={{ color: 'var(--text-primary)' }}
-                  className="font-semibold text-[16px] mb-2">
-                  {title}
-                </h3>
-                <p style={{ color: 'var(--text-secondary)' }}
-                  className="text-[14px] leading-relaxed">
-                  {desc}
-                </p>
+              { rank: 'S', label: 'メタ解析・SR',   desc: '複数のRCTを統合分析。最も信頼度が高い研究形式。' },
+              { rank: 'A', label: 'RCT',            desc: 'ランダム化比較試験。プラセボとの厳密な比較実験。' },
+              { rank: 'B', label: 'コホート研究',    desc: '長期追跡による大規模観察研究。関連性を確認。' },
+              { rank: 'C', label: '動物・小規模研究', desc: 'ヒトでの大規模検証が不十分。今後に期待。' },
+            ].map(({ rank, label, desc }) => (
+              <div key={rank}
+                className={`ev-${rank.toLowerCase()} border rounded-xl p-4 flex items-start gap-3`}>
+                <span className="font-black text-[22px] leading-none w-8 flex-shrink-0">
+                  {rank}
+                </span>
+                <div>
+                  <p className="font-semibold text-[13px] mb-1">{label}</p>
+                  <p className="text-[12px] opacity-80 leading-relaxed">{desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-    </div>
+      {/* ── Why ─────────────────────────────────── */}
+      <section className="border-t border-border bg-card px-5 py-16">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+            text-muted-foreground text-center mb-12">
+            Why Agescience
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+            {[
+              {
+                icon: '📄',
+                title: '論文だけを根拠にする',
+                desc:  'メーカーの自社試験は使わない。査読済み論文のみを根拠にし、研究の質を全成分で透明に示す。',
+              },
+              {
+                icon: '✕',
+                title: '「効かない」も正直に',
+                desc:  'NMN・ビオチンなど話題の成分も「エビデンスC」と正直に表示。バズっているかどうかで評価しない。',
+              },
+              {
+                icon: '⬆',
+                title: 'スキンケアもサプリも',
+                desc:  'レチノール・ナイアシンアミドなどの外用成分から、マグネシウム・ビタミンDまで同じ基準で評価。',
+              },
+            ].map(({ icon, title, desc }) => (
+              <div key={title}>
+                <span className="text-[24px] mb-4 block">{icon}</span>
+                <h3 className="font-semibold text-[16px] text-foreground mb-2">{title}</h3>
+                <p className="text-[14px] text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

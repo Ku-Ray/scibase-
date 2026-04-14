@@ -23,85 +23,96 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const BASE_URL = 'https://agescience.jp'
+
 export default async function ConcernPage({ params }: Props) {
   const { slug } = await params
   const concern = getConcern(slug)
   if (!concern) notFound()
 
-  const allIngredients = getIngredientsByConcern(slug)
+  const all = getIngredientsByConcern(slug)
   const ranks: EvidenceRank[] = ['S', 'A', 'B', 'C']
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type':    'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム',     item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: '悩みから探す', item: `${BASE_URL}/concerns` },
+      { '@type': 'ListItem', position: 3, name: concern.nameJa, item: `${BASE_URL}/concerns/${slug}` },
+    ],
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     <div className="max-w-4xl mx-auto px-5 py-10">
 
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-1.5 text-[12px] mb-8"
-        style={{ color: 'var(--text-tertiary)' }}>
+      <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-8">
         <Link href="/" className="hover:underline">ホーム</Link>
         <ChevronRight className="w-3 h-3" />
         <Link href="/concerns" className="hover:underline">悩みから探す</Link>
         <ChevronRight className="w-3 h-3" />
-        <span style={{ color: 'var(--text-secondary)' }}>{concern.nameJa}</span>
+        <span className="text-foreground">{concern.nameJa}</span>
       </nav>
 
       {/* Header */}
       <div className="mb-10">
-        <h1 style={{ color: 'var(--text-primary)', lineHeight: 1.2 }}
-          className="text-[28px] sm:text-[34px] font-bold mb-3">
-          {concern.nameJa}
-        </h1>
-        <p style={{ color: 'var(--text-secondary)' }}
-          className="text-[15px] leading-relaxed max-w-xl">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-[36px] leading-none">{concern.emoji}</span>
+          <h1 className="text-[30px] sm:text-[38px] font-bold text-foreground
+            leading-[1.2] tracking-tight">
+            {concern.nameJa}
+          </h1>
+        </div>
+        <p className="text-[15px] text-muted-foreground leading-relaxed max-w-xl">
           {concern.description}
         </p>
       </div>
 
       {/* Stats */}
-      <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-        className="rounded-2xl p-5 mb-10 flex flex-wrap gap-6">
+      <div className="bg-card border border-border rounded-2xl p-5 mb-8
+        flex flex-wrap gap-8">
         <div>
-          <p style={{ color: 'var(--text-primary)' }} className="text-[24px] font-bold">
-            {allIngredients.length}
-          </p>
-          <p style={{ color: 'var(--text-tertiary)' }} className="text-[12px]">関連成分</p>
+          <p className="text-[26px] font-bold text-foreground">{all.length}</p>
+          <p className="text-[12px] text-muted-foreground">関連成分</p>
         </div>
-        {(['S','A','B','C'] as EvidenceRank[]).map((r) => {
-          const count = allIngredients.filter((i) => i.evidenceRank === r).length
-          if (!count) return null
+        {ranks.map((r) => {
+          const n = all.filter((i) => i.evidenceRank === r).length
+          if (!n) return null
           return (
             <div key={r}>
-              <p className={`ev-${r.toLowerCase()} text-[24px] font-bold w-fit px-1 rounded`}>
-                {count}
-              </p>
-              <p style={{ color: 'var(--text-tertiary)' }} className="text-[12px]">{r}ランク</p>
+              <p className={`ev-${r.toLowerCase()} text-[26px] font-bold w-fit
+                px-2 rounded-lg border`}>{n}</p>
+              <p className="text-[12px] text-muted-foreground mt-0.5">{r}ランク</p>
             </div>
           )
         })}
       </div>
 
-      {/* 注意書き */}
-      <div style={{ background: 'var(--bg-muted)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
-        className="rounded-xl p-4 text-[13px] leading-relaxed mb-10">
+      {/* Disclaimer */}
+      <p className="text-[13px] text-muted-foreground bg-secondary rounded-xl p-4 mb-10">
         エビデンスランクは研究の種類と質を示すものです。個人への効果を保証するものではありません。
         摂取前には医師・薬剤師にご相談ください。
-      </div>
+      </p>
 
-      {/* 成分一覧（ランク別） */}
+      {/* 成分一覧 */}
       <div className="space-y-12">
         {ranks.map((rank) => {
-          const items = allIngredients.filter((i) => i.evidenceRank === rank)
+          const items = all.filter((i) => i.evidenceRank === rank)
           if (!items.length) return null
           return (
             <section key={rank}>
-              <div className="flex items-center gap-3 mb-5">
-                <EvidenceBadge rank={rank} variant="full" />
+              <div className="mb-5">
+                <EvidenceBadge rank={rank} variant="chip" />
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {items.map((ing) => (
                   <IngredientCard
                     key={ing.slug}
                     ingredient={ing}
-                    rank={allIngredients.indexOf(ing) + 1}
+                    rank={all.indexOf(ing) + 1}
                   />
                 ))}
               </div>
@@ -111,21 +122,24 @@ export default async function ConcernPage({ params }: Props) {
       </div>
 
       {/* 関連悩み */}
-      <div style={{ borderTop: '1px solid var(--border)' }} className="mt-14 pt-10">
-        <p style={{ color: 'var(--text-secondary)' }}
-          className="font-medium text-[14px] mb-4">他の悩みを見る</p>
+      <div className="mt-14 pt-10 border-t border-border">
+        <p className="font-medium text-[14px] text-foreground mb-4">他の悩みを見る</p>
         <div className="flex flex-wrap gap-2">
           {concerns.filter((c) => c.slug !== slug).slice(0, 9).map((c) => (
-            <Link key={c.slug} href={`/concerns/${c.slug}`}
-              style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
-              className="text-[13px] px-3 py-1.5 rounded-full hover:border-[var(--accent)]
-                hover:text-[var(--accent)] transition-colors">
+            <Link
+              key={c.slug}
+              href={`/concerns/${c.slug}`}
+              className={`inline-flex items-center gap-1.5 text-[13px] border
+                rounded-full px-3 py-1.5 hover:scale-105 transition-all duration-150
+                cat-${c.category}`}
+            >
+              <span>{c.emoji}</span>
               {c.nameJa}
             </Link>
           ))}
         </div>
       </div>
-
     </div>
+    </>
   )
 }

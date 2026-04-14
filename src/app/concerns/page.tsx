@@ -3,59 +3,68 @@ import { concerns } from '@/lib/data'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '悩みから探す | サプリ推薦',
-  description: '悩み別に、エビデンスが確認されている成分を論文ベースで紹介。',
+  title: '悩みから探す | Agescience — エビデンスで成分を選ぶ',
+  description: '悩み別に、論文エビデンスが確認されている成分を科学的に紹介。シミ・乾燥・ニキビ・老化・睡眠など全カテゴリ対応。',
 }
 
 const categoryLabel: Record<string, string> = {
-  skin:      '肌',
+  skin:      'スキンケア',
   sleep:     '睡眠',
   body:      '体・全身',
-  cognitive: '認知・脳',
-  gut:       '腸内',
+  cognitive: '認知・メンタル',
+  gut:       '腸・消化',
   immunity:  '免疫',
 }
 
+const CATEGORY_ORDER = ['skin', 'body', 'cognitive', 'sleep', 'gut', 'immunity']
+
 export default function ConcernsPage() {
-  const categories = [...new Set(concerns.map((c) => c.category))]
+  const orderedCategories = CATEGORY_ORDER.filter(cat =>
+    concerns.some(c => c.category === cat)
+  )
 
   return (
     <div className="max-w-4xl mx-auto px-5 py-10">
       <div className="mb-10">
-        <h1 style={{ color: 'var(--text-primary)' }}
-          className="font-bold text-[28px] mb-2">悩みから探す</h1>
-        <p style={{ color: 'var(--text-secondary)' }} className="text-[14px]">
-          悩みを選ぶと、関連するエビデンスが確認されている成分一覧が表示されます。
+        <h1 className="font-bold text-[28px] sm:text-[34px] text-foreground mb-2 tracking-tight">
+          悩みから探す
+        </h1>
+        <p className="text-[14px] text-muted-foreground">
+          悩みを選ぶと、論文で効果が確認されている成分一覧が表示されます。
         </p>
       </div>
 
-      <div className="space-y-10">
-        {categories.map((cat) => {
+      <div className="space-y-12">
+        {orderedCategories.map((cat) => {
           const catConcerns = concerns.filter((c) => c.category === cat)
           return (
             <section key={cat}>
-              <p style={{ color: 'var(--text-tertiary)', letterSpacing: '0.06em' }}
-                className="text-[11px] font-medium uppercase mb-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
+                text-muted-foreground mb-5">
                 {categoryLabel[cat]}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {catConcerns.map((c) => (
                   <Link key={c.slug} href={`/concerns/${c.slug}`}
-                    style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-                    className="group rounded-xl p-5 hover:border-[var(--accent)]
-                      hover:shadow-sm transition-all duration-150">
+                    className={`group border rounded-xl p-5
+                      hover:-translate-y-0.5 hover:shadow-md transition-all duration-150
+                      cat-${c.category}`}>
                     <div className="flex items-start justify-between gap-2 mb-1.5">
-                      <h2 style={{ color: 'var(--text-primary)' }}
-                        className="font-semibold text-[15px] group-hover:text-[var(--accent)] transition-colors">
-                        {c.nameJa}
-                      </h2>
-                      <span style={{ color: 'var(--text-tertiary)', background: 'var(--bg-muted)', border: '1px solid var(--border)' }}
-                        className="text-[11px] px-2 py-0.5 rounded flex-shrink-0">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-[20px] leading-none flex-shrink-0">
+                          {c.emoji}
+                        </span>
+                        <h2 className="font-semibold text-[15px] truncate
+                          group-hover:opacity-80 transition-opacity">
+                          {c.nameJa}
+                        </h2>
+                      </div>
+                      <span className="text-[11px] px-2 py-0.5 rounded-md flex-shrink-0
+                        bg-white/50 border border-current/20 opacity-70">
                         {c.ingredientSlugs.length}成分
                       </span>
                     </div>
-                    <p style={{ color: 'var(--text-secondary)' }}
-                      className="text-[13px] leading-relaxed line-clamp-2">
+                    <p className="text-[13px] leading-relaxed line-clamp-2 opacity-70 ml-8">
                       {c.description}
                     </p>
                   </Link>
