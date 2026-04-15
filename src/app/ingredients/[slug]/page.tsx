@@ -545,18 +545,18 @@ export default async function IngredientPage({ params }: Props) {
         {siblingIngredients.length > 0 && (
           <section className="mb-10">
             <h2 className="font-semibold text-[16px] text-foreground mb-3">
-              他の成分と比較する
+              同じ悩みに使われる成分
             </h2>
             <div className="flex flex-wrap gap-2">
               {siblingIngredients.slice(0, 5).map(sibling => (
                 <Link
                   key={sibling.slug}
-                  href={`/compare/${slug}-vs-${sibling.slug}`}
+                  href={`/ingredients/${sibling.slug}`}
                   className="inline-flex items-center gap-1.5 text-[12px] font-medium
                     bg-card border border-border rounded-full px-3 py-1.5
                     hover:border-accent hover:text-accent transition-colors"
                 >
-                  {ing.nameJa} vs {sibling.nameJa}
+                  {sibling.nameJa}
                 </Link>
               ))}
             </div>

@@ -3,33 +3,6 @@ import { ingredients, concerns } from '@/lib/data'
 
 const BASE_URL = 'https://scibase.jp'
 
-const COMPARE_PAIRS = [
-  ['retinol', 'bakuchiol'],
-  ['retinol', 'retinal'],
-  ['niacinamide', 'vitamin-c-topical'],
-  ['hyaluronic-acid', 'ceramide'],
-  ['glycolic-acid', 'salicylic-acid'],
-  ['niacinamide', 'azelaic-acid'],
-  ['arbutin', 'niacinamide'],
-  ['arbutin', 'kojic-acid'],
-  ['vitamin-c-topical', 'azelaic-acid'],
-  ['retinol', 'glycolic-acid'],
-  ['magnesium', 'ashwagandha'],
-  ['vitamin-d', 'omega3'],
-  ['collagen-peptide', 'vitamin-c-oral'],
-  ['nmn', 'coq10'],
-  ['l-theanine', 'ashwagandha'],
-  ['melatonin', 'magnesium'],
-  ['melatonin', 'glycine'],
-  ['l-theanine', 'gaba'],
-  ['creatine', 'coq10'],
-  ['vitamin-c-oral', 'zinc'],
-  ['omega3', 'vitamin-d'],
-  ['resveratrol', 'coq10'],
-  ['magnesium', 'l-theanine'],
-  ['ashwagandha', 'gaba'],
-  ['creatine', 'nmn'],
-]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()
@@ -62,12 +35,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:        0.75,
   }))
 
-  const comparePages: MetadataRoute.Sitemap = COMPARE_PAIRS.map(([a, b]) => ({
-    url:             `${BASE_URL}/compare/${a}-vs-${b}`,
-    lastModified:    now,
-    changeFrequency: 'monthly',
-    priority:        0.7,
-  }))
-
-  return [...staticPages, ...ingredientPages, ...concernPages, ...rankingPages, ...comparePages]
+  return [...staticPages, ...ingredientPages, ...concernPages, ...rankingPages]
 }
