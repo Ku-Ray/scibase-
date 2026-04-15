@@ -7,8 +7,9 @@ import { HeroSearch } from '@/components/HeroSearch'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SciBase — 美容・健康成分を論文エビデンスで評価するデータベース',
-  description: '成分名や悩みを選ぶだけで、論文に基づいたエビデンス評価が分かる。メタ解析・RCT・コホート研究をもとにスキンケア成分・サプリ成分を科学的に評価。',
+  title: 'SciBase — スキンケア・サプリ成分を論文エビデンスで評価するデータベース',
+  description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・マグネシウムなど29成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
+  alternates: { canonical: 'https://scibase.jp' },
 }
 
 const TOP_CONCERNS = ['spots', 'wrinkles', 'dry-skin', 'acne', 'pores', 'skin-aging', 'sleep', 'stress']
@@ -98,6 +99,56 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── このサイトの使い方 ─────────────────────── */}
+      <section className="border-t border-border px-5 py-14">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+            text-muted-foreground text-center mb-10">
+            How to use SciBase
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              {
+                num: '01',
+                href: '/concerns',
+                title: '悩みから探す',
+                desc: 'シミ・乾燥・睡眠など気になる悩みを選ぶと、その悩みに効果がエビデンスで確認されている成分が分かる。',
+                cta: '悩みから探す →',
+              },
+              {
+                num: '02',
+                href: '/ranking',
+                title: 'ランキングで比べる',
+                desc: '同じ悩みに対して複数の成分を論文エビデンスの強さ順にランキング。何を選べばいいか一目で分かる。',
+                cta: 'ランキングを見る →',
+              },
+              {
+                num: '03',
+                href: '/analyzer',
+                title: '今のサプリを診断する',
+                desc: '現在摂っているサプリを選ぶと、7軸（抗老化・肌・認知・ストレス・睡眠・免疫・代謝）でスコア診断。',
+                cta: '診断してみる →',
+              },
+            ].map(({ num, href, title, desc, cta }) => (
+              <Link key={num} href={href}
+                className="group bg-card border border-border rounded-2xl p-5
+                  hover:border-accent/50 hover:shadow-md transition-all duration-200
+                  hover:-translate-y-0.5">
+                <p className="text-[11px] font-black text-muted-foreground/40 mb-3 tabular-nums">
+                  {num}
+                </p>
+                <h3 className="font-semibold text-[15px] text-foreground mb-2
+                  group-hover:text-accent transition-colors">
+                  {title}
+                </h3>
+                <p className="text-[12px] text-muted-foreground leading-relaxed mb-4">{desc}</p>
+                <p className="text-[12px] text-accent font-medium">{cta}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -237,6 +288,41 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── noteメンバーシップCTA ──────────────────── */}
+      <section className="px-5 py-16">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800
+            rounded-3xl px-8 py-10 text-center">
+            <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+              text-slate-400 mb-4">
+              SciBase メンバーシップ
+            </p>
+            <h2 className="text-[24px] sm:text-[28px] font-bold text-white
+              leading-[1.3] mb-4">
+              論文を読む時間がない人のための<br className="hidden sm:block" />
+              エビデンス要約マガジン
+            </h2>
+            <p className="text-[14px] text-slate-400 leading-relaxed mb-8 max-w-md mx-auto">
+              毎週、老化・スキンケア・サプリに関する新着論文を要約。
+              何が効くか・何が効かないかを、研究の質ごとに正直に解説。
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://note.com/r_evidence_/membership"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-slate-900
+                  font-semibold text-[14px] rounded-2xl px-7 py-3
+                  hover:bg-slate-100 transition-colors"
+              >
+                月額980円で読む →
+              </a>
+              <p className="text-[12px] text-slate-500">いつでも解約できます</p>
+            </div>
           </div>
         </div>
       </section>

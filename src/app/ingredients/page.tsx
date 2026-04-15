@@ -4,8 +4,9 @@ import { IngredientsFilter } from '@/components/IngredientsFilter'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '成分一覧 | スキンケア・サプリ成分のエビデンスDB',
-  description: 'スキンケア・サプリメントの成分をエビデンスランク順に一覧表示。外用/経口・ランクでフィルタリング可能。',
+  title: '成分一覧｜レチノール・ナイアシンアミド・ビタミンCほか論文エビデンス評価',
+  description: 'レチノール・ナイアシンアミド・ビタミンC・マグネシウムなど29成分を論文エビデンス順に掲載。外用/経口・ランクでフィルタリング可能。メタ解析・RCTの結果をもとに評価。',
+  alternates: { canonical: 'https://scibase.jp/ingredients' },
 }
 
 export default function IngredientsPage() {

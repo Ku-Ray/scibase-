@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${ing.nameJa} 効果・副作用・濃度【論文エビデンス${ing.evidenceRank}ランク】`,
     description: `エビデンスランク${ing.evidenceRank}。${ing.papers.length}件の論文をもとに${ing.nameJa}の効果・副作用・有効量を解説。${ing.tagline}`,
+    alternates: { canonical: `${BASE_URL}/ingredients/${slug}` },
   }
 }
 
@@ -390,6 +391,51 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
+        {/* この成分の始め方 */}
+        {(ing.dosageMin || ing.timing || ing.duration) && (
+          <section className="mb-10">
+            <h2 className="font-semibold text-[18px] text-foreground mb-4">
+              この成分の始め方
+            </h2>
+            <div className="space-y-3">
+              {[
+                {
+                  step: 1,
+                  title: '有効量を確認する',
+                  body: ing.dosageMin
+                    ? ing.dosageUnit.includes('濃度')
+                      ? `配合濃度${ing.dosageMin}%以上の製品を選ぶ。論文で使用された濃度の基準となる。`
+                      : `1日${ing.dosageMin}${ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `〜${ing.dosageMax}` : ''}${ing.dosageUnit}を目安にする。この量が論文で効果を確認した用量。`
+                    : '製品ラベルの配合量を確認する。',
+                },
+                {
+                  step: 2,
+                  title: 'タイミングと使い方',
+                  body: ing.timing ?? (ing.usageType === 'topical' ? '洗顔後の清潔な肌に使用。保湿剤の前に塗布するのが一般的。' : '食事と一緒に摂取するのが吸収を助けることが多い。'),
+                },
+                {
+                  step: 3,
+                  title: '効果が出るまでの期間',
+                  body: ing.duration ?? '継続的な使用が重要。数週間〜数ヶ月単位での評価が必要。短期間での判断は避ける。',
+                },
+              ].map(({ step, title, body }) => (
+                <div key={step} className="flex gap-4 bg-card border border-border rounded-2xl p-5">
+                  <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center
+                    text-[13px] font-black mt-0.5
+                    ${{ S: 'bg-amber-100 text-amber-700', A: 'bg-blue-100 text-blue-700',
+                         B: 'bg-emerald-100 text-emerald-700', C: 'bg-stone-100 text-stone-600' }[ing.evidenceRank]}`}>
+                    {step}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[14px] text-foreground mb-1">{title}</p>
+                    <p className="text-[13px] text-muted-foreground leading-relaxed">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Products */}
         {ing.products.length > 0 && (
           <section className="mb-10">
@@ -596,6 +642,26 @@ export default async function IngredientPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* note誘導 */}
+        <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
+          <p className="font-semibold text-[14px] text-foreground mb-1">
+            もっと深く知りたい方へ
+          </p>
+          <p className="text-[13px] text-muted-foreground mb-3">
+            {ing.nameJa}を含む老化・スキンケア・サプリの最新論文を毎週要約しています。
+            noteメンバーシップで読めます（月額980円）。
+          </p>
+          <a
+            href="https://note.com/r_evidence_/membership"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold
+              text-accent hover:underline transition-colors"
+          >
+            noteメンバーシップを見る →
+          </a>
+        </div>
 
         <Link href="/ingredients"
           className="inline-flex items-center gap-2 text-[13px] text-muted-foreground

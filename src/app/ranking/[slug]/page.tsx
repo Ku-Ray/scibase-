@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, Trophy, ArrowLeft, FlaskConical } from 'lucide-react'
+import { ChevronRight, Trophy, ArrowLeft, FlaskConical, ExternalLink } from 'lucide-react'
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
@@ -38,6 +38,9 @@ export default async function RankingPage({ params }: Props) {
   if (!concern) notFound()
 
   const ranked = getIngredientsByConcern(slug)
+  const topIngredient = ranked[0]
+  const topProduct = topIngredient?.products
+    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0]
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -107,6 +110,59 @@ export default async function RankingPage({ params }: Props) {
             </p>
           </div>
         </div>
+
+        {/* No.1成分 推奨商品CTA */}
+        {topIngredient && topProduct && (
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+              text-amber-600 mb-3">
+              このカテゴリのNo.1成分
+            </p>
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <EvidenceBadge rank={topIngredient.evidenceRank} variant="chip" />
+                  <span className="text-[12px] text-amber-700 font-medium">
+                    エビデンス{topIngredient.evidenceRank}ランク
+                  </span>
+                </div>
+                <h3 className="font-bold text-[20px] text-foreground mb-1">
+                  {topIngredient.nameJa}
+                </h3>
+                <p className="text-[13px] text-muted-foreground mb-3">
+                  {topIngredient.tagline}
+                </p>
+                {topProduct.reasonJa && (
+                  <p className="text-[12px] text-amber-800 font-medium">
+                    → {topProduct.reasonJa}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center gap-3 mt-4 pt-4 border-t border-amber-200">
+              <Link
+                href={`/ingredients/${topIngredient.slug}`}
+                className="flex-1 text-center text-[13px] font-medium border border-amber-300
+                  text-amber-800 rounded-xl px-4 py-2.5 hover:bg-amber-100 transition-colors"
+              >
+                エビデンスを確認する
+              </Link>
+              {topProduct.url && topProduct.url !== '#' && (
+                <a
+                  href={topProduct.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="flex-1 text-center inline-flex items-center justify-center gap-1.5
+                    text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5
+                    hover:bg-amber-600 transition-colors"
+                >
+                  購入する
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Ranking list */}
         <div className="space-y-3 mb-10">
