@@ -10,16 +10,33 @@ interface Props { params: Promise<{ pair: string }> }
 
 /* Pre-render popular comparisons */
 const POPULAR_PAIRS = [
+  // スキンケア成分の比較
   ['retinol', 'bakuchiol'],
   ['retinol', 'retinal'],
   ['niacinamide', 'vitamin-c-topical'],
   ['hyaluronic-acid', 'ceramide'],
-  ['collagen-peptide', 'vitamin-c-oral'],
-  ['magnesium', 'ashwagandha'],
-  ['vitamin-d', 'omega3'],
-  ['resveratrol', 'astaxanthin'],
   ['glycolic-acid', 'salicylic-acid'],
   ['niacinamide', 'azelaic-acid'],
+  ['arbutin', 'niacinamide'],
+  ['arbutin', 'kojic-acid'],
+  ['vitamin-c-topical', 'azelaic-acid'],
+  ['retinol', 'glycolic-acid'],
+  // サプリメントの比較
+  ['magnesium', 'ashwagandha'],
+  ['vitamin-d', 'omega3'],
+  ['collagen-peptide', 'vitamin-c-oral'],
+  ['nmn', 'coq10'],
+  ['l-theanine', 'ashwagandha'],
+  ['melatonin', 'magnesium'],
+  ['melatonin', 'glycine'],
+  ['l-theanine', 'gaba'],
+  ['creatine', 'coq10'],
+  ['vitamin-c-oral', 'zinc'],
+  ['omega3', 'vitamin-d'],
+  ['resveratrol', 'coq10'],
+  ['magnesium', 'l-theanine'],
+  ['ashwagandha', 'gaba'],
+  ['creatine', 'nmn'],
 ]
 
 export async function generateStaticParams() {
