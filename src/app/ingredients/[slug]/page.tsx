@@ -79,7 +79,7 @@ const rankDesc: Record<EvidenceRank, string> = {
   C: 'ヒトデータ不十分',
 }
 
-const BASE_URL = 'https://scibase.jp'
+const BASE_URL = 'https://scibase.app'
 
 export default async function IngredientPage({ params }: Props) {
   const { slug } = await params

@@ -12,7 +12,7 @@ const notoSansJP = Noto_Sans_JP({
   variable: '--font-noto',
 })
 
-const BASE_URL = 'https://scibase.jp'
+const BASE_URL = 'https://scibase.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

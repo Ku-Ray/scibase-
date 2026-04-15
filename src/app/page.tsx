@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'SciBase — スキンケア・サプリ成分を論文エビデンスで評価するデータベース',
   description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・マグネシウムなど29成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
-  alternates: { canonical: 'https://scibase.jp' },
+  alternates: { canonical: 'https://scibase.app' },
 }
 
 const TOP_CONCERNS = ['spots', 'wrinkles', 'dry-skin', 'acne', 'pores', 'skin-aging', 'sleep', 'stress']

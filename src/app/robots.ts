@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://scibase.jp/sitemap.xml',
-    host:    'https://scibase.jp',
+    sitemap: 'https://scibase.app/sitemap.xml',
+    host:    'https://scibase.app',
   }
 }

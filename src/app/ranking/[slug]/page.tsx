@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
 
-const BASE_URL = 'https://scibase.jp'
+const BASE_URL = 'https://scibase.app'
 
 export async function generateStaticParams() {
   return concerns.map(c => ({ slug: c.slug }))
