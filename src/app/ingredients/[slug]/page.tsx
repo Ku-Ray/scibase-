@@ -643,26 +643,6 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
-        {/* note誘導 */}
-        <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
-          <p className="font-semibold text-[14px] text-foreground mb-1">
-            もっと深く知りたい方へ
-          </p>
-          <p className="text-[13px] text-muted-foreground mb-3">
-            {ing.nameJa}を含む老化・スキンケア・サプリの最新論文を毎週要約しています。
-            noteメンバーシップで読めます（月額980円）。
-          </p>
-          <a
-            href="https://note.com/r_evidence_/membership"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[13px] font-semibold
-              text-accent hover:underline transition-colors"
-          >
-            noteメンバーシップを見る →
-          </a>
-        </div>
-
         <Link href="/ingredients"
           className="inline-flex items-center gap-2 text-[13px] text-muted-foreground
             hover:text-foreground transition-colors">

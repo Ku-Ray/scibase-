@@ -292,41 +292,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── noteメンバーシップCTA ──────────────────── */}
-      <section className="px-5 py-16">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800
-            rounded-3xl px-8 py-10 text-center">
-            <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
-              text-slate-400 mb-4">
-              SciBase メンバーシップ
-            </p>
-            <h2 className="text-[24px] sm:text-[28px] font-bold text-white
-              leading-[1.3] mb-4">
-              論文を読む時間がない人のための<br className="hidden sm:block" />
-              エビデンス要約マガジン
-            </h2>
-            <p className="text-[14px] text-slate-400 leading-relaxed mb-8 max-w-md mx-auto">
-              毎週、老化・スキンケア・サプリに関する新着論文を要約。
-              何が効くか・何が効かないかを、研究の質ごとに正直に解説。
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href="https://note.com/r_evidence_/membership"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white text-slate-900
-                  font-semibold text-[14px] rounded-2xl px-7 py-3
-                  hover:bg-slate-100 transition-colors"
-              >
-                月額980円で読む →
-              </a>
-              <p className="text-[12px] text-slate-500">いつでも解約できます</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Why ─────────────────────────────────── */}
       <section className="border-t border-border bg-card px-5 py-16">
         <div className="max-w-3xl mx-auto">
