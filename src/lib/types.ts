@@ -68,6 +68,10 @@ export interface Ingredient {
   products: Product[]
   axisScores?: AxisScores
   emerging?: boolean   // 注目成分フラグ（論文少ないが研究注目度高）
+  /** この成分が特に向いている人（チェックリスト形式） */
+  whoFor?: string[]
+  /** ヒーローエリアに大きく表示するキー統計 */
+  heroStat?: { value: string; label: string }
   updatedAt: string
 }
 

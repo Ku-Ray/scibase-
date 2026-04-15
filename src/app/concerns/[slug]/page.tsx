@@ -91,6 +91,65 @@ export default async function ConcernPage({ params }: Props) {
         })}
       </div>
 
+      {/* ── まずこれ1つ ── */}
+      {all.length > 0 && (() => {
+        const top = all[0]
+        const usageLabel: Record<string, string> = { topical: '外用', oral: '経口', both: '外用・経口' }
+        return (
+          <section className="mb-10">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+              text-muted-foreground mb-3">
+              まずこれ1つ
+            </p>
+            <Link href={`/ingredients/${top.slug}`}
+              className="group block bg-card border-2 border-accent/20 rounded-2xl p-5
+                hover:border-accent/50 hover:shadow-md transition-all duration-200">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-2.5">
+                    <EvidenceBadge rank={top.evidenceRank} variant="chip" />
+                    {top.usageType && (
+                      <span className="text-[11px] text-muted-foreground bg-secondary
+                        rounded px-2 py-0.5">
+                        {usageLabel[top.usageType]}
+                      </span>
+                    )}
+                    {top.emerging && (
+                      <span className="text-[11px] bg-violet-50 text-violet-700 border
+                        border-violet-200 rounded px-2 py-0.5">
+                        注目成分
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-[22px] font-bold text-foreground mb-1.5
+                    group-hover:text-accent transition-colors">
+                    {top.nameJa}
+                  </h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed">
+                    {top.tagline}
+                  </p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-1
+                  group-hover:text-accent transition-colors" />
+              </div>
+              {top.dosageMin && (
+                <div className="mt-4 pt-4 border-t border-border flex flex-wrap gap-4
+                  text-[12px] text-muted-foreground">
+                  <span>
+                    有効量:&nbsp;
+                    <strong className="text-foreground">
+                      {top.dosageMin}{top.dosageMax && top.dosageMax !== top.dosageMin
+                        ? `〜${top.dosageMax}` : ''}&nbsp;{top.dosageUnit}
+                    </strong>
+                  </span>
+                  <span>論文: <strong className="text-foreground">{top.papers.length}件</strong></span>
+                </div>
+              )}
+            </Link>
+          </section>
+        )
+      })()}
+
       {/* Disclaimer */}
       <p className="text-[13px] text-muted-foreground bg-secondary rounded-xl p-4 mb-10">
         エビデンスランクは研究の種類と質を示すものです。個人への効果を保証するものではありません。

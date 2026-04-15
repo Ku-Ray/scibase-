@@ -222,6 +222,16 @@ export default async function IngredientPage({ params }: Props) {
               </>
             )}
           </div>
+
+          {/* Hero stat（キー数値があれば大きく表示） */}
+          {ing.heroStat && (
+            <div className="inline-block mt-6 rounded-2xl px-5 py-3 bg-white/70 border border-black/8">
+              <p className={`text-[38px] font-black tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
+                {ing.heroStat.value}
+              </p>
+              <p className="text-[11px] text-muted-foreground mt-1">{ing.heroStat.label}</p>
+            </div>
+          )}
         </div>
 
         {/* Evidence bar at bottom of hero */}
@@ -245,6 +255,30 @@ export default async function IngredientPage({ params }: Props) {
           <h2 className="font-semibold text-[18px] text-foreground mb-4">この成分について</h2>
           <p className="text-[15px] text-muted-foreground leading-[1.85]">{ing.description}</p>
         </section>
+
+        {/* こんな人に特に関係する */}
+        {ing.whoFor && ing.whoFor.length > 0 && (
+          <section className="mb-10">
+            <h2 className="font-semibold text-[18px] text-foreground mb-4">
+              こんな人に特に関係する
+            </h2>
+            <div className="bg-card border border-border rounded-2xl p-5 space-y-3">
+              {ing.whoFor.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center
+                    justify-center text-[10px] font-bold mt-0.5
+                    ${{ S: 'bg-amber-100 text-amber-700',
+                         A: 'bg-blue-100 text-blue-700',
+                         B: 'bg-emerald-100 text-emerald-700',
+                         C: 'bg-stone-100 text-stone-600' }[ing.evidenceRank]}`}>
+                    ✓
+                  </span>
+                  <p className="text-[14px] text-foreground leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Papers */}
         <section className="mb-10">

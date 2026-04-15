@@ -316,31 +316,53 @@ export function AnalyzerClient() {
                 スコアが低い軸をカバーできる成分です
               </p>
               <div className="space-y-3">
-                {recommendations.map(({ ing, axis }) => (
-                  <Link key={ing.slug} href={`/ingredients/${ing.slug}`}
-                    className="group flex items-center gap-4 bg-card border border-border
-                      rounded-2xl p-4 hover:border-accent/50 hover:shadow-md
-                      transition-all duration-200">
-                    <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <p className="font-semibold text-[14px] text-foreground
-                          group-hover:text-accent transition-colors truncate">
-                          {ing.nameJa}
-                        </p>
-                        <span className="text-[10px] bg-secondary border border-border
-                          rounded px-1.5 py-0.5 text-muted-foreground flex-shrink-0">
-                          {axis.emoji} {axis.label}を強化
-                        </span>
+                {recommendations.map(({ ing, axis }) => {
+                  const topProduct = ing.products.find(p => p.rank === 1) ?? ing.products[0]
+                  const platformLabel: Record<string, string> = {
+                    iherb: 'iHerb', amazon: 'Amazon', rakuten: '楽天', cosme: '@cosme',
+                  }
+                  return (
+                    <div key={ing.slug}
+                      className="bg-card border border-border rounded-2xl p-4
+                        hover:border-accent/50 hover:shadow-md transition-all duration-200">
+                      <div className="flex items-center gap-4">
+                        <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-0.5">
+                            <p className="font-semibold text-[14px] text-foreground truncate">
+                              {ing.nameJa}
+                            </p>
+                            <span className="text-[10px] bg-secondary border border-border
+                              rounded px-1.5 py-0.5 text-muted-foreground flex-shrink-0">
+                              {axis.emoji} {axis.label}を強化
+                            </span>
+                          </div>
+                          <p className="text-[12px] text-muted-foreground line-clamp-1">
+                            {ing.tagline}
+                          </p>
+                        </div>
                       </div>
-                      <p className="text-[12px] text-muted-foreground line-clamp-1">
-                        {ing.tagline}
-                      </p>
+                      {/* CTA行 */}
+                      <div className="flex items-center gap-3 mt-3 pt-3 border-t border-border">
+                        <Link href={`/ingredients/${ing.slug}`}
+                          className="text-[12px] text-muted-foreground hover:text-foreground
+                            transition-colors flex items-center gap-1">
+                          <ChevronRight className="w-3.5 h-3.5" />
+                          エビデンスを確認する
+                        </Link>
+                        {topProduct && (
+                          <a href={topProduct.url}
+                            target="_blank" rel="noopener noreferrer"
+                            className="ml-auto text-[12px] font-semibold text-accent
+                              bg-accent/8 border border-accent/20 rounded-lg px-3 py-1.5
+                              hover:bg-accent/15 transition-colors flex items-center gap-1.5">
+                            {platformLabel[topProduct.platform]}で購入 →
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0
-                      group-hover:text-accent transition-colors" />
-                  </Link>
-                ))}
+                  )
+                })}
               </div>
             </section>
           )}
