@@ -70,7 +70,7 @@ export default async function RankingPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
 
-      <div className="max-w-2xl mx-auto px-5 py-10">
+      <div className="max-w-3xl mx-auto px-5 py-10">
 
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-8">

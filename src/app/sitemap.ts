@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ingredients`,   lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE_URL}/concerns`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE_URL}/ranking`,       lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/analyzer`,      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ]
 
   const ingredientPages: MetadataRoute.Sitemap = ingredients.map((ing) => ({

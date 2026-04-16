@@ -6,7 +6,7 @@ import { Home, Trophy, FlaskConical, Search, Microscope } from 'lucide-react'
 
 const NAV = [
   { href: '/',            icon: Home,         label: 'ホーム'  },
-  { href: '/concerns',    icon: Search,        label: '悩みから' },
+  { href: '/concerns',    icon: Search,        label: '悩み別' },
   { href: '/ranking',     icon: Trophy,        label: 'ランキング' },
   { href: '/ingredients', icon: FlaskConical,  label: '成分一覧' },
   { href: '/analyzer',    icon: Microscope,    label: '診断' },

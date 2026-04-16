@@ -26,6 +26,16 @@ export interface Product {
   monthlyCostJpy?: number
   /** ハイライトタグ（「コスパ最強」「初心者向け」等） */
   highlight?: string
+  /** 剤形（カプセル / 錠剤 / 粉末 / 液体 / クリーム / セラム 等） */
+  form?: string
+  /** 第三者検査機関による品質確認あり */
+  thirdPartyTested?: boolean
+  /** 重金属（水銀・鉛・カドミウム・砒素）の検査結果公開あり */
+  heavyMetalTested?: boolean
+  /** 取得している品質認証 */
+  certifications?: ('NSF' | 'USP' | 'InformedSport' | 'GMP' | 'NonGMO' | 'Organic')[]
+  /** 品質に関する補足メモ */
+  qualityNote?: string
 }
 
 export type AnalysisAxis =

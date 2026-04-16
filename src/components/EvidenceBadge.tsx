@@ -162,8 +162,8 @@ export function EvidenceBadge({ rank, variant = 'chip' }: Props) {
 export function EvidenceBar({ rank }: { rank: EvidenceRank }) {
   const widths: Record<EvidenceRank, string> = { S: 'w-full', A: 'w-3/4', B: 'w-1/2', C: 'w-1/4' }
   return (
-    <div className="h-1 bg-secondary rounded-full overflow-hidden">
-      <div className={`h-full rounded-full ${widths[rank]} ${config[rank].bar}`} />
+    <div className="h-2 bg-secondary rounded-full overflow-hidden">
+      <div className={`h-full rounded-full ${widths[rank]} ${config[rank].bar} opacity-80`} />
     </div>
   )
 }
