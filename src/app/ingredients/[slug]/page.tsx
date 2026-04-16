@@ -5,6 +5,7 @@ import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
+import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import type { TocSection } from '@/components/TableOfContents'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
@@ -256,6 +257,17 @@ export default async function IngredientPage({ params }: Props) {
               </p>
             </div>
           )}
+
+          {/* Quick CTA — 診断に追加 */}
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <AddToAnalyzerButton slug={ing.slug} />
+            <Link
+              href="/analyzer"
+              className="text-[12px] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              診断結果を見る →
+            </Link>
+          </div>
         </div>
 
         {/* Evidence bar at bottom of hero */}

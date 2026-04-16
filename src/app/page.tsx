@@ -58,15 +58,23 @@ export default function Home() {
             <HeroSearch />
           </div>
 
-          {/* サプリ診断CTA */}
-          <div className="mb-8">
+          {/* 2択CTA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+            <Link
+              href="/concerns"
+              className="inline-flex items-center gap-2 bg-foreground text-background
+                text-[13px] font-semibold rounded-xl px-5 py-3
+                hover:opacity-85 transition-opacity w-full sm:w-auto justify-center"
+            >
+              🔍 悩みから成分を探す
+            </Link>
             <Link
               href="/analyzer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground
-                text-[13px] font-medium rounded-xl px-5 py-2.5
-                hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 bg-card border border-border text-foreground
+                text-[13px] font-medium rounded-xl px-5 py-3
+                hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
             >
-              🔬 今のサプリを7軸で診断する
+              🔬 今のサプリを診断する
             </Link>
           </div>
 

@@ -415,15 +415,34 @@ export function AnalyzerClient() {
           )}
         </>
       ) : (
-        /* 未選択状態 */
-        <div className="bg-secondary border border-border rounded-2xl p-8 text-center">
-          <p className="text-[32px] mb-3">🔬</p>
-          <p className="font-medium text-[15px] text-foreground mb-2">
-            成分を追加するとチャートが表示されます
-          </p>
-          <p className="text-[13px] text-muted-foreground">
-            今飲んでいるサプリメントやスキンケア成分を選んでください
-          </p>
+        /* 未選択状態 — 損失回避フレーム */
+        <div className="border border-border rounded-2xl overflow-hidden">
+          <div className="bg-rose-50 border-b border-rose-100 px-5 py-3 flex items-center gap-2">
+            <span className="text-[12px] font-semibold text-rose-700">
+              現在のあなたのカバー状況
+            </span>
+            <span className="text-[11px] text-rose-500 bg-rose-100 border border-rose-200 rounded-full px-2 py-0.5">
+              7軸すべて未カバー
+            </span>
+          </div>
+          <div className="px-5 py-5">
+            {/* Ghost radar — 7軸すべて0の状態 */}
+            <div className="space-y-2 mb-5">
+              {AXES.map(a => (
+                <div key={a.key} className="flex items-center gap-3">
+                  <span className="text-[14px] w-5 text-center">{a.emoji}</span>
+                  <span className="text-[12px] text-muted-foreground/60 w-16 flex-shrink-0">{a.label}</span>
+                  <div className="flex-1 h-1.5 bg-rose-50 border border-rose-100 rounded-full overflow-hidden">
+                    <div className="h-full w-0 bg-rose-300 rounded-full" />
+                  </div>
+                  <span className="text-[11px] font-semibold text-rose-400 tabular-nums w-6 text-right">0.0</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[13px] text-muted-foreground leading-relaxed">
+              今飲んでいるサプリを追加すると、どの軸が<span className="font-semibold text-foreground">カバーできていないか</span>が見えます。
+            </p>
+          </div>
         </div>
       )}
 

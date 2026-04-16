@@ -114,10 +114,15 @@ export default async function RankingPage({ params }: Props) {
         {/* No.1成分 推奨商品CTA */}
         {topIngredient && topProduct && (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
-              text-amber-600 mb-3">
-              このカテゴリのNo.1成分
-            </p>
+            <div className="flex items-center gap-2 mb-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-600">
+                このカテゴリのNo.1成分
+              </p>
+              <span className="text-[10px] font-semibold bg-amber-500 text-white
+                rounded-full px-2.5 py-0.5">
+                初めてならまずこれ
+              </span>
+            </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1.5">
