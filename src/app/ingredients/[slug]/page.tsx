@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ExternalLink, ArrowLeft, Trophy, BarChart2 } from 'lucide-react'
+import { ChevronRight, ExternalLink, ArrowLeft, Trophy, BarChart2, GitCompare } from 'lucide-react'
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
@@ -759,6 +759,30 @@ export default async function IngredientPage({ params }: Props) {
               {siblingIngredients.map(i => (
                 <IngredientCard key={i.slug} ingredient={i} showConcerns={false} />
               ))}
+            </div>
+            {/* Compare links — 行動経済学：選択肢の比較を促すことで離脱前に関与度を高める */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {siblingIngredients.slice(0, 3).map(i => (
+                <Link
+                  key={i.slug}
+                  href={`/compare/${ing.slug}-vs-${i.slug}`}
+                  className="inline-flex items-center gap-1.5 text-[12px]
+                    bg-secondary border border-border text-muted-foreground
+                    rounded-full px-3 py-1.5 hover:border-accent hover:text-accent
+                    transition-colors"
+                >
+                  <GitCompare className="w-3 h-3 flex-shrink-0" />
+                  {ing.nameJa} vs {i.nameJa}
+                </Link>
+              ))}
+              <Link
+                href="/compare"
+                className="inline-flex items-center gap-1.5 text-[12px]
+                  text-muted-foreground/60 rounded-full px-3 py-1.5
+                  hover:text-accent transition-colors"
+              >
+                比較一覧を見る →
+              </Link>
             </div>
           </section>
         )}
