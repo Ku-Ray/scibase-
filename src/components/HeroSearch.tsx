@@ -27,7 +27,14 @@ const fuse = new Fuse<Result>(
   }
 )
 
-const SUGGESTIONS = ['レチノール', 'ナイアシンアミド', 'セラミド', 'ビタミンC', 'シミ', 'ニキビ']
+const SUGGESTIONS = [
+  { label: 'レチノール',       isNew: false },
+  { label: 'トラネキサム酸',   isNew: false },
+  { label: 'タウリン',         isNew: true  },
+  { label: 'フィセチン',       isNew: true  },
+  { label: 'シミ',             isNew: false },
+  { label: '疲れやすい',       isNew: false },
+]
 
 export function HeroSearch() {
   const [query,   setQuery]   = useState('')
@@ -36,7 +43,7 @@ export function HeroSearch() {
   const [focused, setFocused] = useState(false)
   const inputRef  = useRef<HTMLInputElement>(null)
   const router    = useRouter()
-  const open = focused && (query.length > 0 || true) // show on focus
+  const open = focused
 
   useEffect(() => {
     if (!query.trim()) { setResults([]); return }
@@ -126,12 +133,17 @@ export function HeroSearch() {
               <div className="flex flex-wrap gap-2">
                 {SUGGESTIONS.map(s => (
                   <button
-                    key={s}
-                    onMouseDown={() => setQuery(s)}
-                    className="text-[13px] text-muted-foreground bg-secondary border border-border
-                      rounded-full px-3 py-1.5 hover:border-accent/50 hover:text-accent transition-colors"
+                    key={s.label}
+                    onMouseDown={() => setQuery(s.label)}
+                    className="inline-flex items-center gap-1.5 text-[13px] text-muted-foreground
+                      bg-secondary border border-border rounded-full px-3 py-1.5
+                      hover:border-accent/50 hover:text-accent transition-colors"
                   >
-                    {s}
+                    {s.label}
+                    {s.isNew && (
+                      <span className="text-[9px] font-bold bg-violet-100 text-violet-700
+                        rounded px-1 py-0.5 leading-none">NEW</span>
+                    )}
                   </button>
                 ))}
               </div>

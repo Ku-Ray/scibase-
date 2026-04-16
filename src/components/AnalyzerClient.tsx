@@ -123,6 +123,19 @@ export function AnalyzerClient() {
       .slice(0, 5)
   }, [scores, selectedSlugs, weakAxes.length])
 
+  /* 軸ごとのトップ推薦成分（弱軸のインライン表示用） */
+  const axisTopRec = useMemo(() => {
+    const map = new Map<AnalysisAxis, typeof ingredients[0]>()
+    AXES.forEach(a => {
+      if (scores[a.key] >= 4.5) return
+      const top = ingredients
+        .filter(i => !selectedSlugs.includes(i.slug) && (i.axisScores?.[a.key] ?? 0) >= 6)
+        .sort((x, y) => (y.axisScores?.[a.key] ?? 0) - (x.axisScores?.[a.key] ?? 0))[0]
+      if (top) map.set(a.key, top)
+    })
+    return map
+  }, [scores, selectedSlugs])
+
   const add = (slug: string) => {
     setSelectedSlugs(prev => [...prev, slug])
     setQuery('')
@@ -269,13 +282,16 @@ export function AnalyzerClient() {
               {AXES.map(a => {
                 const score = scores[a.key]
                 const level = score >= 7.5 ? 'sufficient' : score >= 4.5 ? 'moderate' : 'weak'
+                const rec = level === 'weak' ? axisTopRec.get(a.key) : undefined
                 return (
-                  <div key={a.key} className="bg-card border border-border rounded-xl px-4 py-3">
+                  <div key={a.key}
+                    className={`bg-card border rounded-xl px-4 py-3 transition-colors
+                      ${level === 'weak' ? 'border-rose-200' : 'border-border'}`}>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <span className="text-[16px]">{a.emoji}</span>
                         <span className="text-[13px] font-medium text-foreground">{a.label}</span>
-                        <span className="text-[11px] text-muted-foreground/60">{a.desc}</span>
+                        <span className="hidden sm:inline text-[11px] text-muted-foreground/60">{a.desc}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full
@@ -300,6 +316,26 @@ export function AnalyzerClient() {
                         style={{ width: `${score * 10}%` }}
                       />
                     </div>
+                    {/* 弱軸：インライン推薦 */}
+                    {rec && (
+                      <div className="flex items-center gap-2 mt-2.5 pt-2.5 border-t border-rose-100">
+                        <span className="text-[11px] text-rose-600">補強に：</span>
+                        <Link
+                          href={`/ingredients/${rec.slug}`}
+                          className="text-[12px] font-semibold text-accent hover:underline truncate"
+                        >
+                          {rec.nameJa}
+                        </Link>
+                        <button
+                          onClick={() => add(rec.slug)}
+                          className="ml-auto flex-shrink-0 text-[11px] font-semibold
+                            bg-accent text-primary-foreground rounded-lg px-2.5 py-1
+                            hover:opacity-90 transition-opacity"
+                        >
+                          + 追加
+                        </button>
+                      </div>
+                    )}
                   </div>
                 )
               })}

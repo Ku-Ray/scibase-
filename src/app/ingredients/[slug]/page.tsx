@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ExternalLink, ArrowLeft, Trophy } from 'lucide-react'
+import { ChevronRight, ExternalLink, ArrowLeft, Trophy, BarChart2 } from 'lucide-react'
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
+import { TableOfContents } from '@/components/TableOfContents'
+import type { TocSection } from '@/components/TableOfContents'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
 
@@ -103,6 +105,7 @@ export default async function IngredientPage({ params }: Props) {
     headline:          `${ing.nameJa}の効果・副作用・論文エビデンス`,
     description:       ing.tagline,
     url:               `${BASE_URL}/ingredients/${slug}`,
+    datePublished:     ing.updatedAt,
     dateModified:      ing.updatedAt,
     author:            { '@type': 'Organization', name: 'SciBase' },
     publisher:         { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
@@ -145,6 +148,19 @@ export default async function IngredientPage({ params }: Props) {
     })),
   } : null
 
+  /* Build ToC sections */
+  const tocSections: TocSection[] = [
+    { id: 'description', label: 'この成分について' },
+    ...(ing.whoFor?.length ? [{ id: 'who-for', label: 'こんな人に' }] : []),
+    { id: 'papers', label: '主要研究' },
+    { id: 'evidence', label: 'エビデンスの読み方' },
+    ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'dosage', label: '摂取・使用ガイド' }] : []),
+    ...(faqItems.length > 0 ? [{ id: 'faq', label: 'よくある疑問' }] : []),
+    ...((ing.sideEffects?.length || ing.contraindications?.length) ? [{ id: 'safety', label: '副作用・注意' }] : []),
+    ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'start', label: '始め方' }] : []),
+    ...(ing.products.length > 0 ? [{ id: 'products', label: 'おすすめ商品' }] : []),
+  ]
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
@@ -154,7 +170,7 @@ export default async function IngredientPage({ params }: Props) {
       )}
 
       {/* ── Hero (light tinted block) ─────────────────── */}
-      <div className={`${heroBg[ing.evidenceRank]} border-t-4 ${heroBorder[ing.evidenceRank]}`}>
+      <div className={`${heroBg[ing.evidenceRank]} border-t-8 ${heroBorder[ing.evidenceRank]}`}>
         <div className="max-w-2xl mx-auto px-5 pt-8 pb-10">
 
           {/* Breadcrumb */}
@@ -226,11 +242,18 @@ export default async function IngredientPage({ params }: Props) {
 
           {/* Hero stat（キー数値があれば大きく表示） */}
           {ing.heroStat && (
-            <div className="inline-block mt-6 rounded-2xl px-5 py-3 bg-white/70 border border-black/8">
-              <p className={`text-[38px] font-black tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
+            <div className={`inline-block mt-6 rounded-2xl px-6 py-4 border-2
+              shadow-sm
+              ${{ S: 'bg-amber-100/60 border-amber-300 shadow-amber-100',
+                   A: 'bg-blue-100/60 border-blue-300 shadow-blue-100',
+                   B: 'bg-emerald-100/60 border-emerald-300 shadow-emerald-100',
+                   C: 'bg-stone-100/60 border-stone-300 shadow-stone-100' }[ing.evidenceRank]}`}>
+              <p className={`text-[48px] font-black tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
                 {ing.heroStat.value}
               </p>
-              <p className="text-[11px] text-muted-foreground mt-1">{ing.heroStat.label}</p>
+              <p className={`text-[12px] font-medium mt-1.5 ${heroText[ing.evidenceRank]} opacity-70`}>
+                {ing.heroStat.label}
+              </p>
             </div>
           )}
         </div>
@@ -243,7 +266,10 @@ export default async function IngredientPage({ params }: Props) {
       </div>
 
       {/* ── Body ──────────────────────────────────────── */}
-      <div className="max-w-2xl mx-auto px-5 py-10">
+      <div className="max-w-4xl mx-auto px-5 py-10">
+        <div className="flex gap-12 items-start">
+        {/* Main content */}
+        <div className="flex-1 min-w-0">
 
         {/* PR表記 */}
         <p className="text-[12px] text-muted-foreground bg-secondary rounded-lg px-3 py-2 mb-10">
@@ -252,14 +278,14 @@ export default async function IngredientPage({ params }: Props) {
         </p>
 
         {/* Description */}
-        <section className="mb-10">
+        <section id="description" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">この成分について</h2>
           <p className="text-[15px] text-muted-foreground leading-[1.85]">{ing.description}</p>
         </section>
 
         {/* こんな人に特に関係する */}
         {ing.whoFor && ing.whoFor.length > 0 && (
-          <section className="mb-10">
+          <section id="who-for" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-4">
               こんな人に特に関係する
             </h2>
@@ -282,7 +308,7 @@ export default async function IngredientPage({ params }: Props) {
         )}
 
         {/* Papers */}
-        <section className="mb-10">
+        <section id="papers" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">主要研究</h2>
           <div className="space-y-3">
             {ing.papers.map((p, i) => (
@@ -299,19 +325,26 @@ export default async function IngredientPage({ params }: Props) {
                     <span key={j} className="text-[11px] text-muted-foreground">{v}</span>
                   ))}
                 </div>
-                <p className="text-[12px] text-muted-foreground/60 mb-2 leading-snug italic">
-                  {p.title}
-                </p>
-                <p className="text-[14px] text-foreground font-medium leading-relaxed">
+                <p className="text-[14px] text-foreground font-medium leading-relaxed mb-2">
                   {p.keyFinding}
                 </p>
+                <details className="group">
+                  <summary className="text-[11px] text-muted-foreground/50 cursor-pointer
+                    hover:text-muted-foreground transition-colors list-none flex items-center gap-1">
+                    <span className="group-open:hidden">▶ 論文タイトル（英語）</span>
+                    <span className="hidden group-open:block">▼ 論文タイトル（英語）</span>
+                  </summary>
+                  <p className="text-[11px] text-muted-foreground/50 mt-1.5 leading-snug italic pl-3">
+                    {p.title}
+                  </p>
+                </details>
               </div>
             ))}
           </div>
         </section>
 
         {/* Evidence rank detail */}
-        <section className="mb-10">
+        <section id="evidence" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">
             このエビデンスをどう読むか
           </h2>
@@ -319,7 +352,7 @@ export default async function IngredientPage({ params }: Props) {
         </section>
 
         {/* Dosage */}
-        <section className="mb-10">
+        <section id="dosage" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">
             {ing.usageType === 'topical' ? '使用ガイド（論文ベース）' : '摂取ガイド（論文ベース）'}
           </h2>
@@ -345,7 +378,7 @@ export default async function IngredientPage({ params }: Props) {
 
         {/* FAQ */}
         {faqItems.length > 0 && (
-          <section className="mb-10">
+          <section id="faq" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-4">よくある疑問</h2>
             <div className="space-y-3">
               {faqItems.map(({ q, a }, i) => (
@@ -360,7 +393,7 @@ export default async function IngredientPage({ params }: Props) {
 
         {/* Side effects */}
         {(ing.sideEffects?.length || ing.contraindications?.length) && (
-          <section className="mb-10">
+          <section id="safety" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-4">副作用・注意事項</h2>
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 space-y-4">
               {ing.sideEffects?.length ? (
@@ -393,7 +426,7 @@ export default async function IngredientPage({ params }: Props) {
 
         {/* この成分の始め方 */}
         {(ing.dosageMin || ing.timing || ing.duration) && (
-          <section className="mb-10">
+          <section id="start" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-4">
               この成分の始め方
             </h2>
@@ -438,7 +471,7 @@ export default async function IngredientPage({ params }: Props) {
 
         {/* Products */}
         {ing.products.length > 0 && (
-          <section className="mb-10">
+          <section id="products" className="mb-10 scroll-mt-20">
             {/* ヘッダー */}
             <div className="flex items-center justify-between mb-2">
               <h2 className="font-semibold text-[18px] text-foreground">おすすめ商品</h2>
@@ -513,8 +546,8 @@ export default async function IngredientPage({ params }: Props) {
                         </span>
                       </div>
 
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="min-w-0 flex-1">
+                      <div className="flex flex-col gap-4">
+                        <div>
                           <p className="text-[11px] text-muted-foreground mb-0.5">{prod.brand}</p>
                           <p className="font-semibold text-[15px] text-foreground mb-2 leading-snug">
                             {prod.name}
@@ -533,52 +566,100 @@ export default async function IngredientPage({ params }: Props) {
                             </p>
                           )}
 
-                          {/* コスト情報 */}
-                          <div className="flex flex-wrap gap-3 mt-3">
-                            <div>
-                              <p className="text-[10px] text-muted-foreground/50 mb-0.5">価格</p>
-                              <p className="font-bold text-[16px] text-foreground tabular-nums">
-                                ¥{prod.priceJpy.toLocaleString()}
-                                <span className="text-[11px] font-normal text-muted-foreground">〜</span>
-                              </p>
+                          {/* 品質バッジ */}
+                          {(prod.thirdPartyTested || prod.heavyMetalTested || (prod.certifications && prod.certifications.length > 0) || prod.form) && (
+                            <div className="flex flex-wrap gap-1.5 mt-3">
+                              {prod.heavyMetalTested && (
+                                <span className="inline-flex items-center gap-1 text-[10px] font-semibold
+                                  bg-emerald-50 text-emerald-700 border border-emerald-200 rounded px-2 py-0.5">
+                                  ✓ 重金属検査済
+                                </span>
+                              )}
+                              {prod.thirdPartyTested && !prod.heavyMetalTested && (
+                                <span className="inline-flex items-center gap-1 text-[10px] font-semibold
+                                  bg-blue-50 text-blue-700 border border-blue-200 rounded px-2 py-0.5">
+                                  ✓ 第三者検査済
+                                </span>
+                              )}
+                              {prod.certifications?.includes('NSF') && (
+                                <span className="text-[10px] font-bold bg-blue-700 text-white
+                                  rounded px-2 py-0.5">NSF</span>
+                              )}
+                              {prod.certifications?.includes('USP') && (
+                                <span className="text-[10px] font-bold bg-indigo-700 text-white
+                                  rounded px-2 py-0.5">USP</span>
+                              )}
+                              {prod.certifications?.includes('GMP') && (
+                                <span className="text-[10px] font-semibold bg-secondary text-muted-foreground
+                                  border border-border rounded px-2 py-0.5">GMP</span>
+                              )}
+                              {prod.certifications?.includes('NonGMO') && (
+                                <span className="text-[10px] font-semibold bg-teal-50 text-teal-700
+                                  border border-teal-200 rounded px-2 py-0.5">Non-GMO</span>
+                              )}
+                              {prod.certifications?.includes('Organic') && (
+                                <span className="text-[10px] font-semibold bg-green-50 text-green-700
+                                  border border-green-200 rounded px-2 py-0.5">有機</span>
+                              )}
+                              {prod.form && (
+                                <span className="text-[10px] text-muted-foreground/60 border border-border
+                                  rounded px-2 py-0.5">{prod.form}</span>
+                              )}
                             </div>
-                            {prod.monthlyCostJpy && (
-                              <div>
-                                <p className="text-[10px] text-muted-foreground/50 mb-0.5">月あたり</p>
-                                <p className="font-semibold text-[14px] text-muted-foreground tabular-nums">
-                                  ¥{prod.monthlyCostJpy.toLocaleString()}
-                                </p>
-                              </div>
-                            )}
-                            {prod.dosageMg && (
-                              <div>
-                                <p className="text-[10px] text-muted-foreground/50 mb-0.5">1回量</p>
-                                <p className="font-semibold text-[14px] text-muted-foreground tabular-nums">
-                                  {prod.dosageMg >= 1000
-                                    ? `${prod.dosageMg / 1000}g`
-                                    : `${prod.dosageMg}mg`}
-                                </p>
-                              </div>
-                            )}
-                          </div>
+                          )}
+
+                          {/* 品質メモ */}
+                          {prod.qualityNote && (
+                            <p className="text-[11px] text-muted-foreground/70 leading-relaxed mt-2
+                              bg-secondary/60 rounded-lg px-3 py-2">
+                              {prod.qualityNote}
+                            </p>
+                          )}
                         </div>
 
-                        {/* CTA */}
-                        <div className="flex-shrink-0 pt-1">
-                          <a
-                            href={prod.url}
-                            target="_blank"
-                            rel="noopener noreferrer nofollow"
-                            className={`inline-flex items-center gap-1.5 text-[13px] font-semibold
-                              rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90
-                              ${isTop
-                                ? 'bg-accent text-accent-foreground'
-                                : 'bg-primary text-primary-foreground'}`}
-                          >
-                            購入する
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
+                        {/* コスト情報 */}
+                        <div className="flex flex-wrap gap-3">
+                          <div>
+                            <p className="text-[10px] text-muted-foreground/50 mb-0.5">価格</p>
+                            <p className="font-bold text-[16px] text-foreground tabular-nums">
+                              ¥{prod.priceJpy.toLocaleString()}
+                              <span className="text-[11px] font-normal text-muted-foreground">〜</span>
+                            </p>
+                          </div>
+                          {prod.monthlyCostJpy && (
+                            <div>
+                              <p className="text-[10px] text-muted-foreground/50 mb-0.5">月あたり</p>
+                              <p className="font-semibold text-[14px] text-muted-foreground tabular-nums">
+                                ¥{prod.monthlyCostJpy.toLocaleString()}
+                              </p>
+                            </div>
+                          )}
+                          {prod.dosageMg && (
+                            <div>
+                              <p className="text-[10px] text-muted-foreground/50 mb-0.5">1回量</p>
+                              <p className="font-semibold text-[14px] text-muted-foreground tabular-nums">
+                                {prod.dosageMg >= 1000
+                                  ? `${prod.dosageMg / 1000}g`
+                                  : `${prod.dosageMg}mg`}
+                              </p>
+                            </div>
+                          )}
                         </div>
+
+                        {/* CTA: full-width */}
+                        <a
+                          href={prod.url}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          className={`flex items-center justify-center gap-2 text-[14px] font-semibold
+                            rounded-xl px-4 py-3 transition-opacity hover:opacity-90 w-full
+                            ${isTop
+                              ? 'bg-accent text-accent-foreground'
+                              : 'bg-primary text-primary-foreground'}`}
+                        >
+                          購入する
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
                       </div>
                     </div>
                   )
@@ -603,8 +684,10 @@ export default async function IngredientPage({ params }: Props) {
         {/* Related ingredients */}
         {siblingIngredients.length > 0 && (
           <section className="mb-10">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-semibold text-[18px] text-foreground">同じ悩みに効く成分</h2>
+            <div className="flex items-center justify-between mb-1">
+              <h2 className="font-semibold text-[18px] text-foreground">
+                よく一緒に調べられている成分
+              </h2>
               {relatedConcerns[0] && (
                 <Link href={`/ranking/${relatedConcerns[0].slug}`}
                   className="text-[12px] text-accent flex items-center gap-1 hover:underline">
@@ -613,6 +696,9 @@ export default async function IngredientPage({ params }: Props) {
                 </Link>
               )}
             </div>
+            <p className="text-[12px] text-muted-foreground mb-4">
+              {ing.nameJa}と同じ悩みカテゴリで見られている成分
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {siblingIngredients.map(i => (
                 <IngredientCard key={i.slug} ingredient={i} showConcerns={false} />
@@ -621,34 +707,59 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
-        {/* Compare links */}
-        {siblingIngredients.length > 0 && (
-          <section className="mb-10">
-            <h2 className="font-semibold text-[16px] text-foreground mb-3">
-              同じ悩みに使われる成分
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {siblingIngredients.slice(0, 5).map(sibling => (
-                <Link
-                  key={sibling.slug}
-                  href={`/ingredients/${sibling.slug}`}
-                  className="inline-flex items-center gap-1.5 text-[12px] font-medium
-                    bg-card border border-border rounded-full px-3 py-1.5
-                    hover:border-accent hover:text-accent transition-colors"
-                >
-                  {sibling.nameJa}
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* ── 次のアクション CTA ── */}
+        <div className="border-t border-border pt-10 mt-4 mb-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
+            text-muted-foreground mb-5">
+            次にやること
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            {relatedConcerns[0] && (
+              <Link
+                href={`/ranking/${relatedConcerns[0].slug}`}
+                className="flex items-center gap-3 bg-accent text-accent-foreground
+                  rounded-2xl px-5 py-4 hover:opacity-90 transition-opacity"
+              >
+                <BarChart2 className="w-5 h-5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-[14px] leading-snug">
+                    {relatedConcerns[0].nameJa}のランキングを見る
+                  </p>
+                  <p className="text-[12px] opacity-70 mt-0.5">
+                    {relatedConcerns[0].nameJa}に効く成分を比較
+                  </p>
+                </div>
+              </Link>
+            )}
+            {relatedConcerns[0] && (
+              <Link
+                href={`/concerns/${relatedConcerns[0].slug}`}
+                className="flex items-center gap-3 border border-border bg-card
+                  rounded-2xl px-5 py-4 hover:border-accent/50 hover:shadow-sm transition-all"
+              >
+                <Trophy className="w-5 h-5 text-accent flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-[14px] text-foreground leading-snug">
+                    {relatedConcerns[0].nameJa}の成分一覧
+                  </p>
+                  <p className="text-[12px] text-muted-foreground mt-0.5">
+                    すべての関連成分を確認
+                  </p>
+                </div>
+              </Link>
+            )}
+          </div>
+          <Link href="/ingredients"
+            className="inline-flex items-center gap-2 text-[13px] text-muted-foreground
+              hover:text-foreground transition-colors">
+            <ArrowLeft className="w-4 h-4" />
+            成分一覧に戻る
+          </Link>
+        </div>
 
-        <Link href="/ingredients"
-          className="inline-flex items-center gap-2 text-[13px] text-muted-foreground
-            hover:text-foreground transition-colors">
-          <ArrowLeft className="w-4 h-4" />
-          成分一覧に戻る
-        </Link>
+        </div>{/* /main content */}
+        <TableOfContents sections={tocSections} />
+        </div>{/* /flex */}
       </div>
     </>
   )
