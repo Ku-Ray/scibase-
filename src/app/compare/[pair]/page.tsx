@@ -1,37 +1,16 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ArrowRight } from 'lucide-react'
+import { ChevronRight, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { getIngredient, concerns as allConcerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
+import { POPULAR_PAIRS, PAIR_CATEGORIES } from '@/lib/compare-data'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
 
 interface Props { params: Promise<{ pair: string }> }
 
 const BASE_URL = 'https://scibase.app'
-
-/* 人気比較ペア（SEO優先順） */
-export const POPULAR_PAIRS = [
-  ['retinol',          'bakuchiol'],
-  ['retinol',          'retinal'],
-  ['nmn',              'nicotinamide-riboside'],
-  ['glycine',          'magnesium'],
-  ['vitamin-c-topical','niacinamide'],
-  ['ashwagandha',      'rhodiola'],
-  ['collagen-peptide', 'vitamin-c-oral'],
-  ['omega3',           'astaxanthin'],
-  ['probiotics',       'inulin'],
-  ['coq10',            'pqq'],
-  ['melatonin',        'glycine'],
-  ['ashwagandha',      'l-theanine'],
-  ['resveratrol',      'quercetin'],
-  ['hyaluronic-acid',  'ceramide'],
-  ['vitamin-d',        'magnesium'],
-  ['zinc',             'vitamin-c-oral'],
-  ['lions-mane',       'bacopa-monnieri'],
-  ['nmn',              'coq10'],
-]
 
 export async function generateStaticParams() {
   return POPULAR_PAIRS.map(([a, b]) => ({ pair: `${a}-vs-${b}` }))
@@ -67,12 +46,12 @@ const rankColor: Record<EvidenceRank, string> = {
 
 /* 7軸の定義 */
 const AXES: { key: AnalysisAxis; label: string; emoji: string }[] = [
-  { key: 'antiAging',  label: '抗老化',        emoji: '🔬' },
-  { key: 'skin',       label: '肌老化',         emoji: '🌿' },
-  { key: 'cognitive',  label: '脳・認知',       emoji: '🧠' },
-  { key: 'stress',     label: 'ストレス',       emoji: '🧘' },
-  { key: 'sleep',      label: '睡眠・回復',     emoji: '🌙' },
-  { key: 'immunity',   label: '免疫・炎症',     emoji: '🛡️' },
+  { key: 'antiAging',  label: '抗老化',          emoji: '🔬' },
+  { key: 'skin',       label: '肌老化',           emoji: '🌿' },
+  { key: 'cognitive',  label: '脳・認知',         emoji: '🧠' },
+  { key: 'stress',     label: 'ストレス',         emoji: '🧘' },
+  { key: 'sleep',      label: '睡眠・回復',       emoji: '🌙' },
+  { key: 'immunity',   label: '免疫・炎症',       emoji: '🛡️' },
   { key: 'metabolism', label: '代謝・エネルギー', emoji: '⚡' },
 ]
 
@@ -114,6 +93,25 @@ export default async function ComparePage({ params }: Props) {
     else if (sB > sA) axisWins.b++
   })
 
+  /* 月あたりコスト（products[0]がある場合） */
+  const costA = ingA.products[0]?.monthlyCostJpy ?? ingA.products[0]?.priceJpy
+  const costB = ingB.products[0]?.monthlyCostJpy ?? ingB.products[0]?.priceJpy
+
+  /* 関連する比較ペア（同じカテゴリ or どちらかの成分が含まれる） */
+  const currentCategory = PAIR_CATEGORIES[pair]
+  const relatedPairs = POPULAR_PAIRS
+    .map(([a, b]) => ({ a, b, key: `${a}-vs-${b}` }))
+    .filter(p =>
+      p.key !== pair && (
+        p.a === slugA || p.b === slugA ||
+        p.a === slugB || p.b === slugB ||
+        PAIR_CATEGORIES[p.key] === currentCategory
+      )
+    )
+    .slice(0, 3)
+    .map(({ a, b, key }) => ({ key, ingA: getIngredient(a), ingB: getIngredient(b) }))
+    .filter(p => p.ingA && p.ingB)
+
   /* JSON-LD */
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -124,31 +122,56 @@ export default async function ComparePage({ params }: Props) {
       { '@type': 'ListItem', position: 3, name: `${ingA.nameJa} vs ${ingB.nameJa}`, item: `${BASE_URL}/compare/${pair}` },
     ],
   }
+
+  const faqItems = [
+    {
+      q: `${ingA.nameJa}と${ingB.nameJa}はどちらが効果がありますか？`,
+      a: evidenceWinner
+        ? `論文エビデンスの強さでは${evidenceWinner.nameJa}（${rankLabel[evidenceWinner.evidenceRank]}）が上回ります。ただし用途が異なるため、目的・悩みに応じた選択が重要です。`
+        : `${ingA.nameJa}と${ingB.nameJa}は同等のエビデンスランクです。用途・悩みに応じて選択してください。`,
+    },
+    {
+      q: `${ingA.nameJa}と${ingB.nameJa}の違いは何ですか？`,
+      a: `主な違いは①カバーする悩みカテゴリ（${ingA.nameJa}：${onlyA.slice(0,2).map(c=>c.nameJa).join('・') || ingA.concerns.slice(0,2).join('・')}、${ingB.nameJa}：${onlyB.slice(0,2).map(c=>c.nameJa).join('・') || ingB.concerns.slice(0,2).join('・')}）、②エビデンスの種類（${ingA.nameJa}：${rankLabel[ingA.evidenceRank]}、${ingB.nameJa}：${rankLabel[ingB.evidenceRank]}）の2点です。`,
+    },
+    {
+      q: `${ingA.nameJa}と${ingB.nameJa}は一緒に飲んでも大丈夫ですか？`,
+      a: sharedConcerns.length > 0
+        ? `両成分は異なるメカニズムで機能するため、一般に組み合わせ使用が検討されます。ただし相互作用の研究は限られているため、医師・薬剤師への相談を推奨します。`
+        : `目的が異なる成分のため、それぞれの役割で使い分けることが一般的です。`,
+    },
+    {
+      q: `${ingA.nameJa}と${ingB.nameJa}の副作用のリスクはどちらが低いですか？`,
+      a: [
+        ingA.sideEffects?.length ? `${ingA.nameJa}の主な副作用：${ingA.sideEffects.slice(0,2).join('、')}。` : `${ingA.nameJa}は安全性が高く、重大な副作用の報告は少ないとされています。`,
+        ingB.sideEffects?.length ? `${ingB.nameJa}の主な副作用：${ingB.sideEffects.slice(0,2).join('、')}。` : `${ingB.nameJa}は安全性が高く、重大な副作用の報告は少ないとされています。`,
+        'いずれも適切な用量・タイミングを守ることで多くの方が問題なく使用できます。持病がある方は使用前に医師に相談してください。',
+      ].join(' '),
+    },
+    ...(costA || costB ? [{
+      q: `${ingA.nameJa}と${ingB.nameJa}はどちらがコスパが良いですか？`,
+      a: (() => {
+        const parts: string[] = []
+        if (costA) parts.push(`${ingA.nameJa}は月あたり約¥${costA.toLocaleString()}`)
+        if (costB) parts.push(`${ingB.nameJa}は月あたり約¥${costB.toLocaleString()}`)
+        if (costA && costB) {
+          const cheaper = costA < costB ? ingA.nameJa : costB < costA ? ingB.nameJa : null
+          if (cheaper) parts.push(`コスト面では${cheaper}が有利です`)
+        }
+        parts.push('ただしコスパは「継続できるか」と「目的に合っているか」で判断することが重要です')
+        return parts.join('。') + '。'
+      })(),
+    }] : []),
+  ]
+
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `${ingA.nameJa}と${ingB.nameJa}はどちらが効果がありますか？`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: evidenceWinner
-            ? `論文エビデンスの強さでは${evidenceWinner.nameJa}（${rankLabel[evidenceWinner.evidenceRank]}）が上回ります。ただし用途が異なるため、目的・悩みに応じた選択が重要です。`
-            : `${ingA.nameJa}と${ingB.nameJa}は同等のエビデンスランクです。用途・悩みに応じて選択してください。`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `${ingA.nameJa}と${ingB.nameJa}は一緒に使えますか？`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: sharedConcerns.length > 0
-            ? `両成分は${sharedConcerns.map(c => c.nameJa).join('・')}という共通の悩みをカバーします。相互作用の研究は限られていますが、別々の機序で働くため、医師に相談の上で併用が検討されることがあります。`
-            : `${ingA.nameJa}と${ingB.nameJa}はカバーする悩みが異なり、目的が異なる成分です。それぞれの目的に応じて使い分けることを推奨します。`,
-        },
-      },
-    ],
+    mainEntity: faqItems.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
   }
 
   return (
@@ -168,7 +191,7 @@ export default async function ComparePage({ params }: Props) {
         </nav>
 
         {/* Hero — 損失回避フレーミング */}
-        <div className="mb-10">
+        <div className="mb-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
             text-muted-foreground mb-3">論文エビデンス比較</p>
           <h1 className="text-[28px] sm:text-[36px] font-bold text-foreground
@@ -181,14 +204,59 @@ export default async function ComparePage({ params }: Props) {
           </p>
         </div>
 
-        {/* クイック評決（アンカリング）— 最重要セクション */}
+        {/* ── TL;DR：30秒で分かる結論（認知負荷軽減 + スクロール前の離脱防止） ── */}
+        <div className="bg-foreground text-background rounded-2xl p-5 mb-8">
+          <p className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-3">
+            30秒でわかる結論
+          </p>
+          <div className="space-y-2.5">
+            {/* エビデンス結論 */}
+            <div className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
+              <p className="text-[13px] leading-snug">
+                <span className="font-bold">エビデンス: </span>
+                {evidenceWinner
+                  ? <>{evidenceWinner.nameJa}が上（{rankLabel[evidenceWinner.evidenceRank]} vs {rankLabel[evidenceWinner.slug === ingA.slug ? ingB.evidenceRank : ingA.evidenceRank]}）</>
+                  : <>両成分は同等（{rankLabel[ingA.evidenceRank]}）</>
+                }
+              </p>
+            </div>
+            {/* 向いている人 */}
+            <div className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
+              <p className="text-[13px] leading-snug">
+                <span className="font-bold">{ingA.nameJa}向き: </span>
+                {ingA.whoFor?.[0] ?? ingA.tagline.slice(0, 40) + '…'}
+              </p>
+            </div>
+            <div className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
+              <p className="text-[13px] leading-snug">
+                <span className="font-bold">{ingB.nameJa}向き: </span>
+                {ingB.whoFor?.[0] ?? ingB.tagline.slice(0, 40) + '…'}
+              </p>
+            </div>
+            {/* コスト（あれば） */}
+            {(costA || costB) && (
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
+                <p className="text-[13px] leading-snug">
+                  <span className="font-bold">月コスト目安: </span>
+                  {[costA && `${ingA.nameJa} ¥${costA.toLocaleString()}`, costB && `${ingB.nameJa} ¥${costB.toLocaleString()}`].filter(Boolean).join(' / ')}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* クイック評決（アンカリング） */}
         <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
           <p className="text-[11px] font-semibold uppercase tracking-wider
             text-muted-foreground mb-4">論文エビデンスによる評決</p>
           <div className="grid grid-cols-2 gap-4 mb-4">
             {[
-              { ing: ingA, wins: axisWins.a, label: 'A' },
-              { ing: ingB, wins: axisWins.b, label: 'B' },
+              { ing: ingA, wins: axisWins.a },
+              { ing: ingB, wins: axisWins.b },
             ].map(({ ing, wins }) => (
               <div key={ing.slug}
                 className={`rounded-xl border p-4 text-center ${rankColor[ing.evidenceRank]}`}>
@@ -254,60 +322,66 @@ export default async function ComparePage({ params }: Props) {
 
         {/* 7軸スコア比較（視覚的アンカリング） */}
         <section className="mb-10">
-          <h2 className="font-semibold text-[18px] text-foreground mb-4">7軸スコア比較</h2>
+          <h2 className="font-semibold text-[18px] text-foreground mb-1">7軸スコア比較</h2>
+          <p className="text-[12px] text-muted-foreground mb-4">
+            太い数字の軸がその成分の強み。自分が重視する軸で選ぶ。
+          </p>
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-[1fr_auto_auto] gap-0 divide-y divide-border">
-              <div className="px-4 py-2.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">軸</div>
-              <div className="px-4 py-2.5 text-[11px] font-semibold text-center text-foreground w-28">{ingA.nameJa}</div>
-              <div className="px-4 py-2.5 text-[11px] font-semibold text-center text-foreground w-28">{ingB.nameJa}</div>
-              {AXES.map(({ key, label, emoji }) => {
-                const sA = ingA.axisScores?.[key] ?? 0
-                const sB = ingB.axisScores?.[key] ?? 0
-                const winnerA = sA > sB
-                const winnerB = sB > sA
-                return (
-                  <>
-                    <div key={`label-${key}`} className="px-4 py-3 flex items-center gap-2">
-                      <span className="text-[14px]">{emoji}</span>
-                      <span className="text-[12px] text-foreground">{label}</span>
-                    </div>
-                    <div key={`a-${key}`} className="px-4 py-3 flex flex-col items-center justify-center w-28">
-                      <div className="w-full bg-secondary rounded-full h-1.5 mb-1.5">
-                        <div
-                          className={`h-full rounded-full ${winnerA ? 'bg-accent' : 'bg-border'}`}
-                          style={{ width: `${sA * 10}%` }}
-                        />
-                      </div>
-                      <span className={`text-[12px] font-bold tabular-nums
-                        ${winnerA ? 'text-accent' : 'text-muted-foreground'}`}>
-                        {sA.toFixed(1)} {winnerA && '▲'}
-                      </span>
-                    </div>
-                    <div key={`b-${key}`} className="px-4 py-3 flex flex-col items-center justify-center w-28">
-                      <div className="w-full bg-secondary rounded-full h-1.5 mb-1.5">
-                        <div
-                          className={`h-full rounded-full ${winnerB ? 'bg-accent' : 'bg-border'}`}
-                          style={{ width: `${sB * 10}%` }}
-                        />
-                      </div>
-                      <span className={`text-[12px] font-bold tabular-nums
-                        ${winnerB ? 'text-accent' : 'text-muted-foreground'}`}>
-                        {sB.toFixed(1)} {winnerB && '▲'}
-                      </span>
-                    </div>
-                  </>
-                )
-              })}
+            {/* ヘッダー行 */}
+            <div className="grid grid-cols-[1fr_100px_100px] border-b border-border">
+              <div className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">軸</div>
+              <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingA.nameJa}</div>
+              <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingB.nameJa}</div>
             </div>
+            {/* データ行 */}
+            {AXES.map(({ key, label, emoji }) => {
+              const sA = ingA.axisScores?.[key] ?? 0
+              const sB = ingB.axisScores?.[key] ?? 0
+              const winA = sA > sB
+              const winB = sB > sA
+              return (
+                <div key={key} className="grid grid-cols-[1fr_100px_100px] border-b border-border last:border-b-0">
+                  <div className="px-4 py-3 flex items-center gap-2">
+                    <span className="text-[14px]">{emoji}</span>
+                    <span className="text-[12px] text-foreground">{label}</span>
+                  </div>
+                  {/* スコアA */}
+                  <div className="px-3 py-3 flex flex-col items-center justify-center border-l border-border">
+                    <div className="w-full bg-secondary rounded-full h-1.5 mb-1.5">
+                      <div className={`h-full rounded-full transition-all ${winA ? 'bg-accent' : 'bg-border'}`}
+                        style={{ width: `${sA * 10}%` }} />
+                    </div>
+                    <span className={`text-[13px] tabular-nums font-bold ${winA ? 'text-accent' : 'text-muted-foreground/50'}`}>
+                      {sA.toFixed(1)}
+                    </span>
+                  </div>
+                  {/* スコアB */}
+                  <div className="px-3 py-3 flex flex-col items-center justify-center border-l border-border">
+                    <div className="w-full bg-secondary rounded-full h-1.5 mb-1.5">
+                      <div className={`h-full rounded-full transition-all ${winB ? 'bg-accent' : 'bg-border'}`}
+                        style={{ width: `${sB * 10}%` }} />
+                    </div>
+                    <span className={`text-[13px] tabular-nums font-bold ${winB ? 'text-accent' : 'text-muted-foreground/50'}`}>
+                      {sB.toFixed(1)}
+                    </span>
+                  </div>
+                </div>
+              )
+            })}
           </div>
-          <p className="text-[11px] text-muted-foreground mt-2">▲ はその軸でスコアが高い方を示す</p>
+          <p className="text-[11px] text-muted-foreground mt-2">
+            スコアが高い方（太字）がその軸でエビデンスの強い成分
+          </p>
         </section>
 
         {/* 悩みカバー比較（パーソナライゼーション） */}
         <section className="mb-10">
-          <h2 className="font-semibold text-[18px] text-foreground mb-4">
+          <h2 className="font-semibold text-[18px] text-foreground mb-2">
             あなたの悩みにはどちらが向いているか
           </h2>
+          <p className="text-[12px] text-muted-foreground mb-4">
+            自分の悩みカテゴリをクリックすると詳しく確認できます
+          </p>
           <div className="space-y-4">
             {sharedConcerns.length > 0 && (
               <div className="bg-card border border-border rounded-2xl p-5">
@@ -323,7 +397,7 @@ export default async function ComparePage({ params }: Props) {
                     </Link>
                   ))}
                 </div>
-                {sharedConcerns.length > 0 && evidenceWinner && (
+                {evidenceWinner && (
                   <p className="text-[12px] text-muted-foreground mt-3 pt-3 border-t border-border">
                     共通の悩みに対しては、エビデンスの強い
                     <span className="font-semibold text-foreground"> {evidenceWinner.nameJa}</span>
@@ -340,10 +414,11 @@ export default async function ComparePage({ params }: Props) {
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {onlyA.slice(0, 4).map(c => (
-                      <span key={c.slug} className="text-[11px] bg-secondary
-                        border border-border rounded-full px-2 py-0.5">
+                      <Link key={c.slug} href={`/concerns/${c.slug}`}
+                        className="text-[11px] bg-secondary border border-border rounded-full px-2 py-0.5
+                          hover:border-accent/50 transition-colors">
                         {c.emoji} {c.nameJa}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -355,10 +430,11 @@ export default async function ComparePage({ params }: Props) {
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {onlyB.slice(0, 4).map(c => (
-                      <span key={c.slug} className="text-[11px] bg-secondary
-                        border border-border rounded-full px-2 py-0.5">
+                      <Link key={c.slug} href={`/concerns/${c.slug}`}
+                        className="text-[11px] bg-secondary border border-border rounded-full px-2 py-0.5
+                          hover:border-accent/50 transition-colors">
                         {c.emoji} {c.nameJa}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -367,12 +443,12 @@ export default async function ComparePage({ params }: Props) {
           </div>
         </section>
 
-        {/* 有効量・摂取ガイド比較 */}
-        {(ingA.dosageMin || ingB.dosageMin) && (
+        {/* 有効量・コスト比較（コミットメント誘導） */}
+        {(ingA.dosageMin || ingB.dosageMin || costA || costB) && (
           <section className="mb-10">
-            <h2 className="font-semibold text-[18px] text-foreground mb-4">有効量・使用ガイド比較</h2>
+            <h2 className="font-semibold text-[18px] text-foreground mb-4">有効量・コスト比較</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[ingA, ingB].map(ing => (
+              {[{ ing: ingA, cost: costA }, { ing: ingB, cost: costB }].map(({ ing, cost }) => (
                 <div key={ing.slug} className="bg-card border border-border rounded-2xl p-4">
                   <p className="font-semibold text-[13px] text-foreground mb-3">{ing.nameJa}</p>
                   <dl className="space-y-2 text-[12px]">
@@ -396,6 +472,14 @@ export default async function ComparePage({ params }: Props) {
                         <dd className="text-foreground leading-relaxed">{ing.duration}</dd>
                       </div>
                     )}
+                    {cost && (
+                      <div className="flex gap-2 pt-2 border-t border-border">
+                        <dt className="text-muted-foreground w-16 flex-shrink-0">月コスト</dt>
+                        <dd className="text-foreground font-semibold text-[14px] tabular-nums">
+                          ¥{cost.toLocaleString()}〜
+                        </dd>
+                      </div>
+                    )}
                   </dl>
                 </div>
               ))}
@@ -403,7 +487,7 @@ export default async function ComparePage({ params }: Props) {
           </section>
         )}
 
-        {/* 一緒に使える？（デコイ効果 — 両方追加への誘導） */}
+        {/* 一緒に使える？（デコイ効果） */}
         <section className="mb-10 bg-accent/5 border border-accent/20 rounded-2xl p-5">
           <h2 className="font-semibold text-[15px] text-foreground mb-2">
             {ingA.nameJa}と{ingB.nameJa}は一緒に使える？
@@ -423,12 +507,15 @@ export default async function ComparePage({ params }: Props) {
           </Link>
         </section>
 
-        {/* Dual CTA（コミットメント原理＋FOMO） */}
-        <section className="mb-10 border border-border rounded-2xl p-5">
-          <p className="text-[12px] font-semibold text-muted-foreground mb-3">
-            比較が終わったら → サプリ診断に追加して7軸カバー状況を確認
+        {/* Dual CTA（強化版）— コミットメント原理＋FOMO */}
+        <section className="mb-10 bg-card border-2 border-accent/30 rounded-2xl p-5">
+          <p className="text-[13px] font-semibold text-foreground mb-1">
+            比較が終わったら → 7軸カバー状況を確認する
           </p>
-          <div className="grid grid-cols-2 gap-3">
+          <p className="text-[12px] text-muted-foreground mb-4">
+            今のサプリが何軸をカバーしているか分かる。不足している軸が明確になる。
+          </p>
+          <div className="grid grid-cols-2 gap-3 mb-3">
             {[ingA, ingB].map(ing => (
               <div key={ing.slug} className="flex flex-col gap-2">
                 <p className="text-[12px] font-medium text-foreground text-center">{ing.nameJa}</p>
@@ -436,30 +523,22 @@ export default async function ComparePage({ params }: Props) {
               </div>
             ))}
           </div>
+          <Link
+            href="/analyzer"
+            className="flex items-center justify-center gap-2 w-full
+              text-[13px] font-semibold text-accent border border-accent/30
+              rounded-xl px-4 py-3 hover:bg-accent/5 transition-colors"
+          >
+            診断結果を見る（7軸レーダーチャート）
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </section>
 
-        {/* FAQ（AI Overview対策） */}
+        {/* FAQ（AI Overview対策 + 行動経済学5問） */}
         <section className="mb-10">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">よくある質問</h2>
           <div className="border border-border rounded-2xl overflow-hidden divide-y divide-border">
-            {[
-              {
-                q: `${ingA.nameJa}と${ingB.nameJa}はどちらが効果がありますか？`,
-                a: evidenceWinner
-                  ? `論文エビデンスの強さでは${evidenceWinner.nameJa}（${rankLabel[evidenceWinner.evidenceRank]}）が上回ります。ただし目的が異なれば選ぶべき成分も変わります。悩みに応じた選択が重要です。`
-                  : `両成分は同等のエビデンスランクです。目的・悩みに応じて選択してください。`,
-              },
-              {
-                q: `${ingA.nameJa}と${ingB.nameJa}の違いは何ですか？`,
-                a: `主な違いは①カバーする悩みカテゴリ（${ingA.nameJa}：${ingA.concerns.slice(0,2).join('・')}、${ingB.nameJa}：${ingB.concerns.slice(0,2).join('・')}）、②エビデンスの種類（${ingA.nameJa}：${rankLabel[ingA.evidenceRank]}、${ingB.nameJa}：${rankLabel[ingB.evidenceRank]}）の2点です。`,
-              },
-              {
-                q: `${ingA.nameJa}と${ingB.nameJa}は一緒に飲んでも大丈夫ですか？`,
-                a: sharedConcerns.length > 0
-                  ? `両成分は異なるメカニズムで機能するため、一般に組み合わせ使用が検討されます。ただし相互作用の研究は限られているため、医師・薬剤師への相談を推奨します。`
-                  : `目的が異なる成分のため、それぞれの役割で使い分けることが一般的です。`,
-              },
-            ].map(({ q, a }, i) => (
+            {faqItems.map(({ q, a }, i) => (
               <details key={i} {...(i === 0 ? { open: true } : {})} className="group bg-card">
                 <summary className="flex items-start justify-between gap-3 px-5 py-4
                   cursor-pointer hover:bg-secondary/50 transition-colors list-none">
@@ -475,8 +554,41 @@ export default async function ComparePage({ params }: Props) {
           </div>
         </section>
 
+        {/* 関連する比較（離脱防止 + 内部リンク強化） */}
+        {relatedPairs.length > 0 && (
+          <section className="mb-10">
+            <h2 className="font-semibold text-[15px] text-foreground mb-3">
+              関連する比較
+            </h2>
+            <div className="space-y-2">
+              {relatedPairs.map(({ key, ingA: rA, ingB: rB }) => {
+                if (!rA || !rB) return null
+                return (
+                  <Link key={key} href={`/compare/${key}`}
+                    className="flex items-center justify-between gap-3 bg-card border border-border
+                      rounded-xl px-4 py-3 hover:border-accent/40 transition-colors group">
+                    <span className="text-[13px] font-medium text-foreground">
+                      {rA.nameJa} vs {rB.nameJa}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <EvidenceBadge rank={rA.evidenceRank} variant="chip" />
+                      <span className="text-[10px] text-muted-foreground/50">vs</span>
+                      <EvidenceBadge rank={rB.evidenceRank} variant="chip" />
+                      <ChevronRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+            <Link href="/compare"
+              className="inline-block mt-3 text-[12px] text-accent hover:underline">
+              比較一覧をすべて見る →
+            </Link>
+          </section>
+        )}
+
         {/* 個別ページへのリンク */}
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col sm:flex-row gap-3 mb-8">
           {[ingA, ingB].map(ing => (
             <Link key={ing.slug} href={`/ingredients/${ing.slug}`}
               className="flex-1 flex items-center justify-between gap-2
@@ -489,6 +601,18 @@ export default async function ComparePage({ params }: Props) {
               <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
             </Link>
           ))}
+        </div>
+
+        {/* 免責事項 + Aboutリンク（信頼構築） */}
+        <div className="bg-secondary border border-border rounded-xl p-4
+          text-[12px] text-muted-foreground leading-relaxed">
+          本ページの情報は医療的アドバイスを提供するものではありません。
+          掲載内容は査読済み論文に基づく研究情報の提供を目的としており、
+          特定成分・商品の効果・効能を保証するものではありません。
+          持病・服薬中の方は使用前に医師・薬剤師にご相談ください。
+          <Link href="/about" className="text-accent hover:underline ml-1">
+            エビデンス評価基準について →
+          </Link>
         </div>
       </div>
     </>
