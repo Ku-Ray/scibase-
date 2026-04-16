@@ -61,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja" className={notoSansJP.variable}>
       <head>
+        <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
