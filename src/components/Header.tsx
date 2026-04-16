@@ -61,6 +61,7 @@ export function Header() {
               { href: '/ranking',     label: 'ランキング'   },
               { href: '/ingredients', label: '成分一覧'     },
               { href: '/analyzer',    label: '🔬 サプリ診断' },
+              { href: '/about',       label: 'About'        },
             ].map(({ href, label }) => (
               <Link
                 key={href}

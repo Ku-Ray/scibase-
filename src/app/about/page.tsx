@@ -1,0 +1,262 @@
+import Link from 'next/link'
+import { ChevronRight, FlaskConical, BookOpen, Shield, Users } from 'lucide-react'
+import type { Metadata } from 'next'
+
+const BASE_URL = 'https://scibase.app'
+
+export const metadata: Metadata = {
+  title: 'SciBaseについて｜編集方針・エビデンス評価基準・運営者',
+  description: 'SciBaseの運営方針・著者プロフィール・論文エビデンスの評価基準を掲載。化粧品メーカー勤務の現役研究者が、メタ解析・RCT・コホート研究をもとに成分情報を独立して評価・掲載しています。',
+  alternates: { canonical: `${BASE_URL}/about` },
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'SciBase 編集者',
+  jobTitle: '化粧品メーカー研究職',
+  description: '化粧品・サプリメント成分の論文エビデンスを独立した立場で評価・発信。メタ解析・RCT・コホート研究を中心に査読済み論文のみを参照。',
+  url: `${BASE_URL}/about`,
+  sameAs: ['https://x.com/scibase_jp'],
+  knowsAbout: [
+    '成分科学', '皮膚科学', 'スキンケア成分', 'サプリメント', '栄養学',
+    'メタ解析', 'ランダム化比較試験（RCT）', 'エビデンスに基づく医療（EBM）',
+  ],
+}
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SciBase',
+  url: BASE_URL,
+  description: '論文エビデンスに基づくスキンケア・サプリメント成分データベース',
+  foundingDate: '2026',
+  sameAs: ['https://x.com/scibase_jp'],
+}
+
+const EVIDENCE_RANKS = [
+  {
+    rank: 'S',
+    label: 'メタ解析・システマティックレビュー',
+    color: 'bg-amber-500',
+    desc: '複数のRCTを統合解析した最上位のエビデンス形式。最も強い根拠として扱います。例：Cochrane Review',
+  },
+  {
+    rank: 'A',
+    label: 'RCT（ランダム化比較試験）',
+    color: 'bg-blue-500',
+    desc: '無作為割り付けによる二重盲検比較試験。偏りが少なく、因果関係の確認に適した研究形式。',
+  },
+  {
+    rank: 'B',
+    label: 'コホート研究・大規模観察研究',
+    color: 'bg-emerald-500',
+    desc: '長期追跡による関連性の確認。因果推論には限界があるが、大規模なデータで傾向を示す研究。',
+  },
+  {
+    rank: 'C',
+    label: '小規模研究・動物実験・in vitro',
+    color: 'bg-stone-400',
+    desc: 'ヒトでの大規模検証が不十分な段階。参考情報として掲載しますが、効果の断定はしません。',
+  },
+]
+
+export default function AboutPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+
+      <div className="max-w-2xl mx-auto px-5 py-12">
+
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-10">
+          <Link href="/" className="hover:underline">ホーム</Link>
+          <ChevronRight className="w-3 h-3" />
+          <span className="text-foreground">SciBaseについて</span>
+        </nav>
+
+        {/* Hero */}
+        <div className="mb-12">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
+            About SciBase
+          </p>
+          <h1 className="text-[30px] sm:text-[38px] font-bold text-foreground
+            tracking-tight leading-[1.2] mb-5">
+            「その成分、本当に<br />効きますか」
+          </h1>
+          <p className="text-[15px] text-muted-foreground leading-[1.9]">
+            SciBaseは、スキンケア・サプリメント成分の情報を
+            <span className="font-semibold text-foreground">口コミでも広告でもなく、査読済み論文</span>
+            だけをもとに評価・掲載する成分データベースです。
+          </p>
+        </div>
+
+        {/* なぜ作ったか */}
+        <section className="mb-12">
+          <h2 className="text-[20px] font-bold text-foreground mb-4">なぜ作ったのか</h2>
+          <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9]">
+            <p>
+              化粧品メーカーに勤め、仕事で成分の論文を読む立場になってわかったことがあります。
+              市場で「効果がある」とされている成分の多くは、
+              自社試験・症例報告・動物実験のデータだけで語られています。
+            </p>
+            <p>
+              一方、メタ解析やRCTといった質の高い研究が存在するにもかかわらず、
+              その情報が一般の人に届いていない成分も多い。
+              SciBaseは、この「エビデンスの格差」を埋めるために作りました。
+            </p>
+            <p>
+              「高価格＝効果がある」でも「人気がある＝根拠がある」でもない。
+              あくまで<span className="font-semibold text-foreground">査読済み論文のエビデンス</span>だけを基準に、
+              成分を評価・掲載しています。
+            </p>
+          </div>
+        </section>
+
+        {/* 著者プロフィール */}
+        <section className="mb-12 bg-secondary rounded-2xl p-6 border border-border">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-primary/10 border border-border
+              flex items-center justify-center flex-shrink-0">
+              <FlaskConical className="w-5 h-5 text-accent" />
+            </div>
+            <div>
+              <p className="font-semibold text-[15px] text-foreground mb-0.5">SciBase 編集者</p>
+              <p className="text-[12px] text-muted-foreground mb-3">化粧品メーカー勤務・成分研究担当</p>
+              <div className="space-y-2 text-[13px] text-muted-foreground leading-relaxed">
+                <p>
+                  化粧品メーカーに現役で勤務。職務上、成分の有効性評価・論文調査を日常的に行っています。
+                </p>
+                <p>
+                  老化科学・栄養学・脳科学に個人的に深い関心を持ち、
+                  皮膚老化・成分エビデンス・サプリメントの研究文献を継続的に読んでいます。
+                </p>
+                <p className="text-[12px]">
+                  専門領域：スキンケア成分科学 / サプリメント評価 / 老化科学 / 論文エビデンス評価
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 編集方針 */}
+        <section className="mb-12">
+          <div className="flex items-center gap-2 mb-5">
+            <BookOpen className="w-5 h-5 text-accent" />
+            <h2 className="text-[20px] font-bold text-foreground">編集方針・論文選定基準</h2>
+          </div>
+
+          <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9] mb-8">
+            <p>
+              掲載する論文は<span className="font-semibold text-foreground">査読済みの学術論文のみ</span>を対象とし、
+              メーカー自社試験・症例報告のみのデータ・査読なしのプレプリントは採用しません。
+            </p>
+            <p>
+              各成分には、参照した主要論文の研究種別・サンプル数・主な知見を明記しています。
+              読者が論文の質を自分で判断できるよう、エビデンスランク（S〜C）を明示しています。
+            </p>
+          </div>
+
+          {/* エビデンスランク表 */}
+          <div className="border border-border rounded-2xl overflow-hidden">
+            <div className="bg-secondary px-5 py-3 border-b border-border">
+              <p className="text-[12px] font-semibold text-foreground">エビデンスランク評価基準</p>
+            </div>
+            <div className="divide-y divide-border">
+              {EVIDENCE_RANKS.map(({ rank, label, color, desc }) => (
+                <div key={rank} className="flex items-start gap-4 px-5 py-4">
+                  <span className={`${color} text-white text-[13px] font-black
+                    w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                    {rank}
+                  </span>
+                  <div>
+                    <p className="text-[13px] font-semibold text-foreground mb-0.5">{label}</p>
+                    <p className="text-[12px] text-muted-foreground leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 掲載しないもの */}
+        <section className="mb-12">
+          <div className="flex items-center gap-2 mb-5">
+            <Shield className="w-5 h-5 text-accent" />
+            <h2 className="text-[20px] font-bold text-foreground">掲載しないもの</h2>
+          </div>
+          <ul className="space-y-3 text-[14px] text-muted-foreground">
+            {[
+              'メーカー自社試験のみのデータ（第三者検証なし）',
+              '症例報告・口コミ・個人の体験談',
+              '査読なし論文・プレプリント（未査読）',
+              '動物実験・in vitro（試験管内）研究のみの成分は Cランクとして明示',
+              '根拠なく「効果がある」「改善する」と断言するコンテンツ',
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-2.5">
+                <span className="text-rose-400 mt-1 flex-shrink-0">✕</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* アフィリエイト・収益 */}
+        <section className="mb-12 bg-amber-50 border border-amber-100 rounded-2xl p-5">
+          <h2 className="text-[15px] font-bold text-foreground mb-3">
+            アフィリエイト・商業的関係について
+          </h2>
+          <p className="text-[13px] text-muted-foreground leading-relaxed">
+            本サイトにはiHerb・Amazon・楽天等のアフィリエイトリンクが含まれます。
+            リンク経由での購入により当サイトへ手数料が発生する場合があります。
+            ただし、<span className="font-semibold text-foreground">商品の掲載・エビデンスランクの評価は広告主・商業的利益とは独立して行っており</span>、
+            手数料の有無が評価に影響することはありません。
+          </p>
+        </section>
+
+        {/* 免責事項 */}
+        <section className="mb-12">
+          <h2 className="text-[15px] font-bold text-foreground mb-3">免責事項</h2>
+          <p className="text-[13px] text-muted-foreground leading-relaxed">
+            本サイトの情報は<span className="font-semibold text-foreground">医療的アドバイスを提供するものではありません</span>。
+            掲載内容は研究情報の提供を目的としており、特定成分・商品の効果・効能を保証するものではありません。
+            サプリメントの使用・スキンケアの変更を行う際は、医師・薬剤師・専門家にご相談ください。
+            個人の体質・健康状態・服用薬との相互作用については、本サイトでは責任を負いかねます。
+          </p>
+        </section>
+
+        {/* お問い合わせ・SNS */}
+        <section className="border-t border-border pt-8">
+          <div className="flex items-center gap-2 mb-4">
+            <Users className="w-5 h-5 text-accent" />
+            <h2 className="text-[15px] font-bold text-foreground">お問い合わせ・SNS</h2>
+          </div>
+          <p className="text-[13px] text-muted-foreground mb-4">
+            掲載内容に関するご意見・ご指摘・論文情報の提供はXのDMにてお受けしています。
+          </p>
+          <a
+            href="https://x.com/scibase_jp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[13px] font-medium
+              bg-foreground text-background rounded-xl px-4 py-2.5
+              hover:opacity-85 transition-opacity"
+          >
+            <svg width="14" height="14" viewBox="0 0 1200 1227" fill="currentColor" aria-hidden>
+              <path d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026Z"/>
+            </svg>
+            @scibase_jp をフォロー
+          </a>
+        </section>
+
+        {/* 関連リンク */}
+        <div className="mt-10 pt-8 border-t border-border flex flex-wrap gap-4 text-[13px]">
+          <Link href="/ingredients" className="text-accent hover:underline">成分一覧 →</Link>
+          <Link href="/concerns"    className="text-accent hover:underline">悩みから探す →</Link>
+          <Link href="/analyzer"    className="text-accent hover:underline">サプリ診断 →</Link>
+        </div>
+      </div>
+    </>
+  )
+}

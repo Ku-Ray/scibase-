@@ -30,6 +30,7 @@ export function Footer() {
           <nav className="flex gap-5 text-[13px] text-muted-foreground">
             <Link href="/concerns"    className="hover:text-foreground transition-colors">悩みから探す</Link>
             <Link href="/ingredients" className="hover:text-foreground transition-colors">成分一覧</Link>
+            <Link href="/about"       className="hover:text-foreground transition-colors">サイトについて</Link>
           </nav>
         </div>
 
