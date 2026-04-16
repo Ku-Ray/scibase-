@@ -123,19 +123,46 @@ export default async function IngredientPage({ params }: Props) {
     ],
   }
 
-  /* Auto-generate FAQ from structured data */
+  /* Auto-generate FAQ — 行動経済学フレーミング適用 */
+  const rankDescFull: Record<EvidenceRank, string> = {
+    S: 'メタ解析（複数RCTの統合解析）という最上位のエビデンス',
+    A: 'RCT（ランダム化比較試験）という厳密な比較実験',
+    B: 'コホート研究・大規模観察研究',
+    C: '動物実験・小規模研究（ヒトでの大規模検証は不十分）',
+  }
+  const topPaper = ing.papers[0]
+  const concernNames = relatedConcerns.map(c => c.nameJa).join('・')
+
   const faqItems = [
-    ing.dosageMin ? {
-      q: `${ing.nameJa}の有効量（推奨濃度）はどのくらいですか？`,
-      a: `論文で有効性が確認されている量は${ing.dosageMin}${ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `〜${ing.dosageMax}` : ''} ${ing.dosageUnit}です。${ing.timing ?? ''}`,
+    /* Q1: エビデンス検証（アンカリング＋社会的証明）— 常時表示 */
+    {
+      q: `${ing.nameJa}に科学的な効果はありますか？`,
+      a: `エビデンスランク${ing.evidenceRank}です。${rankDescFull[ing.evidenceRank]}で根拠が確認されています。${topPaper ? `代表的な研究では「${topPaper.keyFinding}」が示されています（${topPaper.journal}・${topPaper.year}年${topPaper.sampleSize ? `・${topPaper.sampleSize.toLocaleString()}人対象` : ''}）。` : ''}口コミや広告ではなく、査読済み論文のみを根拠としています。`,
+    },
+    /* Q2: 損失回避（使わないとどうなるか）— 常時表示 */
+    relatedConcerns.length > 0 ? {
+      q: `${ing.nameJa}を使わないとどうなりますか？`,
+      a: `${concernNames}への対策を後回しにするほど、加齢とともに改善が難しくなる傾向があります。多くの研究で「早期からの継続的なアプローチ」が推奨されており、問題が顕在化してからでは対策の効果が限定的になることも少なくありません。今すぐ始めることと、数年後に始めることでは、長期的な結果に大きな差が生まれます。`,
     } : null,
+    /* Q3: パーソナライゼーション（どんな人向きか）*/
+    ing.whoFor?.length ? {
+      q: `${ing.nameJa}はどんな人に向いていますか？`,
+      a: `特に次のような方に向いています：${ing.whoFor.join('、')}。逆に、すでに食事からこれらの栄養素を十分に摂取できている方や、該当する悩みがない方は優先度が下がります。まず自分が当てはまるかどうかを確認することが、失敗しない成分選びの出発点です。`,
+    } : null,
+    /* Q4: 有効量（コミットメント誘導）*/
+    ing.dosageMin ? {
+      q: `${ing.nameJa}の${ing.usageType === 'topical' ? '推奨濃度' : '有効量'}はどのくらいですか？`,
+      a: `論文で効果が確認されているのは${ing.dosageMin}${ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `〜${ing.dosageMax}` : ''} ${ing.dosageUnit}です。${ing.timing ? `タイミングは「${ing.timing}」が推奨されています。` : ''}この量を下回ると研究で示された効果が得られない可能性があります。市販品の中には有効量に満たないものもあるため、配合量の確認が重要です。`,
+    } : null,
+    /* Q5: 継続期間（コミットメント原理＋損失回避）*/
     ing.duration ? {
       q: `${ing.nameJa}はどのくらいの期間で効果が出ますか？`,
-      a: ing.duration,
+      a: `${ing.duration}。多くの方が数週間で諦めてしまいますが、研究で効果が確認されているのはいずれも継続使用が前提です。途中でやめてしまうと、蓄積されたはずの効果が失われる可能性があります。少なくとも研究期間と同程度の継続を目標に設定することを推奨します。`,
     } : null,
+    /* Q6: 副作用（信頼構築）*/
     ing.sideEffects?.length ? {
-      q: `${ing.nameJa}の副作用はありますか？`,
-      a: `報告されている副作用として、${ing.sideEffects.join('、')}などがあります。${ing.contraindications?.length ? `特に${ing.contraindications.join('、')}の方はご注意ください。` : ''}`,
+      q: `${ing.nameJa}の副作用はありますか？安全に使えますか？`,
+      a: `報告されている副作用：${ing.sideEffects.join('、')}。${ing.contraindications?.length ? `特に${ing.contraindications.join('、')}の方は使用前に医師に相談してください。` : ''}適切な用量・タイミングを守ることで、多くの方が問題なく使用できます。不安がある場合は医師・薬剤師への相談を推奨します。`,
     } : null,
   ].filter(Boolean) as { q: string; a: string }[]
 
@@ -156,7 +183,7 @@ export default async function IngredientPage({ params }: Props) {
     { id: 'papers', label: '主要研究' },
     { id: 'evidence', label: 'エビデンスの読み方' },
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'dosage', label: '摂取・使用ガイド' }] : []),
-    ...(faqItems.length > 0 ? [{ id: 'faq', label: 'よくある疑問' }] : []),
+    { id: 'faq', label: 'よくある疑問' },
     ...((ing.sideEffects?.length || ing.contraindications?.length) ? [{ id: 'safety', label: '副作用・注意' }] : []),
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'start', label: '始め方' }] : []),
     ...(ing.products.length > 0 ? [{ id: 'products', label: 'おすすめ商品' }] : []),
@@ -388,20 +415,37 @@ export default async function IngredientPage({ params }: Props) {
           </div>
         </section>
 
-        {/* FAQ */}
-        {faqItems.length > 0 && (
-          <section id="faq" className="mb-10 scroll-mt-20">
-            <h2 className="font-semibold text-[18px] text-foreground mb-4">よくある疑問</h2>
-            <div className="space-y-3">
-              {faqItems.map(({ q, a }, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-5">
-                  <p className="font-semibold text-[14px] text-foreground mb-2">Q. {q}</p>
-                  <p className="text-[14px] text-muted-foreground leading-relaxed">A. {a}</p>
+        {/* FAQ — アコーディオン（最初の1問をデフォルト展開・損失回避フレーミング） */}
+        <section id="faq" className="mb-10 scroll-mt-20">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="font-semibold text-[18px] text-foreground">よくある疑問</h2>
+            <span className="text-[11px] text-muted-foreground bg-secondary border border-border
+              rounded-full px-2.5 py-1">{faqItems.length}件</span>
+          </div>
+          <div className="border border-border rounded-2xl overflow-hidden divide-y divide-border">
+            {faqItems.map(({ q, a }, i) => (
+              <details key={i} {...(i === 0 ? { open: true } : {})}
+                className="group bg-card">
+                <summary className="flex items-start justify-between gap-3 px-5 py-4
+                  cursor-pointer hover:bg-secondary/50 transition-colors list-none">
+                  <span className={`text-[13px] font-semibold leading-snug
+                    ${i === 0 ? 'text-foreground' : 'text-foreground/80'}`}>
+                    Q. {q}
+                  </span>
+                  <span className="text-muted-foreground flex-shrink-0 mt-0.5
+                    group-open:rotate-180 transition-transform duration-200 text-[12px]">
+                    ▾
+                  </span>
+                </summary>
+                <div className="px-5 pb-5 pt-1">
+                  <p className="text-[13px] text-muted-foreground leading-[1.85]">
+                    {a}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </section>
-        )}
+              </details>
+            ))}
+          </div>
+        </section>
 
         {/* Side effects */}
         {(ing.sideEffects?.length || ing.contraindications?.length) && (
