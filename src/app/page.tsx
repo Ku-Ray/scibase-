@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'SciBase — スキンケア・サプリ成分を論文エビデンスで評価するデータベース',
-  description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・アスタキサンチン・クルクミンなど54成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
+  description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・アスタキサンチン・クルクミンなど84成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
   alternates: { canonical: 'https://scibase.app' },
 }
 
@@ -128,7 +128,7 @@ export default function Home() {
                 desc: 'シミ・乾燥・睡眠など気になる悩みを選ぶと、その悩みに効果がエビデンスで確認されている成分が分かる。',
                 cta: '悩みから探す →',
                 accent: 'group-hover:border-rose-300 group-hover:shadow-rose-100/60',
-                numColor: 'text-rose-300',
+                numColor: 'text-rose-500',
                 iconColor: 'text-rose-400',
               },
               {
@@ -139,7 +139,7 @@ export default function Home() {
                 desc: '同じ悩みに対して複数の成分を論文エビデンスの強さ順にランキング。何を選べばいいか一目で分かる。',
                 cta: 'ランキングを見る →',
                 accent: 'group-hover:border-amber-300 group-hover:shadow-amber-100/60',
-                numColor: 'text-amber-300',
+                numColor: 'text-amber-600',
                 iconColor: 'text-amber-500',
               },
               {
@@ -150,7 +150,7 @@ export default function Home() {
                 desc: '現在摂っているサプリを選ぶと、7軸（抗老化・肌・認知・ストレス・睡眠・免疫・代謝）でスコア診断。',
                 cta: '診断してみる →',
                 accent: 'group-hover:border-accent/50 group-hover:shadow-emerald-100/60',
-                numColor: 'text-emerald-300',
+                numColor: 'text-emerald-600',
                 iconColor: 'text-accent',
               },
             ].map(({ num, href, icon: Icon, title, desc, cta, accent, numColor, iconColor }) => (
@@ -164,10 +164,10 @@ export default function Home() {
                   </p>
                   <Icon className={`w-5 h-5 mt-1.5 ${iconColor} opacity-70`} />
                 </div>
-                <h3 className="font-semibold text-[15px] text-foreground mb-2
+                <h2 className="font-semibold text-[15px] text-foreground mb-2
                   group-hover:text-accent transition-colors">
                   {title}
-                </h3>
+                </h2>
                 <p className="text-[12px] text-muted-foreground leading-relaxed mb-4">{desc}</p>
                 <p className="text-[12px] text-accent font-medium">{cta}</p>
               </Link>

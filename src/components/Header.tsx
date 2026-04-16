@@ -60,6 +60,7 @@ export function Header() {
               { href: '/concerns',    label: '悩みから探す' },
               { href: '/ranking',     label: 'ランキング'   },
               { href: '/ingredients', label: '成分一覧'     },
+              { href: '/compare',     label: '比較'         },
               { href: '/analyzer',    label: '🔬 サプリ診断' },
               { href: '/about',       label: 'About'        },
             ].map(({ href, label }) => (
@@ -77,6 +78,7 @@ export function Header() {
           {/* Search icon (mobile) */}
           <button
             onClick={() => setSearchOpen(true)}
+            aria-label="成分・悩みを検索"
             className="sm:hidden ml-auto p-2 rounded-md hover:bg-secondary transition-colors"
           >
             <Search className="w-4.5 h-4.5 text-muted-foreground" />
