@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Trophy, FlaskConical } from 'lucide-react'
+import { ArrowRight, Trophy, FlaskConical, Search, BarChart2, Microscope } from 'lucide-react'
 import { concerns, ingredients, getIngredientsByConcern } from '@/lib/data'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'SciBase — スキンケア・サプリ成分を論文エビデンスで評価するデータベース',
-  description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・マグネシウムなど29成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
+  description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・アスタキサンチン・クルクミンなど54成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
   alternates: { canonical: 'https://scibase.app' },
 }
 
@@ -77,7 +77,7 @@ export default function Home() {
             <span className="w-px h-3 bg-border" />
             <span><strong className="text-foreground font-semibold">{concerns.length}</strong> 悩みカテゴリ</span>
             <span className="w-px h-3 bg-border" />
-            <span><strong className="text-foreground font-semibold">100+</strong> 論文</span>
+            <span><strong className="text-foreground font-semibold">150+</strong> 論文</span>
           </div>
 
           {/* 悩みタグ */}
@@ -115,32 +115,47 @@ export default function Home() {
               {
                 num: '01',
                 href: '/concerns',
+                icon: Search,
                 title: '悩みから探す',
                 desc: 'シミ・乾燥・睡眠など気になる悩みを選ぶと、その悩みに効果がエビデンスで確認されている成分が分かる。',
                 cta: '悩みから探す →',
+                accent: 'group-hover:border-rose-300 group-hover:shadow-rose-100/60',
+                numColor: 'text-rose-300',
+                iconColor: 'text-rose-400',
               },
               {
                 num: '02',
                 href: '/ranking',
+                icon: BarChart2,
                 title: 'ランキングで比べる',
                 desc: '同じ悩みに対して複数の成分を論文エビデンスの強さ順にランキング。何を選べばいいか一目で分かる。',
                 cta: 'ランキングを見る →',
+                accent: 'group-hover:border-amber-300 group-hover:shadow-amber-100/60',
+                numColor: 'text-amber-300',
+                iconColor: 'text-amber-500',
               },
               {
                 num: '03',
                 href: '/analyzer',
+                icon: Microscope,
                 title: '今のサプリを診断する',
                 desc: '現在摂っているサプリを選ぶと、7軸（抗老化・肌・認知・ストレス・睡眠・免疫・代謝）でスコア診断。',
                 cta: '診断してみる →',
+                accent: 'group-hover:border-accent/50 group-hover:shadow-emerald-100/60',
+                numColor: 'text-emerald-300',
+                iconColor: 'text-accent',
               },
-            ].map(({ num, href, title, desc, cta }) => (
+            ].map(({ num, href, icon: Icon, title, desc, cta, accent, numColor, iconColor }) => (
               <Link key={num} href={href}
-                className="group bg-card border border-border rounded-2xl p-5
-                  hover:border-accent/50 hover:shadow-md transition-all duration-200
-                  hover:-translate-y-0.5">
-                <p className="text-[11px] font-black text-muted-foreground/40 mb-3 tabular-nums">
-                  {num}
-                </p>
+                className={`group bg-card border border-border rounded-2xl p-5
+                  hover:shadow-lg transition-all duration-200
+                  hover:-translate-y-1 ${accent}`}>
+                <div className="flex items-start justify-between mb-4">
+                  <p className={`text-[36px] font-black tabular-nums leading-none ${numColor}`}>
+                    {num}
+                  </p>
+                  <Icon className={`w-5 h-5 mt-1.5 ${iconColor} opacity-70`} />
+                </div>
                 <h3 className="font-semibold text-[15px] text-foreground mb-2
                   group-hover:text-accent transition-colors">
                   {title}
