@@ -93,3 +93,48 @@ export interface Concern {
   description: string
   ingredientSlugs: string[]
 }
+
+// ─── Article（コラム記事） ────────────────────────────────────────
+
+export type ArticleCategory = 'anti-aging' | 'skin' | 'sleep' | 'supplement'
+
+export interface ArticleIngredientCTA {
+  slug: string
+  nameJa: string
+  reason: string
+  evidenceRank: EvidenceRank
+  productName?: string
+  productUrl?: string
+  productPlatform?: 'iherb' | 'amazon' | 'rakuten'
+  productPriceJpy?: number
+  productHighlight?: string
+}
+
+export interface ArticleFAQ {
+  question: string
+  answer: string
+}
+
+export interface Article {
+  slug: string
+  title: string
+  description: string
+  category: ArticleCategory
+  categoryLabel: string
+  publishedAt: string
+  readingMinutes: number
+  /** ヒーロー数値（アンカリング） */
+  heroStat: { value: string; label: string }
+  /** 損失回避フック（冒頭1文） */
+  lossAversionHook: string
+  problemHeading: string
+  problemBody: string
+  scienceHeading: string
+  scienceBody: string
+  scienceStat?: { value: string; label: string }
+  solutionHeading: string
+  solutionBody: string
+  ingredients: ArticleIngredientCTA[]
+  faqs: ArticleFAQ[]
+  relatedIngredientSlugs: string[]
+}

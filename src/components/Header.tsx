@@ -60,6 +60,7 @@ export function Header() {
               { href: '/concerns',    label: '悩みから探す' },
               { href: '/ranking',     label: 'ランキング'   },
               { href: '/ingredients', label: '成分一覧'     },
+              { href: '/articles',    label: 'コラム'       },
               { href: '/compare',     label: '比較'         },
               { href: '/analyzer',    label: '🔬 サプリ診断' },
               { href: '/about',       label: 'About'        },
