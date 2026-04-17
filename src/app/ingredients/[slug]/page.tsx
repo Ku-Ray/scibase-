@@ -103,6 +103,47 @@ export default async function IngredientPage({ params }: Props) {
     ).values()
   ].slice(0, 6)
 
+  /* Platform-grouped products */
+  const platformProducts = {
+    iherb:   ing.products.filter(p => p.platform === 'iherb').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+    amazon:  ing.products.filter(p => p.platform === 'amazon').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+    rakuten: ing.products.filter(p => p.platform === 'rakuten').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+    cosme:   ing.products.filter(p => p.platform === 'cosme').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+  }
+  const searchSuffix = ing.usageType === 'topical' ? ' スキンケア' : ' サプリ'
+  const platformConfigs = [
+    {
+      key: 'iherb' as const,
+      label: 'iHerb',
+      headerBg: 'bg-emerald-100',
+      headerText: 'text-emerald-800',
+      border: 'border-emerald-200',
+      cardBg: 'bg-emerald-50/40',
+      btnClass: 'bg-emerald-600 text-white',
+      searchUrl: `https://www.iherb.com/search?kw=${encodeURIComponent(ing.nameEn)}`,
+    },
+    {
+      key: 'amazon' as const,
+      label: 'Amazon',
+      headerBg: 'bg-amber-100',
+      headerText: 'text-amber-800',
+      border: 'border-amber-200',
+      cardBg: 'bg-amber-50/40',
+      btnClass: 'bg-amber-500 text-white',
+      searchUrl: `https://www.amazon.co.jp/s?k=${encodeURIComponent(ing.nameJa + searchSuffix)}&tag=scibase-22`,
+    },
+    {
+      key: 'rakuten' as const,
+      label: '楽天',
+      headerBg: 'bg-rose-100',
+      headerText: 'text-rose-800',
+      border: 'border-rose-200',
+      cardBg: 'bg-rose-50/40',
+      btnClass: 'bg-rose-600 text-white',
+      searchUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(ing.nameJa + searchSuffix)}/`,
+    },
+  ]
+
   const articleJsonLd = {
     '@context':        'https://schema.org',
     '@type':           'Article',
@@ -572,158 +613,162 @@ export default async function IngredientPage({ params }: Props) {
               </div>
             )}
 
-            {/* 商品リスト */}
-            <div className="space-y-3">
-              {[...ing.products]
-                .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
-                .map((prod, i) => {
-                  const isTop = prod.rank === 1 || (i === 0 && !prod.rank)
-                  return (
-                    <div key={i}
-                      className={`bg-card rounded-2xl p-5 transition-all duration-200
-                        ${isTop
-                          ? 'border-2 border-accent/40 shadow-sm shadow-accent/10'
-                          : 'border border-border'}`}>
+            {/* 商品リスト - プラットフォーム別3択 */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {platformConfigs.map(({ key, label, headerBg, headerText, border, cardBg, btnClass, searchUrl }) => {
+                const prod = platformProducts[key]
+                return (
+                  <div key={key}
+                    className={`rounded-2xl border ${border} ${cardBg} overflow-hidden flex flex-col`}>
 
-                      {/* ランクバッジ + ハイライト */}
-                      <div className="flex items-center gap-2 mb-3">
-                        {isTop && (
-                          <span className="bg-accent text-accent-foreground text-[11px]
-                            font-bold rounded-full px-2.5 py-0.5">
-                            SciBase推奨
-                          </span>
-                        )}
-                        {prod.highlight && (
-                          <span className="bg-amber-50 text-amber-700 border border-amber-200
-                            text-[11px] font-semibold rounded-full px-2.5 py-0.5">
-                            {prod.highlight}
-                          </span>
-                        )}
-                        <span className="text-[11px] text-muted-foreground bg-secondary
-                          border border-border rounded px-2 py-0.5 ml-auto">
-                          {platformLabel[prod.platform]}
-                        </span>
-                      </div>
+                    {/* Platform header */}
+                    <div className={`${headerBg} px-4 py-2.5 border-b ${border}`}>
+                      <p className={`text-[12px] font-bold ${headerText}`}>{label}</p>
+                    </div>
 
-                      <div className="flex flex-col gap-4">
+                    {prod ? (
+                      <div className="p-4 flex flex-col gap-3 flex-1">
+                        {/* Highlight + Brand + Name */}
                         <div>
-                          <p className="text-[11px] text-muted-foreground mb-0.5">{prod.brand}</p>
-                          <p className="font-semibold text-[15px] text-foreground mb-2 leading-snug">
+                          {prod.highlight && (
+                            <span className="inline-block text-[10px] font-semibold bg-amber-50
+                              text-amber-700 border border-amber-200 rounded-full px-2 py-0.5 mb-1.5">
+                              {prod.highlight}
+                            </span>
+                          )}
+                          <p className="text-[10px] text-muted-foreground/60">{prod.brand}</p>
+                          <p className="font-semibold text-[14px] text-foreground leading-snug mt-0.5">
                             {prod.name}
                           </p>
-
-                          {/* なぜこれか */}
-                          {prod.reasonJa && (
-                            <p className="text-[13px] text-accent font-medium mb-2">
-                              → {prod.reasonJa}
-                            </p>
-                          )}
-
-                          {prod.note && (
-                            <p className="text-[12px] text-muted-foreground leading-relaxed">
-                              {prod.note}
-                            </p>
-                          )}
-
-                          {/* 品質バッジ */}
-                          {(prod.thirdPartyTested || prod.heavyMetalTested || (prod.certifications && prod.certifications.length > 0) || prod.form) && (
-                            <div className="flex flex-wrap gap-1.5 mt-3">
-                              {prod.heavyMetalTested && (
-                                <span className="inline-flex items-center gap-1 text-[10px] font-semibold
-                                  bg-emerald-50 text-emerald-700 border border-emerald-200 rounded px-2 py-0.5">
-                                  ✓ 重金属検査済
-                                </span>
-                              )}
-                              {prod.thirdPartyTested && !prod.heavyMetalTested && (
-                                <span className="inline-flex items-center gap-1 text-[10px] font-semibold
-                                  bg-blue-50 text-blue-700 border border-blue-200 rounded px-2 py-0.5">
-                                  ✓ 第三者検査済
-                                </span>
-                              )}
-                              {prod.certifications?.includes('NSF') && (
-                                <span className="text-[10px] font-bold bg-blue-700 text-white
-                                  rounded px-2 py-0.5">NSF</span>
-                              )}
-                              {prod.certifications?.includes('USP') && (
-                                <span className="text-[10px] font-bold bg-indigo-700 text-white
-                                  rounded px-2 py-0.5">USP</span>
-                              )}
-                              {prod.certifications?.includes('GMP') && (
-                                <span className="text-[10px] font-semibold bg-secondary text-muted-foreground
-                                  border border-border rounded px-2 py-0.5">GMP</span>
-                              )}
-                              {prod.certifications?.includes('NonGMO') && (
-                                <span className="text-[10px] font-semibold bg-teal-50 text-teal-700
-                                  border border-teal-200 rounded px-2 py-0.5">Non-GMO</span>
-                              )}
-                              {prod.certifications?.includes('Organic') && (
-                                <span className="text-[10px] font-semibold bg-green-50 text-green-700
-                                  border border-green-200 rounded px-2 py-0.5">有機</span>
-                              )}
-                              {prod.form && (
-                                <span className="text-[10px] text-muted-foreground/60 border border-border
-                                  rounded px-2 py-0.5">{prod.form}</span>
-                              )}
-                            </div>
-                          )}
-
-                          {/* 品質メモ */}
-                          {prod.qualityNote && (
-                            <p className="text-[11px] text-muted-foreground/70 leading-relaxed mt-2
-                              bg-secondary/60 rounded-lg px-3 py-2">
-                              {prod.qualityNote}
-                            </p>
-                          )}
                         </div>
 
-                        {/* コスト情報 */}
-                        <div className="flex flex-wrap gap-3">
-                          <div>
-                            <p className="text-[10px] text-muted-foreground/50 mb-0.5">価格</p>
-                            <p className="font-bold text-[16px] text-foreground tabular-nums">
-                              ¥{prod.priceJpy.toLocaleString()}
-                              <span className="text-[11px] font-normal text-muted-foreground">〜</span>
-                            </p>
+                        {/* reasonJa */}
+                        {prod.reasonJa && (
+                          <p className="text-[12px] text-muted-foreground leading-relaxed line-clamp-3">
+                            {prod.reasonJa}
+                          </p>
+                        )}
+
+                        {/* Quality badges */}
+                        {(prod.heavyMetalTested || prod.thirdPartyTested ||
+                          (prod.certifications?.length ?? 0) > 0) && (
+                          <div className="flex flex-wrap gap-1">
+                            {prod.heavyMetalTested && (
+                              <span className="text-[10px] font-semibold bg-emerald-50 text-emerald-700
+                                border border-emerald-200 rounded px-1.5 py-0.5">✓ 重金属検査済</span>
+                            )}
+                            {prod.thirdPartyTested && !prod.heavyMetalTested && (
+                              <span className="text-[10px] font-semibold bg-blue-50 text-blue-700
+                                border border-blue-200 rounded px-1.5 py-0.5">✓ 第三者検査済</span>
+                            )}
+                            {prod.certifications?.includes('NSF') && (
+                              <span className="text-[10px] font-bold bg-blue-700 text-white
+                                rounded px-1.5 py-0.5">NSF</span>
+                            )}
+                            {prod.certifications?.includes('USP') && (
+                              <span className="text-[10px] font-bold bg-indigo-700 text-white
+                                rounded px-1.5 py-0.5">USP</span>
+                            )}
+                            {prod.certifications?.includes('GMP') && (
+                              <span className="text-[10px] text-muted-foreground border border-border
+                                rounded px-1.5 py-0.5">GMP</span>
+                            )}
                           </div>
+                        )}
+
+                        {/* Price */}
+                        <div className="mt-auto pt-1">
+                          <p className="font-bold text-[18px] text-foreground tabular-nums">
+                            ¥{prod.priceJpy.toLocaleString()}
+                            <span className="text-[11px] font-normal text-muted-foreground ml-0.5">〜</span>
+                          </p>
                           {prod.monthlyCostJpy && (
-                            <div>
-                              <p className="text-[10px] text-muted-foreground/50 mb-0.5">月あたり</p>
-                              <p className="font-semibold text-[14px] text-muted-foreground tabular-nums">
-                                ¥{prod.monthlyCostJpy.toLocaleString()}
-                              </p>
-                            </div>
-                          )}
-                          {prod.dosageMg && (
-                            <div>
-                              <p className="text-[10px] text-muted-foreground/50 mb-0.5">1回量</p>
-                              <p className="font-semibold text-[14px] text-muted-foreground tabular-nums">
-                                {prod.dosageMg >= 1000
-                                  ? `${prod.dosageMg / 1000}g`
-                                  : `${prod.dosageMg}mg`}
-                              </p>
-                            </div>
+                            <p className="text-[11px] text-muted-foreground">
+                              月あたり ¥{prod.monthlyCostJpy.toLocaleString()}
+                            </p>
                           )}
                         </div>
 
-                        {/* CTA: full-width */}
+                        {/* CTA */}
                         <a
                           href={prod.url}
                           target="_blank"
                           rel="noopener noreferrer nofollow"
-                          className={`flex items-center justify-center gap-2 text-[14px] font-semibold
-                            rounded-xl px-4 py-3 transition-opacity hover:opacity-90 w-full
-                            ${isTop
-                              ? 'bg-accent text-accent-foreground'
-                              : 'bg-primary text-primary-foreground'}`}
+                          className={`flex items-center justify-center gap-2 text-[13px] font-semibold
+                            rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90 w-full ${btnClass}`}
                         >
-                          購入する
-                          <ExternalLink className="w-4 h-4" />
+                          {label}で購入
+                          <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       </div>
-                    </div>
-                  )
+                    ) : (
+                      /* No product — search link */
+                      <div className="p-4 flex flex-col gap-3 flex-1">
+                        <p className="text-[13px] text-muted-foreground leading-relaxed">
+                          {ing.nameJa}の商品を{label}で検索できます
+                        </p>
+                        <div className="mt-auto">
+                          <a
+                            href={searchUrl}
+                            target="_blank"
+                            rel="noopener noreferrer nofollow"
+                            className={`flex items-center justify-center gap-2 text-[13px] font-semibold
+                              rounded-xl px-4 py-2.5 transition-opacity hover:opacity-80 w-full
+                              border-2 ${border} ${headerText} bg-transparent`}
+                          >
+                            {label}で探す
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )
               })}
             </div>
+
+            {/* cosme platform（@cosme等）がある場合 */}
+            {platformProducts.cosme && (
+              <div className="mt-3 bg-card border border-border rounded-2xl p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[12px] font-bold text-muted-foreground bg-secondary
+                    border border-border rounded px-2 py-0.5">コスメ・外用</span>
+                  {platformProducts.cosme.highlight && (
+                    <span className="text-[11px] font-semibold bg-amber-50 text-amber-700
+                      border border-amber-200 rounded-full px-2.5 py-0.5">
+                      {platformProducts.cosme.highlight}
+                    </span>
+                  )}
+                </div>
+                <p className="text-[10px] text-muted-foreground/60 mb-0.5">
+                  {platformProducts.cosme.brand}
+                </p>
+                <p className="font-semibold text-[15px] text-foreground mb-2">
+                  {platformProducts.cosme.name}
+                </p>
+                {platformProducts.cosme.reasonJa && (
+                  <p className="text-[13px] text-accent font-medium mb-3">
+                    → {platformProducts.cosme.reasonJa}
+                  </p>
+                )}
+                <div className="flex items-center justify-between gap-3">
+                  <p className="font-bold text-[16px] text-foreground tabular-nums">
+                    ¥{platformProducts.cosme.priceJpy.toLocaleString()}
+                    <span className="text-[11px] font-normal text-muted-foreground ml-0.5">〜</span>
+                  </p>
+                  <a
+                    href={platformProducts.cosme.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="flex items-center gap-2 text-[13px] font-semibold bg-primary
+                      text-primary-foreground rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90"
+                  >
+                    購入する
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            )}
           </section>
         )}
 
