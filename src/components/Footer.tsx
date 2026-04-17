@@ -27,9 +27,13 @@ export function Footer() {
               論文で選ぶ、成分データベース。
             </p>
           </div>
-          <nav className="flex gap-5 text-[13px] text-muted-foreground">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-muted-foreground">
             <Link href="/concerns"    className="hover:text-foreground transition-colors">悩みから探す</Link>
             <Link href="/ingredients" className="hover:text-foreground transition-colors">成分一覧</Link>
+            <Link href="/ranking"     className="hover:text-foreground transition-colors">ランキング</Link>
+            <Link href="/compare"     className="hover:text-foreground transition-colors">成分比較</Link>
+            <Link href="/articles"    className="hover:text-foreground transition-colors">コラム</Link>
+            <Link href="/analyzer"    className="hover:text-foreground transition-colors">サプリ診断</Link>
             <Link href="/about"       className="hover:text-foreground transition-colors">サイトについて</Link>
           </nav>
         </div>

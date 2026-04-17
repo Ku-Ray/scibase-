@@ -7,9 +7,11 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { HeroSearch } from '@/components/HeroSearch'
 import type { Metadata } from 'next'
 
+const totalPapers = ingredients.reduce((acc, i) => acc + i.papers.length, 0)
+
 export const metadata: Metadata = {
   title: 'SciBase — スキンケア・サプリ成分を論文エビデンスで評価するデータベース',
-  description: '「その成分、本当に効きますか」。レチノール・ナイアシンアミド・アスタキサンチン・クルクミンなど84成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。',
+  description: `「その成分、本当に効きますか」。レチノール・ナイアシンアミド・アスタキサンチン・クルクミンなど${ingredients.length}成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。`,
   alternates: { canonical: 'https://scibase.app' },
 }
 
@@ -86,7 +88,7 @@ export default function Home() {
             <span className="w-px h-3 bg-border" />
             <span><strong className="text-foreground font-semibold">{concerns.length}</strong> 悩みカテゴリ</span>
             <span className="w-px h-3 bg-border" />
-            <span><strong className="text-foreground font-semibold">150+</strong> 論文</span>
+            <span><strong className="text-foreground font-semibold">{totalPapers}</strong> 論文</span>
           </div>
 
           {/* 悩みタグ */}
