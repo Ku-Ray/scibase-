@@ -89,7 +89,7 @@ export interface Concern {
   slug: string
   nameJa: string
   emoji: string
-  category: 'skin' | 'body' | 'cognitive' | 'sleep' | 'gut' | 'immunity'
+  category: 'skin' | 'body' | 'cognitive' | 'sleep' | 'gut' | 'immunity' | 'muscle' | 'cardiovascular'
   description: string
   ingredientSlugs: string[]
 }

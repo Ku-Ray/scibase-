@@ -139,7 +139,7 @@ export const ingredients: Ingredient[] = [
     tagline: '睡眠の質・疲労感への関与がメタ解析で確認されている',
     description:
       'マグネシウムは300以上の酵素反応に関わるミネラル。現代人の多くは食事から不足しがちとされる。睡眠の質改善・筋肉の疲労軽減・神経系の鎮静への関与がメタ解析・RCTで確認されている。',
-    concerns: ['sleep', 'fatigue', 'stress'],
+    concerns: ['sleep', 'fatigue', 'stress', 'muscle'],
     papers: [
       {
         title: 'The Effect of Magnesium Supplementation on Primary Insomnia in Elderly: A Double-Blind Placebo-Controlled Clinical Trial',
@@ -203,7 +203,7 @@ export const ingredients: Ingredient[] = [
     tagline: '免疫機能・骨密度・慢性炎症への関与がメタ解析で確認されている',
     description:
       'ビタミンDは日光照射で皮膚が合成する脂溶性ビタミン。現代の屋内生活・日焼け止め使用で欠乏しやすい。免疫機能のサポート、骨密度維持、慢性炎症（inflammaging）の抑制への関与がメタ解析で確認されている。',
-    concerns: ['immunity', 'inflammation', 'bone'],
+    concerns: ['immunity', 'inflammation', 'bone', 'muscle', 'cardiovascular'],
     papers: [
       {
         title: 'Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis',
@@ -267,7 +267,7 @@ export const ingredients: Ingredient[] = [
     tagline: '慢性炎症・心血管・認知機能への関与がメタ解析で確認されている',
     description:
       'EPA（エイコサペンタエン酸）とDHA（ドコサヘキサエン酸）は青魚に多く含まれる長鎖多価不飽和脂肪酸。慢性炎症（inflammaging）の抑制、心血管リスクの低下、認知機能維持への関与が複数のメタ解析で確認されている。',
-    concerns: ['inflammation', 'cognitive', 'skin-aging'],
+    concerns: ['inflammation', 'cognitive', 'skin-aging', 'muscle', 'cardiovascular'],
     papers: [
       {
         title: 'Omega-3 Fatty Acids and Inflammatory Processes: From Molecules to Man',
@@ -410,7 +410,7 @@ export const ingredients: Ingredient[] = [
     tagline: 'ミトコンドリア機能・酸化ストレス低減への関与がRCTで確認されている',
     description:
       'コエンザイムQ10（ユビキノン）はミトコンドリアのエネルギー産生（ATP合成）に不可欠な補酵素。加齢とともに体内合成量が低下する。疲労感の軽減、酸化ストレスの低下、心血管機能への関与がRCTで確認されている。',
-    concerns: ['fatigue', 'inflammation', 'skin-aging'],
+    concerns: ['fatigue', 'inflammation', 'skin-aging', 'muscle', 'cardiovascular'],
     papers: [
       {
         title: 'The Effect of Coenzyme Q10 on Morbidity and Mortality in Chronic Heart Failure',
@@ -589,7 +589,7 @@ export const ingredients: Ingredient[] = [
     tagline: '動物実験では有望だが、ヒトでの抗老化効果はまだ確認されていない',
     description:
       'ブドウの皮や赤ワインに含まれるポリフェノール。動物実験でサーチュイン（長寿遺伝子）の活性化・寿命延長が示されているが、ヒトでの大規模RCTはほぼ存在しない。「赤ワインで長生き」の科学的根拠は現時点では不十分。吸収率の低さも課題。',
-    concerns: ['inflammation', 'skin-aging'],
+    concerns: ['inflammation', 'skin-aging', 'cardiovascular'],
     papers: [
       {
         title: 'Resveratrol as an anti-aging therapy: Is the evidence robust?',
@@ -1261,7 +1261,7 @@ export const ingredients: Ingredient[] = [
     tagline: 'ニキビ・皮膚の修復・免疫機能への関与がRCTで確認されている',
     description:
       '亜鉛は200以上の酵素の補助因子。皮膚の修復（創傷治癒）・ニキビ（炎症性座瘡）の軽減・免疫応答の調整への関与がRCTで確認されている。日本人の食事では不足しやすいミネラルの一つ。過剰摂取は銅の吸収を阻害するため注意が必要。',
-    concerns: ['acne', 'immunity', 'skin-aging'],
+    concerns: ['acne', 'immunity', 'skin-aging', 'muscle'],
     papers: [
       {
         title: 'Zinc supplementation in the treatment of acne vulgaris: a systematic review and meta-analysis',
@@ -1489,7 +1489,7 @@ export const ingredients: Ingredient[] = [
     tagline: '筋力・筋量・認知機能への関与がメタ解析で繰り返し確認されている',
     description:
       'クレアチンはリン酸クレアチンとしてATP再合成に関わるエネルギー代謝物質。サプリメント中で最もエビデンスが蓄積されており、筋力・無酸素運動パフォーマンスへの効果がメタ解析で確定的に示されている。近年では認知機能（特に睡眠不足時・加齢による低下）への改善効果も複数のRCTで報告されている。',
-    concerns: ['fatigue', 'cognitive'],
+    concerns: ['fatigue', 'cognitive', 'muscle'],
     papers: [
       {
         title: 'Creatine supplementation and exercise performance: a systematic review',
@@ -2064,7 +2064,7 @@ export const ingredients: Ingredient[] = [
     tagline: '皮膚老化・酸化ストレスへのRCTで有効性が確認されているカロテノイド',
     description:
       'アスタキサンチンは微細藻類（ヘマトコッカス藻）由来の赤色カロテノイドで、ビタミンCの約6,000倍とも言われる抗酸化力を持つ。RCTにより、経口摂取が皮膚の弾力・水分量・シワの軽減に寄与することが示されている。光老化（UV酸化）への防御的関与も研究されており、日本で特に人気が高い抗老化成分。',
-    concerns: ['skin-aging', 'uv-damage', 'inflammation'],
+    concerns: ['skin-aging', 'uv-damage', 'inflammation', 'cardiovascular'],
     papers: [
       {
         title: 'Astaxanthin improves skin elasticity and reduces wrinkle depth',
@@ -2184,7 +2184,7 @@ export const ingredients: Ingredient[] = [
     tagline: '2023年Science誌で長寿・老化抑制への関与が示された注目成分',
     description:
       'タウリンはアミノ酸の一種で心臓・脳・筋肉に高濃度に存在する。2023年のScience誌掲載研究で、タウリン濃度が加齢とともに低下すること、補充によって複数の動物モデルで寿命延伸・健康寿命の改善が示された。ヒトへの直接的な長寿効果はまだ研究中だが、運動機能・認知への関与も示唆されている。',
-    concerns: ['fatigue', 'cognitive', 'inflammation'],
+    concerns: ['fatigue', 'cognitive', 'inflammation', 'muscle'],
     papers: [
       {
         title: 'Taurine deficiency as a driver of aging',
@@ -2236,7 +2236,7 @@ export const ingredients: Ingredient[] = [
     tagline: '血糖・脂質代謝への関与がメタ解析で示されている「植物性メトホルミン」',
     description:
       'ベルベリンはゴールデンシール・オウレン等から抽出されるアルカロイド。AMPK活性化を介した血糖降下・脂質改善効果がメタ解析で確認されており、メトホルミン（糖尿病治療薬）と作用機序が類似していることから注目されている。血糖スパイクの抑制から老化を加速するAGEs（終末糖化産物）の蓄積低減にも期待される。',
-    concerns: ['metabolism', 'inflammation'],
+    concerns: ['metabolism', 'inflammation', 'cardiovascular'],
     papers: [
       {
         title: 'Berberine for the treatment of type 2 diabetes: a systematic review and meta-analysis',
@@ -2292,7 +2292,7 @@ export const ingredients: Ingredient[] = [
     tagline: '抗酸化・脂肪代謝・認知機能への関与がメタ解析で示されている',
     description:
       'EGCGはカテキン類の中で最も多く研究されている緑茶由来ポリフェノール。抗酸化作用に加え、脂肪燃焼・体重管理・認知機能・がん予防（疫学）に関するRCT・メタ解析が複数存在する。老化の根本原因とされる酸化ストレスと炎症の両方に作用する点で注目される。',
-    concerns: ['inflammation', 'cognitive', 'skin-aging', 'metabolism'],
+    concerns: ['inflammation', 'cognitive', 'skin-aging', 'metabolism', 'cardiovascular'],
     papers: [
       {
         title: 'Green tea catechins and cognitive function: a systematic review',
@@ -2643,7 +2643,7 @@ export const ingredients: Ingredient[] = [
     tagline: '老化細胞（ゾンビ細胞）の除去に関与する可能性が示されているフラボノイド',
     description:
       'ケルセチンは玉ねぎ・リンゴ・ケッパーに含まれるフラボノイドで、強力な抗炎症・抗酸化作用を持つ。近年、Senolytic（老化細胞除去）活性が注目されており、フィセチンと並んで老化細胞研究の主要ターゲット成分となっている。ダサチニブとの組み合わせ（D+Q）がヒト臨床試験で研究されている。免疫調節・アレルギー抑制でも研究実績がある。',
-    concerns: ['inflammation', 'immunity', 'longevity'],
+    concerns: ['inflammation', 'immunity', 'longevity', 'cardiovascular'],
     papers: [
       {
         title: 'Quercetin as a senolytic: discovery and implications',
@@ -2919,7 +2919,7 @@ export const ingredients: Ingredient[] = [
     tagline: '骨密度維持・動脈石灰化予防へのRCTが複数存在するビタミン',
     description:
       'ビタミンK2（特にMK-7型）は、カルシウムを骨に向かわせ動脈への沈着を防ぐオステオカルシンとマトリックスGlaタンパク質（MGP）を活性化する。ビタミンDとの相乗効果で骨密度維持に関与することがRCTで示されており、動脈硬化リスクの軽減への関与も疫学研究で確認されている。欧米での認知度が急上昇している成分。',
-    concerns: ['bone', 'inflammation'],
+    concerns: ['bone', 'inflammation', 'cardiovascular'],
     papers: [
       {
         title: 'Vitamin K2 supplementation and bone mineral density: a meta-analysis',
@@ -2975,7 +2975,7 @@ export const ingredients: Ingredient[] = [
     tagline: '脂溶性の抗酸化ビタミン。細胞膜の酸化損傷を防ぐ基本的抗老化成分',
     description:
       'ビタミンEはトコフェロール・トコトリエノールの総称で、特にα-トコフェロールが最も活性が高い。細胞膜リン脂質の酸化連鎖反応を断ち切る脂溶性抗酸化物質として機能し、ビタミンCと協調して酸化ストレスを軽減する。外用では肌の酸化ダメージ保護・保湿補助として用いられ、経口では免疫機能・血管保護への関与が研究されている。',
-    concerns: ['skin-aging', 'uv-damage', 'immunity', 'inflammation'],
+    concerns: ['skin-aging', 'uv-damage', 'immunity', 'inflammation', 'cardiovascular'],
     papers: [
       {
         title: 'Vitamin E in aging and cardiovascular protection: a meta-analysis',
@@ -3192,7 +3192,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: '神経・認知機能・DNA合成に必須。メタ解析で認知機能低下リスクとの関連が確認',
     description: '葉酸（ビタミンB9）はDNA合成・修復、アミノ酸代謝、神経系の正常な機能に不可欠な水溶性ビタミン。複数のメタ解析で、葉酸摂取が認知機能低下・脳萎縮・ホモシステイン値（心血管リスク因子）の低下と関連することが示されている。妊娠前後の神経管閉鎖障害予防では最も強いエビデンスがある成分のひとつ。',
-    concerns: ['cognitive', 'fatigue', 'immunity', 'metabolism'],
+    concerns: ['cognitive', 'fatigue', 'immunity', 'metabolism', 'cardiovascular'],
     papers: [
       {
         title: 'Folic acid supplementation and cognitive function: a meta-analysis of randomized controlled trials',
@@ -3281,7 +3281,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: '神経系・DNA合成・赤血球形成に不可欠。欠乏で認知機能低下・疲労が起こる',
     description: 'ビタミンB12は神経髄鞘の形成、DNA合成、赤血球の産生に必須の水溶性ビタミン。動物性食品にのみ含まれるため、ベジタリアン・ヴィーガン・高齢者（胃酸低下による吸収低下）は欠乏リスクが高い。欠乏すると悪性貧血、末梢神経障害、認知機能低下が生じる。RCTで補充による認知機能・疲労の改善が確認されている。',
-    concerns: ['cognitive', 'fatigue'],
+    concerns: ['cognitive', 'fatigue', 'cardiovascular'],
     papers: [
       {
         title: 'Vitamin B12 supplementation and cognitive function: a systematic review and meta-analysis',
@@ -3325,7 +3325,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: 'セロトニン・ドーパミン合成に関与。ストレス・PMS・認知機能にRCTエビデンス',
     description: 'ビタミンB6は100種以上の酵素反応に関与するビタミン。セロトニン・ドーパミン・GABAなどの神経伝達物質合成に必須で、ストレス応答・気分・睡眠に影響する。PMSの症状軽減（乳房痛・むくみ・気分変動）についてはRCTで効果が確認されている。ホモシステイン代謝にも関与し、葉酸・B12との相乗効果がある。',
-    concerns: ['stress', 'cognitive', 'metabolism'],
+    concerns: ['stress', 'cognitive', 'metabolism', 'cardiovascular'],
     papers: [
       {
         title: 'The effect of vitamin B6 on premenstrual symptoms: a systematic review and meta-analysis',
@@ -3368,7 +3368,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: '一酸化窒素（NO）産生を介した血流改善・免疫サポート。コホート研究で関連確認',
     description: 'LアルギニンはNO（一酸化窒素）の前駆体アミノ酸で、血管拡張・血流改善に関与する。勃起機能改善、運動パフォーマンス向上、免疫機能サポートについて複数のコホート研究・小規模RCTで効果が示されているが、大規模メタ解析は限られる。シトルリンと比較すると経口吸収率が低いため、LシトルリンとのセットやLシトルリン単体が注目されている。',
-    concerns: ['fatigue', 'immunity'],
+    concerns: ['fatigue', 'immunity', 'muscle', 'cardiovascular'],
     papers: [
       {
         title: 'L-arginine supplementation and endothelial function: a meta-analysis',
@@ -3411,7 +3411,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: '経口吸収率の高いNO産生アミノ酸。疲労軽減・運動パフォーマンスをRCTで確認',
     description: 'LシトルリンはLアルギニンの前駆体アミノ酸で、経口投与時の吸収効率がアルギニンより高い。腸と腎臓でアルギニンに変換されてNO産生を促進し、血管拡張・血流改善・筋肉疲労の軽減に貢献する。スイカに多く含まれ、RCTで運動時の乳酸蓄積抑制・筋肉痛軽減・持久力向上が確認されている。',
-    concerns: ['fatigue'],
+    concerns: ['fatigue', 'muscle', 'cardiovascular'],
     papers: [
       {
         title: 'Citrulline malate enhances athletic anaerobic performance and relieves muscle soreness',
@@ -4090,7 +4090,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: 'ザクロ由来のポリフェノール代謝物。ミトコンドリア品質管理（マイトファジー）を活性化',
     description: 'ウロリチンAはザクロ・木苺に含まれるエラグ酸を腸内細菌が変換して生成するポリフェノール代謝物。ミトコンドリアのオートファジー（マイトファジー）を活性化し、老化した機能不全ミトコンドリアを除去・更新することで筋機能・持久力・細胞エネルギーを改善する。Amazentis社の特許成分Mitopure®を使用した複数のRCTで安全性と効果が確認されている。',
-    concerns: ['longevity', 'fatigue'],
+    concerns: ['longevity', 'fatigue', 'muscle'],
     papers: [
       {
         title: 'Urolithin A induces mitophagy and prolongs lifespan in C. elegans and increases muscle function in rodents',
@@ -4176,7 +4176,7 @@ export const ingredients: Ingredient[] = [
     usageType: 'oral',
     tagline: 'メチル基ドナーとしてホモシステイン低下・DNAメチル化に関与。長寿研究で注目',
     description: 'TMG（トリメチルグリシン、ベタイン）はコリンから合成されるメチル基供与体。ホモシステイン（心血管・認知リスク因子）をメチオニンに変換する反応に不可欠で、葉酸・B12と協働する。DNAのメチル化（エピジェネティクス）に関与することから長寿研究でも注目されている。運動パフォーマンス向上・筋力増加についてもRCTエビデンスがある。',
-    concerns: ['longevity', 'metabolism'],
+    concerns: ['longevity', 'metabolism', 'cardiovascular'],
     papers: [
       {
         title: 'Betaine supplementation and cardiovascular risk: a meta-analysis',
@@ -4393,7 +4393,7 @@ export const ingredients: Ingredient[] = [
     tagline: '腸管バリア機能と免疫細胞のエネルギー源として複数のRCTで研究されている',
     description:
       'L-グルタミンは体内で最も豊富なアミノ酸のひとつで、腸管上皮細胞・免疫細胞（リンパ球・マクロファージ）の主要エネルギー源として機能する。腸管バリア（タイトジャンクション）の維持、腸漏れ（リーキーガット）の改善、手術・運動後の免疫低下を抑制する効果が複数のRCTで報告されている。健常者への効果は限定的だが、腸の不調・疲れやすい・免疫低下が重なる場合に特に検討価値がある。',
-    concerns: ['gut', 'immunity', 'fatigue', 'inflammation'],
+    concerns: ['gut', 'immunity', 'fatigue', 'inflammation', 'muscle'],
     papers: [
       {
         title: 'Randomised placebo-controlled trial of dietary glutamine supplements for postinfectious irritable bowel syndrome',
@@ -4508,7 +4508,7 @@ export const ingredients: Ingredient[] = [
     tagline: '吸収率が高く胃腸への負担が少ないマグネシウム形態。睡眠・ストレスへのエビデンスが最も充実している',
     description:
       'マグネシウムグリシネートはグリシンとキレート結合したマグネシウム形態で、吸収率・消化器への優しさが一般的な酸化マグネシウムより優れる。マグネシウム欠乏は慢性的なストレス・睡眠障害・筋けいれんと強く関連しており、補給によって入眠・睡眠品質の改善が複数のRCTで確認されている。汎用マグネシウム（酸化Mg）との最大の違いは「1錠で体内利用できるMg量が多い＝少ない用量で効く」こと。',
-    concerns: ['sleep', 'stress', 'fatigue', 'bone'],
+    concerns: ['sleep', 'stress', 'fatigue', 'bone', 'muscle'],
     papers: [
       {
         title: 'The effect of magnesium supplementation on primary insomnia in elderly: A double-blind placebo-controlled clinical trial',
@@ -4628,7 +4628,7 @@ export const ingredients: Ingredient[] = [
     tagline: '高齢者の筋肉量・筋力維持への効果がメタ解析で確認されている抗サルコペニア成分',
     description:
       'HMBはロイシン（必須アミノ酸）の代謝産物で、筋タンパク質の分解を抑制し、合成シグナル（mTOR）を活性化する。高齢者・不活動状態・カロリー制限中の筋肉量維持・筋力改善をアウトカムとした複数のRCTおよびメタ解析でエビデンスが蓄積されている。「サルコペニア（加齢性筋肉減少症）」予防の観点からも注目されており、クレアチンと並ぶ「老化×筋力」の代表的な成分。',
-    concerns: ['fatigue', 'metabolism', 'longevity'],
+    concerns: ['fatigue', 'metabolism', 'longevity', 'muscle'],
     papers: [
       {
         title: 'The effects of HMB supplementation and resistance training on body composition in older adults: A systematic review and meta-analysis',
@@ -4688,7 +4688,7 @@ export const ingredients: Ingredient[] = [
     tagline: '納豆から発見された線溶酵素。血流・血圧への関与がRCTで報告されている',
     description:
       'ナットウキナーゼは納豆菌（Bacillus subtilis natto）が産生するセリンプロテアーゼで、血栓の主成分フィブリンを分解する線溶活性が特徴。血圧低下、血液の流れやすさ改善、心血管イベントリスクとの関連を示すRCTが複数存在する。加齢とともに血管老化が進む40代以降で特に注目されており、「内側からの血管ケア」の候補として研究が続いている。大規模な長期RCTはまだ少ないがBランク相当のエビデンスが蓄積されている。',
-    concerns: ['inflammation', 'longevity', 'fatigue'],
+    concerns: ['inflammation', 'longevity', 'fatigue', 'cardiovascular'],
     papers: [
       {
         title: 'Effects of nattokinase on blood pressure: a randomized, controlled trial',
@@ -4924,7 +4924,7 @@ export const ingredients: Ingredient[] = [
     tagline: '免疫機能の活性化と上気道感染症リスク低下がメタ解析で確認されている多糖類',
     description:
       'βグルカンは酵母・オート麦・キノコ類に含まれる多糖類で、免疫細胞（マクロファージ・NK細胞・好中球）の受容体（Dectin-1）に結合して自然免疫を活性化する。上気道感染症（風邪・インフルエンザ）の罹患頻度・重症度の低下、コレステロール低下をアウトカムとしたメタ解析が複数存在し、日常的な免疫サポートとして最もエビデンスが充実した成分のひとつ。腸内の免疫細胞活性化を通じて腸管免疫とも関連する。',
-    concerns: ['immunity', 'gut', 'inflammation'],
+    concerns: ['immunity', 'gut', 'inflammation', 'cardiovascular'],
     papers: [
       {
         title: 'Baker\'s Yeast Beta-Glucan Supplement Reduces Upper Respiratory Symptoms and Improves Mood State in Stressed Women',
@@ -5138,6 +5138,22 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '加齢黄斑変性・ブルーライトダメージ・眼の酸化ストレスへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['lutein', 'zeaxanthin'],
+  },
+  {
+    slug: 'muscle',
+    nameJa: '筋力・体組成',
+    emoji: '💪',
+    category: 'muscle',
+    description: 'サルコペニア（加齢性筋肉減少症）の予防・筋力維持・筋タンパク質合成への関与が研究で示されている成分一覧。40代以降の「老化×筋力」対策に。',
+    ingredientSlugs: ['creatine', 'hmb', 'l-glutamine', 'vitamin-d', 'omega3', 'zinc', 'magnesium-glycinate', 'magnesium', 'taurine', 'l-citrulline', 'l-arginine', 'urolithin-a', 'coq10'],
+  },
+  {
+    slug: 'cardiovascular',
+    nameJa: '血管・循環',
+    emoji: '❤️',
+    category: 'cardiovascular',
+    description: '動脈硬化・血圧・血管内皮機能・血液の流れへの関与が研究で示されている成分一覧。「血管年齢」を意識した老化対策の核心テーマ。',
+    ingredientSlugs: ['omega3', 'coq10', 'nattokinase', 'vitamin-k2', 'l-arginine', 'l-citrulline', 'resveratrol', 'quercetin', 'egcg', 'astaxanthin', 'vitamin-e', 'vitamin-d', 'tmg', 'folic-acid', 'vitamin-b12', 'vitamin-b6', 'beta-glucan', 'berberine'],
   },
 ]
 
