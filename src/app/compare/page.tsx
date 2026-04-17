@@ -15,7 +15,7 @@ const BASE_URL = 'https://scibase.app'
 export const metadata: Metadata = {
   title: '成分比較一覧【論文エビデンス】どっちが効く？｜SciBase',
   description:
-    '「レチノール vs バクチオール」「NMN vs NR」など、よく比較される18ペアを論文エビデンスで徹底比較。査読済み論文・エビデンスランク・7軸スコアで判断する成分比較データベース。',
+    '「レチノール vs バクチオール」「クレアチン vs HMB」「NMN vs NR」など、よく比較される30ペアを論文エビデンスで徹底比較。査読済み論文・エビデンスランク・7軸スコアで判断する成分比較データベース。',
   alternates: { canonical: `${BASE_URL}/compare` },
 }
 
