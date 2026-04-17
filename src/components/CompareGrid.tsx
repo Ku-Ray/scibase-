@@ -23,14 +23,14 @@ const rankLabel: Record<EvidenceRank, string> = {
 }
 
 function PairRow({ pairKey, nameJaA, nameJaB, rankA, rankB, highlighted = false }: PairEntry & { highlighted?: boolean }) {
-  const winner = rankScore[rankA] > rankScore[rankB]
-    ? nameJaA
-    : rankScore[rankB] > rankScore[rankA] ? nameJaB : null
+  const dominated = rankScore[rankA] > rankScore[rankB]
+    ? 'A'
+    : rankScore[rankB] > rankScore[rankA] ? 'B' : null
 
   return (
     <Link
       href={`/compare/${pairKey}`}
-      className={`flex items-center gap-3 rounded-2xl px-5 py-4
+      className={`flex items-center gap-3 rounded-2xl px-4 py-3.5
         hover:shadow-sm transition-all group
         ${highlighted
           ? 'bg-amber-50/60 border border-amber-200 hover:border-amber-400'
@@ -39,36 +39,34 @@ function PairRow({ pairKey, nameJaA, nameJaB, rankA, rankB, highlighted = false 
     >
       {/* 成分A */}
       <div className="flex items-center gap-2 flex-1 min-w-0">
-        <EvidenceBadge rank={rankA} variant="chip" />
-        <span className="font-semibold text-[14px] text-foreground truncate">{nameJaA}</span>
+        <EvidenceBadge rank={rankA} variant="dot" />
+        <span className={`font-semibold text-[14px] truncate
+          ${dominated === 'A' ? 'text-foreground' : 'text-foreground/70'}`}>
+          {nameJaA}
+        </span>
       </div>
 
       {/* vs */}
-      <div className={`flex-shrink-0 text-[10px] font-black rounded-full px-2.5 py-1 leading-none
+      <div className={`flex-shrink-0 text-[10px] font-black rounded-full px-2 py-0.5 leading-none
         ${highlighted
           ? 'text-amber-700 bg-white border border-amber-200'
-          : 'text-muted-foreground/50 bg-secondary border border-border'
+          : 'text-muted-foreground/40 bg-secondary border border-border'
         }`}>
         VS
       </div>
 
       {/* 成分B */}
       <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
-        <span className="font-semibold text-[14px] text-foreground truncate text-right">{nameJaB}</span>
-        <EvidenceBadge rank={rankB} variant="chip" />
+        <span className={`font-semibold text-[14px] truncate text-right
+          ${dominated === 'B' ? 'text-foreground' : 'text-foreground/70'}`}>
+          {nameJaB}
+        </span>
+        <EvidenceBadge rank={rankB} variant="dot" />
       </div>
 
-      {/* 勝者バッジ + 矢印 */}
-      <div className="flex items-center gap-2 flex-shrink-0 ml-1">
-        {winner && (
-          <span className="hidden sm:block text-[10px] font-semibold whitespace-nowrap
-            bg-white border border-amber-200 text-amber-700 rounded-full px-2 py-0.5">
-            {winner}が優位
-          </span>
-        )}
-        <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-colors
-          ${highlighted ? 'text-amber-600' : 'text-muted-foreground group-hover:text-accent'}`} />
-      </div>
+      {/* 矢印 */}
+      <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-colors
+        ${highlighted ? 'text-amber-600' : 'text-muted-foreground/40 group-hover:text-accent'}`} />
     </Link>
   )
 }
@@ -130,17 +128,15 @@ export function CompareGrid({ pairs }: { pairs: PairEntry[] }) {
         </p>
       )}
 
-      {/* カテゴリフィルター時：エビデンスランク凡例 */}
-      {activeFilter !== 'all' && (
-        <div className="mt-4 flex flex-wrap gap-3 text-[11px] text-muted-foreground">
-          {(['S', 'A', 'B', 'C'] as EvidenceRank[]).map(r => (
-            <span key={r} className="flex items-center gap-1.5">
-              <EvidenceBadge rank={r} variant="chip" />
-              {rankLabel[r]}
-            </span>
-          ))}
-        </div>
-      )}
+      {/* エビデンスランク凡例（常時表示） */}
+      <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-muted-foreground border-t border-border pt-4">
+        {(['S', 'A', 'B', 'C'] as EvidenceRank[]).map(r => (
+          <span key={r} className="flex items-center gap-1.5">
+            <EvidenceBadge rank={r} variant="dot" />
+            <span>{rankLabel[r]}</span>
+          </span>
+        ))}
+      </div>
     </>
   )
 }
