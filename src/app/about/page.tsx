@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRight, FlaskConical, BookOpen, Shield, Users } from 'lucide-react'
+import { ChevronRight, FlaskConical, BookOpen, Shield } from 'lucide-react'
 import type { Metadata } from 'next'
 
 const BASE_URL = 'https://scibase.app'
@@ -17,7 +17,6 @@ const personJsonLd = {
   jobTitle: '化粧品メーカー研究職',
   description: '化粧品・サプリメント成分の論文エビデンスを独立した立場で評価・発信。メタ解析・RCT・コホート研究を中心に査読済み論文のみを参照。',
   url: `${BASE_URL}/about`,
-  sameAs: ['https://x.com/scibase_jp'],
   knowsAbout: [
     '成分科学', '皮膚科学', 'スキンケア成分', 'サプリメント', '栄養学',
     'メタ解析', 'ランダム化比較試験（RCT）', 'エビデンスに基づく医療（EBM）',
@@ -31,7 +30,6 @@ const orgJsonLd = {
   url: BASE_URL,
   description: '論文エビデンスに基づくスキンケア・サプリメント成分データベース',
   foundingDate: '2026',
-  sameAs: ['https://x.com/scibase_jp'],
 }
 
 const EVIDENCE_RANKS = [
@@ -224,30 +222,6 @@ export default function AboutPage() {
             サプリメントの使用・スキンケアの変更を行う際は、医師・薬剤師・専門家にご相談ください。
             個人の体質・健康状態・服用薬との相互作用については、本サイトでは責任を負いかねます。
           </p>
-        </section>
-
-        {/* お問い合わせ・SNS */}
-        <section className="border-t border-border pt-8">
-          <div className="flex items-center gap-2 mb-4">
-            <Users className="w-5 h-5 text-accent" />
-            <h2 className="text-[15px] font-bold text-foreground">お問い合わせ・SNS</h2>
-          </div>
-          <p className="text-[13px] text-muted-foreground mb-4">
-            掲載内容に関するご意見・ご指摘・論文情報の提供はXのDMにてお受けしています。
-          </p>
-          <a
-            href="https://x.com/scibase_jp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[13px] font-medium
-              bg-foreground text-background rounded-xl px-4 py-2.5
-              hover:opacity-85 transition-opacity"
-          >
-            <svg width="14" height="14" viewBox="0 0 1200 1227" fill="currentColor" aria-hidden>
-              <path d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026Z"/>
-            </svg>
-            @scibase_jp をフォロー
-          </a>
         </section>
 
         {/* 関連リンク */}
