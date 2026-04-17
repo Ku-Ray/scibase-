@@ -241,6 +241,13 @@ export default async function ArticlePage({ params }: Props) {
                 {/* Product CTA */}
                 {ing.productUrl && (
                   <div className="border-t border-border bg-secondary px-5 py-4">
+                    {/* 緊急性トリガー（損失回避の最終押し） */}
+                    {ing.urgencyNote && (
+                      <p className="text-[12px] text-muted-foreground leading-relaxed mb-3
+                        border-l-2 border-accent/40 pl-3">
+                        {ing.urgencyNote}
+                      </p>
+                    )}
                     <div className="flex items-center justify-between gap-3 flex-wrap">
                       <div className="min-w-0">
                         <p className="text-[12px] font-semibold text-foreground truncate">
@@ -268,7 +275,7 @@ export default async function ArticlePage({ params }: Props) {
                           bg-foreground text-background rounded-lg px-4 py-2
                           hover:opacity-80 transition-opacity flex-shrink-0"
                       >
-                        {platformLabel[ing.productPlatform ?? 'iherb']}で確認
+                        {platformLabel[ing.productPlatform ?? 'iherb']}で見る
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>

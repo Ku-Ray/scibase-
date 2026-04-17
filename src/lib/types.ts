@@ -103,6 +103,8 @@ export interface ArticleIngredientCTA {
   nameJa: string
   reason: string
   evidenceRank: EvidenceRank
+  /** 商品CTAボタン直前に表示する緊急性テキスト（損失回避の最終押し） */
+  urgencyNote?: string
   productName?: string
   productUrl?: string
   productPlatform?: 'iherb' | 'amazon' | 'rakuten'

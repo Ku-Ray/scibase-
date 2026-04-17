@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ExternalLink, ArrowLeft, Trophy, BarChart2, GitCompare } from 'lucide-react'
+import { ChevronRight, ExternalLink, ArrowLeft, Trophy, BarChart2, GitCompare, BookOpen, Clock } from 'lucide-react'
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
+import { getArticlesByIngredient } from '@/lib/articles'
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
@@ -90,6 +91,8 @@ export default async function IngredientPage({ params }: Props) {
   if (!ing) notFound()
 
   const relatedConcerns = concerns.filter((c) => ing.concerns.includes(c.slug))
+
+  const relatedArticles = getArticlesByIngredient(slug)
 
   const siblingIngredients = [
     ...new Map(
@@ -736,6 +739,45 @@ export default async function IngredientPage({ params }: Props) {
           サプリメントの使用前には医師・薬剤師にご相談ください。
           掲載内容は論文情報の提供を目的としており、効果・効能を保証するものではありません。
         </div>
+
+        {/* 関連コラム */}
+        {relatedArticles.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-center gap-2 mb-4">
+              <BookOpen className="w-4 h-4 text-muted-foreground" />
+              <h2 className="font-semibold text-[18px] text-foreground">
+                この成分についてのコラム
+              </h2>
+            </div>
+            <div className="space-y-3">
+              {relatedArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/articles/${article.slug}`}
+                  className="group flex items-start gap-4 border border-border rounded-xl p-4
+                    hover:border-accent/50 hover:bg-secondary/50 transition-all duration-150"
+                >
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-[14px] text-foreground leading-snug mb-1
+                      group-hover:text-accent transition-colors">
+                      {article.title}
+                    </p>
+                    <div className="flex items-center gap-2 text-[12px] text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {article.readingMinutes}分
+                      </span>
+                      <span>·</span>
+                      <span>{article.categoryLabel}</span>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5
+                    group-hover:text-accent transition-colors" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Related ingredients */}
         {siblingIngredients.length > 0 && (

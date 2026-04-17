@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { ArrowRight, Trophy, FlaskConical, Search, BarChart2, Microscope } from 'lucide-react'
+import { ArrowRight, Trophy, FlaskConical, Search, BarChart2, Microscope, BookOpen, Clock } from 'lucide-react'
 import { concerns, ingredients, getIngredientsByConcern } from '@/lib/data'
+import { articles } from '@/lib/articles'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { HeroSearch } from '@/components/HeroSearch'
@@ -218,6 +219,54 @@ export default function Home() {
                   <EvidenceBadge rank={top.evidenceRank} variant="dot" />
                   <span className="text-[12px] text-muted-foreground line-clamp-1">
                     {top.tagline}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 新着コラム ───────────────────────────── */}
+      <section className="border-t border-border px-5 py-14">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-baseline justify-between mb-8">
+            <div className="flex items-center gap-2.5">
+              <BookOpen className="w-5 h-5 text-muted-foreground" />
+              <h2 className="font-semibold text-[20px] text-foreground">コラム</h2>
+            </div>
+            <Link href="/articles"
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <p className="text-[13px] text-muted-foreground mb-6 -mt-4">
+            「なぜ効くのか」「何を選ぶのか」を論文で解説
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {articles.slice(0, 3).map((article) => (
+              <Link
+                key={article.slug}
+                href={`/articles/${article.slug}`}
+                className="group border border-border rounded-2xl p-5 bg-card
+                  hover:-translate-y-0.5 hover:shadow-md transition-all duration-150"
+              >
+                <div className="flex items-center gap-1.5 mb-3 text-[11px] text-muted-foreground">
+                  <Clock className="w-3 h-3" />
+                  <span>{article.readingMinutes}分</span>
+                  <span>·</span>
+                  <span>{article.categoryLabel}</span>
+                </div>
+                <p className="font-semibold text-[14px] text-foreground leading-snug mb-3
+                  group-hover:text-accent transition-colors line-clamp-2">
+                  {article.title}
+                </p>
+                <div className="bg-secondary rounded-lg px-3 py-2">
+                  <span className="block text-[18px] font-black text-foreground tabular-nums leading-none mb-0.5">
+                    {article.heroStat.value}
+                  </span>
+                  <span className="block text-[10px] text-muted-foreground leading-tight line-clamp-1">
+                    {article.heroStat.label}
                   </span>
                 </div>
               </Link>
