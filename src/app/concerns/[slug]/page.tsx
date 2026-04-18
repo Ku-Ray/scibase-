@@ -70,6 +70,11 @@ export default async function ConcernPage({ params }: Props) {
   const ranks: EvidenceRank[] = ['S', 'A', 'B', 'C']
   const hero = categoryHero[concern.category] ?? categoryHero.skin
 
+  /* 推奨Top 3と残り（アコーディオン用） */
+  const top3 = all.slice(0, 3)
+  const top3Slugs = new Set(top3.map((i) => i.slug))
+  const rest = all.filter((i) => !top3Slugs.has(i.slug))
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type':    'BreadcrumbList',
@@ -137,40 +142,143 @@ export default async function ConcernPage({ params }: Props) {
 
     <div className="max-w-4xl mx-auto px-5 py-10">
 
-      {/* ── まずこれ1つ ── */}
-      {all.length > 0 && (() => {
-        const top = all[0]
+      {/* ── 特に注意が必要な人（riskProfile） ── */}
+      {concern.riskProfile && concern.riskProfile.length > 0 && (
+        <section className="mb-10">
+          <div className="mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+              text-muted-foreground mb-1">
+              PROFILE
+            </p>
+            <h2 className="text-[18px] font-bold text-foreground leading-snug">
+              {concern.nameJa}で注意が必要な人の特徴
+            </h2>
+          </div>
+
+          <div className="bg-amber-50/60 border border-amber-200 rounded-2xl p-5">
+            <ul className="space-y-2">
+              {concern.riskProfile.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-1.5">
+                  <span className="flex-shrink-0 text-amber-700 font-bold text-[15px] leading-[1.5]">
+                    ・
+                  </span>
+                  <span className="text-[13px] text-foreground/85 leading-[1.8]">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[12px] text-amber-900 mt-4 pt-4 border-t border-amber-200 font-semibold leading-relaxed">
+              3つ以上該当すれば、すでに進行しているサインと考えて良い。
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── メカニズム3ステップ ── */}
+      {concern.mechanism && (
+        <section className="mb-10">
+          <div className="mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+              text-muted-foreground mb-1">
+              MECHANISM
+            </p>
+            <h2 className="text-[18px] font-bold text-foreground leading-snug">
+              {concern.nameJa}のメカニズム
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {[
+              { num: '1', label: '原因',           body: concern.mechanism.cause },
+              { num: '2', label: '老化への影響',   body: concern.mechanism.process },
+              { num: '3', label: '対策の方向性',   body: concern.mechanism.direction },
+            ].map((step) => (
+              <div key={step.num}
+                className="bg-card border border-border rounded-xl p-4 relative">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full
+                    bg-foreground text-background text-[11px] font-bold tabular-nums">
+                    {step.num}
+                  </span>
+                  <span className="text-[11px] font-semibold text-muted-foreground
+                    uppercase tracking-[0.08em]">
+                    {step.label}
+                  </span>
+                </div>
+                <p className="text-[13px] text-foreground/80 leading-relaxed">
+                  {step.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 flex items-center gap-3 bg-foreground/[0.03]
+            border-l-2 border-foreground/40 rounded-r-lg px-4 py-3">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.12em]
+              text-muted-foreground">SO</span>
+            <p className="text-[13px] text-foreground/85 leading-relaxed font-medium">
+              だから、以下の3成分が論文エビデンス順に優先される。
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── 推奨Top 3 ── */}
+      {top3.length > 0 && (() => {
+        const top = top3[0]
+        const others = top3.slice(1)
         const usageLabel: Record<string, string> = { topical: '外用', oral: '経口', both: '外用・経口' }
+        const platformLabel: Record<string, string> = {
+          iherb: 'iHerbで見る', amazon: 'Amazonで見る', cosme: '@cosmeで見る',
+        }
         const topRankBg: Record<string, string> = {
           S: 'bg-amber-50 border-amber-300',
           A: 'bg-blue-50 border-blue-300',
           B: 'bg-emerald-50 border-emerald-300',
           C: 'bg-stone-100 border-stone-300',
         }
-        const topRankText: Record<string, string> = {
-          S: 'text-amber-700', A: 'text-blue-700', B: 'text-emerald-700', C: 'text-stone-600',
-        }
         const topRankBarBg: Record<string, string> = {
           S: 'bg-amber-500', A: 'bg-blue-500', B: 'bg-emerald-500', C: 'bg-stone-400',
         }
+        const topRankHoverText: Record<string, string> = {
+          S: 'group-hover:text-amber-700',
+          A: 'group-hover:text-blue-700',
+          B: 'group-hover:text-emerald-700',
+          C: 'group-hover:text-stone-600',
+        }
+        const topProduct = top.products.find((p) => p.rank === 1) ?? top.products[0]
         return (
           <section className="mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
-              text-muted-foreground mb-3">
-              まずこれ1つ
-            </p>
-            <Link href={`/ingredients/${top.slug}`}
-              className={`group block border-2 rounded-2xl overflow-hidden
-                hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5
+            <div className="mb-4">
+              <div className="flex items-center gap-2 mb-1">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+                  text-muted-foreground">
+                  TOP PICKS
+                </p>
+                <span className="text-[10px] text-muted-foreground/70">·</span>
+                <p className="text-[11px] text-muted-foreground">
+                  まず1つ選んで始める
+                </p>
+              </div>
+              <h2 className="text-[18px] font-bold text-foreground leading-snug">
+                {concern.nameJa}の推奨成分Top 3
+              </h2>
+            </div>
+
+            {/* #1 BEST — 大型カード */}
+            <div className={`group border-2 rounded-2xl overflow-hidden mb-3
+                transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5
                 ${topRankBg[top.evidenceRank]}`}>
 
               {/* Rank accent bar */}
               <div className={`h-1 w-full ${topRankBarBg[top.evidenceRank]}`} />
 
-              <div className="p-5">
+              <Link href={`/ingredients/${top.slug}`} className="block p-5
+                hover:bg-white/30 transition-colors">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span className="text-[10px] font-bold bg-foreground text-background
+                        rounded px-2 py-0.5 tracking-[0.08em]">BEST</span>
                       <EvidenceBadge rank={top.evidenceRank} variant="chip" />
                       {top.usageType && (
                         <span className="text-[11px] text-muted-foreground bg-white/70
@@ -186,15 +294,13 @@ export default async function ConcernPage({ params }: Props) {
                       )}
                     </div>
                     <h3 className={`text-[24px] font-black text-foreground mb-2
-                      group-hover:${topRankText[top.evidenceRank]} transition-colors leading-snug`}>
+                      ${topRankHoverText[top.evidenceRank]} transition-colors leading-snug`}>
                       {top.nameJa}
                     </h3>
                     <p className="text-[14px] text-foreground/70 leading-relaxed">
                       {top.tagline}
                     </p>
                   </div>
-                  <ChevronRight className={`w-5 h-5 flex-shrink-0 mt-1 transition-colors
-                    text-muted-foreground group-hover:${topRankText[top.evidenceRank]}`} />
                 </div>
                 {top.heroStat && (
                   <p className="mt-3 text-[12px] text-muted-foreground leading-relaxed">
@@ -215,8 +321,81 @@ export default async function ConcernPage({ params }: Props) {
                     <span>論文: <strong className="text-foreground">{top.papers.length}件</strong></span>
                   </div>
                 )}
+              </Link>
+
+              {/* Dual CTA bar */}
+              <div className="border-t border-black/10 bg-white/60 px-4 py-3
+                flex flex-col sm:flex-row gap-2">
+                <Link href={`/ingredients/${top.slug}`}
+                  className="flex-1 inline-flex items-center justify-center gap-1.5
+                    text-[13px] font-semibold text-foreground bg-white border border-border
+                    rounded-lg px-4 py-2.5 hover:border-foreground/40 hover:shadow-sm
+                    transition-all">
+                  論文エビデンスを確認
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+                {topProduct && (
+                  <a href={topProduct.url} target="_blank" rel="noopener nofollow sponsored"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5
+                      text-[13px] font-semibold text-background bg-foreground rounded-lg
+                      px-4 py-2.5 hover:opacity-90 transition-opacity">
+                    {platformLabel[topProduct.platform]}
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
-            </Link>
+            </div>
+
+            {/* #2・#3 代替・補強（コンパクトカード） */}
+            {others.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {others.map((ing, idx) => {
+                  const ingTopProduct = ing.products.find((p) => p.rank === 1) ?? ing.products[0]
+                  return (
+                    <div key={ing.slug}
+                      className="group bg-card border border-border rounded-xl overflow-hidden
+                        hover:border-foreground/30 hover:shadow-sm transition-all duration-150">
+                      <Link href={`/ingredients/${ing.slug}`}
+                        className="flex items-center gap-3 px-4 py-3">
+                        <span className="text-[11px] font-bold text-muted-foreground
+                          tabular-nums w-4">
+                          {idx + 2}
+                        </span>
+                        <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[13px] font-semibold text-foreground truncate
+                            group-hover:text-foreground transition-colors">
+                            {ing.nameJa}
+                          </p>
+                          <p className="text-[11px] text-muted-foreground truncate">
+                            {ing.tagline}
+                          </p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      </Link>
+                      <div className="border-t border-border/60 bg-secondary/40 px-4 py-2
+                        flex items-center justify-between gap-2 text-[11px]">
+                        <Link href={`/ingredients/${ing.slug}`}
+                          className="text-muted-foreground hover:text-foreground font-medium
+                            inline-flex items-center gap-1">
+                          エビデンス
+                          <ChevronRight className="w-3 h-3" />
+                        </Link>
+                        {ingTopProduct && (
+                          <a href={ingTopProduct.url} target="_blank"
+                            rel="noopener nofollow sponsored"
+                            className="font-semibold text-foreground hover:underline
+                              inline-flex items-center gap-1">
+                            {platformLabel[ingTopProduct.platform]}
+                            <ChevronRight className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
           </section>
         )
       })()}
@@ -227,29 +406,46 @@ export default async function ConcernPage({ params }: Props) {
         摂取前には医師・薬剤師にご相談ください。
       </p>
 
-      {/* 成分一覧 */}
-      <div className="space-y-12">
-        {ranks.map((rank) => {
-          const items = all.filter((i) => i.evidenceRank === rank)
-          if (!items.length) return null
-          return (
-            <section key={rank}>
-              <div className="mb-5">
-                <EvidenceBadge rank={rank} variant="chip" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {items.map((ing) => (
-                  <IngredientCard
-                    key={ing.slug}
-                    ingredient={ing}
-                    rank={all.indexOf(ing) + 1}
-                  />
-                ))}
-              </div>
-            </section>
-          )
-        })}
-      </div>
+      {/* その他の成分（アコーディオン） */}
+      {rest.length > 0 && (
+        <details className="group">
+          <summary className="list-none cursor-pointer flex items-center justify-between
+            bg-secondary hover:bg-secondary/80 rounded-xl px-5 py-4 transition-colors">
+            <div>
+              <p className="text-[13px] font-semibold text-foreground">
+                その他の関連成分を見る（{rest.length}件）
+              </p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">
+                エビデンスランク別にすべて表示
+              </p>
+            </div>
+            <ChevronRight className="w-4 h-4 text-muted-foreground
+              group-open:rotate-90 transition-transform" />
+          </summary>
+          <div className="mt-6 space-y-12">
+            {ranks.map((rank) => {
+              const items = rest.filter((i) => i.evidenceRank === rank)
+              if (!items.length) return null
+              return (
+                <section key={rank}>
+                  <div className="mb-5">
+                    <EvidenceBadge rank={rank} variant="chip" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {items.map((ing) => (
+                      <IngredientCard
+                        key={ing.slug}
+                        ingredient={ing}
+                        rank={all.indexOf(ing) + 1}
+                      />
+                    ))}
+                  </div>
+                </section>
+              )
+            })}
+          </div>
+        </details>
+      )}
 
       {/* 関連悩み */}
       <div className="mt-14 pt-10 border-t border-border">

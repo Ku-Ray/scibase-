@@ -92,6 +92,14 @@ export interface Concern {
   category: 'skin' | 'body' | 'cognitive' | 'sleep' | 'gut' | 'immunity' | 'muscle' | 'cardiovascular'
   description: string
   ingredientSlugs: string[]
+  /** なぜこの悩みが起きるか（3ステップ）・推奨成分の論理的前振りとして表示 */
+  mechanism?: {
+    cause: string      // 原因：体で何が起きているか
+    process: string    // 機序：それがどう老化を加速させるか
+    direction: string  // 対策の方向性：Top 3成分への橋渡し
+  }
+  /** こういう人は特に注意（5-7項目）・自己関連リスクの提示で行動動機を強化 */
+  riskProfile?: string[]
 }
 
 // ─── Article（コラム記事） ────────────────────────────────────────

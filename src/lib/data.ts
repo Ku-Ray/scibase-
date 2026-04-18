@@ -7068,6 +7068,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: 'コラーゲン減少・くすみ・ハリの低下など、肌の経年変化に関わるエビデンスを確認した成分一覧',
     ingredientSlugs: ['collagen-peptide', 'niacinamide', 'omega3', 'coq10', 'nmn', 'resveratrol', 'astaxanthin', 'tranexamic-acid', 'centella-asiatica', 'lactic-acid', 'egcg', 'vitamin-e', 'equol', 'soy-isoflavones', 'ferulic-acid', 'evening-primrose-oil', 'mandelic-acid', 'sulforaphane', 'placenta', 'glutathione', 'carnosine', 'nac', 'hyaluronic-acid-oral'],
+    mechanism: {
+      cause: 'コラーゲン産生は25歳をピークに年1%ずつ低下することが皮膚生理学の複数の研究で報告されている。同時に、紫外線と加齢で分解酵素MMP-1の発現が増え、合成は減る・分解は増えるの二重進行に入る。30代後半から真皮密度の低下が自覚され、40代で一気に加速する。',
+      process: '失われたコラーゲンを、紫外線由来の活性酸素（ROS）と、糖化によって生じるAGEs（終末糖化産物）がさらに攻撃する。その結果、弾力を失った皮膚は戻らなくなり、ハリ低下・シワ・くすみ・たるみが同時進行する。皮膚老化の約80%は紫外線と糖化が占めるとされ、何もしない時間が最も高コストな選択になる。',
+      direction: 'つまり、攻め手は3方向。コラーゲン合成を直接促進する成分（レチノイド・ペプチド系）、活性酸素を抑える抗酸化成分（ビタミンC・アスタキサンチン）、糖化を防ぐ成分（カルノシン・αリポ酸）。この3軸を同時に押さえられる成分から選ぶのが最も効率が高い。',
+    },
+    riskProfile: [
+      '日焼け止めを塗らない日がある、または夕方以降も屋外に長時間いる',
+      '甘いもの・加工食品・血糖スパイクを起こす食事が多い',
+      '睡眠時間が6時間未満の日が週3日以上ある',
+      '喫煙習慣がある、または受動喫煙の環境にいる',
+      '30代後半以降で、スキンケアは保湿中心のまま更新していない',
+      '激しい運動や過度な食事制限で酸化ストレスを増やしている',
+    ],
   },
   {
     slug: 'wrinkles',
@@ -7076,6 +7089,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: '皮膚の弾力・ハリへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['collagen-peptide', 'niacinamide', 'retinol', 'retinal', 'bakuchiol', 'copper-peptide', 'equol', 'adenosine', 'ferulic-acid', 'pdrn'],
+    mechanism: {
+      cause: '表情動作の反復による真皮の微細損傷が、20代後半から蓄積する。これに紫外線によるエラスチン線維の断裂が重なり、修復を担う線維芽細胞の活性も加齢で低下するため、戻す力が減り続ける。',
+      process: '真皮の細胞外マトリックス（コラーゲン・エラスチン・ヒアルロン酸）の密度が下がると、動かしたあとに元に戻らなくなる。これが動的ジワ（表情時だけ出る）から静的ジワ（常にある）への移行であり、一度定着すると外用だけでは改善が難しくなる。',
+      direction: 'つまり、鍵は線維芽細胞を直接刺激すること。皮膚生理学で効果が確立しているのはレチノイド系（レチノール・レチナール）、銅ペプチド・PDRNなどのペプチド系、バクチオールの3カテゴリ。動的ジワのうちに止めるのが最も効率的な戦略になる。',
+    },
+    riskProfile: [
+      '笑いジワ・眉間のシワが固定化してきたと感じる',
+      '表情の動きが大きい、または無意識にしかめ面・食いしばりが多い',
+      '紫外線対策が夏以外は手薄',
+      '30代後半以降で、レチノイドやペプチド系をまだ使ったことがない',
+      '急激な体重減少・過度な食事制限の経験がある',
+      'うつ伏せ・横向き寝で枕ジワができやすい',
+    ],
   },
   {
     slug: 'sleep',
@@ -7084,6 +7110,19 @@ export const concerns: Concern[] = [
     category: 'sleep',
     description: '睡眠の質・入眠・睡眠時間への関与が研究で示されている成分一覧',
     ingredientSlugs: ['melatonin', 'glycine', 'magnesium', 'l-theanine', 'gaba', 'ashwagandha', '5-htp', 'magnesium-glycinate', 'l-tryptophan', 'apigenin', 'reishi'],
+    mechanism: {
+      cause: '加齢と慢性ストレスでメラトニン分泌が年齢とともに減少する。さらに現代の夜間ブルーライト暴露・不規則な食事時間がサーカディアンリズムを乱し、深睡眠の時間と質が同時に下がる。',
+      process: '深睡眠は成長ホルモン分泌と、脳の老廃物を排出するグリンパティック系が最も活発に働く時間帯。この時間が短くなると、アミロイドβ等の蓄積が進み、体の修復もコルチゾール上昇で妨げられる。慢性睡眠不足は肌・脳・代謝を同時に老化させる共通の上流原因といえる。',
+      direction: '対策は3方向から入る。メラトニン経路をサポートする成分（メラトニン・L-トリプトファン）、交感神経を鎮めるアダプトゲン（アシュワガンダ・L-テアニン）、筋弛緩・神経鎮静系のミネラル（マグネシウムグリシネート・グリシン）。入眠と深睡眠のどちらを強化したいかで成分が分かれる。',
+    },
+    riskProfile: [
+      '夜中に目が覚めることが週3日以上ある',
+      '朝起きた時の回復感が低い・疲れが残っている',
+      '就寝前にスマホ・PCを30分以上見ている',
+      '夕方以降にカフェイン（コーヒー・緑茶）を摂ることがある',
+      '寝室が完全な暗闇になっていない（豆電・街灯）',
+      '不規則なシフト勤務や週末の寝だめ習慣がある',
+    ],
   },
   {
     slug: 'stress',
@@ -7092,6 +7131,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: 'コルチゾール・ストレス応答への関与が研究で示されている成分一覧',
     ingredientSlugs: ['ashwagandha', 'l-theanine', 'magnesium', 'gaba', 'rhodiola', 'phosphatidylserine', 'vitamin-b6', 'bacopa-monnieri', 'panax-ginseng', '5-htp', 'magnesium-glycinate', 'myo-inositol', 'l-tryptophan', 'reishi'],
+    mechanism: {
+      cause: '慢性的なストレス刺激で、HPA軸（視床下部-下垂体-副腎軸）が過活動になり、コルチゾールが慢性的に高止まりする。副交感神経の活性が下がり、本来は夜間に低下すべきコルチゾールが下がりきらなくなる。',
+      process: '高止まりしたコルチゾールは海馬の萎縮・テロメアの短縮・炎症性サイトカイン上昇を引き起こす。これは脳と体と皮膚を同時に老けさせる共通経路であり、ストレス過多の人は実年齢より老化スピードが速いことが複数の長期追跡研究で示されている。',
+      direction: '対策はHPA軸そのものを鎮めに行く。臨床データが豊富なアダプトゲン（アシュワガンダ・ロディオラ）、GABA経路を強化するL-テアニン、神経鎮静の基礎であるマグネシウムグリシネート。今のストレス反応を弱めることが、結果的に老化ペースを落とす。',
+    },
+    riskProfile: [
+      '首肩のこり・顎の食いしばりが慢性化している',
+      '夕方以降にどっと疲れる・甘いものが欲しくなる',
+      '寝つきが悪い、または眠りが浅い',
+      '責任負担の大きい仕事・育児・介護の状況にある',
+      '朝起きた時点ですでに疲れていることがある',
+      '週末や休暇で「休んでも回復しない」感覚がある',
+    ],
   },
   {
     slug: 'fatigue',
@@ -7100,6 +7152,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '抗疲労・エネルギー産生への関与が研究で示されている成分一覧',
     ingredientSlugs: ['coq10', 'creatine', 'magnesium', 'ashwagandha', 'glycine', 'nmn', 'taurine', 'rhodiola', 'nicotinamide-riboside', 'iron', 'alpha-lipoic-acid', 'alpha-ketoglutarate', 'vitamin-b12', 'l-arginine', 'l-citrulline', 'acetyl-l-carnitine', 'bacopa-monnieri', 'panax-ginseng', 'urolithin-a', 'pqq', 'l-glutamine', 'magnesium-glycinate', 'placenta', 'hmb'],
+    mechanism: {
+      cause: '加齢でミトコンドリア機能が低下し、ATP産生効率が落ちる。同時にCoQ10・NAD+濃度が年齢とともに減少し、細胞のエネルギー工場そのものが縮小していく。40代以降で顕在化する「休んでも取れない疲労」の背景はここにある。',
+      process: '慢性疲労は単なる休息不足ではなく、細胞レベルのエネルギー不全。ミトコンドリアが減り質も劣化することで、筋肉・脳・免疫の活動が同時に低下する。この状態は酸化ストレスと炎症を招き、さらにミトコンドリアを傷つける悪循環に入る。',
+      direction: '対策は3層で攻める。ATP産生の核となる補酵素（CoQ10・PQQ・NMN/NR）、細胞内エネルギーに直接使えるクレアチン、そしてミトコンドリアを守る抗酸化（αリポ酸・アシュワガンダ）。原因が細胞レベルである以上、休息だけでは戻らない。',
+    },
+    riskProfile: [
+      '睡眠を取っても朝からだるさが残る',
+      '食後に急激な眠気・集中力の低下が出る',
+      '40代以降で明らかに回復速度が落ちたと感じる',
+      '運動が億劫になり、階段で息切れするようになった',
+      'カフェインがないと仕事のパフォーマンスが保てない',
+      'ストレス・睡眠不足・食事の乱れが同時に慢性化している',
+    ],
   },
   {
     slug: 'cognitive',
@@ -7108,6 +7173,19 @@ export const concerns: Concern[] = [
     category: 'cognitive',
     description: '認知機能・集中力・記憶力への関与が研究で示されている成分一覧',
     ingredientSlugs: ['omega3', 'creatine', 'l-theanine', 'lions-mane', 'phosphatidylserine', 'ginkgo-biloba', 'egcg', 'curcumin', 'taurine', 'fisetin', 'spermidine', 'iron', 'vitamin-b12', 'vitamin-b6', 'acetyl-l-carnitine', 'bacopa-monnieri', 'panax-ginseng', 'alpha-gpc', 'pqq', 'folic-acid', 'niacin', 'carnosine', 'luteolin', 'alpha-lipoic-acid'],
+    mechanism: {
+      cause: '加齢で神経伝達物質（アセチルコリン・ドーパミン）の分泌が減少する。同時に脳血流が低下し、シナプスの可塑性（新しい接続を作る力）も落ちる。これは30代後半から始まり自覚されにくく、40代で出にくさとして表面化する。',
+      process: '脳のミトコンドリア機能低下と、アミロイドβ・タウ蛋白の蓄積が、記憶力・集中力・処理速度を段階的に下げていく。特にDHA・EPAが不足した状態では神経細胞膜の柔軟性が失われ、シナプス伝達の効率が大きく落ちることが報告されている。',
+      direction: '対策は3層構造。神経細胞膜の材料を入れる（オメガ3）、脳のエネルギー代謝を支える（クレアチン・アセチル-L-カルニチン）、脳内抗酸化（フィセチン・クルクミン）。特にオメガ3は複数のメタ解析でヒトでの認知機能維持効果が確認されており、優先度が最も高い。',
+    },
+    riskProfile: [
+      '人の名前・固有名詞が出てこないことが増えた',
+      '以前より作業の切り替えに疲れる・マルチタスクが辛い',
+      '魚を食べる頻度が週1回以下',
+      '運動習慣が週2回未満',
+      '睡眠時間が6時間以下の日が多い',
+      '座っている時間が1日8時間以上',
+    ],
   },
   {
     slug: 'inflammation',
@@ -7116,6 +7194,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: 'Inflammaging（老化性炎症）・炎症マーカーへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['omega3', 'vitamin-d', 'coq10', 'resveratrol', 'curcumin', 'egcg', 'quercetin', 'berberine', 'alpha-lipoic-acid', 'astaxanthin', 'vitamin-e', 'selenium', 'l-arginine', 'glucosamine', 'chondroitin', 'butyrate', 'spirulina', 'evening-primrose-oil', 'l-glutamine', 'sulforaphane', 'nattokinase', 'beta-glucan', 'glutathione', 'nac', 'olive-leaf-extract', 'milk-thistle', 'luteolin', 'fisetin', 'boswellia'],
+    mechanism: {
+      cause: '加齢で免疫細胞の調整機能が低下し、老化細胞が分泌するSASP（老化関連分泌現象）によって炎症性サイトカイン（IL-6・TNF-α・CRP）が慢性的に高値で推移する。食生活・睡眠不足・内臓脂肪もこれを助長する。',
+      process: 'この低度で慢性の炎症はInflammagingと呼ばれ、全臓器の老化を加速させる共通基盤として近年の老化研究で最重要の位置づけになっている。心血管疾患・認知症・糖尿病・がんなど加齢性疾患の多くが、炎症という共通の上流を持つ。',
+      direction: '対策は3方向。抗炎症作用が確立した成分（オメガ3・クルクミン・レスベラトロール）、炎症制御に不可欠なビタミンD、そして炎症の発火源になりやすい腸内環境の正常化（プロバイオティクス・食物繊維）。上流で鎮火することが全身老化への最短介入になる。',
+    },
+    riskProfile: [
+      '原因のはっきりしない疲労感が続いている',
+      '花粉症・アトピー・喘息など既往のアレルギー疾患がある',
+      '内臓脂肪が増えてきた・ウエスト周囲の増加を自覚する',
+      '加工食品・糖質・オメガ6過多の食生活',
+      '腸内環境の乱れ（便秘・下痢・ガス）を感じる',
+      '慢性的な睡眠不足・ストレスがある',
+    ],
   },
   {
     slug: 'gut',
@@ -7124,6 +7215,19 @@ export const concerns: Concern[] = [
     category: 'gut',
     description: '腸内フローラ・腸のバリア機能への関与が研究で示されている成分一覧',
     ingredientSlugs: ['probiotics', 'inulin', 'butyrate', 'l-glutamine', 'akkermansia', 'beta-glucan', 'reishi', 'phosphatidylcholine'],
+    mechanism: {
+      cause: '加齢・抗生物質・加工食品・ストレスで腸内細菌の多様性が低下する。特にアッカーマンシアなど短鎖脂肪酸を作る有用菌が減ると、腸粘膜のバリア（タイトジャンクション）が弱くなり、リーキーガット（腸漏れ）の素地ができあがる。',
+      process: '腸から漏れた内毒素（LPS）が血中を巡ると、全身で低度の慢性炎症（Inflammaging）が起きる。腸は第二の脳と呼ばれ、脳・肌・免疫と双方向に連絡しているため、腸内環境の悪化は認知・皮膚・免疫の老化を同時に進行させる共通の上流原因になる。',
+      direction: '対策は3段階で組み立てる。有用菌そのものを入れる（プロバイオティクス・アッカーマンシア）、有用菌のエサを入れる（イヌリン・食物繊維）、腸粘膜を直接修復する（L-グルタミン・酪酸）。腸を整えるのは、皮膚・脳・免疫の老化対策と同じ上流介入になる。',
+    },
+    riskProfile: [
+      '便秘・下痢・ガスなど便通の乱れが慢性化している',
+      '食後のお腹の張り・不快感が続く',
+      '抗生物質の服用歴が複数回ある',
+      '加工食品・外食・甘いものが食生活の中心になっている',
+      '花粉症・アトピー・肌荒れなどアレルギー症状がある',
+      '慢性ストレス・睡眠不足で自律神経が乱れている',
+    ],
   },
   {
     slug: 'immunity',
@@ -7132,6 +7236,19 @@ export const concerns: Concern[] = [
     category: 'immunity',
     description: '免疫応答・感染リスクへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['vitamin-d', 'probiotics', 'vitamin-c-oral', 'zinc', 'quercetin', 'egcg', 'selenium', 'vitamin-e', 'folic-acid', 'l-arginine', 'inulin', 'butyrate', 'panax-ginseng', 'spirulina', 'l-glutamine', 'beta-glucan', 'reishi', 'nac', 'milk-thistle'],
+    mechanism: {
+      cause: '加齢とともにT細胞・NK細胞の数と機能が低下する現象はImmunosenescence（免疫老化）と呼ばれる。胸腺の萎縮で新しいT細胞の産生が減り、既存の免疫記憶への依存度が上がる。ビタミンD・亜鉛の不足はこれをさらに加速させる。',
+      process: '免疫応答の低下は感染症リスクだけでなく、がん細胞の監視機能低下・ワクチン効果の減弱・慢性炎症の増加にも直結する。免疫老化は他の老化Hallmarksと深く連動しており、体の防衛線の弱体化は全身老化の加速とイコールと考えられている。',
+      direction: '対策は3層で整える。免疫調整の基盤となるビタミンD・亜鉛、免疫訓練効果を持つβグルカン・プロバイオティクス、そして免疫細胞の酸化ダメージを減らすビタミンC・セレン・NAC。免疫は落ちてから慌てるより、普段から上流を整える方が圧倒的に効率が良い。',
+    },
+    riskProfile: [
+      '風邪を引きやすい・治りにくい・年3回以上引く',
+      '口内炎・帯状疱疹・ヘルペスが出やすい',
+      '日光を浴びる時間が短く、ビタミンD欠乏リスクがある',
+      '睡眠不足・慢性ストレスが続いている',
+      '食事に亜鉛源（貝・赤身肉・種実）が不足している',
+      '40代以降で、感染後の回復が明らかに遅くなった',
+    ],
   },
   {
     slug: 'spots',
@@ -7140,6 +7257,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: 'メラニン産生・色素沈着への関与が研究で示されている成分一覧',
     ingredientSlugs: ['arbutin', 'niacinamide', 'vitamin-c-topical', 'azelaic-acid', 'kojic-acid', 'glycolic-acid', 'tranexamic-acid', 'lactic-acid', 'ferulic-acid', 'mandelic-acid', 'glutathione'],
+    mechanism: {
+      cause: '紫外線や炎症、摩擦刺激でメラノサイトが活性化し、防御反応としてメラニン産生が過剰になる。一度の刺激でも、慢性的に繰り返されると基底層へのメラニン供給が止まらなくなる。',
+      process: '通常は表皮のターンオーバー（28日周期・年齢で延長）で排出されるメラニンが、加齢による代謝低下・炎症の長期化により排出が追いつかず、真皮まで落ちて色素沈着として定着する。定着すると外用の効果は大きく下がる。',
+      direction: '対策はメラニン生成のサイクル全体で攻める。チロシナーゼ阻害（アルブチン・コウジ酸・ビタミンC）、ターンオーバー促進（AHA・BHA・レチノイド）、抗炎症（ナイアシンアミド・トラネキサム酸）。できかけの段階で止めることが最も効率的。',
+    },
+    riskProfile: [
+      '紫外線対策を一年中・毎日は行っていない',
+      'ニキビ跡・虫刺され跡の色素沈着が消えにくい',
+      '30代以降で、頬骨の上に薄いシミが出てきた',
+      '肝斑の既往がある、またはホルモンバランスの変化を感じる',
+      '摩擦（クレンジング・タオル拭き）が強い習慣がある',
+      '喫煙・睡眠不足で肌のターンオーバーが落ちている自覚がある',
+    ],
   },
   {
     slug: 'barrier',
@@ -7148,6 +7278,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: '角質層の水分保持・経皮水分蒸散量（TEWL）への関与が研究で示されている成分一覧',
     ingredientSlugs: ['ceramide', 'hyaluronic-acid', 'niacinamide', 'centella-asiatica', 'squalane', 'panthenol', 'allantoin', 'evening-primrose-oil', 'pdrn', 'ceramide-oral'],
+    mechanism: {
+      cause: '加齢・紫外線・過度な洗浄で角層のセラミド・天然保湿因子（NMF）・皮脂膜が減る。バリアが弱くなると経皮水分蒸散量（TEWL）が増え、同時に外部刺激も侵入しやすくなる。これが敏感肌・ゆらぎ肌の始まりになる。',
+      process: 'バリア破綻→水分蒸発→刺激侵入→炎症→さらなるバリア破綻、の悪循環に入ると、皮膚は自力で回復できなくなる。大人のアトピー様皮膚炎・慢性赤み・乾燥性ゆらぎ肌の基盤はここにあり、放置するほど治療コストと時間が膨らむ。',
+      direction: '対策は3方向から。角層の構成成分を直接補う（セラミド・ヒアルロン酸）、バリア合成を促進する（ナイアシンアミド・パンテノール）、炎症を鎮めて修復環境を整える（ツボクサ・アラントイン）。バリア破綻は初期で止めるほど圧倒的に効率が高い。',
+    },
+    riskProfile: [
+      '季節の変わり目に赤み・かゆみ・ヒリつきが出る',
+      'スキンケアで化粧水がしみる・頬がピリピリする',
+      '洗顔後10分以内に乾燥感が戻る',
+      'クレンジング・洗顔を強くこすっている自覚がある',
+      '熱いシャワー・長風呂の習慣がある',
+      'エアコン・暖房の効いた乾燥空間に長時間いる',
+    ],
   },
   {
     slug: 'dry-skin',
@@ -7156,6 +7299,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: '皮膚の水分量・保湿力への関与が研究で示されている成分一覧',
     ingredientSlugs: ['ceramide', 'hyaluronic-acid', 'collagen-peptide', 'squalane', 'lactic-acid', 'panthenol', 'allantoin', 'hyaluronic-acid-oral', 'ceramide-oral'],
+    mechanism: {
+      cause: '加齢で皮脂腺の分泌量が減り、角層のセラミド・天然保湿因子（NMF）も不足する。特に40代以降は皮脂量が急減し、冬場の肌水分量は20代の半分近くまで落ちることが皮膚計測の研究で報告されている。',
+      process: '水分量の低下した肌は、くすみ・小ジワ・キメの乱れが同時進行する。皮膚老化研究では肌水分量と見た目年齢に強い相関があり、乾燥を放置することは皮膚老化の加速に直結する。バリアも弱いため、色素沈着・炎症へと発展しやすい。',
+      direction: '対策は3層で入れる。角層の構成材料そのものを補う（セラミド・コラーゲンペプチド）、水分を抱え込む成分（ヒアルロン酸・スクワラン）、乾燥による角層ダメージを修復する（パンテノール・アラントイン）。保湿は表面を濡らすのではなく、構成成分を入れ直すのが正しい。',
+    },
+    riskProfile: [
+      '洗顔後すぐに肌がつっぱる・粉を吹くことがある',
+      '冬や乾燥する季節に肌トラブルが一気に増える',
+      '水分摂取量が1日1L未満',
+      'クーラー・暖房の効いた室内に長時間いる',
+      '30代後半以降で皮脂量が落ちたと感じる',
+      '入浴が熱め・長めで、肌の皮脂が奪われやすい',
+    ],
   },
   {
     slug: 'acne',
@@ -7164,6 +7320,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: '炎症性ざ瘡・毛穴詰まりへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['salicylic-acid', 'azelaic-acid', 'niacinamide', 'zinc', 'retinal', 'centella-asiatica', 'panthenol', 'allantoin', 'mandelic-acid', 'myo-inositol', 'pantothenic-acid'],
+    mechanism: {
+      cause: '皮脂過多・角栓による毛穴の詰まり・アクネ菌（Cutibacterium acnes）の増殖・炎症、の4要素が絡んで発生する。大人ニキビはストレス・ホルモンバランス・腸内環境・食事の影響を強く受け、思春期ニキビとは発生メカニズムが異なる。',
+      process: '炎症性ニキビを繰り返すと、治った後に炎症後色素沈着（PIH）・萎縮性瘢痕（凹み跡）・肥厚性瘢痕が残ることがある。跡が定着すると外用だけでは修復が難しくなり、早期に炎症を抑えることが長期的な美肌コストを最も下げる戦略になる。',
+      direction: '対策は4方向を同時に攻める。毛穴詰まりを解消（サリチル酸・マンデル酸）、抗菌・抗炎症（アゼライン酸・ナイアシンアミド）、皮脂調整と傷修復（亜鉛・パントテン酸）、ターンオーバー正常化（レチナール）。炎症期にケアするほど跡を残さない。',
+    },
+    riskProfile: [
+      'あごや口周りに繰り返しニキビができる（ホルモン性パターン）',
+      'ニキビ跡の色素沈着が消えにくい・残りやすい',
+      '生理前に肌荒れが悪化する',
+      '乳製品・糖質・加工食品の摂取が多い',
+      '慢性的な睡眠不足・ストレスがある',
+      '枕カバー・タオル・スマホ画面の清潔管理が手薄',
+    ],
   },
   {
     slug: 'pores',
@@ -7172,6 +7341,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: '毛穴の目立ちにくさ・肌のキメへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['salicylic-acid', 'glycolic-acid', 'niacinamide', 'retinol', 'lactic-acid', 'mandelic-acid'],
+    mechanism: {
+      cause: '加齢で真皮のコラーゲン・エラスチンが減ると、毛穴を支える土台が弱くなり、毛穴が縦長化する（たるみ毛穴）。皮脂過多による詰まり毛穴、角層肥厚による凹凸、そして紫外線による皮膚の硬化が、毛穴の目立ちに同時に重なる。',
+      process: '毛穴は角栓蓄積→酸化・炎症→拡張、のサイクルで進行する。一度広がって真皮の支持構造が弱まると、外用の保湿や角栓除去だけでは元に戻りにくくなる。つまり毛穴の目立ちは、皮膚老化の早期サインでもある。',
+      direction: '対策は3段で攻める。角質除去で詰まりを取る（AHA：グリコール酸・乳酸／BHA：サリチル酸）、ターンオーバーを正常化する（レチノール・マンデル酸）、毛穴の土台である真皮のコラーゲンを増やす（ナイアシンアミド・ペプチド系）。土台ケアまで含めて初めて毛穴は落ち着く。',
+    },
+    riskProfile: [
+      '鼻・頬の毛穴が以前より目立つ・縦長になってきた',
+      '毛穴パックや強いクレンジングを繰り返している',
+      '皮脂分泌が多い・テカリやすい',
+      '紫外線対策が手薄で肌のハリ低下を自覚する',
+      '30代以降でスキンケアに角質ケア・レチノイドを取り入れていない',
+      '肌をゴシゴシこする洗顔・タオル拭きが習慣化している',
+    ],
   },
   {
     slug: 'uv-damage',
@@ -7180,6 +7362,19 @@ export const concerns: Concern[] = [
     category: 'skin',
     description: '紫外線による皮膚ダメージ・光老化への対策に関するエビデンスを持つ成分一覧',
     ingredientSlugs: ['retinol', 'vitamin-c-topical', 'niacinamide', 'arbutin', 'kojic-acid', 'resveratrol', 'astaxanthin', 'tranexamic-acid', 'vitamin-e', 'ferulic-acid'],
+    mechanism: {
+      cause: '紫外線（UVA/UVB）が皮膚内で活性酸素（ROS）を発生させる。これがDNA損傷・コラーゲン分解酵素MMPの発現・メラニン産生亢進を同時に引き起こす。UVAは真皮深くに届くため、自覚のないまま蓄積していく。',
+      process: '累積した光ダメージは線維芽細胞の老化（SASP）を誘導し、シワ・シミ・ハリ低下・毛細血管拡張・皮膚がんリスクまで同時に進行させる。皮膚老化の80%以上は光老化が占めるとされ、遺伝以上にどれだけUVを浴びたかが見た目年齢を決めている。',
+      direction: '対策は3層。紫外線そのものを防ぐ（日焼け止め・帽子・衣類）、受けたROSを抗酸化で中和（ビタミンC・アスタキサンチン・フェルラ酸）、受けたダメージの修復を促進（レチノール・ナイアシンアミド）。防御・中和・修復の3層で初めて光老化が止まる。',
+    },
+    riskProfile: [
+      '日焼け止めは夏や海にだけ塗る、冬や曇りの日は塗らない',
+      '通勤・運転中・ベランダ作業で日光を浴びる時間が長い',
+      '室内でも窓際にいる時間が長い（UVAは窓を通過する）',
+      '眼の周り・首・手の甲の紫外線対策まで気を配っていない',
+      '20代までに海・ウィンタースポーツで強い日焼けを繰り返した',
+      'SPF値の高いものを1回塗ったら安心と考えている（実は2-3時間ごとの塗り直しが必要）',
+    ],
   },
   {
     slug: 'hair',
@@ -7188,6 +7383,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '毛髪・爪の健康への関与が研究で示されている成分一覧',
     ingredientSlugs: ['biotin', 'zinc', 'iron', 'saw-palmetto', 'selenium', 'pantothenic-acid', 'silica', 'collagen-peptide'],
+    mechanism: {
+      cause: '毛母細胞への血流低下・栄養不足・男性ホルモン（DHT）・頭皮の慢性炎症が重なって、毛周期の成長期が短縮する。特に40代以降は毛包が休眠に入りやすく、1本1本の毛が細くなる「軟毛化」も同時に進行する。',
+      process: '髪と爪は体の末端にあるため、鉄・亜鉛・ビオチン・タンパク質の不足がまず現れる部位。慢性の栄養不足・内臓の不調・ストレスが、髪のツヤ低下・抜け毛・爪の割れとして表面化する。つまり髪と爪は全身の栄養状態を映す鏡でもある。',
+      direction: '対策は3層で整える。毛髪・爪の主成分であるケラチン合成を支える栄養（ビオチン・亜鉛・鉄）、毛包周辺の酸化ストレスを減らす抗酸化（セレン・パントテン酸）、DHT関連の抜け毛にはノコギリヤシ。不足している栄養を補うのが最も基本的で効く。',
+    },
+    riskProfile: [
+      '抜け毛・薄毛・分け目が気になってきた',
+      '爪が縦に割れる・白い線が入る・もろくなった',
+      '過度な食事制限・偏食が続いている',
+      '貧血傾向がある・鉄欠乏の指摘を受けたことがある',
+      '慢性ストレス・睡眠不足で自律神経が乱れている',
+      '頭皮の痒み・フケ・脂っぽさなど頭皮環境の不調がある',
+    ],
   },
   {
     slug: 'bone',
@@ -7196,6 +7404,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '骨密度・骨強度への関与が研究で示されている成分一覧',
     ingredientSlugs: ['vitamin-d', 'collagen-peptide', 'vitamin-k2', 'calcium', 'glucosamine', 'chondroitin', 'soy-isoflavones', 'magnesium-glycinate'],
+    mechanism: {
+      cause: '骨密度は35歳頃をピークに低下を始める。特に女性は閉経後のエストロゲン急減で骨吸収が骨形成を上回り、10年で10%以上の骨量減少が起こることも珍しくない。関節軟骨も加齢で水分とコラーゲンが失われていく。',
+      process: '骨密度低下は転倒・骨折リスクに直結し、一度の骨折が寝たきりへの入口になりうる。関節軟骨の摩耗は変形性関節症を招き、日常動作の痛み・運動量の低下・さらなる筋力低下という悪循環を生む。骨と関節は「戻す」より「維持する」の方がはるかに低コスト。',
+      direction: '対策は3層。骨の材料としてのカルシウム・コラーゲンペプチド・マグネシウム、骨へのカルシウム沈着を助けるビタミンD・K2、閉経期の骨量維持に大豆イソフラボン・エクオール。関節軟骨にはグルコサミン・コンドロイチン。骨粗鬆症になってからでは遅い。',
+    },
+    riskProfile: [
+      '女性で40代後半〜閉経期以降である',
+      '骨折の既往がある・身長が縮んだと感じる',
+      '日光を浴びる時間が短く、ビタミンD欠乏リスクがある',
+      '運動習慣がない・荷重をかける運動をしていない',
+      'カルシウム・タンパク質の摂取量が少ない',
+      '関節の痛み・動きにくさ・こわばりを自覚している',
+    ],
   },
   {
     slug: 'metabolism',
@@ -7204,6 +7425,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '血糖スパイク・脂質代謝・インスリン感受性への関与が研究で示されている成分一覧',
     ingredientSlugs: ['berberine', 'alpha-lipoic-acid', 'egcg', 'nicotinamide-riboside', 'alpha-ketoglutarate', 'folic-acid', 'vitamin-b6', 'l-citrulline', 'equol', 'soy-isoflavones', 'inulin', 'spirulina', 'tmg', 'niacin', 'hmb', 'myo-inositol', 'akkermansia', 'carnosine', 'chromium', 'berberine'],
+    mechanism: {
+      cause: '加齢と運動不足でインスリン感受性が低下すると、食後の血糖スパイクが大きくなり、糖化産物（AGEs）が血中・組織に蓄積しやすくなる。これは遺伝よりも生活習慣で大きく変動する。',
+      process: 'AGEsはコラーゲン線維を不可逆的に架橋させ、血管壁を硬く・皮膚を黄ぐすませ・脳の神経機能も低下させる。つまり甘いものの影響は、体の奥で静かに全身の老化を加速させる。血糖の乱高下自体も、慢性炎症と酸化ストレスの引き金になる。',
+      direction: '対策は3段構え。血糖スパイクそのものを抑える（ベルベリン・αリポ酸）、AGEs生成を阻害する（カルノシン・αリポ酸）、腸内環境を整えて食物繊維で血糖上昇を緩やかにする（イヌリン・アッカーマンシア）。食後1時間のスパイクを抑えることが、最も効率的な老化対策になる。',
+    },
+    riskProfile: [
+      '食後に強い眠気・ぼんやり感が出る',
+      '甘いもの・炭水化物への欲求が止められない',
+      '内臓脂肪・ウエスト周囲の増加を自覚している',
+      '空腹時血糖・HbA1cが基準値の上限近くになってきた',
+      '運動習慣が週2回未満で、デスクワークが主体',
+      '食事間隔が長く、一度に大量に食べる習慣がある',
+    ],
   },
   {
     slug: 'longevity',
@@ -7212,6 +7446,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '細胞老化（Senescence）・オートファジー・NAD+経路など、老化の根本機序への関与が研究で示されている成分一覧',
     ingredientSlugs: ['quercetin', 'fisetin', 'spermidine', 'nicotinamide-riboside', 'alpha-ketoglutarate', 'nmn', 'resveratrol', 'urolithin-a', 'pqq', 'tmg', 'acetyl-l-carnitine', 'sulforaphane', 'hmb', 'nattokinase', 'akkermansia', 'carnosine', 'apigenin', 'pterostilbene', 'reishi', 'nac', 'olive-leaf-extract', 'luteolin', 'fisetin', 'astragalus'],
+    mechanism: {
+      cause: '加齢により、細胞分裂の限界を超えた老化細胞（Senescent Cells）が蓄積していく。これらは死なずに居座り続け、SASPで周囲の健康な細胞にも老化シグナルを伝播させる。同時にNAD+濃度とオートファジーの効率も低下する。',
+      process: '老化細胞の除去不全・ミトコンドリア機能低下・DNA損傷の蓄積・テロメア短縮など、老化の9つのHallmarks（López-Otín et al., Cell, 2013）として分類された経路が相互に絡みあい、全臓器機能を静かに蝕む。見た目の老化と細胞の老化は同じ時計で動いている。',
+      direction: '対策は3つの介入点。老化細胞を除去する成分（Senolytics：ケルセチン・フィセチン）、NAD+を補充してミトコンドリア機能を取り戻す（NMN・NR）、オートファジーを誘導する（スペルミジン・レスベラトロール）。細胞レベルで掃除するという新しい介入が、この10年で急速に実用化されている。',
+    },
+    riskProfile: [
+      '40代以降で、全般的な活力の低下を自覚する',
+      '傷の治りが以前より遅い、回復に時間がかかる',
+      '運動後の回復日数が増えた',
+      '糖質・加工食品過多の食生活',
+      '絶食・プチ断食などのオートファジー誘導習慣がない',
+      '慢性炎症・慢性ストレスの背景がある',
+    ],
   },
   {
     slug: 'eye-health',
@@ -7220,6 +7467,19 @@ export const concerns: Concern[] = [
     category: 'body',
     description: '加齢黄斑変性・ブルーライトダメージ・眼の酸化ストレスへの関与が研究で示されている成分一覧',
     ingredientSlugs: ['lutein', 'zeaxanthin'],
+    mechanism: {
+      cause: '紫外線・ブルーライト・酸化ストレスで、網膜黄斑のルテイン・ゼアキサンチン（黄斑色素）が徐々に消費されていく。加齢で黄斑の色素密度が低下することは、加齢黄斑変性（AMD）の最大のリスク因子として複数のコホート研究で示されている。',
+      process: '黄斑は視界の中心を担う部位であり、その変性は読書・運転・顔の識別といった日常生活の質に直結する。初期は自覚症状が出にくいまま数年〜10年単位で静かに進行するため、気づいた時には失われた視機能を取り戻すのが難しい。',
+      direction: '対策はシンプル。黄斑色素を直接補充するルテイン・ゼアキサンチン、紫外線・ブルーライトによる酸化ストレスを減らす抗酸化（ビタミンC・E・アスタキサンチン）、そして物理的にUVとブルーライトをブロックするサングラス・PC用メガネ。眼は失ってからでは戻せない部位。',
+    },
+    riskProfile: [
+      '40代以降で、暗所での見えにくさ・まぶしさを感じる',
+      'PC・スマホを1日6時間以上使う',
+      '紫外線対策（サングラス・帽子）が手薄',
+      '緑黄色野菜の摂取が少ない・魚を食べる頻度が低い',
+      '喫煙習慣がある、または受動喫煙の環境にいる',
+      '加齢黄斑変性・白内障の家族歴がある',
+    ],
   },
   {
     slug: 'muscle',
@@ -7228,6 +7488,19 @@ export const concerns: Concern[] = [
     category: 'muscle',
     description: 'サルコペニア（加齢性筋肉減少症）の予防・筋力維持・筋タンパク質合成への関与が研究で示されている成分一覧。40代以降の「老化×筋力」対策に。',
     ingredientSlugs: ['creatine', 'hmb', 'l-glutamine', 'vitamin-d', 'omega3', 'zinc', 'magnesium-glycinate', 'magnesium', 'taurine', 'l-citrulline', 'l-arginine', 'urolithin-a', 'coq10'],
+    mechanism: {
+      cause: '30代以降、筋タンパク質合成への反応性が低下する「アナボリック抵抗性」が進行する。同じタンパク質を摂っても20代より筋肉を作る効率が落ちるため、意識しなければ年約1%のペースで筋量が減少していく。これがサルコペニアの実体になる。',
+      process: '筋量の低下は基礎代謝低下・姿勢の崩れ・転倒リスク増に直結し、40代以降の体型変化・疲れやすさ・将来の介護リスクの上流要因になる。筋肉は免疫・血糖制御・ホルモン分泌にも関わる臓器であり、筋肉の老化は全身老化の大きな一部を占める。',
+      direction: '対策は3軸。筋タンパク質合成を強力に刺激するクレアチン・HMB、筋機能維持に不可欠なビタミンD・オメガ3、そしてミトコンドリア機能を支えるウロリチンA。何より運動×栄養の掛け算が前提であり、サプリだけでは止まらない。',
+    },
+    riskProfile: [
+      '40代以降で明らかに筋量・体力の低下を自覚する',
+      '運動習慣が週2回未満、または筋トレをしていない',
+      'タンパク質摂取量が体重×1g/日に届いていない',
+      '食事制限ダイエットで体重とともに筋肉も減らした経験がある',
+      '階段・坂道で以前より疲れやすい',
+      '座っている時間が1日8時間以上',
+    ],
   },
   {
     slug: 'cardiovascular',
@@ -7236,6 +7509,19 @@ export const concerns: Concern[] = [
     category: 'cardiovascular',
     description: '動脈硬化・血圧・血管内皮機能・血液の流れへの関与が研究で示されている成分一覧。「血管年齢」を意識した老化対策の核心テーマ。',
     ingredientSlugs: ['omega3', 'coq10', 'nattokinase', 'vitamin-k2', 'l-arginine', 'l-citrulline', 'resveratrol', 'quercetin', 'egcg', 'astaxanthin', 'vitamin-e', 'vitamin-d', 'tmg', 'folic-acid', 'vitamin-b12', 'vitamin-b6', 'beta-glucan', 'berberine', 'olive-leaf-extract', 'pterostilbene'],
+    mechanism: {
+      cause: '加齢・酸化ストレス・慢性炎症で血管内皮機能が低下すると、一酸化窒素（NO）の産生が減って血管の柔軟性が失われる。さらに血管壁にLDLコレステロール・AGEsが蓄積すると動脈硬化が進行し、自覚のないまま数十年かけて進む。',
+      process: '血管年齢は見た目年齢とも強く相関し、動脈硬化は心筋梗塞・脳梗塞という不可逆的な事故の直前まで症状を出さない。血管は全身の酸素・栄養配送網であるため、血管老化の加速はすなわち全臓器の老化加速に直結する。',
+      direction: '対策は3層で組み立てる。NO産生を支えるL-アルギニン・L-シトルリン、血管の抗酸化と炎症抑制に働くオメガ3・CoQ10・レスベラトロール、そして血液凝固バランスを整えるナットウキナーゼ・ビタミンK2。血管ケアは早く始めるほど可逆性が高い。',
+    },
+    riskProfile: [
+      '血圧が高めで推移している・健診で指摘を受けた',
+      'LDLコレステロール・中性脂肪が高めと指摘された',
+      '手足の冷え・むくみが慢性化している',
+      '運動習慣が週2回未満でデスクワーク中心',
+      '喫煙習慣がある、または過去に喫煙歴がある',
+      '家族に心筋梗塞・脳梗塞・高血圧の既往がある',
+    ],
   },
 ]
 
