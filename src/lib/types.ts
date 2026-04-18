@@ -13,7 +13,7 @@ export interface Paper {
 export interface Product {
   name: string
   brand: string
-  platform: 'iherb' | 'amazon' | 'rakuten' | 'cosme'
+  platform: 'iherb' | 'amazon' | 'cosme'
   url: string
   priceJpy: number
   dosageMg?: number
@@ -107,7 +107,7 @@ export interface ArticleIngredientCTA {
   urgencyNote?: string
   productName?: string
   productUrl?: string
-  productPlatform?: 'iherb' | 'amazon' | 'rakuten'
+  productPlatform?: 'iherb' | 'amazon'
   productPriceJpy?: number
   productHighlight?: string
 }

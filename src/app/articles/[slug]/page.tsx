@@ -36,9 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const platformLabel: Record<string, string> = {
-  iherb:   'iHerb',
-  amazon:  'Amazon',
-  rakuten: '楽天',
+  iherb:  'iHerb',
+  amazon: 'Amazon',
 }
 
 const categoryColor: Record<string, string> = {

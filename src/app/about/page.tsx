@@ -206,7 +206,7 @@ export default function AboutPage() {
             アフィリエイト・商業的関係について
           </h2>
           <p className="text-[13px] text-muted-foreground leading-relaxed">
-            本サイトにはiHerb・Amazon・楽天等のアフィリエイトリンクが含まれます。
+            本サイトにはiHerb・Amazonのアフィリエイトリンクが含まれます。
             リンク経由での購入により当サイトへ手数料が発生する場合があります。
             ただし、<span className="font-semibold text-foreground">商品の掲載・エビデンスランクの評価は広告主・商業的利益とは独立して行っており</span>、
             手数料の有無が評価に影響することはありません。

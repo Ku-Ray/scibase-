@@ -39,7 +39,6 @@ const studyLabel: Record<string, string> = {
 const platformLabel: Record<string, string> = {
   iherb:   'iHerb',
   amazon:  'Amazon',
-  rakuten: '楽天',
   cosme:   '@cosme',
 }
 
@@ -105,10 +104,9 @@ export default async function IngredientPage({ params }: Props) {
 
   /* Platform-grouped products */
   const platformProducts = {
-    iherb:   ing.products.filter(p => p.platform === 'iherb').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
-    amazon:  ing.products.filter(p => p.platform === 'amazon').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
-    rakuten: ing.products.filter(p => p.platform === 'rakuten').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
-    cosme:   ing.products.filter(p => p.platform === 'cosme').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+    iherb:  ing.products.filter(p => p.platform === 'iherb').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+    amazon: ing.products.filter(p => p.platform === 'amazon').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
+    cosme:  ing.products.filter(p => p.platform === 'cosme').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
   }
   const searchSuffix = ing.usageType === 'topical' ? ' スキンケア' : ' サプリ'
   const platformConfigs = [
@@ -131,16 +129,6 @@ export default async function IngredientPage({ params }: Props) {
       cardBg: 'bg-amber-50/40',
       btnClass: 'bg-amber-500 text-white',
       searchUrl: `https://www.amazon.co.jp/s?k=${encodeURIComponent(ing.nameJa + searchSuffix)}&tag=scibase-22`,
-    },
-    {
-      key: 'rakuten' as const,
-      label: '楽天',
-      headerBg: 'bg-rose-100',
-      headerText: 'text-rose-800',
-      border: 'border-rose-200',
-      cardBg: 'bg-rose-50/40',
-      btnClass: 'bg-rose-600 text-white',
-      searchUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(ing.nameJa + searchSuffix)}/`,
     },
   ]
 
@@ -613,8 +601,8 @@ export default async function IngredientPage({ params }: Props) {
               </div>
             )}
 
-            {/* 商品リスト - プラットフォーム別3択 */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {/* 商品リスト - プラットフォーム別2択 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {platformConfigs.map(({ key, label, headerBg, headerText, border, cardBg, btnClass, searchUrl }) => {
                 const prod = platformProducts[key]
                 return (

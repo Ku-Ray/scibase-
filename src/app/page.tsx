@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://scibase.app' },
 }
 
-const TOP_CONCERNS = ['spots', 'wrinkles', 'dry-skin', 'acne', 'pores', 'skin-aging', 'sleep', 'stress']
+const TOP_CONCERNS = ['spots', 'wrinkles', 'dry-skin', 'acne', 'pores', 'skin-aging', 'sleep', 'stress', 'longevity', 'inflammation']
 
 export default function Home() {
   const topIngredients = [...ingredients]
@@ -229,6 +229,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 注目・新着成分 ──────────────────────────── */}
+      <section className="border-t border-border px-5 py-14">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-baseline justify-between mb-8">
+            <div className="flex items-center gap-2.5">
+              <Microscope className="w-5 h-5 text-muted-foreground" />
+              <h2 className="font-semibold text-[20px] text-foreground">注目成分</h2>
+            </div>
+            <Link href="/ingredients"
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <p className="text-[13px] text-muted-foreground mb-6 -mt-4">
+            新着・エビデンスランクSの主要成分
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {topIngredients.map((ing) => (
+              <Link
+                key={ing.slug}
+                href={`/ingredients/${ing.slug}`}
+                className="group bg-card border border-border rounded-2xl p-4
+                  hover:border-accent/50 hover:shadow-md transition-all duration-200
+                  hover:-translate-y-0.5"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <EvidenceBadge rank={ing.evidenceRank} variant="chip" />
+                  {ing.emerging && (
+                    <span className="text-[10px] font-semibold text-amber-600 bg-amber-50
+                      border border-amber-200 rounded-full px-2 py-0.5">
+                      注目
+                    </span>
+                  )}
+                </div>
+                <p className="font-semibold text-[15px] text-foreground mb-1
+                  group-hover:text-accent transition-colors">
+                  {ing.nameJa}
+                </p>
+                <p className="text-[12px] text-muted-foreground line-clamp-2 leading-relaxed">
+                  {ing.tagline}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 新着コラム ───────────────────────────── */}
       <section className="border-t border-border px-5 py-14">
         <div className="max-w-5xl mx-auto">
@@ -288,7 +335,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5">
-            {concerns.map((c) => (
+            {concerns.map((c) => {
+              const concernIngredients = getIngredientsByConcern(c.slug)
+              const sCount = concernIngredients.filter(i => i.evidenceRank === 'S').length
+              return (
               <Link
                 key={c.slug}
                 href={`/concerns/${c.slug}`}
@@ -296,17 +346,25 @@ export default function Home() {
                   hover:-translate-y-0.5 hover:shadow-md transition-all duration-150
                   cat-${c.category}`}
               >
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2 mb-1.5">
                   <span className="text-[18px] leading-none">{c.emoji}</span>
                   <p className="font-semibold text-[13px] truncate">
                     {c.nameJa}
                   </p>
                 </div>
-                <p className="text-[11px] opacity-70 ml-7">
-                  {c.ingredientSlugs.length}成分
-                </p>
+                <div className="flex items-center gap-2 ml-7">
+                  <p className="text-[11px] opacity-70">
+                    {concernIngredients.length}成分
+                  </p>
+                  {sCount > 0 && (
+                    <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 rounded px-1.5 py-0.5 leading-none">
+                      S×{sCount}
+                    </span>
+                  )}
+                </div>
               </Link>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

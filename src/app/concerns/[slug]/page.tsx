@@ -47,7 +47,9 @@ const lossFraming: Record<string, string> = {
   'bone':         '骨密度は35歳をピークに低下する。失われた骨を取り戻すより、維持する方がはるかに効率的。',
   'metabolism':   '血糖スパイクが繰り返されるとAGEs（糖化産物）が蓄積し、皮膚・血管・脳を老化させる。',
   'longevity':    '老化細胞の蓄積は臓器機能を静かに蝕む。Senolytic研究は「除去」より「蓄積させないこと」を示す。',
-  'eye-health':   '眼の光老化は紫外線暴露とともに蓄積する。黄斑変性の初期は自覚症状がなく発見が遅れがち。',
+  'eye-health':    '眼の光老化は紫外線暴露とともに蓄積する。黄斑変性の初期は自覚症状がなく発見が遅れがち。',
+  'muscle':        'サルコペニア（加齢性筋肉減少）は30代から静かに始まる。筋量の低下は代謝・姿勢・転倒リスクに直結する。',
+  'cardiovascular': '心血管機能の低下は自覚なく進行する。動脈硬化・血圧上昇は早期介入ほど可逆性が高い。',
 }
 
 const categoryHero: Record<string, { bg: string; border: string; text: string }> = {
@@ -194,6 +196,12 @@ export default async function ConcernPage({ params }: Props) {
                   <ChevronRight className={`w-5 h-5 flex-shrink-0 mt-1 transition-colors
                     text-muted-foreground group-hover:${topRankText[top.evidenceRank]}`} />
                 </div>
+                {top.heroStat && (
+                  <p className="mt-3 text-[12px] text-muted-foreground leading-relaxed">
+                    <strong className="text-foreground">{top.heroStat.value}</strong>
+                    {' '}<span className="opacity-70">{top.heroStat.label}</span>
+                  </p>
+                )}
                 {top.dosageMin && (
                   <div className="mt-4 pt-4 border-t border-black/10 flex flex-wrap gap-4
                     text-[12px] text-muted-foreground">

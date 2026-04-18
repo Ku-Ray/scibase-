@@ -60,6 +60,24 @@ export default function ArticlesPage() {
         </div>
       </div>
 
+      {/* Category filter pills */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {[
+          { key: 'all', label: 'すべて' },
+          { key: 'skin', label: '肌老化' },
+          { key: 'anti-aging', label: 'アンチエイジング' },
+          { key: 'supplement', label: 'サプリ入門' },
+          { key: 'sleep', label: '睡眠' },
+        ].map(({ key, label }) => (
+          <a key={key} href={key === 'all' ? '/articles' : `/articles?cat=${key}`}
+            className={`text-[12px] font-medium px-3 py-1.5 rounded-full border transition-all
+              ${categoryColor[key] ?? 'bg-secondary text-muted-foreground border-border'}
+              hover:opacity-80`}>
+            {label}
+          </a>
+        ))}
+      </div>
+
       {/* Article List */}
       <div className="space-y-4">
         {articles.map((article) => (
