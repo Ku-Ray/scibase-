@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${BASE_URL}/articles/${slug}`,
       type: 'article',
       publishedTime: article.publishedAt,
+      modifiedTime: article.updatedAt ?? article.publishedAt,
     },
   }
 }
@@ -56,13 +57,32 @@ export default async function ArticlePage({ params }: Props) {
     .map((s) => getIngredient(s))
     .filter(Boolean) as NonNullable<ReturnType<typeof getIngredient>>[]
 
+  const relatedArticles = (article.relatedArticleSlugs ?? [])
+    .map((s) => getArticle(s))
+    .filter(Boolean) as NonNullable<ReturnType<typeof getArticle>>[]
+
+  /* citation: CTA成分の代表論文を集約（重複除去・優先度順） */
+  const studyPriority: Record<string, number> = {
+    'meta-analysis': 0, rct: 1, cohort: 2, observational: 3, animal: 4,
+  }
+  const citationPapers = Array.from(
+    new Map(
+      article.ingredients
+        .map((c) => getIngredient(c.slug))
+        .filter(Boolean)
+        .flatMap((ing) => ing!.papers)
+        .sort((a, b) => (studyPriority[a.studyType] ?? 9) - (studyPriority[b.studyType] ?? 9))
+        .map((p) => [p.title, p] as const)
+    ).values()
+  ).slice(0, 8)
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
     description: article.description,
     datePublished: article.publishedAt,
-    dateModified: article.publishedAt,
+    dateModified: article.updatedAt ?? article.publishedAt,
     author: {
       '@type': 'Person',
       name: 'SciBase 編集者',
@@ -76,6 +96,14 @@ export default async function ArticlePage({ params }: Props) {
       url: BASE_URL,
     },
     url: `${BASE_URL}/articles/${slug}`,
+    ...(citationPapers.length > 0 && {
+      citation: citationPapers.map((p) => ({
+        '@type': 'ScholarlyArticle',
+        name: p.title,
+        datePublished: String(p.year),
+        isPartOf: { '@type': 'Periodical', name: p.journal },
+      })),
+    }),
   }
 
   const breadcrumbJsonLd = {
@@ -378,6 +406,45 @@ export default async function ArticlePage({ params }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {relatedIngredients.map((ing) => (
                 <IngredientCard key={ing.slug} ingredient={ing} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── Related Articles ── */}
+        {relatedArticles.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-center gap-2 mb-5">
+              <BookOpen className="w-4 h-4 text-muted-foreground" />
+              <h2 className="text-[17px] font-bold text-foreground">関連コラム</h2>
+            </div>
+            <div className="space-y-3">
+              {relatedArticles.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/articles/${a.slug}`}
+                  className="group flex items-start gap-4 border border-border rounded-xl p-4
+                    hover:border-accent/50 hover:bg-secondary/50 transition-all duration-150"
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded border
+                        ${categoryColor[a.category] ?? 'bg-secondary text-muted-foreground border-border'}`}>
+                        {a.categoryLabel}
+                      </span>
+                      <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                        <Clock className="w-3 h-3" />
+                        {a.readingMinutes}分
+                      </span>
+                    </div>
+                    <p className="font-semibold text-[14px] text-foreground leading-snug
+                      group-hover:text-accent transition-colors">
+                      {a.title}
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5
+                    group-hover:text-accent transition-colors" />
+                </Link>
               ))}
             </div>
           </section>

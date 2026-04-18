@@ -132,6 +132,8 @@ export interface Article {
   category: ArticleCategory
   categoryLabel: string
   publishedAt: string
+  /** 記事本文・JSON-LDが最後に更新された日。省略時は publishedAt にフォールバック */
+  updatedAt?: string
   readingMinutes: number
   /** ヒーロー数値（アンカリング） */
   heroStat: { value: string; label: string }
@@ -147,4 +149,5 @@ export interface Article {
   ingredients: ArticleIngredientCTA[]
   faqs: ArticleFAQ[]
   relatedIngredientSlugs: string[]
+  relatedArticleSlugs?: string[]
 }

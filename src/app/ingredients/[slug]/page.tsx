@@ -21,9 +21,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const ing = getIngredient(slug)
   if (!ing) return {}
+
+  const usageAxis =
+    ing.usageType === 'topical' ? '推奨濃度' :
+    ing.usageType === 'both'    ? '使い方'   :
+                                  '有効量'
+  const descAxis =
+    ing.usageType === 'topical' ? '推奨濃度・使い方・副作用' :
+    ing.usageType === 'both'    ? '有効量・濃度・副作用'     :
+                                  '有効量・タイミング・副作用'
+
   return {
-    title: `${ing.nameJa} 効果・副作用・濃度【論文エビデンス${ing.evidenceRank}ランク】`,
-    description: `エビデンスランク${ing.evidenceRank}。${ing.papers.length}件の論文をもとに${ing.nameJa}の効果・副作用・有効量を解説。${ing.tagline}`,
+    title: `${ing.nameJa} 効果・副作用・${usageAxis}【論文エビデンス${ing.evidenceRank}ランク】`,
+    description: `${ing.nameJa}の論文エビデンス${ing.evidenceRank}ランク。${ing.papers.length}本の研究から${descAxis}を解説。${ing.tagline}`,
     alternates: { canonical: `${BASE_URL}/ingredients/${slug}` },
   }
 }
@@ -214,6 +224,40 @@ export default async function IngredientPage({ params }: Props) {
     })),
   } : null
 
+  /* HowTo JSON-LD — 始め方3ステップ（DOM表示と同一文言） */
+  const howToJsonLd = (ing.dosageMin || ing.timing || ing.duration) ? {
+    '@context': 'https://schema.org',
+    '@type':    'HowTo',
+    name:       `${ing.nameJa}の始め方`,
+    description: `${ing.nameJa}を論文で示された用量・タイミング・期間で使い始める3ステップ。`,
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name:    '有効量を確認する',
+        text: ing.dosageMin
+          ? ing.dosageUnit.includes('濃度')
+            ? `配合濃度${ing.dosageMin}%以上の製品を選ぶ。論文で使用された濃度の基準となる。`
+            : `1日${ing.dosageMin}${ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `〜${ing.dosageMax}` : ''}${ing.dosageUnit}を目安にする。この量が論文で効果を確認した用量。`
+          : '製品ラベルの配合量を確認する。',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name:    'タイミングと使い方',
+        text: ing.timing ?? (ing.usageType === 'topical'
+          ? '洗顔後の清潔な肌に使用。保湿剤の前に塗布するのが一般的。'
+          : '食事と一緒に摂取するのが吸収を助けることが多い。'),
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name:    '効果が出るまでの期間',
+        text: ing.duration ?? '継続的な使用が重要。数週間〜数ヶ月単位での評価が必要。短期間での判断は避ける。',
+      },
+    ],
+  } : null
+
   /* Build ToC sections */
   const tocSections: TocSection[] = [
     { id: 'description', label: 'この成分について' },
@@ -233,6 +277,9 @@ export default async function IngredientPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {faqJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
+      {howToJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       )}
 
       {/* ── Hero (light tinted block) ─────────────────── */}
