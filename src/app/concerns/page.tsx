@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { concerns } from '@/lib/data'
+import type { Concern } from '@/lib/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,24 +9,62 @@ export const metadata: Metadata = {
 }
 
 const categoryLabel: Record<string, string> = {
-  skin:      'スキンケア',
-  sleep:     '睡眠',
-  body:      '体・全身',
-  cognitive: '認知・メンタル',
-  gut:       '腸・消化',
-  immunity:  '免疫',
+  skin:           'スキンケア',
+  body:           '体・全身',
+  cognitive:      '認知・メンタル',
+  sleep:          '睡眠',
+  gut:            '腸・消化',
+  immunity:       '免疫',
+  muscle:         '筋肉・運動',
+  cardiovascular: '血管・循環',
 }
 
-const CATEGORY_ORDER = ['skin', 'body', 'cognitive', 'sleep', 'gut', 'immunity']
+const CATEGORY_ORDER = [
+  'skin', 'body', 'cognitive', 'sleep', 'gut', 'immunity', 'muscle', 'cardiovascular',
+]
+
+const POPULAR_SLUGS = ['wrinkles', 'spots', 'uv-damage', 'sleep', 'longevity', 'cognitive']
+
+function ConcernCard({ c }: { c: Concern }) {
+  return (
+    <Link
+      href={`/concerns/${c.slug}`}
+      className={`group border rounded-xl p-5
+        hover:-translate-y-0.5 hover:shadow-md transition-all duration-150
+        cat-${c.category}`}
+    >
+      <div className="flex items-start justify-between gap-2 mb-1.5">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-[20px] leading-none flex-shrink-0">{c.emoji}</span>
+          <h2 className="font-semibold text-[15px] truncate
+            group-hover:opacity-80 transition-opacity">
+            {c.nameJa}
+          </h2>
+        </div>
+        <span className="text-[11px] px-2 py-0.5 rounded-md flex-shrink-0
+          bg-white/50 border border-current/20 opacity-70">
+          {c.ingredientSlugs.length}成分
+        </span>
+      </div>
+      <p className="text-[13px] leading-relaxed line-clamp-2 opacity-70 ml-8">
+        {c.description}
+      </p>
+    </Link>
+  )
+}
 
 export default function ConcernsPage() {
   const orderedCategories = CATEGORY_ORDER.filter(cat =>
     concerns.some(c => c.category === cat)
   )
 
+  const popular = POPULAR_SLUGS
+    .map(slug => concerns.find(c => c.slug === slug))
+    .filter((c): c is Concern => Boolean(c))
+
   return (
     <div className="max-w-4xl mx-auto px-5 py-10">
-      <div className="mb-10">
+      <div className="mb-7">
         <h1 className="font-bold text-[28px] sm:text-[34px] text-foreground mb-2 tracking-tight">
           悩みから探す
         </h1>
@@ -34,40 +73,54 @@ export default function ConcernsPage() {
         </p>
       </div>
 
+      <nav aria-label="カテゴリで絞り込み" className="mb-12 flex flex-wrap gap-2">
+        {orderedCategories.map((cat) => (
+          <a
+            key={cat}
+            href={`#cat-${cat}`}
+            className={`cat-${cat} text-[12.5px] font-medium px-3 py-1.5 rounded-full border
+              hover:-translate-y-0.5 hover:shadow-sm transition-all duration-150`}
+          >
+            {categoryLabel[cat]}
+          </a>
+        ))}
+      </nav>
+
+      {popular.length > 0 && (
+        <section className="mb-14">
+          <div className="flex items-baseline justify-between mb-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
+              text-muted-foreground">
+              人気Top6
+            </p>
+            <span className="text-[11px] text-muted-foreground/70">
+              まず見られている悩み
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {popular.map((c) => (
+              <ConcernCard key={c.slug} c={c} />
+            ))}
+          </div>
+        </section>
+      )}
+
       <div className="space-y-12">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
+          text-muted-foreground -mb-6">
+          すべての悩み
+        </p>
         {orderedCategories.map((cat) => {
           const catConcerns = concerns.filter((c) => c.category === cat)
           return (
-            <section key={cat}>
+            <section key={cat} id={`cat-${cat}`} className="scroll-mt-20">
               <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
                 text-muted-foreground mb-5">
                 {categoryLabel[cat]}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {catConcerns.map((c) => (
-                  <Link key={c.slug} href={`/concerns/${c.slug}`}
-                    className={`group border rounded-xl p-5
-                      hover:-translate-y-0.5 hover:shadow-md transition-all duration-150
-                      cat-${c.category}`}>
-                    <div className="flex items-start justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-[20px] leading-none flex-shrink-0">
-                          {c.emoji}
-                        </span>
-                        <h2 className="font-semibold text-[15px] truncate
-                          group-hover:opacity-80 transition-opacity">
-                          {c.nameJa}
-                        </h2>
-                      </div>
-                      <span className="text-[11px] px-2 py-0.5 rounded-md flex-shrink-0
-                        bg-white/50 border border-current/20 opacity-70">
-                        {c.ingredientSlugs.length}成分
-                      </span>
-                    </div>
-                    <p className="text-[13px] leading-relaxed line-clamp-2 opacity-70 ml-8">
-                      {c.description}
-                    </p>
-                  </Link>
+                  <ConcernCard key={c.slug} c={c} />
                 ))}
               </div>
             </section>
