@@ -140,7 +140,13 @@ export default async function IngredientPage({ params }: Props) {
     url:               `${BASE_URL}/ingredients/${slug}`,
     datePublished:     ing.updatedAt,
     dateModified:      ing.updatedAt,
-    author:            { '@type': 'Organization', name: 'SciBase' },
+    author: {
+      '@type': 'Person',
+      name: 'SciBase 編集者',
+      url: `${BASE_URL}/about`,
+      jobTitle: '化粧品メーカー研究職',
+      sameAs: ['https://x.com/r_evidence_'],
+    },
     publisher:         { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
     mainEntityOfPage:  { '@type': 'WebPage', '@id': `${BASE_URL}/ingredients/${slug}` },
   }

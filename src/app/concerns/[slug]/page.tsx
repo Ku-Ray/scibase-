@@ -85,9 +85,81 @@ export default async function ConcernPage({ params }: Props) {
     ],
   }
 
+  const itemListJsonLd = top3.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${concern.nameJa}に効く成分Top 3`,
+    numberOfItems: top3.length,
+    itemListElement: top3.map((ing, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: ing.nameJa,
+      url: `${BASE_URL}/ingredients/${ing.slug}`,
+    })),
+  } : null
+
+  const rankLabel: Record<EvidenceRank, string> = {
+    S: 'Sランク・メタ解析',
+    A: 'Aランク・RCT',
+    B: 'Bランク・コホート研究',
+    C: 'Cランク・小規模研究',
+  }
+
+  const faqMainEntity: Array<{ '@type': 'Question'; name: string; acceptedAnswer: { '@type': 'Answer'; text: string } }> = []
+
+  if (lossFraming[slug]) {
+    faqMainEntity.push({
+      '@type': 'Question',
+      name: `${concern.nameJa}を放置するとどうなりますか？`,
+      acceptedAnswer: { '@type': 'Answer', text: lossFraming[slug] },
+    })
+  }
+  if (concern.mechanism) {
+    faqMainEntity.push({
+      '@type': 'Question',
+      name: `${concern.nameJa}の原因は何ですか？`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${concern.mechanism.cause} ${concern.mechanism.process}`,
+      },
+    })
+  }
+  if (concern.riskProfile && concern.riskProfile.length > 0) {
+    faqMainEntity.push({
+      '@type': 'Question',
+      name: `${concern.nameJa}で注意が必要な人は？`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: concern.riskProfile.join(' / '),
+      },
+    })
+  }
+  if (top3.length > 0) {
+    faqMainEntity.push({
+      '@type': 'Question',
+      name: `${concern.nameJa}に効く成分は何ですか？`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: top3.map((ing) => `${ing.nameJa}（${rankLabel[ing.evidenceRank]}）`).join('、') + ' の3つが論文エビデンス順に優先される。',
+      },
+    })
+  }
+
+  const faqJsonLd = faqMainEntity.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqMainEntity,
+  } : null
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {itemListJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
+      )}
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
 
       {/* ── Category Hero ─────────────────────────────── */}
       <div className={`${hero.bg} border-t-4 ${hero.border}`}>

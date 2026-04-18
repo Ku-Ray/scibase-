@@ -63,13 +63,29 @@ export default async function ArticlePage({ params }: Props) {
     description: article.description,
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
-    author: { '@type': 'Organization', name: 'SciBase' },
+    author: {
+      '@type': 'Person',
+      name: 'SciBase 編集者',
+      url: `${BASE_URL}/about`,
+      jobTitle: '化粧品メーカー研究職',
+      sameAs: ['https://x.com/r_evidence_'],
+    },
     publisher: {
       '@type': 'Organization',
       name: 'SciBase',
       url: BASE_URL,
     },
     url: `${BASE_URL}/articles/${slug}`,
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type':    'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'コラム', item: `${BASE_URL}/articles` },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `${BASE_URL}/articles/${slug}` },
+    ],
   }
 
   const faqJsonLd = article.faqs.length > 0 ? {
@@ -90,6 +106,10 @@ export default async function ArticlePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {faqJsonLd && (
         <script
