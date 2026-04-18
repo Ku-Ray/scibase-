@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: '成分ランキング｜悩み別・論文エビデンス順',
   description: 'シミ・乾燥・ニキビ・老化など悩み別に、論文エビデンスが強い成分をランキング形式で紹介。メタ解析・RCTの結果に基づいた科学的評価。',
+  alternates: { canonical: 'https://scibase.app/ranking' },
 }
 
 const categoryLabel: Record<string, string> = {

@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'サプリ診断 | 今のサプリを7軸で評価',
   description: '今飲んでいるサプリメントを入力すると、抗老化・肌・脳・ストレス・睡眠・免疫・代謝の7軸でカバー状況を可視化。不足している成分もレコメンド。',
+  alternates: { canonical: 'https://scibase.app/analyzer' },
 }
 
 export default function AnalyzerPage() {
