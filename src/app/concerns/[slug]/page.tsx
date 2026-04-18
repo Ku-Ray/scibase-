@@ -180,9 +180,14 @@ export default async function ConcernPage({ params }: Props) {
               <p className={`text-[11px] font-semibold uppercase tracking-[0.15em] mb-1 ${hero.text}`}>
                 {concern.category}
               </p>
-              <h1 className="text-[30px] sm:text-[40px] font-black text-foreground
-                leading-[1.15] tracking-tight">
-                {concern.nameJa}
+              <h1>
+                <span className="block text-[30px] sm:text-[40px] font-black text-foreground
+                  leading-[1.15] tracking-tight">
+                  {concern.nameJa}
+                </span>
+                <span className={`block text-[14px] sm:text-[16px] font-semibold mt-2 ${hero.text} opacity-80`}>
+                  に効く成分・サプリ一覧【論文エビデンス順】
+                </span>
               </h1>
             </div>
           </div>

@@ -103,6 +103,11 @@ export default async function IngredientPage({ params }: Props) {
 
   const relatedArticles = getArticlesByIngredient(slug)
 
+  const usageAxis =
+    ing.usageType === 'topical' ? '推奨濃度' :
+    ing.usageType === 'both'    ? '使い方'   :
+                                  '有効量'
+
   const siblingIngredients = [
     ...new Map(
       ing.concerns
@@ -224,6 +229,38 @@ export default async function IngredientPage({ params }: Props) {
     })),
   } : null
 
+  /* Products ItemList JSON-LD — プラットフォーム別Top推奨商品（アフィリエイト商品） */
+  const rankedProducts = ing.products
+    .filter(p => p.rank)
+    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
+  const productsJsonLd = rankedProducts.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type':    'ItemList',
+    name:       `${ing.nameJa}のおすすめ商品（論文エビデンス基準）`,
+    description: `論文で有効とされた用量・濃度を含む${ing.nameJa}商品を独立した立場で評価・選定。`,
+    itemListElement: rankedProducts.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name:  p.name,
+        brand: { '@type': 'Brand', name: p.brand },
+        ...(p.reasonJa && { description: p.reasonJa }),
+        ...(p.certifications?.length && {
+          hasCertification: p.certifications.map(c => ({ '@type': 'Certification', name: c })),
+        }),
+        offers: {
+          '@type':        'Offer',
+          price:          p.priceJpy,
+          priceCurrency:  'JPY',
+          url:            p.url,
+          availability:   'https://schema.org/InStock',
+          seller: { '@type': 'Organization', name: platformLabel[p.platform] ?? p.platform },
+        },
+      },
+    })),
+  } : null
+
   /* HowTo JSON-LD — 始め方3ステップ（DOM表示と同一文言） */
   const howToJsonLd = (ing.dosageMin || ing.timing || ing.duration) ? {
     '@context': 'https://schema.org',
@@ -281,6 +318,9 @@ export default async function IngredientPage({ params }: Props) {
       {howToJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       )}
+      {productsJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productsJsonLd) }} />
+      )}
 
       {/* ── Hero (light tinted block) ─────────────────── */}
       <div className={`${heroBg[ing.evidenceRank]} border-t-8 ${heroBorder[ing.evidenceRank]}`}>
@@ -318,11 +358,17 @@ export default async function IngredientPage({ params }: Props) {
           </div>
 
           {/* Name */}
-          <h1 className="text-[34px] sm:text-[44px] font-black leading-[1.15]
-            tracking-tight text-foreground mb-1.5">
-            {ing.nameJa}
+          <h1 className="mb-1.5">
+            <span className="block text-[34px] sm:text-[44px] font-black leading-[1.15]
+              tracking-tight text-foreground">
+              {ing.nameJa}
+            </span>
+            <span className={`block text-[15px] sm:text-[17px] font-semibold mt-2.5
+              ${heroText[ing.evidenceRank]} opacity-80`}>
+              効果・副作用・{usageAxis}・論文エビデンス
+            </span>
           </h1>
-          <p className="text-[13px] text-muted-foreground mb-5 tracking-wide">
+          <p className="text-[13px] text-muted-foreground mt-2 mb-5 tracking-wide">
             {ing.nameEn}
           </p>
 

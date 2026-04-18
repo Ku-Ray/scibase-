@@ -29,28 +29,53 @@ export const metadata: Metadata = {
     siteName:    'SciBase',
     title:       'SciBase — 論文で選ぶ、成分データベース',
     description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   twitter: {
-    card:        'summary_large_image',
+    card:        'summary',
     site:        '@scibase_jp',
     title:       'SciBase — 論文で選ぶ、成分データベース',
     description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
-    images:      ['/og-default.png'],
   },
   alternates: { canonical: BASE_URL },
 }
 
-const jsonLd = {
+const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type':    'WebSite',
+  '@id':      `${BASE_URL}/#website`,
   name:       'SciBase',
   url:        BASE_URL,
   description: '査読済み論文に基づいて美容・健康成分のエビデンスを評価・解説するデータベース',
+  publisher:  { '@id': `${BASE_URL}/#organization` },
+  inLanguage: 'ja-JP',
   potentialAction: {
     '@type':       'SearchAction',
     target:        `${BASE_URL}/ingredients?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
+  },
+}
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type':    'Organization',
+  '@id':      `${BASE_URL}/#organization`,
+  name:       'SciBase',
+  url:        BASE_URL,
+  logo: {
+    '@type': 'ImageObject',
+    url:     `${BASE_URL}/scibase_logo.png`,
+    width:   500,
+    height:  500,
+  },
+  description: '論文エビデンスに基づくスキンケア・サプリメント成分データベース',
+  foundingDate: '2026',
+  sameAs: ['https://x.com/r_evidence_'],
+  founder: {
+    '@type':   'Person',
+    name:      'SciBase 編集者',
+    url:       `${BASE_URL}/about`,
+    jobTitle:  '化粧品メーカー研究職',
+    sameAs:    ['https://x.com/r_evidence_'],
   },
 }
 
@@ -63,7 +88,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         {GA_ID && (
           <>
