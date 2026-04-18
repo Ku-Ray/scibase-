@@ -56,8 +56,7 @@ export default async function ArticlePage({ params }: Props) {
     .map((s) => getIngredient(s))
     .filter(Boolean) as NonNullable<ReturnType<typeof getIngredient>>[]
 
-  // JSON-LD for Article
-  const jsonLd = {
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
@@ -73,12 +72,31 @@ export default async function ArticlePage({ params }: Props) {
     url: `${BASE_URL}/articles/${slug}`,
   }
 
+  const faqJsonLd = article.faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: article.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <div className="max-w-2xl mx-auto px-5 py-10">
 
