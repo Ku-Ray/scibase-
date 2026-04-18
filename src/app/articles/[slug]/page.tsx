@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticle(slug)
   if (!article) return {}
   return {
-    title: `${article.title} | SciBase`,
+    title: article.title,
     description: article.description,
     alternates: { canonical: `${BASE_URL}/articles/${slug}` },
     openGraph: {

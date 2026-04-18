@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 const BASE_URL = 'https://scibase.app'
 
 export const metadata: Metadata = {
-  title: 'コラム｜老化・成分・習慣を論文で解説 | SciBase',
+  title: 'コラム｜老化・成分・習慣を論文で解説',
   description:
     'コラーゲン・NAD+・睡眠と老化など、スキンケア・サプリ・老化対策のテーマを論文エビデンスで解説するコラム。成分データベースへの入口として活用できます。',
   alternates: { canonical: `${BASE_URL}/articles` },
