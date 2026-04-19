@@ -229,9 +229,10 @@ export default async function IngredientPage({ params }: Props) {
     })),
   } : null
 
-  /* Products ItemList JSON-LD — プラットフォーム別Top推奨商品（アフィリエイト商品） */
+  /* Products ItemList JSON-LD — プラットフォーム別Top推奨商品（アフィリエイト商品）
+     Amazon検索URL（/s?k=）は具体商品ではないため JSON-LD からは除外 */
   const rankedProducts = ing.products
-    .filter(p => p.rank)
+    .filter(p => p.rank && !/\/s\?k=/.test(p.url))
     .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
   const productsJsonLd = rankedProducts.length > 0 ? {
     '@context': 'https://schema.org',

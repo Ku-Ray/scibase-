@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
   },
   twitter: {
-    card:        'summary',
+    card:        'summary_large_image',
     site:        '@scibase_jp',
     title:       'SciBase — 論文で選ぶ、成分データベース',
     description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
