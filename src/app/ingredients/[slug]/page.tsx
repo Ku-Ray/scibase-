@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ExternalLink, ArrowLeft, Trophy, BarChart2, GitCompare, BookOpen, Clock } from 'lucide-react'
+import { ChevronRight, ExternalLink, ArrowLeft, ArrowRight, Trophy, BarChart2, GitCompare, BookOpen, Clock } from 'lucide-react'
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
 import { getArticlesByIngredient } from '@/lib/articles'
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
@@ -1078,6 +1078,36 @@ export default async function IngredientPage({ params }: Props) {
             成分一覧に戻る
           </Link>
         </div>
+
+        {/* 著者情報（E-E-A-T対応・小型） */}
+        <aside className="mt-14 pt-8 border-t border-border">
+          <div className="flex items-start gap-4 bg-card border border-border rounded-2xl p-5">
+            <div className="w-12 h-12 rounded-full bg-muted flex-shrink-0 flex items-center justify-center
+              text-[18px] font-semibold text-muted-foreground">
+              編
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-[14px] text-foreground mb-0.5">
+                SciBase 編集者
+              </p>
+              <p className="text-[12px] text-muted-foreground mb-2">
+                化粧品メーカー勤務・成分研究担当
+              </p>
+              <p className="text-[12px] text-muted-foreground leading-relaxed">
+                現役で化粧品メーカーに勤務し、職務上の成分評価・論文調査を独立した立場で発信しています。
+                本ページはメタ解析・RCT・コホート研究のみを参照。
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1 text-[12px] text-foreground
+                  font-medium mt-2 hover:underline"
+              >
+                編集方針・評価基準
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+        </aside>
 
         </div>{/* /main content */}
         <TableOfContents sections={tocSections} />

@@ -80,8 +80,8 @@ export default function Home() {
               🔬 今のサプリを診断する
             </Link>
           </div>
-          <p className="text-[11px] text-muted-foreground/70 mb-8">
-            初めての方は <span className="font-medium text-foreground/80">「悩みから探す」</span> から
+          <p className="text-[12px] text-muted-foreground mb-8">
+            初めての方は <span className="font-medium text-foreground">「悩みから探す」</span> から
           </p>
 
           {/* 統計 */}
@@ -96,7 +96,7 @@ export default function Home() {
 
           {/* 悩みタグ */}
           <div>
-            <p className="text-[11px] text-muted-foreground/60 mb-3 tracking-wider uppercase font-medium">
+            <p className="text-[11px] text-muted-foreground mb-3 tracking-wider font-medium">
               悩みから探す
             </p>
             <div className="flex flex-wrap justify-center gap-2">

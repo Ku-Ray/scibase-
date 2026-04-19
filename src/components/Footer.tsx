@@ -8,8 +8,9 @@ export function Footer() {
         <p className="text-[13px] text-muted-foreground leading-relaxed bg-secondary rounded-xl p-4">
           <span className="font-semibold text-foreground">PR・アフィリエイト表記 —{' '}</span>
           本サイトにはiHerb・Amazonのアフィリエイトリンクが含まれます。
-          リンク経由での購入により当サイトへ手数料が発生する場合がありますが、
-          掲載内容は論文エビデンスに基づき独立して評価しています。
+          ユーザーがリンクから商品を購入すると、運営に販売手数料が支払われる仕組みです。
+          ただし、成分・商品の掲載順位および評価は論文エビデンスのみに基づいて決定しており、
+          手数料の有無・金額が評価に影響することはありません。
         </p>
 
         <p className="text-[13px] text-muted-foreground leading-relaxed">

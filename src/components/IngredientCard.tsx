@@ -74,7 +74,7 @@ export function IngredientCard({ ingredient: ing, rank, showConcerns = true }: P
                 group-hover:text-accent transition-colors truncate">
                 {ing.nameJa}
               </h3>
-              <p className="text-[11px] text-muted-foreground/50 truncate">{ing.nameEn}</p>
+              <p className="text-[11px] text-muted-foreground truncate">{ing.nameEn}</p>
             </div>
           </div>
           <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
@@ -88,10 +88,10 @@ export function IngredientCard({ ingredient: ing, rank, showConcerns = true }: P
         {/* Evidence bar */}
         <div>
           <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[10px] text-muted-foreground/50 uppercase tracking-wide font-medium">
+            <span className="text-[10px] text-muted-foreground uppercase tracking-wide font-medium">
               Evidence
             </span>
-            <span className="text-[10px] text-muted-foreground/50">
+            <span className="text-[10px] text-muted-foreground">
               {ing.papers.length}件の論文
             </span>
           </div>
@@ -115,13 +115,13 @@ export function IngredientCard({ ingredient: ing, rank, showConcerns = true }: P
             )}
             {relatedConcerns.map(c => (
               <span key={c.slug}
-                className="text-[10px] text-muted-foreground/60 truncate max-w-[72px]">
+                className="text-[10px] text-muted-foreground truncate max-w-[72px]">
                 {c.emoji} {c.nameJa}
               </span>
             ))}
           </div>
           {ing.dosageMin && (
-            <span className="text-[10px] text-muted-foreground/50 flex-shrink-0 tabular-nums">
+            <span className="text-[10px] text-muted-foreground flex-shrink-0 tabular-nums">
               {ing.dosageMin}
               {ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `–${ing.dosageMax}` : ''}
               {ing.dosageUnit.includes('濃度') ? '%' : ing.dosageUnit.split('/')[0].replace('mg', 'mg')}

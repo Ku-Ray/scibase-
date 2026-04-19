@@ -42,7 +42,7 @@ export function TableOfContents({ sections }: Props) {
   return (
     <aside className="hidden lg:block">
       <div className="sticky top-20 w-52">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60 mb-3">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
           目次
         </p>
         <nav className="space-y-0.5">

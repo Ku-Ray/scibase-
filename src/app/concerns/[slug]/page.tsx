@@ -53,12 +53,25 @@ const lossFraming: Record<string, string> = {
 }
 
 const categoryHero: Record<string, { bg: string; border: string; text: string }> = {
-  skin:      { bg: 'bg-rose-50',    border: 'border-t-rose-400',    text: 'text-rose-700'    },
-  body:      { bg: 'bg-orange-50',  border: 'border-t-orange-400',  text: 'text-orange-700'  },
-  cognitive: { bg: 'bg-blue-50',    border: 'border-t-blue-500',    text: 'text-blue-700'    },
-  sleep:     { bg: 'bg-violet-50',  border: 'border-t-violet-500',  text: 'text-violet-700'  },
-  gut:       { bg: 'bg-teal-50',    border: 'border-t-teal-500',    text: 'text-teal-700'    },
-  immunity:  { bg: 'bg-emerald-50', border: 'border-t-emerald-500', text: 'text-emerald-700' },
+  skin:           { bg: 'bg-rose-50',    border: 'border-t-rose-400',    text: 'text-rose-700'    },
+  body:           { bg: 'bg-orange-50',  border: 'border-t-orange-400',  text: 'text-orange-700'  },
+  cognitive:      { bg: 'bg-blue-50',    border: 'border-t-blue-500',    text: 'text-blue-700'    },
+  sleep:          { bg: 'bg-violet-50',  border: 'border-t-violet-500',  text: 'text-violet-700'  },
+  gut:            { bg: 'bg-teal-50',    border: 'border-t-teal-500',    text: 'text-teal-700'    },
+  immunity:       { bg: 'bg-emerald-50', border: 'border-t-emerald-500', text: 'text-emerald-700' },
+  muscle:         { bg: 'bg-amber-50',   border: 'border-t-amber-500',   text: 'text-amber-700'   },
+  cardiovascular: { bg: 'bg-red-50',     border: 'border-t-red-500',     text: 'text-red-700'     },
+}
+
+const categoryLabel: Record<string, string> = {
+  skin:           'スキンケア',
+  body:           '体・全身',
+  cognitive:      '認知・メンタル',
+  sleep:          '睡眠',
+  gut:            '腸・消化',
+  immunity:       '免疫',
+  muscle:         '筋肉・運動',
+  cardiovascular: '血管・循環',
 }
 
 export default async function ConcernPage({ params }: Props) {
@@ -177,8 +190,8 @@ export default async function ConcernPage({ params }: Props) {
           <div className="flex items-center gap-4 mb-4">
             <span className="text-[48px] leading-none">{concern.emoji}</span>
             <div>
-              <p className={`text-[11px] font-semibold uppercase tracking-[0.15em] mb-1 ${hero.text}`}>
-                {concern.category}
+              <p className={`text-[11px] font-semibold tracking-[0.1em] mb-1 ${hero.text}`}>
+                {categoryLabel[concern.category] ?? concern.category}
               </p>
               <h1>
                 <span className="block text-[30px] sm:text-[40px] font-black text-foreground
@@ -522,6 +535,35 @@ export default async function ConcernPage({ params }: Props) {
             })}
           </div>
         </details>
+      )}
+
+      {/* FAQ（JSON-LDと同じ内容をUI表示） */}
+      {faqMainEntity.length > 0 && (
+        <section className="mt-14 pt-10 border-t border-border">
+          <h2 className="font-bold text-[18px] text-foreground mb-5">
+            よくある質問
+          </h2>
+          <div className="space-y-2">
+            {faqMainEntity.map((qa, i) => (
+              <details
+                key={i}
+                className="group border border-border rounded-xl px-5 py-4 bg-background
+                  hover:bg-muted/20 transition-colors"
+                open={i === 0}
+              >
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-3
+                  font-semibold text-[14px] text-foreground min-h-[44px] items-center">
+                  <span className="flex-1">{qa.name}</span>
+                  <span className="text-muted-foreground text-[12px] flex-shrink-0
+                    group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-3 text-[13px] text-foreground/75 leading-[1.85]">
+                  {qa.acceptedAnswer.text}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* 関連悩み */}

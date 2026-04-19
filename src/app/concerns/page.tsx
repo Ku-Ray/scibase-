@@ -20,9 +20,10 @@ const categoryLabel: Record<string, string> = {
   cardiovascular: '血管・循環',
 }
 
-const CATEGORY_ORDER = [
-  'skin', 'body', 'cognitive', 'sleep', 'gut', 'immunity', 'muscle', 'cardiovascular',
-]
+// 複数項目があるカテゴリ（独立セクション化）
+const MAIN_CATEGORIES = ['skin', 'body']
+// 1項目のみのカテゴリ（「その他」に集約）
+const OTHER_CATEGORIES = ['cognitive', 'sleep', 'gut', 'immunity', 'muscle', 'cardiovascular']
 
 const POPULAR_SLUGS = ['wrinkles', 'spots', 'uv-damage', 'sleep', 'longevity', 'cognitive']
 
@@ -55,9 +56,11 @@ function ConcernCard({ c }: { c: Concern }) {
 }
 
 export default function ConcernsPage() {
-  const orderedCategories = CATEGORY_ORDER.filter(cat =>
+  const mainCategories = MAIN_CATEGORIES.filter(cat =>
     concerns.some(c => c.category === cat)
   )
+  const otherConcerns = concerns.filter(c => OTHER_CATEGORIES.includes(c.category))
+  const hasOther = otherConcerns.length > 0
 
   const popular = POPULAR_SLUGS
     .map(slug => concerns.find(c => c.slug === slug))
@@ -75,7 +78,7 @@ export default function ConcernsPage() {
       </div>
 
       <nav aria-label="カテゴリで絞り込み" className="mb-12 flex flex-wrap gap-2">
-        {orderedCategories.map((cat) => (
+        {mainCategories.map((cat) => (
           <a
             key={cat}
             href={`#cat-${cat}`}
@@ -86,17 +89,28 @@ export default function ConcernsPage() {
             {categoryLabel[cat]}
           </a>
         ))}
+        {hasOther && (
+          <a
+            href="#cat-other"
+            className="inline-flex items-center text-[12.5px] font-medium
+              px-4 py-2 min-h-[44px] rounded-full border border-border
+              bg-muted/30 text-muted-foreground
+              hover:-translate-y-0.5 hover:shadow-sm transition-all duration-150"
+          >
+            その他
+          </a>
+        )}
       </nav>
 
       {popular.length > 0 && (
         <section className="mb-14">
           <div className="flex items-baseline justify-between mb-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
+            <p className="text-[12px] font-semibold tracking-[0.05em]
               text-muted-foreground">
-              人気Top6
+              編集部おすすめ
             </p>
-            <span className="text-[11px] text-muted-foreground/70">
-              まず見られている悩み
+            <span className="text-[11px] text-muted-foreground">
+              まず見ておきたい悩み
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -108,15 +122,15 @@ export default function ConcernsPage() {
       )}
 
       <div className="space-y-12">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
+        <p className="text-[12px] font-semibold tracking-[0.05em]
           text-muted-foreground -mb-6">
           すべての悩み
         </p>
-        {orderedCategories.map((cat) => {
+        {mainCategories.map((cat) => {
           const catConcerns = concerns.filter((c) => c.category === cat)
           return (
             <section key={cat} id={`cat-${cat}`} className="scroll-mt-20">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.1em]
+              <p className="text-[12px] font-semibold tracking-[0.05em]
                 text-muted-foreground mb-5">
                 {categoryLabel[cat]}
               </p>
@@ -128,6 +142,20 @@ export default function ConcernsPage() {
             </section>
           )
         })}
+
+        {hasOther && (
+          <section id="cat-other" className="scroll-mt-20">
+            <p className="text-[12px] font-semibold tracking-[0.05em]
+              text-muted-foreground mb-5">
+              その他
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {otherConcerns.map((c) => (
+                <ConcernCard key={c.slug} c={c} />
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   )

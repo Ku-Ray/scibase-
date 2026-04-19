@@ -218,9 +218,10 @@ export default function AboutPage() {
           </h2>
           <p className="text-[13px] text-muted-foreground leading-relaxed">
             本サイトにはiHerb・Amazonのアフィリエイトリンクが含まれます。
-            リンク経由での購入により当サイトへ手数料が発生する場合があります。
+            ユーザーがリンクから商品を購入すると、運営に販売手数料が支払われる仕組みです。
             ただし、<span className="font-semibold text-foreground">商品の掲載・エビデンスランクの評価は広告主・商業的利益とは独立して行っており</span>、
-            手数料の有無が評価に影響することはありません。
+            手数料の有無・金額が評価に影響することはありません。
+            掲載順は論文エビデンス（メタ解析・RCT）の強さ、有効量、継続期間、副作用情報のみで決定しています。
           </p>
         </section>
 
