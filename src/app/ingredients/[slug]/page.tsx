@@ -46,12 +46,6 @@ const studyLabel: Record<string, string> = {
   animal:          '動物実験',
 }
 
-const platformLabel: Record<string, string> = {
-  iherb:   'iHerb',
-  amazon:  'Amazon',
-  cosme:   '@cosme',
-}
-
 const usageLabel: Record<string, string> = {
   topical: '外用',
   oral:    '経口',
@@ -262,7 +256,6 @@ export default async function IngredientPage({ params }: Props) {
           priceCurrency:  'JPY',
           url:            p.url,
           availability:   'https://schema.org/InStock',
-          seller: { '@type': 'Organization', name: platformLabel[p.platform] ?? p.platform },
         },
       },
     })),
