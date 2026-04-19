@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scan outputs (raw data, regenerable)
+scripts/scan.log
+scripts/scan_results.json
+scripts/scan_results.ndjson
+scripts/scan_targets.json
