@@ -56,8 +56,8 @@ export function AddToAnalyzerButton({ slug, variant = 'default' }: Props) {
   return (
     <button
       onClick={toggle}
-      className={`inline-flex items-center gap-2 text-[13px] font-medium rounded-xl
-        px-4 py-2.5 border transition-all duration-200
+      className={`inline-flex items-center justify-center gap-2 text-[13px] font-medium rounded-xl
+        px-4 py-2.5 min-h-[44px] border transition-all duration-200
         ${added
           ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
           : 'bg-card text-muted-foreground border-border hover:border-accent hover:text-accent'
@@ -77,7 +77,7 @@ export function AnalyzerBanner({ count }: { count: number }) {
   return (
     <Link href="/analyzer"
       className="flex items-center justify-between gap-3
-        bg-accent/8 border border-accent/20 rounded-xl px-4 py-3
+        bg-accent/8 border border-accent/20 rounded-xl px-4 py-3 min-h-[44px]
         hover:bg-accent/12 transition-colors group">
       <div className="flex items-center gap-2">
         <Microscope className="w-4 h-4 text-accent" />

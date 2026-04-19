@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { X, Plus, ChevronRight } from 'lucide-react'
+import { X, Plus, ChevronRight, ArrowDown, RotateCcw } from 'lucide-react'
 import { ingredients, concerns, getIngredient } from '@/lib/data'
 import { RadarChart } from './RadarChart'
 import { EvidenceBadge } from './EvidenceBadge'
@@ -98,6 +98,37 @@ export function AnalyzerClient() {
   const [selectedConcernSlugs, setSelectedConcernSlugs] = useState<string[]>([])
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
+  const [resultsInView, setResultsInView] = useState(false)
+  const resultsRef = useRef<HTMLDivElement | null>(null)
+
+  const hasResults = mode === 'ingredient'
+    ? selectedSlugs.length > 0
+    : selectedConcernSlugs.length > 0
+
+  /* 結果セクションが画面内にあるか監視 → スティッキーCTAの出し分け */
+  useEffect(() => {
+    if (!hasResults) {
+      setResultsInView(false)
+      return
+    }
+    const el = resultsRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => setResultsInView(entry.isIntersecting),
+      { rootMargin: '-80px 0px -40% 0px' }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [hasResults, mode])
+
+  const scrollToResults = () => {
+    resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const resetAll = () => {
+    if (mode === 'ingredient') setSelectedSlugs([])
+    else setSelectedConcernSlugs([])
+  }
 
   /* localStorage 読み込み */
   useEffect(() => {
@@ -145,7 +176,8 @@ export function AnalyzerClient() {
       <div className="mb-10 inline-flex gap-1 p-1 bg-secondary rounded-xl">
         <button
           onClick={() => setMode('ingredient')}
-          className={`text-[13px] font-semibold px-4 py-2 rounded-lg transition-all
+          className={`inline-flex items-center justify-center text-[13px] font-semibold
+            px-4 py-2 min-h-[40px] rounded-lg transition-all
             ${mode === 'ingredient'
               ? 'bg-card text-foreground shadow-sm'
               : 'text-muted-foreground hover:text-foreground'}`}
@@ -154,7 +186,8 @@ export function AnalyzerClient() {
         </button>
         <button
           onClick={() => setMode('concern')}
-          className={`text-[13px] font-semibold px-4 py-2 rounded-lg transition-all
+          className={`inline-flex items-center justify-center text-[13px] font-semibold
+            px-4 py-2 min-h-[40px] rounded-lg transition-all
             ${mode === 'concern'
               ? 'bg-card text-foreground shadow-sm'
               : 'text-muted-foreground hover:text-foreground'}`}
@@ -169,11 +202,13 @@ export function AnalyzerClient() {
           setSelectedSlugs={setSelectedSlugs}
           query={query} setQuery={setQuery}
           open={open} setOpen={setOpen}
+          resultsRef={resultsRef}
         />
       ) : (
         <ConcernMode
           selectedConcernSlugs={selectedConcernSlugs}
           setSelectedConcernSlugs={setSelectedConcernSlugs}
+          resultsRef={resultsRef}
         />
       )}
 
@@ -182,6 +217,35 @@ export function AnalyzerClient() {
         スコアは論文エビデンスに基づく参考値です。個人の状態・用量・相互作用は考慮していません。
         医療的アドバイスではありません。
       </p>
+
+      {/* スティッキーCTA — 選択済み＆結果が画面外の時だけ表示 */}
+      {hasResults && !resultsInView && (
+        <div className="fixed inset-x-0 bottom-4 z-40 px-4 pointer-events-none">
+          <div className="max-w-2xl mx-auto flex gap-2 pointer-events-auto">
+            <button
+              onClick={scrollToResults}
+              className="flex-1 inline-flex items-center justify-center gap-2
+                bg-foreground text-background text-[14px] font-semibold
+                rounded-full px-5 py-3 min-h-[48px] shadow-lg
+                hover:opacity-90 transition-opacity"
+            >
+              診断結果を見る
+              <ArrowDown className="w-4 h-4" />
+            </button>
+            <button
+              onClick={resetAll}
+              aria-label="やり直す"
+              className="inline-flex items-center justify-center gap-1.5
+                bg-card text-muted-foreground border border-border text-[13px] font-medium
+                rounded-full px-4 py-3 min-h-[48px] shadow-md
+                hover:text-foreground hover:border-foreground/30 transition-colors"
+            >
+              <RotateCcw className="w-4 h-4" />
+              <span className="hidden sm:inline">やり直す</span>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -192,6 +256,7 @@ function IngredientMode({
   selectedSlugs, setSelectedSlugs,
   query, setQuery,
   open, setOpen,
+  resultsRef,
 }: {
   selectedSlugs: string[]
   setSelectedSlugs: React.Dispatch<React.SetStateAction<string[]>>
@@ -199,6 +264,7 @@ function IngredientMode({
   setQuery: (v: string) => void
   open: boolean
   setOpen: (v: boolean) => void
+  resultsRef: React.MutableRefObject<HTMLDivElement | null>
 }) {
   const selected = useMemo(
     () => selectedSlugs.map(s => ingredients.find(i => i.slug === s)).filter(Boolean) as Ingredient[],
@@ -271,8 +337,12 @@ function IngredientMode({
           <h2 className="font-semibold text-[15px] text-foreground">使用中の成分</h2>
           {selected.length > 0 && (
             <button onClick={reset}
-              className="text-[12px] text-muted-foreground hover:text-destructive transition-colors">
-              リセット
+              className="inline-flex items-center gap-1.5 text-[12px] font-medium
+                text-muted-foreground border border-border rounded-full
+                px-3 py-1.5 min-h-[36px]
+                hover:text-destructive hover:border-destructive/30 transition-colors">
+              <RotateCcw className="w-3 h-3" />
+              やり直す
             </button>
           )}
         </div>
@@ -351,8 +421,8 @@ function IngredientMode({
                 if (!ing) return null
                 return (
                   <button key={slug} onClick={() => add(slug)}
-                    className="text-[12px] bg-secondary border border-border rounded-full
-                      px-3 py-1 hover:border-accent hover:text-accent transition-colors">
+                    className="inline-flex items-center text-[12px] bg-secondary border border-border
+                      rounded-full px-4 py-2 min-h-[44px] hover:border-accent hover:text-accent transition-colors">
                     + {ing.nameJa}
                   </button>
                 )
@@ -393,7 +463,7 @@ function IngredientMode({
 
       {selected.length > 0 ? (
         <>
-          <section className="mb-10">
+          <section ref={resultsRef} className="mb-10 scroll-mt-6">
             <h2 className="font-semibold text-[15px] text-foreground mb-6">カバー状況</h2>
             <RadarChart data={radarData} size={340} />
           </section>
@@ -572,9 +642,11 @@ const POPULAR_PRIMARY_SLUGS = ['wrinkles', 'spots', 'sleep', 'stress', 'longevit
 function ConcernMode({
   selectedConcernSlugs,
   setSelectedConcernSlugs,
+  resultsRef,
 }: {
   selectedConcernSlugs: string[]
   setSelectedConcernSlugs: React.Dispatch<React.SetStateAction<string[]>>
+  resultsRef: React.MutableRefObject<HTMLDivElement | null>
 }) {
   const [showAllPrimary, setShowAllPrimary] = useState(false)
   const [showPrimaryPicker, setShowPrimaryPicker] = useState(false)
@@ -621,6 +693,11 @@ function ConcernMode({
     setShowPrimaryPicker(false)
     setShowAllPrimary(false)
   }
+  const resetAll = () => {
+    setSelectedConcernSlugs([])
+    setShowPrimaryPicker(false)
+    setShowAllPrimary(false)
+  }
   const toggleSecondary = (slug: string) => {
     if (!primarySlug || slug === primarySlug) return
     setSelectedConcernSlugs(prev => {
@@ -650,12 +727,24 @@ function ConcernMode({
 
       {/* ── STEP 1：主悩み ─────────────────────────────── */}
       <section className="mb-10">
-        <div className="flex items-baseline gap-2 mb-4">
-          <span className="text-[10px] font-bold tracking-wider bg-accent/10 text-accent
-            px-2 py-0.5 rounded-md">STEP 1</span>
-          <h2 className="font-semibold text-[15px] text-foreground">
-            最も気になる悩みを1つ選ぶ
-          </h2>
+        <div className="flex items-center justify-between gap-2 mb-4">
+          <div className="flex items-baseline gap-2">
+            <span className="text-[10px] font-bold tracking-wider bg-accent/10 text-accent
+              px-2 py-0.5 rounded-md">STEP 1</span>
+            <h2 className="font-semibold text-[15px] text-foreground">
+              最も気になる悩みを1つ選ぶ
+            </h2>
+          </div>
+          {primary && (
+            <button onClick={resetAll}
+              className="inline-flex items-center gap-1.5 text-[12px] font-medium
+                text-muted-foreground border border-border rounded-full
+                px-3 py-1.5 min-h-[36px]
+                hover:text-destructive hover:border-destructive/30 transition-colors">
+              <RotateCcw className="w-3 h-3" />
+              やり直す
+            </button>
+          )}
         </div>
 
         {primary && !showPrimaryPicker && (
@@ -739,7 +828,7 @@ function ConcernMode({
                             key={c.slug}
                             onClick={() => setPrimary(c.slug)}
                             className="inline-flex items-center gap-1.5 text-[12.5px] font-medium
-                              bg-card border border-border rounded-full px-3 py-1.5
+                              bg-card border border-border rounded-full px-4 py-2 min-h-[44px]
                               text-muted-foreground hover:text-foreground hover:border-accent/50
                               transition-all"
                           >
@@ -791,7 +880,7 @@ function ConcernMode({
                           onClick={() => toggleSecondary(c.slug)}
                           disabled={disabled}
                           className={`inline-flex items-center gap-1.5 text-[12.5px] font-medium
-                            px-3 py-1.5 rounded-full border transition-all
+                            px-4 py-2 min-h-[44px] rounded-full border transition-all
                             ${active
                               ? `cat-${c.category} shadow-sm`
                               : disabled
@@ -814,7 +903,7 @@ function ConcernMode({
       {/* ── STEP 3：結果 ─────────────────────────────── */}
       {primary && top3.length > 0 && (
         <>
-          <section className="mb-10">
+          <section ref={resultsRef} className="mb-10 scroll-mt-6">
             <div className="flex items-baseline gap-2 mb-4">
               <span className="text-[10px] font-bold tracking-wider bg-accent text-primary-foreground
                 px-2 py-0.5 rounded-md">STEP 3</span>

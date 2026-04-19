@@ -147,8 +147,9 @@ export default async function RankingPage({ params }: Props) {
             <div className="flex items-center gap-3 mt-4 pt-4 border-t border-amber-200">
               <Link
                 href={`/ingredients/${topIngredient.slug}`}
-                className="flex-1 text-center text-[13px] font-medium border border-amber-300
-                  text-amber-800 rounded-xl px-4 py-2.5 hover:bg-amber-100 transition-colors"
+                className="flex-1 inline-flex items-center justify-center text-[13px] font-medium
+                  border border-amber-300 text-amber-800 rounded-xl px-4 py-2.5 min-h-[44px]
+                  hover:bg-amber-100 transition-colors"
               >
                 エビデンスを確認する
               </Link>
@@ -158,7 +159,7 @@ export default async function RankingPage({ params }: Props) {
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="flex-1 text-center inline-flex items-center justify-center gap-1.5
-                    text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5
+                    text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
                     hover:bg-amber-600 transition-colors"
                 >
                   購入する
@@ -262,8 +263,9 @@ export default async function RankingPage({ params }: Props) {
               <Link
                 key={c.slug}
                 href={`/ranking/${c.slug}`}
-                className="text-[13px] text-muted-foreground bg-card border border-border
-                  rounded-full px-3 py-1.5 hover:border-accent hover:text-accent transition-colors"
+                className="inline-flex items-center text-[13px] text-muted-foreground
+                  bg-card border border-border rounded-full px-4 py-2 min-h-[44px]
+                  hover:border-accent hover:text-accent transition-colors"
               >
                 {c.nameJa}
               </Link>

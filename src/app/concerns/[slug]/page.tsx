@@ -406,7 +406,7 @@ export default async function ConcernPage({ params }: Props) {
                 <Link href={`/ingredients/${top.slug}`}
                   className="flex-1 inline-flex items-center justify-center gap-1.5
                     text-[13px] font-semibold text-foreground bg-white border border-border
-                    rounded-lg px-4 py-2.5 hover:border-foreground/40 hover:shadow-sm
+                    rounded-lg px-4 py-2.5 min-h-[44px] hover:border-foreground/40 hover:shadow-sm
                     transition-all">
                   論文エビデンスを確認
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -415,7 +415,7 @@ export default async function ConcernPage({ params }: Props) {
                   <a href={topProduct.url} target="_blank" rel="noopener nofollow sponsored"
                     className="flex-1 inline-flex items-center justify-center gap-1.5
                       text-[13px] font-semibold text-background bg-foreground rounded-lg
-                      px-4 py-2.5 hover:opacity-90 transition-opacity">
+                      px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity">
                     {platformLabel[topProduct.platform]}
                     <ChevronRight className="w-3.5 h-3.5" />
                   </a>
@@ -450,11 +450,11 @@ export default async function ConcernPage({ params }: Props) {
                         </div>
                         <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                       </Link>
-                      <div className="border-t border-border/60 bg-secondary/40 px-4 py-2
-                        flex items-center justify-between gap-2 text-[11px]">
+                      <div className="border-t border-border/60 bg-secondary/40 px-2
+                        flex items-center justify-between gap-2 text-[12px]">
                         <Link href={`/ingredients/${ing.slug}`}
                           className="text-muted-foreground hover:text-foreground font-medium
-                            inline-flex items-center gap-1">
+                            inline-flex items-center gap-1 px-2 min-h-[44px]">
                           エビデンス
                           <ChevronRight className="w-3 h-3" />
                         </Link>
@@ -462,7 +462,7 @@ export default async function ConcernPage({ params }: Props) {
                           <a href={ingTopProduct.url} target="_blank"
                             rel="noopener nofollow sponsored"
                             className="font-semibold text-foreground hover:underline
-                              inline-flex items-center gap-1">
+                              inline-flex items-center gap-1 px-2 min-h-[44px]">
                             {platformLabel[ingTopProduct.platform]}
                             <ChevronRight className="w-3 h-3" />
                           </a>
@@ -533,7 +533,7 @@ export default async function ConcernPage({ params }: Props) {
               key={c.slug}
               href={`/concerns/${c.slug}`}
               className={`inline-flex items-center gap-1.5 text-[13px] border
-                rounded-full px-3 py-1.5 hover:scale-105 transition-all duration-150
+                rounded-full px-4 py-2 min-h-[44px] hover:scale-105 transition-all duration-150
                 cat-${c.category}`}
             >
               <span>{c.emoji}</span>

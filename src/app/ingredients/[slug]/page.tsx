@@ -351,8 +351,8 @@ export default async function IngredientPage({ params }: Props) {
             )}
             {relatedConcerns.slice(0, 2).map(c => (
               <Link key={c.slug} href={`/concerns/${c.slug}`}
-                className={`cat-${c.category} border rounded-full px-3 py-1
-                  text-[12px] hover:opacity-80 transition-opacity`}>
+                className={`cat-${c.category} inline-flex items-center border rounded-full
+                  px-4 py-2 min-h-[44px] text-[12px] hover:opacity-80 transition-opacity`}>
                 {c.emoji} {c.nameJa}
               </Link>
             ))}
@@ -493,35 +493,52 @@ export default async function IngredientPage({ params }: Props) {
         <section id="papers" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">主要研究</h2>
           <div className="space-y-3">
-            {ing.papers.map((p, i) => (
-              <div key={i} className="bg-card border border-border rounded-2xl p-5">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="text-[11px] font-medium bg-secondary text-muted-foreground
-                    border border-border rounded-md px-2 py-0.5">
-                    {studyLabel[p.studyType] ?? p.studyType}
-                  </span>
-                  {[p.journal, `${p.year}年`,
-                    p.sampleSize ? `n=${p.sampleSize.toLocaleString()}` : null,
-                    p.durationWeeks ? `${p.durationWeeks}週間` : null,
-                  ].filter(Boolean).map((v, j) => (
-                    <span key={j} className="text-[11px] text-muted-foreground">{v}</span>
-                  ))}
-                </div>
-                <p className="text-[14px] text-foreground font-medium leading-relaxed mb-2">
-                  {p.keyFinding}
-                </p>
-                <details className="group">
-                  <summary className="text-[11px] text-muted-foreground/50 cursor-pointer
-                    hover:text-muted-foreground transition-colors list-none flex items-center gap-1">
-                    <span className="group-open:hidden">▶ 論文タイトル（英語）</span>
-                    <span className="hidden group-open:block">▼ 論文タイトル（英語）</span>
-                  </summary>
-                  <p className="text-[11px] text-muted-foreground/50 mt-1.5 leading-snug italic pl-3">
-                    {p.title}
+            {ing.papers.map((p, i) => {
+              const paperUrl = p.pmid
+                ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/`
+                : p.doi
+                  ? `https://doi.org/${p.doi}`
+                  : p.url ?? null
+              const paperLinkLabel = p.pmid ? 'PubMedで確認' : p.doi ? 'DOIで確認' : '原文を確認'
+              return (
+                <div key={i} className="bg-card border border-border rounded-2xl p-5">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-[11px] font-medium bg-secondary text-muted-foreground
+                      border border-border rounded-md px-2 py-0.5">
+                      {studyLabel[p.studyType] ?? p.studyType}
+                    </span>
+                    {[p.journal, `${p.year}年`,
+                      p.sampleSize ? `n=${p.sampleSize.toLocaleString()}` : null,
+                      p.durationWeeks ? `${p.durationWeeks}週間` : null,
+                    ].filter(Boolean).map((v, j) => (
+                      <span key={j} className="text-[11px] text-muted-foreground">{v}</span>
+                    ))}
+                  </div>
+                  <p className="text-[14px] text-foreground font-medium leading-relaxed mb-2">
+                    {p.keyFinding}
                   </p>
-                </details>
-              </div>
-            ))}
+                  <details className="group">
+                    <summary className="text-[11px] text-muted-foreground/50 cursor-pointer
+                      hover:text-muted-foreground transition-colors list-none flex items-center gap-1">
+                      <span className="group-open:hidden">▶ 論文タイトル（英語）</span>
+                      <span className="hidden group-open:block">▼ 論文タイトル（英語）</span>
+                    </summary>
+                    <p className="text-[11px] text-muted-foreground/50 mt-1.5 leading-snug italic pl-3">
+                      {p.title}
+                    </p>
+                  </details>
+                  {paperUrl && (
+                    <a href={paperUrl} target="_blank" rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-medium
+                        text-accent border border-accent/30 rounded-full
+                        px-3 py-1.5 min-h-[36px] hover:bg-accent/5 transition-colors">
+                      {paperLinkLabel}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </section>
 
@@ -882,6 +899,34 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
+        {/* Bottom Line — この成分を一言で */}
+        <section className="mb-8 bg-foreground/[0.03] border-l-4 border-foreground/50 rounded-r-xl px-5 py-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+            text-muted-foreground mb-3">
+            Bottom Line
+          </p>
+          <p className="text-[14px] text-foreground leading-[1.85]">
+            <strong className="font-semibold">{ing.nameJa}</strong>は
+            {rankDescFull[ing.evidenceRank]}で{concernNames ? `${concernNames}への効果` : '効果'}が確認されている成分です。
+            {ing.whoFor && ing.whoFor.length > 0 && (
+              <>特に <span className="font-medium">{ing.whoFor.slice(0, 2).join('・')}</span> に向いています。</>
+            )}
+            {ing.dosageMin && (
+              <>
+                始めるなら
+                <span className="font-medium">
+                  {' '}{ing.dosageMin}{ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `〜${ing.dosageMax}` : ''}{ing.dosageUnit}
+                </span>
+                {ing.timing ? `を${ing.timing}` : ''}から。
+              </>
+            )}
+            {ing.duration && <>効果の実感には<span className="font-medium">{ing.duration}</span>が目安です。</>}
+            {ing.sideEffects && ing.sideEffects.length > 0 && (
+              <>なお、<span className="font-medium">{ing.sideEffects[0]}</span>の報告があるため、体調に合わせて量を調整してください。</>
+            )}
+          </p>
+        </section>
+
         {/* Meta */}
         <p className="text-[12px] text-muted-foreground mb-8">
           最終更新：{ing.updatedAt} ／ 参照論文：{ing.papers.length}件
@@ -965,7 +1010,7 @@ export default async function IngredientPage({ params }: Props) {
                   href={`/compare/${ing.slug}-vs-${i.slug}`}
                   className="inline-flex items-center gap-1.5 text-[12px]
                     bg-secondary border border-border text-muted-foreground
-                    rounded-full px-3 py-1.5 hover:border-accent hover:text-accent
+                    rounded-full px-4 py-2 min-h-[44px] hover:border-accent hover:text-accent
                     transition-colors"
                 >
                   <GitCompare className="w-3 h-3 flex-shrink-0" />
@@ -975,7 +1020,7 @@ export default async function IngredientPage({ params }: Props) {
               <Link
                 href="/compare"
                 className="inline-flex items-center gap-1.5 text-[12px]
-                  text-muted-foreground/60 rounded-full px-3 py-1.5
+                  text-muted-foreground/60 rounded-full px-4 py-2 min-h-[44px]
                   hover:text-accent transition-colors"
               >
                 比較一覧を見る →

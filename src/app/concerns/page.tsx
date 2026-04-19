@@ -79,7 +79,8 @@ export default function ConcernsPage() {
           <a
             key={cat}
             href={`#cat-${cat}`}
-            className={`cat-${cat} text-[12.5px] font-medium px-3 py-1.5 rounded-full border
+            className={`cat-${cat} inline-flex items-center text-[12.5px] font-medium
+              px-4 py-2 min-h-[44px] rounded-full border
               hover:-translate-y-0.5 hover:shadow-sm transition-all duration-150`}
           >
             {categoryLabel[cat]}

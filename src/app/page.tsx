@@ -66,7 +66,7 @@ export default function Home() {
             <Link
               href="/concerns"
               className="inline-flex items-center gap-2 bg-foreground text-background
-                text-[13px] font-semibold rounded-xl px-5 py-3
+                text-[13px] font-semibold rounded-xl px-5 py-3 min-h-[44px]
                 hover:opacity-85 transition-opacity w-full sm:w-auto justify-center"
             >
               🔍 悩みから成分を探す
@@ -74,7 +74,7 @@ export default function Home() {
             <Link
               href="/analyzer"
               className="inline-flex items-center gap-2 bg-card border border-border text-foreground
-                text-[13px] font-medium rounded-xl px-5 py-3
+                text-[13px] font-medium rounded-xl px-5 py-3 min-h-[44px]
                 hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
             >
               🔬 今のサプリを診断する
@@ -105,7 +105,7 @@ export default function Home() {
                   key={c.slug}
                   href={`/concerns/${c.slug}`}
                   className={`group inline-flex items-center gap-1.5 border
-                    text-[13px] font-medium rounded-full px-4 py-2
+                    text-[13px] font-medium rounded-full px-4 py-2.5 min-h-[44px]
                     hover:scale-105 hover:shadow-sm transition-all duration-150 cat-${c.category}`}
                 >
                   <span>{c.emoji}</span>

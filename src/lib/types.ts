@@ -8,6 +8,12 @@ export interface Paper {
   sampleSize?: number
   durationWeeks?: number
   keyFinding: string
+  /** PubMed ID — リンクは https://pubmed.ncbi.nlm.nih.gov/{pmid}/ */
+  pmid?: string
+  /** DOI — リンクは https://doi.org/{doi} */
+  doi?: string
+  /** その他直接リンク（出版社サイト等）。pmid/doi優先 */
+  url?: string
 }
 
 export interface Product {

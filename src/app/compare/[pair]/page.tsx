@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ChevronRight, ArrowRight, CheckCircle2, ExternalLink } from 'lucide-react'
 import { getIngredient, concerns as allConcerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
@@ -111,6 +111,14 @@ export default async function ComparePage({ params }: Props) {
     }
     return { pick: null, reason: '目的・悩みに応じて選択' }
   })()
+
+  /* 総合おすすめ成分のTop商品（購入CTA用） */
+  const overallTopProduct = overall.pick
+    ? overall.pick.products.find(p => p.rank === 1) ?? overall.pick.products[0]
+    : null
+  const platformLabel: Record<'iherb' | 'amazon' | 'cosme', string> = {
+    iherb: 'iHerbで購入', amazon: 'Amazonで購入', cosme: '@cosmeで購入',
+  }
 
   /* 関連する比較ペア（同じカテゴリ or どちらかの成分が含まれる） */
   const currentCategory = PAIR_CATEGORIES[pair]
@@ -273,6 +281,43 @@ export default async function ComparePage({ params }: Props) {
           </div>
         </div>
 
+        {/* 総合おすすめ → 購入CTA（即時意思決定支援） */}
+        {overall.pick && overallTopProduct && overallTopProduct.url && overallTopProduct.url !== '#' && (
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
+            <div className="flex items-center gap-2 mb-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-700">
+                総合おすすめ
+              </p>
+              <span className="text-[10px] font-semibold bg-amber-500 text-white rounded-full px-2.5 py-0.5">
+                迷ったらこれ
+              </span>
+            </div>
+            <p className="font-bold text-[20px] text-foreground mb-1">{overall.pick.nameJa}</p>
+            <p className="text-[13px] text-amber-800 mb-4">{overall.reason}</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href={`/ingredients/${overall.pick.slug}`}
+                className="flex-1 inline-flex items-center justify-center gap-1.5
+                  text-[13px] font-medium border border-amber-300 text-amber-800
+                  rounded-xl px-4 py-2.5 min-h-[44px] hover:bg-amber-100 transition-colors"
+              >
+                エビデンスを確認する
+              </Link>
+              <a
+                href={overallTopProduct.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow sponsored"
+                className="flex-1 inline-flex items-center justify-center gap-1.5
+                  text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
+                  hover:bg-amber-600 transition-colors"
+              >
+                {platformLabel[overallTopProduct.platform]}
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* クイック評決（アンカリング） */}
         <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
           <p className="text-[11px] font-semibold uppercase tracking-wider
@@ -332,9 +377,9 @@ export default async function ComparePage({ params }: Props) {
                 )}
                 <div className="mt-4 flex items-center gap-2">
                   <Link href={`/ingredients/${ing.slug}`}
-                    className="flex-1 text-center text-[12px] font-medium border border-border
-                      text-muted-foreground rounded-xl px-3 py-2 hover:border-accent
-                      hover:text-accent transition-colors">
+                    className="flex-1 inline-flex items-center justify-center text-[12px] font-medium
+                      border border-border text-muted-foreground rounded-xl px-3 py-2 min-h-[44px]
+                      hover:border-accent hover:text-accent transition-colors">
                     詳細を見る
                   </Link>
                   <AddToAnalyzerButton slug={ing.slug} variant="compact" />
@@ -416,7 +461,7 @@ export default async function ComparePage({ params }: Props) {
                   {sharedConcerns.map(c => (
                     <Link key={c.slug} href={`/concerns/${c.slug}`}
                       className="inline-flex items-center gap-1.5 text-[12px] border border-border
-                        rounded-full px-3 py-1.5 hover:border-accent hover:text-accent transition-colors">
+                        rounded-full px-4 py-2 min-h-[44px] hover:border-accent hover:text-accent transition-colors">
                       {c.emoji} {c.nameJa}
                     </Link>
                   ))}
@@ -524,7 +569,7 @@ export default async function ComparePage({ params }: Props) {
           </p>
           <Link href="/analyzer"
             className="inline-flex items-center gap-2 text-[13px] font-semibold
-              bg-foreground text-background rounded-xl px-4 py-2.5
+              bg-foreground text-background rounded-xl px-4 py-2.5 min-h-[44px]
               hover:opacity-85 transition-opacity">
             今のサプリと組み合わせて診断する
             <ArrowRight className="w-3.5 h-3.5" />
@@ -551,7 +596,7 @@ export default async function ComparePage({ params }: Props) {
             href="/analyzer"
             className="flex items-center justify-center gap-2 w-full
               text-[13px] font-semibold text-accent border border-accent/30
-              rounded-xl px-4 py-3 hover:bg-accent/5 transition-colors"
+              rounded-xl px-4 py-3 min-h-[44px] hover:bg-accent/5 transition-colors"
           >
             診断結果を見る（7軸レーダーチャート）
             <ArrowRight className="w-3.5 h-3.5" />
