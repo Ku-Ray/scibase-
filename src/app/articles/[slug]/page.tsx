@@ -81,6 +81,7 @@ export default async function ArticlePage({ params }: Props) {
     '@type': 'Article',
     headline: article.title,
     description: article.description,
+    image: `${BASE_URL}/articles/${slug}/opengraph-image`,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt ?? article.publishedAt,
     author: {
@@ -94,7 +95,10 @@ export default async function ArticlePage({ params }: Props) {
       '@type': 'Organization',
       name: 'SciBase',
       url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/scibase_logo.png` },
     },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/articles/${slug}` },
+    timeRequired: `PT${article.readingMinutes}M`,
     url: `${BASE_URL}/articles/${slug}`,
     ...(citationPapers.length > 0 && {
       citation: citationPapers.map((p) => ({

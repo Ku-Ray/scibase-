@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: '悩みから探す — エビデンスで成分を選ぶ',
   description: '悩み別に、論文エビデンスが確認されている成分を科学的に紹介。シミ・乾燥・ニキビ・老化・睡眠など全カテゴリ対応。',
+  alternates: { canonical: 'https://scibase.app/concerns' },
 }
 
 const categoryLabel: Record<string, string> = {

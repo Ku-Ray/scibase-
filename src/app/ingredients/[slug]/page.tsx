@@ -152,6 +152,7 @@ export default async function IngredientPage({ params }: Props) {
     '@type':           'Article',
     headline:          `${ing.nameJa}の効果・副作用・論文エビデンス`,
     description:       ing.tagline,
+    image:             `${BASE_URL}/ingredients/${slug}/opengraph-image`,
     url:               `${BASE_URL}/ingredients/${slug}`,
     datePublished:     ing.updatedAt,
     dateModified:      ing.updatedAt,
@@ -162,7 +163,12 @@ export default async function IngredientPage({ params }: Props) {
       jobTitle: '化粧品メーカー研究職',
       sameAs: ['https://x.com/r_evidence_'],
     },
-    publisher:         { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SciBase',
+      url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/scibase_logo.png` },
+    },
     mainEntityOfPage:  { '@type': 'WebPage', '@id': `${BASE_URL}/ingredients/${slug}` },
   }
 
