@@ -245,6 +245,7 @@ export default async function IngredientPage({ params }: Props) {
       item: {
         '@type': 'Product',
         name:  p.name,
+        image: `${BASE_URL}/ingredients/${slug}/opengraph-image`,
         brand: { '@type': 'Brand', name: p.brand },
         ...(p.reasonJa && { description: p.reasonJa }),
         ...(p.certifications?.length && {
