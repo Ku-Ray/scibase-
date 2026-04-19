@@ -97,6 +97,21 @@ export default async function ComparePage({ params }: Props) {
   const costA = ingA.products[0]?.monthlyCostJpy ?? ingA.products[0]?.priceJpy
   const costB = ingB.products[0]?.monthlyCostJpy ?? ingB.products[0]?.priceJpy
 
+  /* 総合おすすめ：エビデンス差→コスト差で判定 */
+  const overall = ((): { pick: typeof ingA | null; reason: string } => {
+    if (Math.abs(scoreA - scoreB) >= 2 && evidenceWinner) {
+      return { pick: evidenceWinner, reason: 'エビデンスの強さで明確に上回る' }
+    }
+    if (scoreA === scoreB && costA && costB) {
+      if (costA < costB * 0.85) return { pick: ingA, reason: 'エビデンス同等で月コストが安い' }
+      if (costB < costA * 0.85) return { pick: ingB, reason: 'エビデンス同等で月コストが安い' }
+    }
+    if (evidenceWinner) {
+      return { pick: evidenceWinner, reason: '論文エビデンスがやや上回る' }
+    }
+    return { pick: null, reason: '目的・悩みに応じて選択' }
+  })()
+
   /* 関連する比較ペア（同じカテゴリ or どちらかの成分が含まれる） */
   const currentCategory = PAIR_CATEGORIES[pair]
   const relatedPairs = POPULAR_PAIRS
@@ -210,6 +225,15 @@ export default async function ComparePage({ params }: Props) {
             30秒でわかる結論
           </p>
           <div className="space-y-2.5">
+            {/* 総合おすすめ */}
+            <div className="flex items-start gap-2.5 pb-3 border-b border-white/15">
+              <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-amber-400" />
+              <p className="text-[13px] leading-snug">
+                <span className="font-bold text-amber-300">総合おすすめ: </span>
+                {overall.pick ? overall.pick.nameJa : '目的・悩みに応じて選択'}
+                <span className="opacity-60 text-[11px] ml-1.5">（{overall.reason}）</span>
+              </p>
+            </div>
             {/* エビデンス結論 */}
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />

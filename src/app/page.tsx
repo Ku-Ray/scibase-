@@ -62,7 +62,7 @@ export default function Home() {
           </div>
 
           {/* 2択CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
             <Link
               href="/concerns"
               className="inline-flex items-center gap-2 bg-foreground text-background
@@ -80,6 +80,9 @@ export default function Home() {
               🔬 今のサプリを診断する
             </Link>
           </div>
+          <p className="text-[11px] text-muted-foreground/70 mb-8">
+            初めての方は <span className="font-medium text-foreground/80">「悩みから探す」</span> から
+          </p>
 
           {/* 統計 */}
           <div className="flex items-center justify-center gap-6 mb-10

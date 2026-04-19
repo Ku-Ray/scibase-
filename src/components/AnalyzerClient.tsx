@@ -93,7 +93,7 @@ const STORAGE_SLUGS     = 'scibase_analyzer_slugs'
 const STORAGE_CONCERNS  = 'scibase_analyzer_concerns'
 
 export function AnalyzerClient() {
-  const [mode, setMode] = useState<Mode>('ingredient')
+  const [mode, setMode] = useState<Mode>('concern')
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([])
   const [selectedConcernSlugs, setSelectedConcernSlugs] = useState<string[]>([])
   const [query, setQuery] = useState('')
@@ -346,7 +346,7 @@ function IngredientMode({
           <div className="mt-4">
             <p className="text-[11px] text-muted-foreground mb-2">よく使われる成分から追加：</p>
             <div className="flex flex-wrap gap-1.5">
-              {['magnesium','vitamin-d','omega3','ashwagandha','retinol','vitamin-c-oral','zinc'].map(slug => {
+              {['vitamin-d','magnesium','omega3'].map(slug => {
                 const ing = ingredients.find(i => i.slug === slug)
                 if (!ing) return null
                 return (

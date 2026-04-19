@@ -400,22 +400,33 @@ export default async function IngredientPage({ params }: Props) {
             )}
           </div>
 
-          {/* Hero stat（キー数値があれば大きく表示） */}
-          {ing.heroStat && (
-            <div className={`inline-block mt-6 rounded-2xl px-6 py-4 border-2
-              shadow-sm
-              ${{ S: 'bg-amber-100/60 border-amber-300 shadow-amber-100',
-                   A: 'bg-blue-100/60 border-blue-300 shadow-blue-100',
-                   B: 'bg-emerald-100/60 border-emerald-300 shadow-emerald-100',
-                   C: 'bg-stone-100/60 border-stone-300 shadow-stone-100' }[ing.evidenceRank]}`}>
-              <p className={`text-[48px] font-black tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
-                {ing.heroStat.value}
-              </p>
-              <p className={`text-[12px] font-medium mt-1.5 ${heroText[ing.evidenceRank]} opacity-70`}>
-                {ing.heroStat.label}
-              </p>
-            </div>
-          )}
+          {/* Hero stat（キー数値があれば大きく表示・なければ論文集計をフォールバック） */}
+          {(() => {
+            const totalSubjects = ing.papers.reduce((acc, p) => acc + (p.sampleSize ?? 0), 0)
+            const fallback = !ing.heroStat && ing.papers.length > 0 ? {
+              value: ing.papers.length.toString(),
+              label: totalSubjects > 0
+                ? `件の研究で根拠を確認（対象延べ${totalSubjects.toLocaleString()}人）`
+                : '件の研究で根拠を確認',
+            } : null
+            const stat = ing.heroStat ?? fallback
+            if (!stat) return null
+            return (
+              <div className={`inline-block mt-6 rounded-2xl px-6 py-4 border-2
+                shadow-sm
+                ${{ S: 'bg-amber-100/60 border-amber-300 shadow-amber-100',
+                     A: 'bg-blue-100/60 border-blue-300 shadow-blue-100',
+                     B: 'bg-emerald-100/60 border-emerald-300 shadow-emerald-100',
+                     C: 'bg-stone-100/60 border-stone-300 shadow-stone-100' }[ing.evidenceRank]}`}>
+                <p className={`text-[48px] font-black tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
+                  {stat.value}
+                </p>
+                <p className={`text-[12px] font-medium mt-1.5 ${heroText[ing.evidenceRank]} opacity-70`}>
+                  {stat.label}
+                </p>
+              </div>
+            )
+          })()}
 
           {/* Quick CTA — 診断に追加 */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -710,8 +721,18 @@ export default async function IngredientPage({ params }: Props) {
                     className={`rounded-2xl border ${border} ${cardBg} overflow-hidden flex flex-col`}>
 
                     {/* Platform header */}
-                    <div className={`${headerBg} px-4 py-2.5 border-b ${border}`}>
+                    <div className={`${headerBg} px-4 py-2.5 border-b ${border}
+                      flex items-center justify-between gap-2`}>
                       <p className={`text-[12px] font-bold ${headerText}`}>{label}</p>
+                      {key === 'iherb' && prod && (
+                        <span className="text-[10px] font-bold bg-emerald-700 text-white
+                          rounded px-1.5 py-0.5 tracking-wide">BEST PICK</span>
+                      )}
+                      {key === 'amazon' && prod && (
+                        <span className="text-[10px] font-medium text-amber-800/70">
+                          国内配送が早い
+                        </span>
+                      )}
                     </div>
 
                     {prod ? (
@@ -771,8 +792,9 @@ export default async function IngredientPage({ params }: Props) {
                             <span className="text-[11px] font-normal text-muted-foreground ml-0.5">〜</span>
                           </p>
                           {prod.monthlyCostJpy && (
-                            <p className="text-[11px] text-muted-foreground">
+                            <p className="text-[11px] text-muted-foreground tabular-nums">
                               月あたり ¥{prod.monthlyCostJpy.toLocaleString()}
+                              <span className="opacity-70"> ／ 1日約¥{Math.round(prod.monthlyCostJpy / 30).toLocaleString()}</span>
                             </p>
                           )}
                         </div>

@@ -7,6 +7,7 @@ import { getArticle, articles } from '@/lib/articles'
 import { getIngredient } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
+import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -297,7 +298,7 @@ export default async function ArticlePage({ params }: Props) {
                 </div>
 
                 {/* Actions */}
-                <div className="border-t border-border px-5 py-3 flex flex-wrap gap-2">
+                <div className="border-t border-border px-5 py-3 flex flex-wrap items-center gap-3">
                   <Link
                     href={`/ingredients/${ing.slug}`}
                     className="inline-flex items-center gap-1.5 text-[12px] font-semibold
@@ -305,6 +306,7 @@ export default async function ArticlePage({ params }: Props) {
                   >
                     エビデンス詳細を見る <ArrowRight className="w-3 h-3" />
                   </Link>
+                  <AddToAnalyzerButton slug={ing.slug} variant="compact" />
                 </div>
 
                 {/* Product CTA */}

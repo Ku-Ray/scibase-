@@ -166,6 +166,18 @@ export default async function RankingPage({ params }: Props) {
                 </a>
               )}
             </div>
+            {/* 2位・3位への誘発（後悔回避） */}
+            {ranked.length >= 2 && (
+              <div className="mt-3 pt-3 border-t border-amber-200/60">
+                <Link
+                  href="#rank-2"
+                  className="inline-flex items-center gap-1.5 text-[12px] font-medium
+                    text-amber-700 hover:text-amber-900 transition-colors"
+                >
+                  ↓ 2位・3位の成分も確認してから決める
+                </Link>
+              </div>
+            )}
           </div>
         )}
 
@@ -175,7 +187,8 @@ export default async function RankingPage({ params }: Props) {
             const rank = i + 1
             const { bg, badge, icon } = rankStyle(rank)
             return (
-              <Link key={ing.slug} href={`/ingredients/${ing.slug}`}>
+              <Link key={ing.slug} href={`/ingredients/${ing.slug}`} id={`rank-${rank}`}
+                className="block scroll-mt-20">
                 <article className={`border rounded-2xl p-5 hover:shadow-md transition-all duration-200
                   hover:-translate-y-0.5 group ${bg}`}>
                   <div className="flex items-start gap-4">
