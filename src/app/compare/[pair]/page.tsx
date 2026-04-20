@@ -4,7 +4,7 @@ import { ChevronRight, ArrowRight, CheckCircle2, ExternalLink } from 'lucide-rea
 import { getIngredient, concerns as allConcerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
-import { POPULAR_PAIRS, PAIR_CATEGORIES } from '@/lib/compare-data'
+import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO } from '@/lib/compare-data'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
 
@@ -25,9 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ingA = getIngredient(slugA)
   const ingB = getIngredient(slugB)
   if (!ingA || !ingB) return {}
+  const pairSeo = PAIR_SEO[pair]
   return {
-    title: `${ingA.nameJa} vs ${ingB.nameJa}【論文エビデンス比較】どっちが効く？`,
-    description: `${ingA.nameJa}（エビデンス${ingA.evidenceRank}）と${ingB.nameJa}（エビデンス${ingB.evidenceRank}）を論文根拠・有効量・向いている人で徹底比較。口コミでも広告でもなく、査読済み論文で判断する。`,
+    title: pairSeo?.title ?? `${ingA.nameJa} vs ${ingB.nameJa}【論文エビデンス比較】どっちが効く？`,
+    description: pairSeo?.description ?? `${ingA.nameJa}（エビデンス${ingA.evidenceRank}）と${ingB.nameJa}（エビデンス${ingB.evidenceRank}）を論文根拠・有効量・向いている人で徹底比較。口コミでも広告でもなく、査読済み論文で判断する。`,
     alternates: { canonical: `${BASE_URL}/compare/${pair}` },
   }
 }

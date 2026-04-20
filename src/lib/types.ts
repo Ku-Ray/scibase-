@@ -88,6 +88,10 @@ export interface Ingredient {
   whoFor?: string[]
   /** ヒーローエリアに大きく表示するキー統計 */
   heroStat?: { value: string; label: string }
+  /** SEO用タイトル上書き。未設定時は自動生成。`| SciBase`は layout template で自動付与 */
+  seoTitle?: string
+  /** SEO用ディスクリプション上書き。未設定時は自動生成 */
+  seoDescription?: string
   updatedAt: string
 }
 
@@ -106,6 +110,10 @@ export interface Concern {
   }
   /** こういう人は特に注意（5-7項目）・自己関連リスクの提示で行動動機を強化 */
   riskProfile?: string[]
+  /** SEO用タイトル上書き。未設定時は自動生成。`| SciBase`は layout template で自動付与 */
+  seoTitle?: string
+  /** SEO用ディスクリプション上書き。未設定時は自動生成 */
+  seoDescription?: string
 }
 
 // ─── Article（コラム記事） ────────────────────────────────────────

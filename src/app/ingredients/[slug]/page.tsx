@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                                   '有効量・タイミング・副作用'
 
   return {
-    title: `${ing.nameJa} 効果・副作用・${usageAxis}【論文エビデンス${ing.evidenceRank}ランク】`,
-    description: `${ing.nameJa}の論文エビデンス${ing.evidenceRank}ランク。${ing.papers.length}本の研究から${descAxis}を解説。${ing.tagline}`,
+    title: ing.seoTitle ?? `${ing.nameJa} 効果・副作用・${usageAxis}【論文エビデンス${ing.evidenceRank}ランク】`,
+    description: ing.seoDescription ?? `${ing.nameJa}の論文エビデンス${ing.evidenceRank}ランク。${ing.papers.length}本の研究から${descAxis}を解説。${ing.tagline}`,
     alternates: { canonical: `${BASE_URL}/ingredients/${slug}` },
   }
 }

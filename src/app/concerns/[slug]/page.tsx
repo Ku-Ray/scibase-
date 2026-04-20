@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getConcern(slug)
   if (!c) return {}
   return {
-    title: `${c.nameJa}に効く成分・サプリ一覧【論文エビデンス順】`,
-    description: `${c.nameJa}に関連する成分を論文エビデンスの強さ順に掲載。${c.description}`,
+    title: c.seoTitle ?? `${c.nameJa}に効く成分・サプリ一覧【論文エビデンス順】`,
+    description: c.seoDescription ?? `${c.nameJa}に関連する成分を論文エビデンスの強さ順に掲載。${c.description}`,
     alternates: { canonical: `${BASE_URL}/concerns/${slug}` },
   }
 }

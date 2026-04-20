@@ -4,12 +4,14 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['retinol',              'retinal'],
   ['vitamin-c-topical',    'niacinamide'],
   ['hyaluronic-acid',      'ceramide'],
+  ['arbutin',              'azelaic-acid'],
   ['myo-inositol',         'zinc'],
   // ── 抗老化・長寿 ────────────────────────────────
   ['nmn',                  'nicotinamide-riboside'],
   ['resveratrol',          'quercetin'],
   ['nmn',                  'coq10'],
   ['collagen-peptide',     'vitamin-c-oral'],
+  ['hyaluronic-acid',      'collagen-peptide'],
   ['nmn',                  'urolithin-a'],
   ['spermidine',           'fisetin'],
   // ── ストレス・睡眠 ───────────────────────────────
@@ -53,12 +55,14 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'retinol-vs-retinal':                  'skin',
   'vitamin-c-topical-vs-niacinamide':    'skin',
   'hyaluronic-acid-vs-ceramide':         'skin',
+  'arbutin-vs-azelaic-acid':             'skin',
   'myo-inositol-vs-zinc':                'skin',
   // antiaging
   'nmn-vs-nicotinamide-riboside':        'antiaging',
   'resveratrol-vs-quercetin':            'antiaging',
   'nmn-vs-coq10':                        'antiaging',
   'collagen-peptide-vs-vitamin-c-oral':  'antiaging',
+  'hyaluronic-acid-vs-collagen-peptide': 'antiaging',
   'nmn-vs-urolithin-a':                  'antiaging',
   'spermidine-vs-fisetin':               'antiaging',
   // stress
@@ -87,6 +91,18 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'lions-mane-vs-bacopa-monnieri':       'cognitive',
   // energy
   'coq10-vs-pqq':                        'energy',
+}
+
+/** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
+export const PAIR_SEO: Record<string, { title: string; description: string }> = {
+  'arbutin-vs-azelaic-acid': {
+    title: 'アルブチンvsアゼライン酸｜論文エビデンス比較',
+    description: '美白・色素沈着対策のアルブチンとアゼライン酸を論文で比較。有効濃度、効果の出方、副作用（刺激・赤み）、肌質別の向き不向き、併用可否、月あたりコストまで。どちらを先に試すかの判定と理由を化粧品メーカー視点で解説。',
+  },
+  'hyaluronic-acid-vs-collagen-peptide': {
+    title: 'ヒアルロン酸vsコラーゲンペプチド｜経口比較',
+    description: '飲むヒアルロン酸とコラーゲンペプチドを論文で比較。経口摂取時の吸収率、肌弾力・保湿への影響、1日あたり有効量、エビデンスランクの差、月コスト、どちらを先に試すかの判定まで化粧品メーカー視点で解説。',
+  },
 }
 
 export const CATEGORY_LABELS: Record<string, string> = {

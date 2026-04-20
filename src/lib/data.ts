@@ -83,6 +83,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'ナイアシンアミド',
     nameEn: 'Niacinamide',
     evidenceRank: 'A',
+    seoTitle: 'ナイアシンアミドの効果・副作用・濃度｜論文解説',
+    seoDescription: 'ナイアシンアミドは2〜5%濃度で毛穴・バリア機能・色素沈着への影響がRCTで報告されている。2%と10%の違い、ピリピリ感の原因、ビタミンCやレチノールとの併用可否まで、化粧品メーカー視点で査読済み論文を参照して解説。',
     tagline: 'メラニン産生抑制・バリア機能改善がRCTで示されている',
     description:
       'ナイアシンアミド（ニコチンアミド）はビタミンB3の一形態。外用・経口ともに研究があり、メラニン産生の抑制、皮膚バリア機能の強化、毛穴の目立ちにくさへの寄与が複数のRCTで確認されている。忌避反応が少なく、レチノールと比べてマイルドな選択肢として位置付けられている。',
@@ -573,6 +575,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'プロバイオティクス',
     nameEn: 'Probiotics',
     evidenceRank: 'A',
+    seoTitle: 'プロバイオティクスの効果｜株別の論文エビデンス',
+    seoDescription: 'プロバイオティクスは菌株ごとに効果が異なる。Lactobacillus・Bifidobacteriumなど主要株の腸内環境・肌バリア・免疫への報告を論文で整理。1日あたりのCFU目安、継続期間、服用タイミングまで化粧品メーカー視点で解説。',
     tagline: '腸内環境・免疫機能への関与がRCTで確認されているが菌株特異性に注意',
     description:
       '乳酸菌やビフィズス菌などの生きた微生物。腸内環境の改善、免疫機能のサポートについてRCTでエビデンスがある。ただし「腸活でニキビが治る」など一部の誇大な主張はメタ解析で否定されており、効果は菌株・用途によって大きく異なる。',
@@ -1123,6 +1127,8 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Azelaic Acid',
     evidenceRank: 'A',
     usageType: 'topical',
+    seoTitle: 'アゼライン酸の効果・副作用・濃度｜論文エビデンス',
+    seoDescription: 'アゼライン酸は15〜20%濃度でニキビ・色素沈着への有効性がRCTで報告されている。ヒリつき・乾燥の発生率、敏感肌での始め方、レチノール・ビタミンCとの併用可否まで、査読済み論文を参照して化粧品メーカー視点で解説。',
     tagline: '色素沈着・ニキビ・酒さへの効果がRCTで確認されている多機能成分',
     description:
       'アゼライン酸は穀物由来のジカルボン酸。チロシナーゼ（メラニン合成酵素）の阻害・抗炎症・殺菌（ニキビの原因菌P.acnesへの作用）という3つの作用を持つ。色素沈着・ニキビ・酒さ（ロザシア）への効果が複数のRCTで確認されており、欧米では医薬品としても承認されている。',
@@ -7115,6 +7121,8 @@ export const concerns: Concern[] = [
     nameJa: 'バリア機能・乾燥',
     emoji: '🏔️',
     category: 'skin',
+    seoTitle: '肌バリア低下の原因と対策成分｜論文エビデンス順',
+    seoDescription: '肌バリア機能低下の原因（経皮水分喪失・セラミド減少）と関連成分を論文で整理。セラミド・ナイアシンアミド・パンテノールなどをエビデンスランク順に比較。敏感肌・乾燥・赤みの読み方、避けるべき刺激まで化粧品メーカー視点で解説。',
     description: '角質層の水分保持・経皮水分蒸散量（TEWL）への関与が研究で示されている成分一覧',
     ingredientSlugs: ['ceramide', 'hyaluronic-acid', 'niacinamide', 'centella-asiatica', 'squalane', 'panthenol', 'allantoin', 'evening-primrose-oil', 'pdrn', 'ceramide-oral'],
     mechanism: {
