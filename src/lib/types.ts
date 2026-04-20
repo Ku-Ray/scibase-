@@ -92,6 +92,16 @@ export interface Ingredient {
   seoTitle?: string
   /** SEO用ディスクリプション上書き。未設定時は自動生成 */
   seoDescription?: string
+  /** 用量別の効果（用量×効果が論文で別々に確認されている成分用・任意） */
+  dosageLevels?: {
+    dose: string
+    category: string
+    effect: string
+    whoFor: string
+    evidenceNote?: string
+  }[]
+  /** 成分固有のFAQ（自動生成FAQの後ろに追加・任意） */
+  customFaqs?: { q: string; a: string }[]
   updatedAt: string
 }
 

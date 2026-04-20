@@ -217,6 +217,8 @@ export default async function IngredientPage({ params }: Props) {
       q: `${ing.nameJa}の副作用はありますか？安全に使えますか？`,
       a: `報告されている副作用：${ing.sideEffects.join('、')}。${ing.contraindications?.length ? `特に${ing.contraindications.join('、')}の方は使用前に医師に相談してください。` : ''}適切な用量・タイミングを守ることで、多くの方が問題なく使用できます。不安がある場合は医師・薬剤師への相談を推奨します。`,
     } : null,
+    /* 成分固有のFAQ（用量別・薬剤併用など個別ナレッジ） */
+    ...(ing.customFaqs ?? []),
   ].filter(Boolean) as { q: string; a: string }[]
 
   const faqJsonLd = faqItems.length > 0 ? {
@@ -303,6 +305,7 @@ export default async function IngredientPage({ params }: Props) {
     { id: 'papers', label: '主要研究' },
     { id: 'evidence', label: 'エビデンスの読み方' },
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'dosage', label: '摂取・使用ガイド' }] : []),
+    ...(ing.dosageLevels?.length ? [{ id: 'dosage-levels', label: '用量別の効果' }] : []),
     { id: 'faq', label: 'よくある疑問' },
     ...((ing.sideEffects?.length || ing.contraindications?.length) ? [{ id: 'safety', label: '副作用・注意' }] : []),
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'start', label: '始め方' }] : []),
@@ -574,6 +577,50 @@ export default async function IngredientPage({ params }: Props) {
             ))}
           </div>
         </section>
+
+        {/* Dosage levels — 用量別効果（用量×効果が論文で別々に確認されている成分用） */}
+        {ing.dosageLevels && ing.dosageLevels.length > 0 && (
+          <section id="dosage-levels" className="mb-10 scroll-mt-20">
+            <h2 className="font-semibold text-[18px] text-foreground mb-2">
+              {ing.nameJa}の用量別の効果
+            </h2>
+            <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed">
+              論文で報告されている用量ごとの効果と、推奨される対象層を整理しました。
+              数値はあくまで研究での投与量であり、個人差・服薬状況により最適量は異なります。
+            </p>
+            <div className="space-y-3">
+              {ing.dosageLevels.map((lv, i) => (
+                <div key={i}
+                  className="bg-card border border-border rounded-2xl p-5">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+                    <h3 className={`text-[18px] font-black tabular-nums leading-tight
+                      ${heroText[ing.evidenceRank]}`}>
+                      {lv.dose}
+                    </h3>
+                    <span className="text-[12px] font-medium text-muted-foreground
+                      bg-secondary border border-border rounded-full px-2.5 py-0.5">
+                      {lv.category}
+                    </span>
+                  </div>
+                  <p className="text-[14px] text-foreground leading-[1.85] mb-3">
+                    {lv.effect}
+                  </p>
+                  <div className="border-t border-border pt-3 space-y-1.5">
+                    <p className="text-[12px] text-muted-foreground">
+                      <span className="font-semibold text-foreground/80">向いている人：</span>
+                      {lv.whoFor}
+                    </p>
+                    {lv.evidenceNote && (
+                      <p className="text-[11px] text-muted-foreground/70 italic">
+                        参照：{lv.evidenceNote}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* FAQ — アコーディオン（最初の1問をデフォルト展開・損失回避フレーミング） */}
         <section id="faq" className="mb-10 scroll-mt-20">
