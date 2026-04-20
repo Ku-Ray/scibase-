@@ -83,8 +83,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'ナイアシンアミド',
     nameEn: 'Niacinamide',
     evidenceRank: 'A',
-    seoTitle: 'ナイアシンアミドの効果・副作用・濃度｜論文解説',
-    seoDescription: 'ナイアシンアミドは2〜5%濃度で毛穴・バリア機能・色素沈着への影響がRCTで報告されている。2%と10%の違い、ピリピリ感の原因、ビタミンCやレチノールとの併用可否まで、化粧品メーカー視点で査読済み論文を参照して解説。',
+    seoTitle: 'ナイアシンアミド｜毛穴・しみの論文エビデンス',
+    seoDescription: 'ナイアシンアミドはビタミンB3の一形態。2〜5%外用でメラニン産生抑制・皮膚バリア機能の強化が複数のRCTで示されている。推奨濃度・副作用・レチノールとの違いを査読済み論文ベースで解説。',
     tagline: 'メラニン産生抑制・バリア機能改善がRCTで示されている',
     description:
       'ナイアシンアミド（ニコチンアミド）はビタミンB3の一形態。外用・経口ともに研究があり、メラニン産生の抑制、皮膚バリア機能の強化、毛穴の目立ちにくさへの寄与が複数のRCTで確認されている。忌避反応が少なく、レチノールと比べてマイルドな選択肢として位置付けられている。',
@@ -575,8 +575,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'プロバイオティクス',
     nameEn: 'Probiotics',
     evidenceRank: 'A',
-    seoTitle: 'プロバイオティクスの効果｜株別の論文エビデンス',
-    seoDescription: 'プロバイオティクスは菌株ごとに効果が異なる。Lactobacillus・Bifidobacteriumなど主要株の腸内環境・肌バリア・免疫への報告を論文で整理。1日あたりのCFU目安、継続期間、服用タイミングまで化粧品メーカー視点で解説。',
+    seoTitle: 'プロバイオティクス｜腸・肌の論文エビデンス',
+    seoDescription: '乳酸菌・ビフィズス菌などの生きた微生物。腸内環境と免疫機能への関与がCochraneメタ解析で示されている。株別のエビデンス、「腸活でニキビが治る」主張の検証、有効用量を査読済み論文で解説。',
     tagline: '腸内環境・免疫機能への関与がRCTで確認されているが菌株特異性に注意',
     description:
       '乳酸菌やビフィズス菌などの生きた微生物。腸内環境の改善、免疫機能のサポートについてRCTでエビデンスがある。ただし「腸活でニキビが治る」など一部の誇大な主張はメタ解析で否定されており、効果は菌株・用途によって大きく異なる。',
@@ -939,6 +939,8 @@ export const ingredients: Ingredient[] = [
       'スキンケアの土台（保湿・バリア）から整えたい',
     ],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
+    seoTitle: 'セラミド｜肌バリア・乾燥の論文エビデンス',
+    seoDescription: 'セラミドは角層の主要脂質。外用で経皮水分蒸散量（TEWL）低下とバリア機能改善がRCTで示されている。乾燥・アトピー様肌への使い方、配合濃度、ヒアルロン酸との違いを査読済み論文ベースで解説。',
     updatedAt: '2026-04-13',
   },
 
@@ -1127,8 +1129,8 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Azelaic Acid',
     evidenceRank: 'A',
     usageType: 'topical',
-    seoTitle: 'アゼライン酸の効果・副作用・濃度｜論文エビデンス',
-    seoDescription: 'アゼライン酸は15〜20%濃度でニキビ・色素沈着への有効性がRCTで報告されている。ヒリつき・乾燥の発生率、敏感肌での始め方、レチノール・ビタミンCとの併用可否まで、査読済み論文を参照して化粧品メーカー視点で解説。',
+    seoTitle: 'アゼライン酸｜ニキビ・色素沈着の論文エビデンス',
+    seoDescription: 'アゼライン酸は穀物由来のジカルボン酸。15〜20%外用でニキビ・酒さ・色素沈着への効果が複数のRCTで示されている。推奨濃度・刺激リスク・トラネキサム酸との比較を査読済み論文で解説。',
     tagline: '色素沈着・ニキビ・酒さへの効果がRCTで確認されている多機能成分',
     description:
       'アゼライン酸は穀物由来のジカルボン酸。チロシナーゼ（メラニン合成酵素）の阻害・抗炎症・殺菌（ニキビの原因菌P.acnesへの作用）という3つの作用を持つ。色素沈着・ニキビ・酒さ（ロザシア）への効果が複数のRCTで確認されており、欧米では医薬品としても承認されている。',
@@ -1481,6 +1483,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '380名', label: 'ストレス・認知改善メタ解析の規模' },
     axisScores: { antiAging: 2, skin: 0, cognitive: 7, stress: 8, sleep: 7, immunity: 2, metabolism: 2 },
+    seoTitle: 'L-テアニン｜200mgで集中・睡眠の論文',
+    seoDescription: 'L-テアニンは緑茶由来のアミノ酸。200mg/日で注意集中・ストレス低減・入眠への関与がRCTで示されている。有効量・カフェインとの併用・副作用・テアニン:カフェイン比を査読済み論文で解説。',
     updatedAt: '2026-04-15',
   },
 
@@ -1742,6 +1746,8 @@ export const ingredients: Ingredient[] = [
         a: 'ワルファリンなど抗凝固薬・免疫抑制剤・一部の抗うつ薬・血圧降下薬との相互作用が報告されています。糖尿病薬と併用すると血糖値に影響する可能性も指摘されています。服薬中の方は併用前に医師・薬剤師への相談が推奨されています。アルコールとの併用も翌朝のだるさを増やすことがあるため避けたほうが無難です。',
       },
     ],
+    seoTitle: 'メラトニン｜不眠・時差ボケの論文エビデンス',
+    seoDescription: 'メラトニンは睡眠リズムを調整するホルモン。0.3〜5mgで入眠潜時短縮・時差ボケ軽減がメタ解析で示されている。用量別の効果、就寝前の摂取タイミング、依存性・離脱症状の有無を査読済み論文で解説。',
     updatedAt: '2026-04-20',
   },
 
@@ -1803,6 +1809,8 @@ export const ingredients: Ingredient[] = [
       },
     ],
     axisScores: { antiAging: 1, skin: 0, cognitive: 3, stress: 7, sleep: 7, immunity: 1, metabolism: 1 },
+    seoTitle: 'GABA｜ストレス・睡眠の論文エビデンス',
+    seoDescription: 'GABAは抑制性神経伝達物質。100〜200mg/日でストレス指標の低下・入眠潜時短縮がRCTで示されている。経口摂取の吸収率論争、有効量、カフェイン・アルコールとの併用を査読済み論文で解説。',
     updatedAt: '2026-04-15',
   },
 
@@ -2379,6 +2387,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '−80%', label: '60歳までの体内タウリン濃度低下（Science 2023）' },
     axisScores: { antiAging: 7, skin: 1, cognitive: 5, stress: 2, sleep: 1, immunity: 3, metabolism: 5 },
+    seoTitle: 'タウリン｜疲労・心血管の論文エビデンス',
+    seoDescription: 'タウリンは含硫アミノ酸。3〜6g/日で疲労回復・心血管機能への関与がRCTで示されている。有効量、カフェインとの併用、エナジードリンクの実質量、副作用を査読済み論文ベースで解説。',
     updatedAt: '2026-04-16',
   },
   {
@@ -2435,6 +2445,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'HbA1c改善', label: 'メトホルミンと同等の血糖降下効果（メタ解析）' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 3, stress: 0, sleep: 0, immunity: 3, metabolism: 9 },
+    seoTitle: 'ベルベリン｜血糖・脂質の論文エビデンス',
+    seoDescription: 'ベルベリンはアルカロイドの植物成分。500mg×3回/日で空腹時血糖・HbA1c・LDLコレステロール低下がメタ解析で示されている。メトホルミンとの比較、吸収率、副作用を査読済み論文で解説。',
     updatedAt: '2026-04-16',
   },
   {
@@ -2565,6 +2577,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'MMSE改善', label: '軽度認知機能低下で有意な認知スコア改善（16週RCT）' },
     axisScores: { antiAging: 6, skin: 0, cognitive: 9, stress: 4, sleep: 2, immunity: 4, metabolism: 1 },
+    seoTitle: 'ヤマブシタケ 効果・副作用・認知機能論文',
+    seoDescription: 'ヤマブシタケ（ライオンズメーン）は薬用キノコ。1g/日×16週で軽度認知機能の改善がRCTで示されている。神経成長因子（NGF）への作用、有効量、副作用、抽出法の違いを査読済み論文で解説。',
     updatedAt: '2026-04-16',
   },
   {
@@ -2619,6 +2633,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'FDAが表示許可', label: '認知機能への関与でFDAが条件付き健康強調表示を許可' },
     axisScores: { antiAging: 5, skin: 0, cognitive: 9, stress: 6, sleep: 2, immunity: 1, metabolism: 1 },
+    seoTitle: 'ホスファチジルセリン｜認知・ストレスの論文',
+    seoDescription: 'ホスファチジルセリンは細胞膜リン脂質。100〜300mg/日で高齢者の記憶・認知機能、運動時のコルチゾール抑制がRCTで示されている。大豆由来・ウシ由来の違いと有効量を査読済み論文で解説。',
     updatedAt: '2026-04-16',
   },
   {
@@ -4552,6 +4568,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['ストレスで眠れない・夜中に目が覚める', '足・ふくらはぎがよくつる', '酸化マグネシウムでお腹が緩くなった'],
     heroStat: { value: '睡眠効率・入眠時間', label: '8週間RCTで有意改善（JRMS 2012）' },
     axisScores: { antiAging: 3, skin: 2, cognitive: 4, stress: 8, sleep: 9, immunity: 4, metabolism: 5 },
+    seoTitle: 'マグネシウムグリシネート 効果・副作用・有効量',
+    seoDescription: 'マグネシウムグリシネートはアミノ酸キレート型。200〜400mg/日で吸収率の高さと下痢を起こしにくい傾向が研究で示されている。酸化マグネシウム・クエン酸塩との違いと有効量を査読済み論文で解説。',
     updatedAt: '2026-04-17',
   },
   {
@@ -7173,8 +7191,6 @@ export const concerns: Concern[] = [
     nameJa: 'バリア機能・乾燥',
     emoji: '🏔️',
     category: 'skin',
-    seoTitle: '肌バリア低下の原因と対策成分｜論文エビデンス順',
-    seoDescription: '肌バリア機能低下の原因（経皮水分喪失・セラミド減少）と関連成分を論文で整理。セラミド・ナイアシンアミド・パンテノールなどをエビデンスランク順に比較。敏感肌・乾燥・赤みの読み方、避けるべき刺激まで化粧品メーカー視点で解説。',
     description: '角質層の水分保持・経皮水分蒸散量（TEWL）への関与が研究で示されている成分一覧',
     ingredientSlugs: ['ceramide', 'hyaluronic-acid', 'niacinamide', 'centella-asiatica', 'squalane', 'panthenol', 'allantoin', 'evening-primrose-oil', 'pdrn', 'ceramide-oral'],
     mechanism: {
@@ -7190,6 +7206,8 @@ export const concerns: Concern[] = [
       '熱いシャワー・長風呂の習慣がある',
       'エアコン・暖房の効いた乾燥空間に長時間いる',
     ],
+    seoTitle: '肌バリア機能の低下｜論文で選ぶ成分一覧',
+    seoDescription: '肌バリア機能の低下はTEWL（経皮水分蒸散量）増加と炎症の悪循環を招く。セラミド・ナイアシンアミド・パンテノールなどバリア改善成分を論文エビデンス順に掲載。原因・機序・対策の方向性まで解説。',
   },
   {
     slug: 'dry-skin',
