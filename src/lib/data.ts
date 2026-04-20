@@ -329,7 +329,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '11,321名', label: 'メタ解析のエビデンス規模（BMJ）' },
     axisScores: { antiAging: 5, skin: 2, cognitive: 5, stress: 3, sleep: 3, immunity: 9, metabolism: 5 },
-    updatedAt: '2026-04-13',
+    interactions: [
+      {
+        substance: 'チアジド系利尿薬（ヒドロクロロチアジド等）',
+        level: 'caution',
+        mechanism: 'チアジド系は尿中カルシウム排泄を低下させ、ビタミンDは腸管カルシウム吸収を促進する。両者の併用で高カルシウム血症のリスクが高まる可能性が報告されており、特に高齢者・腎機能低下・副甲状腺機能亢進症のある方で注意が必要。',
+        action: '併用中は血中カルシウム値の定期確認が推奨される。詳しくは医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'PMC5623087 systematic review／PubMed 4338123',
+      },
+      {
+        substance: '副腎皮質ステロイド（プレドニゾロン等）',
+        level: 'caution',
+        mechanism: 'グルココルチコイドは24-ヒドロキシラーゼを誘導しビタミンDの異化を促進する。長期服用ではビタミンD補充の効果が減弱し血中25(OH)D濃度が低下しやすいことが報告されている。',
+        action: '長期ステロイド服用中の方は併用前に医師・薬剤師に相談し、血中ビタミンD・カルシウムを定期的に確認する。',
+        evidence: 'established',
+        source: 'PMC5623087 systematic review',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'omega3',
@@ -565,7 +583,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '2年間', label: '心血管イベント低下を確認したRCT期間' },
     axisScores: { antiAging: 7, skin: 4, cognitive: 3, stress: 2, sleep: 2, immunity: 4, metabolism: 9 },
-    updatedAt: '2026-04-13',
+    interactions: [
+      {
+        substance: '抗凝固薬（ワルファリン）',
+        level: 'caution',
+        mechanism: 'CoQ10はビタミンKと類似構造を持ち、ワルファリンの抗凝固作用を弱める可能性が報告されている。100mg/日の併用でS型・R型ワルファリンの全身クリアランスがそれぞれ約32%・17%増加すると推定される。72歳女性の症例でCoQ10中止により反応性が回復した報告あり。',
+        action: 'ワルファリン服用中の方は併用前に必ず医師・薬剤師に相談。開始・中止時はINRモニタリングが推奨される。',
+        evidence: 'established',
+        source: 'British National Formulary／Specialist Pharmacy Service／PubMed症例報告',
+      },
+      {
+        substance: '降圧薬（ACE阻害薬・ARB・β遮断薬・Ca拮抗薬・利尿薬等）',
+        level: 'caution',
+        mechanism: 'CoQ10には軽度の血圧降下作用が報告されており、降圧薬と併用すると過度な血圧低下によるめまい・ふらつきを生じる可能性がある。',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、血圧を定期的に測定する。',
+        evidence: 'theoretical',
+        source: 'Mayo Clinic／Merck Manual',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'nmn',
@@ -735,7 +771,25 @@ export const ingredients: Ingredient[] = [
       'ただし現時点でのヒトエビデンスはCランク（動物実験が中心）',
     ],
     axisScores: { antiAging: 5, skin: 3, cognitive: 3, stress: 2, sleep: 1, immunity: 4, metabolism: 3 },
-    updatedAt: '2026-04-13',
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬（ワルファリン等）',
+        level: 'avoid',
+        mechanism: 'レスベラトロールはBCRPおよびCYP2C9を阻害し、ワルファリンの全身曝露を増加させ抗凝固効果を増強する可能性が動物モデル・臨床薬物動態研究で報告されている。',
+        action: 'ワルファリン服用中の方は併用を避け、必ず医師・薬剤師に相談。手術予定がある方も術前の中止を相談する。',
+        evidence: 'established',
+        source: 'Scientific Reports 2020 (warfarin pharmacokinetics)／PMC trans-resveratrol mouse model',
+      },
+      {
+        substance: 'CYP3A4基質薬（一部の降圧薬・スタチン・免疫抑制剤・ベンゾジアゼピン等）',
+        level: 'caution',
+        mechanism: '1g/日のレスベラトロールがヒトでCYP3A4活性を有意に阻害し、CYP3A4基質薬（ブスピロン等）のAUCを変化させたことが報告されている。',
+        action: 'CYP3A4で代謝される薬を服用中の方は併用前に医師・薬剤師に相談。',
+        evidence: 'established',
+        source: 'Pharmacology Research & Perspectives 2017／健常人臨床試験',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   // ─── スキンケア成分（外用） ────────────────────────────────────────
@@ -1357,7 +1411,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '11,306名', label: 'Cochraneメタ解析のエビデンス規模' },
     axisScores: { antiAging: 6, skin: 5, cognitive: 4, stress: 3, sleep: 1, immunity: 8, metabolism: 3 },
-    updatedAt: '2026-04-13',
+    interactions: [
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'caution',
+        mechanism: '高用量ビタミンC（1g以上）でワルファリンへの反応が低下し、INRが目標域以下にとどまる「ワルファリン抵抗性」の症例が報告されている。ビタミンC中止でINRが正常化した。生理量では問題は報告されていない。',
+        action: 'ワルファリン服用中の方が高用量ビタミンCを摂取する場合は医師・薬剤師に相談し、INRをこまめに確認する。',
+        evidence: 'case-report',
+        source: 'Frontiers in Pharmacology 2024 case report／PubMed 23592361',
+      },
+      {
+        substance: 'エストロゲン製剤（経口避妊薬・閉経後ホルモン補充療法）',
+        level: 'caution',
+        mechanism: '経口アスコルビン酸が閉経後ホルモン補充療法中の血中エストラジオール濃度を上昇させたという報告がある。避妊効果に影響するほどの大きさではないとされるが、軽度の血中エストロゲン増加の可能性が指摘されている。',
+        action: 'ホルモン療法中の方が高用量ビタミンCを継続する場合は医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'GoodRx／Topvitamine review',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   {
@@ -1422,7 +1494,25 @@ export const ingredients: Ingredient[] = [
       '免疫機能の底上げとスキンケアを同時にしたい',
     ],
     axisScores: { antiAging: 4, skin: 5, cognitive: 4, stress: 3, sleep: 2, immunity: 8, metabolism: 4 },
-    updatedAt: '2026-04-13',
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗菌薬（ドキシサイクリン・シプロフロキサシン等）',
+        level: 'avoid',
+        mechanism: '亜鉛は消化管内で抗菌薬とキレート複合体を形成し、両方の吸収を低下させ抗菌効果を減弱させる可能性が複数の薬物動態研究で報告されている。',
+        action: '抗菌薬服用の少なくとも2時間前または4〜6時間後に亜鉛サプリを摂取。詳しくは医師・薬剤師に相談。',
+        evidence: 'established',
+        source: 'Mayo Clinic／NIH ODS Health Professional Fact Sheet／European Journal of Clinical Pharmacology 1976',
+      },
+      {
+        substance: 'ペニシラミン（リウマチ・ウィルソン病治療薬）',
+        level: 'avoid',
+        mechanism: '亜鉛がペニシラミンと結合し吸収を低下させ、薬剤の有効性が減弱する可能性がある。',
+        action: 'ペニシラミンと亜鉛サプリは少なくとも1時間以上間隔を空けて服用。必ず医師・薬剤師に相談。',
+        evidence: 'established',
+        source: 'NIH ODS／Mayo Clinic',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   {
@@ -1537,7 +1627,25 @@ export const ingredients: Ingredient[] = [
     axisScores: { antiAging: 2, skin: 0, cognitive: 7, stress: 8, sleep: 7, immunity: 2, metabolism: 2 },
     seoTitle: 'L-テアニン｜200mgで集中・睡眠の論文',
     seoDescription: 'L-テアニンは緑茶由来のアミノ酸。200mg/日で注意集中・ストレス低減・入眠への関与がRCTで示されている。有効量・カフェインとの併用・副作用・テアニン:カフェイン比を査読済み論文で解説。',
-    updatedAt: '2026-04-15',
+    interactions: [
+      {
+        substance: '降圧薬（ACE阻害薬・ARB・Ca拮抗薬・β遮断薬・利尿薬等）',
+        level: 'caution',
+        mechanism: 'L-テアニンはストレス時の血圧上昇を抑制する作用が報告されており、降圧薬と併用すると血圧が過度に低下する可能性がある（薬理学的根拠ベース・専用相互作用試験は限定的）。',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、血圧を定期的に測定する。',
+        evidence: 'theoretical',
+        source: 'WebMD／PMC3518171',
+      },
+      {
+        substance: '中枢刺激薬（メチルフェニデート等）',
+        level: 'caution',
+        mechanism: 'L-テアニンは鎮静・リラックス方向の作用を持つため、中枢刺激薬の効果と相反する可能性が指摘されている。ADHD児を対象とした併用研究では明確な有害事象は報告されていないが、データは限定的。',
+        action: '中枢刺激薬を服用中の方は併用前に医師に相談する。',
+        evidence: 'theoretical',
+        source: 'WebMD／RxList',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   {
@@ -1611,7 +1719,17 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '3g', label: '睡眠改善に必要な1日量（RCT）' },
     axisScores: { antiAging: 3, skin: 3, cognitive: 2, stress: 4, sleep: 9, immunity: 2, metabolism: 3 },
-    updatedAt: '2026-04-15',
+    interactions: [
+      {
+        substance: 'クロザピン（治療抵抗性統合失調症薬）',
+        level: 'caution',
+        mechanism: '高用量グリシン（30〜60g/日）はNMDA受容体グリシン部位に作用し、従来型抗精神病薬・リスペリドン・オランザピンでは陰性症状改善が報告される一方、クロザピン併用時は効果が打ち消される（陽性症状・陰性症状とも改善なし）ことが複数のプラセボ対照試験で報告されている。',
+        action: 'クロザピン服用中の方は高用量グリシンの併用前に必ず医師に相談する。',
+        evidence: 'established',
+        source: 'American Journal of Psychiatry 2000／PubMed 9892314',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   {
@@ -1897,7 +2015,25 @@ export const ingredients: Ingredient[] = [
     axisScores: { antiAging: 1, skin: 0, cognitive: 3, stress: 7, sleep: 7, immunity: 1, metabolism: 1 },
     seoTitle: 'GABA｜ストレス・睡眠の論文エビデンス',
     seoDescription: 'GABAは抑制性神経伝達物質。100〜200mg/日でストレス指標の低下・入眠潜時短縮がRCTで示されている。経口摂取の吸収率論争、有効量、カフェイン・アルコールとの併用を査読済み論文で解説。',
-    updatedAt: '2026-04-15',
+    interactions: [
+      {
+        substance: '鎮静剤・睡眠薬・ベンゾジアゼピン系（ジアゼパム・アルプラゾラム・ゾルピデム等）・アルコール',
+        level: 'caution',
+        mechanism: 'GABAは抑制性神経伝達物質であり、これらと併用すると中枢神経抑制作用が増強し、過度の眠気・呼吸抑制を生じる可能性が指摘されている。',
+        action: '鎮静剤・睡眠薬を服用中の方は併用前に必ず医師・薬剤師に相談。アルコール併用も避ける。',
+        evidence: 'theoretical',
+        source: 'WebMD／Medical News Today',
+      },
+      {
+        substance: '降圧薬（ACE阻害薬・ARB・Ca拮抗薬・β遮断薬・利尿薬等）',
+        level: 'caution',
+        mechanism: 'GABAは血圧低下作用が報告されており、降圧薬と併用すると過度な血圧低下を生じる可能性がある。',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、血圧を定期的に測定する。',
+        evidence: 'theoretical',
+        source: 'WebMD',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   // ─── 美白・スキンケア成分（追加） ────────────────────────────────────────
@@ -2446,7 +2582,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'CRP低下', label: '炎症マーカーがプラセボ比で有意改善（メタ解析）' },
     axisScores: { antiAging: 7, skin: 3, cognitive: 5, stress: 3, sleep: 1, immunity: 7, metabolism: 4 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬（ワルファリン等）',
+        level: 'avoid',
+        mechanism: 'クルクミンはワルファリンの代謝・クリアランスに影響し、INR上昇および出血リスク増加を伴う症例が報告されている。治療域が狭い薬剤であるため小さな相互作用でも臨床的影響が大きい。',
+        action: 'ワルファリン服用中の方は併用を避け、必ず医師・薬剤師に相談。手術予定がある方は術前2週間程度の中止を相談する。',
+        evidence: 'established',
+        source: 'Welsh Medicines Advice Service／British Journal of Clinical Pharmacology 2021 systematic review',
+      },
+      {
+        substance: 'CYP3A4基質薬（タクロリムス・一部のスタチン・免疫抑制剤等）',
+        level: 'caution',
+        mechanism: '高用量クルクミンによるCYP3A4阻害でタクロリムス血中濃度が上昇し急性腎障害を生じた症例報告がある。',
+        action: 'CYP3A4で代謝される薬・移植後免疫抑制剤を服用中の方は併用前に必ず医師に相談。',
+        evidence: 'case-report',
+        source: 'Welsh Medicines Advice Service／タクロリムス症例報告',
+      },
+      {
+        substance: '糖尿病薬（スルホニル尿素薬・インスリン等）',
+        level: 'caution',
+        mechanism: 'クルクミンは血糖・HbA1cの低下作用が報告されており、グリベンクラミドの血中濃度上昇と血糖低下を示した薬物動態研究がある。併用で低血糖リスクが高まる可能性がある。',
+        action: '糖尿病薬を服用中の方は併用前に必ず医師・薬剤師に相談。血糖の自己測定を強化する。',
+        evidence: 'established',
+        source: 'PubMed薬物動態研究／WebMD',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'taurine',
@@ -3216,7 +3378,17 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '細胞膜保護', label: '脂溶性抗酸化の基本成分。ビタミンCと相乗効果' },
     axisScores: { antiAging: 5, skin: 6, cognitive: 2, stress: 1, sleep: 0, immunity: 5, metabolism: 2 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬（ワルファリン・アスピリン等）',
+        level: 'avoid',
+        mechanism: 'ビタミンEはビタミンK依存性凝固因子の活性化を阻害し、組織因子発現も抑制する。300mg/日以上の高用量ではワルファリン併用で出血リスクが増加し、コホート研究で血中ビタミンEが出血イベントを予測したと報告されている。',
+        action: '高用量（400IU/日以上）は抗凝固薬・抗血小板薬服用中の方は併用を避け、必ず医師・薬剤師に相談。手術予定がある方は術前の中止を相談する。',
+        evidence: 'established',
+        source: 'Journal of the American Heart Association（NVAFコホート研究）／Nutrition Research Reviews',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'iron',
@@ -3497,7 +3669,33 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['乳製品をほとんど食べない', '骨密度が低いと指摘された', '閉経後の女性'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 2, stress: 2, sleep: 3, immunity: 2, metabolism: 4 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '甲状腺ホルモン薬（レボチロキシン）',
+        level: 'caution',
+        mechanism: '炭酸カルシウム・クエン酸カルシウム等は胃・小腸でレボチロキシンと不溶性複合体を形成し、生体利用率が約20〜25%低下することがシステマティックレビューで示されている。',
+        action: 'レボチロキシンと少なくとも4時間以上間隔を空けて服用。詳しくは医師・薬剤師に相談。',
+        evidence: 'established',
+        source: 'PMC systematic review (PMC10295503)／PMC8002057',
+      },
+      {
+        substance: 'テトラサイクリン系・キノロン系抗菌薬',
+        level: 'avoid',
+        mechanism: 'カルシウムは抗菌薬とキレート複合体を形成し、両方の吸収を低下させ抗菌効果を減弱させる可能性がある。',
+        action: '抗菌薬服用中はカルシウムサプリと2〜4時間以上間隔を空ける。詳しくは医師・薬剤師に相談。',
+        evidence: 'established',
+        source: 'Linus Pauling Institute／Chemist Direct',
+      },
+      {
+        substance: 'ビスホスホネート系骨粗鬆症薬（アレンドロン酸等）',
+        level: 'avoid',
+        mechanism: 'カルシウムがビスホスホネートと結合し吸収を阻害するため、骨保護効果が低下し骨折リスクが高まる可能性がある。',
+        action: 'ビスホスホネート服用後少なくとも30分〜2時間（薬剤による）はカルシウムサプリを摂らない。必ず医師・薬剤師の指示に従う。',
+        evidence: 'established',
+        source: 'GoodRx／Linus Pauling Institute',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'vitamin-b12',
@@ -3628,7 +3826,33 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['血流・冷え性が気になる', '運動パフォーマンスを高めたい', '免疫力が低下している'],
     axisScores: { antiAging: 4, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 5, metabolism: 5 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '硝酸薬（ニトログリセリン・硝酸イソソルビド等）',
+        level: 'avoid',
+        mechanism: 'L-アルギニンはNO（一酸化窒素）の前駆体で、硝酸薬の血管拡張作用を増強し、過度な血圧低下を生じる可能性が指摘されている。',
+        action: '硝酸薬を服用中の方は併用を避け、必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'AHA Circulation／Urology Times',
+      },
+      {
+        substance: 'PDE5阻害薬（シルデナフィル・タダラフィル等のED治療薬）',
+        level: 'caution',
+        mechanism: '両者ともNOシグナル経路を介した血管拡張作用を持ち、併用で頭痛・顔面紅潮・血圧低下のリスクが高まる可能性が報告されている。',
+        action: 'ED治療薬を服用中の方は併用前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'Drugs.com／AHA Circulation',
+      },
+      {
+        substance: '降圧薬（ACE阻害薬・ARB・Ca拮抗薬・β遮断薬・利尿薬等）',
+        level: 'caution',
+        mechanism: 'L-アルギニンには軽度の血圧降下作用が報告されており、降圧薬と併用すると過度な血圧低下を生じる可能性がある。',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、血圧を定期的に測定する。',
+        evidence: 'theoretical',
+        source: 'WebMD',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'l-citrulline',
@@ -5292,7 +5516,17 @@ export const ingredients: Ingredient[] = [
     whoFor: ['くすみ・肌の透明感が気になる', '酸化ストレス・疲労の蓄積が気になる40代以上', '肝臓の解毒機能をサポートしたい'],
     heroStat: { value: '皮膚明度 有意改善', label: '経口500mg/12週間RCT（JCD 2017, n=60）' },
     axisScores: { antiAging: 6, skin: 7, cognitive: 2, stress: 3, sleep: 1, immunity: 6, metabolism: 4 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: '化学療法薬・抗悪性腫瘍薬（シスプラチン以外を含む）',
+        level: 'avoid',
+        mechanism: 'グルタチオンは抗酸化作用により一部の化学療法薬の細胞傷害効果を減弱させ、治療効果を損なう可能性が指摘されている。乳がん術後補助化学療法でグルタチオン併用群の再発率が有意に高かった（31.8% vs 22.2%）と報告されている。一方シスプラチン誘発神経障害ではIVグルタチオンの保護効果が示されている領域もあり、患者の自己判断は危険。',
+        action: '化学療法中の方は自己判断で併用せず、必ず主治医・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'PMC11663319 (breast cancer recurrence study)／MDPI Biomedicines 2023',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
   {
     slug: 'pdrn',
@@ -5473,7 +5707,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'グルタチオン産生促進', label: '細胞内合成を最も効率よく高める前駆体経路' },
     axisScores: { antiAging: 7, skin: 4, cognitive: 3, stress: 4, sleep: 2, immunity: 8, metabolism: 6 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: '硝酸薬（ニトログリセリン・硝酸イソソルビド等）',
+        level: 'avoid',
+        mechanism: 'NACのスルフヒドリル基がニトログリセリンの血管拡張作用を増強し、過度な低血圧・頭痛を生じる可能性が複数の臨床研究で報告されている。S-ニトロソNACの形成によりNO産生が増強される。',
+        action: '硝酸薬を服用中の方は併用を避け、必ず医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'AHA Circulation 1995（NACIAM）／PubMed 3127076 unstable angina',
+      },
+      {
+        substance: '抗血小板薬・抗凝固薬',
+        level: 'caution',
+        mechanism: 'NACとニトログリセリンの併用で生成されるS-ニトロソNACは血小板凝集を強く阻害し、出血リスクが高まる可能性が指摘されている。',
+        action: '抗血小板薬・抗凝固薬を服用中の方は併用前に医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'PubMed 1930267（thiol-nitroglycerin pharmacology）',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   // ── L-トリプトファン ──────────────────────────────────────────────────
@@ -6657,7 +6909,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '−0.4%', label: 'HbA1cの改善効果（メタ解析 2019、インスリン抵抗性）' },
     axisScores: { antiAging: 6, skin: 5, cognitive: 5, stress: 3, sleep: 2, immunity: 4, metabolism: 8 },
-    updatedAt: '2026-04-19',
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・メトホルミン・スルホニル尿素薬等）',
+        level: 'avoid',
+        mechanism: 'α-リポ酸はインスリン感受性を高め血糖を下げる作用があり、糖尿病薬と併用すると血糖が過度に低下し低血糖を生じる可能性が複数の臨床ソースで指摘されている。',
+        action: '糖尿病薬を服用中の方は併用前に必ず医師・薬剤師に相談し、血糖の自己測定を強化する。',
+        evidence: 'established',
+        source: 'WebMD／MedXdrg／Mayo Clinic Connect',
+      },
+      {
+        substance: '甲状腺ホルモン薬（レボチロキシン）',
+        level: 'caution',
+        mechanism: 'α-リポ酸がT4からT3への変換を低下させレボチロキシンの効果を減弱させる可能性が報告されている。',
+        action: 'レボチロキシンとα-リポ酸は少なくとも4時間以上間隔を空けて服用。詳しくは医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'MedXdrg／Drugs.com',
+      },
+    ],
+    updatedAt: '2026-04-20',
   },
 
   // ── セラミド（内服） ───────────────────────────────────────────────
