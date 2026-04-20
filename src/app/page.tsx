@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 }
 
 const TOP_CONCERNS = ['spots', 'wrinkles', 'dry-skin', 'acne', 'pores', 'skin-aging', 'sleep', 'stress', 'longevity', 'inflammation']
+const HERO_FEATURED_CONCERNS = ['skin-aging', 'longevity', 'sleep']
+const HERO_FEATURED_INGREDIENTS = ['ashwagandha', 'magnesium-glycinate', 'lions-mane']
 
 export default function Home() {
   const topIngredients = [...ingredients]
@@ -25,6 +27,14 @@ export default function Home() {
     .slice(0, 6)
 
   const featuredConcerns = concerns.filter(c => TOP_CONCERNS.includes(c.slug))
+
+  const heroFeaturedConcerns = HERO_FEATURED_CONCERNS
+    .map(slug => concerns.find(c => c.slug === slug))
+    .filter((c): c is typeof concerns[number] => Boolean(c))
+
+  const heroFeaturedIngredients = HERO_FEATURED_INGREDIENTS
+    .map(slug => ingredients.find(i => i.slug === slug))
+    .filter((i): i is typeof ingredients[number] => Boolean(i))
 
   /* ランキングプレビュー用：悩み上位3件 × 各1位成分 */
   const rankingPreviews = ['spots', 'wrinkles', 'acne', 'dry-skin', 'pores', 'sleep'].map(slug => {
@@ -114,6 +124,123 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── よく見られている悩み（データ駆動ショートカット） ─── */}
+      <section className="border-t border-border px-5 py-14">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-baseline justify-between mb-3">
+            <h2 className="font-semibold text-[20px] text-foreground">よく見られている悩み</h2>
+            <Link href="/concerns"
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <p className="text-[13px] text-muted-foreground mb-8">
+            このサイトで最も読まれている3テーマから、論文ベースの成分を見つける
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {heroFeaturedConcerns.map(c => {
+              const ings = getIngredientsByConcern(c.slug)
+              const sCount = ings.filter(i => i.evidenceRank === 'S').length
+              return (
+                <Link
+                  key={c.slug}
+                  href={`/concerns/${c.slug}`}
+                  className={`group border rounded-2xl p-5 cat-${c.category}
+                    hover:-translate-y-0.5 hover:shadow-md transition-all duration-200`}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[22px] leading-none">{c.emoji}</span>
+                    <p className="font-semibold text-[16px]">
+                      {c.nameJa}
+                    </p>
+                  </div>
+                  <p className="text-[12px] opacity-80 line-clamp-2 leading-relaxed mb-3">
+                    {c.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-[11px] opacity-80">
+                    <span>{ings.length}成分</span>
+                    {sCount > 0 && (
+                      <span className="font-semibold bg-amber-100 text-amber-700 rounded px-1.5 py-0.5 leading-none">
+                        S×{sCount}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 今読まれている成分 ─────────────────────── */}
+      <section className="border-t border-border bg-card px-5 py-14">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-baseline justify-between mb-3">
+            <h2 className="font-semibold text-[20px] text-foreground">今読まれている成分</h2>
+            <Link href="/ingredients"
+              className="text-[13px] text-accent flex items-center gap-1 hover:underline">
+              すべて <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <p className="text-[13px] text-muted-foreground mb-8">
+            直近で検索・閲覧が多い成分から
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {heroFeaturedIngredients.map(ing => (
+              <Link
+                key={ing.slug}
+                href={`/ingredients/${ing.slug}`}
+                className="group bg-background border border-border rounded-2xl p-5
+                  hover:border-accent/50 hover:shadow-md transition-all duration-200
+                  hover:-translate-y-0.5"
+              >
+                <div className="mb-3">
+                  <EvidenceBadge rank={ing.evidenceRank} variant="chip" />
+                </div>
+                <p className="font-semibold text-[16px] text-foreground mb-2
+                  group-hover:text-accent transition-colors">
+                  {ing.nameJa}
+                </p>
+                <p className="text-[12px] text-muted-foreground line-clamp-3 leading-relaxed">
+                  {ing.tagline}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 診断ツール CTAバナー ─────────────────── */}
+      <section className="border-t border-border px-5 py-12">
+        <div className="max-w-5xl mx-auto">
+          <Link
+            href="/analyzer"
+            className="group block border-2 border-accent/40 bg-accent/5 rounded-2xl
+              p-6 sm:p-10 hover:bg-accent/10 hover:border-accent/60
+              transition-all duration-200"
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+              <div className="flex-1">
+                <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-accent mb-2">
+                  Analyzer
+                </p>
+                <h2 className="font-bold text-[20px] sm:text-[24px] text-foreground leading-tight mb-2">
+                  あなたの悩みに合う成分を、3つに絞る
+                </h2>
+                <p className="text-[13px] text-muted-foreground leading-relaxed">
+                  {ingredients.length}成分 / {concerns.length}悩み / 論文ベース・会員登録不要
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-2 bg-foreground text-background
+                text-[14px] font-semibold rounded-xl px-5 py-3 min-h-[44px] flex-shrink-0
+                group-hover:opacity-85 transition-opacity">
+                診断を始める <ArrowRight className="w-4 h-4" />
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
