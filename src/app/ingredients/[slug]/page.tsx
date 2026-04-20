@@ -217,6 +217,17 @@ export default async function IngredientPage({ params }: Props) {
       q: `${ing.nameJa}の副作用はありますか？安全に使えますか？`,
       a: `報告されている副作用：${ing.sideEffects.join('、')}。${ing.contraindications?.length ? `特に${ing.contraindications.join('、')}の方は使用前に医師に相談してください。` : ''}適切な用量・タイミングを守ることで、多くの方が問題なく使用できます。不安がある場合は医師・薬剤師への相談を推奨します。`,
     } : null,
+    /* Q7: 飲み合わせ（医薬品との相互作用）*/
+    ing.interactions?.length ? {
+      q: `${ing.nameJa}と薬を一緒に飲んでも大丈夫ですか？`,
+      a: `${ing.interactions.map(x => {
+        const lvl = x.level === 'avoid' ? '併用回避が推奨されます' : x.level === 'caution' ? '併用には注意が必要です' : '経過観察が推奨されます'
+        return `${x.substance}との併用：${lvl}。${x.mechanism}`
+      }).join(' ')} 服薬中の方は自己判断で併用せず、必ず医師・薬剤師に相談してください。`,
+    } : {
+      q: `${ing.nameJa}と薬を一緒に飲んでも大丈夫ですか？`,
+      a: `現時点で添付文書レベルの重要な相互作用は本ページに掲載していませんが、処方薬を服用中の方は念のため医師・薬剤師にご相談ください。サプリメントの成分には個人差があり、新しい相互作用が後から報告されることもあります。`,
+    },
     /* 成分固有のFAQ（用量別・薬剤併用など個別ナレッジ） */
     ...(ing.customFaqs ?? []),
   ].filter(Boolean) as { q: string; a: string }[]
@@ -308,6 +319,7 @@ export default async function IngredientPage({ params }: Props) {
     ...(ing.dosageLevels?.length ? [{ id: 'dosage-levels', label: '用量別の効果' }] : []),
     { id: 'faq', label: 'よくある疑問' },
     ...((ing.sideEffects?.length || ing.contraindications?.length) ? [{ id: 'safety', label: '副作用・注意' }] : []),
+    ...(ing.interactions?.length ? [{ id: 'interactions', label: '飲み合わせ' }] : []),
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'start', label: '始め方' }] : []),
     ...(ing.products.length > 0 ? [{ id: 'products', label: 'おすすめ商品' }] : []),
   ]
@@ -687,6 +699,62 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
+        {/* 飲み合わせ・医薬品との相互作用 */}
+        {ing.interactions?.length ? (
+          <section id="interactions" className="mb-10 scroll-mt-20">
+            <h2 className="font-semibold text-[18px] text-foreground mb-2">飲み合わせ・医薬品との相互作用</h2>
+            <p className="text-[13px] text-muted-foreground mb-4">
+              添付文書・FDA警告・査読論文をもとに、併用に注意が必要な医薬品をまとめています。
+            </p>
+            <div className="space-y-3">
+              {ing.interactions.map((x, i) => {
+                const levelStyle = {
+                  avoid:   { bg: 'bg-red-50',    border: 'border-red-300',   text: 'text-red-900',   badge: 'bg-red-100 text-red-800',     label: '併用回避' },
+                  caution: { bg: 'bg-amber-50',  border: 'border-amber-300', text: 'text-amber-900', badge: 'bg-amber-100 text-amber-800', label: '要注意' },
+                  monitor: { bg: 'bg-blue-50',   border: 'border-blue-200',  text: 'text-blue-900',  badge: 'bg-blue-100 text-blue-800',   label: '要経過観察' },
+                }[x.level]
+                const evidenceBadge = {
+                  established:   { symbol: '●', label: '実証' },
+                  theoretical:   { symbol: '○', label: '理論' },
+                  'case-report': { symbol: '△', label: '報告' },
+                }[x.evidence]
+                return (
+                  <div key={i} className={`${levelStyle.bg} border ${levelStyle.border} rounded-2xl p-5`}>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className={`${levelStyle.badge} text-[11px] font-bold rounded px-2 py-0.5`}>
+                        {levelStyle.label}
+                      </span>
+                      <span className="text-[11px] text-muted-foreground">
+                        エビデンス：{evidenceBadge.symbol}{evidenceBadge.label}
+                      </span>
+                    </div>
+                    <p className={`font-semibold text-[14px] ${levelStyle.text} mb-2`}>
+                      {x.substance}
+                    </p>
+                    <p className={`text-[13px] ${levelStyle.text} leading-relaxed mb-2`}>
+                      <strong>作用機序：</strong>{x.mechanism}
+                    </p>
+                    <p className={`text-[13px] ${levelStyle.text} leading-relaxed`}>
+                      <strong>推奨行動：</strong>{x.action}
+                    </p>
+                    {x.source && (
+                      <p className="text-[11px] text-muted-foreground mt-2">
+                        出典：{x.source}
+                      </p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+            <div className="mt-4 bg-secondary border border-border rounded-xl p-4">
+              <p className="text-[13px] text-foreground leading-relaxed">
+                <strong>該当する薬を服用中の方は、自己判断で併用せず、必ず医師・薬剤師に相談してください。</strong>
+                本項は一般的な情報提供であり、個別の診療・処方判断の代替ではありません。
+              </p>
+            </div>
+          </section>
+        ) : null}
+
         {/* この成分の始め方 */}
         {(ing.dosageMin || ing.timing || ing.duration) && (
           <section id="start" className="mb-10 scroll-mt-20">
@@ -984,6 +1052,7 @@ export default async function IngredientPage({ params }: Props) {
           text-[13px] text-muted-foreground leading-relaxed mb-10">
           本ページの情報は医療的アドバイスを提供するものではありません。
           サプリメントの使用前には医師・薬剤師にご相談ください。
+          <strong className="text-foreground">特に処方薬を服用中の方は、サプリメントとの併用について必ず医師・薬剤師にご相談ください。自己判断での併用はお控えください。</strong>
           掲載内容は論文情報の提供を目的としており、効果・効能を保証するものではありません。
         </div>
 

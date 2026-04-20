@@ -102,6 +102,21 @@ export interface Ingredient {
   }[]
   /** 成分固有のFAQ（自動生成FAQの後ろに追加・任意） */
   customFaqs?: { q: string; a: string }[]
+  /** 医薬品・他サプリとの相互作用（併用注意・回避） */
+  interactions?: {
+    /** 対象物質（一般名のみ・商品名禁止）例: "経口避妊薬（ピル）" "ワルファリン" "SSRI系抗うつ薬" */
+    substance: string
+    /** 併用レベル：avoid=併用回避 / caution=要注意 / monitor=要経過観察 */
+    level: 'avoid' | 'caution' | 'monitor'
+    /** 作用機序（1-2文・非断定表現）例: "血栓リスク増加の可能性が報告されている" */
+    mechanism: string
+    /** 推奨される行動（必ず「医師・薬剤師に相談」を含める） */
+    action: string
+    /** エビデンス：established=添付文書/臨床報告多数 / theoretical=薬理推定 / case-report=事例報告 */
+    evidence: 'established' | 'theoretical' | 'case-report'
+    /** 出典（添付文書名・FDA・ジャーナル名等） */
+    source?: string
+  }[]
   updatedAt: string
 }
 
