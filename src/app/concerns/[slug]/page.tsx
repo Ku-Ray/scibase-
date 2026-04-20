@@ -236,9 +236,9 @@ export default async function ConcernPage({ params }: Props) {
       {concern.riskProfile && concern.riskProfile.length > 0 && (
         <section className="mb-10">
           <div className="mb-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+            <p className="text-[12px] font-semibold tracking-[0.05em]
               text-muted-foreground mb-1">
-              PROFILE
+              注意プロファイル
             </p>
             <h2 className="text-[18px] font-bold text-foreground leading-snug">
               {concern.nameJa}で注意が必要な人の特徴
@@ -269,9 +269,9 @@ export default async function ConcernPage({ params }: Props) {
       {concern.mechanism && (
         <section className="mb-10">
           <div className="mb-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+            <p className="text-[12px] font-semibold tracking-[0.05em]
               text-muted-foreground mb-1">
-              MECHANISM
+              メカニズム
             </p>
             <h2 className="text-[18px] font-bold text-foreground leading-snug">
               {concern.nameJa}のメカニズム
@@ -303,8 +303,8 @@ export default async function ConcernPage({ params }: Props) {
           </div>
           <div className="mt-5 flex items-center gap-3 bg-foreground/[0.03]
             border-l-2 border-foreground/40 rounded-r-lg px-4 py-3">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.12em]
-              text-muted-foreground">SO</span>
+            <span className="text-[11px] font-semibold tracking-[0.05em]
+              text-muted-foreground flex-shrink-0">結論</span>
             <p className="text-[13px] text-foreground/85 leading-relaxed font-medium">
               だから、以下の3成分が論文エビデンス順に優先される。
             </p>
@@ -340,9 +340,9 @@ export default async function ConcernPage({ params }: Props) {
           <section className="mb-10">
             <div className="mb-4">
               <div className="flex items-center gap-2 mb-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+                <p className="text-[12px] font-semibold tracking-[0.05em]
                   text-muted-foreground">
-                  TOP PICKS
+                  推奨Top 3
                 </p>
                 <span className="text-[10px] text-muted-foreground/70">·</span>
                 <p className="text-[11px] text-muted-foreground">

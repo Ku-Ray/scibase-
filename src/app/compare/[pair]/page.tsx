@@ -395,26 +395,24 @@ export default async function ComparePage({ params }: Props) {
           <p className="text-[12px] text-muted-foreground mb-4">
             太い数字の軸がその成分の強み。自分が重視する軸で選ぶ。
           </p>
-          <div className="bg-card border border-border rounded-2xl overflow-hidden">
-            {/* ヘッダー行 */}
-            <div className="grid grid-cols-[1fr_100px_100px] border-b border-border">
-              <div className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">軸</div>
-              <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingA.nameJa}</div>
-              <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingB.nameJa}</div>
-            </div>
-            {/* データ行 */}
-            {AXES.map(({ key, label, emoji }) => {
+          {(() => {
+            type AxisRow = { key: typeof AXES[number]['key']; label: string; emoji: string; sA: number; sB: number; diff: number; max: number }
+            const rows: AxisRow[] = AXES.map(({ key, label, emoji }) => {
               const sA = ingA.axisScores?.[key] ?? 0
               const sB = ingB.axisScores?.[key] ?? 0
+              return { key, label, emoji, sA, sB, diff: Math.abs(sA - sB), max: Math.max(sA, sB) }
+            }).sort((a, b) => b.diff - a.diff || b.max - a.max)
+            const primary = rows.slice(0, 4)
+            const secondary = rows.slice(4)
+            const renderRow = ({ key, label, emoji, sA, sB }: AxisRow, isLast: boolean) => {
               const winA = sA > sB
               const winB = sB > sA
               return (
-                <div key={key} className="grid grid-cols-[1fr_100px_100px] border-b border-border last:border-b-0">
+                <div key={key} className={`grid grid-cols-[1fr_100px_100px] ${isLast ? '' : 'border-b border-border'}`}>
                   <div className="px-4 py-3 flex items-center gap-2">
                     <span className="text-[14px]">{emoji}</span>
                     <span className="text-[12px] text-foreground">{label}</span>
                   </div>
-                  {/* スコアA */}
                   <div className="px-3 py-3 flex flex-col items-center justify-center border-l border-border">
                     <div className="w-full bg-secondary rounded-full h-1.5 mb-1.5">
                       <div className={`h-full rounded-full transition-all ${winA ? 'bg-accent' : 'bg-border'}`}
@@ -424,7 +422,6 @@ export default async function ComparePage({ params }: Props) {
                       {sA.toFixed(1)}
                     </span>
                   </div>
-                  {/* スコアB */}
                   <div className="px-3 py-3 flex flex-col items-center justify-center border-l border-border">
                     <div className="w-full bg-secondary rounded-full h-1.5 mb-1.5">
                       <div className={`h-full rounded-full transition-all ${winB ? 'bg-accent' : 'bg-border'}`}
@@ -436,10 +433,34 @@ export default async function ComparePage({ params }: Props) {
                   </div>
                 </div>
               )
-            })}
-          </div>
+            }
+            return (
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                {/* ヘッダー行 */}
+                <div className="grid grid-cols-[1fr_100px_100px] border-b border-border">
+                  <div className="px-4 py-3 text-[11px] font-semibold text-muted-foreground tracking-wider">差が大きい軸（上位{primary.length}軸）</div>
+                  <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingA.nameJa}</div>
+                  <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingB.nameJa}</div>
+                </div>
+                {primary.map((row, i) => renderRow(row, secondary.length === 0 && i === primary.length - 1))}
+                {secondary.length > 0 && (
+                  <details className="group bg-secondary/30">
+                    <summary className="flex items-center justify-between px-4 py-3 cursor-pointer
+                      text-[12px] font-medium text-muted-foreground hover:bg-secondary/60
+                      transition-colors list-none border-t border-border">
+                      <span>残り{secondary.length}軸（差が小さい軸）を見る</span>
+                      <span className="group-open:rotate-180 transition-transform duration-200 text-[12px]">▾</span>
+                    </summary>
+                    <div className="bg-card border-t border-border">
+                      {secondary.map((row, i) => renderRow(row, i === secondary.length - 1))}
+                    </div>
+                  </details>
+                )}
+              </div>
+            )
+          })()}
           <p className="text-[11px] text-muted-foreground mt-2">
-            スコアが高い方（太字）がその軸でエビデンスの強い成分
+            差が大きい軸ほど上に表示。スコアが高い方（太字）がその軸でエビデンスの強い成分
           </p>
         </section>
 

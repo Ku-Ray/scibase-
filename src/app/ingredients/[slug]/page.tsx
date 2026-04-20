@@ -364,9 +364,9 @@ export default async function IngredientPage({ params }: Props) {
               tracking-tight text-foreground">
               {ing.nameJa}
             </span>
-            <span className={`block text-[15px] sm:text-[17px] font-semibold mt-2.5
+            <span className={`block text-[14px] sm:text-[15px] font-medium mt-2.5
               ${heroText[ing.evidenceRank]} opacity-80`}>
-              効果・副作用・{usageAxis}・論文エビデンス
+              {ing.papers.length}本の論文で評価
             </span>
           </h1>
           <p className="text-[13px] text-muted-foreground mt-2 mb-5 tracking-wide">
@@ -901,9 +901,9 @@ export default async function IngredientPage({ params }: Props) {
 
         {/* Bottom Line — この成分を一言で */}
         <section className="mb-8 bg-foreground/[0.03] border-l-4 border-foreground/50 rounded-r-xl px-5 py-5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em]
+          <p className="text-[12px] font-semibold tracking-wide
             text-muted-foreground mb-3">
-            Bottom Line
+            この成分を一言で
           </p>
           <p className="text-[14px] text-foreground leading-[1.85]">
             <strong className="font-semibold">{ing.nameJa}</strong>は
@@ -995,7 +995,9 @@ export default async function IngredientPage({ params }: Props) {
               )}
             </div>
             <p className="text-[12px] text-muted-foreground mb-4">
-              {ing.nameJa}と同じ悩みカテゴリで見られている成分
+              {relatedConcerns.length > 0
+                ? `${ing.nameJa}と共通の悩み（${relatedConcerns.slice(0, 3).map(c => c.nameJa).join('・')}）で推奨される成分`
+                : `${ing.nameJa}と関連が深い成分`}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {siblingIngredients.map(i => (
@@ -1031,7 +1033,7 @@ export default async function IngredientPage({ params }: Props) {
 
         {/* ── 次のアクション CTA ── */}
         <div className="border-t border-border pt-10 mt-4 mb-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
+          <p className="text-[13px] font-semibold tracking-wide
             text-muted-foreground mb-5">
             次にやること
           </p>

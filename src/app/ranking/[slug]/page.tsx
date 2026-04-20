@@ -85,8 +85,8 @@ export default async function RankingPage({ params }: Props) {
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-3">
             <Trophy className="w-5 h-5 text-amber-500" />
-            <span className="text-[12px] font-semibold text-amber-600 uppercase tracking-wider">
-              Evidence Ranking
+            <span className="text-[12px] font-semibold text-amber-600 tracking-wider">
+              論文エビデンスランキング
             </span>
           </div>
           <h1 className="text-[28px] sm:text-[36px] font-bold text-foreground

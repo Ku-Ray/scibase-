@@ -39,9 +39,9 @@ export default function Home() {
       <section className="hero-pattern px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
         <div className="max-w-2xl mx-auto text-center">
 
-          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+          <p className="text-[12px] font-medium tracking-[0.05em]
             text-muted-foreground mb-6">
-            Evidence-Based · Beauty &amp; Supplement Database
+            論文エビデンスで選ぶスキンケア・サプリ成分データベース
           </p>
 
           <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
@@ -120,9 +120,9 @@ export default function Home() {
       {/* ── このサイトの使い方 ─────────────────────── */}
       <section className="border-t border-border px-5 py-14">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+          <p className="text-[13px] font-semibold tracking-[0.05em]
             text-muted-foreground text-center mb-10">
-            How to use SciBase
+            SciBaseの使い方
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
@@ -401,9 +401,9 @@ export default function Home() {
       {/* ── エビデンスの見方 ─────────────────────── */}
       <section className="px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+          <p className="text-[13px] font-semibold tracking-[0.05em]
             text-muted-foreground text-center mb-12">
-            How we evaluate
+            エビデンスの4段階評価
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
@@ -430,9 +430,9 @@ export default function Home() {
       {/* ── Why ─────────────────────────────────── */}
       <section className="border-t border-border bg-card px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase
+          <p className="text-[13px] font-semibold tracking-[0.05em]
             text-muted-foreground text-center mb-12">
-            Why SciBase
+            SciBaseが選ばれる理由
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
             {[
