@@ -7762,7 +7762,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '6週間', label: 'RCTで更年期症状改善が確認された期間（マカ3.5g/日）' },
     axisScores: { antiAging: 3, skin: 2, cognitive: 3, stress: 5, sleep: 2, immunity: 3, metabolism: 4 },
-    updatedAt: '2026-04-20',
+    interactions: [
+      {
+        substance: 'SSRI・抗うつ薬',
+        level: 'caution',
+        mechanism: 'マカには気分への作用が報告されており、SSRI・抗うつ薬と併用するとセロトニン作用が増幅される可能性が指摘されている',
+        action: 'SSRI・抗うつ薬を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 18801111 maca for SSRI-induced sexual dysfunction / WebMD Maca monograph',
+      },
+      {
+        substance: '降圧薬',
+        level: 'caution',
+        mechanism: 'マカに弱い降圧作用が報告されており、降圧薬と併用すると血圧が過度に低下しめまい・失神のリスクが高まる可能性がある',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、開始時は血圧モニタリングを行う',
+        evidence: 'theoretical',
+        source: 'WebMD Maca monograph / Maca Root Benefits drug interactions',
+      },
+      {
+        substance: 'ホルモン依存性疾患治療薬・甲状腺薬',
+        level: 'caution',
+        mechanism: '生マカに含まれるゴイトロゲン（加熱処理品では不活化）が甲状腺機能に影響する可能性が報告されており、ホルモン依存性疾患（乳がん・前立腺がん等）治療中の使用は推奨されない',
+        action: '甲状腺疾患・ホルモン依存性疾患の既往または治療中の方は使用前に医師に相談する',
+        evidence: 'theoretical',
+        source: 'WebMD Maca monograph / MedlinePlus Maca',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── レスベラトロール詳細化確認 → ニコチンアミドモノヌクレオチド補助成分 ───
