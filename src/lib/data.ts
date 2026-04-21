@@ -4331,7 +4331,25 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['大豆を多く食べてもエクオールを産生できない（検査で確認）', '更年期症状が気になる', '肌の老化・しわが気になる40代以上の女性'],
     axisScores: { antiAging: 5, skin: 6, cognitive: 1, stress: 3, sleep: 2, immunity: 2, metabolism: 4 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'タモキシフェン・ホルモン療法薬（乳がん治療）',
+        level: 'caution',
+        mechanism: 'エクオールはエストロゲン受容体に結合する作用を持つため、ホルモン療法薬の効果に理論的に影響する可能性が指摘されている。S-equolの経口ホルモン療法薬の薬物動態への影響は臨床的に有意でないとの報告もあるが、生物学的影響は複雑',
+        action: '乳がん治療中・ホルモン療法薬を服用中の方は使用前に必ず腫瘍内科医・主治医に相談する',
+        evidence: 'theoretical',
+        source: 'Springer Cancer Chemother Pharmacol S-equol pharmacokinetics study / MDPI 26(4):1105',
+      },
+      {
+        substance: 'エストロゲン受容体陽性の疾患（乳がん・子宮内膜症等）既往',
+        level: 'caution',
+        mechanism: 'エクオールはエストロゲン受容体に結合し、低用量では細胞増殖を促進する可能性が報告されている一方、高用量では抗腫瘍効果も示されている。エストロゲン感受性疾患の既往がある場合は慎重な判断が必要',
+        action: 'エストロゲン受容体陽性の疾患（乳がん・子宮内膜症等）の既往がある方は使用前に主治医に相談する',
+        evidence: 'theoretical',
+        source: 'MDPI Molecules 26(4):1105 Systematic Review of Equol on Breast Cancer',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'soy-isoflavones',
@@ -5598,7 +5616,17 @@ export const ingredients: Ingredient[] = [
     whoFor: ['更年期症状（疲労・ほてり・不眠）が気になる', '肌のハリ・潤いを内側から補いたい', '日本発のエビデンスを重視したい'],
     heroStat: { value: '疲労・ほてり', label: '12週間RCTで有意改善（更年期女性）' },
     axisScores: { antiAging: 5, skin: 6, cognitive: 1, stress: 3, sleep: 4, immunity: 5, metabolism: 3 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: 'ホルモン依存性疾患（乳がん・子宮内膜症等）治療中・既往',
+        level: 'caution',
+        mechanism: 'プラセンタには成長因子・ペプチド・微量ホルモンが含まれており、ホルモン依存性疾患の治療効果や病態に影響する可能性が理論的に指摘されている',
+        action: 'ホルモン依存性疾患（乳がん・子宮内膜症・子宮筋腫等）の治療中・既往がある方は使用前に必ず主治医に相談する',
+        evidence: 'theoretical',
+        source: 'プラセンタ製剤（ラエンネック・メルスモン）添付文書',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'hmb',
@@ -6478,7 +6506,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '生物利用率 約4倍', label: 'レスベラトロール比（メトキシ基による脂溶性向上）' },
     axisScores: { antiAging: 7, skin: 3, cognitive: 5, stress: 3, sleep: 2, immunity: 5, metabolism: 7 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'CYP2C8代謝薬（パクリタキセル・リピグリニド等）',
+        level: 'caution',
+        mechanism: 'in vitro試験でプテロスチルベンがCYP2C8を阻害することが報告されている（IC50 約3.0μM）。該当酵素で代謝される薬剤の血中濃度上昇の可能性がある',
+        action: 'CYP2C8で代謝される薬剤を服用中の場合は、併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Drug Metab Dispos 2013 / PMC6438784',
+      },
+      {
+        substance: 'ワルファリン・抗血小板薬',
+        level: 'caution',
+        mechanism: 'UGT1A9等のグルクロン酸抱合酵素阻害が報告されており、ワルファリン等の血中濃度変動の理論的可能性がある',
+        action: '抗凝固薬・抗血小板薬との併用前に必ず医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 31812603（UGT阻害プロファイル）',
+      },
+      {
+        substance: 'スタチン・脂質異常症治療薬',
+        level: 'monitor',
+        mechanism: 'RCTで125mg/日8週間摂取時にLDLコレステロールが17.1mg/dL上昇したことが報告されている',
+        action: '脂質治療中・高LDL傾向の場合は摂取前に医師・薬剤師に相談する',
+        evidence: 'established',
+        source: 'Riche DM et al. J Toxicol 2013（RCT）',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── ミルクシスル ────────────────────────────────────────────────────
@@ -7516,7 +7570,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'Senolytic', label: '老化細胞を選択的に除去する「セノリティクス」活性が確認されたフラボノイド' },
     axisScores: { antiAging: 7, skin: 3, cognitive: 7, stress: 3, sleep: 2, immunity: 5, metabolism: 3 },
-    updatedAt: '2026-04-19',
+    interactions: [
+      {
+        substance: 'ワルファリン・CYP2C9代謝薬',
+        level: 'caution',
+        mechanism: 'in vitro試験でルテオリンがCYP2C9を競合阻害することが報告されている（Ki ≤2.2μM）。ワルファリン等の血中濃度変動の理論的可能性がある',
+        action: '抗凝固薬・CYP2C9基質薬を服用中の場合は、併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Sciencedirect S0753332222014676 / PMC6152318',
+      },
+      {
+        substance: '甲状腺薬（レボチロキシン等）',
+        level: 'caution',
+        mechanism: '動物試験・症例報告でフラボノイド類の甲状腺ペルオキシダーゼ阻害作用が報告されており、甲状腺ホルモン値変動の可能性が指摘されている',
+        action: '甲状腺疾患がある場合・甲状腺薬服用中は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'MDPI Molecules 28(6):2536（ポリフェノール相互作用レビュー）',
+      },
+      {
+        substance: 'アトルバスタチン等スタチン',
+        level: 'monitor',
+        mechanism: 'ラットモデルでルテオリン併用によりアトルバスタチンの薬物動態パラメータ変動が報告されている',
+        action: '脂質治療中の方は摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PMC11881160（ラット薬物動態試験）',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── フィセチン ──────────────────────────────────────────────────────
@@ -7773,7 +7853,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'キサントン', label: '数十種のキサントン類が複数の抗老化経路を同時にターゲットする多機能ポリフェノール' },
     axisScores: { antiAging: 5, skin: 4, cognitive: 3, stress: 2, sleep: 1, immunity: 5, metabolism: 6 },
-    updatedAt: '2026-04-19',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗血小板薬',
+        level: 'caution',
+        mechanism: 'キサントン類が血液凝固を遅らせ出血時間を延長させる可能性が報告されている。抗凝固薬・抗血小板薬との併用で出血リスク増大の可能性がある',
+        action: '抗凝固薬・抗血小板薬を服用中の場合は、摂取前に必ず医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Memorial Sloan Kettering Cancer Center マンゴスチン項 / RxList Mangosteen',
+      },
+      {
+        substance: 'CYP2C8・CYP2C9代謝薬',
+        level: 'caution',
+        mechanism: 'in vitro試験でα-マンゴスチン等のキサントン誘導体がCYP2C8・CYP2C9を阻害することが報告されている。予測されるin vivo血漿濃度が阻害定数を上回る可能性が指摘されている',
+        action: 'CYP2C8・CYP2C9で代謝される薬剤を服用中の場合は、併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Sciencedirect S0090955624021585（キサントン誘導体CYP阻害試験）',
+      },
+      {
+        substance: '手術予定（術前2週間）',
+        level: 'avoid',
+        mechanism: '血小板機能抑制・出血時間延長の可能性があるため、周術期の摂取は出血リスクを高める可能性がある',
+        action: '手術予定の2週間前からは摂取を避け、担当医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'RxList Mangosteen Precautions',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── グリシン詳細化は既存あり。代わりに ホスファチジルコリン ─────────
