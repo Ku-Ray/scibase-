@@ -7066,7 +7066,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'HbA1c・空腹時血糖を有意に改善', label: '25 RCTのメタ解析（Diabetes Tech & Ther 2014）' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 2, sleep: 2, immunity: 2, metabolism: 8 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: '糖尿病治療薬（インスリン・経口血糖降下薬）',
+        level: 'caution',
+        mechanism: 'クロムはインスリン感受性を高めグルコース取り込みを促進する作用が報告されており、糖尿病治療薬と併用すると低血糖リスクが高まる可能性がある。1000μg/日の併用で低血糖症例が報告されている',
+        action: '糖尿病治療薬を服用中の方は併用前に医師・薬剤師に相談し、開始時は血糖値を頻回にモニタリングする',
+        evidence: 'case-report',
+        source: 'Memorial Sloan Kettering Chromium monograph / ScienceInsights chromium interactions',
+      },
+      {
+        substance: 'レボチロキシン（甲状腺ホルモン薬）',
+        level: 'caution',
+        mechanism: 'クロムはレボチロキシンと不溶性複合体を形成し腸管吸収を低下させることが報告されている。1mgのクロム併用で血中レボチロキシン濃度が17%低下した小規模試験がある',
+        action: 'レボチロキシン服用中の方はクロム摂取の少なくとも30分前または3〜4時間後に服用するよう医師・薬剤師に相談する',
+        evidence: 'established',
+        source: 'Drugs.com Chromium picolinate-Levothyroxine moderate interaction / PubMed 17725434',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── ブラックシードオイル ─────────────────────────────────────────────
