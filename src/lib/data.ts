@@ -6406,7 +6406,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '5α還元酵素阻害', label: 'DHT産生を抑制するメカニズムがRCTで確認' },
     axisScores: { antiAging: 4, skin: 3, cognitive: 1, stress: 2, sleep: 2, immunity: 3, metabolism: 4 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: 'ノコギリヤシによるCYP2C9阻害およびCOX阻害を介した血小板機能低下が報告されており、INR延長や出血リスク増加の可能性がある',
+        action: '抗凝固薬・抗血小板薬を服用中の場合は併用前に医師・薬剤師に相談する。手術予定の2週間前には中止を検討する',
+        evidence: 'case-report',
+        source: 'PMC3976951 systematic review of herb-drug interactions / Mayo Clinic Herbal Supplements',
+      },
+      {
+        substance: 'エストロゲン製剤・経口避妊薬・HRT',
+        level: 'caution',
+        mechanism: 'ノコギリヤシのフィトエストロゲン作用および5α還元酵素阻害によりホルモン製剤の効果に影響する可能性が理論的に指摘されている',
+        action: 'エストロゲン製剤・経口避妊薬・ホルモン補充療法（HRT）を使用中の場合は併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Drugs.com Estradiol-Saw palmetto interaction monograph',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── オリーブ葉エキス ────────────────────────────────────────────────
