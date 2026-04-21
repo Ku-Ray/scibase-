@@ -3290,7 +3290,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'HR 0.60', label: '高摂取群で全死亡リスクが40%低下（コホート研究）' },
     axisScores: { antiAging: 9, skin: 2, cognitive: 7, stress: 1, sleep: 1, immunity: 5, metabolism: 4 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '化学療法薬（活動性がん治療中）',
+        level: 'avoid',
+        mechanism: 'スペルミジンを含むポリアミンはがん細胞増殖との関連が指摘されており、活動性のがん治療中（特に進行がん）の摂取は推奨されないと専門家ガイダンスが報告されている',
+        action: 'がん治療中・がんの既往がある方はサプリメントとしての摂取前に必ず腫瘍内科医に相談する',
+        evidence: 'theoretical',
+        source: 'Madeo et al. Spermidine in health and disease (Science 2018) / DrugBank DB03566',
+      },
+      {
+        substance: '免疫抑制剤（臓器移植後・自己免疫疾患治療薬）',
+        level: 'caution',
+        mechanism: 'スペルミジンはT細胞機能の若返り・オートファジー誘導作用が報告されており、免疫抑制療法の効果に理論的に影響する可能性が指摘されている',
+        action: '免疫抑制剤を使用中の方は併用前に主治医・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'MASI Longevity Science clinical guidance / DrugBank DB03566',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'nicotinamide-riboside',
