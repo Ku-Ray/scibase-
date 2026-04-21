@@ -4459,7 +4459,25 @@ export const ingredients: Ingredient[] = [
     whoFor: ['腸の炎症・過敏性腸症候群が気になる', '腸活を本格的にしたい', '食物繊維の摂取が少ない'],
     emerging: true,
     axisScores: { antiAging: 5, skin: 2, cognitive: 4, stress: 2, sleep: 1, immunity: 7, metabolism: 4 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '抗生物質',
+        level: 'monitor',
+        mechanism: '抗生物質は腸内の短鎖脂肪酸（酪酸を含む）産生に影響することが報告されており、酪酸菌（生菌）製剤との同時摂取は効果が変動する可能性がある',
+        action: '抗生物質服用時は数時間以上の間隔をあけて摂取する。詳細は医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PMC10221771 Butyrate in Inflammatory Bowel Disease review',
+      },
+      {
+        substance: 'メサラジン（5-ASA・潰瘍性大腸炎治療薬）',
+        level: 'monitor',
+        mechanism: '酪酸ナトリウムとメサラジンの併用で潰瘍性大腸炎治療効果が増強したケースが報告されている。治療中の用量調整が必要となる可能性がある',
+        action: '潰瘍性大腸炎・クローン病治療中の方は併用前に主治医に相談する',
+        evidence: 'case-report',
+        source: 'ScienceDirect Butyrate clinical application in gastrointestinal disease',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'ferulic-acid',
@@ -5845,7 +5863,25 @@ export const ingredients: Ingredient[] = [
     whoFor: ['腸内環境と代謝を同時に整えたい', '最新の腸内細菌研究を取り入れたい', '一般的なプロバイオティクスで物足りなさを感じている'],
     heroStat: { value: 'インスリン感受性・腸管透過性', label: 'Nature Medicine 2019 ヒトRCTで有意改善' },
     axisScores: { antiAging: 6, skin: 3, cognitive: 2, stress: 3, sleep: 2, immunity: 6, metabolism: 9 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: '免疫抑制剤・重度免疫不全（プロバイオティクス全般の注意）',
+        level: 'caution',
+        mechanism: '次世代プロバイオティクスとして一般的なプロバイオティクスと同様の注意が必要とされ、免疫抑制状態では生菌・パスチャライズ菌ともに安全性データが限定的と報告されている',
+        action: '免疫抑制剤使用中・臓器移植後・化学療法中の方は使用前に必ず医師に相談する',
+        evidence: 'theoretical',
+        source: 'PMC10301191 Critical Perspective on Akkermansia muciniphila Supplementation',
+      },
+      {
+        substance: '抗生物質',
+        level: 'monitor',
+        mechanism: '抗生物質は腸内のAkkermansiaにも影響する可能性が指摘されており、同時摂取は効果が変動する可能性がある',
+        action: '抗生物質服用時は数時間以上の間隔をあけて摂取する。詳細は医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Tandfonline Akkermansia muciniphila against inflammation review',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'zeaxanthin',
