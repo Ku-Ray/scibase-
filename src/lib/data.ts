@@ -7745,7 +7745,41 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '2000%', label: 'ピペリン20mg添加によるクルクミン血中濃度の上昇率（Planta Medica 1998）' },
     axisScores: { antiAging: 4, skin: 3, cognitive: 2, stress: 1, sleep: 1, immunity: 3, metabolism: 5 },
-    updatedAt: '2026-04-20',
+    interactions: [
+      {
+        substance: 'CYP3A4基質薬（一部の降圧薬・スタチン・免疫抑制剤・睡眠導入剤・抗HIV薬等）',
+        level: 'caution',
+        mechanism: 'ピペリンはCYP3A4を阻害し、これら薬剤の血中濃度を上昇させる可能性が報告されている。PBPKモデリングではシンバスタチン+59%・シクロスポリン+35%・ニフェジピン+34%等のAUC上昇が予測されている',
+        action: 'CYP3A4で代謝される薬剤を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'established',
+        source: 'PMC11506926 PBPK Modeling of Piperine and CYP3A4 Substrate Drugs / PubMed 12130727',
+      },
+      {
+        substance: 'フェニトイン・ジクロフェナク・ワルファリン（CYP2C9基質薬）',
+        level: 'caution',
+        mechanism: 'ピペリンはCYP2C9も阻害しこれら薬剤の代謝を遅延させる可能性が報告されている。フェニトインのバイオアベイラビリティ増加がヒト試験で確認されている',
+        action: 'これら薬剤を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'established',
+        source: 'Pharmacy Times Piperine Drug Interactions',
+      },
+      {
+        substance: 'プロプラノロール・テオフィリン',
+        level: 'caution',
+        mechanism: 'ヒト試験でピペリン併用時にプロプラノロール・テオフィリンの血中濃度上昇（Cmax・AUC増加）が確認されている',
+        action: '降圧薬・気管支拡張薬を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'established',
+        source: 'PubMed 1815977 Effect of piperine on bioavailability of propranolol and theophylline',
+      },
+      {
+        substance: 'P-糖タンパク質基質薬（フェキソフェナジン・ジゴキシン等）',
+        level: 'caution',
+        mechanism: 'ピペリンはP-糖タンパク質も阻害し、これら薬剤の腸管吸収を増加させる可能性が報告されている',
+        action: '抗ヒスタミン薬・強心配糖体を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 12130727 Piperine inhibits human P-glycoprotein and CYP3A4',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── パントテン酸（ビタミンB5） ──────────────────────────────────────
