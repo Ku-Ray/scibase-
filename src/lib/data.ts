@@ -1549,7 +1549,17 @@ export const ingredients: Ingredient[] = [
       '「飲めば髪が増える」という主張はRCTで支持されていない',
     ],
     axisScores: { antiAging: 1, skin: 3, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 2 },
-    updatedAt: '2026-04-13',
+    interactions: [
+      {
+        substance: '甲状腺機能検査・トロポニン検査・ホルモン検査（薬剤ではなく検査値）',
+        level: 'caution',
+        mechanism: '高用量ビオチン（数mg以上）はビオチン-ストレプトアビジン免疫測定法に干渉し、TSH偽低値・T4/T3偽高値・トロポニン偽低値などを引き起こすことがFDA警告で報告されている。甲状腺機能亢進症や心筋梗塞の誤診断につながる可能性がある',
+        action: '甲状腺・トロポニン・ホルモン等の血液検査を予定している場合は、検査の48〜72時間前にはビオチン摂取を中止する。事前に医師・検査技師に伝える。',
+        evidence: 'established',
+        source: 'FDA Safety Communication / PMC6663274',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ─── 睡眠・リラックス成分 ────────────────────────────────────────
@@ -1803,7 +1813,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '100件以上', label: 'RCTが支持する筋力・認知効果' },
     axisScores: { antiAging: 4, skin: 0, cognitive: 7, stress: 3, sleep: 3, immunity: 3, metabolism: 9 },
-    updatedAt: '2026-04-15',
+    interactions: [
+      {
+        substance: 'NSAIDs（イブプロフェン・ナプロキセン等の鎮痛薬）',
+        level: 'caution',
+        mechanism: 'NSAIDsは長期・高用量で腎機能に影響することがあり、クレアチンと併用した際の理論的な腎負荷の加算リスクが指摘されている',
+        action: 'NSAIDsを長期・高用量で服用する場合は、クレアチン併用前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'Mayo Clinic / Cymbiotika',
+      },
+      {
+        substance: '腎排泄性・腎毒性のある薬剤',
+        level: 'caution',
+        mechanism: 'クレアチンが血清クレアチニン値を10〜30%上昇させるため、腎機能の評価指標（eGFR等）が見かけ上悪化する可能性がある。腎毒性薬剤による初期障害を見逃すリスクがある',
+        action: '腎機能検査を定期的に受けている場合・腎排泄性の薬剤を服用中の場合は、クレアチン補充前に医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'Mayo Clinic / Drugs.com',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -2527,7 +2555,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '16週', label: '皮膚弾力・水分量が有意改善（RCT）' },
     axisScores: { antiAging: 7, skin: 8, cognitive: 2, stress: 1, sleep: 0, immunity: 5, metabolism: 2 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'caution',
+        mechanism: 'アスタキサンチンの止血系への薬理作用がワルファリンの抗凝固作用を増強する可能性が、症例報告（69歳女性で皮下出血発生）として報告されている',
+        action: '抗凝固薬を服用中の場合は、アスタキサンチン補充前に必ず医師・薬剤師に相談する。',
+        evidence: 'case-report',
+        source: 'PMC6495044 / ScienceDirect',
+      },
+      {
+        substance: '降圧薬',
+        level: 'caution',
+        mechanism: 'アスタキサンチン12mg以上の用量で拡張期血圧を低下させることがメタ解析で示されており、降圧薬と併用すると血圧が過度に低下する可能性がある',
+        action: '降圧薬を服用中の場合は、アスタキサンチン補充前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'Natural Medicine Journal',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'curcumin',
@@ -2663,7 +2709,25 @@ export const ingredients: Ingredient[] = [
     axisScores: { antiAging: 7, skin: 1, cognitive: 5, stress: 2, sleep: 1, immunity: 3, metabolism: 5 },
     seoTitle: 'タウリン｜疲労・心血管の論文エビデンス',
     seoDescription: 'タウリンは含硫アミノ酸。3〜6g/日で疲労回復・心血管機能への関与がRCTで示されている。有効量、カフェインとの併用、エナジードリンクの実質量、副作用を査読済み論文ベースで解説。',
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'リチウム製剤（双極性障害薬）',
+        level: 'caution',
+        mechanism: 'タウリンがリチウムの体外排出を遅らせ、血中濃度を上昇させる可能性が報告されている。リチウム中毒のリスクが高まる可能性がある',
+        action: 'リチウム製剤を服用中の場合は、タウリン補充前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'WebMD / RxList',
+      },
+      {
+        substance: '降圧薬（アムロジピン・リシノプリル・メトプロロール等）',
+        level: 'caution',
+        mechanism: 'タウリンには血圧低下作用があり、降圧薬と併用すると血圧が過度に低下する可能性が報告されている',
+        action: '降圧薬を服用中の場合は、タウリンサプリ（特に高用量）の摂取前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'HelloPharmacist / Drugs.com',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'berberine',
@@ -3099,7 +3163,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'Senolytic', label: '老化細胞の選択的除去に関与（マウス・ヒト初期臨床）' },
     axisScores: { antiAging: 8, skin: 3, cognitive: 3, stress: 1, sleep: 0, immunity: 7, metabolism: 4 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'caution',
+        mechanism: 'ケルセチン代謝物が血清アルブミンからワルファリンを置換しINRを上昇させる可能性が報告されている。出血リスクが高まる可能性がある',
+        action: '抗凝固薬を服用中の場合は、ケルセチンサプリの摂取前に必ず医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'PMC9608098 / PubMed 28135601',
+      },
+      {
+        substance: 'シクロスポリン（免疫抑制剤）',
+        level: 'caution',
+        mechanism: 'ケルセチンがCYP3A4とP糖タンパク質を阻害し、シクロスポリン血中濃度が30〜50%上昇する可能性が報告されている。腎毒性・神経毒性のリスクが増す可能性がある',
+        action: '免疫抑制剤を服用中の場合は、ケルセチン補充前に必ず処方医・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'WebMD / Memorial Sloan Kettering',
+      },
+      {
+        substance: 'CYP3A4で代謝される薬剤全般（一部の降圧薬・抗がん剤等）',
+        level: 'monitor',
+        mechanism: 'ケルセチンはin vitroでCYP3A4を40〜60%阻害することが報告されており、これらの薬剤の血中濃度に影響する可能性がある',
+        action: '常用薬がある場合は、ケルセチンサプリ開始前に医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'enkehauspharmacy / WebMD',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'spermidine',
@@ -3624,7 +3714,25 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['認知機能の低下が気になる40代以上', 'ホモシステイン値が高い', '葉物野菜が少ない食生活'],
     axisScores: { antiAging: 5, skin: 2, cognitive: 7, stress: 2, sleep: 1, immunity: 5, metabolism: 7 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'フェニトイン（抗てんかん薬）',
+        level: 'caution',
+        mechanism: '葉酸補充によりフェニトインの血中濃度が7.5〜47.6%低下したと報告されている。発作コントロールが失われる可能性がある',
+        action: '抗てんかん薬を服用中の場合は、葉酸補充の前に必ず医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'PMC: Folic acid and antiepileptic drugs',
+      },
+      {
+        substance: 'メトトレキサート（抗がん剤・関節リウマチ薬）',
+        level: 'caution',
+        mechanism: '葉酸はメトトレキサートの作用機序（葉酸代謝阻害）に影響する可能性がある。関節リウマチ治療では副作用軽減目的で併用されることが多いが、抗がん目的では効果を弱める可能性が指摘されている',
+        action: 'メトトレキサート治療中は、用途・用量を必ず処方医・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'Mayo Clinic Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'calcium',
@@ -3739,7 +3847,25 @@ export const ingredients: Ingredient[] = [
     whoFor: ['ベジタリアン・ヴィーガン', '50代以上（胃酸低下による吸収低下）', '慢性的な疲れがある'],
     heroStat: { value: '欠乏率26%', label: '日本の高齢者の潜在的B12不足率（推計）' },
     axisScores: { antiAging: 4, skin: 1, cognitive: 7, stress: 3, sleep: 2, immunity: 4, metabolism: 6 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'メトホルミン（糖尿病薬）',
+        level: 'monitor',
+        mechanism: 'メトホルミンは回腸でのカルシウム依存的なビタミンB12吸収を阻害し、長期使用でB12欠乏リスクが上昇することが報告されている',
+        action: 'メトホルミンを長期服用中の場合は、定期的なB12濃度測定と必要に応じた補充を医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'PMC6054240 / GOV.UK Drug Safety Update',
+      },
+      {
+        substance: 'プロトンポンプ阻害薬（PPI・オメプラゾール等）・H2ブロッカー',
+        level: 'monitor',
+        mechanism: '胃酸抑制により食物中のB12が遊離されにくくなり、吸収が低下することが報告されている。長期使用でB12欠乏リスクが上昇する可能性がある',
+        action: 'PPI・H2ブロッカーを長期服用中の場合は、B12濃度測定と補充の必要性を医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'PMC6054240 / Springer Nature',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'vitamin-b6',
@@ -3783,7 +3909,25 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['PMSの症状が気になる', 'ストレスが多い', 'タンパク質摂取が多い（消費量増加）'],
     axisScores: { antiAging: 3, skin: 2, cognitive: 5, stress: 6, sleep: 4, immunity: 3, metabolism: 6 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'レボドパ（パーキンソン病薬・カルビドパ非配合品）',
+        level: 'avoid',
+        mechanism: 'ピリドキシン5mg/日以上の摂取で末梢のレボドパ→ドパミン代謝が促進され、脳に届くレボドパ量が減少すると報告されている。カルビドパ配合製剤ではこの相互作用は防がれる',
+        action: 'パーキンソン病薬を服用中の場合は、ビタミンB6サプリの摂取前に必ず処方医・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'Drugs.com Professional Interactions',
+      },
+      {
+        substance: 'フェニトイン（抗てんかん薬）',
+        level: 'caution',
+        mechanism: 'ピリドキシン200mg/日の高用量でフェニトイン血中濃度が約50%低下したと報告されている。発作コントロールが失われる可能性がある',
+        action: '抗てんかん薬を服用中の場合は、ビタミンB6サプリ（特に高用量）の前に必ず医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'Drugs.com / NIH StatPearls',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'l-arginine',
@@ -3938,7 +4082,25 @@ export const ingredients: Ingredient[] = [
     whoFor: ['脳の疲れ・集中力低下を感じる', 'エネルギー代謝を上げたい', '認知機能の老化が気になる40代以上'],
     emerging: true,
     axisScores: { antiAging: 6, skin: 1, cognitive: 7, stress: 3, sleep: 1, immunity: 2, metabolism: 6 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'ワルファリン・アセノクマロール（抗凝固薬）',
+        level: 'caution',
+        mechanism: 'アセチルLカルニチンが抗凝固薬の作用を増強し、出血・あざのリスクが高まる可能性が報告されている',
+        action: '抗凝固薬を服用中の場合は、ALCAR補充前に必ず医師・薬剤師に相談する。INR値の定期チェックも検討。',
+        evidence: 'established',
+        source: 'PubMed 15340883 / WebMD',
+      },
+      {
+        substance: '甲状腺ホルモン製剤（レボチロキシン等）',
+        level: 'caution',
+        mechanism: 'L-カルニチン・ALCARが甲状腺ホルモンの細胞内作用を阻害する可能性が報告されている。甲状腺機能低下症ではホルモン補充の効果が低下するおそれがある',
+        action: '甲状腺ホルモンを服用中の場合は、ALCAR補充前に必ず処方医・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'WebMD / Blackmores Institute',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'glucosamine',
@@ -4703,7 +4865,25 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['植物性タンパク・ミネラルを補いたい', '免疫力が気になる', '炎症・血糖コントロールをしたい'],
     axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 2, sleep: 1, immunity: 6, metabolism: 5 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '免疫抑制剤（シクロスポリン・タクロリムス等）',
+        level: 'caution',
+        mechanism: 'スピルリナの免疫増強作用が、免疫抑制剤の効果を減弱させる可能性が指摘されている。臓器移植後・自己免疫疾患治療中はリスクが高い',
+        action: '免疫抑制剤を服用中の場合は、スピルリナ摂取前に必ず処方医・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'WebMD / Mayo Clinic',
+      },
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'caution',
+        mechanism: 'スピルリナにビタミンKが含まれており、ワルファリンの抗凝固作用を弱める可能性が報告されている。INR値が変動するおそれがある',
+        action: '抗凝固薬を服用中の場合は、スピルリナ摂取前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'Drugs.com / PMC3025393',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'evening-primrose-oil',
@@ -4833,7 +5013,25 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['脂質プロファイル（HDL・LDL）を改善したい', 'NAD+前駆体としてエネルギー代謝を高めたい', 'NMN・NRの代替を探している'],
     axisScores: { antiAging: 5, skin: 2, cognitive: 4, stress: 2, sleep: 1, immunity: 3, metabolism: 7 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'スタチン系脂質異常症治療薬（シンバスタチン・ロバスタチン等）',
+        level: 'caution',
+        mechanism: 'スタチン＋高用量ナイアシンの併用で筋障害（ミオパチー・筋炎）の発現が約1%（スタチン単独の0.2%）に上昇すると報告されている。HPS2-THRIVE試験では徐放性ナイアシン+ラロピプラント+シンバスタチン併用でミオパチー発生率が4倍に増加した（特にアジア人）。',
+        action: 'スタチン服用中の方が高用量ナイアシン（>500mg/日）を併用する場合は必ず医師・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'HPS2-THRIVE試験／ACC/AHA/NHLBI Clinical Advisory／American Journal of Cardiology',
+      },
+      {
+        substance: '糖尿病薬（インスリン・スルホニル尿素薬・メトホルミン等）',
+        level: 'caution',
+        mechanism: '高用量ナイアシンはインスリン抵抗性を一過性に増加させ、HbA1c・空腹時血糖の悪化が報告されている（HPS2-THRIVEで糖尿病コントロール障害が3.7%絶対増加）。',
+        action: '糖尿病の方が高用量ナイアシンを使用する場合は必ず医師・薬剤師に相談し、血糖を定期的に確認する。',
+        evidence: 'established',
+        source: 'HPS2-THRIVE試験／PMC3770072',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   // ── Phase 1 追加成分（2026-04-17） ─────────────────────────────
   {
@@ -4949,7 +5147,25 @@ export const ingredients: Ingredient[] = [
     whoFor: ['慢性的な炎症・疲れやすさが気になる', '肝機能（ALT・γGTP）が高めと言われた', '老化対策の土台として「体の解毒力」を高めたい'],
     heroStat: { value: 'Nrf2活性化', label: '200以上の研究が示す抗炎症経路（レビュー 2019）' },
     axisScores: { antiAging: 7, skin: 5, cognitive: 4, stress: 2, sleep: 1, immunity: 7, metabolism: 6 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: 'CYP3A4・CYP2D6で代謝される薬剤（治療域が狭い薬剤）',
+        level: 'monitor',
+        mechanism: 'スルフォラファンがin vitroでCYP3A4・CYP2D6を阻害することが報告されている。in vivoでの臨床的影響は限定的との報告もあるが、治療域が狭い薬剤では血中濃度変動の可能性がある',
+        action: '常用薬がある場合は、スルフォラファンサプリ（特に高用量）の摂取前に医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'ScienceDirect / PMC7603454',
+      },
+      {
+        substance: '甲状腺機能低下症の治療薬・甲状腺疾患',
+        level: 'caution',
+        mechanism: 'スルフォラファンを含むアブラナ科由来成分は超高用量でゴイトロジェン作用（甲状腺ヨウ素取り込み阻害）が指摘されている',
+        action: '甲状腺疾患がある場合、または甲状腺ホルモン製剤を服用中の場合は、スルフォラファンサプリ（特に高用量）の前に医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'Oxidative Medicine and Cellular Longevity 2019',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'magnesium-glycinate',
@@ -5216,7 +5432,17 @@ export const ingredients: Ingredient[] = [
     whoFor: ['40代以降で血管の健康に気を遣いたい', '血圧が高め・血液の流れが気になる', '心血管リスクを日常的にケアしたい'],
     heroStat: { value: '収縮期血圧−5.5mmHg', label: '8週間RCTで有意低下（Hypertension Research 2008）' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 5, metabolism: 5 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬・線溶薬（ワルファリン・アスピリン・クロピドグレル等）',
+        level: 'avoid',
+        mechanism: 'ナットウキナーゼは線溶活性と抗凝固作用を持ち、これらと併用すると相加的に出血リスクが高まる可能性が指摘されている。一方ワルファリンの代用としてナットウキナーゼに切り替えた患者で機械弁血栓症を発症した症例も報告されており、自己判断による置き換えも危険。',
+        action: '抗凝固薬・抗血小板薬服用中の方は併用・切り替え判断を自己判断せず、必ず医師・薬剤師に相談。手術予定がある方は術前2週間程度の中止を相談する。',
+        evidence: 'established',
+        source: 'Memorial Sloan Kettering Cancer Center／PMC4264722 (mechanical valve thrombosis case report)',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'myo-inositol',
@@ -6631,7 +6857,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '体脂肪率低下・運動回復改善', label: 'メタ解析（Nutrients 2018）で確認' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 3, metabolism: 8 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'caution',
+        mechanism: 'L-カルニチンがワルファリンの作用を増強し、出血・あざのリスクが高まる可能性が報告されている',
+        action: '抗凝固薬を服用中の場合は、L-カルニチン補充前に必ず医師・薬剤師に相談する。INR値の定期的なチェックも検討。',
+        evidence: 'established',
+        source: 'Drugs.com / WebMD',
+      },
+      {
+        substance: '甲状腺ホルモン製剤（レボチロキシン等）',
+        level: 'caution',
+        mechanism: 'L-カルニチンが甲状腺ホルモンの細胞内取り込みを阻害し、ホルモン補充療法の効果を低下させる可能性が報告されている。摂取時間をずらしても回避できない（薬力学的相互作用）',
+        action: '甲状腺ホルモンを服用中の場合は、L-カルニチン補充前に必ず処方医・薬剤師に相談する。',
+        evidence: 'established',
+        source: 'PubMed 15591013 / Memorial Sloan Kettering',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── アストラガルス（黄耆）────────────────────────────────────────────
@@ -6861,7 +7105,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '+10%', label: 'フィセチン投与マウスの中央寿命延長率（Mayo Clinic, 2018）' },
     axisScores: { antiAging: 9, skin: 3, cognitive: 6, stress: 2, sleep: 1, immunity: 5, metabolism: 4 },
-    updatedAt: '2026-04-19',
+    interactions: [
+      {
+        substance: 'ワルファリン等の抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'フィセチンが抗凝固薬の作用を増強し、出血リスクが高まる可能性が指摘されている',
+        action: '抗凝固薬・抗血小板薬を服用中の場合は、フィセチンサプリの摂取前に必ず医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'Neurogan Health / ScienceDirect',
+      },
+      {
+        substance: 'CYP3A4・CYP2C9・CYP2C19で代謝される薬剤（治療域が狭い薬剤）',
+        level: 'caution',
+        mechanism: 'フィセチンがin vitroでCYP3A4・CYP2C9・CYP2C19・CYP1A2を阻害することが報告されており、これらの酵素で代謝される薬剤の血中濃度が上昇する可能性がある',
+        action: '常用薬がある場合は、フィセチン摂取前に医師・薬剤師に相談する。',
+        evidence: 'theoretical',
+        source: 'PMC4100265 / MDPI Biomedicines',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── アルファリポ酸 ─────────────────────────────────────────────────
