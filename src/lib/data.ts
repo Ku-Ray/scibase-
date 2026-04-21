@@ -5717,7 +5717,25 @@ export const ingredients: Ingredient[] = [
     whoFor: ['ホルモン性ニキビ・肌荒れに悩んでいる', '生理不順・PCOSと診断されたことがある', 'インスリン抵抗性・代謝を改善したい'],
     heroStat: { value: '排卵率・インスリン感受性', label: 'メタ解析640名で有意改善（Int J Endocrinol 2016）' },
     axisScores: { antiAging: 4, skin: 5, cognitive: 3, stress: 6, sleep: 4, immunity: 4, metabolism: 8 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: 'リチウム（双極性障害治療薬）',
+        level: 'caution',
+        mechanism: 'リチウムはイノシトール代謝経路（ホスホイノシチド経路）を阻害し脳内イノシトール濃度を低下させることが治療作用機序の一部とされている。ミオイノシトール補給がリチウムの効果に影響する可能性が理論的に指摘されている',
+        action: 'リチウムを服用中の方は併用前に必ず精神科医・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PMC13024216 Myo-Inositol Pharmacokinetics review / PCOS guidelines',
+      },
+      {
+        substance: '糖尿病治療薬（インスリン・メトホルミン等）',
+        level: 'monitor',
+        mechanism: 'ミオイノシトールはインスリン感受性を改善する作用がメタ解析で確認されており、糖尿病治療薬と併用すると低血糖リスクが高まる可能性がある',
+        action: '糖尿病治療薬を服用中の方は併用前に医師・薬剤師に相談し、開始時は血糖値を頻回にモニタリングする',
+        evidence: 'established',
+        source: 'PubMed 37148410 / PMC9786218 Myo-inositol vs Metformin in PCOS meta-analysis',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'akkermansia',
