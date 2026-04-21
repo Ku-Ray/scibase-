@@ -6741,7 +6741,17 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '皮膚水分量・弾力改善', label: '80〜200mg/日×12週間RCT（n=60〜96）' },
     axisScores: { antiAging: 4, skin: 7, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 2 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'がん治療中・がん既往（特に膵臓がん）',
+        level: 'avoid',
+        mechanism: 'ヒアルロン酸が特定のがん細胞（特に膵臓がん）の増殖促進に関与する可能性が報告されている。経口ヒアルロン酸の長期使用はがん既往者では慎重を要する',
+        action: 'がん治療中・がん既往（特に膵臓がん）のある方は使用前に必ず腫瘍内科医に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 26410544 Caution in long-term oral HA in patients with cancer history',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── 霊芝 ────────────────────────────────────────────────────────────
