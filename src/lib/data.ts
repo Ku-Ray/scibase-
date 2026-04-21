@@ -3345,7 +3345,17 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '+60%', label: 'NAD+レベルが最大60%上昇（Nature Communications RCT）' },
     axisScores: { antiAging: 8, skin: 1, cognitive: 5, stress: 2, sleep: 2, immunity: 3, metabolism: 8 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'カルバマゼピン・プリミドン（抗てんかん薬）',
+        level: 'caution',
+        mechanism: 'NRはニコチンアミドと類似の代謝経路をたどると考えられ、ニコチンアミドはこれら抗てんかん薬の代謝を阻害し血中濃度を上昇させる可能性が報告されている',
+        action: '抗てんかん薬を服用中の場合は併用前に医師・薬剤師に相談する',
+        evidence: 'case-report',
+        source: 'PubMed 6214728 Interactions between primidone, carbamazepine, and nicotinamide',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'alpha-ketoglutarate',
