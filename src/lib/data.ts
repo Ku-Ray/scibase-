@@ -6002,7 +6002,17 @@ export const ingredients: Ingredient[] = [
     whoFor: ['風邪を引きやすい・感染症に弱い気がする', '免疫力を日常的にサポートしたい', '腸活と免疫ケアを同時に行いたい'],
     heroStat: { value: '上気道感染リスク低下', label: 'メタ解析16件RCT統合で有意確認（EJCN 2021）' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 2, sleep: 2, immunity: 9, metabolism: 5 },
-    updatedAt: '2026-04-17',
+    interactions: [
+      {
+        substance: '免疫抑制剤・自己免疫疾患治療薬',
+        level: 'avoid',
+        mechanism: 'βグルカンは自然免疫（Dectin-1経路）を活性化する作用が報告されており、免疫抑制療法の効果を減弱させる、または自己免疫疾患を悪化させる可能性が指摘されている',
+        action: '免疫抑制剤使用中・臓器移植後・自己免疫疾患治療中の方は使用前に必ず医師に相談する',
+        evidence: 'theoretical',
+        source: 'WebMD Beta-Glucans monograph / National Kidney Foundation supplement guidance',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── Phase 2 追加成分（2026-04-17） ─────────────────────────────
@@ -6710,7 +6720,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '収縮期血圧 -11.5mmHg', label: '500mg/日×8週間RCT（n=232）' },
     axisScores: { antiAging: 6, skin: 3, cognitive: 3, stress: 2, sleep: 1, immunity: 6, metabolism: 6 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: '降圧薬',
+        level: 'caution',
+        mechanism: 'オリーブ葉エキスには血圧降下作用が複数のRCTで確認されており、降圧薬と併用すると血圧が過度に低下しめまい・失神のリスクが高まる可能性がある',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、開始時は血圧モニタリングを行う',
+        evidence: 'established',
+        source: 'Nutrients 2019 Olive leaf extract meta-analysis / ScienceDirect Phytomedicine 2011',
+      },
+      {
+        substance: '糖尿病治療薬（インスリン・経口血糖降下薬）',
+        level: 'caution',
+        mechanism: 'オリーブ葉エキス（オレウロペイン）には血糖降下作用が報告されており、糖尿病治療薬と併用すると低血糖リスクが高まる可能性がある',
+        action: '糖尿病治療薬を服用中の方は併用前に医師・薬剤師に相談し、開始時は血糖値を頻回にモニタリングする',
+        evidence: 'theoretical',
+        source: 'MSK Olive Leaf monograph',
+      },
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'monitor',
+        mechanism: 'オリーブ葉エキスに弱い抗血小板作用が理論的に指摘されており、抗凝固薬・抗血小板薬と併用時に出血リスクが高まる可能性がある',
+        action: '抗凝固薬・抗血小板薬を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Drugs.com Olive leaf-Warfarin interaction monograph',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── ヒアルロン酸（経口）────────────────────────────────────────────
@@ -7191,6 +7227,32 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '血糖・血圧・脂質を同時改善', label: '17 RCTのメタ解析（Complement Ther Med 2018）' },
     axisScores: { antiAging: 5, skin: 3, cognitive: 2, stress: 3, sleep: 2, immunity: 7, metabolism: 7 },
+    interactions: [
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: 'チモキノンはCYP2C9を阻害しワルファリン代謝を遅延させる可能性が報告されている。チモキノン18mg/日超、またはN. sativa油1g/日超で薬物動態に影響が出る可能性が示唆されている',
+        action: 'ワルファリンを服用中の方は併用前に医師・薬剤師に相談し、INR値のモニタリングを行う',
+        evidence: 'theoretical',
+        source: 'PubMed 35921950 Potential food-drug interaction of thymoquinone with warfarin',
+      },
+      {
+        substance: '降圧薬',
+        level: 'caution',
+        mechanism: 'ニゲラ・サティバには血圧降下作用がメタ解析（11 RCT）で確認されており、降圧薬と併用すると血圧が過度に低下する可能性がある',
+        action: '降圧薬を服用中の方は併用前に医師・薬剤師に相談し、血圧モニタリングを行う',
+        evidence: 'established',
+        source: 'Journal of Hypertension 2016 Nigella sativa meta-analysis',
+      },
+      {
+        substance: '糖尿病治療薬（インスリン・経口血糖降下薬・グリベンクラミド等）',
+        level: 'caution',
+        mechanism: 'チモキノンはグリベンクラミドの血中濃度を13〜22%上昇させることが報告されており、血糖降下作用の増強と低血糖リスクが高まる可能性がある',
+        action: '糖尿病治療薬を服用中の方は併用前に医師・薬剤師に相談し、血糖値を頻回にモニタリングする',
+        evidence: 'established',
+        source: 'MSK Nigella sativa monograph / Complement Ther Med 2018',
+      },
+    ],
     updatedAt: '2026-04-18',
   },
 
