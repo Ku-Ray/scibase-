@@ -3363,7 +3363,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '+12%', label: 'マウスで平均寿命が12%延伸（Cell Metabolism 2020）' },
     axisScores: { antiAging: 9, skin: 2, cognitive: 3, stress: 1, sleep: 0, immunity: 3, metabolism: 8 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── Batch 5: ビタミン・ミネラル ─────────────────────────────────────
@@ -3685,7 +3686,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'AREDS2確認', label: '加齢黄斑変性の進行リスクを有意に低下（4,203人RCT）' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 2, stress: 0, sleep: 0, immunity: 3, metabolism: 1 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'folic-acid',
@@ -4756,7 +4758,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['ミトコンドリア機能・細胞エネルギーを高めたい', '筋肉の老化を遅らせたい', '最先端のアンチエイジングに興味がある'],
     emerging: true,
     axisScores: { antiAging: 8, skin: 1, cognitive: 3, stress: 1, sleep: 1, immunity: 4, metabolism: 7 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'pqq',
@@ -4799,7 +4802,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['脳の疲れ・集中力低下', 'エネルギーが出にくい', 'CoQ10と組み合わせてミトコンドリアを強化したい'],
     emerging: true,
     axisScores: { antiAging: 7, skin: 1, cognitive: 7, stress: 3, sleep: 3, immunity: 3, metabolism: 7 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'tmg',
@@ -5394,7 +5398,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['40歳以上で筋肉が落ちやすくなった気がする', '運動後の回復が遅い・筋肉痛が長引く', 'サルコペニア（加齢性筋肉減少）を予防したい'],
     heroStat: { value: '筋肉量・筋力', label: 'メタ解析で高齢者の有意維持を確認（JCSM 2019）' },
     axisScores: { antiAging: 5, skin: 1, cognitive: 2, stress: 2, sleep: 2, immunity: 3, metabolism: 8 },
-    updatedAt: '2026-04-17',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'nattokinase',
@@ -5640,7 +5645,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['スマートフォン・PCを1日長時間使用する', '40代以降で視力低下・かすみ目が気になる', '加齢黄斑変性の家族歴がある'],
     heroStat: { value: 'AMD進行リスク−26%', label: 'AREDS2試験 4,203名RCTで確認（JAMA Ophth. 2014）' },
     axisScores: { antiAging: 5, skin: 2, cognitive: 3, stress: 1, sleep: 1, immunity: 4, metabolism: 2 },
-    updatedAt: '2026-04-17',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'beta-glucan',
@@ -7644,7 +7650,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '−67%', label: 'パントテン酸2.2g/日×12週でのニキビ数減少率（RCT 2014, n=48）' },
     axisScores: { antiAging: 3, skin: 7, cognitive: 2, stress: 4, sleep: 2, immunity: 3, metabolism: 4 },
-    updatedAt: '2026-04-20',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── パルミトイル三重鎖ペプチド（パルミトイルトリペプチド-5） ─────────
