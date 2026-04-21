@@ -224,6 +224,9 @@ export default async function IngredientPage({ params }: Props) {
         const lvl = x.level === 'avoid' ? '併用回避が推奨されます' : x.level === 'caution' ? '併用には注意が必要です' : '経過観察が推奨されます'
         return `${x.substance}との併用：${lvl}。${x.mechanism}`
       }).join(' ')} 服薬中の方は自己判断で併用せず、必ず医師・薬剤師に相談してください。`,
+    } : ing.interactions !== undefined ? {
+      q: `${ing.nameJa}と薬を一緒に飲んでも大丈夫ですか？`,
+      a: `${ing.nameJa}について、現時点で添付文書・FDA警告・査読論文レベルで併用に重要な注意が必要とされる医薬品の報告は確認されていません。ただし処方薬を服用中の方や持病のある方は、新たな成分を始める前に医師・薬剤師にご相談ください。`,
     } : {
       q: `${ing.nameJa}と薬を一緒に飲んでも大丈夫ですか？`,
       a: `現時点で添付文書レベルの重要な相互作用は本ページに掲載していませんが、処方薬を服用中の方は念のため医師・薬剤師にご相談ください。サプリメントの成分には個人差があり、新しい相互作用が後から報告されることもあります。`,
@@ -319,7 +322,7 @@ export default async function IngredientPage({ params }: Props) {
     ...(ing.dosageLevels?.length ? [{ id: 'dosage-levels', label: '用量別の効果' }] : []),
     { id: 'faq', label: 'よくある疑問' },
     ...((ing.sideEffects?.length || ing.contraindications?.length) ? [{ id: 'safety', label: '副作用・注意' }] : []),
-    ...(ing.interactions?.length ? [{ id: 'interactions', label: '飲み合わせ' }] : []),
+    ...(ing.interactions !== undefined ? [{ id: 'interactions', label: '飲み合わせ' }] : []),
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'start', label: '始め方' }] : []),
     ...(ing.products.length > 0 ? [{ id: 'products', label: 'おすすめ商品' }] : []),
   ]
@@ -700,6 +703,24 @@ export default async function IngredientPage({ params }: Props) {
         )}
 
         {/* 飲み合わせ・医薬品との相互作用 */}
+        {ing.interactions !== undefined && ing.interactions.length === 0 ? (
+          <section id="interactions" className="mb-10 scroll-mt-20">
+            <h2 className="font-semibold text-[18px] text-foreground mb-2">飲み合わせ・医薬品との相互作用</h2>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+              <p className="text-[14px] text-emerald-900 font-semibold mb-2">
+                現時点で重要な相互作用は報告されていません
+              </p>
+              <p className="text-[13px] text-emerald-900 leading-relaxed">
+                {ing.nameJa}について、添付文書・FDA警告・査読論文レベルで併用回避・要注意とされる医薬品の報告は確認されていません。
+              </p>
+            </div>
+            <div className="mt-4 bg-secondary border border-border rounded-xl p-4">
+              <p className="text-[13px] text-foreground leading-relaxed">
+                ただし処方薬を服用中の方・持病のある方は、新たな成分を始める前に医師・薬剤師にご相談ください。サプリメント成分には個人差があり、新しい相互作用が後から報告されることもあります。
+              </p>
+            </div>
+          </section>
+        ) : null}
         {ing.interactions?.length ? (
           <section id="interactions" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-2">飲み合わせ・医薬品との相互作用</h2>

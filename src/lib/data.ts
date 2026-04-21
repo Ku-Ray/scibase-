@@ -855,7 +855,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '24週間', label: 'コラーゲン産生増加を確認した研究期間' },
     axisScores: { antiAging: 4, skin: 10, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -918,7 +919,8 @@ export const ingredients: Ingredient[] = [
       'より速く効果を出したい・レチノールの上位互換を試したい',
     ],
     axisScores: { antiAging: 4, skin: 9, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -981,7 +983,8 @@ export const ingredients: Ingredient[] = [
       'UV後の酸化ダメージを日焼け止めに加えてケアしたい',
     ],
     axisScores: { antiAging: 4, skin: 9, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -1047,7 +1050,8 @@ export const ingredients: Ingredient[] = [
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
     seoTitle: 'セラミド｜肌バリア・乾燥の論文エビデンス',
     seoDescription: 'セラミドは角層の主要脂質。外用で経皮水分蒸散量（TEWL）低下とバリア機能改善がRCTで示されている。乾燥・アトピー様肌への使い方、配合濃度、ヒアルロン酸との違いを査読済み論文ベースで解説。',
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -1100,7 +1104,8 @@ export const ingredients: Ingredient[] = [
       '刺激の少ないレチノール代替を朝晩使いたい',
     ],
     axisScores: { antiAging: 3, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -1163,7 +1168,8 @@ export const ingredients: Ingredient[] = [
       'ターンオーバーを促進して透明感を出したい',
     ],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -1226,7 +1232,8 @@ export const ingredients: Ingredient[] = [
       '炎症性の赤ニキビにも対応したい',
     ],
     axisScores: { antiAging: 1, skin: 6, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -1291,7 +1298,8 @@ export const ingredients: Ingredient[] = [
       'ハイドロキノンは刺激が強すぎた・処方箋なしで使える美白成分を探している',
     ],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -2121,7 +2129,8 @@ export const ingredients: Ingredient[] = [
       },
     ],
     axisScores: { antiAging: 2, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 0 },
-    updatedAt: '2026-04-15',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   {
@@ -2179,7 +2188,8 @@ export const ingredients: Ingredient[] = [
       },
     ],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 0 },
-    updatedAt: '2026-04-15',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── Batch 1: スキンケア外用 ──────────────────────────────────────────
@@ -2325,7 +2335,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '鎮静', label: 'バリア修復・コラーゲン合成促進（複数試験）' },
     axisScores: { antiAging: 4, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'squalane',
@@ -2371,7 +2382,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '低刺激', label: '皮脂類似構造で肌なじみが良い' },
     axisScores: { antiAging: 2, skin: 6, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'lactic-acid',
@@ -2421,7 +2433,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '保湿+剥離', label: '唯一NMF産生を促すAHA成分' },
     axisScores: { antiAging: 3, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'copper-peptide',
@@ -2477,7 +2490,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '同等', label: 'レチノールと同等のシワ改善（12週RCT）' },
     axisScores: { antiAging: 6, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── Batch 2: メジャーサプリ ──────────────────────────────────────────
@@ -4395,7 +4409,8 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['ビタミンCセラムの効果を高めたい', 'UV・光老化対策をしたい', '色素沈着・シミが気になる'],
     axisScores: { antiAging: 5, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'adenosine',
@@ -4435,7 +4450,8 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['しわを医薬部外品レベルで改善したい', '目元・口元のしわが気になる', 'レチノールが使えない敏感肌'],
     axisScores: { antiAging: 4, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'panthenol',
@@ -4476,7 +4492,8 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['乾燥・バリア機能が低下している', '敏感肌・刺激に弱い', 'ニキビ後の肌修復をしたい'],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'allantoin',
@@ -4516,7 +4533,8 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['敏感肌・乾燥肌', 'ニキビ・傷跡の修復をしたい', '低刺激なスキンケアを探している'],
     axisScores: { antiAging: 2, skin: 5, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'bacopa-monnieri',
@@ -4969,7 +4987,8 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['グリコール酸が刺激強すぎる敏感肌', '色素沈着・毛穴・ニキビが気になる', 'AHAを初めて試す人'],
     axisScores: { antiAging: 3, skin: 6, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 0 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'niacin',
@@ -5808,7 +5827,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['注射治療に近い効果を外用で試したい', 'コラーゲン産生を刺激する成分を探している', '韓国スキンケアのエビデンスを知りたい'],
     heroStat: { value: 'コラーゲン産生促進', label: '外用RCTでシワスコア有意改善（JCD 2021, n=40）' },
     axisScores: { antiAging: 5, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
-    updatedAt: '2026-04-17',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'carnosine',
@@ -7682,7 +7702,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '−36%', label: 'Pal-KTTKS外用12週でのしわスコア改善率（RCT 2003, n=93）' },
     axisScores: { antiAging: 7, skin: 9, cognitive: 1, stress: 1, sleep: 1, immunity: 1, metabolism: 1 },
-    updatedAt: '2026-04-20',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── メラトニン（外用）→ より重要な経口に絞る ─────────────────────
