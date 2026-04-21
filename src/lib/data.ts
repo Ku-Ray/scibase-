@@ -520,7 +520,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '2.5〜5g', label: '皮膚弾力改善を確認した用量（RCT）' },
     axisScores: { antiAging: 3, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 2 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'coq10',
@@ -4325,7 +4326,8 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['腸内環境を改善したい', 'プロバイオティクスと組み合わせて効果を高めたい', '食物繊維が不足している'],
     axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 1, sleep: 1, immunity: 6, metabolism: 6 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
   {
     slug: 'butyrate',
@@ -5886,7 +5888,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['糖化（AGEs）対策を成分ベースで取り組みたい', '甘いもの・糖質が多い食生活が気になる', 'テロメア・細胞老化の根本対策に興味がある'],
     heroStat: { value: 'AGEs・血糖・炎症を同時抑制', label: '2g/日×12週間RCT（Nutrition Research 2015, n=30）' },
     axisScores: { antiAging: 7, skin: 5, cognitive: 4, stress: 2, sleep: 1, immunity: 3, metabolism: 6 },
-    updatedAt: '2026-04-17',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── NAC ─────────────────────────────────────────────────────────────
@@ -6688,7 +6691,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'コラーゲン架橋を補助', label: '骨・皮膚・毛髪の構造タンパク質形成に関与' },
     axisScores: { antiAging: 4, skin: 5, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 2 },
-    updatedAt: '2026-04-18',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── クロム ──────────────────────────────────────────────────────────
@@ -7272,7 +7276,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '4週間', label: '肌水分量改善が確認されたRCTの期間（グルコシルセラミド12mg/日）' },
     axisScores: { antiAging: 5, skin: 9, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 1 },
-    updatedAt: '2026-04-19',
+    interactions: [],
+    updatedAt: '2026-04-21',
   },
 
   // ── ホスファチジルセリン詳細（既存slugあり確認済み）→ マンゴスチン ─────
