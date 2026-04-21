@@ -6341,7 +6341,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'ALT・AST低下', label: '複数RCTのメタ解析で確認（肝酵素正常化）' },
     axisScores: { antiAging: 5, skin: 3, cognitive: 2, stress: 3, sleep: 2, immunity: 7, metabolism: 6 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: 'シリマリン成分（特にシリビンB）がCYP2C9を阻害しワルファリン代謝を遅延させる可能性が報告されている。アルブミンからのワルファリン置換も指摘されている',
+        action: 'ワルファリン等の抗凝固薬を服用中の場合は併用前に医師・薬剤師に相談する。INR値の定期モニタリングが推奨される',
+        evidence: 'theoretical',
+        source: 'PubMed 19934397 / 31633199 CYP2C9-mediated warfarin and milk thistle interaction',
+      },
+      {
+        substance: '糖尿病治療薬（インスリン・経口血糖降下薬）',
+        level: 'monitor',
+        mechanism: 'シリマリンには血糖降下作用が複数のRCT・メタ解析で報告されており、糖尿病治療薬と併用時に低血糖リスクが高まる可能性がある',
+        action: '糖尿病治療薬を服用中の方は併用前に医師・薬剤師に相談し、開始時は血糖値を頻回にモニタリングする',
+        evidence: 'established',
+        source: 'PMC4908257 Silymarin in Type 2 Diabetes Mellitus systematic review and meta-analysis',
+      },
+      {
+        substance: 'CYP3A4基質薬（一部のスタチン・降圧薬・免疫抑制剤等）',
+        level: 'monitor',
+        mechanism: 'シリマリンによるCYP3A4阻害がin vitroで報告されているが、臨床試験では限定的との報告も多い。高用量摂取時に薬物代謝への影響可能性が指摘されている',
+        action: 'CYP3A4で代謝される薬剤を服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'MDPI Molecules 24(20):3693 Metabolism, Transport and Drug-Drug Interactions of Silymarin',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── ノコギリヤシ ────────────────────────────────────────────────────
