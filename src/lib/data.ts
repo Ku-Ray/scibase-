@@ -4308,7 +4308,25 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['膝・関節の違和感がある', '40代以上で関節の老化が気になる', '運動強度が高い'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 0, stress: 0, sleep: 1, immunity: 3, metabolism: 2 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: 'グルコサミン併用でINR上昇・出血傾向増大が複数の症例で報告されている。FDA MedWatchで20件・WHO ADRデータベースで21件の症例が記録されている',
+        action: 'ワルファリン服用中の場合は、摂取前に必ず医師・薬剤師に相談する。併用時はINRを定期モニタリングする',
+        evidence: 'case-report',
+        source: 'PubMed 18363538（症例報告レビュー） / Drugs.com Glucosamine-Warfarin',
+      },
+      {
+        substance: '糖尿病薬・血糖降下薬',
+        level: 'monitor',
+        mechanism: 'グルコサミン摂取で血糖値変動の可能性が指摘されている',
+        action: '糖尿病治療中の場合は摂取前に医師・薬剤師に相談し、血糖値モニタリング頻度を増やす',
+        evidence: 'theoretical',
+        source: 'Arthritis Foundation Glucosamine Recommendations',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
   {
     slug: 'chondroitin',
@@ -4350,7 +4368,17 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['関節・膝の不調が気になる', '40〜50代以上で関節の老化ケアをしたい'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 0, stress: 0, sleep: 1, immunity: 2, metabolism: 2 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: 'コンドロイチン+グルコサミン併用でワルファリン作用増強・INR上昇症例が報告されている',
+        action: 'ワルファリン服用中の場合は、摂取前に医師・薬剤師に相談する。併用時はINRを定期モニタリングする',
+        evidence: 'case-report',
+        source: 'Drugs.com Chondroitin/Glucosamine-Warfarin',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
   {
     slug: 'equol',
@@ -7082,7 +7110,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'NK細胞・T細胞を活性化', label: 'Cochraneメタ解析で確認された免疫増強作用' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 3, stress: 7, sleep: 6, immunity: 9, metabolism: 3 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗血小板薬',
+        level: 'caution',
+        mechanism: '霊芝の抗血小板作用が報告されており、3g/日の高用量で血小板凝集低下が確認されている。抗凝固薬・抗血小板薬との併用で出血リスク増大の可能性がある',
+        action: '抗凝固薬・抗血小板薬を服用中の場合は、摂取前に医師・薬剤師に相談する。手術前2週間は摂取を中止する',
+        evidence: 'theoretical',
+        source: 'Memorial Sloan Kettering Reishi / ASCO Post Reishi 2018',
+      },
+      {
+        substance: '免疫抑制剤（シクロスポリン・タクロリムス等）',
+        level: 'caution',
+        mechanism: '霊芝が免疫を活性化することが報告されており、臓器移植・自己免疫疾患の免疫抑制治療効果を低下させる理論的可能性がある',
+        action: '免疫抑制剤を服用中の場合は、摂取前に必ず医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Memorial Sloan Kettering Reishi',
+      },
+      {
+        substance: 'CYP2E1/1A2/3A4代謝薬',
+        level: 'monitor',
+        mechanism: 'in vitro試験で霊芝多糖類がCYP2E1・CYP1A2・CYP3Aを阻害することが報告されており、該当酵素で代謝される薬剤の血中濃度に影響する可能性がある',
+        action: '処方薬を服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'CancerNetwork Reishi / ASCO Post 2018',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
 
   // ── ボスウェリア ────────────────────────────────────────────────────
@@ -7237,7 +7291,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'VO2max向上', label: 'ATP産生促進・酸素利用効率改善がRCTで確認' },
     axisScores: { antiAging: 5, skin: 1, cognitive: 3, stress: 5, sleep: 3, immunity: 7, metabolism: 8 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: '免疫抑制剤（シクロスポリン・タクロリムス等）',
+        level: 'caution',
+        mechanism: 'コルジセプスがT細胞・NK細胞を免疫抑制薬の影響から保護する作用が報告されており、臓器移植・自己免疫疾患の治療効果を妨げる理論的可能性がある',
+        action: '免疫抑制剤を服用中の場合は、摂取前に必ず医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Memorial Sloan Kettering Cordyceps',
+      },
+      {
+        substance: 'ワルファリン・抗血小板薬',
+        level: 'caution',
+        mechanism: 'in vitro試験でコルジセプスの血小板凝集阻害作用が報告されており、抜歯後過剰出血の症例も報告されている',
+        action: '抗凝固薬・抗血小板薬・NSAIDsを服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'case-report',
+        source: 'Memorial Sloan Kettering Cordyceps（症例報告）',
+      },
+      {
+        substance: '糖尿病薬・血糖降下薬',
+        level: 'monitor',
+        mechanism: 'コルジセプスに血糖降下作用が報告されており、糖尿病治療薬との併用で低血糖リスク増大の可能性がある',
+        action: '糖尿病治療中の場合は摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'WebMD Cordyceps Interactions',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
 
   // ── シリカ（ケイ素）────────────────────────────────────────────────
@@ -7618,7 +7698,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'テロメラーゼ活性化', label: 'アストラガロシドによるテロメア保護研究が進行中' },
     axisScores: { antiAging: 8, skin: 2, cognitive: 3, stress: 5, sleep: 3, immunity: 8, metabolism: 3 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'リチウム',
+        level: 'avoid',
+        mechanism: 'アストラガルスがリチウムの腎排泄を阻害し、血中リチウム濃度を中毒域まで上昇させる可能性が報告されている',
+        action: 'リチウム服用中は併用を避け、必ず医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'WebMD Astragalus Interactions',
+      },
+      {
+        substance: '免疫抑制剤（タクロリムス・シクロスポリン等）',
+        level: 'avoid',
+        mechanism: '症例報告でアストラガルス含有漢方併用によりタクロリムス血中濃度が約50%低下したことが報告されている。臓器移植・自己免疫疾患の治療効果を著しく低下させる可能性がある',
+        action: '免疫抑制剤を服用中の場合は併用を避け、必ず医師・薬剤師に相談する',
+        evidence: 'case-report',
+        source: 'Memorial Sloan Kettering Astragalus（タクロリムス併用症例）',
+      },
+      {
+        substance: 'シクロホスファミド・化学療法薬',
+        level: 'caution',
+        mechanism: 'アストラガルスの免疫活性化作用がシクロホスファミド等の免疫抑制効果と拮抗する可能性が報告されている。ただし併用での免疫サポート効果も研究されている',
+        action: 'がん治療中の場合は、摂取前に必ず腫瘍内科医・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Susan G. Komen Astragalus / WebMD',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
 
   // ── コラーゲン II型 ────────────────────────────────────────────────
