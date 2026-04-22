@@ -6442,7 +6442,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'CD38阻害→NAD+節約', label: 'NMN/NRとの組み合わせスタックで研究注目' },
     axisScores: { antiAging: 7, skin: 2, cognitive: 4, stress: 4, sleep: 6, immunity: 5, metabolism: 5 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗血小板薬',
+        level: 'caution',
+        mechanism: 'in vitro試験でアピゲニンがCYP酵素・血小板凝集を阻害することが報告されており、抗凝固薬併用で出血リスク増大の理論的可能性がある',
+        action: '抗凝固薬・抗血小板薬を服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 27766890 / Drugs.com bioflavonoids-warfarin',
+      },
+      {
+        substance: '鎮静剤・ベンゾジアゼピン',
+        level: 'caution',
+        mechanism: 'アピゲニンがGABA-A受容体に結合する動物試験結果が報告されており、鎮静剤との併用で中枢抑制作用増強の可能性がある',
+        action: '睡眠薬・抗不安薬を服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PMC6817918（アピゲニン薬理レビュー）',
+      },
+      {
+        substance: 'ホルモン療法薬・エストロゲン',
+        level: 'caution',
+        mechanism: 'アピゲニンのフィトエストロゲン様作用が報告されており、ホルモン療法薬との相互作用の可能性が指摘されている',
+        action: 'ホルモン療法中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'DrugBank DB07352',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── プテロスチルベン ─────────────────────────────────────────────────
@@ -7008,7 +7034,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '疼痛スコア・可動域が有意に改善', label: '333mg/日×8週間RCT（Phytomedicine 2003）' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 6, metabolism: 3 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: 'ボスウェリアがCYP2C9・CYP3A4・CYP2C19（ワルファリン代謝酵素）を阻害することが報告されており、症例報告でINR上昇が2例報告されている（併用中止で回復）',
+        action: '抗凝固薬を服用中の場合は、併用前に必ず医師・薬剤師に相談する',
+        evidence: 'case-report',
+        source: 'PubMed 25233607 / Liebert aivt.2018.0023（CYP阻害試験）',
+      },
+      {
+        substance: 'NSAIDs・COX阻害薬',
+        level: 'monitor',
+        mechanism: 'ボスウェリア酸がCOX-1・5-LOXを阻害することが報告されており、NSAIDsとは作用機序が異なるが重複による副作用増強の可能性が指摘されている',
+        action: 'NSAIDsと併用する場合は、医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Memorial Sloan Kettering Boswellia / PMC8951360',
+      },
+      {
+        substance: 'CYP3A4代謝薬（ベンゾジアゼピン・スタチン等）',
+        level: 'caution',
+        mechanism: 'in vitro試験でボスウェリアがCYP3A4を阻害することが報告されており、該当酵素で代謝される薬剤の血中濃度上昇の可能性がある',
+        action: 'CYP3A4で代謝される薬剤を服用中の場合は、併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Liebert aivt.2018.0023（in vitro CYP阻害評価）',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── コルジセプス ───────────────────────────────────────────────────
@@ -8002,7 +8054,25 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'βアミロイド抑制', label: 'βアミロイドの凝集を抑制する作用がin vitroで確認された神経保護ポリフェノール' },
     axisScores: { antiAging: 6, skin: 4, cognitive: 6, stress: 3, sleep: 2, immunity: 5, metabolism: 3 },
-    updatedAt: '2026-04-20',
+    interactions: [
+      {
+        substance: 'ワルファリン・抗血小板薬',
+        level: 'monitor',
+        mechanism: 'ローズマリー由来成分の抗血小板作用が報告されており、抗凝固薬・抗血小板薬との併用で出血リスクが増える理論的可能性がある',
+        action: '抗凝固薬・抗血小板薬を服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'HelloPharmacist Rosemary-Warfarin',
+      },
+      {
+        substance: 'UGT1A1/1A6/2B7基質薬',
+        level: 'monitor',
+        mechanism: 'in vitro試験でロスマリン酸がUGT1A1・1A6・2B7を中程度阻害することが報告されており、該当グルクロン酸抱合薬の血中濃度変動の可能性が指摘されている',
+        action: '処方薬を服用中の場合は、医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 30466000（UGT阻害試験）',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 
   // ── トリメチルグリシン（TMG）→既存確認 ──────────────────────────
@@ -8376,7 +8446,33 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '12週', label: 'バーンアウト症候群のRCTで精神的疲労・うつ症状改善が確認された期間（n=118）' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 7, stress: 9, sleep: 5, immunity: 3, metabolism: 3 },
-    updatedAt: '2026-04-20',
+    interactions: [
+      {
+        substance: 'SSRI・SNRI・MAO阻害薬',
+        level: 'avoid',
+        mechanism: 'ロジオラの併用で血中セロトニン濃度過剰となりセロトニン症候群が発症した症例が報告されている（パロキセチン併用例等）',
+        action: 'SSRI・SNRI・MAO阻害薬を服用中の場合は、併用を避け必ず医師・薬剤師に相談する',
+        evidence: 'case-report',
+        source: 'PubMed 25413939 / PMC9881059（神経精神薬との相互作用レビュー）',
+      },
+      {
+        substance: 'CYP1A2/2C9/2C19/2D6/3A4代謝薬',
+        level: 'caution',
+        mechanism: 'in vitro試験でロジオラが複数のCYP酵素を阻害することが報告されており、該当酵素で代謝される薬剤の血中濃度上昇の可能性がある',
+        action: '処方薬を服用中の場合は、併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PubMed 30659561（向精神薬との薬物相互作用）',
+      },
+      {
+        substance: '興奮剤・刺激薬（カフェイン高用量・ADHD治療薬等）',
+        level: 'caution',
+        mechanism: 'ロジオラ自体に軽度の刺激作用が報告されており、興奮剤との併用で心拍数上昇・不眠・不安症状増悪の可能性が指摘されている',
+        action: '刺激性薬剤を服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Merck Manual Professional Edition Rhodiola',
+      },
+    ],
+    updatedAt: '2026-04-21',
   },
 ]
 
