@@ -4,10 +4,12 @@ import { concerns, getIngredientsByConcern } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://scibase.app'
+
 export const metadata: Metadata = {
   title: '成分ランキング｜悩み別・論文エビデンス順',
   description: 'シミ・乾燥・ニキビ・老化など悩み別に、論文エビデンスが強い成分をランキング形式で紹介。メタ解析・RCTの結果に基づいた科学的評価。',
-  alternates: { canonical: 'https://scibase.app/ranking' },
+  alternates: { canonical: `${BASE_URL}/ranking` },
 }
 
 const categoryLabel: Record<string, string> = {
@@ -31,7 +33,32 @@ export default function RankingIndexPage() {
     return acc
   }, {})
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム',     item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'ランキング', item: `${BASE_URL}/ranking` },
+    ],
+  }
+
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'SciBase 悩み別ランキング一覧',
+    numberOfItems: concerns.length,
+    itemListElement: concerns.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${c.nameJa}ランキング`,
+      url: `${BASE_URL}/ranking/${c.slug}`,
+    })),
+  }
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
     <div className="max-w-4xl mx-auto px-5 py-10">
 
       {/* Header */}
@@ -112,5 +139,6 @@ export default function RankingIndexPage() {
         })}
       </div>
     </div>
+    </>
   )
 }

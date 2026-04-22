@@ -22,9 +22,19 @@ export const metadata: Metadata = {
 /* 参照論文の総数（全成分の論文件数合計） */
 const totalPapers = ingredients.reduce((acc, i) => acc + i.papers.length, 0)
 
+type PairEntry = {
+  pairKey: string
+  nameJaA: string
+  nameJaB: string
+  rankA:   EvidenceRank
+  rankB:   EvidenceRank
+  category: string
+  isTop3:  boolean
+}
+
 export default function ComparePage() {
-  const pairs = POPULAR_PAIRS
-    .map(([slugA, slugB]) => {
+  const pairs: PairEntry[] = POPULAR_PAIRS
+    .map(([slugA, slugB]): PairEntry | null => {
       const ingA = getIngredient(slugA)
       const ingB = getIngredient(slugB)
       const pairKey = `${slugA}-vs-${slugB}`
@@ -39,9 +49,34 @@ export default function ComparePage() {
         isTop3:  TOP3_PAIR_KEYS.includes(pairKey),
       }
     })
-    .filter(Boolean) as NonNullable<ReturnType<typeof POPULAR_PAIRS.map>>[number][]
+    .filter((p): p is PairEntry => p !== null)
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: '成分比較', item: `${BASE_URL}/compare` },
+    ],
+  }
+
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'SciBase 成分比較ペア一覧',
+    numberOfItems: pairs.length,
+    itemListElement: pairs.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${p.nameJaA} vs ${p.nameJaB}`,
+      url: `${BASE_URL}/compare/${p.pairKey}`,
+    })),
+  }
 
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
     <div className="max-w-3xl mx-auto px-5 py-10">
 
       {/* Breadcrumb */}
@@ -81,7 +116,6 @@ export default function ComparePage() {
       </div>
 
       {/* CompareGrid（フィルター + TOP3 + 一覧） */}
-      {/* @ts-expect-error: pairs型はnullをfilterで除外済み */}
       <CompareGrid pairs={pairs} />
 
       {/* CTA — 選択疲れへの出口：診断で今足りていないものを見つける */}
@@ -113,5 +147,6 @@ export default function ComparePage() {
         <Link href="/about"       className="text-accent hover:underline">エビデンス評価基準 →</Link>
       </div>
     </div>
+    </>
   )
 }

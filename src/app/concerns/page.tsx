@@ -3,10 +3,12 @@ import { concerns } from '@/lib/data'
 import type { Concern } from '@/lib/types'
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://scibase.app'
+
 export const metadata: Metadata = {
   title: '悩みから探す — エビデンスで成分を選ぶ',
   description: '悩み別に、論文エビデンスが確認されている成分を科学的に紹介。シミ・乾燥・ニキビ・老化・睡眠など全カテゴリ対応。',
-  alternates: { canonical: 'https://scibase.app/concerns' },
+  alternates: { canonical: `${BASE_URL}/concerns` },
 }
 
 const categoryLabel: Record<string, string> = {
@@ -66,7 +68,32 @@ export default function ConcernsPage() {
     .map(slug => concerns.find(c => c.slug === slug))
     .filter((c): c is Concern => Boolean(c))
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム',     item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: '悩みから探す', item: `${BASE_URL}/concerns` },
+    ],
+  }
+
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'SciBase 悩みカテゴリ一覧',
+    numberOfItems: concerns.length,
+    itemListElement: concerns.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.nameJa,
+      url: `${BASE_URL}/concerns/${c.slug}`,
+    })),
+  }
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
     <div className="max-w-4xl mx-auto px-5 py-10">
       <div className="mb-7">
         <h1 className="font-bold text-[28px] sm:text-[34px] text-foreground mb-2 tracking-tight">
@@ -158,5 +185,6 @@ export default function ConcernsPage() {
         )}
       </div>
     </div>
+    </>
   )
 }

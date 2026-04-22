@@ -13,16 +13,24 @@ export const metadata: Metadata = {
 
 export default function IngredientsPage() {
   const rankOrder: Record<string, number> = { S: 0, A: 1, B: 2, C: 3 }
-  const topIngredients = [...ingredients]
+  const sortedIngredients = [...ingredients]
     .sort((a, b) => (rankOrder[a.evidenceRank] ?? 99) - (rankOrder[b.evidenceRank] ?? 99))
-    .slice(0, 30)
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム',   item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: '成分一覧', item: `${BASE_URL}/ingredients` },
+    ],
+  }
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'SciBase 成分一覧（論文エビデンス順）',
-    numberOfItems: ingredients.length,
-    itemListElement: topIngredients.map((ing, i) => ({
+    numberOfItems: sortedIngredients.length,
+    itemListElement: sortedIngredients.map((ing, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: ing.nameJa,
@@ -32,6 +40,7 @@ export default function IngredientsPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <div className="max-w-5xl mx-auto px-5 py-10">
         <div className="mb-10">

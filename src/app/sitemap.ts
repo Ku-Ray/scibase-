@@ -6,17 +6,26 @@ import { POPULAR_PAIRS } from '@/lib/compare-data'
 const BASE_URL = 'https://scibase.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString()
+  /* データ更新日から最終更新日を導出（ビルド時刻ではなくコンテンツ変更日をGoogleに伝える） */
+  const latestIngredient = ingredients
+    .map(i => i.updatedAt)
+    .sort()
+    .at(-1) ?? '2026-01-01'
+  const latestArticle = articles
+    .map(a => a.updatedAt ?? a.publishedAt)
+    .sort()
+    .at(-1) ?? '2026-01-01'
+  const latestOverall = [latestIngredient, latestArticle].sort().at(-1)!
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL,                    lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${BASE_URL}/ingredients`,   lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE_URL}/concerns`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE_URL}/ranking`,       lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE_URL}/compare`,       lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
-    { url: `${BASE_URL}/articles`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
-    { url: `${BASE_URL}/analyzer`,      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/about`,         lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: BASE_URL,                    lastModified: latestOverall,    changeFrequency: 'weekly',  priority: 1.0 },
+    { url: `${BASE_URL}/ingredients`,   lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/concerns`,      lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/ranking`,       lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/compare`,       lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE_URL}/articles`,      lastModified: latestArticle,    changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE_URL}/analyzer`,      lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/about`,         lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.6 },
   ]
 
   const ingredientPages: MetadataRoute.Sitemap = ingredients.map((ing) => ({
@@ -28,28 +37,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const concernPages: MetadataRoute.Sitemap = concerns.map((c) => ({
     url:             `${BASE_URL}/concerns/${c.slug}`,
-    lastModified:    now,
+    lastModified:    latestIngredient,
     changeFrequency: 'monthly',
     priority:        0.7,
   }))
 
   const rankingPages: MetadataRoute.Sitemap = concerns.map((c) => ({
     url:             `${BASE_URL}/ranking/${c.slug}`,
-    lastModified:    now,
+    lastModified:    latestIngredient,
     changeFrequency: 'monthly',
     priority:        0.75,
   }))
 
   const comparePages: MetadataRoute.Sitemap = POPULAR_PAIRS.map(([slugA, slugB]) => ({
     url:             `${BASE_URL}/compare/${slugA}-vs-${slugB}`,
-    lastModified:    now,
+    lastModified:    latestIngredient,
     changeFrequency: 'monthly',
     priority:        0.7,
   }))
 
   const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
     url:             `${BASE_URL}/articles/${a.slug}`,
-    lastModified:    a.publishedAt,
+    lastModified:    a.updatedAt ?? a.publishedAt,
     changeFrequency: 'monthly',
     priority:        0.8,
   }))

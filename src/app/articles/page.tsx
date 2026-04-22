@@ -47,7 +47,32 @@ export default async function ArticlesPage({ searchParams }: Props) {
 
   const totalPaperRefs = articles.reduce((acc, a) => acc + a.ingredients.length, 0)
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'コラム', item: `${BASE_URL}/articles` },
+    ],
+  }
+
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'SciBase コラム一覧',
+    numberOfItems: articles.length,
+    itemListElement: articles.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: a.title,
+      url: `${BASE_URL}/articles/${a.slug}`,
+    })),
+  }
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
     <div className="max-w-3xl mx-auto px-5 py-10">
 
       {/* Breadcrumb */}
@@ -204,5 +229,6 @@ export default async function ArticlesPage({ searchParams }: Props) {
         <Link href="/concerns"    className="text-accent hover:underline">悩みから探す →</Link>
       </div>
     </div>
+    </>
   )
 }
