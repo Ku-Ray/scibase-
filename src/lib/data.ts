@@ -6,6 +6,7 @@ export const ingredients: Ingredient[] = [
     nameJa: 'アシュワガンダ',
     nameEn: 'Ashwagandha',
     evidenceRank: 'S',
+    seoDescription: 'アシュワガンダはインド伝統医学のハーブ。300〜600mg/日でストレス指標・コルチゾール低下がメタ解析で確認されている。KSM-66等抽出法別の有効量・副作用・摂取タイミングを査読済み論文で解説。',
     tagline: 'ストレス・コルチゾール低下への関与がメタ解析で確認されている',
     description:
       'アシュワガンダ（Withania somnifera）は、アーユルヴェーダ医学で数千年使われてきた植物由来のアダプトゲン。ストレスホルモン（コルチゾール）の低下、睡眠の質改善、抗疲労効果について、RCT複数件を統合したメタ解析でエビデンスが確認されている。',
@@ -389,6 +390,7 @@ export const ingredients: Ingredient[] = [
     nameJa: 'オメガ3（EPA・DHA）',
     nameEn: 'Omega-3 (EPA/DHA)',
     evidenceRank: 'S',
+    seoDescription: 'オメガ3（EPA・DHA）は多価不飽和脂肪酸。1〜3g/日で慢性炎症・心血管・認知機能への効果がメタ解析で確認されている。魚油とクリルオイルの違い・EPA/DHA比・酸化対策・空腹時摂取の是非を査読済み論文で解説。',
     tagline: '慢性炎症・心血管・認知機能への関与がメタ解析で確認されている',
     description:
       'EPA（エイコサペンタエン酸）とDHA（ドコサヘキサエン酸）は青魚に多く含まれる長鎖多価不飽和脂肪酸。慢性炎症（inflammaging）の抑制、心血管リスクの低下、認知機能維持への関与が複数のメタ解析で確認されている。',
@@ -498,6 +500,7 @@ export const ingredients: Ingredient[] = [
     nameJa: 'コラーゲンペプチド',
     nameEn: 'Collagen Peptide',
     evidenceRank: 'A',
+    seoDescription: 'コラーゲンペプチドは低分子化タンパク質。2.5〜10g/日で皮膚の弾力・水分量の改善がRCTで確認されている。魚由来と豚由来の違い・有効量・ビタミンC併用の根拠・飲むタイミングを査読済み論文で解説。',
     tagline: '皮膚の弾力・水分量への関与がRCTで確認されている',
     description:
       'コラーゲンペプチドは加水分解により低分子化されたコラーゲン。経口摂取後、皮膚線維芽細胞への到達・刺激が動物実験およびヒトRCTで確認されている。肌の弾力・水分量・ハリへの関与が複数のRCTで示されている。',
@@ -644,6 +647,7 @@ export const ingredients: Ingredient[] = [
     nameJa: 'NMN',
     nameEn: 'Nicotinamide Mononucleotide',
     evidenceRank: 'B',
+    seoDescription: 'NMNはNAD+前駆体。250〜1000mg/日で血中NAD+値の上昇は確認されているが臨床的効果のエビデンスは不足。NR（ニコチンアミドリボシド）との比較・有効量論争・「アンチエイジング」表示の実態を査読済み論文で解説。',
     tagline: 'NAD+値の上昇は確認されているが、臨床的効果はデータ不足',
     description:
       'NMNはNAD+（細胞のエネルギー通貨）の前駆体。動物実験では著明な抗老化効果が示されているが、ヒト臨床試験では「NAD+は上がる。しかし体の指標はほぼ変わらない」が現時点の結論。2024年のメタ解析（12RCT・n=513）でもほとんどの臨床アウトカムで有意差なし。',
@@ -888,6 +892,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Retinol',
     evidenceRank: 'A',
     usageType: 'topical',
+    seoDescription: 'レチノールは活性型ビタミンAの一種。0.1〜1%外用でシワ・光老化の改善が複数のRCTで示されている。推奨濃度・ピーリング反応の対処・副作用・バクチオールとの違いを査読済み論文ベースで解説。',
     tagline: '光老化・シワへの改善効果がRCTで繰り返し確認されている外用成分',
     description:
       'レチノールはビタミンAの一形態。皮膚に塗布すると真皮内でレチノイン酸に変換され、コラーゲン産生の促進・ターンオーバーの正常化・メラニン合成の抑制を引き起こす。光老化・シワ・くすみに対する複数のRCTで有意な改善が確認されており、スキンケア成分として最もエビデンスが蓄積されている部類に入る。',
@@ -1017,6 +1022,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Topical Vitamin C (L-Ascorbic Acid)',
     evidenceRank: 'A',
     usageType: 'topical',
+    seoDescription: 'ビタミンC外用はLアスコルビン酸とその誘導体。10〜20%濃度でコラーゲン合成促進・美白・抗酸化が複数のRCTで示されている。推奨濃度・pH・誘導体型との違い・刺激性・保存安定性を査読済み論文で解説。',
     tagline: 'コラーゲン合成促進・美白・抗酸化がRCTで確認されている外用成分',
     description:
       '外用ビタミンC（L-アスコルビン酸およびその誘導体）は、コラーゲン合成の促進、メラニン産生の抑制、UV誘発酸化ストレスの軽減において複数のRCTで有効性が示されている。安定性が低いため、誘導体（アスコルビルグルコシド・3-O-エチルアスコルビン酸等）や安定化処方（フェルラ酸との組み合わせ）が有効。',
@@ -1148,6 +1154,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Bakuchiol',
     evidenceRank: 'B',
     usageType: 'topical',
+    seoDescription: 'バクチオールはオランダビユ由来の植物成分。0.5〜1%外用でレチノール様のシワ改善が研究されており、光感受性が低く妊娠中にも使いやすい。推奨濃度・レチノールとの効果差・副作用を査読済み論文で解説。',
     tagline: 'レチノールと類似の光老化改善が示されているが研究数はまだ少ない',
     description:
       'バクチオールはアーユルヴェーダに由来する植物由来成分。レチノールと同様の遺伝子発現変化（コラーゲン産生促進・MMP抑制）を引き起こすことが確認されており、レチノールとの直接比較RCTでほぼ同等の光老化改善効果が示されている。ただし研究数は少なく、様々な濃度での最適化も途上。',
@@ -1396,6 +1403,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Hyaluronic Acid (Topical)',
     evidenceRank: 'B',
     usageType: 'topical',
+    seoDescription: 'ヒアルロン酸外用は分子量で働きが変わる保湿成分。高分子型は表皮保湿・低分子型は真皮到達が研究されている。推奨濃度・濡れた肌への塗布・セラミドとの使い分け・注入剤との違いを査読済み論文で解説。',
     tagline: '表皮の水分保持に働くが、真皮への浸透は分子量に依存する',
     description:
       '外用ヒアルロン酸は皮膚表面の水分保持を助ける。しかし高分子HA（>1MDa）は角質層を通過できず、保湿効果は表皮レベルに留まる。低分子HA（<50kDa）は真皮への浸透が示唆されているが、ヒトRCTでの長期効果確認はまだ限定的。総合的なエビデンスは「保湿の観点では有効だが、抗老化効果としてはエビデンスが不十分」。',
@@ -1845,6 +1853,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Creatine',
     evidenceRank: 'S',
     usageType: 'oral',
+    seoDescription: 'クレアチンはATP再合成を助ける有機酸。3〜5g/日で筋力・筋量・認知機能への効果がメタ解析で繰り返し確認されている。モノハイドレート型の優位性・ローディング不要論・副作用を査読済み論文で解説。',
     tagline: '筋力・筋量・認知機能への関与がメタ解析で繰り返し確認されている',
     description:
       'クレアチンはリン酸クレアチンとしてATP再合成に関わるエネルギー代謝物質。サプリメント中で最もエビデンスが蓄積されており、筋力・無酸素運動パフォーマンスへの効果がメタ解析で確定的に示されている。近年では認知機能（特に睡眠不足時・加齢による低下）への改善効果も複数のRCTで報告されている。',
@@ -2684,6 +2693,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Curcumin',
     evidenceRank: 'A',
     usageType: 'oral',
+    seoDescription: 'クルクミンはウコン由来のポリフェノール。500〜2000mg/日で慢性炎症マーカー・関節痛スコアの低下がメタ解析で確認されている。吸収率問題・ピペリン併用・相互作用・副作用を査読済み論文ベースで解説。',
     tagline: '慢性炎症・Inflammaging抑制のメタ解析が複数存在する抗炎症成分',
     description:
       'クルクミンはウコン（ターメリック）の主要活性成分。NF-κB経路を介した炎症性サイトカイン抑制が細胞〜臨床レベルで示されており、老化性炎症（Inflammaging）への関与が研究されている。単体では吸収率が低いため、ピペリン（黒胡椒エキス）やリポソーム製剤との組み合わせが臨床研究でも採用されている。',

@@ -85,12 +85,15 @@ export default async function ArticlesPage({ searchParams }: Props) {
       {/* Hero — 損失回避 + アンカリング */}
       <div className="mb-10">
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
-          論文エビデンスで解説
+          SciBase コラム
         </p>
         <h1 className="text-[28px] sm:text-[34px] font-bold text-foreground tracking-tight leading-[1.2] mb-4">
-          「なんとなく良さそう」から<br className="sm:hidden" />
-          抜け出す
+          老化・成分・習慣を<br className="sm:hidden" />
+          論文で解説
         </h1>
+        <p className="text-[15px] text-foreground font-semibold leading-relaxed mb-3">
+          「なんとなく良さそう」から抜け出す、論文ベースの判断軸。
+        </p>
         <p className="text-[14px] text-muted-foreground leading-relaxed max-w-xl mb-6">
           口コミでも広告でもなく、査読済み論文を根拠に成分・老化・習慣を解説する。
           情報が多いほど選択が難しくなる時代に、判断の軸を持つためのコラム。

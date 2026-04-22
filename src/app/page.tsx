@@ -10,8 +10,8 @@ import type { Metadata } from 'next'
 const totalPapers = ingredients.reduce((acc, i) => acc + i.papers.length, 0)
 
 export const metadata: Metadata = {
-  title: { absolute: 'SciBase — スキンケア・サプリ成分を論文エビデンスで評価するデータベース' },
-  description: `「その成分、本当に効きますか」。レチノール・ナイアシンアミド・アスタキサンチン・クルクミンなど${ingredients.length}成分を、メタ解析・RCT・コホート研究をもとに科学的に評価。口コミでも広告でもなく、査読済み論文で選ぶ。`,
+  title: { absolute: '論文で選ぶ成分データベース｜SciBase' },
+  description: `スキンケア・サプリ成分を査読済み論文で評価。メタ解析・RCT・コホート研究から${ingredients.length}成分・${totalPapers}件の論文で「本当に効く成分」を可視化。広告や口コミではなくエビデンスで選ぶ。`,
   alternates: { canonical: 'https://scibase.app' },
 }
 
