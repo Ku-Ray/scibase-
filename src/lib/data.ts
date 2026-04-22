@@ -177,7 +177,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '35〜68%', label: 'メラノソーム転移の抑制率（RCT）' },
     axisScores: { antiAging: 4, skin: 9, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-22',
   },
   {
     slug: 'magnesium',
@@ -1439,7 +1440,8 @@ export const ingredients: Ingredient[] = [
       'レチノールなど他の成分の刺激を和らげたい',
     ],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 1, metabolism: 0 },
-    updatedAt: '2026-04-13',
+    interactions: [],
+    updatedAt: '2026-04-22',
   },
 
   // ─── 経口成分（追加） ────────────────────────────────────────
@@ -4256,7 +4258,33 @@ export const ingredients: Ingredient[] = [
     ],
     whoFor: ['疲れやすい・疲労回復を早めたい', '運動パフォーマンスを高めたい', '冷え・血流が気になる'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 1, stress: 2, sleep: 1, immunity: 3, metabolism: 6 },
-    updatedAt: '2026-04-16',
+    interactions: [
+      {
+        substance: '硝酸薬（ニトログリセリン・硝酸イソソルビド等）',
+        level: 'avoid',
+        mechanism: 'Lシトルリンは体内でアルギニンに変換されNO産生を促進する。硝酸薬との併用で血管拡張作用が重なり、危険な血圧低下を引き起こす可能性がある',
+        action: '狭心症等で硝酸薬を服用中の場合は摂取を避け、必ず医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Drugs.com Citrulline Interactions',
+      },
+      {
+        substance: 'ED治療薬（シルデナフィル・タダラフィル・バルデナフィル）',
+        level: 'caution',
+        mechanism: 'Lシトルリン併用でED治療薬の血管拡張・降圧作用が増強され、めまい・失神・頭痛・潮紅等の副作用増大の可能性がある',
+        action: 'ED治療薬を服用中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Drugs.com Citrulline-Sildenafil',
+      },
+      {
+        substance: '降圧薬',
+        level: 'caution',
+        mechanism: 'Lシトルリンの血管拡張・血圧低下作用と降圧薬の作用が重なり、過度の血圧低下の可能性がある',
+        action: '降圧薬を服用中の場合は、摂取前に医師・薬剤師に相談し血圧モニタリングを行う',
+        evidence: 'theoretical',
+        source: 'WebMD L-Citrulline Uses and Risks',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
   {
     slug: 'acetyl-l-carnitine',
@@ -5256,7 +5284,8 @@ export const ingredients: Ingredient[] = [
     whoFor: ['ホモシステイン値が高い', '葉酸・B12と一緒に使ってメチル化サポートをしたい', 'エピジェネティクス・長寿に関心がある'],
     emerging: true,
     axisScores: { antiAging: 6, skin: 1, cognitive: 3, stress: 1, sleep: 1, immunity: 2, metabolism: 7 },
-    updatedAt: '2026-04-16',
+    interactions: [],
+    updatedAt: '2026-04-22',
   },
   {
     slug: 'spirulina',
@@ -7861,7 +7890,17 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '40mg/日', label: 'グルコサミン+コンドロイチンを超えるRCT結果を40mgで達成' },
     axisScores: { antiAging: 3, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 2 },
-    updatedAt: '2026-04-18',
+    interactions: [
+      {
+        substance: '免疫抑制剤（シクロスポリン・タクロリムス・メソトレキセート等）',
+        level: 'caution',
+        mechanism: 'UC-IIは経口免疫寛容（パイエル板でのT制御細胞誘導）を介して作用するため、免疫抑制治療中は作用機序が干渉する理論的可能性がある',
+        action: '免疫抑制剤を服用中・自己免疫疾患で治療中の場合は、摂取前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'PMC7222752（UC-II関節健康レビュー） / BodySpec UC-II Mechanism',
+      },
+    ],
+    updatedAt: '2026-04-22',
   },
 
   // ── ルテオリン ─────────────────────────────────────────────────────
@@ -8280,7 +8319,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: '70%', label: '細胞膜リン脂質中のホスファチジルコリン比率' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 7, stress: 2, sleep: 2, immunity: 2, metabolism: 5 },
-    updatedAt: '2026-04-19',
+    interactions: [],
+    updatedAt: '2026-04-22',
   },
 
   // ── ロスマリン酸 ───────────────────────────────────────────────────
