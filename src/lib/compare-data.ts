@@ -40,6 +40,47 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['lions-mane',           'bacopa-monnieri'],
   // ── 代謝・エネルギー ─────────────────────────────
   ['coq10',                'pqq'],
+
+  // ── スキンケア（追加） ───────────────────────────
+  ['retinol',              'niacinamide'],
+  ['salicylic-acid',       'glycolic-acid'],
+  ['glycolic-acid',        'lactic-acid'],
+  ['arbutin',              'kojic-acid'],
+  ['tranexamic-acid',      'arbutin'],
+  ['niacinamide',          'azelaic-acid'],
+  ['ferulic-acid',         'vitamin-c-topical'],
+  ['ceramide',             'panthenol'],
+  ['pdrn',                 'retinol'],
+  ['centella-asiatica',    'niacinamide'],
+  ['palmitoyl-tripeptide', 'retinol'],
+  // ── 抗老化・長寿（追加） ────────────────────────
+  ['resveratrol',          'pterostilbene'],
+  ['fisetin',              'quercetin'],
+  ['spermidine',           'resveratrol'],
+  ['alpha-lipoic-acid',    'coq10'],
+  ['glutathione',          'nac'],
+  ['urolithin-a',          'coq10'],
+  // ── 脳・認知（追加） ────────────────────────────
+  ['lions-mane',           'alpha-gpc'],
+  ['ginkgo-biloba',        'bacopa-monnieri'],
+  ['phosphatidylserine',   'alpha-gpc'],
+  // ── 睡眠（追加） ─────────────────────────────────
+  ['5-htp',                'l-tryptophan'],
+  ['melatonin',            'l-theanine'],
+  ['l-theanine',           'gaba'],
+  // ── ストレス（追加） ────────────────────────────
+  ['ashwagandha',          'magnesium-glycinate'],
+  // ── 筋力・体組成（追加） ────────────────────────
+  ['creatine',             'l-glutamine'],
+  ['l-arginine',           'l-citrulline'],
+  // ── 腸活（追加） ────────────────────────────────
+  ['probiotics',           'beta-glucan'],
+  // ── 代謝（追加） ────────────────────────────────
+  ['berberine',            'chromium'],
+  // ── 関節（追加） ────────────────────────────────
+  ['glucosamine',          'chondroitin'],
+  // ── ホルモン（追加） ────────────────────────────
+  ['saw-palmetto',         'biotin'],
 ]
 
 /** 最も検索ボリュームが高い比較ペア（一覧ページでハイライト表示） */
@@ -91,6 +132,45 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'lions-mane-vs-bacopa-monnieri':       'cognitive',
   // energy
   'coq10-vs-pqq':                        'energy',
+  // skin（追加）
+  'retinol-vs-niacinamide':              'skin',
+  'salicylic-acid-vs-glycolic-acid':     'skin',
+  'glycolic-acid-vs-lactic-acid':        'skin',
+  'arbutin-vs-kojic-acid':               'skin',
+  'tranexamic-acid-vs-arbutin':          'skin',
+  'niacinamide-vs-azelaic-acid':         'skin',
+  'ferulic-acid-vs-vitamin-c-topical':   'skin',
+  'ceramide-vs-panthenol':               'skin',
+  'pdrn-vs-retinol':                     'skin',
+  'centella-asiatica-vs-niacinamide':    'skin',
+  'palmitoyl-tripeptide-vs-retinol':     'skin',
+  // antiaging（追加）
+  'resveratrol-vs-pterostilbene':        'antiaging',
+  'fisetin-vs-quercetin':                'antiaging',
+  'spermidine-vs-resveratrol':           'antiaging',
+  'alpha-lipoic-acid-vs-coq10':          'antiaging',
+  'glutathione-vs-nac':                  'antiaging',
+  'urolithin-a-vs-coq10':                'antiaging',
+  // cognitive（追加）
+  'lions-mane-vs-alpha-gpc':             'cognitive',
+  'ginkgo-biloba-vs-bacopa-monnieri':    'cognitive',
+  'phosphatidylserine-vs-alpha-gpc':     'cognitive',
+  // stress（追加・睡眠含む）
+  '5-htp-vs-l-tryptophan':               'stress',
+  'melatonin-vs-l-theanine':             'stress',
+  'l-theanine-vs-gaba':                  'stress',
+  'ashwagandha-vs-magnesium-glycinate':  'stress',
+  // muscle（追加）
+  'creatine-vs-l-glutamine':             'muscle',
+  'l-arginine-vs-l-citrulline':          'muscle',
+  // gut（追加）
+  'probiotics-vs-beta-glucan':           'gut',
+  // energy（追加）
+  'berberine-vs-chromium':               'energy',
+  // joint（新設）
+  'glucosamine-vs-chondroitin':          'joint',
+  // hormone（新設）
+  'saw-palmetto-vs-biotin':              'hormone',
 }
 
 /** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
@@ -116,4 +196,6 @@ export const CATEGORY_LABELS: Record<string, string> = {
   gut:            '腸活',
   cognitive:      '脳・認知',
   energy:         '代謝・エネルギー',
+  joint:          '関節',
+  hormone:        'ホルモン・髪',
 }

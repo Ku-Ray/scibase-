@@ -26,11 +26,12 @@ export function IngredientsFilter({ ingredients }: Props) {
   const usage         = (params.get('usage') ?? 'all') as UsageTab
   const rankFilter    = (params.get('rank') ?? 'all') as EvidenceRank | 'all'
   const concernFilter = params.get('concern') ?? 'all'
+  const query         = (params.get('q') ?? '').trim().toLowerCase()
 
   const update = useCallback((key: string, val: string) => {
     const next = new URLSearchParams(params.toString())
-    if (val === 'all') next.delete(key)
-    else               next.set(key, val)
+    if (val === 'all' || val === '') next.delete(key)
+    else                              next.set(key, val)
     router.push(`${pathname}?${next.toString()}`, { scroll: false })
   }, [params, pathname, router])
 
@@ -42,8 +43,12 @@ export function IngredientsFilter({ ingredients }: Props) {
                             u === 'oral'    || u === 'both'
     const rankOk    = rankFilter === 'all' || ing.evidenceRank === rankFilter
     const concernOk = concernFilter === 'all' || ing.concerns.includes(concernFilter)
-    return usageOk && rankOk && concernOk
-  }), [ingredients, usage, rankFilter, concernFilter])
+    const queryOk   = !query ||
+      ing.nameJa.toLowerCase().includes(query) ||
+      ing.nameEn.toLowerCase().includes(query) ||
+      ing.tagline.toLowerCase().includes(query)
+    return usageOk && rankOk && concernOk && queryOk
+  }), [ingredients, usage, rankFilter, concernFilter, query])
 
   const grouped = RANKS.reduce<Record<EvidenceRank, Ingredient[]>>((acc, r) => {
     acc[r] = filtered.filter(i => i.evidenceRank === r)
@@ -54,6 +59,25 @@ export function IngredientsFilter({ ingredients }: Props) {
 
   return (
     <div>
+      {/* ── Search query indicator (Google SearchAction 等からの ?q= 遷移用) ── */}
+      {query && (
+        <div className="mb-5 flex items-center justify-between gap-3
+          bg-accent/5 border border-accent/20 rounded-xl px-4 py-3">
+          <p className="text-[13px] text-foreground">
+            <span className="text-muted-foreground">検索中：</span>
+            <span className="font-semibold">「{query}」</span>
+            <span className="text-muted-foreground ml-2">（{filtered.length}件）</span>
+          </p>
+          <button
+            onClick={() => update('q', '')}
+            className="text-[12px] text-muted-foreground hover:text-foreground
+              underline underline-offset-2"
+          >
+            クリア
+          </button>
+        </div>
+      )}
+
       {/* ── Filter bar ───────────────────────────── */}
       <div className="space-y-3 mb-8">
 
