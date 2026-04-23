@@ -9,6 +9,7 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
+import { OutboundProductLink } from '@/components/OutboundProductLink'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -339,17 +340,17 @@ export default async function ArticlePage({ params }: Props) {
                           )}
                         </div>
                       </div>
-                      <a
+                      <OutboundProductLink
                         href={ing.productUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        platform={ing.productPlatform ?? 'iherb'}
+                        ingredientSlug={ing.slug}
                         className="inline-flex items-center gap-1.5 text-[12px] font-semibold
                           bg-foreground text-background rounded-lg px-4 py-2
                           hover:opacity-80 transition-opacity flex-shrink-0"
                       >
                         {platformLabel[ing.productPlatform ?? 'iherb']}で見る
                         <ExternalLink className="w-3 h-3" />
-                      </a>
+                      </OutboundProductLink>
                     </div>
                   </div>
                 )}

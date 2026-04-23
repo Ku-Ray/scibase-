@@ -4,6 +4,7 @@ import { ChevronRight, ArrowRight, CheckCircle2, ExternalLink } from 'lucide-rea
 import { getIngredient, concerns as allConcerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
+import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO } from '@/lib/compare-data'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
@@ -304,17 +305,18 @@ export default async function ComparePage({ params }: Props) {
               >
                 エビデンスを確認する
               </Link>
-              <a
+              <OutboundProductLink
                 href={overallTopProduct.url}
-                target="_blank"
-                rel="noopener noreferrer nofollow sponsored"
+                platform={overallTopProduct.platform}
+                ingredientSlug={overall.pick.slug}
+                productRank={overallTopProduct.rank}
                 className="flex-1 inline-flex items-center justify-center gap-1.5
                   text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
                   hover:bg-amber-600 transition-colors"
               >
                 {platformLabel[overallTopProduct.platform]}
                 <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              </OutboundProductLink>
             </div>
           </div>
         )}

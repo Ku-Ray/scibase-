@@ -6,6 +6,7 @@ import { X, Plus, ChevronRight, ArrowDown, RotateCcw } from 'lucide-react'
 import { ingredients, concerns, getIngredient } from '@/lib/data'
 import { RadarChart } from './RadarChart'
 import { EvidenceBadge } from './EvidenceBadge'
+import { OutboundProductLink } from './OutboundProductLink'
 import type { Ingredient, Concern, AnalysisAxis } from '@/lib/types'
 import type { RadarData } from './RadarChart'
 
@@ -576,13 +577,17 @@ function IngredientMode({
                           エビデンスを確認する
                         </Link>
                         {topProduct && (
-                          <a href={topProduct.url}
-                            target="_blank" rel="noopener noreferrer"
+                          <OutboundProductLink
+                            href={topProduct.url}
+                            platform={topProduct.platform}
+                            ingredientSlug={ing.slug}
+                            productRank={topProduct.rank}
                             className="ml-auto text-[12px] font-semibold text-accent
                               bg-accent/8 border border-accent/20 rounded-lg px-3 py-1.5
-                              hover:bg-accent/15 transition-colors flex items-center gap-1.5">
+                              hover:bg-accent/15 transition-colors flex items-center gap-1.5"
+                          >
                             {platformLabel[topProduct.platform]}で購入 →
-                          </a>
+                          </OutboundProductLink>
                         )}
                       </div>
                     </div>
@@ -951,13 +956,17 @@ function ConcernMode({
                       エビデンスを見る
                     </Link>
                     {topProduct && (
-                      <a href={topProduct.url}
-                        target="_blank" rel="noopener noreferrer"
+                      <OutboundProductLink
+                        href={topProduct.url}
+                        platform={topProduct.platform}
+                        ingredientSlug={ing.slug}
+                        productRank={topProduct.rank}
                         className="ml-auto text-[12.5px] font-semibold text-primary-foreground
                           bg-accent rounded-lg px-3.5 py-2
-                          hover:opacity-90 transition-opacity flex items-center gap-1.5">
+                          hover:opacity-90 transition-opacity flex items-center gap-1.5"
+                      >
                         {platformLabel[topProduct.platform]}で購入 →
-                      </a>
+                      </OutboundProductLink>
                     )}
                   </div>
                 </div>
@@ -1003,13 +1012,17 @@ function ConcernMode({
                         エビデンスを見る
                       </Link>
                       {topProduct && (
-                        <a href={topProduct.url}
-                          target="_blank" rel="noopener noreferrer"
+                        <OutboundProductLink
+                          href={topProduct.url}
+                          platform={topProduct.platform}
+                          ingredientSlug={ing.slug}
+                          productRank={topProduct.rank}
                           className="ml-auto text-[11.5px] font-semibold text-accent
                             bg-accent/8 border border-accent/20 rounded-lg px-2.5 py-1
-                            hover:bg-accent/15 transition-colors">
+                            hover:bg-accent/15 transition-colors"
+                        >
                           {platformLabel[topProduct.platform]}で購入 →
-                        </a>
+                        </OutboundProductLink>
                       )}
                     </div>
                   </div>

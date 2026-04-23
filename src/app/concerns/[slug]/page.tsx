@@ -4,6 +4,7 @@ import { ChevronRight } from 'lucide-react'
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
+import { OutboundProductLink } from '@/components/OutboundProductLink'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
 
@@ -425,13 +426,18 @@ export default async function ConcernPage({ params }: Props) {
                   <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
                 {topProduct && (
-                  <a href={topProduct.url} target="_blank" rel="noopener nofollow sponsored"
+                  <OutboundProductLink
+                    href={topProduct.url}
+                    platform={topProduct.platform}
+                    ingredientSlug={top.slug}
+                    productRank={topProduct.rank}
                     className="flex-1 inline-flex items-center justify-center gap-1.5
                       text-[13px] font-semibold text-background bg-foreground rounded-lg
-                      px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity">
+                      px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity"
+                  >
                     {platformLabel[topProduct.platform]}
                     <ChevronRight className="w-3.5 h-3.5" />
-                  </a>
+                  </OutboundProductLink>
                 )}
               </div>
             </div>
@@ -472,13 +478,17 @@ export default async function ConcernPage({ params }: Props) {
                           <ChevronRight className="w-3 h-3" />
                         </Link>
                         {ingTopProduct && (
-                          <a href={ingTopProduct.url} target="_blank"
-                            rel="noopener nofollow sponsored"
+                          <OutboundProductLink
+                            href={ingTopProduct.url}
+                            platform={ingTopProduct.platform}
+                            ingredientSlug={ing.slug}
+                            productRank={ingTopProduct.rank}
                             className="font-semibold text-foreground hover:underline
-                              inline-flex items-center gap-1 px-2 min-h-[44px]">
+                              inline-flex items-center gap-1 px-2 min-h-[44px]"
+                          >
                             {platformLabel[ingTopProduct.platform]}
                             <ChevronRight className="w-3 h-3" />
-                          </a>
+                          </OutboundProductLink>
                         )}
                       </div>
                     </div>

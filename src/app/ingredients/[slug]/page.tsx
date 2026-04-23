@@ -7,6 +7,7 @@ import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
+import { OutboundProductLink } from '@/components/OutboundProductLink'
 import type { TocSection } from '@/components/TableOfContents'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
@@ -953,16 +954,17 @@ export default async function IngredientPage({ params }: Props) {
                         </div>
 
                         {/* CTA */}
-                        <a
+                        <OutboundProductLink
                           href={prod.url}
-                          target="_blank"
-                          rel="noopener noreferrer nofollow"
+                          platform={key}
+                          ingredientSlug={ing.slug}
+                          productRank={prod.rank}
                           className={`flex items-center justify-center gap-2 text-[13px] font-semibold
                             rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90 w-full ${btnClass}`}
                         >
                           {label}で購入
                           <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
+                        </OutboundProductLink>
                       </div>
                     ) : (
                       /* No product — search link */
@@ -971,17 +973,17 @@ export default async function IngredientPage({ params }: Props) {
                           {ing.nameJa}の商品を{label}で検索できます
                         </p>
                         <div className="mt-auto">
-                          <a
+                          <OutboundProductLink
                             href={searchUrl}
-                            target="_blank"
-                            rel="noopener noreferrer nofollow"
+                            platform={key}
+                            ingredientSlug={ing.slug}
                             className={`flex items-center justify-center gap-2 text-[13px] font-semibold
                               rounded-xl px-4 py-2.5 transition-opacity hover:opacity-80 w-full
                               border-2 ${border} ${headerText} bg-transparent`}
                           >
                             {label}で探す
                             <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
+                          </OutboundProductLink>
                         </div>
                       </div>
                     )}
@@ -1019,16 +1021,17 @@ export default async function IngredientPage({ params }: Props) {
                     ¥{platformProducts.cosme.priceJpy.toLocaleString()}
                     <span className="text-[11px] font-normal text-muted-foreground ml-0.5">〜</span>
                   </p>
-                  <a
+                  <OutboundProductLink
                     href={platformProducts.cosme.url}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
+                    platform="cosme"
+                    ingredientSlug={ing.slug}
+                    productRank={platformProducts.cosme.rank}
                     className="flex items-center gap-2 text-[13px] font-semibold bg-primary
                       text-primary-foreground rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90"
                   >
                     購入する
                     <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  </OutboundProductLink>
                 </div>
               </div>
             )}

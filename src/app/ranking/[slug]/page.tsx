@@ -4,6 +4,7 @@ import { ChevronRight, Trophy, ArrowLeft, FlaskConical, ExternalLink } from 'luc
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
+import { OutboundProductLink } from '@/components/OutboundProductLink'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -154,17 +155,18 @@ export default async function RankingPage({ params }: Props) {
                 エビデンスを確認する
               </Link>
               {topProduct.url && topProduct.url !== '#' && (
-                <a
+                <OutboundProductLink
                   href={topProduct.url}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
+                  platform={topProduct.platform}
+                  ingredientSlug={topIngredient.slug}
+                  productRank={topProduct.rank}
                   className="flex-1 text-center inline-flex items-center justify-center gap-1.5
                     text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
                     hover:bg-amber-600 transition-colors"
                 >
                   購入する
                   <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                </OutboundProductLink>
               )}
             </div>
             {/* 2位・3位への誘発（後悔回避） */}
