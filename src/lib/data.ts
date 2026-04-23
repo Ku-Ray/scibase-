@@ -186,6 +186,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'マグネシウム',
     nameEn: 'Magnesium',
     evidenceRank: 'S',
+    seoTitle: 'マグネシウム｜睡眠・便通の論文エビデンス',
+    seoDescription: 'マグネシウムは必須ミネラル。300〜400mg/日で睡眠の質・筋疲労軽減・便通への効果がメタ解析で示されている。グリシン酸・クエン酸など吸収形別の違い、有効量、副作用、腎機能への注意点を査読済み論文で解説。',
     tagline: '睡眠の質・疲労感への関与がメタ解析で確認されている',
     description:
       'マグネシウムは300以上の酵素反応に関わるミネラル。現代人の多くは食事から不足しがちとされる。睡眠の質改善・筋肉の疲労軽減・神経系の鎮静への関与がメタ解析・RCTで確認されている。',
@@ -296,6 +298,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'ビタミンD',
     nameEn: 'Vitamin D',
     evidenceRank: 'S',
+    seoTitle: 'ビタミンD｜免疫・骨の論文エビデンス',
+    seoDescription: 'ビタミンDは脂溶性ビタミン。1000〜4000IU/日で血中25(OH)D値の上昇・骨代謝・免疫機能への関与がRCTで確認されている。有効量論争、K2併用の根拠、過剰摂取リスク、日光との関係を査読済み論文で解説。',
     tagline: '免疫機能・骨密度・慢性炎症への関与がメタ解析で確認されている',
     description:
       'ビタミンDは日光照射で皮膚が合成する脂溶性ビタミン。現代の屋内生活・日焼け止め使用で欠乏しやすい。免疫機能のサポート、骨密度維持、慢性炎症（inflammaging）の抑制への関与がメタ解析で確認されている。',
@@ -566,6 +570,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'コエンザイムQ10',
     nameEn: 'Coenzyme Q10',
     evidenceRank: 'A',
+    seoTitle: 'コエンザイムQ10｜心機能・抗酸化の論文',
+    seoDescription: 'コエンザイムQ10はミトコンドリア電子伝達系の補酵素。100〜300mg/日で心機能・運動疲労・加齢性エネルギー低下への関与がメタ解析で示されている。還元型（ユビキノール）との違い、有効量、副作用を査読済み論文で解説。',
     tagline: 'ミトコンドリア機能・酸化ストレス低減への関与がRCTで確認されている',
     description:
       'コエンザイムQ10（ユビキノン）はミトコンドリアのエネルギー産生（ATP合成）に不可欠な補酵素。加齢とともに体内合成量が低下する。疲労感の軽減、酸化ストレスの低下、心血管機能への関与がRCTで確認されている。',
@@ -818,6 +824,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'レスベラトロール',
     nameEn: 'Resveratrol',
     evidenceRank: 'C',
+    seoTitle: 'レスベラトロール｜抗老化の論文エビデンス',
+    seoDescription: 'レスベラトロールはブドウ由来ポリフェノール。150〜500mg/日で炎症・血管機能への関与がRCTで示されているが「抗老化」効果の臨床エビデンスは限定的。サーチュイン仮説、有効量論争、副作用を査読済み論文で解説。',
     tagline: '動物実験では有望だが、ヒトでの抗老化効果はまだ確認されていない',
     description:
       'ブドウの皮や赤ワインに含まれるポリフェノール。動物実験でサーチュイン（長寿遺伝子）の活性化・寿命延長が示されているが、ヒトでの大規模RCTはほぼ存在しない。「赤ワインで長生き」の科学的根拠は現時点では不十分。吸収率の低さも課題。',
@@ -1459,6 +1467,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'ビタミンC（経口）',
     nameEn: 'Vitamin C (Oral)',
     evidenceRank: 'S',
+    seoTitle: 'ビタミンC経口｜抗酸化・コラーゲンの論文',
+    seoDescription: 'ビタミンC経口は水溶性ビタミン。500〜2000mg/日で抗酸化能・コラーゲン合成・免疫機能への関与がRCTで示されている。リポソーム型の吸収率論争、有効量、分割摂取の意義、過剰摂取リスクを査読済み論文で解説。',
     usageType: 'oral',
     tagline: '免疫機能・皮膚コラーゲン合成・抗酸化への関与がメタ解析で確認されている',
     description:
@@ -1542,6 +1552,8 @@ export const ingredients: Ingredient[] = [
     nameJa: '亜鉛',
     nameEn: 'Zinc',
     evidenceRank: 'A',
+    seoTitle: '亜鉛｜肌・免疫・男性機能の論文',
+    seoDescription: '亜鉛は必須ミネラル。8〜30mg/日で皮膚代謝・免疫機能・テストステロン維持への関与がメタ解析で確認されている。ピコリン酸・グルコン酸など吸収形別の違い、銅バランス、過剰摂取リスクを査読済み論文で解説。',
     usageType: 'oral',
     tagline: 'ニキビ・皮膚の修復・免疫機能への関与がRCTで確認されている',
     description:
@@ -2598,6 +2610,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'アスタキサンチン',
     nameEn: 'Astaxanthin',
     evidenceRank: 'A',
+    seoTitle: 'アスタキサンチン｜紫外線・抗酸化の論文',
+    seoDescription: 'アスタキサンチンはヘマトコッカス藻由来カロテノイド。4〜12mg/日で皮膚弾力・紫外線ダメージ軽減・眼疲労への関与がRCTで示されている。βカロテンとの抗酸化力比較、有効量、脂溶性吸収の注意点を査読済み論文で解説。',
     usageType: 'oral',
     tagline: '皮膚老化・酸化ストレスへのRCTで有効性が確認されているカロテノイド',
     description:
@@ -3197,6 +3211,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'イチョウ葉エキス',
     nameEn: 'Ginkgo Biloba',
     evidenceRank: 'A',
+    seoTitle: 'イチョウ葉エキス｜認知・血流の論文',
+    seoDescription: 'イチョウ葉エキスはフラボノイド・テルペンラクトンを含む植物エキス。120〜240mg/日で軽度認知機能・末梢血流への関与がメタ解析で示されている。標準化抽出物EGb761の位置づけ、有効量、抗凝固薬との相互作用を査読済み論文で解説。',
     usageType: 'oral',
     tagline: '認知機能・脳血流への関与がメタ解析で示されているロングセラー成分',
     description:
@@ -4951,6 +4967,8 @@ export const ingredients: Ingredient[] = [
     nameJa: '高麗人参（パナックスジンセン）',
     nameEn: 'Panax Ginseng / Korean Ginseng',
     evidenceRank: 'A',
+    seoTitle: '高麗人参｜疲労・認知の論文エビデンス',
+    seoDescription: '高麗人参はジンセノサイドを含む伝統ハーブ。200〜400mg/日で疲労回復・認知機能への関与がRCTで示されている。紅参と白参の違い、標準化抽出物、有効量、血圧・降圧薬・ワルファリンとの相互作用を査読済み論文で解説。',
     usageType: 'oral',
     tagline: '世界最古の薬用植物のひとつ。疲労・ストレス・認知機能・免疫への効果をRCTで確認',
     description: '高麗人参（Panax ginseng）はジンセノサイドを主成分とするアダプトゲンハーブ。身体的・精神的ストレスへの抵抗力向上、疲労軽減、認知機能改善、免疫機能強化について複数のRCT・メタ解析でエビデンスが確認されている。シベリアニンジン（エゾウコギ）とは別種。標準化されたエキス（Panax ginseng G115など）を使用した研究が多い。',
@@ -6461,6 +6479,8 @@ export const ingredients: Ingredient[] = [
     nameJa: 'NAC（N-アセチルシステイン）',
     nameEn: 'N-Acetyl Cysteine',
     evidenceRank: 'A',
+    seoTitle: 'NAC｜抗酸化・肝機能の論文エビデンス',
+    seoDescription: 'N-アセチルシステインはシステインのアセチル化型。600〜1800mg/日でグルタチオン合成促進・肝機能・呼吸器への関与がRCTで示されている。有効量、空腹時摂取の是非、胃腸障害、アセトアミノフェン解毒の根拠を査読済み論文で解説。',
     usageType: 'oral',
     tagline: 'グルタチオン前駆体として細胞内抗酸化を底上げ。酸化ストレス・慢性炎症軽減がRCTで確認',
     description:
