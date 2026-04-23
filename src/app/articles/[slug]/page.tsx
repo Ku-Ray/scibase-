@@ -8,6 +8,7 @@ import { getIngredient } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
+import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -304,7 +305,7 @@ export default async function ArticlePage({ params }: Props) {
                     className="inline-flex items-center gap-1.5 text-[12px] font-semibold
                       text-accent hover:underline"
                   >
-                    エビデンス詳細を見る <ArrowRight className="w-3 h-3" />
+                    {ing.nameJa}のエビデンス詳細 <ArrowRight className="w-3 h-3" />
                   </Link>
                   <AddToAnalyzerButton slug={ing.slug} variant="compact" />
                 </div>
@@ -385,25 +386,21 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </section>
 
-        {/* ── Analyzer CTA ── */}
-        <div className="mb-12 bg-secondary border border-border rounded-2xl p-6">
-          <p className="font-semibold text-[15px] text-foreground mb-2">
-            この成分、今のサプリでカバーできていますか？
-          </p>
-          <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
-            7軸診断で、現在のサプリが抗老化・肌・脳・ストレス・睡眠・免疫・代謝をどこまでカバーしているかを確認できます。
-            足りていない軸を埋める成分が分かります。
-          </p>
-          <Link
-            href="/analyzer"
-            className="inline-flex items-center gap-2 text-[14px] font-semibold
-              bg-foreground text-background rounded-xl px-5 py-3
-              hover:opacity-85 transition-opacity"
-          >
-            今のサプリを7軸で診断する
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
+        {/* ── Analyzer CTA（記事の成分を一括診断） ── */}
+        {article.ingredients.length > 0 && (
+          <div className="mb-12 bg-secondary border border-border rounded-2xl p-6">
+            <p className="font-semibold text-[15px] text-foreground mb-2">
+              この記事の成分、あなたに足りているか診断しますか？
+            </p>
+            <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
+              この記事で取り上げた{article.ingredients.length}成分を診断に一括追加します。
+              抗老化・肌・脳・ストレス・睡眠・免疫・代謝の7軸で、どの軸をこの記事の成分が埋めるかが分かります。
+            </p>
+            <AddArticleToAnalyzerButton
+              slugs={article.ingredients.map((i) => i.slug)}
+            />
+          </div>
+        )}
 
         {/* ── Related Ingredients ── */}
         {relatedIngredients.length > 0 && (
