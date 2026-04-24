@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Trophy } from 'lucide-react'
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getConcern(slug)
   if (!c) return {}
   return {
-    title: c.seoTitle ?? `${c.nameJa}に効く成分・サプリ一覧【論文エビデンス順】`,
-    description: c.seoDescription ?? `${c.nameJa}に関連する成分を論文エビデンスの強さ順に掲載。${c.description}`,
+    title: c.seoTitle ?? `${c.nameJa}の原因と対策｜科学的エビデンスで解説`,
+    description: c.seoDescription ?? `${c.nameJa}の原因・メカニズム・対策を論文ベースで解説。関連する成分・サプリもエビデンス順に網羅。${c.description.slice(0, 50)}`,
     alternates: { canonical: `${BASE_URL}/concerns/${slug}` },
   }
 }
@@ -228,6 +228,18 @@ export default async function ConcernPage({ params }: Props) {
               <strong className="text-foreground font-semibold">{all.filter(i => i.evidenceRank === 'A').length}</strong> Aランク
             </span>
           </div>
+
+          {/* ランキングへの即決CTA（検索意図分離） */}
+          <Link
+            href={`/ranking/${slug}`}
+            className="inline-flex items-center gap-2 mt-5 text-[13px] font-medium
+              bg-white/80 border border-border rounded-full px-4 py-2 min-h-[40px]
+              hover:border-accent hover:text-accent transition-colors"
+          >
+            <Trophy className="w-3.5 h-3.5" />
+            {concern.nameJa}サプリをランキングで即決したい
+            <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </div>
 

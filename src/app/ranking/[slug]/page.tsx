@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getConcern(slug)
   if (!c) return {}
   return {
-    title: `${c.nameJa}に効く成分ランキング【論文エビデンス順】`,
-    description: `${c.nameJa}に関連する成分を論文エビデンスの強さ順にランキング。メタ解析・RCT・コホート研究の結果をもとに評価。`,
+    title: `${c.nameJa}サプリおすすめランキング｜論文エビデンスTop10`,
+    description: `${c.nameJa}に効くサプリ・成分をエビデンス順にランキング。迷ったらNo.1を選べばOK。メタ解析・RCTで評価した2026年最新版。`,
     alternates: { canonical: `${BASE_URL}/ranking/${slug}` },
   }
 }
@@ -74,13 +74,23 @@ export default async function RankingPage({ params }: Props) {
       <div className="max-w-3xl mx-auto px-5 py-10">
 
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-8">
+        <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-4">
           <Link href="/" className="hover:underline">ホーム</Link>
           <ChevronRight className="w-3 h-3" />
           <Link href="/ranking" className="hover:underline">ランキング</Link>
           <ChevronRight className="w-3 h-3" />
           <span className="text-foreground">{concern.nameJa}</span>
         </nav>
+
+        {/* 解説ページへの誘導（検索意図分離） */}
+        <Link
+          href={`/concerns/${slug}`}
+          className="inline-flex items-center gap-1.5 text-[12px] text-muted-foreground
+            hover:text-accent transition-colors mb-8"
+        >
+          <ArrowLeft className="w-3 h-3" />
+          まず{concern.nameJa}の原因・メカニズムを知りたい
+        </Link>
 
         {/* Header */}
         <div className="mb-8">
