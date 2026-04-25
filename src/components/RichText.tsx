@@ -44,19 +44,21 @@ function tokenize(input: string): Token[] {
 
 function renderToken(t: Token, key: number): ReactNode {
   if (t.type === 'text') return <Fragment key={key}>{t.value}</Fragment>
-  if (t.type === 'bold')
+  if (t.type === 'bold') {
+    // bold内のリンク・ハイライトを再帰的にパース（ネスト対応）
     return (
       <strong key={key} className="font-bold text-foreground">
-        {t.value}
+        {tokenize(t.value).map(renderToken)}
       </strong>
     )
+  }
   if (t.type === 'mark')
     return (
       <mark
         key={key}
         className="bg-accent/15 text-foreground font-semibold px-1 py-0.5 rounded"
       >
-        {t.value}
+        {tokenize(t.value).map(renderToken)}
       </mark>
     )
   // link
