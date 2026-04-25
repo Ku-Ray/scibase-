@@ -183,6 +183,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
     title: 'ヒアルロン酸vsコラーゲンペプチド｜経口比較',
     description: '飲むヒアルロン酸とコラーゲンペプチドを論文で比較。経口摂取時の吸収率、肌弾力・保湿への影響、1日あたり有効量、エビデンスランクの差、月コスト、どちらを先に試すかの判定まで化粧品メーカー視点で解説。',
   },
+  'retinol-vs-retinal': {
+    title: 'レチノールvsレチナール｜変換工程と刺激の違い',
+    description: 'レチノール（ビタミンA）とレチナール（レチンアルデヒド）を論文で比較。皮膚内変換の工程数、効果発現速度、刺激・赤みのリスク、初心者向け濃度、夜のみ使用ルール、併用NG成分まで。「どちらから始めるべきか」の判定を化粧品メーカー視点で解説。',
+  },
 }
 
 export const CATEGORY_LABELS: Record<string, string> = {

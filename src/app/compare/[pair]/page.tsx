@@ -13,6 +13,13 @@ interface Props { params: Promise<{ pair: string }> }
 
 const BASE_URL = 'https://scibase.app'
 
+/**
+ * POPULAR_PAIRS にないペアは404を返す。
+ * 過去にPOPULAR_PAIRSに含まれていた弱い比較（tmg-vs-hmb等）が
+ * Search Consoleで Thin Content 判定されてインデックス未登録になる問題への対策。
+ */
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   return POPULAR_PAIRS.map(([a, b]) => ({ pair: `${a}-vs-${b}` }))
 }
