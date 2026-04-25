@@ -87,7 +87,17 @@ function renderToken(t: Token, key: number): ReactNode {
   )
 }
 
-/** 段落配列にして返す（\n\n で分割） */
+/** 段落単位で「**bold-only**」かどうかを判定 */
+function isBoldOnlyParagraph(text: string): string | null {
+  const m = text.trim().match(/^\*\*([^*\n]+)\*\*$/)
+  return m ? m[1] : null
+}
+
+/** 段落配列にして返す（\n\n で分割）
+ *
+ * 段落が「**...**」のみで構成されている場合は <h4> として描画し、
+ * SEO的な見出し階層と視覚的サブ見出しを同時に確立する。
+ */
 export function RichParagraphs({
   body,
   className = 'text-[15px] text-foreground leading-[1.9] mb-5 last:mb-0',
@@ -98,11 +108,25 @@ export function RichParagraphs({
   const paras = body.split('\n\n')
   return (
     <>
-      {paras.map((para, i) => (
-        <p key={i} className={className}>
-          {tokenize(para).map(renderToken)}
-        </p>
-      ))}
+      {paras.map((para, i) => {
+        const boldText = isBoldOnlyParagraph(para)
+        if (boldText) {
+          return (
+            <h4
+              key={i}
+              className="text-[15px] sm:text-[16px] font-bold text-foreground
+                mt-7 mb-3 first:mt-0 leading-snug"
+            >
+              {tokenize(boldText).map(renderToken)}
+            </h4>
+          )
+        }
+        return (
+          <p key={i} className={className}>
+            {tokenize(para).map(renderToken)}
+          </p>
+        )
+      })}
     </>
   )
 }
