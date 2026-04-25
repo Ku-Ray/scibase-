@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import {
-  ChevronRight, Clock, ExternalLink, ArrowRight, BookOpen, FlaskConical
+  ChevronRight, Clock, ExternalLink, ArrowRight, BookOpen, FlaskConical, Crown
 } from 'lucide-react'
 import { getArticle, articles } from '@/lib/articles'
 import { getIngredient } from '@/lib/data'
@@ -10,6 +10,7 @@ import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { RichParagraphs, RichInline } from '@/components/RichText'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -275,11 +276,7 @@ export default async function ArticlePage({ params }: Props) {
           <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
             {article.problemHeading}
           </h2>
-          {article.problemBody.split('\n\n').map((para, i) => (
-            <p key={i} className="text-[14px] text-foreground leading-[1.85] mb-4 last:mb-0">
-              {para}
-            </p>
-          ))}
+          <RichParagraphs body={article.problemBody} />
         </section>
 
         <hr className="border-border my-8" />
@@ -295,11 +292,7 @@ export default async function ArticlePage({ params }: Props) {
           <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
             {article.scienceHeading}
           </h2>
-          {article.scienceBody.split('\n\n').map((para, i) => (
-            <p key={i} className="text-[14px] text-foreground leading-[1.85] mb-4 last:mb-0">
-              {para}
-            </p>
-          ))}
+          <RichParagraphs body={article.scienceBody} />
 
           {/* Science stat callout */}
           {article.scienceStat && (
@@ -316,18 +309,21 @@ export default async function ArticlePage({ params }: Props) {
 
           {/* ── Subsections（Pillar記事用 H3群） ── */}
           {article.subsections && article.subsections.length > 0 && (
-            <div className="mt-8 space-y-7">
+            <div className="mt-10 space-y-9">
               {article.subsections.map((sub, i) => (
                 <div key={i} id={`subsection-${i}`} className="scroll-mt-20">
-                  <h3 className="text-[16px] sm:text-[17px] font-bold text-foreground mb-3 leading-snug
-                    border-l-4 border-accent/60 pl-3">
-                    {sub.heading}
-                  </h3>
-                  {sub.body.split('\n\n').map((para, j) => (
-                    <p key={j} className="text-[14px] text-foreground leading-[1.85] mb-3 last:mb-0">
-                      {para}
-                    </p>
-                  ))}
+                  <div className="flex items-baseline gap-3 mb-4">
+                    <span className="flex-shrink-0 inline-flex items-center justify-center
+                      w-7 h-7 rounded-full bg-accent text-background text-[12px] font-black tabular-nums">
+                      {i + 1}
+                    </span>
+                    <h3 className="text-[17px] sm:text-[18px] font-bold text-foreground leading-snug">
+                      {sub.heading}
+                    </h3>
+                  </div>
+                  <div className="pl-10">
+                    <RichParagraphs body={sub.body} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -344,11 +340,66 @@ export default async function ArticlePage({ params }: Props) {
                 <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
                   {ap.heading}
                 </h2>
-                {ap.body.split('\n\n').map((para, j) => (
-                  <p key={j} className="text-[14px] text-foreground leading-[1.85] mb-4 last:mb-0">
-                    {para}
-                  </p>
-                ))}
+
+                {/* Top 3 カード（最初のappendixかつitemListが存在する場合） */}
+                {i === 0 && article.itemList && (
+                  <div className="mb-6 grid gap-3">
+                    {article.itemList.items
+                      .slice()
+                      .sort((a, b) => a.rank - b.rank)
+                      .map((it) => {
+                        const ing = getIngredient(it.ingredientSlug)
+                        if (!ing) return null
+                        const isTop = it.rank === 1
+                        return (
+                          <Link
+                            key={it.ingredientSlug}
+                            href={`/ingredients/${ing.slug}`}
+                            className={`group flex items-start gap-4 rounded-2xl p-4 sm:p-5 transition-all
+                              ${isTop
+                                ? 'bg-accent/[0.07] border-2 border-accent/60 shadow-sm'
+                                : 'bg-card border border-border hover:border-accent/40'}`}
+                          >
+                            <div className="flex-shrink-0 flex flex-col items-center gap-1">
+                              {isTop ? (
+                                <Crown className="w-5 h-5 text-accent" strokeWidth={2.5} />
+                              ) : (
+                                <div className="h-5" />
+                              )}
+                              <span className={`inline-flex items-center justify-center
+                                w-9 h-9 rounded-full text-[14px] font-black tabular-nums
+                                ${isTop
+                                  ? 'bg-accent text-background'
+                                  : 'bg-secondary text-foreground border border-border'}`}>
+                                {it.rank}
+                              </span>
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                                {isTop && (
+                                  <span className="text-[10px] font-black uppercase tracking-wider
+                                    bg-accent text-background px-2 py-0.5 rounded">
+                                    最推奨
+                                  </span>
+                                )}
+                                <EvidenceBadge rank={ing.evidenceRank} />
+                                <h3 className="text-[15px] sm:text-[16px] font-bold text-foreground">
+                                  {ing.nameJa}
+                                </h3>
+                              </div>
+                              <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2">
+                                {ing.tagline}
+                              </p>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0
+                              mt-2 group-hover:text-accent transition-colors" />
+                          </Link>
+                        )
+                      })}
+                  </div>
+                )}
+
+                <RichParagraphs body={ap.body} />
               </section>
             ))}
             <hr className="border-border my-8" />
@@ -366,11 +417,7 @@ export default async function ArticlePage({ params }: Props) {
           <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
             {article.solutionHeading}
           </h2>
-          {article.solutionBody.split('\n\n').map((para, i) => (
-            <p key={i} className="text-[14px] text-foreground leading-[1.85] mb-4 last:mb-0">
-              {para}
-            </p>
-          ))}
+          <RichParagraphs body={article.solutionBody} />
         </section>
 
         {/* ── Ingredient CTAs ── */}
@@ -479,7 +526,7 @@ export default async function ArticlePage({ params }: Props) {
                 </summary>
                 <div className="px-5 pb-4 pt-2 border-t border-border bg-secondary/50">
                   <p className="text-[13px] text-foreground leading-[1.8]">
-                    {faq.answer}
+                    <RichInline text={faq.answer} />
                   </p>
                 </div>
               </details>
