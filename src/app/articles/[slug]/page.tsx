@@ -136,6 +136,44 @@ export default async function ArticlePage({ params }: Props) {
     })),
   } : null
 
+  /* ItemList JSON-LD（Pillar記事の「まず始めるべき○成分」リッチリザルト用） */
+  const itemListJsonLd = article.itemList ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: article.itemList.name,
+    itemListElement: article.itemList.items
+      .map((it) => {
+        const ing = getIngredient(it.ingredientSlug)
+        if (!ing) return null
+        return {
+          '@type': 'ListItem',
+          position: it.rank,
+          url: `${BASE_URL}/ingredients/${ing.slug}`,
+          name: ing.nameJa,
+        }
+      })
+      .filter(Boolean),
+  } : null
+
+  /* 目次（TOC）の動的生成：問題・科学・サブセクション・付録・解決策・FAQ */
+  const tocItems: { id: string; label: string }[] = [
+    { id: 'problem', label: article.problemHeading },
+    { id: 'science', label: article.scienceHeading },
+    ...(article.subsections ?? []).map((s, i) => ({
+      id: `subsection-${i}`,
+      label: `　${s.heading}`,
+    })),
+    ...(article.appendixSections ?? []).map((s, i) => ({
+      id: `appendix-${i}`,
+      label: s.heading,
+    })),
+    { id: 'solution', label: article.solutionHeading },
+    { id: 'ingredients', label: 'この記事で取り上げた成分' },
+    { id: 'faq', label: 'よくある質問' },
+  ]
+  /* 目次は段組がある記事（subsections or appendixSections）にのみ表示 */
+  const showToc = (article.subsections?.length ?? 0) + (article.appendixSections?.length ?? 0) > 0
+
   return (
     <>
       <script
@@ -150,6 +188,12 @@ export default async function ArticlePage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+      {itemListJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
         />
       )}
 
@@ -208,8 +252,26 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </div>
 
+        {/* ── 目次（TOC・Pillar記事用） ── */}
+        {showToc && (
+          <nav aria-label="目次" className="border border-border rounded-2xl p-5 mb-10 bg-secondary/40">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-3">
+              目次
+            </p>
+            <ol className="space-y-1.5 text-[13px]">
+              {tocItems.map((t) => (
+                <li key={t.id}>
+                  <a href={`#${t.id}`} className="text-foreground hover:text-accent hover:underline">
+                    {t.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
         {/* ── Problem ── */}
-        <section className="mb-10">
+        <section id="problem" className="mb-10 scroll-mt-20">
           <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
             {article.problemHeading}
           </h2>
@@ -223,7 +285,7 @@ export default async function ArticlePage({ params }: Props) {
         <hr className="border-border my-8" />
 
         {/* ── Science ── */}
-        <section className="mb-10">
+        <section id="science" className="mb-10 scroll-mt-20">
           <div className="flex items-center gap-2 mb-4">
             <BookOpen className="w-4 h-4 text-muted-foreground" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
@@ -251,12 +313,50 @@ export default async function ArticlePage({ params }: Props) {
               </span>
             </div>
           )}
+
+          {/* ── Subsections（Pillar記事用 H3群） ── */}
+          {article.subsections && article.subsections.length > 0 && (
+            <div className="mt-8 space-y-7">
+              {article.subsections.map((sub, i) => (
+                <div key={i} id={`subsection-${i}`} className="scroll-mt-20">
+                  <h3 className="text-[16px] sm:text-[17px] font-bold text-foreground mb-3 leading-snug
+                    border-l-4 border-accent/60 pl-3">
+                    {sub.heading}
+                  </h3>
+                  {sub.body.split('\n\n').map((para, j) => (
+                    <p key={j} className="text-[14px] text-foreground leading-[1.85] mb-3 last:mb-0">
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
         </section>
 
         <hr className="border-border my-8" />
 
+        {/* ── Appendix Sections（Pillar記事用 追加H2群） ── */}
+        {article.appendixSections && article.appendixSections.length > 0 && (
+          <>
+            {article.appendixSections.map((ap, i) => (
+              <section key={i} id={`appendix-${i}`} className="mb-10 scroll-mt-20">
+                <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
+                  {ap.heading}
+                </h2>
+                {ap.body.split('\n\n').map((para, j) => (
+                  <p key={j} className="text-[14px] text-foreground leading-[1.85] mb-4 last:mb-0">
+                    {para}
+                  </p>
+                ))}
+              </section>
+            ))}
+            <hr className="border-border my-8" />
+          </>
+        )}
+
         {/* ── Solution ── */}
-        <section className="mb-10">
+        <section id="solution" className="mb-10 scroll-mt-20">
           <div className="flex items-center gap-2 mb-4">
             <FlaskConical className="w-4 h-4 text-muted-foreground" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
@@ -274,7 +374,7 @@ export default async function ArticlePage({ params }: Props) {
         </section>
 
         {/* ── Ingredient CTAs ── */}
-        <section className="mb-12">
+        <section id="ingredients" className="mb-12 scroll-mt-20">
           <h2 className="text-[17px] font-bold text-foreground mb-5">
             この記事で取り上げた成分
           </h2>
@@ -360,7 +460,7 @@ export default async function ArticlePage({ params }: Props) {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="mb-12">
+        <section id="faq" className="mb-12 scroll-mt-20">
           <h2 className="text-[17px] font-bold text-foreground mb-5">よくある質問</h2>
           <div className="space-y-3">
             {article.faqs.map((faq, i) => (

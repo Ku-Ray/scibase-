@@ -181,6 +181,26 @@ export interface ArticleFAQ {
   answer: string
 }
 
+/** Pillar記事用のH3サブセクション（scienceBody直下にH3群として描画） */
+export interface ArticleSubsection {
+  heading: string
+  body: string
+}
+
+/** Pillar記事用の追加H2セクション（solutionの前に挿入） */
+export interface ArticleAppendixSection {
+  heading: string
+  body: string
+}
+
+/** ItemList JSON-LD 用（「まず始めるべき3成分」等のリッチリザルト狙い） */
+export interface ArticleItemList {
+  /** リスト名（例: 「30代から始めるべき3成分」） */
+  name: string
+  /** 各アイテム（成分slug参照） */
+  items: { ingredientSlug: string; rank: number }[]
+}
+
 export interface Article {
   slug: string
   title: string
@@ -200,8 +220,14 @@ export interface Article {
   scienceHeading: string
   scienceBody: string
   scienceStat?: { value: string; label: string }
+  /** scienceBody直下に描画するH3群（Pillar記事用・任意） */
+  subsections?: ArticleSubsection[]
+  /** solutionHeadingの前に挿入する追加H2群（Pillar記事用・任意） */
+  appendixSections?: ArticleAppendixSection[]
   solutionHeading: string
   solutionBody: string
+  /** ItemList JSON-LD（リッチリザルト用・任意） */
+  itemList?: ArticleItemList
   ingredients: ArticleIngredientCTA[]
   faqs: ArticleFAQ[]
   relatedIngredientSlugs: string[]
