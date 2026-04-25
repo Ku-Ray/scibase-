@@ -3,29 +3,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { Search, ArrowRight } from 'lucide-react'
-import Fuse from 'fuse.js'
-import { ingredients, concerns } from '@/lib/data'
-import type { Ingredient, Concern } from '@/lib/types'
-
-type Result =
-  | { type: 'ingredient'; item: Ingredient }
-  | { type: 'concern';    item: Concern }
-
-const fuse = new Fuse<Result>(
-  [
-    ...ingredients.map((i): Result => ({ type: 'ingredient', item: i })),
-    ...concerns.map(   (c): Result => ({ type: 'concern',    item: c })),
-  ],
-  {
-    keys: [
-      { name: 'item.nameJa',  weight: 2 },
-      { name: 'item.nameEn',  weight: 1.5 },
-      { name: 'item.tagline', weight: 1 },
-    ],
-    threshold: 0.4,
-    minMatchCharLength: 1,
-  }
-)
+import { concerns } from '@/lib/data'
+import { searchSite, type SearchResult as Result } from '@/lib/search'
 
 const SUGGESTIONS = [
   { label: 'レチノール',       isNew: false },
@@ -47,7 +26,7 @@ export function HeroSearch() {
 
   useEffect(() => {
     if (!query.trim()) { setResults([]); return }
-    setResults(fuse.search(query).slice(0, 6).map(r => r.item))
+    setResults(searchSite(query, 6))
     setActive(0)
   }, [query])
 
@@ -121,9 +100,32 @@ export function HeroSearch() {
               ))}
             </ul>
           ) : query ? (
-            <p className="px-4 py-5 text-[13px] text-muted-foreground text-center">
-              「{query}」に一致する成分・悩みはありません
-            </p>
+            <div className="px-4 py-4">
+              <p className="text-[13px] text-muted-foreground mb-3">
+                「{query}」に一致する成分・悩みはありません
+              </p>
+              <p className="text-[11px] text-muted-foreground/70 uppercase tracking-wider font-medium mb-2">
+                悩みカテゴリから探す
+              </p>
+              <div className="flex flex-wrap gap-1.5 mb-2">
+                {concerns.slice(0, 8).map(c => (
+                  <button
+                    key={c.slug}
+                    onMouseDown={() => { router.push(`/concerns/${c.slug}`); setFocused(false); setQuery('') }}
+                    className="text-[12px] text-muted-foreground bg-secondary border border-border
+                      rounded-full px-2.5 py-1 hover:border-primary/50 hover:text-primary transition-colors"
+                  >
+                    {c.emoji} {c.nameJa}
+                  </button>
+                ))}
+              </div>
+              <button
+                onMouseDown={() => { router.push('/concerns'); setFocused(false); setQuery('') }}
+                className="text-[12px] text-primary hover:underline"
+              >
+                すべての悩みカテゴリを見る →
+              </button>
+            </div>
           ) : (
             <div className="p-4">
               <p className="text-[11px] text-muted-foreground/60 uppercase tracking-wider

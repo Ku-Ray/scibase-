@@ -6,6 +6,46 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+/**
+ * 日本語テキストを検索用に正規化する。
+ * - ひらがな → カタカナ統一（「しみ」と「シミ」を同一視）
+ * - 全角英数 → 半角
+ * - 大文字 → 小文字
+ * - 余分な空白除去
+ *
+ * 検索クエリと検索対象の両方を同じ関数で処理することで、
+ * 「しみ」「シミ」「シミ・色素沈着」のいずれでもヒットする。
+ */
+export function normalizeJa(s: string): string {
+  if (!s) return ''
+  return s
+    // ひらがな → カタカナ
+    .replace(/[ぁ-ゖ]/g, c => String.fromCharCode(c.charCodeAt(0) + 0x60))
+    // 全角英数 → 半角
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+/**
+ * 検索可能なテキストを生成する（オリジナル＋カタカナ正規化版）。
+ * Fuse.js の検索対象フィールドに使用。
+ */
+export function buildSearchText(...parts: (string | string[] | undefined | null)[]): string {
+  const flat: string[] = []
+  for (const p of parts) {
+    if (!p) continue
+    if (Array.isArray(p)) flat.push(...p)
+    else flat.push(p)
+  }
+  const original = flat.join(' ')
+  const normalized = normalizeJa(original)
+  return original + ' ' + normalized
+}
+
+// ─── Alternatives ────────────────────────────────────────
+
 const RANK_SCORE: Record<string, number> = { S: 4, A: 3, B: 2, C: 1 }
 
 /**

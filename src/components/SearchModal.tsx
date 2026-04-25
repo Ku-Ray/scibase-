@@ -3,32 +3,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { Search, X, ArrowRight } from 'lucide-react'
-import Fuse from 'fuse.js'
-import { ingredients, concerns } from '@/lib/data'
-import type { Ingredient, Concern } from '@/lib/types'
-
-type Result =
-  | { type: 'ingredient'; item: Ingredient }
-  | { type: 'concern';    item: Concern }
-
-const fuse = new Fuse<Result>(
-  [
-    ...ingredients.map((i): Result => ({ type: 'ingredient', item: i })),
-    ...concerns.map(   (c): Result => ({ type: 'concern',    item: c })),
-  ],
-  {
-    keys: [
-      { name: 'item.nameJa',      weight: 2 },
-      { name: 'item.nameEn',      weight: 1.5 },
-      { name: 'item.aliases',     weight: 1.8 },
-      { name: 'item.tagline',     weight: 1 },
-      { name: 'item.description', weight: 0.5 },
-    ],
-    threshold: 0.4,
-    minMatchCharLength: 1,
-    ignoreLocation: true,
-  }
-)
+import { concerns } from '@/lib/data'
+import { searchSite, type SearchResult as Result } from '@/lib/search'
 
 interface Props {
   open: boolean
@@ -53,8 +29,7 @@ export function SearchModal({ open, onClose }: Props) {
 
   useEffect(() => {
     if (!query.trim()) { setResults([]); return }
-    const r = fuse.search(query).slice(0, 8).map(r => r.item)
-    setResults(r)
+    setResults(searchSite(query, 8))
     setActive(0)
   }, [query])
 
