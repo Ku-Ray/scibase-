@@ -4806,6 +4806,7 @@ export const ingredients: Ingredient[] = [
         highlight: '特許処方・研究実績最多',
         form: 'セラム',
         thirdPartyTested: true,
+        note: '[2026-04-25] Amazon JP 在庫不安定。OOS時はvitamin-c-topical（VC外用）+vitamin-eで代用可。代替候補（Maelove/Drunk Elephant/Klairs/TruSkin/COSRX等）はAmazon JPで安定供給確認できず保留',
       },
     ],
     whoFor: ['ビタミンCセラムの効果を高めたい', 'UV・光老化対策をしたい', '色素沈着・シミが気になる'],
