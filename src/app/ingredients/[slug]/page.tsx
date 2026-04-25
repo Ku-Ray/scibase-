@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ChevronRight, ExternalLink, ArrowLeft, ArrowRight, Trophy, BarChart2, GitCompare, BookOpen, Clock } from 'lucide-react'
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
 import { getArticlesByIngredient } from '@/lib/articles'
+import { getAlternatives } from '@/lib/utils'
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
@@ -774,6 +775,43 @@ export default async function IngredientPage({ params }: Props) {
                 本項は一般的な情報提供であり、個別の診療・処方判断の代替ではありません。
               </p>
             </div>
+            {/* 代替候補：同じ悩みに対応する別の成分（飲み合わせ NGユーザーの代替手段） */}
+            {(() => {
+              const alts = getAlternatives(ing, ingredients)
+              if (alts.length === 0) return null
+              return (
+                <div className="mt-4 bg-blue-50 border border-blue-200 rounded-2xl p-5">
+                  <h3 className="font-semibold text-[15px] text-blue-900 mb-2">
+                    該当する場合の代替候補
+                  </h3>
+                  <p className="text-[13px] text-blue-900 leading-relaxed mb-4">
+                    上記の薬を服用中・体質的に併用できない方は、同じ悩みに対応する以下の成分が代替候補とされています。最終判断は医師・薬剤師に相談ください。
+                  </p>
+                  <div className="space-y-2">
+                    {alts.map(alt => (
+                      <Link
+                        key={alt.slug}
+                        href={`/ingredients/${alt.slug}`}
+                        className="flex items-center justify-between gap-3 bg-white border border-blue-200 rounded-xl p-3 hover:border-blue-400 transition-colors"
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <EvidenceBadge rank={alt.evidenceRank} />
+                          <div className="min-w-0">
+                            <p className="font-semibold text-[14px] text-foreground truncate">
+                              {alt.nameJa}
+                            </p>
+                            <p className="text-[12px] text-muted-foreground truncate">
+                              {alt.tagline}
+                            </p>
+                          </div>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )
+            })()}
           </section>
         ) : null}
 

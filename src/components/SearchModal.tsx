@@ -20,11 +20,13 @@ const fuse = new Fuse<Result>(
     keys: [
       { name: 'item.nameJa',      weight: 2 },
       { name: 'item.nameEn',      weight: 1.5 },
+      { name: 'item.aliases',     weight: 1.8 },
       { name: 'item.tagline',     weight: 1 },
       { name: 'item.description', weight: 0.5 },
     ],
     threshold: 0.4,
     minMatchCharLength: 1,
+    ignoreLocation: true,
   }
 )
 
@@ -149,9 +151,32 @@ export function SearchModal({ open, onClose }: Props) {
         )}
 
         {query && results.length === 0 && (
-          <p className="px-4 py-6 text-[14px] text-muted-foreground text-center">
-            「{query}」に一致する成分・悩みは見つかりませんでした
-          </p>
+          <div className="px-4 py-5">
+            <p className="text-[13px] text-muted-foreground mb-3">
+              「{query}」に一致する成分・悩みは見つかりませんでした
+            </p>
+            <p className="text-[11px] text-muted-foreground/70 uppercase tracking-wider font-medium mb-2">
+              悩みカテゴリから探す
+            </p>
+            <div className="flex flex-wrap gap-2 mb-3">
+              {concerns.slice(0, 8).map(c => (
+                <button
+                  key={c.slug}
+                  onClick={() => { router.push(`/concerns/${c.slug}`); onClose() }}
+                  className="text-[12px] text-muted-foreground bg-secondary border border-border
+                    rounded-full px-2.5 py-1 hover:border-primary/50 hover:text-primary transition-colors"
+                >
+                  {c.emoji} {c.nameJa}
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() => { router.push('/concerns'); onClose() }}
+              className="text-[12px] text-primary hover:underline"
+            >
+              すべての悩みカテゴリを見る →
+            </button>
+          </div>
         )}
 
         {!query && (

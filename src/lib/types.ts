@@ -67,6 +67,8 @@ export interface Ingredient {
   slug: string
   nameJa: string
   nameEn: string
+  /** 検索用の別名・略称・関連表記（例：「ビタミンC」→「VC」「アスコルビン酸」） */
+  aliases?: string[]
   evidenceRank: EvidenceRank
   /** 'topical'=外用, 'oral'=経口, 'both'=両方 。省略時は'oral' */
   usageType?: 'topical' | 'oral' | 'both'
@@ -126,6 +128,8 @@ export interface Concern {
   emoji: string
   category: 'skin' | 'body' | 'cognitive' | 'sleep' | 'gut' | 'immunity' | 'muscle' | 'cardiovascular'
   description: string
+  /** 検索用の同義語・別名・関連語（例：「肌の老化」→「エイジング」「ハリ低下」「くすみ」）。検索ヒット率向上のため。 */
+  aliases?: string[]
   ingredientSlugs: string[]
   /** なぜこの悩みが起きるか（3ステップ）・推奨成分の論理的前振りとして表示 */
   mechanism?: {
