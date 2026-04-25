@@ -8887,7 +8887,7 @@ export const concerns: Concern[] = [
   {
     slug: 'skin-aging',
     nameJa: '肌の老化',
-    aliases: ['老化', 'エイジング', 'アンチエイジング', 'ハリ低下', 'くすみ', '弾力低下', '真皮', '老け', 'aging', 'anti-aging'],
+    aliases: ['老化', 'エイジング', 'アンチエイジング', 'ハリ低下', 'くすみ', '弾力低下', '真皮', '老け', 'aging', 'anti-aging', '肌', 'はだ', 'skin', 'スキンケア'],
     emoji: '🌿',
     category: 'skin',
     description: 'コラーゲン減少・くすみ・ハリの低下など、肌の経年変化に関わるエビデンスを確認した成分一覧',
@@ -8909,7 +8909,7 @@ export const concerns: Concern[] = [
   {
     slug: 'wrinkles',
     nameJa: 'シワ・たるみ',
-    aliases: ['しわ', 'シワ', 'ほうれい線', '目元のシワ', 'ちりめんジワ', '表情ジワ', '弾力', 'たるみ', 'リフトアップ', 'elasticity'],
+    aliases: ['しわ', 'シワ', 'ほうれい線', '目元のシワ', 'ちりめんジワ', '表情ジワ', '弾力', 'たるみ', 'リフトアップ', 'elasticity', '肌', 'はだ', 'skin'],
     emoji: '💆',
     category: 'skin',
     description: '皮膚の弾力・ハリへの関与が研究で示されている成分一覧',
@@ -8931,7 +8931,7 @@ export const concerns: Concern[] = [
   {
     slug: 'sleep',
     nameJa: '睡眠の質',
-    aliases: ['不眠', '寝つけない', '中途覚醒', '睡眠不足', '早朝覚醒', '入眠', '睡眠障害', '寝起き', 'insomnia', 'sleep'],
+    aliases: ['不眠', '寝つけない', '中途覚醒', '睡眠不足', '早朝覚醒', '入眠', '睡眠障害', '寝起き', 'insomnia', 'sleep', 'ねる', '寝つき', '熟睡'],
     emoji: '🌙',
     category: 'sleep',
     description: '睡眠の質・入眠・睡眠時間への関与が研究で示されている成分一覧',
@@ -8953,7 +8953,7 @@ export const concerns: Concern[] = [
   {
     slug: 'stress',
     nameJa: 'ストレス・不安',
-    aliases: ['不安', 'メンタル', '自律神経', 'コルチゾール', '緊張', '焦り', '気分', 'うつ', 'anxiety', 'stress'],
+    aliases: ['不安', 'メンタル', '自律神経', 'コルチゾール', '緊張', '焦り', '気分', 'うつ', 'anxiety', 'stress', 'ストレス', 'すとれす', '不安感', 'いらいら', '苛立ち'],
     emoji: '🧘',
     category: 'body',
     description: 'コルチゾール・ストレス応答への関与が研究で示されている成分一覧',
@@ -8975,7 +8975,7 @@ export const concerns: Concern[] = [
   {
     slug: 'fatigue',
     nameJa: '疲れやすい',
-    aliases: ['疲れ', 'だるい', '慢性疲労', '倦怠', '寝不足', 'スタミナ', 'エネルギー不足', 'fatigue'],
+    aliases: ['疲れ', 'だるい', '慢性疲労', '倦怠', '寝不足', 'スタミナ', 'エネルギー不足', 'fatigue', 'つかれ', '疲労感', 'バテる'],
     emoji: '⚡',
     category: 'body',
     description: '抗疲労・エネルギー産生への関与が研究で示されている成分一覧',
@@ -8997,7 +8997,7 @@ export const concerns: Concern[] = [
   {
     slug: 'cognitive',
     nameJa: '認知・集中力',
-    aliases: ['記憶力', '集中力', '認知症', '脳', 'ボケ', '思考力', '物忘れ', '注意力', '頭がぼーっと', 'memory', 'focus'],
+    aliases: ['記憶力', '集中力', '認知症', '脳', 'ボケ', '思考力', '物忘れ', '注意力', '頭がぼーっと', 'memory', 'focus', 'あたま', '頭', '集中', '記憶'],
     emoji: '🧠',
     category: 'cognitive',
     description: '認知機能・集中力・記憶力への関与が研究で示されている成分一覧',
@@ -9019,7 +9019,7 @@ export const concerns: Concern[] = [
   {
     slug: 'inflammation',
     nameJa: '体の慢性炎症',
-    aliases: ['慢性炎症', '関節', '痛み', '腫れ', 'リウマチ', '老化炎症', 'inflammaging', 'inflammation'],
+    aliases: ['慢性炎症', '関節', '痛み', '腫れ', 'リウマチ', '老化炎症', 'inflammaging', 'inflammation', '炎症', 'えんしょう', '痛み'],
     emoji: '🔥',
     category: 'body',
     description: 'Inflammaging（老化性炎症）・炎症マーカーへの関与が研究で示されている成分一覧',
@@ -9041,7 +9041,7 @@ export const concerns: Concern[] = [
   {
     slug: 'gut',
     nameJa: '腸内環境',
-    aliases: ['腸内', '腸', '便秘', '下痢', '過敏性腸症候群', 'IBS', '善玉菌', '悪玉菌', 'プロバイオ', 'gut', 'microbiome'],
+    aliases: ['腸内', '腸', '便秘', '下痢', '過敏性腸症候群', 'IBS', '善玉菌', '悪玉菌', 'プロバイオ', 'gut', 'microbiome', 'ちょう', 'おなか', 'お腹', '胃腸', 'おなら'],
     emoji: '🌱',
     category: 'gut',
     description: '腸内フローラ・腸のバリア機能への関与が研究で示されている成分一覧',
@@ -9063,7 +9063,7 @@ export const concerns: Concern[] = [
   {
     slug: 'immunity',
     nameJa: '免疫機能',
-    aliases: ['風邪', '感染症', 'アレルギー', '免疫力', 'インフルエンザ', '花粉症', 'immune'],
+    aliases: ['風邪', '感染症', 'アレルギー', '免疫力', 'インフルエンザ', '花粉症', 'immune', 'めんえき', '免疫'],
     emoji: '🛡️',
     category: 'immunity',
     description: '免疫応答・感染リスクへの関与が研究で示されている成分一覧',
@@ -9085,7 +9085,7 @@ export const concerns: Concern[] = [
   {
     slug: 'spots',
     nameJa: 'シミ・色素沈着',
-    aliases: ['シミ', 'そばかす', '色素沈着', 'メラニン', '黒ずみ', '肝斑', 'pigmentation', '美白'],
+    aliases: ['シミ', 'そばかす', '色素沈着', 'メラニン', '黒ずみ', '肝斑', 'pigmentation', '美白', '肌', 'はだ', 'skin'],
     emoji: '✨',
     category: 'skin',
     description: 'メラニン産生・色素沈着への関与が研究で示されている成分一覧',
@@ -9107,7 +9107,7 @@ export const concerns: Concern[] = [
   {
     slug: 'barrier',
     nameJa: 'バリア機能・乾燥',
-    aliases: ['バリア', '敏感肌', '赤み', '炎症', '肌荒れ', 'アトピー', '肌トラブル', 'rosacea'],
+    aliases: ['バリア', '敏感肌', '赤み', '炎症', '肌荒れ', 'アトピー', '肌トラブル', 'rosacea', '肌', 'はだ', 'skin'],
     emoji: '🏔️',
     category: 'skin',
     description: '角質層の水分保持・経皮水分蒸散量（TEWL）への関与が研究で示されている成分一覧',
@@ -9131,7 +9131,7 @@ export const concerns: Concern[] = [
   {
     slug: 'dry-skin',
     nameJa: '乾燥肌・保湿',
-    aliases: ['乾燥', 'カサカサ', '保湿', 'ドライスキン', 'うるおい', '粉ふき', 'dry'],
+    aliases: ['乾燥', 'カサカサ', '保湿', 'ドライスキン', 'うるおい', '粉ふき', 'dry', '肌', 'はだ', 'skin'],
     emoji: '💧',
     category: 'skin',
     description: '皮膚の水分量・保湿力への関与が研究で示されている成分一覧',
@@ -9153,7 +9153,7 @@ export const concerns: Concern[] = [
   {
     slug: 'acne',
     nameJa: 'ニキビ・肌荒れ',
-    aliases: ['ニキビ', '吹き出物', '肌荒れ', '思春期', '大人ニキビ', 'アクネ', 'acne'],
+    aliases: ['ニキビ', '吹き出物', '肌荒れ', '思春期', '大人ニキビ', 'アクネ', 'acne', '肌', 'はだ', 'skin'],
     emoji: '🌸',
     category: 'skin',
     description: '炎症性ざ瘡・毛穴詰まりへの関与が研究で示されている成分一覧',
@@ -9175,7 +9175,7 @@ export const concerns: Concern[] = [
   {
     slug: 'pores',
     nameJa: '毛穴・テクスチャー',
-    aliases: ['毛穴', '黒ずみ毛穴', '開き毛穴', 'テクスチャー', '肌のキメ', '皮脂', 'pores'],
+    aliases: ['毛穴', '黒ずみ毛穴', '開き毛穴', 'テクスチャー', '肌のキメ', '皮脂', 'pores', '肌', 'はだ', 'skin'],
     emoji: '🔬',
     category: 'skin',
     description: '毛穴の目立ちにくさ・肌のキメへの関与が研究で示されている成分一覧',
@@ -9197,7 +9197,7 @@ export const concerns: Concern[] = [
   {
     slug: 'uv-damage',
     nameJa: '光老化・UVダメージ',
-    aliases: ['紫外線', '日焼け', 'UV', 'サンダメージ', '光老化', '日焼け止め', 'uv', 'photoaging'],
+    aliases: ['紫外線', '日焼け', 'UV', 'サンダメージ', '光老化', '日焼け止め', 'uv', 'photoaging', '肌', 'はだ', 'skin'],
     emoji: '☀️',
     category: 'skin',
     description: '紫外線による皮膚ダメージ・光老化への対策に関するエビデンスを持つ成分一覧',
@@ -9219,7 +9219,7 @@ export const concerns: Concern[] = [
   {
     slug: 'hair',
     nameJa: '髪・爪',
-    aliases: ['髪', '抜け毛', '薄毛', '白髪', 'ヘアケア', '頭皮', '爪', 'AGA', 'hair'],
+    aliases: ['髪', '抜け毛', '薄毛', '白髪', 'ヘアケア', '頭皮', '爪', 'AGA', 'hair', 'かみ', 'まつげ', 'まつ毛', 'つめ'],
     emoji: '💎',
     category: 'body',
     description: '毛髪・爪の健康への関与が研究で示されている成分一覧',
@@ -9241,7 +9241,7 @@ export const concerns: Concern[] = [
   {
     slug: 'bone',
     nameJa: '骨密度・関節',
-    aliases: ['骨', '骨粗しょう症', '関節', '関節痛', '軟骨', '骨折', '骨密度', 'bone'],
+    aliases: ['骨', '骨粗しょう症', '関節', '関節痛', '軟骨', '骨折', '骨密度', 'bone', 'ほね', '関節痛', '腰痛'],
     emoji: '🦴',
     category: 'body',
     description: '骨密度・骨強度への関与が研究で示されている成分一覧',
@@ -9263,7 +9263,7 @@ export const concerns: Concern[] = [
   {
     slug: 'metabolism',
     nameJa: '代謝・血糖コントロール',
-    aliases: ['代謝', '血糖', '糖尿病', '糖化', 'インスリン', 'ダイエット', '体重', 'metabolism', 'glucose'],
+    aliases: ['代謝', '血糖', '糖尿病', '糖化', 'インスリン', 'ダイエット', '体重', 'metabolism', 'glucose', 'たいしゃ', '体重増加', '太る'],
     emoji: '⚖️',
     category: 'body',
     description: '血糖スパイク・脂質代謝・インスリン感受性への関与が研究で示されている成分一覧',
@@ -9285,7 +9285,7 @@ export const concerns: Concern[] = [
   {
     slug: 'longevity',
     nameJa: '長寿・細胞老化',
-    aliases: ['長寿', '細胞老化', 'テロメア', 'NMN', 'NAD', 'ミトコンドリア', 'senolytic', 'longevity', 'lifespan'],
+    aliases: ['長寿', '細胞老化', 'テロメア', 'NMN', 'NAD', 'ミトコンドリア', 'senolytic', 'longevity', 'lifespan', 'ちょうじゅ', '長生き', '若返り'],
     emoji: '🔬',
     category: 'body',
     description: '細胞老化（Senescence）・オートファジー・NAD+経路など、老化の根本機序への関与が研究で示されている成分一覧',
@@ -9307,7 +9307,7 @@ export const concerns: Concern[] = [
   {
     slug: 'eye-health',
     nameJa: '目の老化・眼の健康',
-    aliases: ['目', '視力', 'ドライアイ', '老眼', 'ブルーライト', '黄斑', '眼精疲労', 'eye'],
+    aliases: ['目', '視力', 'ドライアイ', '老眼', 'ブルーライト', '黄斑', '眼精疲労', 'eye', 'め', 'まなこ', 'アイ'],
     emoji: '👁️',
     category: 'body',
     description: '加齢黄斑変性・ブルーライトダメージ・眼の酸化ストレスへの関与が研究で示されている成分一覧',
@@ -9329,7 +9329,7 @@ export const concerns: Concern[] = [
   {
     slug: 'muscle',
     nameJa: '筋力・体組成',
-    aliases: ['筋肉', '筋トレ', 'サルコペニア', '体力', 'パフォーマンス', '筋力低下', 'プロテイン', 'muscle'],
+    aliases: ['筋肉', '筋トレ', 'サルコペニア', '体力', 'パフォーマンス', '筋力低下', 'プロテイン', 'muscle', 'きんにく', '体組成'],
     emoji: '💪',
     category: 'muscle',
     description: 'サルコペニア（加齢性筋肉減少症）の予防・筋力維持・筋タンパク質合成への関与が研究で示されている成分一覧。40代以降の「老化×筋力」対策に。',
@@ -9351,7 +9351,7 @@ export const concerns: Concern[] = [
   {
     slug: 'cardiovascular',
     nameJa: '血管・循環',
-    aliases: ['血圧', '心臓', 'コレステロール', '動脈硬化', '血管', '高血圧', '心血管', 'cardiovascular'],
+    aliases: ['血圧', '心臓', 'コレステロール', '動脈硬化', '血管', '高血圧', '心血管', 'cardiovascular', 'けっかん', '心血管', '心疾患'],
     emoji: '❤️',
     category: 'cardiovascular',
     description: '動脈硬化・血圧・血管内皮機能・血液の流れへの関与が研究で示されている成分一覧。「血管年齢」を意識した老化対策の核心テーマ。',

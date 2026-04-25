@@ -782,10 +782,13 @@ export default async function IngredientPage({ params }: Props) {
               return (
                 <div className="mt-4 bg-blue-50 border border-blue-200 rounded-2xl p-5">
                   <h3 className="font-semibold text-[15px] text-blue-900 mb-2">
-                    該当する場合の代替候補
+                    この問題を回避できる代替候補
                   </h3>
-                  <p className="text-[13px] text-blue-900 leading-relaxed mb-4">
-                    上記の薬を服用中・体質的に併用できない方は、同じ悩みに対応する以下の成分が代替候補とされています。最終判断は医師・薬剤師に相談ください。
+                  <p className="text-[13px] text-blue-900 leading-relaxed mb-2">
+                    上記の薬を服用中・体質的に併用できない方には、<strong>同じ悩みに対応しつつ同系統の薬剤干渉を持たない</strong>成分を選んでいます。
+                  </p>
+                  <p className="text-[12px] text-blue-900/80 leading-relaxed mb-4">
+                    ※ 候補は元成分と同じ系統の薬剤干渉を持たないものに限定していますが、各成分にも個別の注意事項があります。リンク先の飲み合わせ欄を必ず確認し、最終判断は医師・薬剤師にご相談ください。
                   </p>
                   <div className="space-y-2">
                     {alts.map(alt => (
