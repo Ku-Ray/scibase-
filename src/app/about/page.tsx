@@ -241,6 +241,7 @@ export default function AboutPage() {
           <Link href="/ingredients" className="text-accent hover:underline">成分一覧 →</Link>
           <Link href="/concerns"    className="text-accent hover:underline">悩みから探す →</Link>
           <Link href="/analyzer"    className="text-accent hover:underline">サプリ診断 →</Link>
+          <Link href="/privacy"     className="text-accent hover:underline">プライバシーポリシー →</Link>
         </div>
       </div>
     </>

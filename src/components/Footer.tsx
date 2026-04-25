@@ -36,6 +36,7 @@ export function Footer() {
             <Link href="/articles"    className="hover:text-foreground transition-colors">コラム</Link>
             <Link href="/analyzer"    className="hover:text-foreground transition-colors">サプリ診断</Link>
             <Link href="/about"       className="hover:text-foreground transition-colors">サイトについて</Link>
+            <Link href="/privacy"     className="hover:text-foreground transition-colors">プライバシーポリシー</Link>
             <a
               href="https://x.com/r_evidence_"
               target="_blank"

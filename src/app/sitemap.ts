@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/articles`,      lastModified: latestArticle,    changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE_URL}/analyzer`,      lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/about`,         lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/privacy`,       lastModified: '2026-04-25',     changeFrequency: 'yearly',  priority: 0.3 },
   ]
 
   const ingredientPages: MetadataRoute.Sitemap = ingredients.map((ing) => ({
