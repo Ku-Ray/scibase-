@@ -44,6 +44,8 @@ export function SearchModal({ open, onClose }: Props) {
   useEffect(() => {
     if (!open) return
     const handler = (e: KeyboardEvent) => {
+      // IME変換中は無視（日本語確定エンターを誤判定しない）
+      if (e.isComposing || e.keyCode === 229) return
       if (e.key === 'Escape') { onClose(); return }
       if (e.key === 'ArrowDown') { setActive(a => Math.min(a + 1, results.length - 1)); e.preventDefault() }
       if (e.key === 'ArrowUp')   { setActive(a => Math.max(a - 1, 0));                  e.preventDefault() }
