@@ -119,6 +119,19 @@ export interface Ingredient {
     /** 出典（添付文書名・FDA・ジャーナル名等） */
     source?: string
   }[]
+  /** 推奨フォーム（成分の形態指定。「鉄」→「Iron Bisglycinate」等、曖昧成分の検索精度向上用） */
+  recommendedForm?: {
+    /** 英語フォーム名（iHerb検索クエリ用）例: "Iron Bisglycinate" */
+    en: string
+    /** 日本語フォーム名 例: "ビスグリシン酸鉄" */
+    ja: string
+    /** なぜこのフォームか（薬機法準拠・断定なし） */
+    reason: string
+    /** 許容代替フォーム */
+    alternativeForms?: string[]
+    /** 避けるべきフォーム（吸収率低・副作用多等） */
+    avoidForms?: string[]
+  }
   updatedAt: string
 }
 
