@@ -45,6 +45,33 @@ const platformLabel: Record<string, string> = {
   amazon: 'Amazon',
 }
 
+/**
+ * 記事の ingredients[] エントリから商品情報を解決する。
+ * data.ts の products[0] を canonical source として、article 側は override のみ。
+ * 二重管理を避けるため、article 側の productX フィールドは原則未指定にする運用。
+ */
+function resolveProduct(ing: {
+  slug: string
+  productName?: string
+  productUrl?: string
+  productPlatform?: 'iherb' | 'amazon'
+  productPriceJpy?: number
+  productHighlight?: string
+}) {
+  const data = getIngredient(ing.slug)
+  const fallback = data?.products?.[0]
+  const platformRaw = ing.productPlatform ?? fallback?.platform
+  const platform: 'iherb' | 'amazon' =
+    platformRaw === 'amazon' ? 'amazon' : 'iherb' // 'cosme' 等は iherb にフォールバック
+  return {
+    name: ing.productName ?? fallback?.name,
+    url: ing.productUrl ?? fallback?.url,
+    platform,
+    priceJpy: ing.productPriceJpy ?? fallback?.monthlyCostJpy ?? fallback?.priceJpy,
+    highlight: ing.productHighlight ?? fallback?.highlight,
+  }
+}
+
 const categoryColor: Record<string, string> = {
   'anti-aging': 'bg-amber-50 text-amber-700 border-amber-200',
   skin:         'bg-rose-50 text-rose-700 border-rose-200',
@@ -458,49 +485,53 @@ export default async function ArticlePage({ params }: Props) {
                   <AddToAnalyzerButton slug={ing.slug} variant="compact" />
                 </div>
 
-                {/* Product CTA */}
-                {ing.productUrl && (
-                  <div className="border-t border-border bg-secondary px-5 py-4">
-                    {/* 緊急性トリガー（損失回避の最終押し） */}
-                    {ing.urgencyNote && (
-                      <p className="text-[12px] text-muted-foreground leading-relaxed mb-3
-                        border-l-2 border-accent/40 pl-3">
-                        {ing.urgencyNote}
-                      </p>
-                    )}
-                    <div className="flex items-center justify-between gap-3 flex-wrap">
-                      <div className="min-w-0">
-                        <p className="text-[12px] font-semibold text-foreground truncate">
-                          {ing.productName}
+                {/* Product CTA — data.ts canonical / article側 override 可 */}
+                {(() => {
+                  const product = resolveProduct(ing)
+                  if (!product.url || !product.name) return null
+                  return (
+                    <div className="border-t border-border bg-secondary px-5 py-4">
+                      {/* 緊急性トリガー（損失回避の最終押し） */}
+                      {ing.urgencyNote && (
+                        <p className="text-[12px] text-muted-foreground leading-relaxed mb-3
+                          border-l-2 border-accent/40 pl-3">
+                          {ing.urgencyNote}
                         </p>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          {ing.productHighlight && (
-                            <span className="text-[10px] px-1.5 py-0.5 bg-accent/10 text-accent
-                              rounded border border-accent/20 font-medium">
-                              {ing.productHighlight}
-                            </span>
-                          )}
-                          {ing.productPriceJpy && (
-                            <span className="text-[12px] text-muted-foreground">
-                              約¥{ing.productPriceJpy.toLocaleString()}/月
-                            </span>
-                          )}
+                      )}
+                      <div className="flex items-center justify-between gap-3 flex-wrap">
+                        <div className="min-w-0">
+                          <p className="text-[12px] font-semibold text-foreground truncate">
+                            {product.name}
+                          </p>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            {product.highlight && (
+                              <span className="text-[10px] px-1.5 py-0.5 bg-accent/10 text-accent
+                                rounded border border-accent/20 font-medium">
+                                {product.highlight}
+                              </span>
+                            )}
+                            {product.priceJpy && (
+                              <span className="text-[12px] text-muted-foreground">
+                                約¥{product.priceJpy.toLocaleString()}/月
+                              </span>
+                            )}
+                          </div>
                         </div>
+                        <OutboundProductLink
+                          href={product.url}
+                          platform={product.platform}
+                          ingredientSlug={ing.slug}
+                          className="inline-flex items-center gap-1.5 text-[12px] font-semibold
+                            bg-foreground text-background rounded-lg px-4 py-2
+                            hover:opacity-80 transition-opacity flex-shrink-0"
+                        >
+                          {platformLabel[product.platform]}で見る
+                          <ExternalLink className="w-3 h-3" />
+                        </OutboundProductLink>
                       </div>
-                      <OutboundProductLink
-                        href={ing.productUrl}
-                        platform={ing.productPlatform ?? 'iherb'}
-                        ingredientSlug={ing.slug}
-                        className="inline-flex items-center gap-1.5 text-[12px] font-semibold
-                          bg-foreground text-background rounded-lg px-4 py-2
-                          hover:opacity-80 transition-opacity flex-shrink-0"
-                      >
-                        {platformLabel[ing.productPlatform ?? 'iherb']}で見る
-                        <ExternalLink className="w-3 h-3" />
-                      </OutboundProductLink>
                     </div>
-                  </div>
-                )}
+                  )
+                })()}
               </div>
             ))}
           </div>
