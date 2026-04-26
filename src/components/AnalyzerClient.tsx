@@ -155,25 +155,13 @@ export function AnalyzerClient() {
   }, [selectedConcernSlugs])
 
   return (
-    <div className="max-w-2xl mx-auto px-5 py-10">
-      {/* ── ヘッダー ── */}
-      <div className="mb-6">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
-          text-muted-foreground mb-3">
-          Supplement Analyzer
-        </p>
-        <h1 className="text-[28px] sm:text-[34px] font-bold text-foreground
-          tracking-tight mb-3">
-          サプリ診断
-        </h1>
-        <p className="text-[14px] text-muted-foreground leading-relaxed">
-          {mode === 'ingredient'
-            ? '今飲んでいるサプリメント・スキンケア成分を選ぶと、7軸でカバー状況を可視化し、不足している成分をレコメンドします。'
-            : '悩みを1〜3個選ぶと、論文エビデンスが一致する3成分を組み立てます。複数選ぶほど、横断的に効く成分が優先されます。'}
-        </p>
-      </div>
-
+    <div className="max-w-2xl mx-auto px-5 pb-10 pt-2">
       {/* ── モードタブ ── */}
+      <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
+        {mode === 'ingredient'
+          ? '今飲んでいるサプリメント・スキンケア成分を選ぶと、7軸でカバー状況を可視化し、不足している成分をレコメンドします。'
+          : '悩みを1〜3個選ぶと、論文エビデンスが一致する3成分を組み立てます。複数選ぶほど、横断的に効く成分が優先されます。'}
+      </p>
       <div className="mb-10 inline-flex gap-1 p-1 bg-secondary rounded-xl">
         <button
           onClick={() => setMode('ingredient')}
