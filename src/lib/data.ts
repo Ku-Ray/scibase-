@@ -4538,6 +4538,8 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '食事と一緒に摂取',
     duration: '3ヶ月以上の継続で評価されることが多い',
+    sideEffects: ['軽度の消化器症状（腹部膨満感・下痢）はまれ', '長期高用量摂取時の安全性データは限定的'],
+    contraindications: ['エストロゲン感受性疾患（乳がん・子宮内膜症等）の既往がある方は使用前に主治医に相談', '妊娠中・授乳中の方は安全性データが不十分のため推奨されない'],
     products: [
       {
         name: 'エクエル（エクオール含有大豆胚芽発酵エキス）',
@@ -4710,6 +4712,8 @@ export const ingredients: Ingredient[] = [
     dosageMax: 600,
     dosageUnit: 'mg/日（酪酸カルシウムとして）',
     timing: '食後に摂取',
+    sideEffects: ['開始時の腹部膨満感・ガス（多くは数日で軽減）', '高用量で軟便・腹部不快感（まれ）'],
+    contraindications: ['潰瘍性大腸炎・クローン病の急性期は主治医の指導下で使用', '免疫抑制剤服用中の方は使用前に医師相談'],
     products: [
       {
         name: 'BodyBio Sodium Butyrate 600mg 100カプセル',
@@ -4773,6 +4777,8 @@ export const ingredients: Ingredient[] = [
     dosageMax: 1,
     dosageUnit: '% 濃度（外用）',
     timing: '朝の洗顔後、日焼け止め前に使用。光安定性のため日中使用に適している',
+    sideEffects: ['高濃度で軽度の刺激感・赤み（敏感肌）', 'まれに接触皮膚炎', '酸化で変色・効果低下しやすい（開封後は早期使用推奨）'],
+    contraindications: ['ビタミンC/E併用処方では同成分にアレルギー既往がある方', '初回使用時はパッチテスト推奨'],
     products: [
       {
         name: 'C E Ferulic（CE フェルリック）',
@@ -4822,6 +4828,8 @@ export const ingredients: Ingredient[] = [
       ja: 'アデノシン0.04%配合 美容液/アンプル',
       reason: '韓国MFDS認可濃度の0.04%は2008年RCTで効果が確認された範囲。アデノシン単独製品は少なく、ナイアシンアミド・ペプチド等との複合処方が主流',
     },
+    sideEffects: ['軽度の刺激感・発赤（まれ・敏感肌）'],
+    contraindications: ['敏感肌の方は使用前にパッチテスト推奨', '妊娠中・授乳中は外用での吸収量は微量とされるが念のため低濃度の製品を選ぶ'],
     products: [
       {
         name: 'タイムレボリューション ナイトリペア アンプル 5X 50ml',
@@ -4871,6 +4879,8 @@ export const ingredients: Ingredient[] = [
       ja: 'パンテノール5%配合 保湿クリーム',
       reason: 'パンテノール5%は欧州で皮膚保護成分として承認された濃度。RCTで皮膚水分量・バリア機能の改善が確認されている範囲',
     },
+    sideEffects: ['非常にまれに接触皮膚炎・刺激感'],
+    contraindications: ['パンテノール（ビタミンB5）アレルギー既往の方'],
     products: [
       {
         name: 'シカプラスト リペアクリーム B5+ 40ml',
@@ -4917,6 +4927,8 @@ export const ingredients: Ingredient[] = [
     dosageMax: 2,
     dosageUnit: '% 濃度（外用）',
     timing: '保湿ステップで使用。刺激が少なく朝晩使用可能',
+    sideEffects: ['非常にまれに接触皮膚炎・赤み（頻度は極めて低い）'],
+    contraindications: ['コンフリー（ヒレハリソウ）由来成分にアレルギー既往の方は使用前にパッチテスト'],
     products: [
       {
         name: 'La Roche-Posay シカプラスト バーム B5+ 40ml',
@@ -5261,6 +5273,8 @@ export const ingredients: Ingredient[] = [
     dosageMax: 1000,
     dosageUnit: 'mg/日',
     timing: '食事と一緒に摂取',
+    sideEffects: ['軽度の消化器症状（腹部不快・軟便）はまれ', '長期高用量摂取時の安全性データは限定的'],
+    contraindications: ['妊娠中・授乳中・小児は安全性データが不十分', '抗血小板薬・抗凝固薬服用中の方は使用前に医師相談'],
     products: [],
     whoFor: ['ミトコンドリア機能・細胞エネルギーを高めたい', '筋肉の老化を遅らせたい', '最先端のアンチエイジングに興味がある'],
     emerging: true,
@@ -5292,6 +5306,8 @@ export const ingredients: Ingredient[] = [
     dosageMax: 20,
     dosageUnit: 'mg/日',
     timing: '食事と一緒に。CoQ10と組み合わせると効果的',
+    sideEffects: ['高用量で頭痛・倦怠感の報告（まれ）', '軽度の消化器症状（食事と摂取で軽減）'],
+    contraindications: ['妊娠中・授乳中・小児は安全性データが不十分', '長期高用量（30mg/日以上）の安全性データは限定的'],
     products: [
       {
         name: 'PQQ 20mg with BioPQQ',
