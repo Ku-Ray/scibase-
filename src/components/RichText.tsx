@@ -5,12 +5,17 @@ import { getIngredient } from '@/lib/data'
 
 /**
  * 記事本文用の軽量Markdownレンダラ。
- * 対応構文（ネスト不可・1行内で完結）：
+ * 対応構文（インライン・ネスト不可・1行内で完結）：
  *   **bold**             → <strong>
  *   [text](/path)        → 内部リンク（next/link）
  *   [text](https://..)   → 外部リンク（target=_blank）
  *   ==highlight==        → <mark> 重要数値・キーフレーズの強調
  *   [[INGREDIENT:slug]]  → 成分詳細ページへのCTAボタン（独立段落で配置）
+ *
+ * 段落レベル：
+ *   - 段落区切りは「空行（\n\n）」
+ *   - 段落全体が `**...**` のみ → <h4> 自動昇格
+ *   - 段落の全行が `- ` で始まる → <ul><li> リストとして描画
  *
  * Pillar記事を含む長文記事の可読性とCTAクリック可能性を担保する。
  */
@@ -120,10 +125,19 @@ function isBoldOnlyParagraph(text: string): string | null {
   return m ? m[1] : null
 }
 
+const BULLET_LINE = /^\s*-\s+/
+
+/** 段落の全行が `- ` で始まる場合 true（bullet list段落）*/
+function isBulletListParagraph(text: string): boolean {
+  const lines = text.split('\n').filter((l) => l.trim().length > 0)
+  return lines.length > 0 && lines.every((l) => BULLET_LINE.test(l))
+}
+
 /** 段落配列にして返す（\n\n で分割）
  *
- * 段落が「**...**」のみで構成されている場合は <h4> として描画し、
- * SEO的な見出し階層と視覚的サブ見出しを同時に確立する。
+ * 段落が「**...**」のみ → <h4> として描画
+ * 段落の全行が「- 」で始まる → <ul><li> として描画
+ * それ以外 → <p>
  */
 export function RichParagraphs({
   body,
@@ -146,6 +160,23 @@ export function RichParagraphs({
             >
               {tokenize(boldText).map(renderToken)}
             </h4>
+          )
+        }
+        if (isBulletListParagraph(para)) {
+          const items = para
+            .split('\n')
+            .filter((l) => l.trim().length > 0)
+            .map((l) => l.replace(BULLET_LINE, ''))
+          return (
+            <ul
+              key={i}
+              className="list-disc pl-6 mb-5 last:mb-0 space-y-2
+                text-[15px] text-foreground leading-[1.9] marker:text-accent"
+            >
+              {items.map((item, j) => (
+                <li key={j}>{tokenize(item).map(renderToken)}</li>
+              ))}
+            </ul>
           )
         }
         return (
