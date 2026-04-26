@@ -671,9 +671,9 @@ export default async function ComparePage({ params }: Props) {
                       {rA.nameJa} vs {rB.nameJa}
                     </span>
                     <div className="flex items-center gap-2">
-                      <EvidenceBadge rank={rA.evidenceRank} variant="chip" />
+                      <EvidenceBadge rank={rA.evidenceRank} variant="dot" />
                       <span className="text-[10px] text-muted-foreground/50">vs</span>
-                      <EvidenceBadge rank={rB.evidenceRank} variant="chip" />
+                      <EvidenceBadge rank={rB.evidenceRank} variant="dot" />
                       <ChevronRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
                     </div>
                   </Link>

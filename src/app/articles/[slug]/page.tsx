@@ -382,7 +382,7 @@ export default async function ArticlePage({ params }: Props) {
                                     最推奨
                                   </span>
                                 )}
-                                <EvidenceBadge rank={ing.evidenceRank} />
+                                <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
                                 <h3 className="text-[15px] sm:text-[16px] font-bold text-foreground">
                                   {ing.nameJa}
                                 </h3>
@@ -435,7 +435,7 @@ export default async function ArticlePage({ params }: Props) {
                 <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <EvidenceBadge rank={ing.evidenceRank} />
+                      <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
                       <h3 className="font-bold text-[15px] text-foreground">
                         {ing.nameJa}
                       </h3>

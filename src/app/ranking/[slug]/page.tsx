@@ -136,11 +136,8 @@ export default async function RankingPage({ params }: Props) {
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1.5">
+                <div className="mb-1.5">
                   <EvidenceBadge rank={topIngredient.evidenceRank} variant="chip" />
-                  <span className="text-[12px] text-amber-700 font-medium">
-                    エビデンス{topIngredient.evidenceRank}ランク
-                  </span>
                 </div>
                 <h3 className="font-bold text-[20px] text-foreground mb-1">
                   {topIngredient.nameJa}
@@ -224,7 +221,7 @@ export default async function RankingPage({ params }: Props) {
                           </h2>
                           <p className="text-[11px] text-muted-foreground/60">{ing.nameEn}</p>
                         </div>
-                        <EvidenceBadge rank={ing.evidenceRank} variant="chip" />
+                        <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
                       </div>
 
                       <p className="text-[13px] text-muted-foreground leading-relaxed mb-3">
