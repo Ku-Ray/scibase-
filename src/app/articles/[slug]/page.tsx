@@ -233,20 +233,20 @@ export default async function ArticlePage({ params }: Props) {
         {/* 損失回避フック */}
         <div className="bg-secondary border-l-4 border-accent rounded-r-xl px-5 py-4 mb-8">
           <p className="text-[14px] text-foreground leading-relaxed font-medium">
-            {article.lossAversionHook}
+            <RichInline text={article.lossAversionHook} />
           </p>
         </div>
 
         {/* ヒーロー数値（アンカリング） */}
-        <div className="border border-border rounded-2xl p-6 mb-10 flex flex-col sm:flex-row
-          items-start sm:items-center gap-4">
-          <div className="flex-shrink-0">
-            <span className="block text-[40px] sm:text-[48px] font-black text-foreground
-              tabular-nums leading-none">
+        <div className="border border-border rounded-2xl p-5 sm:p-6 mb-10 flex flex-col sm:flex-row
+          items-start sm:items-center gap-3 sm:gap-4">
+          <div className="flex-shrink-0 max-w-full">
+            <span className="block text-[32px] sm:text-[44px] font-black text-foreground
+              tabular-nums leading-[1.05] break-keep">
               {article.heroStat.value}
             </span>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="text-[13px] text-muted-foreground leading-snug">
               {article.heroStat.label}
             </p>

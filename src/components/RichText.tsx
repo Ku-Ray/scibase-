@@ -1,5 +1,13 @@
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import {
+  ArrowRight,
+  Target,
+  Lightbulb,
+  CheckCircle,
+  AlertCircle,
+  BookOpen,
+  type LucideIcon,
+} from 'lucide-react'
 import { Fragment, type ReactNode } from 'react'
 import { getIngredient } from '@/lib/data'
 
@@ -133,6 +141,28 @@ function isBulletListParagraph(text: string): boolean {
   return lines.length > 0 && lines.every((l) => BULLET_LINE.test(l))
 }
 
+/** Callout 5種類（離脱防止・読みやすさ強化）
+ *  構文：`:::<kind>\n本文\n:::` を1段落（前後を空行で挟む）として書く
+ *  中身は通常tokenize（**bold** ==mark== [link]() [[INGREDIENT:slug]] サポート）
+ */
+type CalloutKind = 'conclusion' | 'point' | 'summary' | 'warning' | 'term'
+
+const CALLOUT_META: Record<CalloutKind, { icon: LucideIcon; label: string }> = {
+  conclusion: { icon: Target, label: '結論' },
+  point: { icon: Lightbulb, label: 'ポイント' },
+  summary: { icon: CheckCircle, label: '要点' },
+  warning: { icon: AlertCircle, label: '注意' },
+  term: { icon: BookOpen, label: '用語' },
+}
+
+const CALLOUT_RE = /^:::(conclusion|point|summary|warning|term)\n([\s\S]+?)\n:::$/
+
+function parseCallout(text: string): { kind: CalloutKind; content: string } | null {
+  const m = text.trim().match(CALLOUT_RE)
+  if (!m) return null
+  return { kind: m[1] as CalloutKind, content: m[2] }
+}
+
 /** 段落配列にして返す（\n\n で分割）
  *
  * 段落が「**...**」のみ → <h4> として描画
@@ -150,6 +180,35 @@ export function RichParagraphs({
   return (
     <>
       {paras.map((para, i) => {
+        const callout = parseCallout(para)
+        if (callout) {
+          const meta = CALLOUT_META[callout.kind]
+          const Icon = meta.icon
+          return (
+            <aside
+              key={i}
+              role="note"
+              aria-label={meta.label}
+              className="border border-accent/40 bg-accent/[0.06] rounded-2xl
+                px-5 py-4 sm:px-6 sm:py-5 mb-6 last:mb-0"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <Icon className="w-4 h-4 text-accent flex-shrink-0" aria-hidden="true" />
+                <span className="text-[12px] font-bold tracking-[0.08em] text-accent">
+                  {meta.label}
+                </span>
+              </div>
+              <div className="text-[14px] sm:text-[15px] text-foreground leading-[1.85]">
+                {callout.content.split('\n').map((line, j) => (
+                  <Fragment key={j}>
+                    {j > 0 && <br />}
+                    {tokenize(line).map(renderToken)}
+                  </Fragment>
+                ))}
+              </div>
+            </aside>
+          )
+        }
         const boldText = isBoldOnlyParagraph(para)
         if (boldText) {
           return (
