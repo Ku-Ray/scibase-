@@ -798,7 +798,7 @@ export default async function IngredientPage({ params }: Props) {
                         className="flex items-center justify-between gap-3 bg-white border border-blue-200 rounded-xl p-3 hover:border-blue-400 transition-colors"
                       >
                         <div className="flex items-center gap-3 min-w-0">
-                          <EvidenceBadge rank={alt.evidenceRank} />
+                          <EvidenceBadge rank={alt.evidenceRank} variant="dot" />
                           <div className="min-w-0">
                             <p className="font-semibold text-[14px] text-foreground truncate">
                               {alt.nameJa}
