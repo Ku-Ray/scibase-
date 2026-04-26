@@ -232,4 +232,6 @@ export interface Article {
   faqs: ArticleFAQ[]
   relatedIngredientSlugs: string[]
   relatedArticleSlugs?: string[]
+  /** 関連する悩みカテゴリ（concern slug）。悩みページの「関連記事」表示で使用 */
+  concerns?: string[]
 }

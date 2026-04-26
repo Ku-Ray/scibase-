@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, Trophy } from 'lucide-react'
+import { ChevronRight, Trophy, BookOpen } from 'lucide-react'
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
+import { getArticlesByConcern } from '@/lib/articles'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
@@ -587,6 +588,42 @@ export default async function ConcernPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* 関連記事（コラム） */}
+      {(() => {
+        const relatedArticles = getArticlesByConcern(slug)
+        if (relatedArticles.length === 0) return null
+        return (
+          <section className="mt-14 pt-10 border-t border-border">
+            <h2 className="font-bold text-[18px] text-foreground mb-5 flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-accent" />
+              この悩みに関連する論文ガイド
+            </h2>
+            <div className="space-y-2">
+              {relatedArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/articles/${article.slug}`}
+                  className="group block rounded-xl border border-border bg-background px-5 py-4
+                    hover:border-accent/40 hover:bg-muted/30 transition-colors"
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.12em]
+                    text-muted-foreground mb-1.5">
+                    {article.categoryLabel}
+                  </p>
+                  <h3 className="font-bold text-[14px] text-foreground group-hover:text-accent
+                    leading-snug mb-1.5 transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-[12px] text-muted-foreground leading-relaxed line-clamp-2">
+                    {article.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )
+      })()}
 
       {/* 関連悩み */}
       <div className="mt-14 pt-10 border-t border-border">

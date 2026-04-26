@@ -7155,7 +7155,7 @@ export const ingredients: Ingredient[] = [
     tagline: '経口ヒアルロン酸の皮膚水分量・乾燥・シワへの関与がRCTで確認されている',
     description:
       '外用のヒアルロン酸（保湿成分）とは異なり、経口摂取したヒアルロン酸は腸管で加水分解され、N-アセチルグルコサミンやグルクロン酸として吸収後、真皮でのヒアルロン酸合成を促進する可能性が研究されている。分子量が小さいほど（低分子HA）腸管吸収率が高い。複数のRCTで皮膚水分量・肌のうるおい・小じわの改善が確認されているが、外用ヒアルロン酸と比較したエビデンスはまだ限られている。関節軟骨へのHA補充（変形性関節症補助）としても研究されている。',
-    concerns: ['skin-aging', 'wrinkles', 'dryness', 'dry-skin'],
+    concerns: ['skin-aging', 'wrinkles', 'dry-skin'],
     papers: [
       {
         title: 'Oral hyaluronan relieves wrinkles: a double-blinded, placebo-controlled study over a 12-week period',
