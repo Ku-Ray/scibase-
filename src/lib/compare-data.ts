@@ -29,7 +29,7 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['nattokinase',          'vitamin-k2'],
   ['omega3',               'vitamin-k2'],
   // ── サプリメント基礎 ─────────────────────────────
-  ['omega3',               'astaxanthin'],
+  ['astaxanthin',          'omega3'],
   ['vitamin-d',            'magnesium'],
   ['vitamin-d',            'vitamin-k2'],
   ['zinc',                 'vitamin-c-oral'],
@@ -54,6 +54,7 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['centella-asiatica',    'niacinamide'],
   ['palmitoyl-tripeptide', 'retinol'],
   ['pantothenic-acid',     'niacinamide'],
+  ['ceramide-oral',        'collagen-peptide'],
   // ── 抗老化・長寿（追加） ────────────────────────
   ['resveratrol',          'pterostilbene'],
   ['fisetin',              'quercetin'],
@@ -122,7 +123,7 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'nattokinase-vs-vitamin-k2':           'cardiovascular',
   'omega3-vs-vitamin-k2':                'cardiovascular',
   // supplement
-  'omega3-vs-astaxanthin':               'supplement',
+  'astaxanthin-vs-omega3':               'supplement',
   'vitamin-d-vs-magnesium':              'supplement',
   'vitamin-d-vs-vitamin-k2':             'supplement',
   'zinc-vs-vitamin-c-oral':              'supplement',
@@ -146,6 +147,7 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'centella-asiatica-vs-niacinamide':    'skin',
   'palmitoyl-tripeptide-vs-retinol':     'skin',
   'pantothenic-acid-vs-niacinamide':     'skin',
+  'ceramide-oral-vs-collagen-peptide':   'skin',
   // antiaging（追加）
   'resveratrol-vs-pterostilbene':        'antiaging',
   'fisetin-vs-quercetin':                'antiaging',
@@ -192,6 +194,14 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'pantothenic-acid-vs-niacinamide': {
     title: 'ナイアシンアミドvsパントテン酸｜B群ビタミンの違いと併用',
     description: 'ナイアシンアミド（B3）とパントテン酸（B5）を論文で比較。バリア機能・皮脂・赤みへの作用、有効濃度、併用OKの根拠、ニキビ・敏感肌での使い分けを化粧品メーカー視点で解説。',
+  },
+  'astaxanthin-vs-omega3': {
+    title: 'アスタキサンチンvsDHA・EPA｜抗酸化と必須脂肪酸の違い',
+    description: 'アスタキサンチンとDHA・EPA（オメガ3）を論文で比較。脂溶性カロテノイドによる抗酸化作用と、細胞膜構成成分としての必須脂肪酸作用の違い、有効量、肌・脳・心血管への効果分担、併用OKの根拠を化粧品メーカー視点で解説。',
+  },
+  'ceramide-oral-vs-collagen-peptide': {
+    title: '経口セラミドvsコラーゲンペプチド｜飲む美容成分の違い',
+    description: '経口セラミドとコラーゲンペプチドを論文で比較。セラミドはバリア機能・水分保持の補強、コラーゲンペプチドは真皮の弾力サポート。作用層の違い、有効量、効果が出るまでの目安、併用可否、月コストまで化粧品メーカー視点で解説。',
   },
 }
 
