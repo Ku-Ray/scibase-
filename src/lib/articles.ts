@@ -2966,7 +2966,7 @@ DHA（ドコサヘキサエン酸）は脳・神経系の細胞膜構成成分�
     ],
 
     relatedIngredientSlugs: ['ashwagandha', 'rhodiola', 'magnesium', 'l-theanine', 'phosphatidylserine', 'l-tryptophan', 'gaba'],
-    relatedArticleSlugs: ['stress-cortisol-aging', 'sleep-aging'],
+    relatedArticleSlugs: ['stress-cortisol-aging', 'sleep-aging', 'supplement-side-effects-guide'],
     concerns: ['stress', 'sleep', 'fatigue'],
   },
 
