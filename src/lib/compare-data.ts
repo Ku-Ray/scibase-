@@ -53,6 +53,7 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['pdrn',                 'retinol'],
   ['centella-asiatica',    'niacinamide'],
   ['palmitoyl-tripeptide', 'retinol'],
+  ['pantothenic-acid',     'niacinamide'],
   // ── 抗老化・長寿（追加） ────────────────────────
   ['resveratrol',          'pterostilbene'],
   ['fisetin',              'quercetin'],
@@ -144,6 +145,7 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'pdrn-vs-retinol':                     'skin',
   'centella-asiatica-vs-niacinamide':    'skin',
   'palmitoyl-tripeptide-vs-retinol':     'skin',
+  'pantothenic-acid-vs-niacinamide':     'skin',
   // antiaging（追加）
   'resveratrol-vs-pterostilbene':        'antiaging',
   'fisetin-vs-quercetin':                'antiaging',
@@ -186,6 +188,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'retinol-vs-retinal': {
     title: 'レチノールvsレチナール｜変換工程と刺激の違い',
     description: 'レチノール（ビタミンA）とレチナール（レチンアルデヒド）を論文で比較。皮膚内変換の工程数、効果発現速度、刺激・赤みのリスク、初心者向け濃度、夜のみ使用ルール、併用NG成分まで。「どちらから始めるべきか」の判定を化粧品メーカー視点で解説。',
+  },
+  'pantothenic-acid-vs-niacinamide': {
+    title: 'ナイアシンアミドvsパントテン酸｜B群ビタミンの違いと併用',
+    description: 'ナイアシンアミド（B3）とパントテン酸（B5）を論文で比較。バリア機能・皮脂・赤みへの作用、有効濃度、併用OKの根拠、ニキビ・敏感肌での使い分けを化粧品メーカー視点で解説。',
   },
 }
 
