@@ -1,0 +1,713 @@
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle } from 'lucide-react'
+import type { Metadata } from 'next'
+import { getConcern, getIngredient } from '@/lib/data'
+import { getArticle } from '@/lib/articles'
+import {
+  getConcernGuide,
+  getAllConcernGuideSlugs,
+} from '@/lib/concern-guide-data'
+import { EvidenceBadge } from '@/components/EvidenceBadge'
+import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { RichParagraphs } from '@/components/RichText'
+
+const BASE_URL = 'https://scibase.app'
+
+interface Props {
+  params: Promise<{ slug: string }>
+}
+
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return getAllConcernGuideSlugs().map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const guide = getConcernGuide(slug)
+  const concern = getConcern(slug)
+  if (!guide || !concern) return {}
+  return {
+    title: guide.title,
+    description: guide.summary + '。' + guide.bottomLine.slice(0, 80),
+    alternates: { canonical: `${BASE_URL}/concerns/${slug}/guide` },
+    openGraph: {
+      title: guide.title,
+      description: guide.summary,
+      url: `${BASE_URL}/concerns/${slug}/guide`,
+      type: 'article',
+      publishedTime: guide.publishedAt,
+      modifiedTime: guide.updatedAt,
+    },
+  }
+}
+
+const categoryHero: Record<
+  string,
+  { bg: string; border: string; text: string; tag: string }
+> = {
+  skin: {
+    bg: 'bg-rose-50',
+    border: 'border-t-rose-400',
+    text: 'text-rose-700',
+    tag: 'bg-rose-100 text-rose-800',
+  },
+  body: {
+    bg: 'bg-orange-50',
+    border: 'border-t-orange-400',
+    text: 'text-orange-700',
+    tag: 'bg-orange-100 text-orange-800',
+  },
+  cognitive: {
+    bg: 'bg-blue-50',
+    border: 'border-t-blue-500',
+    text: 'text-blue-700',
+    tag: 'bg-blue-100 text-blue-800',
+  },
+  sleep: {
+    bg: 'bg-violet-50',
+    border: 'border-t-violet-500',
+    text: 'text-violet-700',
+    tag: 'bg-violet-100 text-violet-800',
+  },
+  gut: {
+    bg: 'bg-teal-50',
+    border: 'border-t-teal-500',
+    text: 'text-teal-700',
+    tag: 'bg-teal-100 text-teal-800',
+  },
+  immunity: {
+    bg: 'bg-emerald-50',
+    border: 'border-t-emerald-500',
+    text: 'text-emerald-700',
+    tag: 'bg-emerald-100 text-emerald-800',
+  },
+  muscle: {
+    bg: 'bg-amber-50',
+    border: 'border-t-amber-500',
+    text: 'text-amber-700',
+    tag: 'bg-amber-100 text-amber-800',
+  },
+  cardiovascular: {
+    bg: 'bg-red-50',
+    border: 'border-t-red-500',
+    text: 'text-red-700',
+    tag: 'bg-red-100 text-red-800',
+  },
+}
+
+const platformLabel: Record<string, string> = {
+  iherb: 'iHerbで見る',
+  amazon: 'Amazonで見る',
+  cosme: '@cosmeで見る',
+}
+
+const studyTypeLabel: Record<string, string> = {
+  'meta-analysis': 'メタ解析',
+  rct: 'RCT',
+  cohort: 'コホート研究',
+  observational: '観察研究',
+  review: 'レビュー',
+}
+
+export default async function ConcernGuidePage({ params }: Props) {
+  const { slug } = await params
+  const guide = getConcernGuide(slug)
+  const concern = getConcern(slug)
+  if (!guide || !concern) notFound()
+
+  const hero = categoryHero[concern.category] ?? categoryHero.skin
+
+  const relatedArticles = guide.relatedArticleSlugs
+    .map((s) => getArticle(s))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a))
+
+  /* JSON-LD ── Breadcrumb */
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE_URL },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: '悩みから探す',
+        item: `${BASE_URL}/concerns`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: concern.nameJa,
+        item: `${BASE_URL}/concerns/${slug}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: '商品ガイド',
+        item: `${BASE_URL}/concerns/${slug}/guide`,
+      },
+    ],
+  }
+
+  /* JSON-LD ── ItemList（タイプ別BEST PICK） */
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${concern.nameJa}のタイプ別BEST PICK成分`,
+    numberOfItems: guide.solutionByType.length,
+    itemListElement: guide.solutionByType
+      .map((s, i) => {
+        const ing = getIngredient(s.bestPickSlug)
+        if (!ing) return null
+        return {
+          '@type': 'ListItem',
+          position: i + 1,
+          name: `${s.typeName} → ${ing.nameJa}`,
+          url: `${BASE_URL}/ingredients/${ing.slug}`,
+        }
+      })
+      .filter(Boolean),
+  }
+
+  /* JSON-LD ── FAQPage */
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: guide.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
+  /* JSON-LD ── Article */
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.summary,
+    datePublished: guide.publishedAt,
+    dateModified: guide.updatedAt,
+    author: {
+      '@type': 'Organization',
+      name: 'SciBase',
+      url: BASE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SciBase',
+      url: BASE_URL,
+    },
+    mainEntityOfPage: `${BASE_URL}/concerns/${slug}/guide`,
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
+      {/* ── [1] Hero ───────────────────────────── */}
+      <div className={`${hero.bg} border-t-4 ${hero.border}`}>
+        <div className="max-w-3xl mx-auto px-5 pt-8 pb-10">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-6 flex-wrap">
+            <Link href="/" className="hover:underline">
+              ホーム
+            </Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link href="/concerns" className="hover:underline">
+              悩みから探す
+            </Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link href={`/concerns/${slug}`} className="hover:underline">
+              {concern.nameJa}
+            </Link>
+            <ChevronRight className="w-3 h-3" />
+            <span className="text-foreground">商品ガイド</span>
+          </nav>
+
+          <span
+            className={`inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.08em] rounded-full px-2.5 py-1 mb-4 ${hero.tag}`}
+          >
+            <FileText className="w-3 h-3" />
+            化粧品メーカー現役の論文ガイド
+          </span>
+
+          <h1 className="text-[26px] sm:text-[34px] font-black text-foreground leading-[1.25] tracking-tight break-keep min-w-0">
+            {guide.title}
+          </h1>
+
+          <p className="mt-3 text-[14px] sm:text-[15px] text-foreground/75 leading-[1.85] max-w-xl">
+            {guide.summary}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3 mt-5 text-[12px] text-muted-foreground">
+            <span>
+              公開：<time dateTime={guide.publishedAt}>{guide.publishedAt}</time>
+            </span>
+            <span className="w-px h-3 bg-border" />
+            <span>
+              更新：<time dateTime={guide.updatedAt}>{guide.updatedAt}</time>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <article className="max-w-3xl mx-auto px-5 py-10">
+        {/* ── [2] 著者の前置き ── */}
+        <section className="mb-12">
+          <RichParagraphs
+            body={guide.introNote}
+            className="text-[14px] sm:text-[15px] text-foreground/85 leading-[1.95] mb-4 last:mb-0"
+          />
+        </section>
+
+        {/* ── [3] 結論先出し ── */}
+        <section className="mb-14">
+          <div className="bg-foreground/[0.04] border-l-4 border-foreground/60 rounded-r-xl p-5">
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-2 uppercase">
+              この記事の結論
+            </p>
+            <p className="text-[14px] sm:text-[15px] text-foreground leading-[1.95] font-medium">
+              {guide.bottomLine}
+            </p>
+          </div>
+        </section>
+
+        {/* ── [4] 3タイプメカニズム ── */}
+        <section className="mb-14">
+          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+            シミの3タイプを論文で整理する
+          </h2>
+          <p className="text-[14px] text-foreground/70 leading-[1.85] mb-6">
+            まず自分のシミがどのタイプかを見極めることから始める。タイプによって機序が違うため、効く成分も変わる。
+          </p>
+
+          <div className="space-y-8">
+            {guide.mechanismByType.map((m, idx) => (
+              <div
+                key={m.typeName}
+                className="border border-border rounded-2xl p-5 sm:p-6 bg-card"
+              >
+                <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-1 uppercase">
+                  TYPE {idx + 1}
+                </p>
+                <h3 className="text-[18px] sm:text-[20px] font-black text-foreground leading-snug mb-1">
+                  {m.typeName}
+                </h3>
+                <p className="text-[13px] text-foreground/70 leading-relaxed mb-4">
+                  {m.subtitle}
+                </p>
+
+                {/* 見分け方 */}
+                <div className="bg-secondary/50 rounded-xl p-4 mb-4">
+                  <p className="text-[11px] font-semibold tracking-[0.05em] text-muted-foreground mb-2 uppercase">
+                    こういう特徴があれば{m.typeName}タイプ
+                  </p>
+                  <ul className="space-y-1.5">
+                    {m.signs.map((s, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-[13px] text-foreground/85 leading-relaxed"
+                      >
+                        <span className="flex-shrink-0 text-foreground/50 mt-0.5">
+                          ・
+                        </span>
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* メカニズム本文 */}
+                <RichParagraphs
+                  body={m.body}
+                  className="text-[14px] text-foreground/85 leading-[1.95] mb-3 last:mb-0"
+                />
+
+                {/* 引用論文 */}
+                {m.paperRefs.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="text-[11px] font-semibold tracking-[0.05em] text-muted-foreground mb-2 uppercase">
+                      引用
+                    </p>
+                    <ul className="space-y-2">
+                      {m.paperRefs.map((p, i) => (
+                        <li
+                          key={i}
+                          className="text-[12px] text-foreground/70 leading-relaxed"
+                        >
+                          <span className="font-semibold text-foreground/85">
+                            {p.journal} {p.year}
+                          </span>
+                          <span className="mx-1.5 text-muted-foreground">·</span>
+                          <span className="text-muted-foreground">
+                            {studyTypeLabel[p.studyType]}
+                          </span>
+                          {p.sampleSize && (
+                            <>
+                              <span className="mx-1.5 text-muted-foreground">·</span>
+                              <span className="text-muted-foreground">
+                                n={p.sampleSize}
+                              </span>
+                            </>
+                          )}
+                          <p className="mt-1 text-foreground/80">{p.keyFinding}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── [5] タイプ別の解決策 ── */}
+        <section className="mb-14">
+          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+            タイプ別・論文で効果が確認された成分
+          </h2>
+          <p className="text-[14px] text-foreground/70 leading-[1.85] mb-8">
+            タイプを見極めたら、それぞれの機序に合った成分を選ぶ。論文ベースで効果が確認された組み合わせを順番に解説する。
+          </p>
+
+          <div className="space-y-12">
+            {guide.solutionByType.map((s, idx) => {
+              const bestPick = getIngredient(s.bestPickSlug)
+              if (!bestPick) return null
+              const secondaries = (s.secondarySlugs ?? [])
+                .map((slug) => getIngredient(slug))
+                .filter((ing): ing is NonNullable<typeof ing> => Boolean(ing))
+              return (
+                <div key={s.typeName}>
+                  <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-1 uppercase">
+                    TYPE {idx + 1} の解決策
+                  </p>
+                  <h3 className="text-[20px] sm:text-[22px] font-black text-foreground leading-snug mb-3">
+                    {s.typeName}に効く成分
+                  </h3>
+
+                  {/* BEST PICK 成分タグ */}
+                  <div className="flex flex-wrap items-center gap-2 mb-5">
+                    <span className="text-[10px] font-bold bg-foreground text-background rounded px-2 py-0.5 tracking-[0.08em]">
+                      BEST
+                    </span>
+                    <Link
+                      href={`/ingredients/${bestPick.slug}`}
+                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-foreground bg-secondary hover:bg-secondary/70 border border-border rounded-full px-3 py-1.5 min-h-[36px] transition-colors"
+                    >
+                      <EvidenceBadge rank={bestPick.evidenceRank} variant="dot" />
+                      {bestPick.nameJa}
+                      <ChevronRight className="w-3 h-3" />
+                    </Link>
+                    {secondaries.map((ing) => (
+                      <Link
+                        key={ing.slug}
+                        href={`/ingredients/${ing.slug}`}
+                        className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-foreground/85 bg-secondary/50 hover:bg-secondary/70 border border-border rounded-full px-3 py-1.5 min-h-[36px] transition-colors"
+                      >
+                        <span className="text-[10px] text-muted-foreground">＋</span>
+                        <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                        {ing.nameJa}
+                        <ChevronRight className="w-3 h-3" />
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* 本文 */}
+                  <div className="mb-6">
+                    <RichParagraphs
+                      body={s.body}
+                      className="text-[14px] sm:text-[15px] text-foreground/85 leading-[1.95] mb-4 last:mb-0"
+                    />
+                  </div>
+
+                  {/* 商品ブロック */}
+                  {s.productBlocks.length > 0 && (
+                    <div className="space-y-3">
+                      {s.productBlocks.map((pb, pbIdx) => {
+                        const ing = getIngredient(pb.ingredientSlug)
+                        if (!ing) return null
+                        const product =
+                          ing.products[pb.productIndex ?? 0] ??
+                          ing.products.find((p) => p.rank === 1) ??
+                          ing.products[0]
+                        if (!product) return null
+                        return (
+                          <div
+                            key={pbIdx}
+                            className="border-2 border-border rounded-2xl overflow-hidden bg-background"
+                          >
+                            <div className="p-5">
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-[10px] font-bold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">
+                                  PR
+                                </span>
+                                {pb.badge && (
+                                  <span className="text-[11px] font-semibold text-muted-foreground bg-secondary border border-border rounded px-2 py-0.5">
+                                    {pb.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-[12px] text-muted-foreground mb-1">
+                                {ing.nameJa} ／ {product.brand}
+                              </p>
+                              <p className="text-[15px] sm:text-[16px] font-bold text-foreground leading-snug mb-3">
+                                {product.name}
+                              </p>
+                              <p className="text-[13px] text-foreground/80 leading-[1.9] mb-4">
+                                {pb.whyJa}
+                              </p>
+                              <div className="flex flex-wrap items-center gap-3 text-[12px] text-muted-foreground mb-4">
+                                <span>
+                                  価格：
+                                  <strong className="text-foreground tabular-nums">
+                                    ¥{product.priceJpy.toLocaleString()}
+                                  </strong>
+                                </span>
+                                {product.monthlyCostJpy && (
+                                  <>
+                                    <span className="w-px h-3 bg-border" />
+                                    <span>
+                                      月コスト：
+                                      <strong className="text-foreground tabular-nums">
+                                        ¥{product.monthlyCostJpy.toLocaleString()}
+                                      </strong>
+                                    </span>
+                                  </>
+                                )}
+                              </div>
+                              <div className="flex flex-col sm:flex-row gap-2">
+                                <Link
+                                  href={`/ingredients/${ing.slug}`}
+                                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-foreground bg-white border border-border rounded-lg px-4 py-2.5 min-h-[44px] hover:border-foreground/40 hover:shadow-sm transition-all"
+                                >
+                                  論文エビデンスを読む
+                                  <ChevronRight className="w-3.5 h-3.5" />
+                                </Link>
+                                <OutboundProductLink
+                                  href={product.url}
+                                  platform={product.platform}
+                                  ingredientSlug={ing.slug}
+                                  productRank={product.rank}
+                                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-background bg-foreground rounded-lg px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity"
+                                >
+                                  {platformLabel[product.platform]}
+                                  <ChevronRight className="w-3.5 h-3.5" />
+                                </OutboundProductLink>
+                              </div>
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* ── [6] 失敗パターン ── */}
+        <section className="mb-14">
+          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+            化粧品メーカーで見てきた失敗パターン
+          </h2>
+          <p className="text-[14px] text-foreground/70 leading-[1.85] mb-6">
+            成分選びが正しくても、運用で外すと効果は出ない。実際に相談を受けてきた中で多い失敗を5つ挙げる。
+          </p>
+          <ul className="space-y-3">
+            {guide.failurePatterns.map((f, i) => (
+              <li
+                key={i}
+                className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 sm:p-5"
+              >
+                <div className="flex items-start gap-3 mb-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" />
+                  <h3 className="text-[14px] sm:text-[15px] font-bold text-foreground leading-snug">
+                    {f.title}
+                  </h3>
+                </div>
+                <p className="text-[13px] text-foreground/85 leading-[1.9] pl-7">
+                  {f.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ── [7] セルフチェック ── */}
+        <section className="mb-14">
+          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+            あなたが最初に試すべき成分
+          </h2>
+          <p className="text-[14px] text-foreground/75 leading-[1.85] mb-6">
+            {guide.selfCheck.intro}
+          </p>
+          <ul className="space-y-3">
+            {guide.selfCheck.questions.map((q, i) => (
+              <li
+                key={i}
+                className="border border-border rounded-2xl p-4 sm:p-5 bg-background"
+              >
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-[12px] font-bold tabular-nums">
+                    {i + 1}
+                  </span>
+                  <p className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">
+                    {q.q}
+                  </p>
+                </div>
+                <div className="pl-10">
+                  <p className="text-[12px] text-muted-foreground mb-2">
+                    → これは「<span className="text-foreground font-semibold">{q.typeAnswer}</span>」タイプ。論文ベースのBEST PICKは：
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {q.recommendIngredientSlugs.map((s, idx) => {
+                      const ing = getIngredient(s)
+                      if (!ing) return null
+                      const isBest = idx === 0
+                      return (
+                        <div key={s} className="flex items-center gap-2">
+                          {idx > 0 && (
+                            <span className="text-[13px] font-bold text-muted-foreground">＋</span>
+                          )}
+                          <Link
+                            href={`/ingredients/${s}`}
+                            className={`inline-flex items-center gap-1.5 text-[12px] font-semibold rounded-full px-3 py-1.5 min-h-[36px] transition-colors ${
+                              isBest
+                                ? 'text-background bg-foreground hover:bg-foreground/85'
+                                : 'text-foreground bg-secondary hover:bg-secondary/70 border border-border'
+                            }`}
+                          >
+                            {isBest && (
+                              <span className="text-[9px] font-bold tracking-[0.08em] bg-amber-400 text-amber-950 rounded px-1 py-0.5 leading-none">
+                                BEST
+                              </span>
+                            )}
+                            <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                            {ing.nameJa}
+                            <ChevronRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Disclaimer */}
+        <p className="text-[12px] text-muted-foreground bg-secondary rounded-xl p-4 mb-12 leading-relaxed">
+          論文で示された効果はあくまで研究条件下のもので、個人の効果を保証するものではありません。経口摂取は持病・服用中の薬がある場合は医師・薬剤師に相談を。商品リンクはアフィリエイト（PR）を含みます。
+        </p>
+
+        {/* ── [8] FAQ ── */}
+        <section className="mb-14">
+          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-6">
+            よくある質問
+          </h2>
+          <div className="space-y-2">
+            {guide.faqs.map((f, i) => (
+              <details
+                key={i}
+                className="group border border-border rounded-xl px-5 py-4 bg-background hover:bg-muted/20 transition-colors"
+                open={i === 0}
+              >
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-3 font-semibold text-[14px] text-foreground min-h-[44px] items-center">
+                  <span className="flex-1">{f.q}</span>
+                  <span className="text-muted-foreground text-[12px] flex-shrink-0 group-open:rotate-180 transition-transform">
+                    ▼
+                  </span>
+                </summary>
+                <p className="mt-3 text-[13px] text-foreground/75 leading-[1.95]">
+                  {f.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* ── [9] 締め・行動ステップ ── */}
+        <section className="mb-14">
+          <RichParagraphs
+            body={guide.closingSummary}
+            className="text-[14px] sm:text-[15px] text-foreground/85 leading-[1.95] mb-4 last:mb-0"
+          />
+        </section>
+
+        {/* ── [10] 関連リンク ── */}
+        <section className="mt-14 pt-10 border-t border-border">
+          {/* 親concernページへの逆向きリンク（Hub & Spoke） */}
+          <div className="mb-10">
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-3 uppercase">
+              この悩みのトップへ
+            </p>
+            <Link
+              href={`/concerns/${slug}`}
+              className="group flex items-center justify-between gap-3 bg-card border border-border rounded-xl px-5 py-4 hover:border-accent/40 hover:bg-muted/30 transition-colors"
+            >
+              <div className="min-w-0">
+                <p className="text-[14px] font-bold text-foreground group-hover:text-accent transition-colors">
+                  {concern.emoji} {concern.nameJa}に効く成分一覧を見る
+                </p>
+                <p className="text-[12px] text-muted-foreground mt-0.5 line-clamp-1">
+                  全関連成分をエビデンスランク順で表示
+                </p>
+              </div>
+              <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+            </Link>
+          </div>
+
+          {/* 関連記事 */}
+          {relatedArticles.length > 0 && (
+            <div>
+              <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-accent" />
+                関連する論文ガイド記事
+              </h2>
+              <div className="space-y-2">
+                {relatedArticles.map((a) => (
+                  <Link
+                    key={a.slug}
+                    href={`/articles/${a.slug}`}
+                    className="group block rounded-xl border border-border bg-background px-5 py-4 hover:border-accent/40 hover:bg-muted/30 transition-colors"
+                  >
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1.5">
+                      {a.categoryLabel}
+                    </p>
+                    <h3 className="font-bold text-[14px] text-foreground group-hover:text-accent leading-snug mb-1.5 transition-colors">
+                      {a.title}
+                    </h3>
+                    <p className="text-[12px] text-muted-foreground leading-relaxed line-clamp-2">
+                      {a.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      </article>
+    </>
+  )
+}

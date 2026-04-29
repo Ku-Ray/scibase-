@@ -1,6 +1,8 @@
 import Link from 'next/link'
-import { ChevronRight, Clock, ArrowRight } from 'lucide-react'
+import { ChevronRight, Clock, ArrowRight, FileText } from 'lucide-react'
 import { articles } from '@/lib/articles'
+import { concernGuides } from '@/lib/concern-guide-data'
+import { getConcern } from '@/lib/data'
 import type { Metadata } from 'next'
 import type { ArticleCategory } from '@/lib/types'
 
@@ -143,6 +145,62 @@ export default async function ArticlesPage({ searchParams }: Props) {
       <p className="text-[13px] text-muted-foreground mb-6">
         <span className="font-semibold text-foreground">{filteredArticles.length}</span> 件表示中
       </p>
+
+      {/* ── 悩み解決ガイド series（"all" カテゴリの時のみ表示） ── */}
+      {activeCat === 'all' && concernGuides.length > 0 && (
+        <section className="mb-12">
+          <div className="flex items-center gap-2 mb-1">
+            <FileText className="w-4 h-4 text-rose-600" />
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-rose-700 uppercase">
+              FEATURED · 悩み解決ガイドシリーズ
+            </p>
+          </div>
+          <h2 className="text-[18px] font-bold text-foreground leading-snug mb-1">
+            悩み起点で複数成分を横断比較する論文ガイド
+          </h2>
+          <p className="text-[13px] text-muted-foreground leading-relaxed mb-5">
+            個別成分の深掘りではなく「シミ・睡眠・薄毛」など悩みから入って、複数成分の使い分けと商品選択まで一気通貫で扱う。
+          </p>
+
+          <div className="space-y-3">
+            {concernGuides.map((guide) => {
+              const concern = getConcern(guide.concernSlug)
+              if (!concern) return null
+              return (
+                <Link
+                  key={guide.concernSlug}
+                  href={`/concerns/${guide.concernSlug}/guide`}
+                  className="group block border-2 border-rose-200 rounded-2xl p-5 sm:p-6 bg-rose-50/30 hover:bg-rose-50/60 hover:-translate-y-0.5 hover:shadow-md transition-all"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[18px] leading-none">{concern.emoji}</span>
+                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-md border bg-rose-100 text-rose-800 border-rose-200">
+                      論文ガイド
+                    </span>
+                    <span className="text-[11px] text-muted-foreground">
+                      {concern.nameJa}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-[16px] sm:text-[17px] text-foreground leading-snug mb-2 group-hover:opacity-80 transition-opacity">
+                    {guide.title}
+                  </h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2 mb-4">
+                    {guide.summary}
+                  </p>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex flex-wrap items-center gap-3 text-[12px] text-muted-foreground">
+                      <span>論文ベース・3タイプ別BEST PICK</span>
+                    </div>
+                    <span className="flex items-center gap-1.5 text-[13px] font-semibold text-rose-700 group-hover:gap-2.5 transition-all flex-shrink-0">
+                      読む <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       {/* Article List */}
       {filteredArticles.length === 0 ? (
