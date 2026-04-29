@@ -9,6 +9,9 @@ import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { ProductOfferCard } from '@/components/product/ProductOfferCard'
+import { ComparisonTable } from '@/components/product/ComparisonTable'
+import { scoreProduct, computeAxisLeaders } from '@/lib/productScore'
 import type { TocSection } from '@/components/TableOfContents'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
@@ -113,35 +116,54 @@ export default async function IngredientPage({ params }: Props) {
     ).values()
   ].slice(0, 6)
 
-  /* Platform-grouped products */
-  const platformProducts = {
-    iherb:  ing.products.filter(p => p.platform === 'iherb').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
-    amazon: ing.products.filter(p => p.platform === 'amazon').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
-    cosme:  ing.products.filter(p => p.platform === 'cosme').sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))[0] ?? null,
-  }
+  /* Products: SciBase 推奨度 DESC で並べ替え（同点は手動 rank ASC で決定）。
+     これで「1位の商品 = 最も推奨度が高い商品」が常に成立し ★ 表示と矛盾しない。 */
+  const sortedProducts = [...ing.products]
+    .map(p => ({ p, s: scoreProduct(p, ing) }))
+    .sort((a, b) => {
+      const diff = b.s.recommendationScore - a.s.recommendationScore
+      if (Math.abs(diff) > 0.001) return diff
+      return (a.p.rank ?? 99) - (b.p.rank ?? 99)
+    })
+    .map(x => x.p)
+  const heroProduct = sortedProducts.find(p => p.platform !== 'cosme') ?? null
+  const secondaryProducts = sortedProducts.filter(p => p !== heroProduct && p.platform !== 'cosme')
+  const cosmeProduct = sortedProducts.find(p => p.platform === 'cosme') ?? null
+  const heroScore = heroProduct ? scoreProduct(heroProduct, ing) : null
+  /** 軸別1位（multi-context 勝者バッジ用） */
+  const axisLeaders = computeAxisLeaders(ing)
+  /** 自動生成：BEST PICK の客観的根拠（景表法クリア・実際に4以上の強みのみ列挙） */
+  const bestPickReasonAuto = heroProduct && heroScore
+    ? [
+        heroScore.evidenceScore != null && heroScore.evidenceScore >= 4 ? '論文有効量を充足' : null,
+        (heroProduct.heavyMetalTested && heroProduct.thirdPartyTested) ? '重金属＋第三者検査済'
+          : heroProduct.heavyMetalTested ? '重金属検査済'
+          : heroProduct.thirdPartyTested ? '第三者検査済' : null,
+        heroProduct.certifications?.includes('NSF') ? 'NSF認証' :
+          heroProduct.certifications?.includes('USP') ? 'USP認証' :
+            heroProduct.certifications?.includes('GMP') ? 'GMP認証' : null,
+        heroScore.purityScore >= 4 ? 'Non-GMO/Organic 等の高純度' : null,
+      ].filter(Boolean).join('・')
+    : ''
   const searchSuffix = ing.usageType === 'topical' ? ' スキンケア' : ' サプリ'
-  const platformConfigs = [
-    {
-      key: 'iherb' as const,
-      label: 'iHerb',
-      headerBg: 'bg-emerald-100',
-      headerText: 'text-emerald-800',
-      border: 'border-emerald-200',
-      cardBg: 'bg-emerald-50/40',
-      btnClass: 'bg-emerald-600 text-white',
-      searchUrl: `https://www.iherb.com/search?kw=${encodeURIComponent(ing.nameEn)}`,
-    },
-    {
-      key: 'amazon' as const,
-      label: 'Amazon',
-      headerBg: 'bg-amber-100',
-      headerText: 'text-amber-800',
-      border: 'border-amber-200',
-      cardBg: 'bg-amber-50/40',
-      btnClass: 'bg-amber-500 text-white',
-      searchUrl: `https://www.amazon.co.jp/s?k=${encodeURIComponent(ing.nameJa + searchSuffix)}&tag=scibase-22`,
-    },
-  ]
+  const searchUrls = {
+    iherb: `https://www.iherb.com/search?kw=${encodeURIComponent(ing.nameEn)}`,
+    amazon: `https://www.amazon.co.jp/s?k=${encodeURIComponent(ing.nameJa + searchSuffix)}&tag=scibase-22`,
+    rakuten: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(ing.nameJa + searchSuffix)}/`,
+  }
+  /** 主モール以外の検索CTA（multi-CTA 構成）。主モール=heroProduct.platform は除外 */
+  const heroSubLinks: { platform: 'iherb' | 'amazon' | 'cosme'; searchUrl: string; label?: string }[] | undefined =
+    heroProduct
+      ? ([
+          heroProduct.platform !== 'amazon'
+            ? { platform: 'amazon' as const, searchUrl: searchUrls.amazon, label: `Amazonで「${ing.nameJa}」を検索` }
+            : null,
+          heroProduct.platform !== 'iherb'
+            ? { platform: 'iherb' as const, searchUrl: searchUrls.iherb, label: `iHerbで「${ing.nameEn}」を検索` }
+            : null,
+          { platform: 'cosme' as const, searchUrl: searchUrls.rakuten, label: `楽天市場で「${ing.nameJa}」を検索` },
+        ].filter(Boolean) as { platform: 'iherb' | 'amazon' | 'cosme'; searchUrl: string; label?: string }[])
+      : undefined
 
   const articleJsonLd = {
     '@context':        'https://schema.org',
@@ -479,10 +501,13 @@ export default async function IngredientPage({ params }: Props) {
           掲載内容は論文エビデンスに基づき独立して評価しています。
         </p>
 
-        {/* Description */}
+        {/* Description（改善D：tagline 平易要約を先頭に・専門解説は副次） */}
         <section id="description" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">この成分について</h2>
-          <p className="text-[15px] text-muted-foreground leading-[1.85]">{ing.description}</p>
+          <p className="text-[16px] sm:text-[17px] font-bold text-foreground leading-relaxed mb-3">
+            {ing.tagline}
+          </p>
+          <p className="text-[14px] text-muted-foreground leading-[1.85]">{ing.description}</p>
         </section>
 
         {/* こんな人に特に関係する */}
@@ -863,17 +888,17 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
-        {/* Products */}
+        {/* Products v2 — オファー設計（行動経済学・損失回避・アンカー先行） */}
         {ing.products.length > 0 && (
           <section id="products" className="mb-10 scroll-mt-20">
             {/* ヘッダー */}
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-2 gap-3">
               <h2 className="font-semibold text-[18px] text-foreground">おすすめ商品</h2>
               <span className="text-[11px] text-muted-foreground bg-secondary border border-border
-                rounded px-2 py-0.5">PR・アフィリエイトを含む</span>
+                rounded px-2 py-0.5 flex-shrink-0">PR・アフィリエイトを含む</span>
             </div>
             <p className="text-[13px] text-muted-foreground mb-5">
-              論文で有効とされた用量を含む商品を独自に評価・選定しています
+              論文で有効とされた用量・第三者検査・同成分内のコストを客観評価して選定しています。
             </p>
 
             {/* 選び方ポイント（dosageMinがある場合） */}
@@ -899,183 +924,108 @@ export default async function IngredientPage({ params }: Props) {
                   </li>
                   <li className="text-[13px] text-muted-foreground flex gap-2">
                     <span className="text-accent flex-shrink-0 font-bold">✓</span>
-                    <span><strong className="text-foreground">不要な添加物を避ける：</strong>
-                      シンプルな成分表示のものを優先
+                    <span><strong className="text-foreground">第三者検査の有無：</strong>
+                      重金属・含有量を独立機関が確認しているかは品質の重要シグナル
                     </span>
                   </li>
                 </ul>
               </div>
             )}
 
-            {/* 商品リスト - プラットフォーム別2択 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {platformConfigs.map(({ key, label, headerBg, headerText, border, cardBg, btnClass, searchUrl }) => {
-                const prod = platformProducts[key]
-                return (
-                  <div key={key}
-                    className={`rounded-2xl border ${border} ${cardBg} overflow-hidden flex flex-col`}>
-
-                    {/* Platform header */}
-                    <div className={`${headerBg} px-4 py-2.5 border-b ${border}
-                      flex items-center justify-between gap-2`}>
-                      <p className={`text-[12px] font-bold ${headerText}`}>{label}</p>
-                      {key === 'iherb' && prod && (
-                        <span className="text-[10px] font-bold bg-emerald-700 text-white
-                          rounded px-1.5 py-0.5 tracking-wide">BEST PICK</span>
-                      )}
-                      {key === 'amazon' && prod && (
-                        <span className="text-[10px] font-medium text-amber-800/70">
-                          国内配送が早い
-                        </span>
-                      )}
-                    </div>
-
-                    {prod ? (
-                      <div className="p-4 flex flex-col gap-3 flex-1">
-                        {/* Highlight + Brand + Name */}
-                        <div>
-                          {prod.highlight && (
-                            <span className="inline-block text-[10px] font-semibold bg-amber-50
-                              text-amber-700 border border-amber-200 rounded-full px-2 py-0.5 mb-1.5">
-                              {prod.highlight}
-                            </span>
-                          )}
-                          <p className="text-[10px] text-muted-foreground/60">{prod.brand}</p>
-                          <p className="font-semibold text-[14px] text-foreground leading-snug mt-0.5">
-                            {prod.name}
-                          </p>
-                        </div>
-
-                        {/* reasonJa */}
-                        {prod.reasonJa && (
-                          <p className="text-[12px] text-muted-foreground leading-relaxed line-clamp-3">
-                            {prod.reasonJa}
-                          </p>
-                        )}
-
-                        {/* Quality badges */}
-                        {(prod.heavyMetalTested || prod.thirdPartyTested ||
-                          (prod.certifications?.length ?? 0) > 0) && (
-                          <div className="flex flex-wrap gap-1">
-                            {prod.heavyMetalTested && (
-                              <span className="text-[10px] font-semibold bg-emerald-50 text-emerald-700
-                                border border-emerald-200 rounded px-1.5 py-0.5">✓ 重金属検査済</span>
-                            )}
-                            {prod.thirdPartyTested && !prod.heavyMetalTested && (
-                              <span className="text-[10px] font-semibold bg-blue-50 text-blue-700
-                                border border-blue-200 rounded px-1.5 py-0.5">✓ 第三者検査済</span>
-                            )}
-                            {prod.certifications?.includes('NSF') && (
-                              <span className="text-[10px] font-bold bg-blue-700 text-white
-                                rounded px-1.5 py-0.5">NSF</span>
-                            )}
-                            {prod.certifications?.includes('USP') && (
-                              <span className="text-[10px] font-bold bg-indigo-700 text-white
-                                rounded px-1.5 py-0.5">USP</span>
-                            )}
-                            {prod.certifications?.includes('GMP') && (
-                              <span className="text-[10px] text-muted-foreground border border-border
-                                rounded px-1.5 py-0.5">GMP</span>
-                            )}
-                          </div>
-                        )}
-
-                        {/* Price */}
-                        <div className="mt-auto pt-1">
-                          <p className="font-bold text-[18px] text-foreground tabular-nums">
-                            ¥{prod.priceJpy.toLocaleString()}
-                            <span className="text-[11px] font-normal text-muted-foreground ml-0.5">〜</span>
-                          </p>
-                          {prod.monthlyCostJpy && (
-                            <p className="text-[11px] text-muted-foreground tabular-nums">
-                              月あたり ¥{prod.monthlyCostJpy.toLocaleString()}
-                              <span className="opacity-70"> ／ 1日約¥{Math.round(prod.monthlyCostJpy / 30).toLocaleString()}</span>
-                            </p>
-                          )}
-                        </div>
-
-                        {/* CTA */}
-                        <OutboundProductLink
-                          href={prod.url}
-                          platform={key}
-                          ingredientSlug={ing.slug}
-                          productRank={prod.rank}
-                          className={`flex items-center justify-center gap-2 text-[13px] font-semibold
-                            rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90 w-full ${btnClass}`}
-                        >
-                          {label}で購入
-                          <ExternalLink className="w-3.5 h-3.5" />
-                        </OutboundProductLink>
-                      </div>
-                    ) : (
-                      /* No product — search link */
-                      <div className="p-4 flex flex-col gap-3 flex-1">
-                        <p className="text-[13px] text-muted-foreground leading-relaxed">
-                          {ing.nameJa}の商品を{label}で検索できます
-                        </p>
-                        <div className="mt-auto">
-                          <OutboundProductLink
-                            href={searchUrl}
-                            platform={key}
-                            ingredientSlug={ing.slug}
-                            className={`flex items-center justify-center gap-2 text-[13px] font-semibold
-                              rounded-xl px-4 py-2.5 transition-opacity hover:opacity-80 w-full
-                              border-2 ${border} ${headerText} bg-transparent`}
-                          >
-                            {label}で探す
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </OutboundProductLink>
-                        </div>
-                      </div>
+            {/* 結論ボックス：商品hero と同じ SciBase 推奨度を使用（矛盾回避） */}
+            {heroProduct && heroScore && (
+              <div className="mb-5 bg-foreground/[0.03] border-l-4 border-foreground/60 rounded-r-lg px-4 py-3">
+                <p className="text-[10px] font-bold tracking-wider text-muted-foreground mb-1">結論</p>
+                <p className="text-[13px] text-foreground leading-relaxed">
+                  <strong className="font-bold">迷ったら ① {heroProduct.brand} を選ぶ。</strong>
+                  <span className="ml-1 text-muted-foreground">
+                    SciBase 推奨度
+                    <span className="font-bold tabular-nums text-foreground"> ★{heroScore.recommendationScore.toFixed(2)} / 5.0</span>
+                    （当サイト掲載商品中・最上位）。
+                    {heroScore.dailyDoseMg != null && cosmeProduct == null && heroProduct.monthlyCostJpy != null && (
+                      <span> 1日<span className="font-bold tabular-nums text-foreground">¥{Math.round(heroProduct.monthlyCostJpy / 30).toLocaleString()}</span>で続けられる。</span>
                     )}
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* cosme platform（@cosme等）がある場合 */}
-            {platformProducts.cosme && (
-              <div className="mt-3 bg-card border border-border rounded-2xl p-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[12px] font-bold text-muted-foreground bg-secondary
-                    border border-border rounded px-2 py-0.5">コスメ・外用</span>
-                  {platformProducts.cosme.highlight && (
-                    <span className="text-[11px] font-semibold bg-amber-50 text-amber-700
-                      border border-amber-200 rounded-full px-2.5 py-0.5">
-                      {platformProducts.cosme.highlight}
-                    </span>
-                  )}
-                </div>
-                <p className="text-[10px] text-muted-foreground/60 mb-0.5">
-                  {platformProducts.cosme.brand}
+                  </span>
                 </p>
-                <p className="font-semibold text-[15px] text-foreground mb-2">
-                  {platformProducts.cosme.name}
-                </p>
-                {platformProducts.cosme.reasonJa && (
-                  <p className="text-[13px] text-accent font-medium mb-3">
-                    → {platformProducts.cosme.reasonJa}
-                  </p>
-                )}
-                <div className="flex items-center justify-between gap-3">
-                  <p className="font-bold text-[16px] text-foreground tabular-nums">
-                    ¥{platformProducts.cosme.priceJpy.toLocaleString()}
-                    <span className="text-[11px] font-normal text-muted-foreground ml-0.5">〜</span>
-                  </p>
-                  <OutboundProductLink
-                    href={platformProducts.cosme.url}
-                    platform="cosme"
-                    ingredientSlug={ing.slug}
-                    productRank={platformProducts.cosme.rank}
-                    className="flex items-center gap-2 text-[13px] font-semibold bg-primary
-                      text-primary-foreground rounded-xl px-4 py-2.5 transition-opacity hover:opacity-90"
-                  >
-                    購入する
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </OutboundProductLink>
-                </div>
               </div>
             )}
+
+            {/* ヒーロー：BEST PICK 縦長 v4 */}
+            {heroProduct && (
+              <div className="mb-5">
+                <ProductOfferCard
+                  product={heroProduct}
+                  ingredient={ing}
+                  variant="hero"
+                  axisLeaders={axisLeaders}
+                  showOverallRank
+                  subPlatformLinks={heroSubLinks}
+                  bestPickReason={bestPickReasonAuto || undefined}
+                />
+              </div>
+            )}
+
+            {/* セカンダリ商品：2列グリッド */}
+            {secondaryProducts.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                {secondaryProducts.map((p, i) => (
+                  <ProductOfferCard
+                    key={`${p.platform}-${i}`}
+                    product={p}
+                    ingredient={ing}
+                    variant="secondary"
+                    axisLeaders={axisLeaders}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* ソート可能比較表 v4（2商品以上のとき） */}
+            {sortedProducts.filter(p => p.platform !== 'cosme').length >= 2 && (
+              <div className="mb-5">
+                <ComparisonTable
+                  products={sortedProducts.filter(p => p.platform !== 'cosme')}
+                  ingredient={ing}
+                />
+              </div>
+            )}
+
+            {/* 何も見つからない時の検索リンク（フォールバック） */}
+            {!heroProduct && !cosmeProduct && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {(['iherb', 'amazon'] as const).map((key) => (
+                  <OutboundProductLink
+                    key={key}
+                    href={searchUrls[key]}
+                    platform={key}
+                    ingredientSlug={ing.slug}
+                    className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-xl px-4 h-12 border-2 ${
+                      key === 'iherb' ? 'border-emerald-200 text-emerald-700' : 'border-amber-200 text-amber-700'
+                    }`}
+                  >
+                    {key === 'iherb' ? 'iHerb' : 'Amazon'}で探す
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </OutboundProductLink>
+                ))}
+              </div>
+            )}
+
+            {/* cosme platform（@cosme等）がある場合 */}
+            {cosmeProduct && (
+              <div className="mt-3">
+                <ProductOfferCard
+                  product={cosmeProduct}
+                  ingredient={ing}
+                  variant="secondary"
+                />
+              </div>
+            )}
+
+            {/* スコア算出ロジック開示（法務要件） */}
+            <p className="text-[11px] text-muted-foreground/80 mt-4 leading-relaxed">
+              ※ スコアは論文有効量との整合・第三者検査の有無・同成分内のコスト分布に基づく客観算出値です。
+              掲載商品はSciBaseが評価・選定し、購入時にアフィリエイト報酬を得る場合があります（価格はユーザー負担に影響しません）。
+            </p>
           </section>
         )}
 

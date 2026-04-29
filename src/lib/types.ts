@@ -22,7 +22,10 @@ export interface Product {
   platform: 'iherb' | 'amazon' | 'cosme'
   url: string
   priceJpy: number
+  /** 1粒/1錠/1ソフトジェルあたりの含有量（mg）。`unitsPerDay` と乗じて1日量を算出 */
   dosageMg?: number
+  /** 推奨摂取数（1日あたりの粒/錠数）。`dosageMg * unitsPerDay >= ing.dosageMin` で論文有効量充足を判定 */
+  unitsPerDay?: number
   note?: string
   /** おすすめ順位（1=最推奨） */
   rank?: 1 | 2 | 3
@@ -42,6 +45,20 @@ export interface Product {
   certifications?: ('NSF' | 'USP' | 'InformedSport' | 'GMP' | 'NonGMO' | 'Organic')[]
   /** 品質に関する補足メモ */
   qualityNote?: string
+  /** 商品画像URL（Amazon/iHerbの公開imageURLをリンク参照のみ・自前ホスト/改変NG） */
+  imageUrl?: string
+  /** 配送目安（「翌日配送」「7-14日」等） */
+  shippingNote?: string
+  /** 初回購入特典（「初回20% off」等） */
+  firstOrderDiscount?: string
+  /** ベネフィット見出し（20-30字）。「[条件]の人に向く・[特徴]も好評」等。断定NG */
+  benefitHeading?: string
+  /** 詳細説明（150-250字・3-5文）。誰向け・なぜこれか・モニター/論文の声・注意点 */
+  descriptionLong?: string
+  /** 良い点（3項目程度・客観事実のみ・断定NG） */
+  pros?: string[]
+  /** 気になる点（3項目程度・客観事実のみ・「効かない」等の断定NG） */
+  cons?: string[]
 }
 
 export type AnalysisAxis =

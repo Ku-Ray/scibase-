@@ -48,6 +48,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-ksm-66-ashwagandha-600-mg-90-veg-capsules/145913',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now04633/l/8.jpg',
         priceJpy: 3200,
         dosageMg: 600,
         rank: 1,
@@ -64,6 +66,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Jarrow Formulas',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/jarrow-formulas-ashwagandha-300-mg-120-veggie-capsules/3302',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/jrw/jrw22014/l/53.jpg',
         priceJpy: 3500,
         dosageMg: 300,
         rank: 2,
@@ -231,6 +235,8 @@ export const ingredients: Ingredient[] = [
         brand: "Doctor's Best",
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/doctor-s-best-high-absorption-magnesium-lysinate-glycinate-chelated-albion-traacs-120-tablets-100-mg-per-tablet/15',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/drb/drb00025/l/124.jpg',
         priceJpy: 2800,
         dosageMg: 200,
         rank: 1,
@@ -247,6 +253,8 @@ export const ingredients: Ingredient[] = [
         brand: "Doctor's Best",
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B000BD0RT0?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61A-zRQCJiL._SL1500_.jpg',
         priceJpy: 2500,
         rank: 2,
         reasonJa: 'ALBION社TRAACS技術によるグリシン酸キレートMg。国内Prime対応で即日〜翌日届く',
@@ -344,6 +352,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-vitamin-d-3-high-potency-2-000-iu-240-softgels/16272',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00377/l/56.jpg',
         priceJpy: 1400,
         dosageMg: 50,
         rank: 1,
@@ -360,6 +370,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B079P427ZN?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61rZIUC-BKL._SL1500_.jpg',
         priceJpy: 1500,
         rank: 2,
         reasonJa: 'D3形態（コレカルシフェロール）のソフトゲル。オリーブ油溶解で吸収率高い。Prime即日配送',
@@ -440,6 +452,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Nordic Naturals',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/nordic-naturals-ultimate-omega-2x-lemon-120-soft-gels-1-075-mg-per-soft-gel/73701',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/nor/nor02152/l/69.jpg',
         priceJpy: 6800,
         rank: 1,
         reasonJa: 'Nordic NaturalsはCOA（品質検査証明書）を全ロット公開。重金属・PCB・ダイオキシン全て非検出確認済み。1粒でEPA+DHA 2150mgの高濃度処方',
@@ -456,6 +470,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-ultra-omega-3-500-epa-250-dha-180-fish-softgels/96436',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now01665/l/33.jpg',
         priceJpy: 3800,
         rank: 2,
         reasonJa: '1カプセルでEPA 500mg+DHA 250mgを達成。IFOS認証（国際魚油規格）取得でコスパが高い。Nordic Naturalsより安価な選択肢',
@@ -472,6 +488,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Life Extension',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B002ZFUVJ8?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61bFjrgmt4L._SL1500_.jpg',
         priceJpy: 5800,
         rank: 3,
         reasonJa: 'Life ExtensionはエビデンスベースのUS老舗ブランド。EPA/DHAにゴマリグナン（セサミン）とオリーブ果実エキスを複合配合し、酸化抑制と相乗効果を狙った処方。海外直送品としてAmazon JPで安定流通',
@@ -556,6 +574,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Sports Research',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B01M04S6JO?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/619weQLom1L._SL1500_.jpg',
         priceJpy: 4980,
         dosageMg: 10000,
         rank: 1,
@@ -623,6 +643,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Jarrow Formulas',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/jarrow-formulas-ubiquinol-qh-absorb-max-absorption-200-mg-60-softgels/36528',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/jrw/jrw06026/l/92.jpg',
         priceJpy: 6400,
         dosageMg: 200,
         rank: 1,
@@ -699,6 +721,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Tru Niagen',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/-/en/Vitamin-Booster-Nicotinamide-Riboside-Tablets/dp/B07TK4VYWS?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71ytNGvF2oL._SL1500_.jpg',
         priceJpy: 16000,
         dosageMg: 300,
         rank: 1,
@@ -790,6 +814,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Garden of Life',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/garden-of-life-dr-formulated-probiotics-once-daily-30-vegetarian-capsules/64433',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/gol/gol11827/l/23.jpg',
         priceJpy: 3800,
         rank: 1,
         reasonJa: '臨床研究で使用実績の多いLactobacillus acidophilus・Bifidobacterium等16菌株を配合。Dr. Perlmutter監修。NSF認証取得済み',
@@ -870,6 +896,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-resveratrol-200-mg-120-veg-capsules/16093',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now03354/l/56.jpg',
         priceJpy: 3200,
         dosageMg: 200,
         rank: 1,
@@ -959,6 +987,8 @@ export const ingredients: Ingredient[] = [
         brand: 'CeraVe',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B07XJ7XWLW?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71R7zJGeXwL._SL1500_.jpg',
         priceJpy: 3300,
         rank: 1,
         reasonJa: 'カプセル化レチノール処方で徐放性があり刺激が穏やか。皮膚科医共同開発のCeraVeはセラミド3種＋ヒアルロン酸も配合し、レチノール初心者の赤み・乾燥対策が処方レベルで組まれている',
@@ -1030,6 +1060,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Cosmedon',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0DY118QZ4?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51lx+beLRNL._SL1500_.jpg',
         priceJpy: 4980,
         rank: 1,
         reasonJa: 'レチナール500ppm（0.05%）配合の日本製美容液。2005年RCTで光老化改善が確認された濃度と一致。ビタミンA誘導体としては国内で入手できる数少ない高濃度レチナール製品',
@@ -1095,6 +1127,8 @@ export const ingredients: Ingredient[] = [
         brand: 'The Ordinary',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/-/en/Ordinary-C-Suspension-Sphere-Suspension-Hyaluronic/dp/B07S9P1R3C?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51dr08HeKbL._SL1500_.jpg',
         priceJpy: 1500,
         rank: 1,
         reasonJa: '23%高濃度でRCTに近い条件を達成。ただし刺激が強いため敏感肌は10〜12%処方から開始推奨。The Ordinaryは全成分・濃度を公開しており透明性が高い',
@@ -1159,6 +1193,8 @@ export const ingredients: Ingredient[] = [
         brand: 'CeraVe',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/CeraVe-%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%A9%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0-Moisturizing-Cream-Moisturizer/dp/B07RRFGHWK?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/41BlAlmRbbL._SL1500_.jpg',
         priceJpy: 1800,
         rank: 1,
         reasonJa: 'セラミド1・3・6-IIの3種類を配合し皮膚天然バリアに近い組成を再現。皮膚科医が最も推薦するセラミドブランドの一つ。MVEテクノロジーで成分を12時間かけて放出する設計',
@@ -1218,6 +1254,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Benton',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/benton-bakuchiol-serum-1-18-fl-oz-35-ml/115665',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/btn/btn99189/l/29.jpg',
         priceJpy: 3200,
         rank: 1,
         reasonJa: 'バクチオール0.5%を配合したシンプル処方。レチノール代替として妊娠中・授乳中・敏感肌にも使いやすい。Bentonは韓国のエビデンス重視ブランドで日本への発送も安定',
@@ -1346,6 +1384,8 @@ export const ingredients: Ingredient[] = [
         brand: "Paula's Choice",
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0BTK278VB?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/511GQdgCI2L._SL1500_.jpg',
         priceJpy: 4480,
         rank: 1,
         reasonJa: 'サリチル酸2%（RCTで使用された有効濃度）の定番リキッド。pH3.2〜3.8で角質溶解作用が発揮されるよう設計されており、毎日使えるようグリーンティーエキスで刺激を緩和。皮膚科医・成分研究者の支持が厚い',
@@ -1413,6 +1453,8 @@ export const ingredients: Ingredient[] = [
         brand: 'ANUA',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0DCGDL4LZ?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61VLmEGZIhL._SL1500_.jpg',
         priceJpy: 2800,
         rank: 1,
         reasonJa: 'アゼライン酸15%配合のセラム。欧米で処方薬として使われる15%濃度がホームケアで使える数少ない選択肢。シミ・ニキビ・酒さの赤みに1本でアプローチでき、ANUAは韓国の新世代ダーマブランドとして肌再生系処方の評価が高い',
@@ -1468,6 +1510,8 @@ export const ingredients: Ingredient[] = [
         brand: 'The Ordinary',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/Ordinary-Hyaluronic-Acid-2-30ml/dp/B01MYEZPC8?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51or0o-3nDL._SL1500_.jpg',
         priceJpy: 1400,
         rank: 1,
         reasonJa: '高分子・低分子・超低分子の3種類のHAを配合し表皮から深層まで段階的に保湿。パンテノール（B5）との組み合わせで刺激が少なく、レチノール使用時のバッファーとして最適',
@@ -1534,6 +1578,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-c-1000-with-bioflavonoids-250-veg-capsules/475',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00692/l/68.jpg',
         priceJpy: 2200,
         dosageMg: 1000,
         rank: 1,
@@ -1620,6 +1666,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Thorne',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/thorne-zinc-picolinate-30-mg-180-capsules/18460',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/thr/thr22102/l/33.jpg',
         priceJpy: 3600,
         dosageMg: 30,
         rank: 1,
@@ -1754,6 +1802,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-double-strength-l-theanine-200-mg-120-veg-capsules/54096',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00148/l/32.jpg',
         priceJpy: 2400,
         dosageMg: 200,
         rank: 1,
@@ -1770,6 +1820,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B000H7P9M0?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71Ms3qrwxoL._SL1500_.jpg',
         priceJpy: 2200,
         rank: 2,
         reasonJa: 'Suntheanine（Taiyo社特許取得L-テアニン）使用。純度99%以上。論文使用量200mgを1カプセルで達成。海外直送品でも国内Prime対応',
@@ -1851,6 +1903,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-glycine-1-000-mg-100-veg-capsules/18106',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00107/l/50.jpg',
         priceJpy: 1600,
         dosageMg: 1000,
         rank: 1,
@@ -1867,6 +1921,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0013OVZJW?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71NGfz0icuL._SL1500_.jpg',
         priceJpy: 1500,
         rank: 2,
         reasonJa: '食品グレード高純度グリシンパウダー。就寝前に3gを水や飲み物に溶かして摂取。Prime対応',
@@ -1937,6 +1993,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-sports-creatine-monohydrate-2-2-lbs-1-kg/535',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now02032/l/55.jpg',
         priceJpy: 2800,
         dosageMg: 5000,
         rank: 1,
@@ -1953,6 +2011,8 @@ export const ingredients: Ingredient[] = [
         brand: 'GronG',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B086GGFNQ2?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71MMnlereOL._SL1500_.jpg',
         priceJpy: 2500,
         rank: 2,
         reasonJa: '国産・純度99.9%のモノハイドレート。コスパ最高クラスで1kgあたりコスト低。Prime即日配送',
@@ -2029,6 +2089,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-melatonin-1-mg-100-tablets/77389',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now03262/l/27.jpg',
         priceJpy: 1200,
         dosageMg: 1,
         rank: 1,
@@ -2180,6 +2242,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-gaba-750-mg-100-veg-capsules/5020',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00089/l/27.jpg',
         priceJpy: 2200,
         dosageMg: 750,
         rank: 1,
@@ -2324,6 +2388,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Cos De BAHA',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B07H3ZQ8R4?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51dJNXlZ1KL._SL1500_.jpg',
         priceJpy: 1500,
         rank: 1,
         reasonJa: '※コウジ酸単体製品はAmazon.co.jpで入手困難なため、同様のチロシナーゼ阻害×美白効果を持つナイアシンアミド10%+亜鉛1%処方を推奨。RCTで確認済みの美白成分で、コウジ酸より刺激が少なくより多くのエビデンスがある。Cos De BAHAは韓国の処方研究ブランドで、コスパが優秀',
@@ -2387,6 +2453,8 @@ export const ingredients: Ingredient[] = [
         brand: '肌美精（クラシエ）',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B07ND57TWQ?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61TZKD9vqNL._SL1500_.jpg',
         priceJpy: 1200,
         rank: 1,
         reasonJa: 'トラネキサム酸＋ビタミンCの組み合わせを医薬部外品として配合した美容液。市販美白美容液の中でトラネキサム酸を有効成分として明記しているシリーズ。30mlで継続しやすい価格帯',
@@ -2470,6 +2538,8 @@ export const ingredients: Ingredient[] = [
         brand: 'VT Cosmetics',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B083NTHVJV?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61-8EDx5aAL._SL1500_.jpg',
         priceJpy: 1980,
         rank: 1,
         reasonJa: 'CICA（センテラアジアティカ）配合の韓国シカクリーム定番。マデカソサイド・アジアティコサイド等の活性成分を含み、敏感肌・赤み・バリア修復に特化。コスパが優秀で継続しやすい',
@@ -2518,6 +2588,8 @@ export const ingredients: Ingredient[] = [
         brand: 'The Ordinary',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0719WNNK4?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51U7hU-BIIL._SL1500_.jpg',
         priceJpy: 1500,
         rank: 1,
         reasonJa: 'サトウキビ由来スクワラン100%。シンプルで安価。どのスキンケアにも重ね使い可能',
@@ -2570,6 +2642,8 @@ export const ingredients: Ingredient[] = [
         brand: 'The Ordinary',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0937GYRL1?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51WN1Fage+L._SL1500_.jpg',
         priceJpy: 1200,
         rank: 1,
         reasonJa: '乳酸10%＋ヒアルロン酸配合で保湿とピーリングを両立。安価で試しやすい処方',
@@ -2683,6 +2757,8 @@ export const ingredients: Ingredient[] = [
         brand: 'California Gold Nutrition',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/california-gold-nutrition-astaxanthin-astalif-pure-icelandic-12-mg-120-veggie-softgels/71684',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/cgn/cgn01104/l/176.jpg',
         priceJpy: 2800,
         dosageMg: 12,
         rank: 1,
@@ -2698,6 +2774,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Nature In',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0C3ZXTC38?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71-bDA4rd1L._SL1500_.jpg',
         priceJpy: 2500,
         dosageMg: 10,
         rank: 2,
@@ -3193,6 +3271,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/now-foods-phosphatidyl-serine-120-veg-capsules/745',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now02381/l/56.jpg',
         priceJpy: 3800,
         dosageMg: 100,
         rank: 1,
@@ -3506,6 +3586,8 @@ export const ingredients: Ingredient[] = [
         brand: 'ChromaDex',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B07TK4VYWS?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71ytNGvF2oL._SL1500_.jpg',
         priceJpy: 8000,
         dosageMg: 300,
         rank: 1,
@@ -3570,6 +3652,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Nutricost',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0CKKPYTL8?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/61x6lfge8iL._SL1500_.jpg',
         priceJpy: 4500,
         dosageMg: 1000,
         rank: 1,
@@ -3627,6 +3711,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-mk-7-vitamin-k-2-extra-strength-300-mcg-60-veg-capsules/100203',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00994/l/24.jpg',
         priceJpy: 2400,
         dosageMg: 300,
         rank: 1,
@@ -3758,6 +3844,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/now-foods-iron-36-mg-90-veg-capsules/54089',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now01444/l/32.jpg',
         priceJpy: 1500,
         dosageMg: 36,
         rank: 1,
@@ -3920,6 +4008,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Life Extension',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/life-extension-lutein-plus-20-mg-60-softgels/87041',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/pra/pra70464/l/36.jpg',
         priceJpy: 2200,
         dosageMg: 20,
         rank: 1,
@@ -3974,6 +4064,8 @@ export const ingredients: Ingredient[] = [
         brand: 'California Gold Nutrition',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/california-gold-nutrition-methyl-folate-and-vitamin-c-120-veggie-capsules/96310',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/lkn/lkn01677/l/141.jpg',
         priceJpy: 2800,
         rank: 1,
         reasonJa: '活性型5-MTHF＋ビタミンC配合。MTHFR遺伝子変異がある人にも対応・ビタミンCがホモシステイン代謝をサポート。120ベジカプ',
@@ -4037,6 +4129,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Solgar',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/solgar-calcium-citrate-with-vitamin-d3-240-tablets/4467',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/drb/drb00149/l/115.jpg',
         priceJpy: 3500,
         rank: 1,
         reasonJa: 'クエン酸カルシウムは炭酸カルシウムより空腹時でも吸収しやすい。ビタミンD3配合で吸収促進',
@@ -4106,6 +4200,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Jarrow Formulas',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/jarrow-formulas-methyl-b-12-1000-mcg-100-lozenges/4212',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/nbc/nbc01037/l/40.jpg',
         priceJpy: 1800,
         rank: 1,
         reasonJa: '活性型のメチルコバラミンは吸収が速い。舌下錠で胃酸に関係なく吸収できる',
@@ -4168,6 +4264,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Thorne',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/thorne-pyridoxal-5-phosphate-180-capsules/18472',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/thr/thr12603/l/33.jpg',
         priceJpy: 3200,
         rank: 1,
         reasonJa: 'P-5-P（ピリドキサール5リン酸）は活性型B6。変換不要で直接利用できる。ThorneはNSF認証でアスリートにも信頼される品質',
@@ -4368,6 +4466,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-acetyl-l-carnitine-500-mg-200-veg-capsules/1027',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/sns/sns00155/l/37.jpg',
         priceJpy: 4200,
         rank: 1,
         reasonJa: 'コスパの良いALCAR定番品。200カプセルで長期使用に対応。第三者検査済み',
@@ -4544,6 +4644,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Otsuka Pharmaceutical',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B07QLTD47P?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71mc7g3wQTL._SL1500_.jpg',
         priceJpy: 3600,
         rank: 1,
         reasonJa: '国内唯一の臨床研究実績があるエクオール含有サプリ。1粒10mgのエクオール配合',
@@ -4674,6 +4776,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-inulin-pure-powder-227-g/659',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now01278/l/61.jpg',
         priceJpy: 1800,
         rank: 1,
         reasonJa: 'チコリ由来の有機イヌリン。パウダータイプで飲み物に混ぜやすい。コスパ良好',
@@ -4718,6 +4822,8 @@ export const ingredients: Ingredient[] = [
         brand: 'BodyBio',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0058A9SF0?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/615RUfqkPjL._SL1500_.jpg',
         priceJpy: 5500,
         rank: 1,
         reasonJa: '臨床研究でよく使用される酪酸ナトリウム形態。腸管に届く設計でIBD・腸バリア改善のエビデンスがある形態',
@@ -4783,6 +4889,8 @@ export const ingredients: Ingredient[] = [
         brand: 'SkinCeuticals',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B00095W7D4?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51rVgaFufgL._SL1500_.jpg',
         priceJpy: 22000,
         rank: 1,
         reasonJa: 'フェルラ酸研究の権威・Pinnell博士の特許処方。15%ビタミンC＋1%ビタミンE＋0.5%フェルラ酸。最も研究実績がある',
@@ -4834,6 +4942,8 @@ export const ingredients: Ingredient[] = [
         brand: 'MISSHA',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B09CK7V4T6?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/41-6l6oBmVL._SL1500_.jpg',
         priceJpy: 3980,
         rank: 1,
         reasonJa: '韓国MFDS認可のしわ改善機能性化粧品成分アデノシン配合。発酵成分・ナイアシンアミド・ペプチドの複合処方で、4週RCTでシワ年齢15.3%改善が報告されている。コスパが高く韓国コスメではEstée Lauder Advanced Night Repairのデュープとして知られる',
@@ -4887,6 +4997,8 @@ export const ingredients: Ingredient[] = [
         brand: 'La Roche-Posay',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0CSS3MC3J?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/717cDByyu5L._SL1500_.jpg',
         priceJpy: 3300,
         rank: 1,
         reasonJa: 'パンテノール（プロビタミンB5）+マデカッソシド+シア脂配合。皮膚科医推奨の敏感肌ブランドで、低刺激処方・無香料・パラベンフリー。@cosmeベストコスメ2024中価格帯フェイスクリーム1位',
@@ -5062,6 +5174,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Solgar',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/solgar-panax-ginseng-root-extract-250-mg-60-veggie-caps/4559',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/sns/sns01864/l/20.jpg',
         priceJpy: 3200,
         rank: 1,
         reasonJa: '最も研究実績の多いG115標準化エキスを使用。ジンセノサイド含有量が保証されている',
@@ -5206,6 +5320,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-5-htp-100-mg-120-veg-capsules/748',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now04910/l/33.jpg',
         priceJpy: 2200,
         rank: 1,
         reasonJa: 'グリフォニア種子由来の天然5-HTP。低用量50mgからスタートし様子を見ながら増量推奨',
@@ -5407,6 +5523,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-certified-organic-spirulina-1000-mg-500-tablets/5298',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/lif/lif20075/l/30.jpg',
         priceJpy: 2800,
         rank: 1,
         reasonJa: 'USDA有機認証取得。重金属テスト済みで安全性が高い。コスパの良いオーガニックスピルリナ',
@@ -5539,6 +5657,8 @@ export const ingredients: Ingredient[] = [
         brand: 'The Ordinary',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B07BGJMNYL?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51z79Ruw+xL._SL1500_.jpg',
         priceJpy: 1200,
         rank: 1,
         reasonJa: 'マンデル酸10%＋ヒアルロン酸配合。低価格で成分純度が高い。The Ordinaryは成分主義ブランド',
@@ -5657,6 +5777,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-l-glutamine-pure-powder-1-lb-454-g/783',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now02700/l/115.jpg',
         priceJpy: 2800,
         rank: 1,
         reasonJa: '純粉末タイプで用量調節が容易。添加物なし。NOW Foodsは第三者検査済みで価格・品質のバランスが優秀',
@@ -5742,6 +5864,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Jarrow Formulas',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/jarrow-formulas-broccomax-myrosinase-active-60-veggie-caps/1437',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/sns/sns01772/l/47.jpg',
         priceJpy: 3600,
         rank: 1,
         reasonJa: 'ミロシナーゼ活性型（体内変換が不要）を採用。Jarrowは科学的根拠を重視するブランドで第三者検査済み',
@@ -5822,6 +5946,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/now-foods-magnesium-glycinate-180-tablets-100-mg-per-tablet/88819',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now01289/l/62.jpg',
         priceJpy: 2500,
         dosageMg: 200,
         rank: 1,
@@ -6369,6 +6495,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-glutathione-500-mg-60-veg-capsules/731',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now04732/l/43.jpg',
         priceJpy: 4200,
         dosageMg: 500,
         rank: 1,
@@ -6440,6 +6568,8 @@ export const ingredients: Ingredient[] = [
         brand: 'ANUA',
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0DHL3169M?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/51FO9pE6GjL._SL1500_.jpg',
         priceJpy: 3500,
         rank: 1,
         reasonJa: 'ANUAはPDRN × ヒアルロン酸の韓国コスメ代表ブランド。PDRN配合セラムとしてAmazon.co.jpで入手しやすい',
@@ -6645,6 +6775,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/now-foods-l-tryptophan-500-mg-120-veg-capsules/13859',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00167/l/24.jpg',
         priceJpy: 3000,
         dosageMg: 500,
         rank: 1,
@@ -6739,6 +6871,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-apigenin-50-mg-90-veg-capsules/142023',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/bpu/bpu33760/l/38.jpg',
         priceJpy: 2500,
         dosageMg: 50,
         rank: 1,
@@ -6830,6 +6964,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Jarrow Formulas',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/jarrow-formulas-pterostilbene-50-mg-60-capsules/15213',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/arg/arg51650/l/63.jpg',
         priceJpy: 3500,
         dosageMg: 50,
         rank: 1,
@@ -7096,6 +7232,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-olive-leaf-extract-500-mg-60-veg-capsules/698',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now01294/l/77.jpg',
         priceJpy: 2500,
         dosageMg: 500,
         rank: 1,
@@ -7267,6 +7405,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Host Defense',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/host-defense-mushrooms-reishi-120-capsules/21453',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/fpi/fpi03033/l/105.jpg',
         priceJpy: 5800,
         dosageMg: 1000,
         rank: 1,
@@ -7608,6 +7748,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-chromium-picolinate-200-mcg-250-veg-capsules/678',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00527/l/62.jpg',
         priceJpy: 2000,
         dosageMg: 0.2,
         rank: 1,
@@ -7688,6 +7830,8 @@ export const ingredients: Ingredient[] = [
         brand: 'Amazing Herbs',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/amazing-herbs-black-seed-oil-100-pure-cold-pressed-1000-mg-60-softgels/3737',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/him/him00611/l/48.jpg',
         priceJpy: 3000,
         dosageMg: 1000,
         rank: 1,
@@ -7859,6 +8003,8 @@ export const ingredients: Ingredient[] = [
         brand: 'NOW Foods',
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-astragalus-root-500-mg-100-veg-capsules/722',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now02460/l/63.jpg',
         priceJpy: 2500,
         dosageMg: 500,
         rank: 1,
@@ -8136,6 +8282,8 @@ export const ingredients: Ingredient[] = [
       {
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0013OX7XY?tag=scibase-22',
+
+        imageUrl: 'https://m.media-amazon.com/images/I/71L85dZkshL._SL1500_.jpg',
         name: 'Alpha Lipoic Acid 300mg',
         brand: 'Jarrow Formulas',
         priceJpy: 2800,
@@ -8225,6 +8373,8 @@ export const ingredients: Ingredient[] = [
       {
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/swanson-phytoceramides-advanced-formula-30-mg-30-veggie-caps/118634',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/swv/swv02917/l/24.jpg',
         name: 'PhytoCeramides Advanced Formula 30mg (30 caps)',
         brand: 'Swanson',
         priceJpy: 2200,
@@ -8563,6 +8713,8 @@ export const ingredients: Ingredient[] = [
       {
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/naturesplus-bioperine-10-90-capsules-10-mg-per-capsule/79230',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/nap/nap04377/l/46.jpg',
         name: 'BioPerine 10mg (90 caps)',
         brand: 'NaturesPlus',
         priceJpy: 1800,
@@ -8661,6 +8813,8 @@ export const ingredients: Ingredient[] = [
       {
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-pantothenic-acid-500-mg-250-veg-capsules/326',
+
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00488/l/48.jpg',
         name: 'Pantothenic Acid 500mg (250 caps)',
         brand: 'NOW Foods',
         priceJpy: 2200,

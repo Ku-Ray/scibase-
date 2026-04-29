@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import {
-  ChevronRight, Clock, ExternalLink, ArrowRight, BookOpen, FlaskConical, Crown
+  ChevronRight, Clock, ArrowRight, BookOpen, FlaskConical, Crown
 } from 'lucide-react'
 import { getArticle, articles } from '@/lib/articles'
 import { getIngredient } from '@/lib/data'
@@ -9,7 +9,8 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
-import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { ProductOfferCard } from '@/components/product/ProductOfferCard'
+import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
 import type { Metadata } from 'next'
 
@@ -37,38 +38,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt ?? article.publishedAt,
     },
-  }
-}
-
-const platformLabel: Record<string, string> = {
-  iherb:  'iHerb',
-  amazon: 'Amazon',
-}
-
-/**
- * 記事の ingredients[] エントリから商品情報を解決する。
- * data.ts の products[0] を canonical source として、article 側は override のみ。
- * 二重管理を避けるため、article 側の productX フィールドは原則未指定にする運用。
- */
-function resolveProduct(ing: {
-  slug: string
-  productName?: string
-  productUrl?: string
-  productPlatform?: 'iherb' | 'amazon'
-  productPriceJpy?: number
-  productHighlight?: string
-}) {
-  const data = getIngredient(ing.slug)
-  const fallback = data?.products?.[0]
-  const platformRaw = ing.productPlatform ?? fallback?.platform
-  const platform: 'iherb' | 'amazon' =
-    platformRaw === 'amazon' ? 'amazon' : 'iherb' // 'cosme' 等は iherb にフォールバック
-  return {
-    name: ing.productName ?? fallback?.name,
-    url: ing.productUrl ?? fallback?.url,
-    platform,
-    priceJpy: ing.productPriceJpy ?? fallback?.monthlyCostJpy ?? fallback?.priceJpy,
-    highlight: ing.productHighlight ?? fallback?.highlight,
   }
 }
 
@@ -485,51 +454,39 @@ export default async function ArticlePage({ params }: Props) {
                   <AddToAnalyzerButton slug={ing.slug} variant="compact" />
                 </div>
 
-                {/* Product CTA — data.ts canonical / article側 override 可 */}
+                {/* Product CTA v2 — オファー設計（BEST PICK 1商品集約・BE3軸圧縮表示） */}
                 {(() => {
-                  const product = resolveProduct(ing)
-                  if (!product.url || !product.name) return null
+                  const ingData = getIngredient(ing.slug)
+                  if (!ingData) return null
+                  const sortedProducts = [...ingData.products]
+                    .filter(p => p.platform !== 'cosme')
+                    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
+                  // article側 override が指定された場合：data.ts 該当商品を優先・無ければ override の URL/名前で簡易表示
+                  let bestProduct = sortedProducts[0]
+                  if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
+                    const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
+                    if (overrideMatch) bestProduct = overrideMatch
+                  }
+                  if (!bestProduct) return null
+                  const axisLeaders = computeAxisLeaders(ingData)
                   return (
-                    <div className="border-t border-border bg-secondary px-5 py-4">
+                    <>
                       {/* 緊急性トリガー（損失回避の最終押し） */}
                       {ing.urgencyNote && (
-                        <p className="text-[12px] text-muted-foreground leading-relaxed mb-3
-                          border-l-2 border-accent/40 pl-3">
-                          {ing.urgencyNote}
-                        </p>
-                      )}
-                      <div className="flex items-center justify-between gap-3 flex-wrap">
-                        <div className="min-w-0">
-                          <p className="text-[12px] font-semibold text-foreground truncate">
-                            {product.name}
+                        <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
+                          <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
+                            {ing.urgencyNote}
                           </p>
-                          <div className="flex items-center gap-2 mt-0.5">
-                            {product.highlight && (
-                              <span className="text-[10px] px-1.5 py-0.5 bg-accent/10 text-accent
-                                rounded border border-accent/20 font-medium">
-                                {product.highlight}
-                              </span>
-                            )}
-                            {product.priceJpy && (
-                              <span className="text-[12px] text-muted-foreground">
-                                約¥{product.priceJpy.toLocaleString()}/月
-                              </span>
-                            )}
-                          </div>
                         </div>
-                        <OutboundProductLink
-                          href={product.url}
-                          platform={product.platform}
-                          ingredientSlug={ing.slug}
-                          className="inline-flex items-center gap-1.5 text-[12px] font-semibold
-                            bg-foreground text-background rounded-lg px-4 py-2
-                            hover:opacity-80 transition-opacity flex-shrink-0"
-                        >
-                          {platformLabel[product.platform]}で見る
-                          <ExternalLink className="w-3 h-3" />
-                        </OutboundProductLink>
-                      </div>
-                    </div>
+                      )}
+                      <ProductOfferCard
+                        product={bestProduct}
+                        ingredient={ingData}
+                        variant="article-compact"
+                        axisLeaders={axisLeaders}
+                        bestPickReason="6軸スコアで当サイト掲載商品中・総合最上位"
+                      />
+                    </>
                   )
                 })()}
               </div>
