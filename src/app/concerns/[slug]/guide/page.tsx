@@ -2,11 +2,12 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle } from 'lucide-react'
 import type { Metadata } from 'next'
-import { getConcern, getIngredient } from '@/lib/data'
+import { getConcern, getIngredient, concerns } from '@/lib/data'
 import { getArticle } from '@/lib/articles'
 import {
   getConcernGuide,
   getAllConcernGuideSlugs,
+  concernGuides,
 } from '@/lib/concern-guide-data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
@@ -123,6 +124,15 @@ export default async function ConcernGuidePage({ params }: Props) {
   const relatedArticles = guide.relatedArticleSlugs
     .map((s) => getArticle(s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a))
+
+  /* 他の悩み別ガイド（自分以外の同シリーズ） */
+  const otherGuides = concernGuides
+    .filter((g) => g.concernSlug !== slug)
+    .map((g) => ({ guide: g, concern: getConcern(g.concernSlug) }))
+    .filter((x): x is { guide: typeof concernGuides[number]; concern: NonNullable<ReturnType<typeof getConcern>> } => Boolean(x.concern))
+
+  /* 他の悩みを見る（/concerns/[slug] の概要ページ群） */
+  const otherConcerns = concerns.filter((c) => c.slug !== slug).slice(0, 9)
 
   /* JSON-LD ── Breadcrumb */
   const breadcrumbJsonLd = {
@@ -680,7 +690,7 @@ export default async function ConcernGuidePage({ params }: Props) {
 
           {/* 関連記事 */}
           {relatedArticles.length > 0 && (
-            <div>
+            <div className="mb-10">
               <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-accent" />
                 関連する論文ガイド記事
@@ -706,6 +716,53 @@ export default async function ConcernGuidePage({ params }: Props) {
               </div>
             </div>
           )}
+
+          {/* 他の悩み別ガイド（同シリーズの他記事・1本のみの間は非表示） */}
+          {otherGuides.length > 0 && (
+            <div className="mb-10">
+              <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
+                <FileText className="w-4 h-4 text-rose-600" />
+                他の悩み別ガイド
+              </h2>
+              <div className="space-y-2">
+                {otherGuides.map(({ guide: g, concern: c }) => (
+                  <Link
+                    key={g.concernSlug}
+                    href={`/concerns/${g.concernSlug}/guide`}
+                    className="group flex items-start gap-3 rounded-xl border-2 border-rose-200 bg-rose-50/30 px-5 py-4 hover:bg-rose-50/60 transition-colors"
+                  >
+                    <span className="text-[20px] leading-none flex-shrink-0 mt-0.5">{c.emoji}</span>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose-700 mb-1">
+                        論文ガイド · {c.nameJa}
+                      </p>
+                      <h3 className="font-bold text-[14px] text-foreground group-hover:text-foreground/85 leading-snug">
+                        {g.title}
+                      </h3>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 他の悩みを見る */}
+          <div>
+            <p className="font-medium text-[14px] text-foreground mb-3">他の悩みを見る</p>
+            <div className="flex flex-wrap gap-2">
+              {otherConcerns.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/concerns/${c.slug}`}
+                  className={`inline-flex items-center gap-1.5 text-[13px] border rounded-full px-4 py-2 min-h-[44px] hover:border-foreground/40 hover:bg-muted/30 transition-all cat-${c.category}`}
+                >
+                  <span>{c.emoji}</span>
+                  {c.nameJa}
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
       </article>
     </>
