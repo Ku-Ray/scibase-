@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, ExternalLink, ArrowLeft, ArrowRight, Trophy, BarChart2, GitCompare, BookOpen, Clock } from 'lucide-react'
+import { ChevronRight, ExternalLink, ArrowLeft, ArrowRight, Trophy, BarChart2, GitCompare, BookOpen, Clock, Compass } from 'lucide-react'
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
 import { getArticlesByIngredient } from '@/lib/articles'
 import { getAlternatives } from '@/lib/utils'
@@ -92,6 +92,19 @@ const rankDesc: Record<EvidenceRank, string> = {
 }
 
 const BASE_URL = 'https://scibase.app'
+
+/* Pillar #1（30代抗老化サプリ完全ガイド）で言及される主要成分。
+   該当成分ページからのみ Pillar #1 への逆向き内部リンクを表示し、
+   PageRank を集約しつつ関連性を保つ。 */
+const PILLAR1_INGREDIENTS = new Set([
+  '5-htp', 'alpha-lipoic-acid', 'ashwagandha', 'astaxanthin', 'bakuchiol',
+  'berberine', 'calcium', 'chromium', 'collagen-peptide', 'coq10',
+  'folic-acid', 'gaba', 'ginkgo-biloba', 'glycine', 'iron',
+  'l-theanine', 'l-tryptophan', 'magnesium', 'magnesium-glycinate', 'melatonin',
+  'niacin', 'nmn', 'omega3', 'probiotics', 'resveratrol',
+  'retinol', 'rhodiola', 'soy-isoflavones', 'tmg', 'tranexamic-acid',
+  'vitamin-c-oral', 'vitamin-d', 'vitamin-e', 'vitamin-k2', 'zinc',
+])
 
 export default async function IngredientPage({ params }: Props) {
   const { slug } = await params
@@ -1204,6 +1217,26 @@ export default async function IngredientPage({ params }: Props) {
               </Link>
             )}
           </div>
+          {PILLAR1_INGREDIENTS.has(slug) && (
+            <Link
+              href="/articles/anti-aging-supplement-guide-30s"
+              className="group flex items-start gap-3 border border-border bg-card
+                rounded-2xl px-5 py-4 mb-6 hover:border-accent/50 hover:shadow-sm transition-all"
+            >
+              <Compass className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <p className="font-semibold text-[14px] text-foreground leading-snug
+                  group-hover:text-accent transition-colors">
+                  30代から始める論文で選ぶ抗老化サプリ完全ガイドを読む
+                </p>
+                <p className="text-[12px] text-muted-foreground mt-0.5 leading-snug">
+                  肌・脳・代謝・免疫・睡眠・ストレスの6領域を論文で組み立てる
+                </p>
+              </div>
+              <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1
+                group-hover:text-accent transition-colors" />
+            </Link>
+          )}
           <Link href="/ingredients"
             className="inline-flex items-center gap-2 text-[13px] text-muted-foreground
               hover:text-foreground transition-colors">
