@@ -276,21 +276,6 @@ export const ingredients: Ingredient[] = [
         ],
         qualityNote: 'ALBION社TRAACS技術によるキレートMg。第三者認証済みGMP工場で製造',
       },
-      {
-        name: 'High Absorption Magnesium Glycinate 200mg 240錠',
-        brand: "Doctor's Best",
-        platform: 'amazon',
-        url: 'https://www.amazon.co.jp/dp/B000BD0RT0?tag=scibase-22',
-
-        imageUrl: 'https://m.media-amazon.com/images/I/61A-zRQCJiL._SL1500_.jpg',
-        priceJpy: 2500,
-        rank: 2,
-        reasonJa: 'ALBION社TRAACS技術によるグリシン酸キレートMg。国内Prime対応で即日〜翌日届く',
-        highlight: 'Prime即配',
-        monthlyCostJpy: 630,
-        unitsPerDay: 2,
-        form: 'カプセル',
-      },
     ],
     whoFor: [
       '寝付きが悪い・夜中に目が覚める',

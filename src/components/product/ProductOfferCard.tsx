@@ -319,6 +319,71 @@ function axisScoreColor(v: number | null): string {
   return 'text-muted-foreground'
 }
 
+/**
+ * CTA stack（モール別購入ボタン群）。hero card の上部・下部の2箇所で同じものを描画する。
+ * mybest はスマホで card 末尾に CTA を配置することで「読み終え→即購入」の摩擦を減らしている。
+ */
+function CtaStack({
+  product,
+  ingredient,
+  subPlatformLinks,
+}: {
+  product: Product
+  ingredient: Ingredient
+  subPlatformLinks: SubPlatformLink[] | undefined
+}) {
+  return (
+    <div className="flex flex-col gap-2">
+      <div>
+        <div className="relative">
+          {product.firstOrderDiscount && (
+            <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10 text-[10px] font-bold bg-orange-100 text-orange-800 border border-orange-300 rounded px-2 py-0.5 whitespace-nowrap shadow-sm">
+              {product.firstOrderDiscount}
+            </span>
+          )}
+          <OutboundProductLink
+            href={product.url}
+            platform={product.platform}
+            ingredientSlug={ingredient.slug}
+            productRank={product.rank}
+            className={`flex items-center justify-center gap-2 text-[13px] font-bold rounded-lg px-3 h-12 transition-colors w-full ${PRIMARY_CTA}`}
+          >
+            <span className="flex flex-col items-center leading-tight">
+              <span>{platformLabel[product.platform]}で詳細を見る</span>
+              {product.monthlyCostJpy != null && (
+                <span className="text-[11px] font-semibold opacity-90 tabular-nums">{formatYen(product.monthlyCostJpy)}</span>
+              )}
+            </span>
+            <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
+          </OutboundProductLink>
+        </div>
+        <p className="text-[10px] text-muted-foreground/90 leading-snug mt-1.5 text-center">
+          {PLATFORM_TRUST_NOTE[product.platform]}
+        </p>
+      </div>
+      {subPlatformLinks?.map(sub => (
+        <div key={sub.platform + sub.searchUrl}>
+          <OutboundProductLink
+            href={sub.searchUrl}
+            platform={sub.platform}
+            ingredientSlug={ingredient.slug}
+            className={`flex items-center justify-center gap-2 text-[12px] font-bold rounded-lg px-3 h-11 transition-colors w-full ${PRIMARY_CTA}`}
+          >
+            <span className="flex flex-col items-center leading-tight">
+              <span>{sub.label ?? `${platformLabel[sub.platform]}で探す`}</span>
+              <span className="text-[10px] font-medium opacity-85">価格は検索結果で確認</span>
+            </span>
+            <ExternalLink className="w-3 h-3 flex-shrink-0" />
+          </OutboundProductLink>
+          <p className="text-[10px] text-muted-foreground/80 leading-snug mt-1 text-center">
+            {PLATFORM_SEARCH_TRUST_NOTE[sub.platform]}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function HeroMybestCard({
   product,
   ingredient,
@@ -465,53 +530,8 @@ function HeroMybestCard({
             </div>
 
             {/* CTA 縦並び（mybest 形式・モール名 + 価格） */}
-            <div className="flex flex-col gap-2 pt-1">
-              <div>
-                <div className="relative">
-                  {product.firstOrderDiscount && (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10 text-[10px] font-bold bg-orange-100 text-orange-800 border border-orange-300 rounded px-2 py-0.5 whitespace-nowrap shadow-sm">
-                      {product.firstOrderDiscount}
-                    </span>
-                  )}
-                  <OutboundProductLink
-                    href={product.url}
-                    platform={product.platform}
-                    ingredientSlug={ingredient.slug}
-                    productRank={product.rank}
-                    className={`flex items-center justify-center gap-2 text-[13px] font-bold rounded-lg px-3 h-12 transition-colors w-full ${PRIMARY_CTA}`}
-                  >
-                    <span className="flex flex-col items-center leading-tight">
-                      <span>{platformLabel[product.platform]}で詳細を見る</span>
-                      {product.monthlyCostJpy != null && (
-                        <span className="text-[11px] font-semibold opacity-90 tabular-nums">{formatYen(product.monthlyCostJpy)}</span>
-                      )}
-                    </span>
-                    <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
-                  </OutboundProductLink>
-                </div>
-                <p className="text-[10px] text-muted-foreground/90 leading-snug mt-1.5 text-center">
-                  {PLATFORM_TRUST_NOTE[product.platform]}
-                </p>
-              </div>
-              {subPlatformLinks?.map(sub => (
-                <div key={sub.platform + sub.searchUrl}>
-                  <OutboundProductLink
-                    href={sub.searchUrl}
-                    platform={sub.platform}
-                    ingredientSlug={ingredient.slug}
-                    className={`flex items-center justify-center gap-2 text-[12px] font-bold rounded-lg px-3 h-11 transition-colors w-full ${PRIMARY_CTA}`}
-                  >
-                    <span className="flex flex-col items-center leading-tight">
-                      <span>{sub.label ?? `${platformLabel[sub.platform]}で探す`}</span>
-                      <span className="text-[10px] font-medium opacity-85">価格は検索結果で確認</span>
-                    </span>
-                    <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                  </OutboundProductLink>
-                  <p className="text-[10px] text-muted-foreground/80 leading-snug mt-1 text-center">
-                    {PLATFORM_SEARCH_TRUST_NOTE[sub.platform]}
-                  </p>
-                </div>
-              ))}
+            <div className="pt-1">
+              <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} />
             </div>
           </div>
         </div>
@@ -597,6 +617,14 @@ function HeroMybestCard({
 
         {/* 副作用・併用注意コラプス（改善A） */}
         <SafetyDisclosureCollapse ingredient={ingredient} />
+
+        {/* 下部 CTA（mybest 風・読み終え→即購入の摩擦削減） */}
+        <div className="pt-2 border-t border-border">
+          <p className="text-[11px] text-muted-foreground text-center mb-3">
+            ここまで読んだ方へ・購入はこちら
+          </p>
+          <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} />
+        </div>
 
         {bestPickReason && (
           <p className="text-[11px] text-muted-foreground text-center leading-relaxed">
