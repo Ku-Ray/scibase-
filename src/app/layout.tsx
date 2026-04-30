@@ -87,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja" className={notoSansJP.variable}>
       <head>
         <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
+        <meta name="impact-site-verification" content="95344c15-5ed3-423e-8ac3-5536380adf4f" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
@@ -108,6 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body className="font-[var(--font-noto),_'Hiragino_Sans',_system-ui,_sans-serif] flex flex-col min-h-screen bg-background text-foreground">
+        <p className="sr-only" aria-hidden="true">Impact-Site-Verification: 95344c15-5ed3-423e-8ac3-5536380adf4f</p>
         <Header />
         <main className="flex-1 pb-16 sm:pb-0">{children}</main>
         <Footer />
