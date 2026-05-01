@@ -297,13 +297,32 @@ export default function AboutPage() {
               <p>
                 上記6軸を以下の重みで合成して、
                 <span className="font-semibold text-foreground">SciBase推奨度</span>を算出します。
+                成分の使用形態（経口サプリ／外用化粧品）によって重み付けを切り替えます。
               </p>
-              <p className="bg-secondary border border-border rounded-xl px-4 py-3 text-[13px] tabular-nums">
-                論文整合 × 0.40 ＋ 第三者検査 × 0.25 ＋ 認証 × 0.15 ＋ 純度 × 0.10 ＋ コスパ × 0.05 ＋ 配送 × 0.05
-              </p>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-[12px] font-semibold text-foreground mb-1.5">
+                    経口サプリ（成分の usageType: oral）
+                  </p>
+                  <p className="bg-secondary border border-border rounded-xl px-4 py-3 text-[13px] tabular-nums">
+                    論文整合 × 0.40 ＋ 第三者検査 × 0.25 ＋ 認証 × 0.15 ＋ 純度 × 0.10 ＋ コスパ × 0.05 ＋ 配送 × 0.05
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[12px] font-semibold text-foreground mb-1.5">
+                    外用化粧品（成分の usageType: topical / both）
+                  </p>
+                  <p className="bg-secondary border border-border rounded-xl px-4 py-3 text-[13px] tabular-nums">
+                    論文整合 × 0.60 ＋ コスパ × 0.20 ＋ 配送 × 0.10 ＋ 第三者検査 × 0.05 ＋ 認証 × 0.03 ＋ 純度 × 0.02
+                  </p>
+                </div>
+              </div>
               <p>
-                論文整合と第三者検査に重みの65%を寄せているのは、
-                SciBase の編集方針（<span className="font-semibold text-foreground">論文ベース・科学的選定</span>）を数値に反映するためです。
+                経口は論文整合と第三者検査に重みの65%を寄せ、
+                外用は論文整合に60%を寄せています。
+                外用商品では heavy metal 検査・GMP/Organic 等の表示が業界慣習として一般的でないため、
+                これらを高い重みにすると実態を反映しないスコアになります。
+                <span className="font-semibold text-foreground">論文ベース・科学的選定</span>という編集方針はどちらも共通で、
                 価格や配送スピードが評価の主軸になることは設計上ありません。
               </p>
               <p>

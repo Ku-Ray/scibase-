@@ -142,18 +142,31 @@ function calcTotalScore(s: Omit<ProductScore, 'totalScore' | 'recommendationScor
  * 論文ベース×科学的選定という SciBase の編集方針を数値化したもの。
  * 1位商品は通常 ★4.5 以上になる設計（mybest が 1位 ★5.00 にしているのと同じ役割）。
  *
+ * usageType による重み分岐:
+ * - 経口 (oral / undefined): 論文40% + 第三者検査25% + 認証15% + 純度10% + コスパ5% + 配送5%
+ * - 外用 (topical / both): 論文60% + コスパ20% + 配送10% + 第三者検査5% + 認証3% + 純度2%
+ *   外用商品は heavy metal/GMP/Organic等の表示が一般的でないため、
+ *   論文整合（濃度×成分エビデンス）を主軸に評価する。
+ *
  * null 軸は重みから除外し、残り軸の重みで再正規化する（欠損を中立3で埋めない）。
  * これにより「データが揃わない商品が中位スコアで実態より高く見える」バイアスを排除。
  * 算出基準は /about#scoring で全公開（景表法・優良誤認の予防）。
  */
-function calcRecommendationScore(s: Omit<ProductScore, 'totalScore' | 'recommendationScore' | 'unitCostPerMg'>): number {
+function calcRecommendationScore(
+  s: Omit<ProductScore, 'totalScore' | 'recommendationScore' | 'unitCostPerMg'>,
+  usageType: Ingredient['usageType'],
+): number {
+  const isTopical = usageType === 'topical' || usageType === 'both'
+  const weights = isTopical
+    ? { evidence: 0.60, thirdParty: 0.05, certification: 0.03, purity: 0.02, cost: 0.20, shipping: 0.10 }
+    : { evidence: 0.40, thirdParty: 0.25, certification: 0.15, purity: 0.10, cost: 0.05, shipping: 0.05 }
   const axes: { value: number | null; weight: number }[] = [
-    { value: s.evidenceScore, weight: 0.40 },
-    { value: s.thirdPartyScore, weight: 0.25 },
-    { value: s.certificationScore, weight: 0.15 },
-    { value: s.purityScore, weight: 0.10 },
-    { value: s.costScore, weight: 0.05 },
-    { value: s.shippingScore, weight: 0.05 },
+    { value: s.evidenceScore, weight: weights.evidence },
+    { value: s.thirdPartyScore, weight: weights.thirdParty },
+    { value: s.certificationScore, weight: weights.certification },
+    { value: s.purityScore, weight: weights.purity },
+    { value: s.costScore, weight: weights.cost },
+    { value: s.shippingScore, weight: weights.shipping },
   ]
   // null 軸を除外して残り重みで再正規化
   const valid = axes.filter((a): a is { value: number; weight: number } => a.value != null)
@@ -191,7 +204,7 @@ export function scoreProduct(product: Product, ingredient: Ingredient): ProductS
   return {
     ...partial,
     totalScore: calcTotalScore(partial),
-    recommendationScore: calcRecommendationScore(partial),
+    recommendationScore: calcRecommendationScore(partial, ingredient.usageType),
     unitCostPerMg: calcUnitCost(product, dailyDoseMg),
   }
 }
