@@ -123,15 +123,16 @@ function calcPurityScore(p: Product): number {
 }
 
 function calcTotalScore(s: Omit<ProductScore, 'totalScore' | 'recommendationScore' | 'unitCostPerMg'>): number {
-  // null 軸はニュートラル（3）として平均に組み入れる
+  // null 軸は除外して算出（欠損を中立3で埋めない・/about#scoring 公開ロジック）
   const axes = [
-    s.evidenceScore ?? 3,
+    s.evidenceScore,
     s.thirdPartyScore,
-    s.costScore ?? 3,
+    s.costScore,
     s.certificationScore,
     s.shippingScore,
     s.purityScore,
-  ]
+  ].filter((v): v is number => v != null)
+  if (axes.length === 0) return 1.0
   const sum = axes.reduce((a, b) => a + b, 0)
   return Math.round((sum / axes.length) * 10) / 10
 }
@@ -140,22 +141,25 @@ function calcTotalScore(s: Omit<ProductScore, 'totalScore' | 'recommendationScor
  * SciBase 推奨度：論文整合と第三者検査を強く重み付けした合成スコア。
  * 論文ベース×科学的選定という SciBase の編集方針を数値化したもの。
  * 1位商品は通常 ★4.5 以上になる設計（mybest が 1位 ★5.00 にしているのと同じ役割）。
+ *
+ * null 軸は重みから除外し、残り軸の重みで再正規化する（欠損を中立3で埋めない）。
+ * これにより「データが揃わない商品が中位スコアで実態より高く見える」バイアスを排除。
+ * 算出基準は /about#scoring で全公開（景表法・優良誤認の予防）。
  */
 function calcRecommendationScore(s: Omit<ProductScore, 'totalScore' | 'recommendationScore' | 'unitCostPerMg'>): number {
-  const evidenceN = (s.evidenceScore ?? 3) / 5
-  const thirdPartyN = s.thirdPartyScore / 5
-  const certN = s.certificationScore / 5
-  const purityN = s.purityScore / 5
-  const costN = (s.costScore ?? 3) / 5
-  const shipN = s.shippingScore / 5
-  // 重み付き平均（合計 1.0）
-  const weighted =
-    evidenceN * 0.40 +
-    thirdPartyN * 0.25 +
-    certN * 0.15 +
-    purityN * 0.10 +
-    costN * 0.05 +
-    shipN * 0.05
+  const axes: { value: number | null; weight: number }[] = [
+    { value: s.evidenceScore, weight: 0.40 },
+    { value: s.thirdPartyScore, weight: 0.25 },
+    { value: s.certificationScore, weight: 0.15 },
+    { value: s.purityScore, weight: 0.10 },
+    { value: s.costScore, weight: 0.05 },
+    { value: s.shippingScore, weight: 0.05 },
+  ]
+  // null 軸を除外して残り重みで再正規化
+  const valid = axes.filter((a): a is { value: number; weight: number } => a.value != null)
+  if (valid.length === 0) return 1.0
+  const totalWeight = valid.reduce((sum, a) => sum + a.weight, 0)
+  const weighted = valid.reduce((sum, a) => sum + (a.value / 5) * a.weight, 0) / totalWeight
   // 0-1 を 1.0-5.0 にスケール（最低でも 1.0）
   const score = Math.max(1, weighted * 5)
   return Math.round(score * 10) / 10
