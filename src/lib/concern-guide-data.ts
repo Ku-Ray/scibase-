@@ -84,6 +84,36 @@ export interface ConcernGuideSelfCheckQuestion {
   recommendIngredientSlugs: string[]
 }
 
+/** タイプ別マイルストーン（時間割引対抗の callout 用） */
+export interface ConcernGuideMilestoneByType {
+  /** mechanismByType[].typeName と一致 */
+  typeName: string
+  /** 例: { period: '3ヶ月', sign: '抜け毛量がやや減り始める' } */
+  milestones: { period: string; sign: string }[]
+}
+
+/** タイプ別 高単価アフィCTA（Phase C で導入） */
+export interface ConcernGuideClinicCTAByType {
+  /** mechanismByType[].typeName と一致 */
+  typeName: string
+  /** 例:「もっと本気で止めたい人へ」等 */
+  headline: string
+  /** 80-150字・サプリとの棲み分けを明記 */
+  body: string
+  products: {
+    name: string
+    brand?: string
+    /** ASPアフィURL */
+    url: string
+    /** 月額または1回あたりの相場 */
+    priceJpy?: number
+    /** なぜこのクリニック・80-120字 */
+    whyJa: string
+    /** 「初診¥1,500」等 */
+    badge?: string
+  }[]
+}
+
 export interface ConcernGuide {
   concernSlug: string
   /** h1兼タイトル */
@@ -113,6 +143,19 @@ export interface ConcernGuide {
   closingSummary: string
   /** 章[10] 関連既存記事 slug（/articles/[slug]） */
   relatedArticleSlugs: string[]
+
+  /** SEO用<title>タグ（H1とは別）。未指定時は title をフォールバック */
+  seoTitle?: string
+  /** Meta description（CTR最適化用個別化）。未指定時は summary をフォールバック */
+  metaDescription?: string
+  /** 価格アンカリング（bottomLine 直後に表示する1-2行） */
+  priceAnchor?: string
+  /** タイプ別 3-12ヶ月マイルストーン（solutionByType の各typeNameと一致） */
+  milestonesByType?: ConcernGuideMilestoneByType[]
+  /** 成功パターン（failurePatterns 後に gain framing として配置）3-5項目 */
+  successProfile?: string[]
+  /** タイプ別 高単価アフィCTA（typeName単位で配置・全TYPEに置かないこと） */
+  clinicCTAByType?: ConcernGuideClinicCTAByType[]
 }
 
 const concernGuides: ConcernGuide[] = [

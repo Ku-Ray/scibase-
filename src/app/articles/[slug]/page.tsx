@@ -40,13 +40,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const guide = getConcernGuide(guideMatch.concernSlug)
     if (!guide) return {}
     const url = `${BASE_URL}/articles/${slug}`
+    const metaTitle = guide.seoTitle ?? guide.title
+    const metaDescription =
+      guide.metaDescription ?? guide.summary + '。' + guide.bottomLine.slice(0, 80)
+    const ogDescription = guide.metaDescription ?? guide.summary
     return {
-      title: guide.title,
-      description: guide.summary + '。' + guide.bottomLine.slice(0, 80),
+      title: metaTitle,
+      description: metaDescription,
       alternates: { canonical: url },
       openGraph: {
-        title: guide.title,
-        description: guide.summary,
+        title: metaTitle,
+        description: ogDescription,
         url,
         type: 'article',
         publishedTime: guide.publishedAt,

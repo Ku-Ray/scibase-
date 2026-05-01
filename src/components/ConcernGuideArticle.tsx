@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle } from 'lucide-react'
+import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle, CheckCircle2, Stethoscope } from 'lucide-react'
 import { getConcern, getIngredient, concerns } from '@/lib/data'
 import { getArticle } from '@/lib/articles'
 import { getConcernGuide, concernGuides } from '@/lib/concern-guide-data'
@@ -179,6 +179,17 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               {guide.bottomLine}
             </p>
           </div>
+
+          {guide.priceAnchor && (
+            <div className="mt-3 bg-emerald-50/70 border-l-4 border-emerald-500 rounded-r-xl px-5 py-3">
+              <p className="text-[11px] font-semibold tracking-[0.1em] text-emerald-700 mb-1.5 uppercase">
+                価格の目安
+              </p>
+              <p className="text-[13px] sm:text-[14px] text-foreground/85 leading-[1.85]">
+                {guide.priceAnchor}
+              </p>
+            </div>
+          )}
         </section>
 
         {/* ── [4] 3タイプメカニズム ── */}
@@ -266,8 +277,10 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               const secondaries = (s.secondarySlugs ?? [])
                 .map((slug) => getIngredient(slug))
                 .filter((ing): ing is NonNullable<typeof ing> => Boolean(ing))
+              const milestone = guide.milestonesByType?.find((m) => m.typeName === s.typeName)
+              const clinic = guide.clinicCTAByType?.find((c) => c.typeName === s.typeName)
               return (
-                <div key={s.typeName}>
+                <div key={s.typeName} id={`solution-type-${idx}`} className="scroll-mt-20">
                   <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-1 uppercase">
                     TYPE {idx + 1} の解決策
                   </p>
@@ -309,7 +322,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                   </div>
 
                   {s.productBlocks.length > 0 && (
-                    <div className="space-y-3">
+                    <div className="space-y-3" id={`bestpick-type-${idx}`}>
                       {s.productBlocks.map((pb, pbIdx) => {
                         const ing = getIngredient(pb.ingredientSlug)
                         if (!ing) return null
@@ -376,6 +389,79 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                       })}
                     </div>
                   )}
+
+                  {milestone && milestone.milestones.length > 0 && (
+                    <div className="mt-6 border border-border rounded-2xl p-5 bg-secondary/30">
+                      <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-4 uppercase">
+                        {s.typeName}・継続のマイルストーン
+                      </p>
+                      <ol className="relative border-l-2 border-foreground/15 ml-2 space-y-4">
+                        {milestone.milestones.map((mile, mi) => (
+                          <li key={mi} className="pl-5 relative">
+                            <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-foreground/70 border-2 border-background" />
+                            <p className="text-[13px] font-bold text-foreground tabular-nums">{mile.period}</p>
+                            <p className="text-[13px] text-foreground/80 leading-relaxed mt-0.5">{mile.sign}</p>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
+
+                  {clinic && clinic.products.length > 0 && (
+                    <div className="mt-6 border-2 border-blue-300 bg-blue-50/40 rounded-2xl p-5">
+                      <div className="flex items-start gap-2 mb-3">
+                        <Stethoscope className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
+                        <div className="min-w-0">
+                          <p className="text-[11px] font-semibold tracking-[0.08em] text-blue-700 mb-1 uppercase">
+                            医療ルート（補助）
+                          </p>
+                          <h4 className="text-[15px] sm:text-[16px] font-bold text-foreground leading-snug">
+                            {clinic.headline}
+                          </h4>
+                        </div>
+                      </div>
+                      <p className="text-[13px] text-foreground/85 leading-[1.9] mb-4">
+                        {clinic.body}
+                      </p>
+                      <div className="space-y-3">
+                        {clinic.products.map((p, pi) => (
+                          <div key={pi} className="bg-background border border-border rounded-xl p-4">
+                            <div className="flex items-center gap-2 mb-2 flex-wrap">
+                              <span className="text-[10px] font-bold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
+                              {p.badge && (
+                                <span className="text-[11px] font-semibold text-blue-700 bg-blue-100 border border-blue-200 rounded px-2 py-0.5">
+                                  {p.badge}
+                                </span>
+                              )}
+                            </div>
+                            {p.brand && (
+                              <p className="text-[12px] text-muted-foreground mb-1">{p.brand}</p>
+                            )}
+                            <p className="text-[15px] font-bold text-foreground leading-snug mb-2">
+                              {p.name}
+                            </p>
+                            <p className="text-[13px] text-foreground/80 leading-[1.9] mb-3">
+                              {p.whyJa}
+                            </p>
+                            {p.priceJpy != null && (
+                              <p className="text-[12px] text-muted-foreground mb-3">
+                                目安：<strong className="text-foreground tabular-nums">¥{p.priceJpy.toLocaleString()}</strong>
+                              </p>
+                            )}
+                            <a
+                              href={p.url}
+                              target="_blank"
+                              rel="nofollow sponsored noopener"
+                              className="inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-background bg-blue-700 rounded-lg px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity w-full sm:w-auto"
+                            >
+                              公式サイトを見る
+                              <ChevronRight className="w-3.5 h-3.5" />
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )
             })}
@@ -401,6 +487,25 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               </li>
             ))}
           </ul>
+
+          {guide.successProfile && guide.successProfile.length > 0 && (
+            <div className="mt-6 bg-emerald-50/60 border-2 border-emerald-200 rounded-2xl p-5 sm:p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
+                <h3 className="text-[14px] sm:text-[15px] font-bold text-emerald-900 leading-snug">
+                  逆に、うまくいく人の共通パターン
+                </h3>
+              </div>
+              <ul className="space-y-2 pl-1">
+                {guide.successProfile.map((sp, i) => (
+                  <li key={i} className="flex items-start gap-2 text-[13px] text-foreground/85 leading-[1.9]">
+                    <span className="flex-shrink-0 text-emerald-600 font-bold mt-0.5">✓</span>
+                    <span>{sp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         {/* ── [7] セルフチェック ── */}
@@ -410,52 +515,64 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
           </h2>
           <p className="text-[14px] text-foreground/75 leading-[1.85] mb-6">{guide.selfCheck.intro}</p>
           <ul className="space-y-3">
-            {guide.selfCheck.questions.map((q, i) => (
-              <li key={i} className="border border-border rounded-2xl p-4 sm:p-5 bg-background">
-                <div className="flex items-start gap-3 mb-3">
-                  <span className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-[12px] font-bold tabular-nums">
-                    {i + 1}
-                  </span>
-                  <p className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">{q.q}</p>
-                </div>
-                <div className="pl-10">
-                  <p className="text-[12px] text-muted-foreground mb-2">
-                    → これは「<span className="text-foreground font-semibold">{q.typeAnswer}</span>」タイプ。論文ベースのBEST PICKは：
-                  </p>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {q.recommendIngredientSlugs.map((s, idx) => {
-                      const ing = getIngredient(s)
-                      if (!ing) return null
-                      const isBest = idx === 0
-                      return (
-                        <div key={s} className="flex items-center gap-2">
-                          {idx > 0 && (
-                            <span className="text-[13px] font-bold text-muted-foreground">＋</span>
-                          )}
-                          <Link
-                            href={`/ingredients/${s}`}
-                            className={`inline-flex items-center gap-1.5 text-[12px] font-semibold rounded-full px-3 py-1.5 min-h-[36px] transition-colors ${
-                              isBest
-                                ? 'text-background bg-foreground hover:bg-foreground/85'
-                                : 'text-foreground bg-secondary hover:bg-secondary/70 border border-border'
-                            }`}
-                          >
-                            {isBest && (
-                              <span className="text-[9px] font-bold tracking-[0.08em] bg-amber-400 text-amber-950 rounded px-1 py-0.5 leading-none">
-                                BEST
-                              </span>
-                            )}
-                            <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-                            {ing.nameJa}
-                            <ChevronRight className="w-3 h-3" />
-                          </Link>
-                        </div>
-                      )
-                    })}
+            {guide.selfCheck.questions.map((q, i) => {
+              const solutionIdx = guide.solutionByType.findIndex((s) => s.typeName === q.typeAnswer)
+              return (
+                <li key={i} className="border border-border rounded-2xl p-4 sm:p-5 bg-background">
+                  <div className="flex items-start gap-3 mb-3">
+                    <span className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-[12px] font-bold tabular-nums">
+                      {i + 1}
+                    </span>
+                    <p className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">{q.q}</p>
                   </div>
-                </div>
-              </li>
-            ))}
+                  <div className="pl-10">
+                    <p className="text-[12px] text-muted-foreground mb-2">
+                      → これは「<span className="text-foreground font-semibold">{q.typeAnswer}</span>」タイプ。論文ベースのBEST PICKは：
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {q.recommendIngredientSlugs.map((s, idx) => {
+                        const ing = getIngredient(s)
+                        if (!ing) return null
+                        const isBest = idx === 0
+                        return (
+                          <div key={s} className="flex items-center gap-2">
+                            {idx > 0 && (
+                              <span className="text-[13px] font-bold text-muted-foreground">＋</span>
+                            )}
+                            <Link
+                              href={`/ingredients/${s}`}
+                              className={`inline-flex items-center gap-1.5 text-[12px] font-semibold rounded-full px-3 py-1.5 min-h-[36px] transition-colors ${
+                                isBest
+                                  ? 'text-background bg-foreground hover:bg-foreground/85'
+                                  : 'text-foreground bg-secondary hover:bg-secondary/70 border border-border'
+                              }`}
+                            >
+                              {isBest && (
+                                <span className="text-[9px] font-bold tracking-[0.08em] bg-amber-400 text-amber-950 rounded px-1 py-0.5 leading-none">
+                                  BEST
+                                </span>
+                              )}
+                              <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                              {ing.nameJa}
+                              <ChevronRight className="w-3 h-3" />
+                            </Link>
+                          </div>
+                        )
+                      })}
+                    </div>
+                    {solutionIdx >= 0 && (
+                      <a
+                        href={`#solution-type-${solutionIdx}`}
+                        className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent hover:underline mt-3"
+                      >
+                        この記事の{q.typeAnswer}・解決策セクションへ
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                </li>
+              )
+            })}
           </ul>
         </section>
 
