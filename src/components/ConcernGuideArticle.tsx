@@ -7,6 +7,7 @@ import { getConcernGuide, concernGuides } from '@/lib/concern-guide-data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { RichParagraphs } from '@/components/RichText'
+import { PageViewTracker } from '@/components/PageViewTracker'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 
 const BASE_URL = 'https://scibase.app'
@@ -118,6 +119,10 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
   return (
     <>
+      <PageViewTracker
+        eventName="view_concern_guide"
+        params={{ concern_slug: concernSlug, concern_category: concern.category }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

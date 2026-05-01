@@ -7,6 +7,7 @@ import { ingredients, concerns, getIngredient } from '@/lib/data'
 import { RadarChart } from './RadarChart'
 import { EvidenceBadge } from './EvidenceBadge'
 import { OutboundProductLink } from './OutboundProductLink'
+import { trackEvent } from '@/lib/analytics'
 import type { Ingredient, Concern, AnalysisAxis } from '@/lib/types'
 import type { RadarData } from './RadarChart'
 
@@ -101,10 +102,27 @@ export function AnalyzerClient() {
   const [open, setOpen] = useState(false)
   const [resultsInView, setResultsInView] = useState(false)
   const resultsRef = useRef<HTMLDivElement | null>(null)
+  const startTrackedRef = useRef(false)
+  const completeTrackedRef = useRef(false)
 
   const hasResults = mode === 'ingredient'
     ? selectedSlugs.length > 0
     : selectedConcernSlugs.length > 0
+
+  /* GA4: start_analyzer — 初回選択時に1回だけ発火 */
+  useEffect(() => {
+    if (!hasResults || startTrackedRef.current) return
+    startTrackedRef.current = true
+    trackEvent('start_analyzer', { mode })
+  }, [hasResults, mode])
+
+  /* GA4: complete_analyzer — 結果セクションが画面内に入った最初の1回だけ発火 */
+  useEffect(() => {
+    if (!resultsInView || completeTrackedRef.current) return
+    completeTrackedRef.current = true
+    const itemCount = mode === 'ingredient' ? selectedSlugs.length : selectedConcernSlugs.length
+    trackEvent('complete_analyzer', { mode, item_count: itemCount })
+  }, [resultsInView, mode, selectedSlugs.length, selectedConcernSlugs.length])
 
   /* 結果セクションが画面内にあるか監視 → スティッキーCTAの出し分け */
   useEffect(() => {

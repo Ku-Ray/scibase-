@@ -5,6 +5,7 @@ import { getIngredient, concerns as allConcerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { PageViewTracker } from '@/components/PageViewTracker'
 import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO } from '@/lib/compare-data'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
@@ -208,6 +209,10 @@ export default async function ComparePage({ params }: Props) {
 
   return (
     <>
+      <PageViewTracker
+        eventName="view_compare_pair"
+        params={{ pair_slug: pair, ingredient_a: slugA, ingredient_b: slugB }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
