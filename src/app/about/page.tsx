@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRight, FlaskConical, BookOpen, Shield } from 'lucide-react'
+import { ChevronRight, FlaskConical, BookOpen, Shield, Calculator } from 'lucide-react'
 import type { Metadata } from 'next'
 
 const BASE_URL = 'https://scibase.app'
@@ -31,6 +31,39 @@ const orgJsonLd = {
   description: '論文エビデンスに基づくスキンケア・サプリメント成分データベース',
   foundingDate: '2026',
 }
+
+const SCORE_AXES = [
+  {
+    axis: '論文整合',
+    weight: 40,
+    desc: '商品の1日あたり有効成分量が、論文RCTで使われた最低有効量を超えているかで判定。充足率1.0以上で★5、0.5以上で部分充足、それ未満は不足。算出に必要なデータが揃わない場合は欠損として「—」を表示します。',
+  },
+  {
+    axis: '第三者検査',
+    weight: 25,
+    desc: '重金属検査と第三者試験機関の検査の両方を通過していれば★5、どちらかのみで★4、いずれもなしは★2。メーカー自社試験のみは加点しません。',
+  },
+  {
+    axis: '認証',
+    weight: 15,
+    desc: 'NSF・USP・Informed Sport いずれかの第三者認証で★5、GMP認証で★4、それ以外で★3。',
+  },
+  {
+    axis: '純度',
+    weight: 10,
+    desc: 'Organic と NonGMO の両方で★5、どちらか一方で★4、NSF/USPで★4、GMPで★3、それ以外で★2。',
+  },
+  {
+    axis: 'コスパ',
+    weight: 5,
+    desc: '同じ成分の掲載商品内で、月額コストの分布から逆算（最安付近=★5、最高値付近=★1）。比較対象が1商品のみなら★3固定。月額が不明なら欠損として「—」を表示します。',
+  },
+  {
+    axis: '配送',
+    weight: 5,
+    desc: '翌日・即日配送の表記で★5、国内2-3日で★4、海外7-14日で★3、2-3週で★2。表記がなければプラットフォーム別に補正（Amazon=★5・公式=★4・iHerb=★3）。',
+  },
+]
 
 const EVIDENCE_RANKS = [
   {
@@ -209,6 +242,149 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        {/* 商品スコア・SciBase推奨度の算出基準 */}
+        <section id="scoring" className="mb-12 scroll-mt-20">
+          <div className="flex items-center gap-2 mb-5">
+            <Calculator className="w-5 h-5 text-accent" />
+            <h2 className="text-[20px] font-bold text-foreground">
+              商品スコア・SciBase推奨度の算出基準
+            </h2>
+          </div>
+
+          <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9] mb-8">
+            <p>
+              SciBase の各成分ページでは、掲載商品ごとに
+              <span className="font-semibold text-foreground">「SciBase推奨度（★1.0〜5.0）」</span>と
+              <span className="font-semibold text-foreground">「6軸スコア（★1〜5）」</span>を表示しています。
+              算出の根拠を全公開し、読者が自分で判断できる材料を残すことを編集方針としています。
+            </p>
+            <p>
+              スコアは<span className="font-semibold text-foreground">アフィリエイト手数料・広告主の意向とは独立</span>に算出され、
+              手数料の有無や金額がスコアに影響することはありません。
+            </p>
+          </div>
+
+          {/* 6軸スコア表 */}
+          <div className="border border-border rounded-2xl overflow-hidden mb-8">
+            <div className="bg-secondary px-5 py-3 border-b border-border">
+              <p className="text-[12px] font-semibold text-foreground">
+                6軸スコアの定義と判定基準
+              </p>
+            </div>
+            <div className="divide-y divide-border">
+              {SCORE_AXES.map(({ axis, weight, desc }) => (
+                <div key={axis} className="px-5 py-4">
+                  <div className="flex items-center gap-3 mb-1.5">
+                    <p className="text-[13px] font-semibold text-foreground">{axis}</p>
+                    <span className="text-[11px] font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded">
+                      重み {weight}%
+                    </span>
+                  </div>
+                  <p className="text-[12px] text-muted-foreground leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* SciBase推奨度の重み付け */}
+          <div className="mb-8">
+            <h3 className="text-[15px] font-bold text-foreground mb-3">
+              SciBase推奨度（★1.0〜5.0）の重み付け
+            </h3>
+            <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
+              <p>
+                上記6軸を以下の重みで合成して、
+                <span className="font-semibold text-foreground">SciBase推奨度</span>を算出します。
+              </p>
+              <p className="bg-secondary border border-border rounded-xl px-4 py-3 text-[13px] tabular-nums">
+                論文整合 × 0.40 ＋ 第三者検査 × 0.25 ＋ 認証 × 0.15 ＋ 純度 × 0.10 ＋ コスパ × 0.05 ＋ 配送 × 0.05
+              </p>
+              <p>
+                論文整合と第三者検査に重みの65%を寄せているのは、
+                SciBase の編集方針（<span className="font-semibold text-foreground">論文ベース・科学的選定</span>）を数値に反映するためです。
+                価格や配送スピードが評価の主軸になることは設計上ありません。
+              </p>
+            </div>
+          </div>
+
+          {/* No.1バッジの発動条件 */}
+          <div className="mb-8">
+            <h3 className="text-[15px] font-bold text-foreground mb-3">
+              「軸別 No.1（当サイト掲載商品中）」バッジの発動条件
+            </h3>
+            <ul className="space-y-2.5 text-[14px] text-muted-foreground">
+              {[
+                '同じ成分の掲載商品が2品以上あるときのみ表示',
+                'その軸のスコアが★4以上のときのみ表示（★3以下を「No.1」と呼ぶことは誇張になるため除外）',
+                '比較対象の全商品が同点の場合は表示しない（差別化が成立していないため）',
+                '「当サイト掲載商品中」と必ず併記し、市場全体での1位ではないことを明示',
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <span className="text-accent mt-1 flex-shrink-0">●</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* BEST PICK の選定ロジック */}
+          <div className="mb-8">
+            <h3 className="text-[15px] font-bold text-foreground mb-3">
+              BEST PICK の選定ロジック
+            </h3>
+            <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
+              <p>
+                各成分ページの先頭に表示される「BEST PICK（1位）」は、
+                <span className="font-semibold text-foreground">SciBase推奨度の高い順</span>で機械的に決定します。
+              </p>
+              <p>
+                BEST PICK の選定理由として表示する文言は、
+                <span className="font-semibold text-foreground">実際に★4以上のスコアを持つ軸のみ</span>を列挙する設計です。
+                「コスパ★3」のような中位スコアを根拠として表示することはありません。
+              </p>
+            </div>
+          </div>
+
+          {/* データ不足時の挙動 */}
+          <div className="mb-8">
+            <h3 className="text-[15px] font-bold text-foreground mb-3">
+              データが揃わないとき
+            </h3>
+            <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
+              <p>
+                算出に必要な情報（1日あたり有効成分量・月額コスト等）が公式情報で確認できない場合、
+                該当軸のスコアは<span className="font-semibold text-foreground">「—」</span>として表示し、
+                数値として算出しません。
+              </p>
+              <p>
+                データの欠損を「★3（中立）」として埋めると、
+                実態より高く見せる方向にバイアスが入りやすくなります。
+                SciBase は<span className="font-semibold text-foreground">欠損は欠損として明示する</span>方針を取っています。
+              </p>
+            </div>
+          </div>
+
+          {/* 中立性の保証 */}
+          <div className="bg-secondary border border-border rounded-2xl p-5">
+            <h3 className="text-[14px] font-bold text-foreground mb-3">
+              中立性の保証
+            </h3>
+            <ul className="space-y-2 text-[13px] text-muted-foreground leading-relaxed">
+              {[
+                'スコア算出ロジックにアフィリエイト手数料は一切含まれていません',
+                '販売プラットフォーム（iHerb・Amazon・公式）による加点はありません（配送軸の補正を除く）',
+                '掲載商品の選定・除外は商業的関係ではなく、論文エビデンスと有効量の充足で判断します',
+                'スコアの根拠となる元データ（成分の有効量・商品の用量・月額・認証等）は成分ページで個別確認できます',
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-emerald-600 mt-0.5 flex-shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         {/* アフィリエイト・収益 */}
