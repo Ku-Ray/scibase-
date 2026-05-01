@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { ChevronRight, Clock, ArrowRight, FileText } from 'lucide-react'
+import { ChevronRight, Clock, ArrowRight } from 'lucide-react'
 import { articles } from '@/lib/articles'
 import { concernGuides } from '@/lib/concern-guide-data'
 import { getConcern } from '@/lib/data'
+import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import type { Metadata } from 'next'
 import type { ArticleCategory } from '@/lib/types'
 
@@ -11,24 +12,46 @@ const BASE_URL = 'https://scibase.app'
 export const metadata: Metadata = {
   title: 'コラム｜老化・成分・習慣を論文で解説',
   description:
-    'コラーゲン・NAD+・睡眠と老化など、スキンケア・サプリ・老化対策のテーマを論文エビデンスで解説するコラム。成分データベースへの入口として活用できます。',
+    'コラーゲン・NAD+・睡眠と老化・悩み別の論文ガイドなど、スキンケア・サプリ・老化対策のテーマを論文エビデンスで解説するコラム。成分データベースへの入口として活用できます。',
   alternates: { canonical: `${BASE_URL}/articles` },
 }
 
-const categoryColor: Record<string, string> = {
-  'anti-aging': 'bg-amber-50 text-amber-700 border-amber-200',
-  skin:         'bg-rose-50 text-rose-700 border-rose-200',
-  sleep:        'bg-indigo-50 text-indigo-700 border-indigo-200',
-  supplement:   'bg-emerald-50 text-emerald-700 border-emerald-200',
+type ListingCategory = ArticleCategory | 'concern-guide'
+
+const categoryColor: Record<ListingCategory, string> = {
+  'anti-aging':    'bg-amber-50 text-amber-700 border-amber-200',
+  skin:            'bg-rose-50 text-rose-700 border-rose-200',
+  sleep:           'bg-indigo-50 text-indigo-700 border-indigo-200',
+  supplement:      'bg-emerald-50 text-emerald-700 border-emerald-200',
+  'concern-guide': 'bg-rose-50 text-rose-700 border-rose-200',
 }
 
-const categoryFilters: { key: 'all' | ArticleCategory; label: string }[] = [
-  { key: 'all',        label: 'すべて' },
-  { key: 'skin',       label: '肌老化' },
-  { key: 'anti-aging', label: 'アンチエイジング' },
-  { key: 'supplement', label: 'サプリ入門' },
-  { key: 'sleep',      label: '睡眠' },
+const categoryFilters: { key: 'all' | ListingCategory; label: string }[] = [
+  { key: 'all',            label: 'すべて' },
+  { key: 'concern-guide',  label: '悩み解決ガイド' },
+  { key: 'skin',           label: '肌老化' },
+  { key: 'anti-aging',     label: 'アンチエイジング' },
+  { key: 'supplement',     label: 'サプリ入門' },
+  { key: 'sleep',          label: '睡眠' },
 ]
+
+/**
+ * 一覧用のカード共通形。articles[] と concernGuides[] を同じ形に正規化して並べる。
+ */
+type ListingCard = {
+  slug: string
+  href: string
+  category: ListingCategory
+  categoryLabel: string
+  title: string
+  description: string
+  publishedAt: string
+  /** 並び替え用の更新日。なければ publishedAt にフォールバック */
+  sortDate: string
+  readingMinutes?: number
+  /** 通常コラムのみのヒーロー数値（ガイドにはなし） */
+  heroStat?: { value: string; label: string }
+}
 
 interface Props {
   searchParams: Promise<{ cat?: string }>
@@ -36,14 +59,49 @@ interface Props {
 
 export default async function ArticlesPage({ searchParams }: Props) {
   const { cat } = await searchParams
-  const activeCat = categoryFilters.find(f => f.key === cat)?.key ?? 'all'
+  const activeCat: 'all' | ListingCategory =
+    categoryFilters.find(f => f.key === cat)?.key ?? 'all'
 
-  const filteredArticles = activeCat === 'all'
-    ? articles
-    : articles.filter(a => a.category === activeCat)
+  /* articles → ListingCard */
+  const articleCards: ListingCard[] = articles.map((a) => ({
+    slug: a.slug,
+    href: `/articles/${a.slug}`,
+    category: a.category,
+    categoryLabel: a.categoryLabel,
+    title: a.title,
+    description: a.lossAversionHook,
+    publishedAt: a.publishedAt,
+    sortDate: a.updatedAt ?? a.publishedAt,
+    readingMinutes: a.readingMinutes,
+    heroStat: a.heroStat,
+  }))
 
-  const countByCategory = articles.reduce<Record<string, number>>((acc, a) => {
-    acc[a.category] = (acc[a.category] ?? 0) + 1
+  /* concernGuides → ListingCard（articles 配下のURLに統合） */
+  const guideCards: ListingCard[] = concernGuides.map((g) => {
+    const concern = getConcern(g.concernSlug)
+    return {
+      slug: `${g.concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}`,
+      href: `/articles/${g.concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}`,
+      category: 'concern-guide' as const,
+      categoryLabel: `悩み解決ガイド · ${concern?.nameJa ?? g.concernSlug}`,
+      title: g.title,
+      description: g.summary,
+      publishedAt: g.publishedAt,
+      sortDate: g.updatedAt,
+    }
+  })
+
+  /* 統合・新しい順にソート */
+  const allCards: ListingCard[] = [...guideCards, ...articleCards].sort(
+    (a, b) => (a.sortDate < b.sortDate ? 1 : -1),
+  )
+
+  const filteredCards = activeCat === 'all'
+    ? allCards
+    : allCards.filter(c => c.category === activeCat)
+
+  const countByCategory = allCards.reduce<Record<string, number>>((acc, c) => {
+    acc[c.category] = (acc[c.category] ?? 0) + 1
     return acc
   }, {})
 
@@ -62,12 +120,12 @@ export default async function ArticlesPage({ searchParams }: Props) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'SciBase コラム一覧',
-    numberOfItems: articles.length,
-    itemListElement: articles.map((a, i) => ({
+    numberOfItems: allCards.length,
+    itemListElement: allCards.map((c, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: a.title,
-      url: `${BASE_URL}/articles/${a.slug}`,
+      name: c.title,
+      url: `${BASE_URL}${c.href}`,
     })),
   }
 
@@ -104,7 +162,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
         {/* 数値バッジ（アンカリング） */}
         <div className="flex flex-wrap gap-5 text-[13px]">
           {[
-            { value: String(articles.length),   label: '本のコラム' },
+            { value: String(allCards.length),    label: '本のコラム' },
             { value: String(totalPaperRefs),     label: '成分を解説' },
           ].map(({ value, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">
@@ -118,8 +176,13 @@ export default async function ArticlesPage({ searchParams }: Props) {
       {/* Category filter pills */}
       <div className="flex flex-wrap gap-2 mb-4">
         {categoryFilters.map(({ key, label }) => {
-          const count = key === 'all' ? articles.length : (countByCategory[key] ?? 0)
+          const count = key === 'all' ? allCards.length : (countByCategory[key] ?? 0)
+          if (key !== 'all' && count === 0) return null
           const isActive = activeCat === key
+          const activeColorClass =
+            key === 'all'
+              ? 'bg-foreground text-background border-foreground'
+              : categoryColor[key as ListingCategory] ?? 'bg-foreground text-background border-foreground'
           return (
             <Link
               key={key}
@@ -128,7 +191,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
               className={`text-[12px] font-medium px-3 py-1.5 rounded-full border transition-all
                 inline-flex items-center gap-1.5
                 ${isActive
-                  ? categoryColor[key] ?? 'bg-foreground text-background border-foreground'
+                  ? activeColorClass
                   : 'bg-card text-muted-foreground border-border hover:border-foreground hover:text-foreground'}
                 ${isActive ? 'ring-2 ring-offset-1 ring-current/30' : ''}`}
             >
@@ -143,67 +206,11 @@ export default async function ArticlesPage({ searchParams }: Props) {
 
       {/* 件数 */}
       <p className="text-[13px] text-muted-foreground mb-6">
-        <span className="font-semibold text-foreground">{filteredArticles.length}</span> 件表示中
+        <span className="font-semibold text-foreground">{filteredCards.length}</span> 件表示中
       </p>
 
-      {/* ── 悩み解決ガイド series（"all" カテゴリの時のみ表示） ── */}
-      {activeCat === 'all' && concernGuides.length > 0 && (
-        <section className="mb-12">
-          <div className="flex items-center gap-2 mb-1">
-            <FileText className="w-4 h-4 text-rose-600" />
-            <p className="text-[11px] font-semibold tracking-[0.1em] text-rose-700 uppercase">
-              FEATURED · 悩み解決ガイドシリーズ
-            </p>
-          </div>
-          <h2 className="text-[18px] font-bold text-foreground leading-snug mb-1">
-            悩み起点で複数成分を横断比較する論文ガイド
-          </h2>
-          <p className="text-[13px] text-muted-foreground leading-relaxed mb-5">
-            個別成分の深掘りではなく「シミ・睡眠・薄毛」など悩みから入って、複数成分の使い分けと商品選択まで一気通貫で扱う。
-          </p>
-
-          <div className="space-y-3">
-            {concernGuides.map((guide) => {
-              const concern = getConcern(guide.concernSlug)
-              if (!concern) return null
-              return (
-                <Link
-                  key={guide.concernSlug}
-                  href={`/concerns/${guide.concernSlug}/guide`}
-                  className="group block border-2 border-rose-200 rounded-2xl p-5 sm:p-6 bg-rose-50/30 hover:bg-rose-50/60 hover:-translate-y-0.5 hover:shadow-md transition-all"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[18px] leading-none">{concern.emoji}</span>
-                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-md border bg-rose-100 text-rose-800 border-rose-200">
-                      論文ガイド
-                    </span>
-                    <span className="text-[11px] text-muted-foreground">
-                      {concern.nameJa}
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-[16px] sm:text-[17px] text-foreground leading-snug mb-2 group-hover:opacity-80 transition-opacity">
-                    {guide.title}
-                  </h3>
-                  <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2 mb-4">
-                    {guide.summary}
-                  </p>
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex flex-wrap items-center gap-3 text-[12px] text-muted-foreground">
-                      <span>論文ベース・3タイプ別BEST PICK</span>
-                    </div>
-                    <span className="flex items-center gap-1.5 text-[13px] font-semibold text-rose-700 group-hover:gap-2.5 transition-all flex-shrink-0">
-                      読む <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
-      )}
-
       {/* Article List */}
-      {filteredArticles.length === 0 ? (
+      {filteredCards.length === 0 ? (
         <div className="text-center py-20 text-muted-foreground text-[14px]">
           <p className="text-[32px] mb-3">🔍</p>
           <p className="font-medium text-foreground mb-1">このカテゴリの記事はまだありません</p>
@@ -213,46 +220,54 @@ export default async function ArticlesPage({ searchParams }: Props) {
         </div>
       ) : (
         <div className="space-y-4">
-          {filteredArticles.map((article) => (
+          {filteredCards.map((card) => (
             <Link
-              key={article.slug}
-              href={`/articles/${article.slug}`}
+              key={card.slug}
+              href={card.href}
               className="group block border border-border rounded-2xl p-6
                 hover:-translate-y-0.5 hover:shadow-md transition-all duration-150 bg-card"
             >
               {/* Category + Reading time */}
               <div className="flex items-center gap-2 mb-3">
                 <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-md border
-                  ${categoryColor[article.category] ?? 'bg-secondary text-muted-foreground border-border'}`}>
-                  {article.categoryLabel}
+                  ${categoryColor[card.category] ?? 'bg-secondary text-muted-foreground border-border'}`}>
+                  {card.categoryLabel}
                 </span>
-                <span className="flex items-center gap-1 text-[12px] text-muted-foreground">
-                  <Clock className="w-3 h-3" />
-                  {article.readingMinutes}分
-                </span>
+                {card.readingMinutes !== undefined && (
+                  <span className="flex items-center gap-1 text-[12px] text-muted-foreground">
+                    <Clock className="w-3 h-3" />
+                    {card.readingMinutes}分
+                  </span>
+                )}
               </div>
 
               {/* Title */}
               <h2 className="font-bold text-[16px] sm:text-[17px] text-foreground leading-snug mb-2
                 group-hover:opacity-80 transition-opacity">
-                {article.title}
+                {card.title}
               </h2>
 
-              {/* Loss aversion hook */}
+              {/* description（lossAversionHook or summary） */}
               <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2 mb-4">
-                {article.lossAversionHook}
+                {card.description}
               </p>
 
-              {/* Hero stat + Arrow */}
+              {/* Hero stat（articles のみ） + Arrow */}
               <div className="flex items-end justify-between gap-4">
-                <div className="bg-secondary border border-border rounded-xl px-4 py-2.5 min-w-0">
-                  <span className="block text-[18px] font-black text-foreground tabular-nums leading-none mb-0.5">
-                    {article.heroStat.value}
+                {card.heroStat ? (
+                  <div className="bg-secondary border border-border rounded-xl px-4 py-2.5 min-w-0">
+                    <span className="block text-[18px] font-black text-foreground tabular-nums leading-none mb-0.5">
+                      {card.heroStat.value}
+                    </span>
+                    <span className="block text-[11px] text-muted-foreground leading-tight">
+                      {card.heroStat.label}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-[12px] text-muted-foreground">
+                    論文ベース・タイプ別BEST PICK
                   </span>
-                  <span className="block text-[11px] text-muted-foreground leading-tight">
-                    {article.heroStat.label}
-                  </span>
-                </div>
+                )}
                 <span className="flex items-center gap-1.5 text-[13px] font-semibold text-accent
                   group-hover:gap-2.5 transition-all flex-shrink-0">
                   読む <ArrowRight className="w-3.5 h-3.5" />

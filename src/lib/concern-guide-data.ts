@@ -2,12 +2,13 @@
  * 悩み解決ガイド記事（コラム型・Buy intent × エビデンス差別化）
  *
  * 6本シリーズ：spots / wrinkles / hair / fatigue / menopause / skin-aging
- * URL: /concerns/[slug]/guide
+ * URL: /articles/[concernSlug]-supplement-guide（2026-05-01 にコラム配下へ統合）
+ *      旧URL /concerns/[slug]/guide からは next.config.ts redirects で 301 移行
  *
  * 役割の棲み分け：
- *  - /concerns/[slug]              → 一覧・即決の入口（カード並べ）
- *  - /concerns/[slug]/guide（本物） → コラム記事・読み物・商品購入導線
- *  - /articles/[slug]              → 個別成分の縦深掘り（既存21記事）
+ *  - /concerns/[slug]                                  → 悩み一覧・即決の入口（カード並べ）
+ *  - /articles/[slug]-supplement-guide（このコラム）   → 悩み起点で複数成分を横断比較する論文ガイド
+ *  - /articles/[slug]                                  → 個別成分・テーマの縦深掘り（既存21記事）
  */
 
 export interface ConcernGuidePaperRef {

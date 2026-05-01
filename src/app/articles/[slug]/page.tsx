@@ -5,11 +5,17 @@ import {
 } from 'lucide-react'
 import { getArticle, articles } from '@/lib/articles'
 import { getIngredient } from '@/lib/data'
+import { getConcernGuide } from '@/lib/concern-guide-data'
+import {
+  matchSupplementGuideSlug,
+  getAllSupplementGuideArticleSlugs,
+} from '@/lib/concern-guide-utils'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
+import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
 import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
 import type { Metadata } from 'next'
@@ -19,11 +25,36 @@ interface Props { params: Promise<{ slug: string }> }
 const BASE_URL = 'https://scibase.app'
 
 export async function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }))
+  return [
+    ...articles.map((a) => ({ slug: a.slug })),
+    ...getAllSupplementGuideArticleSlugs().map((slug) => ({ slug })),
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
+
+  /* 悩み解決ガイドの metadata 分岐 */
+  const guideMatch = matchSupplementGuideSlug(slug)
+  if (guideMatch) {
+    const guide = getConcernGuide(guideMatch.concernSlug)
+    if (!guide) return {}
+    const url = `${BASE_URL}/articles/${slug}`
+    return {
+      title: guide.title,
+      description: guide.summary + '。' + guide.bottomLine.slice(0, 80),
+      alternates: { canonical: url },
+      openGraph: {
+        title: guide.title,
+        description: guide.summary,
+        url,
+        type: 'article',
+        publishedTime: guide.publishedAt,
+        modifiedTime: guide.updatedAt,
+      },
+    }
+  }
+
   const article = getArticle(slug)
   if (!article) return {}
   return {
@@ -50,6 +81,13 @@ const categoryColor: Record<string, string> = {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
+
+  /* 悩み解決ガイドは別コンポーネントで描画 */
+  const guideMatch = matchSupplementGuideSlug(slug)
+  if (guideMatch) {
+    return <ConcernGuideArticle concernSlug={guideMatch.concernSlug} />
+  }
+
   const article = getArticle(slug)
   if (!article) notFound()
 

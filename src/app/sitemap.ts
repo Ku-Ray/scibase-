@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { ingredients, concerns } from '@/lib/data'
 import { articles } from '@/lib/articles'
+import { concernGuides } from '@/lib/concern-guide-data'
+import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { POPULAR_PAIRS } from '@/lib/compare-data'
 
 const BASE_URL = 'https://scibase.app'
@@ -64,6 +66,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:        0.8,
   }))
 
+  /* 悩み解決ガイド記事（articles 配下に統合） */
+  const concernGuidePages: MetadataRoute.Sitemap = concernGuides.map((g) => ({
+    url:             `${BASE_URL}/articles/${g.concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}`,
+    lastModified:    g.updatedAt,
+    changeFrequency: 'monthly',
+    priority:        0.85,
+  }))
+
   return [
     ...staticPages,
     ...ingredientPages,
@@ -71,5 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...rankingPages,
     ...comparePages,
     ...articlePages,
+    ...concernGuidePages,
   ]
 }

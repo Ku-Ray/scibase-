@@ -1,102 +1,28 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle } from 'lucide-react'
-import type { Metadata } from 'next'
 import { getConcern, getIngredient, concerns } from '@/lib/data'
 import { getArticle } from '@/lib/articles'
-import {
-  getConcernGuide,
-  getAllConcernGuideSlugs,
-  concernGuides,
-} from '@/lib/concern-guide-data'
+import { getConcernGuide, concernGuides } from '@/lib/concern-guide-data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { RichParagraphs } from '@/components/RichText'
+import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 
 const BASE_URL = 'https://scibase.app'
-
-interface Props {
-  params: Promise<{ slug: string }>
-}
-
-export const dynamicParams = false
-
-export async function generateStaticParams() {
-  return getAllConcernGuideSlugs().map((slug) => ({ slug }))
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
-  const guide = getConcernGuide(slug)
-  const concern = getConcern(slug)
-  if (!guide || !concern) return {}
-  return {
-    title: guide.title,
-    description: guide.summary + '。' + guide.bottomLine.slice(0, 80),
-    alternates: { canonical: `${BASE_URL}/concerns/${slug}/guide` },
-    openGraph: {
-      title: guide.title,
-      description: guide.summary,
-      url: `${BASE_URL}/concerns/${slug}/guide`,
-      type: 'article',
-      publishedTime: guide.publishedAt,
-      modifiedTime: guide.updatedAt,
-    },
-  }
-}
 
 const categoryHero: Record<
   string,
   { bg: string; border: string; text: string; tag: string }
 > = {
-  skin: {
-    bg: 'bg-rose-50',
-    border: 'border-t-rose-400',
-    text: 'text-rose-700',
-    tag: 'bg-rose-100 text-rose-800',
-  },
-  body: {
-    bg: 'bg-orange-50',
-    border: 'border-t-orange-400',
-    text: 'text-orange-700',
-    tag: 'bg-orange-100 text-orange-800',
-  },
-  cognitive: {
-    bg: 'bg-blue-50',
-    border: 'border-t-blue-500',
-    text: 'text-blue-700',
-    tag: 'bg-blue-100 text-blue-800',
-  },
-  sleep: {
-    bg: 'bg-violet-50',
-    border: 'border-t-violet-500',
-    text: 'text-violet-700',
-    tag: 'bg-violet-100 text-violet-800',
-  },
-  gut: {
-    bg: 'bg-teal-50',
-    border: 'border-t-teal-500',
-    text: 'text-teal-700',
-    tag: 'bg-teal-100 text-teal-800',
-  },
-  immunity: {
-    bg: 'bg-emerald-50',
-    border: 'border-t-emerald-500',
-    text: 'text-emerald-700',
-    tag: 'bg-emerald-100 text-emerald-800',
-  },
-  muscle: {
-    bg: 'bg-amber-50',
-    border: 'border-t-amber-500',
-    text: 'text-amber-700',
-    tag: 'bg-amber-100 text-amber-800',
-  },
-  cardiovascular: {
-    bg: 'bg-red-50',
-    border: 'border-t-red-500',
-    text: 'text-red-700',
-    tag: 'bg-red-100 text-red-800',
-  },
+  skin: { bg: 'bg-rose-50', border: 'border-t-rose-400', text: 'text-rose-700', tag: 'bg-rose-100 text-rose-800' },
+  body: { bg: 'bg-orange-50', border: 'border-t-orange-400', text: 'text-orange-700', tag: 'bg-orange-100 text-orange-800' },
+  cognitive: { bg: 'bg-blue-50', border: 'border-t-blue-500', text: 'text-blue-700', tag: 'bg-blue-100 text-blue-800' },
+  sleep: { bg: 'bg-violet-50', border: 'border-t-violet-500', text: 'text-violet-700', tag: 'bg-violet-100 text-violet-800' },
+  gut: { bg: 'bg-teal-50', border: 'border-t-teal-500', text: 'text-teal-700', tag: 'bg-teal-100 text-teal-800' },
+  immunity: { bg: 'bg-emerald-50', border: 'border-t-emerald-500', text: 'text-emerald-700', tag: 'bg-emerald-100 text-emerald-800' },
+  muscle: { bg: 'bg-amber-50', border: 'border-t-amber-500', text: 'text-amber-700', tag: 'bg-amber-100 text-amber-800' },
+  cardiovascular: { bg: 'bg-red-50', border: 'border-t-red-500', text: 'text-red-700', tag: 'bg-red-100 text-red-800' },
 }
 
 const platformLabel: Record<string, string> = {
@@ -113,11 +39,17 @@ const studyTypeLabel: Record<string, string> = {
   review: 'レビュー',
 }
 
-export default async function ConcernGuidePage({ params }: Props) {
-  const { slug } = await params
-  const guide = getConcernGuide(slug)
-  const concern = getConcern(slug)
+interface Props {
+  /** concern slug（例: 'wrinkles'）。article URL は `${concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}` */
+  concernSlug: string
+}
+
+export function ConcernGuideArticle({ concernSlug }: Props) {
+  const guide = getConcernGuide(concernSlug)
+  const concern = getConcern(concernSlug)
   if (!guide || !concern) notFound()
+
+  const articleUrl = `${BASE_URL}/articles/${concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}`
 
   const hero = categoryHero[concern.category] ?? categoryHero.skin
 
@@ -125,43 +57,24 @@ export default async function ConcernGuidePage({ params }: Props) {
     .map((s) => getArticle(s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a))
 
-  /* 他の悩み別ガイド（自分以外の同シリーズ） */
   const otherGuides = concernGuides
-    .filter((g) => g.concernSlug !== slug)
+    .filter((g) => g.concernSlug !== concernSlug)
     .map((g) => ({ guide: g, concern: getConcern(g.concernSlug) }))
     .filter((x): x is { guide: typeof concernGuides[number]; concern: NonNullable<ReturnType<typeof getConcern>> } => Boolean(x.concern))
 
-  /* 他の悩みを見る（/concerns/[slug] の概要ページ群） */
-  const otherConcerns = concerns.filter((c) => c.slug !== slug).slice(0, 9)
+  const otherConcerns = concerns.filter((c) => c.slug !== concernSlug).slice(0, 9)
 
-  /* JSON-LD ── Breadcrumb */
+  /* JSON-LD ── Breadcrumb（コラム配下） */
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE_URL },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: '悩みから探す',
-        item: `${BASE_URL}/concerns`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: concern.nameJa,
-        item: `${BASE_URL}/concerns/${slug}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: '商品ガイド',
-        item: `${BASE_URL}/concerns/${slug}/guide`,
-      },
+      { '@type': 'ListItem', position: 2, name: 'コラム', item: `${BASE_URL}/articles` },
+      { '@type': 'ListItem', position: 3, name: guide.title, item: articleUrl },
     ],
   }
 
-  /* JSON-LD ── ItemList（タイプ別BEST PICK） */
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -181,7 +94,6 @@ export default async function ConcernGuidePage({ params }: Props) {
       .filter(Boolean),
   }
 
-  /* JSON-LD ── FAQPage */
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -192,7 +104,6 @@ export default async function ConcernGuidePage({ params }: Props) {
     })),
   }
 
-  /* JSON-LD ── Article */
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -200,61 +111,30 @@ export default async function ConcernGuidePage({ params }: Props) {
     description: guide.summary,
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
-    author: {
-      '@type': 'Organization',
-      name: 'SciBase',
-      url: BASE_URL,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'SciBase',
-      url: BASE_URL,
-    },
-    mainEntityOfPage: `${BASE_URL}/concerns/${slug}/guide`,
+    author: { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
+    publisher: { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
+    mainEntityOfPage: articleUrl,
   }
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
 
       {/* ── [1] Hero ───────────────────────────── */}
       <div className={`${hero.bg} border-t-4 ${hero.border}`}>
         <div className="max-w-3xl mx-auto px-5 pt-8 pb-10">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-6 flex-wrap">
-            <Link href="/" className="hover:underline">
-              ホーム
-            </Link>
+            <Link href="/" className="hover:underline">ホーム</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href="/concerns" className="hover:underline">
-              悩みから探す
-            </Link>
+            <Link href="/articles" className="hover:underline">コラム</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href={`/concerns/${slug}`} className="hover:underline">
-              {concern.nameJa}
-            </Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-foreground">商品ガイド</span>
+            <span className="text-foreground">{concern.nameJa}</span>
           </nav>
 
-          <span
-            className={`inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.08em] rounded-full px-2.5 py-1 mb-4 ${hero.tag}`}
-          >
+          <span className={`inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.08em] rounded-full px-2.5 py-1 mb-4 ${hero.tag}`}>
             <FileText className="w-3 h-3" />
             化粧品メーカー現役の論文ガイド
           </span>
@@ -268,13 +148,9 @@ export default async function ConcernGuidePage({ params }: Props) {
           </p>
 
           <div className="flex flex-wrap items-center gap-3 mt-5 text-[12px] text-muted-foreground">
-            <span>
-              公開：<time dateTime={guide.publishedAt}>{guide.publishedAt}</time>
-            </span>
+            <span>公開：<time dateTime={guide.publishedAt}>{guide.publishedAt}</time></span>
             <span className="w-px h-3 bg-border" />
-            <span>
-              更新：<time dateTime={guide.updatedAt}>{guide.updatedAt}</time>
-            </span>
+            <span>更新：<time dateTime={guide.updatedAt}>{guide.updatedAt}</time></span>
           </div>
         </div>
       </div>
@@ -303,18 +179,15 @@ export default async function ConcernGuidePage({ params }: Props) {
         {/* ── [4] 3タイプメカニズム ── */}
         <section className="mb-14">
           <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
-            シミの3タイプを論文で整理する
+            {concern.nameJa}の3タイプを論文で整理する
           </h2>
           <p className="text-[14px] text-foreground/70 leading-[1.85] mb-6">
-            まず自分のシミがどのタイプかを見極めることから始める。タイプによって機序が違うため、効く成分も変わる。
+            まず自分の{concern.nameJa}がどのタイプかを見極めることから始める。タイプによって機序が違うため、効く成分も変わる。
           </p>
 
           <div className="space-y-8">
             {guide.mechanismByType.map((m, idx) => (
-              <div
-                key={m.typeName}
-                className="border border-border rounded-2xl p-5 sm:p-6 bg-card"
-              >
+              <div key={m.typeName} className="border border-border rounded-2xl p-5 sm:p-6 bg-card">
                 <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-1 uppercase">
                   TYPE {idx + 1}
                 </p>
@@ -325,33 +198,25 @@ export default async function ConcernGuidePage({ params }: Props) {
                   {m.subtitle}
                 </p>
 
-                {/* 見分け方 */}
                 <div className="bg-secondary/50 rounded-xl p-4 mb-4">
                   <p className="text-[11px] font-semibold tracking-[0.05em] text-muted-foreground mb-2 uppercase">
                     こういう特徴があれば{m.typeName}タイプ
                   </p>
                   <ul className="space-y-1.5">
                     {m.signs.map((s, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-[13px] text-foreground/85 leading-relaxed"
-                      >
-                        <span className="flex-shrink-0 text-foreground/50 mt-0.5">
-                          ・
-                        </span>
+                      <li key={i} className="flex items-start gap-2 text-[13px] text-foreground/85 leading-relaxed">
+                        <span className="flex-shrink-0 text-foreground/50 mt-0.5">・</span>
                         <span>{s}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* メカニズム本文 */}
                 <RichParagraphs
                   body={m.body}
                   className="text-[14px] text-foreground/85 leading-[1.95] mb-3 last:mb-0"
                 />
 
-                {/* 引用論文 */}
                 {m.paperRefs.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-border">
                     <p className="text-[11px] font-semibold tracking-[0.05em] text-muted-foreground mb-2 uppercase">
@@ -359,23 +224,14 @@ export default async function ConcernGuidePage({ params }: Props) {
                     </p>
                     <ul className="space-y-2">
                       {m.paperRefs.map((p, i) => (
-                        <li
-                          key={i}
-                          className="text-[12px] text-foreground/70 leading-relaxed"
-                        >
-                          <span className="font-semibold text-foreground/85">
-                            {p.journal} {p.year}
-                          </span>
+                        <li key={i} className="text-[12px] text-foreground/70 leading-relaxed">
+                          <span className="font-semibold text-foreground/85">{p.journal} {p.year}</span>
                           <span className="mx-1.5 text-muted-foreground">·</span>
-                          <span className="text-muted-foreground">
-                            {studyTypeLabel[p.studyType]}
-                          </span>
+                          <span className="text-muted-foreground">{studyTypeLabel[p.studyType]}</span>
                           {p.sampleSize && (
                             <>
                               <span className="mx-1.5 text-muted-foreground">·</span>
-                              <span className="text-muted-foreground">
-                                n={p.sampleSize}
-                              </span>
+                              <span className="text-muted-foreground">n={p.sampleSize}</span>
                             </>
                           )}
                           <p className="mt-1 text-foreground/80">{p.keyFinding}</p>
@@ -414,7 +270,6 @@ export default async function ConcernGuidePage({ params }: Props) {
                     {s.typeName}に効く成分
                   </h3>
 
-                  {/* BEST PICK 成分タグ */}
                   <div className="flex flex-wrap items-center gap-2 mb-5">
                     <span className="text-[10px] font-bold bg-foreground text-background rounded px-2 py-0.5 tracking-[0.08em]">
                       BEST
@@ -441,7 +296,6 @@ export default async function ConcernGuidePage({ params }: Props) {
                     ))}
                   </div>
 
-                  {/* 本文 */}
                   <div className="mb-6">
                     <RichParagraphs
                       body={s.body}
@@ -449,7 +303,6 @@ export default async function ConcernGuidePage({ params }: Props) {
                     />
                   </div>
 
-                  {/* 商品ブロック */}
                   {s.productBlocks.length > 0 && (
                     <div className="space-y-3">
                       {s.productBlocks.map((pb, pbIdx) => {
@@ -461,15 +314,10 @@ export default async function ConcernGuidePage({ params }: Props) {
                           ing.products[0]
                         if (!product) return null
                         return (
-                          <div
-                            key={pbIdx}
-                            className="border-2 border-border rounded-2xl overflow-hidden bg-background"
-                          >
+                          <div key={pbIdx} className="border-2 border-border rounded-2xl overflow-hidden bg-background">
                             <div className="p-5">
                               <div className="flex items-center gap-2 mb-2">
-                                <span className="text-[10px] font-bold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">
-                                  PR
-                                </span>
+                                <span className="text-[10px] font-bold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
                                 {pb.badge && (
                                   <span className="text-[11px] font-semibold text-muted-foreground bg-secondary border border-border rounded px-2 py-0.5">
                                     {pb.badge}
@@ -487,19 +335,13 @@ export default async function ConcernGuidePage({ params }: Props) {
                               </p>
                               <div className="flex flex-wrap items-center gap-3 text-[12px] text-muted-foreground mb-4">
                                 <span>
-                                  価格：
-                                  <strong className="text-foreground tabular-nums">
-                                    ¥{product.priceJpy.toLocaleString()}
-                                  </strong>
+                                  価格：<strong className="text-foreground tabular-nums">¥{product.priceJpy.toLocaleString()}</strong>
                                 </span>
                                 {product.monthlyCostJpy && (
                                   <>
                                     <span className="w-px h-3 bg-border" />
                                     <span>
-                                      月コスト：
-                                      <strong className="text-foreground tabular-nums">
-                                        ¥{product.monthlyCostJpy.toLocaleString()}
-                                      </strong>
+                                      月コスト：<strong className="text-foreground tabular-nums">¥{product.monthlyCostJpy.toLocaleString()}</strong>
                                     </span>
                                   </>
                                 )}
@@ -545,19 +387,12 @@ export default async function ConcernGuidePage({ params }: Props) {
           </p>
           <ul className="space-y-3">
             {guide.failurePatterns.map((f, i) => (
-              <li
-                key={i}
-                className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 sm:p-5"
-              >
+              <li key={i} className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 sm:p-5">
                 <div className="flex items-start gap-3 mb-2">
                   <AlertTriangle className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" />
-                  <h3 className="text-[14px] sm:text-[15px] font-bold text-foreground leading-snug">
-                    {f.title}
-                  </h3>
+                  <h3 className="text-[14px] sm:text-[15px] font-bold text-foreground leading-snug">{f.title}</h3>
                 </div>
-                <p className="text-[13px] text-foreground/85 leading-[1.9] pl-7">
-                  {f.body}
-                </p>
+                <p className="text-[13px] text-foreground/85 leading-[1.9] pl-7">{f.body}</p>
               </li>
             ))}
           </ul>
@@ -568,22 +403,15 @@ export default async function ConcernGuidePage({ params }: Props) {
           <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
             あなたが最初に試すべき成分
           </h2>
-          <p className="text-[14px] text-foreground/75 leading-[1.85] mb-6">
-            {guide.selfCheck.intro}
-          </p>
+          <p className="text-[14px] text-foreground/75 leading-[1.85] mb-6">{guide.selfCheck.intro}</p>
           <ul className="space-y-3">
             {guide.selfCheck.questions.map((q, i) => (
-              <li
-                key={i}
-                className="border border-border rounded-2xl p-4 sm:p-5 bg-background"
-              >
+              <li key={i} className="border border-border rounded-2xl p-4 sm:p-5 bg-background">
                 <div className="flex items-start gap-3 mb-3">
                   <span className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-[12px] font-bold tabular-nums">
                     {i + 1}
                   </span>
-                  <p className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">
-                    {q.q}
-                  </p>
+                  <p className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">{q.q}</p>
                 </div>
                 <div className="pl-10">
                   <p className="text-[12px] text-muted-foreground mb-2">
@@ -626,7 +454,6 @@ export default async function ConcernGuidePage({ params }: Props) {
           </ul>
         </section>
 
-        {/* Disclaimer */}
         <p className="text-[12px] text-muted-foreground bg-secondary rounded-xl p-4 mb-12 leading-relaxed">
           論文で示された効果はあくまで研究条件下のもので、個人の効果を保証するものではありません。経口摂取は持病・服用中の薬がある場合は医師・薬剤師に相談を。商品リンクはアフィリエイト（PR）を含みます。
         </p>
@@ -638,20 +465,12 @@ export default async function ConcernGuidePage({ params }: Props) {
           </h2>
           <div className="space-y-2">
             {guide.faqs.map((f, i) => (
-              <details
-                key={i}
-                className="group border border-border rounded-xl px-5 py-4 bg-background hover:bg-muted/20 transition-colors"
-                open={i === 0}
-              >
+              <details key={i} className="group border border-border rounded-xl px-5 py-4 bg-background hover:bg-muted/20 transition-colors" open={i === 0}>
                 <summary className="cursor-pointer list-none flex items-start justify-between gap-3 font-semibold text-[14px] text-foreground min-h-[44px] items-center">
                   <span className="flex-1">{f.q}</span>
-                  <span className="text-muted-foreground text-[12px] flex-shrink-0 group-open:rotate-180 transition-transform">
-                    ▼
-                  </span>
+                  <span className="text-muted-foreground text-[12px] flex-shrink-0 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <p className="mt-3 text-[13px] text-foreground/75 leading-[1.95]">
-                  {f.a}
-                </p>
+                <p className="mt-3 text-[13px] text-foreground/75 leading-[1.95]">{f.a}</p>
               </details>
             ))}
           </div>
@@ -667,13 +486,12 @@ export default async function ConcernGuidePage({ params }: Props) {
 
         {/* ── [10] 関連リンク ── */}
         <section className="mt-14 pt-10 border-t border-border">
-          {/* 親concernページへの逆向きリンク（Hub & Spoke） */}
           <div className="mb-10">
             <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-3 uppercase">
               この悩みのトップへ
             </p>
             <Link
-              href={`/concerns/${slug}`}
+              href={`/concerns/${concernSlug}`}
               className="group flex items-center justify-between gap-3 bg-card border border-border rounded-xl px-5 py-4 hover:border-accent/40 hover:bg-muted/30 transition-colors"
             >
               <div className="min-w-0">
@@ -688,7 +506,6 @@ export default async function ConcernGuidePage({ params }: Props) {
             </Link>
           </div>
 
-          {/* 関連記事 */}
           {relatedArticles.length > 0 && (
             <div className="mb-10">
               <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
@@ -717,7 +534,6 @@ export default async function ConcernGuidePage({ params }: Props) {
             </div>
           )}
 
-          {/* 他の悩み別ガイド（同シリーズの他記事・1本のみの間は非表示） */}
           {otherGuides.length > 0 && (
             <div className="mb-10">
               <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
@@ -728,7 +544,7 @@ export default async function ConcernGuidePage({ params }: Props) {
                 {otherGuides.map(({ guide: g, concern: c }) => (
                   <Link
                     key={g.concernSlug}
-                    href={`/concerns/${g.concernSlug}/guide`}
+                    href={`/articles/${g.concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}`}
                     className="group flex items-start gap-3 rounded-xl border-2 border-rose-200 bg-rose-50/30 px-5 py-4 hover:bg-rose-50/60 transition-colors"
                   >
                     <span className="text-[20px] leading-none flex-shrink-0 mt-0.5">{c.emoji}</span>
@@ -747,7 +563,6 @@ export default async function ConcernGuidePage({ params }: Props) {
             </div>
           )}
 
-          {/* 他の悩みを見る */}
           <div>
             <p className="font-medium text-[14px] text-foreground mb-3">他の悩みを見る</p>
             <div className="flex flex-wrap gap-2">

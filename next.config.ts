@@ -31,6 +31,16 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      // 悩み解決ガイドをコラム配下に統合（2026-05-01）
+      {
+        source: '/concerns/:slug/guide',
+        destination: '/articles/:slug-supplement-guide',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig;
