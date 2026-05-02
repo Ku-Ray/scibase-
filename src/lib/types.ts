@@ -26,6 +26,8 @@ export interface Product {
   dosageMg?: number
   /** 推奨摂取数（1日あたりの粒/錠数）。`dosageMg * unitsPerDay >= ing.dosageMin` で論文有効量充足を判定 */
   unitsPerDay?: number
+  /** 商品の表示%濃度（外用商品向け）。例: ナイアシンアミド10%なら 10。`>= ing.concentrationMinPct` で論文整合を判定 */
+  concentrationPct?: number
   note?: string
   /** おすすめ順位（1=最推奨） */
   rank?: 1 | 2 | 3
@@ -96,6 +98,10 @@ export interface Ingredient {
   dosageMin?: number
   dosageMax?: number
   dosageUnit: string
+  /** 外用成分の論文使用最小濃度（%）。topical/both で使用。商品の concentrationPct >= これで論文整合 */
+  concentrationMinPct?: number
+  /** 外用成分の標準使用最大濃度（%）。論文での標準範囲の上限・参考値 */
+  concentrationMaxPct?: number
   timing?: string
   duration?: string
   sideEffects?: string[]

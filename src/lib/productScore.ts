@@ -50,14 +50,41 @@ export interface ProductScore {
   unitCostPerMg: number | null
 }
 
+/**
+ * 論文整合スコア計算。
+ * - 外用成分（topical/both）かつ商品に concentrationPct がある場合は %濃度ベースで判定
+ *   （化粧品は%濃度で表記されるため。Phase B 改修）
+ * - 経口商品は dosageMg ベースで従来通り判定
+ *
+ * `both` 成分は商品ごとに「外用評価可能か」を見て分岐：
+ * concentrationPct が入っていれば外用、入っていなければ経口扱い。
+ */
 function calcEvidenceScore(
+  product: Product,
+  ingredient: Ingredient,
   dailyDoseMg: number | null,
-  dosageMin: number | undefined,
 ): { ratio: number | null; score: number | null; status: EffectiveDoseStatus } {
-  if (dailyDoseMg == null || dosageMin == null || dosageMin <= 0) {
+  const isTopical = ingredient.usageType === 'topical' || ingredient.usageType === 'both'
+
+  // 外用：concentrationPct で評価
+  if (
+    isTopical &&
+    product.concentrationPct != null &&
+    ingredient.concentrationMinPct != null &&
+    ingredient.concentrationMinPct > 0
+  ) {
+    const ratio = product.concentrationPct / ingredient.concentrationMinPct
+    const score = ratio >= 1 ? 5 : Math.max(1, Math.round(ratio * 5))
+    const status: EffectiveDoseStatus =
+      ratio >= 1 ? 'sufficient' : ratio >= 0.5 ? 'partial' : 'insufficient'
+    return { ratio: Math.min(ratio, 1.2), score, status }
+  }
+
+  // 経口：既存の dosageMg ベース
+  if (dailyDoseMg == null || ingredient.dosageMin == null || ingredient.dosageMin <= 0) {
     return { ratio: null, score: null, status: 'unknown' }
   }
-  const ratio = dailyDoseMg / dosageMin
+  const ratio = dailyDoseMg / ingredient.dosageMin
   const score = ratio >= 1 ? 5 : Math.max(1, Math.round(ratio * 5))
   const status: EffectiveDoseStatus =
     ratio >= 1 ? 'sufficient' : ratio >= 0.5 ? 'partial' : 'insufficient'
@@ -189,7 +216,7 @@ export function scoreProduct(product: Product, ingredient: Ingredient): ProductS
     product.dosageMg != null && product.unitsPerDay != null
       ? product.dosageMg * product.unitsPerDay
       : product.dosageMg ?? null
-  const evidence = calcEvidenceScore(dailyDoseMg, ingredient.dosageMin)
+  const evidence = calcEvidenceScore(product, ingredient, dailyDoseMg)
   const partial: Omit<ProductScore, 'totalScore' | 'recommendationScore' | 'unitCostPerMg'> = {
     dailyDoseMg,
     effectiveDoseRatio: evidence.ratio,

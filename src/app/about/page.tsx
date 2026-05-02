@@ -36,7 +36,7 @@ const SCORE_AXES = [
   {
     axis: '論文整合',
     weight: 40,
-    desc: '商品の1日あたり有効成分量が、論文RCTで使われた最低有効量を超えているかで判定。充足率（実用量÷最低有効量）に応じて★1〜5を連続的に算出（1.0以上で★5・最低★1）。算出に必要なデータが揃わない場合は欠損として「—」を表示します。',
+    desc: '経口サプリは商品の1日あたり有効成分量（mg）が、論文RCTで使われた最低有効量を超えているかで判定。外用化粧品は商品の表示濃度（%）が論文で使われた最小濃度（例：ナイアシンアミド4%・ビタミンC外用10%・サリチル酸0.5%等）を超えているかで判定。どちらも充足率（実用量÷最小有効量）に応じて★1〜5を連続的に算出（1.0以上で★5・最低★1）。算出に必要なデータが揃わない場合は欠損として「—」を表示します。',
   },
   {
     axis: '第三者検査',
@@ -387,6 +387,31 @@ export default function AboutPage() {
                 <span className="font-semibold text-foreground">合成時（SciBase推奨度）は欠損軸を重みから除外し、残り軸の重みで再正規化</span>します。
                 欠損を「★3（中立）」として埋めて合成すると実態より高い推奨度が出るバイアスがあるため、
                 算出から外す設計です。SciBase は欠損は欠損として明示する方針を取っています。
+              </p>
+            </div>
+          </div>
+
+          {/* 掲載基準 */}
+          <div className="mb-8">
+            <h3 className="text-[15px] font-bold text-foreground mb-3">
+              掲載基準
+            </h3>
+            <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
+              <p>
+                SciBase は<span className="font-semibold text-foreground">推奨度★4.0以上</span>の商品を基本掲載しています。
+                これより低スコアの商品は、広告主への配慮ではなく
+                <span className="font-semibold text-foreground">編集方針として原則掲載していません</span>。
+                論文整合・第三者検査などSciBaseの評価軸で十分な根拠が得られない商品を除外する設計です。
+              </p>
+              <p>
+                成分内1位として表示する <span className="font-semibold text-foreground">BEST PICK は★4.5以上</span>を必須としています。
+                該当商品が見つからない成分は BEST PICK を表示せず、掲載商品全件を比較表として並べます。
+              </p>
+              <p>
+                掲載基準を満たす商品が成分内に存在しない場合は
+                <span className="font-semibold text-foreground">「掲載休止」</span>として該当成分を悩みページの推奨成分から外します。
+                「とりあえず何か掲載する」より「基準を満たす選択肢がない」ことを正直に伝えるほうが、
+                読者の判断材料として有用と考えるためです。
               </p>
             </div>
           </div>
