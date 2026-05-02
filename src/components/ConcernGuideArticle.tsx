@@ -175,9 +175,15 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-2 uppercase">
               この記事の結論
             </p>
-            <p className="text-[14px] sm:text-[15px] text-foreground leading-[1.95] font-medium">
-              {guide.bottomLine}
-            </p>
+            <ul className="text-[14px] sm:text-[15px] text-foreground leading-[1.95] font-medium space-y-1.5 list-disc pl-5 marker:text-foreground/40">
+              {guide.bottomLine
+                .split('。')
+                .map((s) => s.trim())
+                .filter((s) => s.length > 0)
+                .map((s, i) => (
+                  <li key={i}>{s}。</li>
+                ))}
+            </ul>
           </div>
 
           {guide.priceAnchor && (
@@ -185,9 +191,15 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               <p className="text-[11px] font-semibold tracking-[0.1em] text-emerald-700 mb-1.5 uppercase">
                 価格の目安
               </p>
-              <p className="text-[13px] sm:text-[14px] text-foreground/85 leading-[1.85]">
-                {guide.priceAnchor}
-              </p>
+              <ul className="text-[13px] sm:text-[14px] text-foreground/85 leading-[1.85] space-y-1 list-disc pl-5 marker:text-emerald-600/70">
+                {guide.priceAnchor
+                  .split(/[・／。]/)
+                  .map((s) => s.trim())
+                  .filter((s) => s.length > 0)
+                  .map((s, i) => (
+                    <li key={i}>{s}</li>
+                  ))}
+              </ul>
             </div>
           )}
         </section>
