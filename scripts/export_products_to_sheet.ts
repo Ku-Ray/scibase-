@@ -15,6 +15,7 @@ import { google } from 'googleapis'
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { ingredients } from '../src/lib/data.ts'
+import { scoreProduct } from '../src/lib/productScore.ts'
 import type { Ingredient, Product, EvidenceRank } from '../src/lib/types.ts'
 
 // ─── env ─────────────────────────────────────────────────────
@@ -180,6 +181,8 @@ const HEADER = [
   '認証',
   'Tier1合否',
   'Tier2スコア',
+  '推奨度★',
+  '帯',
   'レビュー数',
   '評価(★)',
   '印',
@@ -187,6 +190,14 @@ const HEADER = [
   '最終更新',
   '差し替えURL希望',
 ]
+
+/** 推奨度から帯ラベルを返す（Phase D 掲載基準準拠） */
+function scoreBucket(score: number): string {
+  if (score >= 4.5) return '★4.5+ BEST PICK帯'
+  if (score >= 4.0) return '★4.0-4.4 掲載基準'
+  if (score >= 3.5) return '★3.5-3.9 差し替え検討'
+  return '★3.5未満 削除推奨'
+}
 
 // ─── D2ルール違反検出 ─────────────────────────────────────────
 type Violation = {
@@ -291,6 +302,9 @@ function buildRows(): (string | number)[][] {
       const s5 = scoreS5(p, ing.products) // D4: 4軸差別化
       const tier2 = s1 + s3 + s4 + s5 // 最大12点（S1+S3+S4+S5）
 
+      const recScore = scoreProduct(p, ing).recommendationScore
+      const bucket = scoreBucket(recScore)
+
       rows.push([
         ing.slug,
         ing.nameJa,
@@ -312,6 +326,8 @@ function buildRows(): (string | number)[][] {
         (p.certifications ?? []).join('/'),
         tier1,
         tier2,
+        recScore, // SciBase推奨度（Phase B+D 濃度整合軸対応）
+        bucket,   // 帯（Phase D 掲載基準準拠）
         '', // レビュー数（手動）
         '', // 評価（手動）
         '', // 印（ユーザー記入）
@@ -347,11 +363,11 @@ async function main() {
   }
   const sheetIdNum = mainTab.properties!.sheetId!
 
-  // 既存シートをクリア（ヘッダー行含む全範囲）
+  // 既存シートをクリア（ヘッダー行含む全範囲・列追加に伴いAC まで拡張）
   console.log(`→ シート '${MAIN_TAB}' クリア中...`)
   await sheets.spreadsheets.values.clear({
     spreadsheetId: sheetId,
-    range: `${MAIN_TAB}!A:AA`,
+    range: `${MAIN_TAB}!A:AC`,
   })
 
   // ヘッダー + データを一括書き込み
@@ -398,7 +414,7 @@ async function main() {
     },
   })
 
-  // 印列（W列=index 22）にプルダウン設定
+  // 印列（Y列=index 24・推奨度/帯列追加で22→24に移動）にプルダウン設定
   await sheets.spreadsheets.batchUpdate({
     spreadsheetId: sheetId,
     requestBody: {
@@ -409,8 +425,8 @@ async function main() {
               sheetId: sheetIdNum,
               startRowIndex: 1,
               endRowIndex: rows.length + 1,
-              startColumnIndex: 22,
-              endColumnIndex: 23,
+              startColumnIndex: 24,
+              endColumnIndex: 25,
             },
             rule: {
               condition: {
@@ -426,6 +442,120 @@ async function main() {
               showCustomUi: true,
               strict: false,
             },
+          },
+        },
+      ],
+    },
+  })
+
+  // 推奨度・帯列（U列=20, V列=21）に条件付き書式
+  // ★3.5未満=赤, ★3.5-3.9=黄, ★4.5+=緑 の3パターン
+  console.log('→ 推奨度カラーバンド適用中...')
+
+  // 既存の conditional format rules を削除（重複防止）
+  const fullMeta = await sheets.spreadsheets.get({
+    spreadsheetId: sheetId,
+    ranges: [`${MAIN_TAB}!A1`],
+    fields: 'sheets(properties.sheetId,conditionalFormats)',
+  })
+  const existingRules =
+    fullMeta.data.sheets?.find(s => s.properties?.sheetId === sheetIdNum)
+      ?.conditionalFormats ?? []
+  if (existingRules.length > 0) {
+    // index 0 から順に削除すると残りのindexが繰り上がるので、後ろから削除
+    const deleteRequests = existingRules.map((_, i) => ({
+      deleteConditionalFormatRule: {
+        sheetId: sheetIdNum,
+        index: existingRules.length - 1 - i,
+      },
+    }))
+    await sheets.spreadsheets.batchUpdate({
+      spreadsheetId: sheetId,
+      requestBody: { requests: deleteRequests },
+    })
+    console.log(`  → 既存 ${existingRules.length} 件の条件付き書式を削除`)
+  }
+
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: sheetId,
+    requestBody: {
+      requests: [
+        // ★3.5未満（削除推奨）= 赤バンド
+        {
+          addConditionalFormatRule: {
+            rule: {
+              ranges: [{
+                sheetId: sheetIdNum,
+                startRowIndex: 1,
+                endRowIndex: rows.length + 1,
+                startColumnIndex: 20,
+                endColumnIndex: 22,
+              }],
+              booleanRule: {
+                condition: {
+                  type: 'NUMBER_LESS',
+                  values: [{ userEnteredValue: '3.5' }],
+                },
+                format: {
+                  backgroundColor: { red: 0.98, green: 0.85, blue: 0.85 },
+                  textFormat: { foregroundColor: { red: 0.6, green: 0.1, blue: 0.1 }, bold: true },
+                },
+              },
+            },
+            index: 0,
+          },
+        },
+        // ★3.5-3.9（差し替え検討）= 黄バンド
+        {
+          addConditionalFormatRule: {
+            rule: {
+              ranges: [{
+                sheetId: sheetIdNum,
+                startRowIndex: 1,
+                endRowIndex: rows.length + 1,
+                startColumnIndex: 20,
+                endColumnIndex: 22,
+              }],
+              booleanRule: {
+                condition: {
+                  type: 'NUMBER_BETWEEN',
+                  values: [
+                    { userEnteredValue: '3.5' },
+                    { userEnteredValue: '3.9' },
+                  ],
+                },
+                format: {
+                  backgroundColor: { red: 1.0, green: 0.95, blue: 0.78 },
+                  textFormat: { foregroundColor: { red: 0.5, green: 0.35, blue: 0.05 } },
+                },
+              },
+            },
+            index: 1,
+          },
+        },
+        // ★4.5+（BEST PICK帯）= 緑バンド
+        {
+          addConditionalFormatRule: {
+            rule: {
+              ranges: [{
+                sheetId: sheetIdNum,
+                startRowIndex: 1,
+                endRowIndex: rows.length + 1,
+                startColumnIndex: 20,
+                endColumnIndex: 22,
+              }],
+              booleanRule: {
+                condition: {
+                  type: 'NUMBER_GREATER_THAN_EQ',
+                  values: [{ userEnteredValue: '4.5' }],
+                },
+                format: {
+                  backgroundColor: { red: 0.85, green: 0.95, blue: 0.85 },
+                  textFormat: { foregroundColor: { red: 0.1, green: 0.5, blue: 0.2 }, bold: true },
+                },
+              },
+            },
+            index: 2,
           },
         },
       ],
