@@ -978,16 +978,17 @@ export default async function IngredientPage({ params }: Props) {
               </div>
             )}
 
-            {/* セカンダリ商品：2列グリッド */}
+            {/* セカンダリ商品：rank=1 と同じ縦長 hero レイアウト・1位バッジは非表示 */}
             {secondaryProducts.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              <div className="flex flex-col gap-5 mb-5">
                 {secondaryProducts.map((p, i) => (
                   <ProductOfferCard
                     key={`${p.platform}-${i}`}
                     product={p}
                     ingredient={ing}
-                    variant="secondary"
+                    variant="hero"
                     axisLeaders={axisLeaders}
+                    showOverallRank={false}
                   />
                 ))}
               </div>
@@ -1023,13 +1024,14 @@ export default async function IngredientPage({ params }: Props) {
               </div>
             )}
 
-            {/* cosme platform（@cosme等）がある場合 */}
+            {/* cosme platform（@cosme等）がある場合・hero レイアウトで統一 */}
             {cosmeProduct && (
-              <div className="mt-3">
+              <div className="mt-5">
                 <ProductOfferCard
                   product={cosmeProduct}
                   ingredient={ing}
-                  variant="secondary"
+                  variant="hero"
+                  showOverallRank={false}
                 />
               </div>
             )}
