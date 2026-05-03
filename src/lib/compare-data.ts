@@ -92,6 +92,29 @@ export const TOP3_PAIR_KEYS = [
   'creatine-vs-hmb',
 ]
 
+/** 禁忌・刺激性差・用途分担が明確で「迷ったらこれ」一択推奨が消費者利益と乖離する比較ペア。
+ *  これらでは TL;DR 後の即購入CTAブロックを抑制し、目的別の判断を促す。
+ *  - 妊娠中NG/OKが分かれるペア（retinol系）
+ *  - 肌タイプ・刺激性で適性が大きく分かれるペア（AHA系・retinol系）
+ *  - 用途・作用ターゲットが補完関係のペア（オメガ3系・脂溶性スタック系）
+ *  - 抗凝固薬等の併用注意が片方に強いペア
+ */
+export const DISABLE_QUICK_CTA_PAIRS: Set<string> = new Set([
+  'retinol-vs-bakuchiol',
+  'retinol-vs-retinal',
+  'retinol-vs-niacinamide',
+  'salicylic-acid-vs-glycolic-acid',
+  'glycolic-acid-vs-lactic-acid',
+  'omega3-vs-vitamin-k2',
+  'astaxanthin-vs-omega3',
+  'collagen-peptide-vs-vitamin-c-oral',
+  'hyaluronic-acid-vs-collagen-peptide',
+  'vitamin-d-vs-vitamin-k2',
+  'vitamin-c-topical-vs-niacinamide',
+  'hyaluronic-acid-vs-ceramide',
+  'arbutin-vs-azelaic-acid',
+])
+
 export const PAIR_CATEGORIES: Record<string, string> = {
   // skin
   'retinol-vs-bakuchiol':                'skin',

@@ -6,7 +6,7 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { PageViewTracker } from '@/components/PageViewTracker'
-import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO } from '@/lib/compare-data'
+import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
 
@@ -107,18 +107,23 @@ export default async function ComparePage({ params }: Props) {
   const costA = ingA.products[0]?.monthlyCostJpy ?? ingA.products[0]?.priceJpy
   const costB = ingB.products[0]?.monthlyCostJpy ?? ingB.products[0]?.priceJpy
 
-  /* 総合おすすめ：エビデンス差→コスト差で判定 */
+  /* 総合おすすめ：エビデンス差が「明確」かつ軸優位も伴う場合のみ発火。
+     「やや上回る」だけで一択推奨するのは比較記事の中立性と消費者利益に反するため、
+     差が小さい場合は pick=null（「目的・悩みに応じて選択」）にフォールバックする。 */
   const overall = ((): { pick: typeof ingA | null; reason: string } => {
-    if (Math.abs(scoreA - scoreB) >= 2 && evidenceWinner) {
-      return { pick: evidenceWinner, reason: 'エビデンスの強さで明確に上回る' }
+    // ① エビデンス差が大きい (3+) かつ 軸優位も 5/7 以上 → 明確に上回る
+    if (Math.abs(scoreA - scoreB) >= 3 && evidenceWinner) {
+      const winnerAxisWins = evidenceWinner.slug === ingA.slug ? axisWins.a : axisWins.b
+      if (winnerAxisWins >= 5) {
+        return { pick: evidenceWinner, reason: 'エビデンスの強さで明確に上回る' }
+      }
     }
+    // ② エビデンス同等＋月コスト 15%以上の差 → コストで選ぶ
     if (scoreA === scoreB && costA && costB) {
       if (costA < costB * 0.85) return { pick: ingA, reason: 'エビデンス同等で月コストが安い' }
       if (costB < costA * 0.85) return { pick: ingB, reason: 'エビデンス同等で月コストが安い' }
     }
-    if (evidenceWinner) {
-      return { pick: evidenceWinner, reason: '論文エビデンスがやや上回る' }
-    }
+    // それ以外は「目的・悩みに応じて選択」（一択推奨を回避）
     return { pick: null, reason: '目的・悩みに応じて選択' }
   })()
 
@@ -127,8 +132,10 @@ export default async function ComparePage({ params }: Props) {
     ? overall.pick.products.find(p => p.rank === 1) ?? overall.pick.products[0]
     : null
   const platformLabel: Record<'iherb' | 'amazon' | 'cosme', string> = {
-    iherb: 'iHerbで購入', amazon: 'Amazonで購入', cosme: '@cosmeで購入',
+    iherb: 'iHerbで価格を確認', amazon: 'Amazonで価格を確認', cosme: '@cosmeで価格を確認',
   }
+  /* 禁忌・刺激性差・用途分担が明確なペアでは「迷ったらこれ」CTAを抑制 */
+  const showQuickCTA = !DISABLE_QUICK_CTA_PAIRS.has(pair)
 
   /* 関連する比較ペア（同じカテゴリ or どちらかの成分が含まれる） */
   const currentCategory = PAIR_CATEGORIES[pair]
@@ -295,15 +302,19 @@ export default async function ComparePage({ params }: Props) {
           </div>
         </div>
 
-        {/* 総合おすすめ → 購入CTA（即時意思決定支援） */}
-        {overall.pick && overallTopProduct && overallTopProduct.url && overallTopProduct.url !== '#' && (
+        {/* 総合おすすめ → エビデンス確認 + 価格確認CTA。
+            判断軸：①エビデンスの強さで明確に上回る場合のみ発火（弱い差では発火しない）、
+            ②禁忌・用途分担が明確なペアは抑制（DISABLE_QUICK_CTA_PAIRS）、
+            ③エビデンス確認を主CTA・価格確認を副CTAとし、即購入想定を弱める。
+            ④PR表記を明示（景品表示法ステマ規制対応）。 */}
+        {showQuickCTA && overall.pick && overallTopProduct && overallTopProduct.url && overallTopProduct.url !== '#' && (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
             <div className="flex items-center gap-2 mb-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-700">
                 総合おすすめ
               </p>
-              <span className="text-[10px] font-semibold bg-amber-500 text-white rounded-full px-2.5 py-0.5">
-                迷ったらこれ
+              <span className="ml-auto text-[10px] font-semibold border border-amber-400 text-amber-700 rounded px-1.5 py-0.5">
+                PR
               </span>
             </div>
             <p className="font-bold text-[20px] text-foreground mb-1">{overall.pick.nameJa}</p>
@@ -312,10 +323,10 @@ export default async function ComparePage({ params }: Props) {
               <Link
                 href={`/ingredients/${overall.pick.slug}`}
                 className="flex-1 inline-flex items-center justify-center gap-1.5
-                  text-[13px] font-medium border border-amber-300 text-amber-800
-                  rounded-xl px-4 py-2.5 min-h-[44px] hover:bg-amber-100 transition-colors"
+                  text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
+                  hover:bg-amber-600 transition-colors"
               >
-                エビデンスを確認する
+                エビデンスを詳しく見る
               </Link>
               <OutboundProductLink
                 href={overallTopProduct.url}
@@ -323,8 +334,8 @@ export default async function ComparePage({ params }: Props) {
                 ingredientSlug={overall.pick.slug}
                 productRank={overallTopProduct.rank}
                 className="flex-1 inline-flex items-center justify-center gap-1.5
-                  text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
-                  hover:bg-amber-600 transition-colors"
+                  text-[13px] font-medium border border-amber-300 text-amber-800
+                  rounded-xl px-4 py-2.5 min-h-[44px] hover:bg-amber-100 transition-colors"
               >
                 {platformLabel[overallTopProduct.platform]}
                 <ExternalLink className="w-3.5 h-3.5" />
