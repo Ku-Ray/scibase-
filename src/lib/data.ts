@@ -189,7 +189,7 @@ export const ingredients: Ingredient[] = [
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0DC61XNLX?tag=scibase-22',
 
-        imageUrl: 'https://m.media-amazon.com/images/I/519BKkBtINL._AC_SX522_.jpg',
+        imageUrl: 'https://m.media-amazon.com/images/I/519BKkBtINL._SL1500_.jpg',
         priceJpy: 2400,
         concentrationPct: 10,
         rank: 1,
@@ -216,7 +216,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/anua-niacinamide-10-txa-4-serum-1-01-fl-oz-30-ml/147912',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/auu/auu73452/s/57.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/auu/auu73452/l/57.jpg',
         priceJpy: 2980,
         concentrationPct: 10,
         rank: 2,
@@ -1097,7 +1097,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/mild-by-nature-serumdipity-retinol-vitamin-a-facial-serum-1-fl-oz-30-ml/118730',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/syi/syi02261/s/61.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/syi/syi02261/l/61.jpg',
         priceJpy: 1980,
         concentrationPct: 1.0,
         rank: 2,
@@ -1212,7 +1212,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/beauty-of-joseon-revive-eye-serum-ginseng-retinal-1-01-fl-oz-30-ml/115901',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/boj/boj31614/s/81.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/boj/boj31614/l/81.jpg',
         priceJpy: 2480,
         concentrationPct: 0.05,
         rank: 2,
@@ -1321,7 +1321,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/advanced-clinicals-vitamin-c-serum-1-75-fl-oz-52-ml/82189',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/adc/adc00801/s/142.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/adc/adc00801/l/142.jpg',
         priceJpy: 1980,
         concentrationPct: 10,
         rank: 2,
@@ -1347,7 +1347,7 @@ export const ingredients: Ingredient[] = [
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0FDQ59T55?tag=scibase-22',
 
-        imageUrl: 'https://m.media-amazon.com/images/I/71GaX4CLlmL._AC_SX679_.jpg',
+        imageUrl: 'https://m.media-amazon.com/images/I/71GaX4CLlmL._SL1500_.jpg',
         priceJpy: 980,
         concentrationPct: 10,
         rank: 3,
@@ -1456,7 +1456,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/mild-by-nature-all-day-hydration-cream-2-oz-57-g/96897',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/syi/syi01514/s/152.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/syi/syi01514/l/152.jpg',
         priceJpy: 1880,
         concentrationPct: 3,
         rank: 2,
@@ -1610,7 +1610,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/advanced-clinicals-10-glycolic-lactic-acid-serum-1-75-fl-oz-52-ml/103847',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/adc/adc03341/s/67.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/adc/adc03341/l/67.jpg',
         priceJpy: 2280,
         concentrationPct: 7,
         rank: 2,
@@ -2860,7 +2860,7 @@ export const ingredients: Ingredient[] = [
         brand: 'ANUA',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/anua-niacinamide-10-txa-4-serum-1-01-fl-oz-30-ml/147912',
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/auu/auu73452/s/57.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/auu/auu73452/l/57.jpg',
         priceJpy: 2980,
         concentrationPct: 4,
         rank: 2,
@@ -2886,7 +2886,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/medicube-txa-niacinamide-15-serum-1-01-fl-oz-30-ml/154378',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/mcb/mcb11913/s/17.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/mcb/mcb11913/l/17.jpg',
         priceJpy: 3500,
         concentrationPct: 5,
         rank: 3,
@@ -3144,7 +3144,7 @@ export const ingredients: Ingredient[] = [
         brand: 'Advanced Clinicals',
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/advanced-clinicals-10-glycolic-lactic-acid-serum-1-75-fl-oz-52-ml/103847',
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/adc/adc03341/s/67.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/adc/adc03341/l/67.jpg',
         priceJpy: 2280,
         concentrationPct: 5,
         rank: 2,
@@ -7126,7 +7126,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-250-veg-capsules/780',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now03363/s/39.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now03363/l/39.jpg',
         priceJpy: 3500,
         dosageMg: 600,
         rank: 1,
@@ -9146,7 +9146,7 @@ export const ingredients: Ingredient[] = [
         platform: 'amazon',
         url: 'https://www.amazon.co.jp/dp/B0BQQG379H?tag=scibase-22',
 
-        imageUrl: 'https://m.media-amazon.com/images/I/51F0HjQJ8XL._AC_SX522_.jpg',
+        imageUrl: 'https://m.media-amazon.com/images/I/51F0HjQJ8XL._SL1500_.jpg',
         priceJpy: 2200,
         concentrationPct: 10,
         rank: 1,
