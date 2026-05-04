@@ -302,12 +302,11 @@ export default async function ComparePage({ params }: Props) {
           </div>
         </div>
 
-        {/* 総合おすすめ → エビデンス確認 + 価格確認CTA。
-            判断軸：①エビデンスの強さで明確に上回る場合のみ発火（弱い差では発火しない）、
-            ②禁忌・用途分担が明確なペアは抑制（DISABLE_QUICK_CTA_PAIRS）、
-            ③エビデンス確認を主CTA・価格確認を副CTAとし、即購入想定を弱める。
-            ④PR表記を明示（景品表示法ステマ規制対応）。 */}
-        {showQuickCTA && overall.pick && overallTopProduct && overallTopProduct.url && overallTopProduct.url !== '#' && (
+        {/* TL;DR 直後の CTA 枠。
+            ①明確に上回るペア（厳格化条件クリア）→「総合おすすめ」CTA（PR表記付き・購入導線）
+            ②それ以外（抑制ペア / pick=null）→ 両成分のデュアル送客カード（成分詳細ページへの中立送客）
+            目的：比較記事の主目的＝成分詳細ページへの送客を、どのペアでも担保する。 */}
+        {showQuickCTA && overall.pick && overallTopProduct && overallTopProduct.url && overallTopProduct.url !== '#' ? (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
             <div className="flex items-center gap-2 mb-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-700">
@@ -340,6 +339,37 @@ export default async function ComparePage({ params }: Props) {
                 {platformLabel[overallTopProduct.platform]}
                 <ExternalLink className="w-3.5 h-3.5" />
               </OutboundProductLink>
+            </div>
+          </div>
+        ) : (
+          // デュアル送客カード：両成分のエビデンス詳細ページへの中立送客（押し付けず・両者均等に）
+          <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1">
+              目的別に詳細を確認する
+            </p>
+            <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed">
+              {overall.reason === '目的・悩みに応じて選択'
+                ? '両成分とも論文エビデンスがあり、目的・悩みに応じて使い分ける成分です。それぞれの詳細を確認してください。'
+                : '両成分のエビデンス詳細を確認し、目的に合うほうを選んでください。'}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[ingA, ingB].map(ing => (
+                <Link key={ing.slug} href={`/ingredients/${ing.slug}`}
+                  className="flex items-center justify-between gap-2
+                    bg-card border border-border rounded-xl px-4 py-3 min-h-[60px]
+                    hover:border-accent hover:bg-accent/5 transition-colors group">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                      <p className="text-[13px] font-semibold text-foreground truncate">{ing.nameJa}</p>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground">
+                      論文 {ing.papers.length}件・エビデンス{rankLabel[ing.evidenceRank]}
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0" />
+                </Link>
+              ))}
             </div>
           </div>
         )}
@@ -403,10 +433,11 @@ export default async function ComparePage({ params }: Props) {
                 )}
                 <div className="mt-4 flex items-center gap-2">
                   <Link href={`/ingredients/${ing.slug}`}
-                    className="flex-1 inline-flex items-center justify-center text-[12px] font-medium
-                      border border-border text-muted-foreground rounded-xl px-3 py-2 min-h-[44px]
-                      hover:border-accent hover:text-accent transition-colors">
-                    詳細を見る
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 text-[12px] font-semibold
+                      bg-foreground text-background rounded-xl px-3 py-2 min-h-[44px]
+                      hover:opacity-85 transition-opacity">
+                    エビデンス詳細を見る
+                    <ArrowRight className="w-3 h-3" />
                   </Link>
                   <AddToAnalyzerButton slug={ing.slug} variant="compact" />
                 </div>
