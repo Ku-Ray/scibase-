@@ -588,6 +588,9 @@ function IngredientMode({
                             platform={topProduct.platform}
                             ingredientSlug={ing.slug}
                             productRank={topProduct.rank}
+                            aspProgram={topProduct.aspProgram}
+                            aspId={topProduct.aspId}
+                            commissionRateBand={topProduct.commissionRateBand}
                             className="ml-auto text-[12px] font-semibold text-accent
                               bg-accent/8 border border-accent/20 rounded-lg px-3 py-1.5
                               hover:bg-accent/15 transition-colors flex items-center gap-1.5"
@@ -967,6 +970,9 @@ function ConcernMode({
                         platform={topProduct.platform}
                         ingredientSlug={ing.slug}
                         productRank={topProduct.rank}
+                        aspProgram={topProduct.aspProgram}
+                        aspId={topProduct.aspId}
+                        commissionRateBand={topProduct.commissionRateBand}
                         className="ml-auto text-[12.5px] font-semibold text-primary-foreground
                           bg-accent rounded-lg px-3.5 py-2
                           hover:opacity-90 transition-opacity flex items-center gap-1.5"
@@ -1023,6 +1029,9 @@ function ConcernMode({
                           platform={topProduct.platform}
                           ingredientSlug={ing.slug}
                           productRank={topProduct.rank}
+                          aspProgram={topProduct.aspProgram}
+                          aspId={topProduct.aspId}
+                          commissionRateBand={topProduct.commissionRateBand}
                           className="ml-auto text-[11.5px] font-semibold text-accent
                             bg-accent/8 border border-accent/20 rounded-lg px-2.5 py-1
                             hover:bg-accent/15 transition-colors"

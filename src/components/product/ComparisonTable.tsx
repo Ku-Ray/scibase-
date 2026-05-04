@@ -162,6 +162,9 @@ export function ComparisonTable({ products, ingredient }: Props) {
                     platform={p.platform}
                     ingredientSlug={ingredient.slug}
                     productRank={p.rank}
+                    aspProgram={p.aspProgram}
+                    aspId={p.aspId}
+                    commissionRateBand={p.commissionRateBand}
                     className="inline-flex items-center gap-1 text-[11px] font-semibold border border-border rounded-md px-2 py-1 hover:bg-secondary transition-colors whitespace-nowrap"
                   >
                     {platformShort[p.platform]}

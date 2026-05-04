@@ -389,6 +389,9 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                                   platform={product.platform}
                                   ingredientSlug={ing.slug}
                                   productRank={product.rank}
+                                  aspProgram={product.aspProgram}
+                                  aspId={product.aspId}
+                                  commissionRateBand={product.commissionRateBand}
                                   className="flex-1 inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-background bg-foreground rounded-lg px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity"
                                 >
                                   {platformLabel[product.platform]}

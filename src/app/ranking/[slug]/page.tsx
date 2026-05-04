@@ -167,6 +167,9 @@ export default async function RankingPage({ params }: Props) {
                   platform={topProduct.platform}
                   ingredientSlug={topIngredient.slug}
                   productRank={topProduct.rank}
+                  aspProgram={topProduct.aspProgram}
+                  aspId={topProduct.aspId}
+                  commissionRateBand={topProduct.commissionRateBand}
                   className="flex-1 text-center inline-flex items-center justify-center gap-1.5
                     text-[13px] font-semibold bg-amber-500 text-white rounded-xl px-4 py-2.5 min-h-[44px]
                     hover:bg-amber-600 transition-colors"

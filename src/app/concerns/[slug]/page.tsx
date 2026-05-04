@@ -453,6 +453,9 @@ export default async function ConcernPage({ params }: Props) {
                     platform={topProduct.platform}
                     ingredientSlug={top.slug}
                     productRank={topProduct.rank}
+                    aspProgram={topProduct.aspProgram}
+                    aspId={topProduct.aspId}
+                    commissionRateBand={topProduct.commissionRateBand}
                     className="flex-1 inline-flex items-center justify-center gap-1.5
                       text-[13px] font-semibold text-background bg-foreground rounded-lg
                       px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity"
@@ -505,6 +508,9 @@ export default async function ConcernPage({ params }: Props) {
                             platform={ingTopProduct.platform}
                             ingredientSlug={ing.slug}
                             productRank={ingTopProduct.rank}
+                            aspProgram={ingTopProduct.aspProgram}
+                            aspId={ingTopProduct.aspId}
+                            commissionRateBand={ingTopProduct.commissionRateBand}
                             className="font-semibold text-foreground hover:underline
                               inline-flex items-center gap-1 px-2 min-h-[44px]"
                           >

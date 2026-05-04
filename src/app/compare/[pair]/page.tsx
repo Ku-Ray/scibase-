@@ -332,6 +332,9 @@ export default async function ComparePage({ params }: Props) {
                 platform={overallTopProduct.platform}
                 ingredientSlug={overall.pick.slug}
                 productRank={overallTopProduct.rank}
+                aspProgram={overallTopProduct.aspProgram}
+                aspId={overallTopProduct.aspId}
+                commissionRateBand={overallTopProduct.commissionRateBand}
                 className="flex-1 inline-flex items-center justify-center gap-1.5
                   text-[13px] font-medium border border-amber-300 text-amber-800
                   rounded-xl px-4 py-2.5 min-h-[44px] hover:bg-amber-100 transition-colors"

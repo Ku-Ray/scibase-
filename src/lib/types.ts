@@ -61,6 +61,16 @@ export interface Product {
   pros?: string[]
   /** 気になる点（3項目程度・客観事実のみ・「効かない」等の断定NG） */
   cons?: string[]
+
+  // ─── ASP連携（2026-05-W2 追加・GA4 click_outbound_product 拡張用） ─────────────
+  /** ASP事業者識別子。'a8' / 'moshimo' / 'afb' / 'amazon-direct' / 'iherb-direct' / 'cosme-direct' / 'rakuten' */
+  aspProgram?: 'a8' | 'moshimo' | 'afb' | 'amazon-direct' | 'iherb-direct' | 'cosme-direct' | 'rakuten'
+  /** ASP案件識別子（GA4ディメンション・例: 'a8-doctorscare-ashwagandha'）。undefined=直URL */
+  aspId?: string
+  /** ASPキャンペーン名（人間可読・任意・例: 'doctors-care-ashwagandha-promo-2026q2'） */
+  aspCampaignId?: string
+  /** 料率帯（GA4の文字列ディメンション・段階分類）。実料率は規約上の第三者開示NGリスクがあるため帯化して送信 */
+  commissionRateBand?: '<5%' | '5-10%' | '10-15%' | '15-20%' | '>20%'
 }
 
 export type AnalysisAxis =

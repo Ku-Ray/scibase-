@@ -139,6 +139,9 @@ export function ProductOfferCard({
             platform={product.platform}
             ingredientSlug={ingredient.slug}
             productRank={product.rank}
+            aspProgram={product.aspProgram}
+            aspId={product.aspId}
+            commissionRateBand={product.commissionRateBand}
             className={`inline-flex items-center justify-center gap-1.5 text-[13px] font-bold rounded-xl px-4 h-12 min-w-[10rem] transition-colors flex-shrink-0 ${PRIMARY_CTA}`}
           >
             {platformLabel[product.platform]}で詳細を見る
@@ -247,6 +250,9 @@ export function ProductOfferCard({
           platform={product.platform}
           ingredientSlug={ingredient.slug}
           productRank={product.rank}
+          aspProgram={product.aspProgram}
+          aspId={product.aspId}
+          commissionRateBand={product.commissionRateBand}
           className={`flex items-center justify-center gap-2 text-[13px] font-bold rounded-xl px-4 h-12 transition-colors w-full ${PRIMARY_CTA}`}
         >
           {platformLabel[product.platform]}で詳細を見る
@@ -346,6 +352,9 @@ function CtaStack({
             platform={product.platform}
             ingredientSlug={ingredient.slug}
             productRank={product.rank}
+            aspProgram={product.aspProgram}
+            aspId={product.aspId}
+            commissionRateBand={product.commissionRateBand}
             className={`flex items-center justify-center gap-2 text-[13px] font-bold rounded-lg px-3 h-12 transition-colors w-full ${PRIMARY_CTA}`}
           >
             <span className="flex flex-col items-center leading-tight">
