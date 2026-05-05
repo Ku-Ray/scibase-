@@ -557,18 +557,7 @@ export default async function ArticlePage({ params }: Props) {
                         axisLeaders={axisLeaders}
                         bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
                       />
-                      {/* 比較リンク — 2位以下の候補が存在する場合のみ表示（健太層の「比較したい」要求対応・B路線論点B） */}
-                      {sortedProducts.length > 1 && (
-                        <div className="border-t border-border bg-card px-5 py-3">
-                          <Link
-                            href={`/ingredients/${ing.slug}#products`}
-                            className="inline-flex items-center gap-1.5 text-[12px] font-semibold
-                              text-accent hover:underline"
-                          >
-                            他の{ing.nameJa}商品を比較する <ArrowRight className="w-3 h-3" />
-                          </Link>
-                        </div>
-                      )}
+                      {/* 比較リンクは appendix body 末尾に移動（商品選択コンテキスト統合・B路線意思決定フロー保護） */}
                     </>
                   )
                 })()}
