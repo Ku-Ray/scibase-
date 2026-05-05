@@ -464,98 +464,76 @@ export default async function ArticlePage({ params }: Props) {
             この記事で取り上げた成分
           </h2>
 
-          {(() => {
-            /* 本文中に [[INGREDIENT:slug]] でインライン展開済みの成分は、末尾での商品/緊急性の重複表示を抑制。
-               比較・教育記事の末尾を「成分まとめ＋エビデンス確認CTA」に保つための判定。 */
-            const bodyText = [
-              article.problemBody,
-              article.scienceBody,
-              ...(article.subsections?.map(s => s.body) ?? []),
-              ...(article.appendixSections?.map(s => s.body) ?? []),
-              article.solutionBody,
-            ].join('\n')
-            const inlinedSlugs = new Set(
-              article.ingredients
-                .map(i => i.slug)
-                .filter(slug => bodyText.includes(`[[INGREDIENT:${slug}]]`))
-            )
+          <div className="space-y-4">
+            {article.ingredients.map((ing) => (
+              <div key={ing.slug}
+                className="border border-border rounded-2xl overflow-hidden bg-card">
 
-            return (
-              <div className="space-y-4">
-                {article.ingredients.map((ing) => {
-                  const isInlined = inlinedSlugs.has(ing.slug)
+                {/* Ingredient header */}
+                <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                      <h3 className="font-bold text-[15px] text-foreground">
+                        {ing.nameJa}
+                      </h3>
+                    </div>
+                    <p className="text-[13px] text-muted-foreground leading-relaxed">
+                      {ing.reason}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="border-t border-border px-5 py-3 flex flex-wrap items-center gap-3">
+                  <Link
+                    href={`/ingredients/${ing.slug}`}
+                    className="inline-flex items-center gap-1.5 text-[12px] font-semibold
+                      text-accent hover:underline"
+                  >
+                    {ing.nameJa}のエビデンス詳細 <ArrowRight className="w-3 h-3" />
+                  </Link>
+                  <AddToAnalyzerButton slug={ing.slug} variant="compact" />
+                </div>
+
+                {/* Product CTA — 本文中の [[INGREDIENT:]] はエビデンス遷移用、末尾の商品カードは購入導線用として併存させる（B路線：コラム=CV機） */}
+                {(() => {
+                  const ingData = getIngredient(ing.slug)
+                  if (!ingData) return null
+                  const sortedProducts = [...ingData.products]
+                    .filter(p => p.platform !== 'cosme')
+                    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
+                  // article側 override が指定された場合：data.ts 該当商品を優先・無ければ override の URL/名前で簡易表示
+                  let bestProduct = sortedProducts[0]
+                  if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
+                    const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
+                    if (overrideMatch) bestProduct = overrideMatch
+                  }
+                  if (!bestProduct) return null
+                  const axisLeaders = computeAxisLeaders(ingData)
                   return (
-                    <div key={ing.slug}
-                      className="border border-border rounded-2xl overflow-hidden bg-card">
-
-                      {/* Ingredient header */}
-                      <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-                            <h3 className="font-bold text-[15px] text-foreground">
-                              {ing.nameJa}
-                            </h3>
-                          </div>
-                          <p className="text-[13px] text-muted-foreground leading-relaxed">
-                            {ing.reason}
+                    <>
+                      {/* 緊急性トリガー（損失回避の最終押し）— 商品ブロックとセットで表示 */}
+                      {ing.urgencyNote && (
+                        <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
+                          <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
+                            {ing.urgencyNote}
                           </p>
                         </div>
-                      </div>
-
-                      {/* Actions */}
-                      <div className="border-t border-border px-5 py-3 flex flex-wrap items-center gap-3">
-                        <Link
-                          href={`/ingredients/${ing.slug}`}
-                          className="inline-flex items-center gap-1.5 text-[12px] font-semibold
-                            text-accent hover:underline"
-                        >
-                          {ing.nameJa}のエビデンス詳細 <ArrowRight className="w-3 h-3" />
-                        </Link>
-                        <AddToAnalyzerButton slug={ing.slug} variant="compact" />
-                      </div>
-
-                      {/* Product CTA — 本文中に [[INGREDIENT:]] でインライン展開済みなら抑制（重複と末尾の商品プッシュを回避） */}
-                      {!isInlined && (() => {
-                        const ingData = getIngredient(ing.slug)
-                        if (!ingData) return null
-                        const sortedProducts = [...ingData.products]
-                          .filter(p => p.platform !== 'cosme')
-                          .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
-                        // article側 override が指定された場合：data.ts 該当商品を優先・無ければ override の URL/名前で簡易表示
-                        let bestProduct = sortedProducts[0]
-                        if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
-                          const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
-                          if (overrideMatch) bestProduct = overrideMatch
-                        }
-                        if (!bestProduct) return null
-                        const axisLeaders = computeAxisLeaders(ingData)
-                        return (
-                          <>
-                            {/* 緊急性トリガー（損失回避の最終押し）— 商品ブロックとセットで表示 */}
-                            {ing.urgencyNote && (
-                              <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
-                                <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
-                                  {ing.urgencyNote}
-                                </p>
-                              </div>
-                            )}
-                            <ProductOfferCard
-                              product={bestProduct}
-                              ingredient={ingData}
-                              variant="article-compact"
-                              axisLeaders={axisLeaders}
-                              bestPickReason="6軸スコアで当サイト掲載商品中・総合最上位"
-                            />
-                          </>
-                        )
-                      })()}
-                    </div>
+                      )}
+                      <ProductOfferCard
+                        product={bestProduct}
+                        ingredient={ingData}
+                        variant="article-compact"
+                        axisLeaders={axisLeaders}
+                        bestPickReason="6軸スコアで当サイト掲載商品中・総合最上位"
+                      />
+                    </>
                   )
-                })}
+                })()}
               </div>
-            )
-          })()}
+            ))}
+          </div>
         </section>
 
         {/* ── FAQ ── */}
