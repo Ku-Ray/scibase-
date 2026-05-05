@@ -83,6 +83,8 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['glucosamine',          'chondroitin'],
   // ── ホルモン（追加） ────────────────────────────
   ['saw-palmetto',         'biotin'],
+  // ── 髪・肌・爪（追加） ──────────────────────────
+  ['biotin',               'zinc'],
 ]
 
 /** 最も検索ボリュームが高い比較ペア（一覧ページでハイライト表示） */
@@ -198,6 +200,8 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'glucosamine-vs-chondroitin':          'joint',
   // hormone（新設）
   'saw-palmetto-vs-biotin':              'hormone',
+  // 髪・肌・爪（supplement系）
+  'biotin-vs-zinc':                      'supplement',
 }
 
 /** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
@@ -225,6 +229,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'ceramide-oral-vs-collagen-peptide': {
     title: '経口セラミドvsコラーゲンペプチド｜飲む美容成分の違い',
     description: '経口セラミドとコラーゲンペプチドを論文で比較。セラミドはバリア機能・水分保持の補強、コラーゲンペプチドは真皮の弾力サポート。作用層の違い、有効量、効果が出るまでの目安、併用可否、月コストまで化粧品メーカー視点で解説。',
+  },
+  'biotin-vs-zinc': {
+    title: 'ビオチンvs亜鉛｜髪・肌・爪サプリの使い分けを論文比較',
+    description: 'ビオチン（B7）と亜鉛を論文で比較。両方とも髪・肌・爪に関わるが作用機序が異なる。ビオチンはケラチン合成補酵素、亜鉛は数百の酵素活性に関わる必須ミネラル。有効量、欠乏時の症状、過剰摂取リスク、どちらを優先すべきかを化粧品メーカー視点で解説。',
   },
 }
 
