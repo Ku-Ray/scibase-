@@ -526,7 +526,7 @@ export default async function ArticlePage({ params }: Props) {
                         ingredient={ingData}
                         variant="article-compact"
                         axisLeaders={axisLeaders}
-                        bestPickReason="6軸スコアで当サイト掲載商品中・総合最上位"
+                        bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
                       />
                     </>
                   )

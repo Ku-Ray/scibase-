@@ -202,6 +202,8 @@ export interface ArticleIngredientCTA {
   evidenceRank: EvidenceRank
   /** 商品CTAボタン直前に表示する緊急性テキスト（損失回避の最終押し） */
   urgencyNote?: string
+  /** 商品カード末尾の推薦理由を記事文脈に沿って上書き（未設定時は汎用「6軸スコアで...」） */
+  bestPickReason?: string
   productName?: string
   productUrl?: string
   productPlatform?: 'iherb' | 'amazon'
