@@ -202,11 +202,15 @@ export default async function ArticlePage({ params }: Props) {
       id: `subsection-${i}`,
       label: `　${s.heading}`,
     })),
-    ...(article.appendixSections ?? []).map((s, i) => ({
-      id: `appendix-${i}`,
-      label: s.heading,
-    })),
+    ...(article.appendixSections ?? [])
+      .map((s, i) => ({ s, i }))
+      .filter(({ s }) => s.position !== 'after-solution')
+      .map(({ s, i }) => ({ id: `appendix-${i}`, label: s.heading })),
     { id: 'solution', label: article.solutionHeading },
+    ...(article.appendixSections ?? [])
+      .map((s, i) => ({ s, i }))
+      .filter(({ s }) => s.position === 'after-solution')
+      .map(({ s, i }) => ({ id: `appendix-${i}`, label: s.heading })),
     { id: 'ingredients', label: 'この記事で取り上げた成分' },
     { id: 'faq', label: 'よくある質問' },
   ]
@@ -370,17 +374,24 @@ export default async function ArticlePage({ params }: Props) {
 
         <hr className="border-border my-8" />
 
-        {/* ── Appendix Sections（Pillar記事用 追加H2群） ── */}
-        {article.appendixSections && article.appendixSections.length > 0 && (
-          <>
-            {article.appendixSections.map((ap, i) => (
+        {(() => {
+          const allAppendix = article.appendixSections ?? []
+          const beforeSolution = allAppendix
+            .map((ap, i) => ({ ap, i }))
+            .filter(({ ap }) => ap.position !== 'after-solution')
+          const afterSolution = allAppendix
+            .map((ap, i) => ({ ap, i }))
+            .filter(({ ap }) => ap.position === 'after-solution')
+
+          const renderAppendixGroup = (group: typeof beforeSolution) =>
+            group.map(({ ap, i }) => (
               <section key={i} id={`appendix-${i}`} className="mb-10 scroll-mt-20">
                 <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
                   {ap.heading}
                 </h2>
 
-                {/* Top 3 カード（最初のappendixかつitemListが存在する場合） */}
-                {i === 0 && article.itemList && (
+                {/* Top 3 カード（最初のappendixかつitemListが存在する場合・before-solution限定） */}
+                {i === 0 && article.itemList && ap.position !== 'after-solution' && (
                   <div className="mb-6 grid gap-3">
                     {article.itemList.items
                       .slice()
@@ -439,24 +450,42 @@ export default async function ArticlePage({ params }: Props) {
 
                 <RichParagraphs body={ap.body} />
               </section>
-            ))}
-            <hr className="border-border my-8" />
-          </>
-        )}
+            ))
 
-        {/* ── Solution ── */}
-        <section id="solution" className="mb-10 scroll-mt-20">
-          <div className="flex items-center gap-2 mb-4">
-            <FlaskConical className="w-4 h-4 text-muted-foreground" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-              具体的な対策
-            </span>
-          </div>
-          <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
-            {article.solutionHeading}
-          </h2>
-          <RichParagraphs body={article.solutionBody} />
-        </section>
+          return (
+            <>
+              {/* ── Appendix Sections（before-solution・science直後） ── */}
+              {beforeSolution.length > 0 && (
+                <>
+                  {renderAppendixGroup(beforeSolution)}
+                  <hr className="border-border my-8" />
+                </>
+              )}
+
+              {/* ── Solution ── */}
+              <section id="solution" className="mb-10 scroll-mt-20">
+                <div className="flex items-center gap-2 mb-4">
+                  <FlaskConical className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+                    具体的な対策
+                  </span>
+                </div>
+                <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
+                  {article.solutionHeading}
+                </h2>
+                <RichParagraphs body={article.solutionBody} />
+              </section>
+
+              {/* ── Appendix Sections（after-solution・solution直後・B路線意思決定誘導） ── */}
+              {afterSolution.length > 0 && (
+                <>
+                  <hr className="border-border my-8" />
+                  {renderAppendixGroup(afterSolution)}
+                </>
+              )}
+            </>
+          )
+        })()}
 
         {/* ── Ingredient CTAs ── */}
         <section id="ingredients" className="mb-12 scroll-mt-20">

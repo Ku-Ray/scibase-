@@ -222,10 +222,12 @@ export interface ArticleSubsection {
   body: string
 }
 
-/** Pillar記事用の追加H2セクション（solutionの前に挿入） */
+/** Pillar記事用の追加H2セクション（位置はpositionで制御・デフォルトはsolutionの前） */
 export interface ArticleAppendixSection {
   heading: string
   body: string
+  /** 表示位置：'before-solution'（既定・science後）or 'after-solution'（solution後・B路線CV機の意思決定誘導） */
+  position?: 'before-solution' | 'after-solution'
 }
 
 /** ItemList JSON-LD 用（「まず始めるべき3成分」等のリッチリザルト狙い） */
