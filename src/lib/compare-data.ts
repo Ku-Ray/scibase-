@@ -234,6 +234,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
     title: 'ビオチンvs亜鉛｜髪・肌・爪サプリの使い分けを論文比較',
     description: 'ビオチン（B7）と亜鉛を論文で比較。両方とも髪・肌・爪に関わるが作用機序が異なる。ビオチンはケラチン合成補酵素、亜鉛は数百の酵素活性に関わる必須ミネラル。有効量、欠乏時の症状、過剰摂取リスク、どちらを優先すべきかを化粧品メーカー視点で解説。',
   },
+  'creatine-vs-l-citrulline': {
+    title: 'クレアチンvs Lシトルリン｜筋トレ・パンプの使い分けを論文比較',
+    description: 'クレアチンとLシトルリンを論文で比較。クレアチンはATP再合成で筋力・パワー向上、シトルリンは血流・パンプ感・乳酸クリアランス改善。両者は補完関係で併用OK。有効量、効果が出る時間、副作用、男女別の優先度を化粧品メーカー視点で解説。',
+  },
 }
 
 export const CATEGORY_LABELS: Record<string, string> = {
