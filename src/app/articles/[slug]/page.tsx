@@ -383,6 +383,51 @@ export default async function ArticlePage({ params }: Props) {
             .map((ap, i) => ({ ap, i }))
             .filter(({ ap }) => ap.position === 'after-solution')
 
+          /* appendix body 内の [[PRODUCT:slug]] を ProductOfferCard で置換しながらレンダリング。
+             商品カードを「論文ベースで選ぶならこれ」の説明の流れの中に埋め込むことで、
+             ingredients フッターは「成分まとめ + エビデンス詳細リンク」だけのシンプル化を実現。 */
+          const renderAppendixBody = (body: string) => {
+            const parts = body.split(/(\[\[PRODUCT:[a-z0-9-]+\]\])/g)
+            return parts.map((part, idx) => {
+              const m = part.match(/^\[\[PRODUCT:([a-z0-9-]+)\]\]$/)
+              if (m) {
+                const slug = m[1]
+                const ing = article.ingredients.find(a => a.slug === slug)
+                const ingData = getIngredient(slug)
+                if (!ingData || !ing) return null
+                const sortedProducts = [...ingData.products]
+                  .filter(p => p.platform !== 'cosme')
+                  .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
+                let bestProduct = sortedProducts[0]
+                if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
+                  const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
+                  if (overrideMatch) bestProduct = overrideMatch
+                }
+                if (!bestProduct) return null
+                const axisLeaders = computeAxisLeaders(ingData)
+                return (
+                  <div key={idx} className="my-6 border border-border rounded-2xl overflow-hidden bg-card">
+                    {ing.urgencyNote && (
+                      <div className="bg-secondary px-5 pt-4 pb-2">
+                        <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
+                          {ing.urgencyNote}
+                        </p>
+                      </div>
+                    )}
+                    <ProductOfferCard
+                      product={bestProduct}
+                      ingredient={ingData}
+                      variant="article-compact"
+                      axisLeaders={axisLeaders}
+                      bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
+                    />
+                  </div>
+                )
+              }
+              return part ? <RichParagraphs key={idx} body={part} /> : null
+            })
+          }
+
           const renderAppendixGroup = (group: typeof beforeSolution) =>
             group.map(({ ap, i }) => (
               <section key={i} id={`appendix-${i}`} className="mb-10 scroll-mt-20">
@@ -448,7 +493,7 @@ export default async function ArticlePage({ params }: Props) {
                   </div>
                 )}
 
-                <RichParagraphs body={ap.body} />
+                {renderAppendixBody(ap.body)}
               </section>
             ))
 
@@ -493,77 +538,92 @@ export default async function ArticlePage({ params }: Props) {
             この記事で取り上げた成分
           </h2>
 
-          <div className="space-y-4">
-            {article.ingredients.map((ing) => (
-              <div key={ing.slug}
-                className="border border-border rounded-2xl overflow-hidden bg-card">
+          {(() => {
+            /* appendix body 内に [[PRODUCT:slug]] が配置されている成分は、商品カードが
+               appendix 内の説明の流れに埋め込まれるため、フッターでは商品カードを抑制
+               （ユーザー指摘 2026-05-06：「ingredients フッターはエビデンス詳細リンクだけでOK・
+               商品リンクは『論文ベースで選ぶならこれ』の流れに入れる」）。 */
+            const appendixBodyText = (article.appendixSections ?? []).map(s => s.body).join('\n')
+            const productInAppendixSlugs = new Set(
+              article.ingredients
+                .map(i => i.slug)
+                .filter(slug => appendixBodyText.includes(`[[PRODUCT:${slug}]]`))
+            )
 
-                {/* Ingredient header */}
-                <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-                      <h3 className="font-bold text-[15px] text-foreground">
-                        {ing.nameJa}
-                      </h3>
-                    </div>
-                    <p className="text-[13px] text-muted-foreground leading-relaxed">
-                      {ing.reason}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="border-t border-border px-5 py-3 flex flex-wrap items-center gap-3">
-                  <Link
-                    href={`/ingredients/${ing.slug}`}
-                    className="inline-flex items-center gap-1.5 text-[12px] font-semibold
-                      text-accent hover:underline"
-                  >
-                    {ing.nameJa}のエビデンス詳細 <ArrowRight className="w-3 h-3" />
-                  </Link>
-                  <AddToAnalyzerButton slug={ing.slug} variant="compact" />
-                </div>
-
-                {/* Product CTA — 本文中の [[INGREDIENT:]] はエビデンス遷移用、末尾の商品カードは購入導線用として併存させる（B路線：コラム=CV機） */}
-                {(() => {
-                  const ingData = getIngredient(ing.slug)
-                  if (!ingData) return null
-                  const sortedProducts = [...ingData.products]
-                    .filter(p => p.platform !== 'cosme')
-                    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
-                  // article側 override が指定された場合：data.ts 該当商品を優先・無ければ override の URL/名前で簡易表示
-                  let bestProduct = sortedProducts[0]
-                  if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
-                    const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
-                    if (overrideMatch) bestProduct = overrideMatch
-                  }
-                  if (!bestProduct) return null
-                  const axisLeaders = computeAxisLeaders(ingData)
+            return (
+              <div className="space-y-4">
+                {article.ingredients.map((ing) => {
+                  const productInAppendix = productInAppendixSlugs.has(ing.slug)
                   return (
-                    <>
-                      {/* 緊急性トリガー（損失回避の最終押し）— 商品ブロックとセットで表示 */}
-                      {ing.urgencyNote && (
-                        <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
-                          <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
-                            {ing.urgencyNote}
+                    <div key={ing.slug}
+                      className="border border-border rounded-2xl overflow-hidden bg-card">
+
+                      {/* Ingredient header */}
+                      <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                            <h3 className="font-bold text-[15px] text-foreground">
+                              {ing.nameJa}
+                            </h3>
+                          </div>
+                          <p className="text-[13px] text-muted-foreground leading-relaxed">
+                            {ing.reason}
                           </p>
                         </div>
-                      )}
-                      <ProductOfferCard
-                        product={bestProduct}
-                        ingredient={ingData}
-                        variant="article-compact"
-                        axisLeaders={axisLeaders}
-                        bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
-                      />
-                      {/* 比較リンクは appendix body 末尾に移動（商品選択コンテキスト統合・B路線意思決定フロー保護） */}
-                    </>
+                      </div>
+
+                      {/* Actions */}
+                      <div className="border-t border-border px-5 py-3 flex flex-wrap items-center gap-3">
+                        <Link
+                          href={`/ingredients/${ing.slug}`}
+                          className="inline-flex items-center gap-1.5 text-[12px] font-semibold
+                            text-accent hover:underline"
+                        >
+                          {ing.nameJa}のエビデンス詳細 <ArrowRight className="w-3 h-3" />
+                        </Link>
+                        <AddToAnalyzerButton slug={ing.slug} variant="compact" />
+                      </div>
+
+                      {/* Product CTA — appendix 内に [[PRODUCT:]] がある成分は抑制（商品カードはappendix内の流れに統合済み） */}
+                      {!productInAppendix && (() => {
+                        const ingData = getIngredient(ing.slug)
+                        if (!ingData) return null
+                        const sortedProducts = [...ingData.products]
+                          .filter(p => p.platform !== 'cosme')
+                          .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
+                        let bestProduct = sortedProducts[0]
+                        if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
+                          const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
+                          if (overrideMatch) bestProduct = overrideMatch
+                        }
+                        if (!bestProduct) return null
+                        const axisLeaders = computeAxisLeaders(ingData)
+                        return (
+                          <>
+                            {ing.urgencyNote && (
+                              <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
+                                <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
+                                  {ing.urgencyNote}
+                                </p>
+                              </div>
+                            )}
+                            <ProductOfferCard
+                              product={bestProduct}
+                              ingredient={ingData}
+                              variant="article-compact"
+                              axisLeaders={axisLeaders}
+                              bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
+                            />
+                          </>
+                        )
+                      })()}
+                    </div>
                   )
-                })()}
+                })}
               </div>
-            ))}
-          </div>
+            )
+          })()}
         </section>
 
         {/* ── FAQ ── */}
