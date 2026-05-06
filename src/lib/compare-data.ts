@@ -85,6 +85,8 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['saw-palmetto',         'biotin'],
   // ── 髪・肌・爪（追加） ──────────────────────────
   ['biotin',               'zinc'],
+  // ── 筋力・回復（追加） ──────────────────────────
+  ['creatine',             'magnesium'],
 ]
 
 /** 最も検索ボリュームが高い比較ペア（一覧ページでハイライト表示） */
@@ -202,6 +204,8 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'saw-palmetto-vs-biotin':              'hormone',
   // 髪・肌・爪（supplement系）
   'biotin-vs-zinc':                      'supplement',
+  // 筋力・回復（muscle系）
+  'creatine-vs-magnesium':               'muscle',
 }
 
 /** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
@@ -241,6 +245,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'nmn-vs-coq10': {
     title: 'NMN vs CoQ10｜抗老化サプリの使い分けを論文比較',
     description: 'NMN（ニコチンアミドモノヌクレオチド）とCoQ10（コエンザイムQ10）を論文で比較。NMNはNAD+前駆体で細胞代謝・サーチュイン活性化、CoQ10はミトコンドリア電子伝達系の電子運搬体。作用層の違い、有効量、効果が出るまで、年齢別の優先度を化粧品メーカー視点で解説。',
+  },
+  'creatine-vs-magnesium': {
+    title: 'クレアチンvs マグネシウム｜筋力UPと回復・睡眠の使い分け論文比較',
+    description: 'クレアチンとマグネシウムを論文で比較。クレアチンはATP再合成で筋力・パワー向上、マグネシウムは筋弛緩・睡眠・骨形成・神経伝達に必須。両者は補完関係で併用OK（ATP-Mg複合体が酵素活性に必要）。タイミング、有効量、運動と回復の最適スタックを化粧品メーカー視点で解説。',
   },
 }
 
