@@ -87,6 +87,8 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['biotin',               'zinc'],
   // ── 筋力・回復（追加） ──────────────────────────
   ['creatine',             'magnesium'],
+  // ── 抗老化・メチル化（追加） ────────────────────
+  ['tmg',                  'nmn'],
 ]
 
 /** 最も検索ボリュームが高い比較ペア（一覧ページでハイライト表示） */
@@ -206,6 +208,8 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'biotin-vs-zinc':                      'supplement',
   // 筋力・回復（muscle系）
   'creatine-vs-magnesium':               'muscle',
+  // 抗老化・メチル化（antiaging系）
+  'tmg-vs-nmn':                          'antiaging',
 }
 
 /** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
@@ -249,6 +253,14 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'creatine-vs-magnesium': {
     title: 'クレアチンvs マグネシウム｜筋力UPと回復・睡眠の使い分け論文比較',
     description: 'クレアチンとマグネシウムを論文で比較。クレアチンはATP再合成で筋力・パワー向上、マグネシウムは筋弛緩・睡眠・骨形成・神経伝達に必須。両者は補完関係で併用OK（ATP-Mg複合体が酵素活性に必要）。タイミング、有効量、運動と回復の最適スタックを化粧品メーカー視点で解説。',
+  },
+  'glucosamine-vs-chondroitin': {
+    title: 'グルコサミンvs コンドロイチン｜関節サプリの使い分け論文比較',
+    description: 'グルコサミンとコンドロイチンを論文で比較。グルコサミンは軟骨基質グリコサミノグリカン前駆体、コンドロイチンは軟骨水分保持・弾力に関与。GAIT試験等のメタ解析、併用vs単独の効果差、運動負荷別の優先度、変形性膝関節症への現実的な期待値を化粧品メーカー視点で解説。',
+  },
+  'tmg-vs-nmn': {
+    title: 'TMGvs NMN｜メチル基ドナーvsNAD+前駆体の使い分け',
+    description: 'TMG（トリメチルグリシン・ベタイン）とNMN（ニコチンアミドモノヌクレオチド）を論文で比較。TMGはホモシステイン低下のメチル基ドナー、NMNはNAD+前駆体でサーチュイン活性化。両者は「メチル化サイクル」で接続する補完関係（NMN代謝でメチル基消費・TMGが補う）。有効量、効果が出るまで、抗老化スタックでの使い分けを化粧品メーカー視点で解説。',
   },
 }
 
