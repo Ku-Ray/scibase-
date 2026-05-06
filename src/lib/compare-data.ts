@@ -89,6 +89,8 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['creatine',             'magnesium'],
   // ── 抗老化・メチル化（追加） ────────────────────
   ['tmg',                  'nmn'],
+  // ── 美白・色素沈着（追加） ──────────────────────
+  ['kojic-acid',           'vitamin-c-topical'],
 ]
 
 /** 最も検索ボリュームが高い比較ペア（一覧ページでハイライト表示） */
@@ -210,6 +212,8 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'creatine-vs-magnesium':               'muscle',
   // 抗老化・メチル化（antiaging系）
   'tmg-vs-nmn':                          'antiaging',
+  // 美白・色素沈着（skin系）
+  'kojic-acid-vs-vitamin-c-topical':     'skin',
 }
 
 /** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
@@ -261,6 +265,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'tmg-vs-nmn': {
     title: 'TMGvs NMN｜メチル基ドナーvsNAD+前駆体の使い分け',
     description: 'TMG（トリメチルグリシン・ベタイン）とNMN（ニコチンアミドモノヌクレオチド）を論文で比較。TMGはホモシステイン低下のメチル基ドナー、NMNはNAD+前駆体でサーチュイン活性化。両者は「メチル化サイクル」で接続する補完関係（NMN代謝でメチル基消費・TMGが補う）。有効量、効果が出るまで、抗老化スタックでの使い分けを化粧品メーカー視点で解説。',
+  },
+  'kojic-acid-vs-vitamin-c-topical': {
+    title: 'コウジ酸vs ビタミンC（外用）｜美白の使い分けを論文比較',
+    description: 'コウジ酸とビタミンC（外用・アスコルビン酸誘導体）を論文で比較。コウジ酸はチロシナーゼ阻害で色素沈着への作用、ビタミンCは抗酸化＋コラーゲン生成促進＋メラニン抑制の3経路。低濃度から始める順序、刺激リスク、併用可否、肝斑への現実的な期待値を化粧品メーカー視点で解説。',
   },
 }
 
