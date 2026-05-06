@@ -189,6 +189,13 @@ const HEADER = [
   '修正メモ',
   '最終更新',
   '差し替えURL希望',
+  // ─── Amazon追加用列（iHerb 行に入力・別Productとしてdata.tsに新規追加） ───
+  '➕ Amazon ASIN',
+  '➕ Amazon商品名',
+  '➕ Amazon価格(JPY)',
+  '➕ Amazon imageUrl',
+  '➕ Amazon追加メモ',
+  '➕ Amazon追加日',
 ]
 
 /** 推奨度から帯ラベルを返す（Phase D 掲載基準準拠） */
@@ -334,6 +341,13 @@ function buildRows(): (string | number)[][] {
         '', // 修正メモ（ユーザー記入）
         today,
         '', // 差し替えURL希望（ユーザー記入）
+        // ─── Amazon追加用列（iHerb 行に入力推奨） ───
+        '', // ➕ Amazon ASIN（B0XXXXXXX or full URL）
+        '', // ➕ Amazon商品名
+        '', // ➕ Amazon価格(JPY)
+        '', // ➕ Amazon imageUrl
+        '', // ➕ Amazon追加メモ
+        '', // ➕ Amazon追加日（importスクリプトが自動記入）
       ])
     }
   }
@@ -363,11 +377,11 @@ async function main() {
   }
   const sheetIdNum = mainTab.properties!.sheetId!
 
-  // 既存シートをクリア（ヘッダー行含む全範囲・列追加に伴いAC まで拡張）
+  // 既存シートをクリア（ヘッダー行含む全範囲・Amazon追加列でAJまで拡張）
   console.log(`→ シート '${MAIN_TAB}' クリア中...`)
   await sheets.spreadsheets.values.clear({
     spreadsheetId: sheetId,
-    range: `${MAIN_TAB}!A:AC`,
+    range: `${MAIN_TAB}!A:AJ`,
   })
 
   // ヘッダー + データを一括書き込み
