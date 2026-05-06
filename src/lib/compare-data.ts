@@ -238,6 +238,10 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
     title: 'クレアチンvs Lシトルリン｜筋トレ・パンプの使い分けを論文比較',
     description: 'クレアチンとLシトルリンを論文で比較。クレアチンはATP再合成で筋力・パワー向上、シトルリンは血流・パンプ感・乳酸クリアランス改善。両者は補完関係で併用OK。有効量、効果が出る時間、副作用、男女別の優先度を化粧品メーカー視点で解説。',
   },
+  'nmn-vs-coq10': {
+    title: 'NMN vs CoQ10｜抗老化サプリの使い分けを論文比較',
+    description: 'NMN（ニコチンアミドモノヌクレオチド）とCoQ10（コエンザイムQ10）を論文で比較。NMNはNAD+前駆体で細胞代謝・サーチュイン活性化、CoQ10はミトコンドリア電子伝達系の電子運搬体。作用層の違い、有効量、効果が出るまで、年齢別の優先度を化粧品メーカー視点で解説。',
+  },
 }
 
 export const CATEGORY_LABELS: Record<string, string> = {
