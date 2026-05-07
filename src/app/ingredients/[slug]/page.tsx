@@ -162,11 +162,16 @@ export default async function IngredientPage({ params }: Props) {
   const searchUrls = {
     iherb: `https://www.iherb.com/search?kw=${encodeURIComponent(ing.nameEn)}`,
     amazon: `https://www.amazon.co.jp/s?k=${encodeURIComponent(ing.nameJa + searchSuffix)}&tag=scibase-22`,
-    rakuten: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(ing.nameJa + searchSuffix)}/`,
   }
-  /** 主モール以外の検索CTA（multi-CTA 構成）。主モール=heroProduct.platform は除外 */
+  /**
+   * 主モール以外の検索CTA（multi-CTA 構成）。
+   * 編集方針（2026-05-07）:
+   * - 経口サプリ（usageType !== 'topical'）→ iHerbのみ。Amazon/楽天検索CTAは表示しない
+   * - 外用製品（usageType === 'topical' or 'both'）→ iHerb + Amazon の両方表示。楽天は削除
+   */
+  const isTopical = ing.usageType === 'topical' || ing.usageType === 'both'
   const heroSubLinks: { platform: 'iherb' | 'amazon' | 'cosme'; searchUrl: string; label?: string }[] | undefined =
-    heroProduct
+    heroProduct && isTopical
       ? ([
           heroProduct.platform !== 'amazon'
             ? { platform: 'amazon' as const, searchUrl: searchUrls.amazon, label: `Amazonで「${ing.nameJa}」を検索` }
@@ -174,7 +179,6 @@ export default async function IngredientPage({ params }: Props) {
           heroProduct.platform !== 'iherb'
             ? { platform: 'iherb' as const, searchUrl: searchUrls.iherb, label: `iHerbで「${ing.nameEn}」を検索` }
             : null,
-          { platform: 'cosme' as const, searchUrl: searchUrls.rakuten, label: `楽天市場で「${ing.nameJa}」を検索` },
         ].filter(Boolean) as { platform: 'iherb' | 'amazon' | 'cosme'; searchUrl: string; label?: string }[])
       : undefined
 
@@ -1004,14 +1008,15 @@ export default async function IngredientPage({ params }: Props) {
               </div>
             )}
 
-            {/* 何も見つからない時の検索リンク（フォールバック） */}
+            {/* 何も見つからない時の検索リンク（フォールバック）
+                編集方針: 経口サプリはiHerbのみ・外用は両方 */}
             {!heroProduct && !cosmeProduct && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {(['iherb', 'amazon'] as const).map((key) => (
+              <div className={isTopical ? 'grid grid-cols-1 sm:grid-cols-2 gap-3' : 'flex flex-col gap-3'}>
+                {(isTopical ? ['iherb', 'amazon'] : ['iherb']).map((key) => (
                   <OutboundProductLink
                     key={key}
-                    href={searchUrls[key]}
-                    platform={key}
+                    href={searchUrls[key as 'iherb' | 'amazon']}
+                    platform={key as 'iherb' | 'amazon'}
                     ingredientSlug={ing.slug}
                     className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-xl px-4 h-12 border-2 ${
                       key === 'iherb' ? 'border-emerald-200 text-emerald-700' : 'border-amber-200 text-amber-700'
