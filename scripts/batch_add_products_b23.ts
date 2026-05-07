@@ -10,6 +10,50 @@ interface ProductSpec {
   product: string
 }
 
+const SPECS_PHASE2: ProductSpec[] = [
+  // berberine (A rank, dosageMin 900mg)
+  {
+    slug: 'berberine',
+    product: `      {
+        name: 'Thorne Berberine 500 mg 60 Capsules',
+        brand: 'Thorne',
+        platform: 'iherb',
+        url: 'https://jp.iherb.com/pr/thorne-berberine-1-000-mg-60-capsules-500-mg-per-capsule/46113',
+        priceJpy: 5800,
+        dosageMg: 500,
+        unitsPerDay: 2,
+        rank: 1,
+        reasonJa: 'ベルベリンHCl 500mg×2粒 = 1000mg・dosageMin相当。Thorneの医療グレード処方・血糖/AMPK経路RCT濃度',
+        highlight: 'Thorne医療グレード',
+        monthlyCostJpy: 2900,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        heavyMetalTested: true,
+        certifications: ['NSF', 'GMP'],
+      },`,
+  },
+  // fisetin (B rank, dosageMin 100mg)
+  {
+    slug: 'fisetin',
+    product: `      {
+        name: "Doctor's Best Fisetin with Novusetin 100 mg 30 Veggie Caps",
+        brand: "Doctor's Best",
+        platform: 'iherb',
+        url: 'https://jp.iherb.com/pr/doctor-s-best-fisetin-100-mg-30-veggie-caps/43592',
+        priceJpy: 3500,
+        dosageMg: 100,
+        unitsPerDay: 1,
+        rank: 1,
+        reasonJa: 'Novusetin（特許フィセチン）100mg・dosageMin相当。Mayo Clinicセノリティクス研究と同じ天然ポリフェノール・30粒で約1ヶ月分',
+        highlight: 'Novusetin・senolytic',
+        monthlyCostJpy: 3500,
+        form: 'ベジカプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP', 'NonGMO'],
+      },`,
+  },
+]
+
 const SPECS: ProductSpec[] = [
   // urolithin-a (oral, dosageMin 500mg)
   {
@@ -436,7 +480,7 @@ let src = fs.readFileSync(DATA_PATH, 'utf-8')
 let added = 0
 const failed: string[] = []
 
-for (const spec of SPECS) {
+for (const spec of SPECS_PHASE2) {
   const slugIdx = src.indexOf(`slug: '${spec.slug}'`)
   if (slugIdx === -1) {
     failed.push(`${spec.slug} (slug not found)`)
