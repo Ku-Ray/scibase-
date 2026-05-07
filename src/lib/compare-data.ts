@@ -91,6 +91,13 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['tmg',                  'nmn'],
   // ── 美白・色素沈着（追加） ──────────────────────
   ['kojic-acid',           'vitamin-c-topical'],
+  // ── GSC機会回収バッチ 2026-05-07 ───────────────
+  ['niacinamide',          'collagen-peptide'],
+  ['acetyl-l-carnitine',   'creatine'],
+  ['l-theanine',           'magnesium'],
+  ['equol',                'collagen-peptide'],
+  ['bakuchiol',            'niacinamide'],
+  ['arbutin',              'niacinamide'],
 ]
 
 /** 最も検索ボリュームが高い比較ペア（一覧ページでハイライト表示） */
@@ -214,6 +221,13 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'tmg-vs-nmn':                          'antiaging',
   // 美白・色素沈着（skin系）
   'kojic-acid-vs-vitamin-c-topical':     'skin',
+  // GSC機会回収バッチ 2026-05-07
+  'niacinamide-vs-collagen-peptide':     'skin',
+  'acetyl-l-carnitine-vs-creatine':      'muscle',
+  'l-theanine-vs-magnesium':             'stress',
+  'equol-vs-collagen-peptide':           'hormone',
+  'bakuchiol-vs-niacinamide':            'skin',
+  'arbutin-vs-niacinamide':              'skin',
 }
 
 /** ペア別SEOメタデータオーバーライド（高順位ページのCTR改善用） */
@@ -269,6 +283,34 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
   'kojic-acid-vs-vitamin-c-topical': {
     title: 'コウジ酸vs ビタミンC（外用）｜美白の使い分けを論文比較',
     description: 'コウジ酸とビタミンC（外用・アスコルビン酸誘導体）を論文で比較。コウジ酸はチロシナーゼ阻害で色素沈着への作用、ビタミンCは抗酸化＋コラーゲン生成促進＋メラニン抑制の3経路。低濃度から始める順序、刺激リスク、併用可否、肝斑への現実的な期待値を化粧品メーカー視点で解説。',
+  },
+  'niacinamide-vs-collagen-peptide': {
+    title: 'ナイアシンアミドvs コラーゲンペプチド｜外用×経口の使い分け',
+    description: 'ナイアシンアミド（外用）とコラーゲンペプチド（経口）を論文で比較。ナイアシンアミドは表皮バリア・色素沈着・毛穴の4方面、コラーゲンペプチドは真皮の弾力サポート。作用層が異なる補完関係（外用×内用）で併用OK。有効濃度・有効量、月コスト、肌悩み別の優先度を化粧品メーカー視点で解説。',
+  },
+  'acetyl-l-carnitine-vs-creatine': {
+    title: 'アセチル-L-カルニチンvs クレアチン｜脳と筋肉の使い分け',
+    description: 'アセチル-L-カルニチン（ALC）とクレアチンを論文で比較。ALCは脳血液関門通過で認知・神経・気分への作用、クレアチンはATP再合成で筋力・パワー向上。作用ターゲットが脳vs筋で完全に補完関係。両者併用は理論上OK・有効量、効果が出るまで、男女差を化粧品メーカー視点で解説。',
+  },
+  'l-theanine-vs-magnesium': {
+    title: 'L-テアニンvs マグネシウム｜リラックス・睡眠の使い分け論文比較',
+    description: 'L-テアニンとマグネシウムを論文で比較。テアニンはα波増加でコルチゾール低下、マグネシウムは神経伝達物質調整・筋弛緩・GABA系。両者は補完関係で併用OK（マグネシウムグリシネートとの組み合わせがRCTで確認）。有効量、効果が出るまで、夜の運用順を化粧品メーカー視点で解説。',
+  },
+  'equol-vs-collagen-peptide': {
+    title: 'エクオールvs コラーゲンペプチド｜更年期・美肌の使い分け',
+    description: 'エクオールとコラーゲンペプチドを論文で比較。エクオールは大豆イソフラボン代謝産物でホットフラッシュ・骨・肌弾力に作用、コラーゲンペプチドは真皮の弾力サポート。30-50代女性で重なる悩みへの補完関係（ホルモン×構造）。有効量、効果が出るまで、肝斑・骨密度への期待値を化粧品メーカー視点で解説。',
+  },
+  'bakuchiol-vs-niacinamide': {
+    title: 'バクチオールvs ナイアシンアミド｜外用美容成分の使い分け論文比較',
+    description: 'バクチオール（植物性レチノール代替）とナイアシンアミドを論文で比較。バクチオールはレチノール様のシワ改善RCT、ナイアシンアミドはバリア・色素沈着・毛穴の4方面。両者は補完関係で併用OK・刺激リスクが低い。妊娠中の使用可否、有効濃度、夜のスタックを化粧品メーカー視点で解説。',
+  },
+  'glutathione-vs-nac': {
+    title: 'グルタチオンvs NAC｜抗酸化と前駆体の使い分け論文比較',
+    description: 'グルタチオン（GSH）とNAC（N-アセチルシステイン）を論文で比較。グルタチオンは細胞内最大の抗酸化物質、NACはシステイン供給による前駆体経路でグルタチオン産生を促進。経口GSHの吸収率vs NACのコスパ、肝臓・呼吸器・解毒への作用、有効量を化粧品メーカー視点で解説。',
+  },
+  'arbutin-vs-niacinamide': {
+    title: 'α-アルブチンvs ナイアシンアミド｜美白の使い分け論文比較',
+    description: 'α-アルブチンとナイアシンアミドを論文で比較。アルブチンはチロシナーゼ阻害（メラニン産生抑制）、ナイアシンアミドはメラノソーム転移阻害（メラニン受け渡し抑制）の異なる経路。両者併用で多経路の美白アプローチが論文で確認。有効濃度、効果が出るまで、刺激リスクを化粧品メーカー視点で解説。',
   },
 }
 
