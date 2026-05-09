@@ -97,12 +97,12 @@
     @apply bg-stone-100 text-stone-500 border-stone-300;
   }
 
-  /* Hero gradient — stronger visual */
+  /* Hero gradient — brand-aligned (暗紫 × ベージュ) */
   .hero-pattern {
     background:
-      radial-gradient(ellipse 80% 60% at 10% 60%, rgba(74,124,89,0.22) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 90% 10%, rgba(30,58,95,0.16) 0%, transparent 55%),
-      radial-gradient(ellipse 50% 40% at 50% 90%, rgba(245,176,84,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 60% at 10% 60%, rgba(196, 168, 130, 0.20) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 10%, rgba(61, 43, 92, 0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 50% 90%, rgba(196, 168, 130, 0.10) 0%, transparent 50%),
       #FAFAF8;
   }
 

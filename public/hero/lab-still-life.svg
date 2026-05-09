@@ -1,0 +1,143 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 600 600"
+  fill="none"
+  role="img"
+  aria-label="論文と分子構造の静物イラスト"
+>
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="#E8DDC9" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#E8DDC9" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#E8DDC9" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paperEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8F2E7" />
+    </linearGradient>
+  </defs>
+
+  <!-- soft beige backdrop -->
+  <circle cx="300" cy="300" r="270" fill="url(#bg)" />
+
+  <!-- back paper sheet (rotated) -->
+  <g transform="translate(300 320) rotate(-8) translate(-300 -320)">
+    <rect
+      x="148"
+      y="160"
+      width="240"
+      height="320"
+      rx="3"
+      fill="url(#paperEdge)"
+      stroke="#D4C4A6"
+      stroke-width="1.2"
+      opacity="0.85"
+    />
+  </g>
+
+  <!-- front paper sheet -->
+  <rect
+    x="180"
+    y="140"
+    width="240"
+    height="320"
+    rx="3"
+    fill="#FFFFFF"
+    stroke="#3D2B5C"
+    stroke-width="1.2"
+    stroke-opacity="0.35"
+  />
+
+  <!-- text lines on front sheet -->
+  <g stroke="#3D2B5C" stroke-width="1.6" stroke-linecap="round" opacity="0.45">
+    <line x1="208" y1="178" x2="392" y2="178" />
+    <line x1="208" y1="200" x2="368" y2="200" />
+    <line x1="208" y1="222" x2="384" y2="222" />
+  </g>
+  <g stroke="#3D2B5C" stroke-width="1.1" stroke-linecap="round" opacity="0.28">
+    <line x1="208" y1="252" x2="372" y2="252" />
+    <line x1="208" y1="268" x2="356" y2="268" />
+    <line x1="208" y1="284" x2="380" y2="284" />
+    <line x1="208" y1="300" x2="324" y2="300" />
+  </g>
+
+  <!-- highlighted abstract block (representing data table) -->
+  <rect x="208" y="328" width="184" height="36" rx="2" fill="#3D2B5C" opacity="0.06" />
+  <g stroke="#3D2B5C" stroke-width="1.1" stroke-linecap="round" opacity="0.32">
+    <line x1="216" y1="344" x2="280" y2="344" />
+    <line x1="296" y1="344" x2="340" y2="344" />
+    <line x1="356" y1="344" x2="384" y2="344" />
+  </g>
+
+  <!-- bottom citation line -->
+  <g stroke="#3D2B5C" stroke-width="1" stroke-linecap="round" opacity="0.22">
+    <line x1="208" y1="392" x2="384" y2="392" />
+    <line x1="208" y1="408" x2="304" y2="408" />
+  </g>
+
+  <!-- hexagonal molecule cluster (overlap with paper, foreground) -->
+  <g transform="translate(420 380)">
+    <!-- center filled hex -->
+    <polygon
+      points="0,-46 39.84,-23 39.84,23 0,46 -39.84,23 -39.84,-23"
+      fill="#3D2B5C"
+    />
+    <polygon
+      points="0,-46 39.84,-23 39.84,23 0,46 -39.84,23 -39.84,-23"
+      fill="none"
+      stroke="#3D2B5C"
+      stroke-width="2"
+    />
+    <!-- right outline hex -->
+    <polygon
+      points="79.68,0 119.52,-23 119.52,23 79.68,46 39.84,23 39.84,-23"
+      fill="none"
+      stroke="#3D2B5C"
+      stroke-width="2"
+      opacity="0.78"
+    />
+    <!-- top-left outline hex -->
+    <polygon
+      points="-39.84,-69 0,-92 39.84,-69 39.84,-23 0,-46 -39.84,-23"
+      fill="none"
+      stroke="#3D2B5C"
+      stroke-width="2"
+      opacity="0.55"
+    />
+    <!-- bond accent dots (beige) -->
+    <circle cx="39.84" cy="-23" r="3.2" fill="#C4A882" />
+    <circle cx="39.84" cy="23" r="3.2" fill="#C4A882" />
+    <circle cx="0" cy="-46" r="3.2" fill="#C4A882" />
+  </g>
+
+  <!-- capsule, tilted, top-right corner -->
+  <g transform="translate(450 180) rotate(-32)">
+    <!-- capsule body -->
+    <rect x="-44" y="-12" width="88" height="24" rx="12" fill="#C4A882" />
+    <!-- left half darker -->
+    <path
+      d="M -32 -12 L -44 -12 A 12 12 0 0 0 -44 12 L -32 12 Z"
+      fill="#3D2B5C"
+    />
+    <!-- subtle shine -->
+    <line
+      x1="0"
+      y1="-10"
+      x2="36"
+      y2="-10"
+      stroke="#FFFFFF"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.55"
+    />
+  </g>
+
+  <!-- single small droplet (pipette accent), bottom-left -->
+  <g transform="translate(160 470)">
+    <path
+      d="M 0 0 C -6 -10, -10 -16, 0 -22 C 10 -16, 6 -10, 0 0 Z"
+      fill="#3D2B5C"
+      opacity="0.65"
+    />
+  </g>
+</svg>
