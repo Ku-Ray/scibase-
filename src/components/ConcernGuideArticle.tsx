@@ -144,7 +144,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             化粧品メーカー現役の論文ガイド
           </span>
 
-          <h1 className="text-[26px] sm:text-[34px] font-black text-foreground leading-[1.25] tracking-tight break-keep min-w-0">
+          <h1 className="text-[26px] sm:text-[34px] font-black text-foreground leading-[1.25] tracking-tight min-w-0 [overflow-wrap:anywhere]">
             {guide.title}
           </h1>
 
