@@ -59,7 +59,7 @@ export default function Home() {
               </p>
 
               <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
-                leading-[1.15] tracking-tight mb-5">
+                leading-[1.15] tracking-tight break-keep mb-5">
                 本当に効く成分を、<br className="hidden sm:block" />
                 論文で。
               </h1>
