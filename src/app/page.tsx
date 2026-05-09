@@ -51,7 +51,7 @@ export default function Home() {
 
           <p className="text-[12px] font-medium tracking-[0.08em]
             text-muted-foreground mb-6">
-            論文で選ぶ成分DB
+            論文で選ぶスキンケア・サプリ成分データベース
           </p>
 
           <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
@@ -62,9 +62,8 @@ export default function Home() {
 
           <p className="text-[15px] sm:text-[16px] text-muted-foreground leading-[1.85]
             max-w-lg mx-auto mb-8">
-            査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。
-            <span className="font-medium text-foreground">{ingredients.length}成分・{totalPapers}+論文</span>。
-            広告でも口コミでもない。
+            査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。<br />
+            <span className="font-medium text-foreground whitespace-nowrap">{ingredients.length}成分・{totalPapers}論文</span>。広告でも口コミでもない。
           </p>
 
           {/* インライン検索 */}
