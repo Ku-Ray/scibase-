@@ -242,6 +242,10 @@ export interface Article {
   slug: string
   title: string
   description: string
+  /** SEO 用タイトル（meta title 専用・H1 とは独立して CTR最適化）。省略時は title にフォールバック */
+  seoTitle?: string
+  /** SEO 用 meta description（H1 直下の description より長く・KW込みで設計）。省略時は description にフォールバック */
+  seoDescription?: string
   category: ArticleCategory
   categoryLabel: string
   publishedAt: string

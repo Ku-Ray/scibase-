@@ -61,12 +61,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const article = getArticle(slug)
   if (!article) return {}
+  const metaTitle = article.seoTitle ?? article.title
+  const metaDescription = article.seoDescription ?? article.description
   return {
-    title: article.title,
-    description: article.description,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: `${BASE_URL}/articles/${slug}` },
     openGraph: {
-      title: article.title,
+      title: metaTitle,
       description: article.description,
       url: `${BASE_URL}/articles/${slug}`,
       type: 'article',
