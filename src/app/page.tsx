@@ -49,21 +49,22 @@ export default function Home() {
       <section className="hero-pattern px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
         <div className="max-w-2xl mx-auto text-center">
 
-          <p className="text-[12px] font-medium tracking-[0.05em]
+          <p className="text-[12px] font-medium tracking-[0.08em]
             text-muted-foreground mb-6">
-            論文エビデンスで選ぶスキンケア・サプリ成分データベース
+            論文で選ぶ成分DB
           </p>
 
           <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
             leading-[1.15] tracking-tight mb-5">
-            その成分、本当に<br className="hidden sm:block" />
-            効きますか。
+            本当に効く成分を、<br className="hidden sm:block" />
+            論文で。
           </h1>
 
           <p className="text-[15px] sm:text-[16px] text-muted-foreground leading-[1.85]
             max-w-lg mx-auto mb-8">
-            口コミでも広告でもなく、査読済み論文で成分を評価。
-            スキンケアもサプリも、根拠で選べるようになる。
+            査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。
+            <span className="font-medium text-foreground">{ingredients.length}成分・{totalPapers}+論文</span>。
+            広告でも口コミでもない。
           </p>
 
           {/* インライン検索 */}
