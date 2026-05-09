@@ -137,7 +137,7 @@ export default async function ArticlePage({ params }: Props) {
       '@type': 'Organization',
       name: 'SciBase',
       url: BASE_URL,
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/scibase_logo.png` },
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo/symbol-dark-512.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/articles/${slug}` },
     timeRequired: `PT${article.readingMinutes}M`,

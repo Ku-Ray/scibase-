@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans_JP, Fraunces } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -10,6 +10,13 @@ const notoSansJP = Noto_Sans_JP({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-noto',
+})
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  display: 'swap',
+  variable: '--font-fraunces',
 })
 
 const BASE_URL = 'https://scibase.app'
@@ -64,9 +71,9 @@ const organizationJsonLd = {
   url:        BASE_URL,
   logo: {
     '@type': 'ImageObject',
-    url:     `${BASE_URL}/scibase_logo.png`,
-    width:   500,
-    height:  500,
+    url:     `${BASE_URL}/logo/symbol-dark-512.png`,
+    width:   512,
+    height:  512,
   },
   description: '論文エビデンスに基づくスキンケア・サプリメント成分データベース',
   foundingDate: '2026',
@@ -84,7 +91,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={notoSansJP.variable}>
+    <html lang="ja" className={`${notoSansJP.variable} ${fraunces.variable}`}>
       <head>
         <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
         <meta name="impact-site-verification" content="95344c15-5ed3-423e-8ac3-5536380adf4f" />

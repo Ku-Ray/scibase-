@@ -22,11 +22,29 @@ export function Footer() {
 
         <div className="pt-6 border-t border-border flex flex-col sm:flex-row
           items-start sm:items-center justify-between gap-4">
-          <div>
-            <p className="font-semibold text-[15px] text-foreground">SciBase</p>
-            <p className="text-[13px] text-muted-foreground mt-0.5">
-              論文で選ぶ、成分データベース。
-            </p>
+          <div className="flex items-center gap-2.5">
+            <svg width="32" height="32" viewBox="0 0 200 200" aria-hidden className="text-foreground flex-shrink-0">
+              <polygon
+                points="180,100 140,31 60,31 20,100 60,169 140,169"
+                fill="none" stroke="currentColor" strokeWidth="14" strokeLinejoin="round"
+              />
+              <text
+                x="100" y="100"
+                fontSize="135" fontWeight="600"
+                textAnchor="middle" dominantBaseline="central"
+                fill="currentColor"
+                style={{ fontFamily: 'var(--font-fraunces), serif' }}
+              >S</text>
+            </svg>
+            <div>
+              <p
+                className="font-semibold text-[18px] text-foreground"
+                style={{ fontFamily: 'var(--font-fraunces), serif' }}
+              >SciBase</p>
+              <p className="text-[12px] text-muted-foreground mt-0.5">
+                論文で選ぶ、成分データベース。
+              </p>
+            </div>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-muted-foreground">
             <Link href="/concerns"    className="hover:text-foreground transition-colors">悩みから探す</Link>

@@ -25,14 +25,24 @@ export function Header() {
         <div className="max-w-5xl mx-auto px-5 h-14 flex items-center gap-4">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-            <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden>
-                <circle cx="6.5" cy="6.5" r="2.5" fill="white"/>
-                <circle cx="6.5" cy="6.5" r="5.5" stroke="white" strokeWidth="1.5" strokeOpacity="0.45"/>
-              </svg>
-            </div>
-            <span className="font-semibold text-[15px] tracking-tight text-foreground">
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
+            <svg width="28" height="28" viewBox="0 0 200 200" aria-hidden className="text-foreground">
+              <polygon
+                points="180,100 140,31 60,31 20,100 60,169 140,169"
+                fill="none" stroke="currentColor" strokeWidth="14" strokeLinejoin="round"
+              />
+              <text
+                x="100" y="100"
+                fontSize="135" fontWeight="600"
+                textAnchor="middle" dominantBaseline="central"
+                fill="currentColor"
+                style={{ fontFamily: 'var(--font-fraunces), serif' }}
+              >S</text>
+            </svg>
+            <span
+              className="font-semibold text-[18px] tracking-tight text-foreground"
+              style={{ fontFamily: 'var(--font-fraunces), serif' }}
+            >
               SciBase
             </span>
           </Link>

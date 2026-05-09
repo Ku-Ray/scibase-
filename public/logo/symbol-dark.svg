@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&amp;display=swap');
+      .wordmark { font-family: 'Fraunces', serif; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="200" height="200" fill="#2D1B4E"/>
+  <polygon points="180,100 140,31 60,31 20,100 60,169 140,169"
+           fill="none" stroke="#C4A882" stroke-width="12" stroke-linejoin="round"/>
+  <text x="100" y="100" class="wordmark" font-size="135"
+        text-anchor="middle" dominant-baseline="central" fill="#C4A882">S</text>
+</svg>
