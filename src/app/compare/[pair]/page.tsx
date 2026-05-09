@@ -6,7 +6,7 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { PageViewTracker } from '@/components/PageViewTracker'
-import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
+import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, PAIR_CUSTOM_FAQS, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
 
@@ -163,7 +163,9 @@ export default async function ComparePage({ params }: Props) {
     ],
   }
 
+  const customFaqs = PAIR_CUSTOM_FAQS[pair] ?? []
   const faqItems = [
+    ...customFaqs,
     {
       q: `${ingA.nameJa}と${ingB.nameJa}はどちらが効果がありますか？`,
       a: evidenceWinner
