@@ -45,76 +45,112 @@ export default function Home() {
 
   return (
     <>
-      {/* ── Hero ──（mybest型 centered + 装飾散らし）─────── */}
-      <section className="hero-pattern relative px-5 py-20 sm:py-28 overflow-hidden">
+      {/* ── Hero ──（mybest型 centered + 大判散らし）────── */}
+      <section className="hero-pattern relative px-5 py-20 sm:py-32 overflow-hidden">
 
-        {/* ─── 装飾散らし（desktop のみ・テキスト周辺の余白を埋める） ─── */}
-        {/* 左上：単体 hex */}
-        <svg aria-hidden="true"
-          className="hidden md:block absolute left-[5%] top-[14%] w-16 h-16 opacity-35 select-none pointer-events-none"
-          viewBox="0 0 64 64" fill="none">
-          <polygon points="32,4 56,18 56,46 32,60 8,46 8,18"
-            stroke="#3D2B5C" strokeWidth="1.5" fill="none"/>
-          <circle cx="32" cy="32" r="3" fill="#C4A882"/>
-        </svg>
+        {/* ─── 大判ハーフブリード装飾（左右）─── */}
 
-        {/* 右上：紙片 + カプセル */}
+        {/* 左：hex 大型ネットワーク + 紙片重ね（縦長） */}
         <div aria-hidden="true"
-          className="hidden md:block absolute right-[6%] top-[10%] w-32 opacity-55 select-none pointer-events-none">
-          <svg viewBox="0 0 100 124" fill="none" className="w-full">
-            <g transform="rotate(8 50 62)">
-              <rect x="6" y="6" width="88" height="112" rx="2" fill="#FFFFFF" stroke="#D4C4A6" strokeWidth="1"/>
-              <line x1="14" y1="24" x2="78" y2="24" stroke="#3D2B5C" strokeWidth="1" opacity="0.45"/>
-              <line x1="14" y1="36" x2="70" y2="36" stroke="#3D2B5C" strokeWidth="1" opacity="0.45"/>
-              <line x1="14" y1="48" x2="76" y2="48" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
-              <line x1="14" y1="60" x2="60" y2="60" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
-              <line x1="14" y1="72" x2="72" y2="72" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
-              <line x1="14" y1="84" x2="50" y2="84" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
-              <rect x="14" y="96" width="52" height="6" rx="1" fill="#3D2B5C" opacity="0.08"/>
+          className="hidden md:block absolute left-[-6%] top-1/2 -translate-y-1/2
+            w-[36%] max-w-[460px] aspect-square pointer-events-none select-none
+            opacity-90">
+          <svg viewBox="0 0 460 460" fill="none" className="w-full h-full">
+            {/* 紙片 大型 */}
+            <g transform="rotate(-8 230 230)">
+              <rect x="40" y="80" width="220" height="280" rx="3"
+                fill="#FFFFFF" stroke="#D4C4A6" strokeWidth="1.4"/>
+              <line x1="62" y1="118" x2="240" y2="118" stroke="#3D2B5C" strokeWidth="1.4" opacity="0.55"/>
+              <line x1="62" y1="138" x2="220" y2="138" stroke="#3D2B5C" strokeWidth="1.4" opacity="0.45"/>
+              <line x1="62" y1="158" x2="232" y2="158" stroke="#3D2B5C" strokeWidth="1.4" opacity="0.45"/>
+              <rect x="62" y="180" width="178" height="40" rx="2" fill="#3D2B5C" opacity="0.08"/>
+              <line x1="62" y1="244" x2="226" y2="244" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.32"/>
+              <line x1="62" y1="262" x2="200" y2="262" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.32"/>
+              <line x1="62" y1="280" x2="218" y2="280" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.28"/>
+              <line x1="62" y1="298" x2="160" y2="298" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.24"/>
+            </g>
+            {/* hex 大型クラスター（紙片に重ねる） */}
+            <g transform="translate(290 280)">
+              <g stroke="#3D2B5C" strokeWidth="1.8" fill="none" opacity="0.85">
+                <polygon points="0,-50 43.3,-25 43.3,25 0,50 -43.3,25 -43.3,-25" fill="#3D2B5C" fillOpacity="1" stroke="#3D2B5C"/>
+                <polygon points="86.6,0 129.9,-25 129.9,25 86.6,50 43.3,25 43.3,-25" opacity="0.85"/>
+                <polygon points="-43.3,-75 0,-100 43.3,-75 43.3,-25 0,-50 -43.3,-25" opacity="0.55"/>
+              </g>
+              <circle cx="43.3" cy="-25" r="4" fill="#C4A882"/>
+              <circle cx="43.3" cy="25" r="4" fill="#C4A882"/>
+              <circle cx="0" cy="-50" r="3.5" fill="#C4A882"/>
             </g>
           </svg>
         </div>
 
-        {/* 左下：hex 連結ネットワーク */}
+        {/* 右：カプセル + 水滴 + hex 中型 */}
+        <div aria-hidden="true"
+          className="hidden md:block absolute right-[-4%] top-1/2 -translate-y-1/2
+            w-[32%] max-w-[420px] aspect-square pointer-events-none select-none
+            opacity-90">
+          <svg viewBox="0 0 420 420" fill="none" className="w-full h-full">
+            {/* 紙片 中型 (背面) */}
+            <g transform="rotate(12 210 210)">
+              <rect x="120" y="50" width="180" height="240" rx="3"
+                fill="#FFFFFF" stroke="#D4C4A6" strokeWidth="1.2" opacity="0.85"/>
+              <line x1="140" y1="86" x2="280" y2="86" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.35"/>
+              <line x1="140" y1="104" x2="262" y2="104" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.32"/>
+              <line x1="140" y1="122" x2="270" y2="122" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.28"/>
+              <rect x="140" y="148" width="140" height="30" rx="2" fill="#3D2B5C" opacity="0.06"/>
+            </g>
+            {/* カプセル 大 */}
+            <g transform="translate(110 130) rotate(-22)">
+              <rect x="-58" y="-16" width="116" height="32" rx="16" fill="#C4A882"/>
+              <path d="M -42 -16 L -58 -16 A 16 16 0 0 0 -58 16 L -42 16 Z" fill="#3D2B5C"/>
+              <line x1="-12" y1="-12" x2="42" y2="-12" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.65"/>
+            </g>
+            {/* カプセル 小 */}
+            <g transform="translate(80 230) rotate(8)">
+              <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#C4A882" opacity="0.7"/>
+              <path d="M -22 -10 L -34 -10 A 10 10 0 0 0 -34 10 L -22 10 Z" fill="#3D2B5C" opacity="0.7"/>
+            </g>
+            {/* hex 中型 */}
+            <g transform="translate(280 320)">
+              <g stroke="#3D2B5C" strokeWidth="1.6" fill="none" opacity="0.7">
+                <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16"/>
+                <polygon points="55.4,0 83.1,-16 83.1,16 55.4,32 27.7,16 27.7,-16" opacity="0.7" strokeDasharray="3 2"/>
+              </g>
+              <circle cx="27.7" cy="-16" r="3" fill="#C4A882"/>
+              <circle cx="27.7" cy="16" r="3" fill="#C4A882"/>
+            </g>
+            {/* 水滴 */}
+            <g transform="translate(150 340)">
+              <path d="M 0 0 C -8 -14, -13 -22, 0 -32 C 13 -22, 8 -14, 0 0 Z" fill="#3D2B5C" opacity="0.7"/>
+            </g>
+          </svg>
+        </div>
+
+        {/* 上中央：ドット constellation（左右の橋渡し） */}
         <svg aria-hidden="true"
-          className="hidden md:block absolute left-[4%] bottom-[10%] w-56 h-32 opacity-40 select-none pointer-events-none"
-          viewBox="0 0 224 128" fill="none">
-          <g stroke="#3D2B5C" strokeWidth="1.5" fill="none">
-            <polygon points="40,8 68,24 68,56 40,72 12,56 12,24"/>
-            <polygon points="96,24 124,40 124,72 96,88 68,72 68,40" opacity="0.7"/>
-            <polygon points="152,8 180,24 180,56 152,72 124,56 124,24" opacity="0.55" strokeDasharray="3 2"/>
-            <polygon points="68,72 96,88 96,120 68,136 40,120 40,88" opacity="0.45"/>
+          className="hidden md:block absolute left-[44%] top-[10%] w-20 h-12 opacity-50 select-none pointer-events-none"
+          viewBox="0 0 80 48" fill="#3D2B5C">
+          <circle cx="6" cy="6" r="2"/>
+          <circle cx="22" cy="16" r="1.5"/>
+          <circle cx="40" cy="6" r="1.8"/>
+          <circle cx="58" cy="20" r="1.5"/>
+          <circle cx="74" cy="10" r="1.8"/>
+          <circle cx="14" cy="32" r="1.4"/>
+          <circle cx="34" cy="38" r="1.6"/>
+          <circle cx="52" cy="34" r="1.2"/>
+          <circle cx="68" cy="40" r="1.4"/>
+        </svg>
+
+        {/* 下中央：小さな hex pair（地面の余白） */}
+        <svg aria-hidden="true"
+          className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-[6%] w-32 h-12 opacity-50 select-none pointer-events-none"
+          viewBox="0 0 128 48" fill="none">
+          <g stroke="#3D2B5C" strokeWidth="1.4" fill="none">
+            <polygon points="20,4 38,14 38,34 20,44 2,34 2,14"/>
+            <polygon points="56,14 74,24 74,44 56,54 38,44 38,24" opacity="0.7" strokeDasharray="3 2"/>
+            <polygon points="92,4 110,14 110,34 92,44 74,34 74,14" opacity="0.55"/>
           </g>
-          <circle cx="68" cy="24" r="3" fill="#C4A882"/>
-          <circle cx="68" cy="56" r="3" fill="#C4A882"/>
-          <circle cx="124" cy="40" r="3" fill="#C4A882" opacity="0.7"/>
-        </svg>
-
-        {/* 右下：カプセル + 水滴 */}
-        <div aria-hidden="true"
-          className="hidden md:block absolute right-[5%] bottom-[14%] opacity-55 select-none pointer-events-none">
-          <svg viewBox="0 0 120 80" fill="none" className="w-32 h-20">
-            <g transform="rotate(-18 60 32)">
-              <rect x="6" y="22" width="92" height="22" rx="11" fill="#C4A882"/>
-              <path d="M 36 22 L 17 22 A 11 11 0 0 0 17 44 L 36 44 Z" fill="#3D2B5C"/>
-              <line x1="50" y1="26" x2="84" y2="26" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
-            </g>
-            <g transform="translate(78 60)">
-              <path d="M 0 0 C -5 -8, -8 -13, 0 -19 C 8 -13, 5 -8, 0 0 Z" fill="#3D2B5C" opacity="0.55"/>
-            </g>
-          </svg>
-        </div>
-
-        {/* ドット constellation（中央上の余白） */}
-        <svg aria-hidden="true"
-          className="hidden md:block absolute right-[34%] top-[8%] w-12 h-12 opacity-30 select-none pointer-events-none"
-          viewBox="0 0 48 48" fill="#3D2B5C">
-          <circle cx="6" cy="6" r="1.6"/>
-          <circle cx="20" cy="14" r="1.2"/>
-          <circle cx="36" cy="6" r="1.4"/>
-          <circle cx="12" cy="28" r="1"/>
-          <circle cx="30" cy="32" r="1.4"/>
-          <circle cx="42" cy="22" r="1"/>
+          <circle cx="38" cy="24" r="2.2" fill="#C4A882"/>
+          <circle cx="74" cy="34" r="2" fill="#C4A882"/>
         </svg>
 
         {/* ─── 中央コンテンツ（mybest型）─── */}
