@@ -12,7 +12,7 @@ export default function NotFound() {
       <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-4">
         404 Not Found
       </p>
-      <h1 className="text-[32px] sm:text-[40px] font-black text-foreground leading-[1.2] mb-4">
+      <h1 className="text-[32px] sm:text-[40px] font-bold text-foreground leading-[1.2] mb-4">
         ページが見つかりません
       </h1>
       <p className="text-[15px] text-muted-foreground leading-relaxed max-w-sm mb-10">

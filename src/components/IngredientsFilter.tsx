@@ -200,7 +200,7 @@ export function IngredientsFilter({ ingredients }: Props) {
               <section key={rank}>
                 <div className={`${m.style} border inline-flex items-center gap-2
                   rounded-xl px-3 py-1.5 mb-5`}>
-                  <span className="font-black text-[18px] leading-none">{m.label}</span>
+                  <span className="font-bold text-[18px] leading-none">{m.label}</span>
                   <span className="text-[12px] font-medium">{m.desc}</span>
                   <span className="text-[11px] opacity-80">· {group.length}件</span>
                 </div>

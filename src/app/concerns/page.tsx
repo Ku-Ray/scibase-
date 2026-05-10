@@ -96,7 +96,7 @@ export default function ConcernsPage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
     <div className="max-w-4xl mx-auto px-5 py-10">
       <div className="mb-7">
-        <h1 className="font-bold text-[28px] sm:text-[34px] text-foreground mb-2 tracking-tight">
+        <h1 className="font-semibold text-[28px] sm:text-[34px] text-foreground mb-2 tracking-tight">
           悩みから探す
         </h1>
         <p className="text-[14px] text-muted-foreground">

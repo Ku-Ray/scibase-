@@ -109,7 +109,7 @@ export default function AnalyzerPage() {
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
           Supplement Analyzer
         </p>
-        <h1 className="text-[28px] sm:text-[34px] font-bold text-foreground tracking-tight mb-3 leading-tight">
+        <h1 className="text-[28px] sm:text-[34px] font-semibold text-foreground tracking-tight mb-3 leading-tight">
           サプリ診断｜論文で選ぶ自分に必要な成分
         </h1>
         <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
@@ -131,7 +131,7 @@ export default function AnalyzerPage() {
       <AnalyzerClient />
 
       <section className="max-w-2xl mx-auto px-5 pb-16 pt-4">
-        <h2 className="text-[18px] sm:text-[20px] font-bold text-foreground mb-4">
+        <h2 className="text-[18px] sm:text-[20px] font-semibold text-foreground mb-4">
           サプリ診断について
         </h2>
         <div className="space-y-5 text-[14px] leading-relaxed text-foreground">

@@ -69,7 +69,7 @@ export default function RankingIndexPage() {
             Evidence Ranking
           </span>
         </div>
-        <h1 className="text-[28px] sm:text-[36px] font-bold text-foreground
+        <h1 className="text-[28px] sm:text-[36px] font-semibold text-foreground
           leading-[1.2] tracking-tight mb-3">
           成分ランキング
         </h1>

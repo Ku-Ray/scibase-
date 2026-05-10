@@ -240,7 +240,7 @@ export default async function ComparePage({ params }: Props) {
         <div className="mb-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
             text-muted-foreground mb-3">論文エビデンス比較</p>
-          <h1 className="text-[28px] sm:text-[36px] font-bold text-foreground
+          <h1 className="text-[28px] sm:text-[36px] font-semibold text-foreground
             tracking-tight leading-[1.2] mb-4">
             {ingA.nameJa} vs {ingB.nameJa}
           </h1>
@@ -252,7 +252,7 @@ export default async function ComparePage({ params }: Props) {
 
         {/* ── TL;DR：30秒で分かる結論（認知負荷軽減 + スクロール前の離脱防止） ── */}
         <div className="bg-foreground text-background rounded-2xl p-5 mb-8">
-          <p className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-3">
+          <p className="text-[10px] font-semibold uppercase tracking-widest opacity-50 mb-3">
             30秒でわかる結論
           </p>
           <div className="space-y-2.5">
@@ -260,7 +260,7 @@ export default async function ComparePage({ params }: Props) {
             <div className="flex items-start gap-2.5 pb-3 border-b border-white/15">
               <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-amber-400" />
               <p className="text-[13px] leading-snug">
-                <span className="font-bold text-amber-300">総合おすすめ: </span>
+                <span className="font-semibold text-amber-300">総合おすすめ: </span>
                 {overall.pick ? overall.pick.nameJa : '目的・悩みに応じて選択'}
                 <span className="opacity-60 text-[11px] ml-1.5">（{overall.reason}）</span>
               </p>
@@ -269,7 +269,7 @@ export default async function ComparePage({ params }: Props) {
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
               <p className="text-[13px] leading-snug">
-                <span className="font-bold">エビデンス: </span>
+                <span className="font-semibold">エビデンス: </span>
                 {evidenceWinner
                   ? <>{evidenceWinner.nameJa}が上（{rankLabel[evidenceWinner.evidenceRank]} vs {rankLabel[evidenceWinner.slug === ingA.slug ? ingB.evidenceRank : ingA.evidenceRank]}）</>
                   : <>両成分は同等（{rankLabel[ingA.evidenceRank]}）</>
@@ -280,14 +280,14 @@ export default async function ComparePage({ params }: Props) {
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
               <p className="text-[13px] leading-snug">
-                <span className="font-bold">{ingA.nameJa}向き: </span>
+                <span className="font-semibold">{ingA.nameJa}向き: </span>
                 {ingA.whoFor?.[0] ?? ingA.tagline.slice(0, 40) + '…'}
               </p>
             </div>
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
               <p className="text-[13px] leading-snug">
-                <span className="font-bold">{ingB.nameJa}向き: </span>
+                <span className="font-semibold">{ingB.nameJa}向き: </span>
                 {ingB.whoFor?.[0] ?? ingB.tagline.slice(0, 40) + '…'}
               </p>
             </div>
@@ -296,7 +296,7 @@ export default async function ComparePage({ params }: Props) {
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400" />
                 <p className="text-[13px] leading-snug">
-                  <span className="font-bold">月コスト目安: </span>
+                  <span className="font-semibold">月コスト目安: </span>
                   {[costA && `${ingA.nameJa} ¥${costA.toLocaleString()}`, costB && `${ingB.nameJa} ¥${costB.toLocaleString()}`].filter(Boolean).join(' / ')}
                 </p>
               </div>
@@ -318,7 +318,7 @@ export default async function ComparePage({ params }: Props) {
                 PR
               </span>
             </div>
-            <p className="font-bold text-[20px] text-foreground mb-1">{overall.pick.nameJa}</p>
+            <p className="font-semibold text-[20px] text-foreground mb-1">{overall.pick.nameJa}</p>
             <p className="text-[13px] text-amber-800 mb-4">{overall.reason}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
@@ -391,8 +391,8 @@ export default async function ComparePage({ params }: Props) {
               <div key={ing.slug}
                 className={`rounded-xl border p-4 text-center ${rankColor[ing.evidenceRank]}`}>
                 <div className="text-[11px] font-semibold mb-1">{rankLabel[ing.evidenceRank]}</div>
-                <div className="text-[26px] font-black mb-0.5">{ing.evidenceRank}</div>
-                <div className="font-bold text-[15px] mb-2">{ing.nameJa}</div>
+                <div className="text-[26px] font-bold mb-0.5">{ing.evidenceRank}</div>
+                <div className="font-semibold text-[15px] mb-2">{ing.nameJa}</div>
                 <div className="text-[11px] opacity-70">{wins}軸で優位</div>
               </div>
             ))}
@@ -423,7 +423,7 @@ export default async function ComparePage({ params }: Props) {
                     論文 {ing.papers.length}件
                   </span>
                 </div>
-                <h3 className="font-bold text-[18px] text-foreground mb-1">{ing.nameJa}</h3>
+                <h3 className="font-semibold text-[18px] text-foreground mb-1">{ing.nameJa}</h3>
                 <p className="text-[12px] text-muted-foreground mb-3">{ing.nameEn}</p>
                 <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
                   {ing.tagline}
@@ -480,7 +480,7 @@ export default async function ComparePage({ params }: Props) {
                       <div className={`h-full rounded-full transition-all ${winA ? 'bg-accent' : 'bg-border'}`}
                         style={{ width: `${sA * 10}%` }} />
                     </div>
-                    <span className={`text-[13px] tabular-nums font-bold ${winA ? 'text-accent' : 'text-muted-foreground/50'}`}>
+                    <span className={`text-[13px] tabular-nums font-semibold ${winA ? 'text-accent' : 'text-muted-foreground/50'}`}>
                       {sA.toFixed(1)}
                     </span>
                   </div>
@@ -489,7 +489,7 @@ export default async function ComparePage({ params }: Props) {
                       <div className={`h-full rounded-full transition-all ${winB ? 'bg-accent' : 'bg-border'}`}
                         style={{ width: `${sB * 10}%` }} />
                     </div>
-                    <span className={`text-[13px] tabular-nums font-bold ${winB ? 'text-accent' : 'text-muted-foreground/50'}`}>
+                    <span className={`text-[13px] tabular-nums font-semibold ${winB ? 'text-accent' : 'text-muted-foreground/50'}`}>
                       {sB.toFixed(1)}
                     </span>
                   </div>
@@ -501,8 +501,8 @@ export default async function ComparePage({ params }: Props) {
                 {/* ヘッダー行 */}
                 <div className="grid grid-cols-[1fr_100px_100px] border-b border-border">
                   <div className="px-4 py-3 text-[11px] font-semibold text-muted-foreground tracking-wider">差が大きい軸（上位{primary.length}軸）</div>
-                  <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingA.nameJa}</div>
-                  <div className="px-3 py-3 text-[12px] font-bold text-center text-foreground border-l border-border">{ingB.nameJa}</div>
+                  <div className="px-3 py-3 text-[12px] font-semibold text-center text-foreground border-l border-border">{ingA.nameJa}</div>
+                  <div className="px-3 py-3 text-[12px] font-semibold text-center text-foreground border-l border-border">{ingB.nameJa}</div>
                 </div>
                 {primary.map((row, i) => renderRow(row, secondary.length === 0 && i === primary.length - 1))}
                 {secondary.length > 0 && (

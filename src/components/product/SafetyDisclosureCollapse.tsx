@@ -34,7 +34,7 @@ export function SafetyDisclosureCollapse({ ingredient }: Props) {
       <summary className="flex items-center justify-between gap-2 px-4 py-3 cursor-pointer list-none hover:bg-secondary/50 transition-colors">
         <div className="flex items-center gap-2">
           <span aria-hidden className="text-amber-600 text-[15px] leading-none">⚠</span>
-          <span className="text-[13px] font-bold text-foreground">
+          <span className="text-[13px] font-semibold text-foreground">
             副作用・薬との併用注意（必ず確認）
           </span>
         </div>
@@ -44,7 +44,7 @@ export function SafetyDisclosureCollapse({ ingredient }: Props) {
       <div className="px-4 pb-4 pt-1 border-t border-border space-y-3">
         {hasSide && (
           <div>
-            <p className="text-[11px] font-bold text-muted-foreground tracking-wide mb-1.5">想定される副作用</p>
+            <p className="text-[11px] font-semibold text-muted-foreground tracking-wide mb-1.5">想定される副作用</p>
             <ul className="space-y-1">
               {ingredient.sideEffects!.map((s, i) => (
                 <li key={i} className="text-[12px] text-foreground leading-relaxed flex gap-2">
@@ -58,11 +58,11 @@ export function SafetyDisclosureCollapse({ ingredient }: Props) {
 
         {hasContra && (
           <div>
-            <p className="text-[11px] font-bold text-muted-foreground tracking-wide mb-1.5">使用を避けるべき人</p>
+            <p className="text-[11px] font-semibold text-muted-foreground tracking-wide mb-1.5">使用を避けるべき人</p>
             <ul className="space-y-1">
               {ingredient.contraindications!.map((c, i) => (
                 <li key={i} className="text-[12px] text-foreground leading-relaxed flex gap-2">
-                  <span aria-hidden className="text-rose-500 flex-shrink-0 font-bold">×</span>
+                  <span aria-hidden className="text-rose-500 flex-shrink-0 font-semibold">×</span>
                   <span>{c}</span>
                 </li>
               ))}
@@ -72,12 +72,12 @@ export function SafetyDisclosureCollapse({ ingredient }: Props) {
 
         {hasInter && (
           <div>
-            <p className="text-[11px] font-bold text-muted-foreground tracking-wide mb-1.5">医薬品・他サプリとの相互作用</p>
+            <p className="text-[11px] font-semibold text-muted-foreground tracking-wide mb-1.5">医薬品・他サプリとの相互作用</p>
             <ul className="space-y-2">
               {ingredient.interactions!.map((it, i) => (
                 <li key={i} className="border border-border rounded-lg p-3 bg-secondary/20">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className={`text-[10px] font-bold border rounded px-1.5 py-0.5 whitespace-nowrap ${LEVEL_COLOR[it.level] ?? ''}`}>
+                    <span className={`text-[10px] font-semibold border rounded px-1.5 py-0.5 whitespace-nowrap ${LEVEL_COLOR[it.level] ?? ''}`}>
                       {LEVEL_LABEL[it.level] ?? it.level}
                     </span>
                     <span className="text-[12px] font-semibold text-foreground">{it.substance}</span>

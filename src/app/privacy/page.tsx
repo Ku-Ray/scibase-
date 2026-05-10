@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         <span className="text-foreground">プライバシーポリシー</span>
       </nav>
 
-      <h1 className="text-[28px] font-bold text-foreground mb-2">プライバシーポリシー</h1>
+      <h1 className="text-[28px] font-semibold text-foreground mb-2">プライバシーポリシー</h1>
       <p className="text-[13px] text-muted-foreground mb-10">最終更新日：{UPDATED_AT}</p>
 
       <div className="space-y-10 text-[14px] leading-[1.85] text-foreground">
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
 
         {/* 第1条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第1条（運営者情報）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第1条（運営者情報）</h2>
           <ul className="space-y-1.5 text-muted-foreground">
             <li>サイト名：SciBase</li>
             <li>URL：https://scibase.app</li>
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
 
         {/* 第2条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第2条（取得する情報）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第2条（取得する情報）</h2>
           <p className="text-muted-foreground mb-3">当サイトでは、以下の情報を取得する場合があります。</p>
           <ul className="space-y-2 text-muted-foreground list-disc pl-5">
             <li><strong className="text-foreground">アクセス情報</strong>：IPアドレス、ブラウザ種別、リファラー、閲覧ページ、滞在時間、デバイス情報（Google Analytics 4を通じて自動取得）</li>
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
 
         {/* 第3条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第3条（情報の利用目的）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第3条（情報の利用目的）</h2>
           <p className="text-muted-foreground mb-3">取得した情報は、以下の目的でのみ利用します。</p>
           <ul className="space-y-2 text-muted-foreground list-disc pl-5">
             <li>当サイトの運営・改善・コンテンツ品質向上</li>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
 
         {/* 第4条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第4条（アクセス解析ツールの利用）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第4条（アクセス解析ツールの利用）</h2>
           <p className="text-muted-foreground mb-3">
             当サイトでは、Google LLCが提供する <strong className="text-foreground">Google Analytics 4（GA4）</strong> を使用し、Cookieを通じて匿名のトラフィック情報を収集しています。収集される情報には個人を特定する内容は含まれません。
           </p>
@@ -90,7 +90,7 @@ export default function PrivacyPage() {
 
         {/* 第5条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第5条（Cookieの取り扱い）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第5条（Cookieの取り扱い）</h2>
           <p className="text-muted-foreground mb-3">
             当サイトはCookieを以下の目的で使用します。
           </p>
@@ -106,7 +106,7 @@ export default function PrivacyPage() {
 
         {/* 第6条 アフィリエイト・PR表示 */}
         <section className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第6条（アフィリエイトプログラム・広告表示）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第6条（アフィリエイトプログラム・広告表示）</h2>
           <p className="text-muted-foreground mb-3">
             当サイトは以下のアフィリエイトプログラムに参加しており、サイト内に広告（PR）リンクを含みます。
           </p>
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
 
         {/* 第7条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第7条（個人情報の第三者提供）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第7条（個人情報の第三者提供）</h2>
           <p className="text-muted-foreground">
             当サイトは、以下の場合を除き、取得した個人情報を第三者に提供することはありません。
           </p>
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
 
         {/* 第8条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第8条（個人情報の開示・訂正・削除）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第8条（個人情報の開示・訂正・削除）</h2>
           <p className="text-muted-foreground">
             ユーザーは、自身の個人情報について、開示・訂正・削除を求めることができます。希望される場合は <a href="https://x.com/r_evidence_" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">@r_evidence_</a> のDMまでご連絡ください。本人確認のうえ、合理的な期間内に対応いたします。
           </p>
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
 
         {/* 第9条 免責事項 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第9条（免責事項）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第9条（免責事項）</h2>
           <ul className="space-y-2 text-muted-foreground list-disc pl-5">
             <li>当サイトの情報は<strong className="text-foreground">医療的アドバイスを提供するものではありません</strong>。サプリメントの使用・スキンケアの変更を行う際は、医師・薬剤師・専門家にご相談ください。</li>
             <li>掲載内容は研究情報の提供を目的としており、特定成分・商品の効果・効能を保証するものではありません。個人の体質・健康状態・服用薬との相互作用については、当サイトでは責任を負いかねます。</li>
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
 
         {/* 第10条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第10条（著作権）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第10条（著作権）</h2>
           <p className="text-muted-foreground">
             当サイトに掲載されている文章・図表・デザインの著作権は、運営者または引用元に帰属します。
             引用される場合は、出典として「SciBase（https://scibase.app）」を明記してください。論文の引用については、各論文の著作権は元の発行元に帰属します。
@@ -171,7 +171,7 @@ export default function PrivacyPage() {
 
         {/* 第11条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第11条（準拠法・管轄）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第11条（準拠法・管轄）</h2>
           <p className="text-muted-foreground">
             本ポリシーの解釈および当サイト利用に関連して生じる一切の紛争は、日本法を準拠法とし、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
           </p>
@@ -179,7 +179,7 @@ export default function PrivacyPage() {
 
         {/* 第12条 */}
         <section>
-          <h2 className="text-[18px] font-bold text-foreground mb-3">第12条（ポリシーの改定）</h2>
+          <h2 className="text-[18px] font-semibold text-foreground mb-3">第12条（ポリシーの改定）</h2>
           <p className="text-muted-foreground">
             本ポリシーの内容は、法令変更・運営方針の変更等により予告なく改定する場合があります。重要な変更がある場合は、当サイト上で通知します。改定後のポリシーは本ページに掲載した時点で効力を発します。
           </p>

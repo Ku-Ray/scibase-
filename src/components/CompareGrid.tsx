@@ -47,7 +47,7 @@ function PairRow({ pairKey, nameJaA, nameJaB, rankA, rankB, highlighted = false 
       </div>
 
       {/* vs */}
-      <div className={`flex-shrink-0 text-[10px] font-black rounded-full px-2 py-0.5 leading-none
+      <div className={`flex-shrink-0 text-[10px] font-bold rounded-full px-2 py-0.5 leading-none
         ${highlighted
           ? 'text-amber-700 bg-white border border-amber-200'
           : 'text-muted-foreground/40 bg-secondary border border-border'
@@ -88,7 +88,7 @@ export function CompareGrid({ pairs }: { pairs: PairEntry[] }) {
       {activeFilter === 'all' && (
         <section className="mb-8">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-[11px] font-bold text-amber-700 bg-amber-50
+            <span className="text-[11px] font-semibold text-amber-700 bg-amber-50
               border border-amber-200 rounded-full px-3 py-1">
               よく比較されているペア
             </span>

@@ -87,7 +87,7 @@ function renderToken(t: Token, key: number): ReactNode {
   if (t.type === 'bold') {
     // bold内のリンク・ハイライトを再帰的にパース（ネスト対応）
     return (
-      <strong key={key} className="font-bold text-foreground">
+      <strong key={key} className="font-semibold text-foreground">
         {tokenize(t.value).map(renderToken)}
       </strong>
     )
@@ -194,7 +194,7 @@ export function RichParagraphs({
             >
               <div className="flex items-center gap-2 mb-2">
                 <Icon className="w-4 h-4 text-accent flex-shrink-0" aria-hidden="true" />
-                <span className="text-[12px] font-bold tracking-[0.08em] text-accent">
+                <span className="text-[12px] font-semibold tracking-[0.08em] text-accent">
                   {meta.label}
                 </span>
               </div>
@@ -214,7 +214,7 @@ export function RichParagraphs({
           return (
             <h4
               key={i}
-              className="text-[15px] sm:text-[16px] font-bold text-foreground
+              className="text-[15px] sm:text-[16px] font-semibold text-foreground
                 mt-7 mb-3 first:mt-0 leading-snug"
             >
               {tokenize(boldText).map(renderToken)}

@@ -60,7 +60,7 @@ export function IngredientCard({ ingredient: ing, rank, showConcerns = true }: P
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2.5 min-w-0">
             {rank !== undefined && (
-              <span className={`flex-shrink-0 w-6 h-6 rounded-full text-[11px] font-black
+              <span className={`flex-shrink-0 w-6 h-6 rounded-full text-[11px] font-bold
                 flex items-center justify-center
                 ${rank === 1 ? 'bg-amber-400 text-white'
                 : rank === 2 ? 'bg-stone-300 text-stone-700'

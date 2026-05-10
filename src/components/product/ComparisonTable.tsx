@@ -79,7 +79,7 @@ export function ComparisonTable({ products, ingredient }: Props) {
     <div className="border border-border rounded-xl overflow-hidden bg-card">
       {/* ヘッダー：タイトル + ソートchips */}
       <div className="bg-secondary px-4 py-3 border-b border-border flex items-center justify-between gap-3 flex-wrap">
-        <p className="text-[13px] font-bold text-foreground">ひと目で比較</p>
+        <p className="text-[13px] font-semibold text-foreground">ひと目で比較</p>
         <div className="flex items-center gap-1.5 flex-wrap">
           <span className="text-[10px] text-muted-foreground">並び替え：</span>
           {(Object.keys(SORT_LABEL) as SortKey[]).map(k => (
@@ -124,11 +124,11 @@ export function ComparisonTable({ products, ingredient }: Props) {
               <tr key={p.url} className="border-b border-border last:border-b-0 hover:bg-secondary/20">
                 <td className="px-3 py-2 align-middle">
                   {i === 0 && sortKey !== 'rank' ? (
-                    <span className="inline-block text-[10px] font-bold tracking-wider bg-foreground text-background rounded px-1.5 py-0.5">
+                    <span className="inline-block text-[10px] font-semibold tracking-wider bg-foreground text-background rounded px-1.5 py-0.5">
                       ①
                     </span>
                   ) : p.rank === 1 ? (
-                    <span className="inline-block text-[10px] font-bold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5">
+                    <span className="inline-block text-[10px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5">
                       1位
                     </span>
                   ) : (
@@ -142,7 +142,7 @@ export function ComparisonTable({ products, ingredient }: Props) {
                   </p>
                 </td>
                 <td className="px-3 py-2 align-middle">
-                  <span className="font-bold text-foreground tabular-nums">★{s.recommendationScore.toFixed(2)}</span>
+                  <span className="font-semibold text-foreground tabular-nums">★{s.recommendationScore.toFixed(2)}</span>
                 </td>
                 <td className="px-3 py-2 align-middle text-foreground tabular-nums">
                   {s.evidenceScore == null ? '—' : `${s.evidenceScore}/5`}

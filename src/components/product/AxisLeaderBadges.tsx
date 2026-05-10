@@ -40,7 +40,7 @@ export function AxisLeaderBadges({
     <div className="flex flex-wrap gap-1.5 items-center">
       {showOverallRank && (
         <span
-          className="inline-flex items-center justify-center text-[12px] font-bold tracking-wider bg-amber-400 text-amber-950 rounded px-2 py-1 leading-none"
+          className="inline-flex items-center justify-center text-[12px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-2 py-1 leading-none"
           title="当サイト掲載商品中・総合スコア1位"
         >
           1位

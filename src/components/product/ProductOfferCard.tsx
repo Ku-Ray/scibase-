@@ -75,13 +75,13 @@ export function ProductOfferCard({
     return (
       <div className="border-t border-border bg-card px-5 py-4">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
-          <span className="inline-flex items-center justify-center text-[11px] font-bold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5 leading-none">
+          <span className="inline-flex items-center justify-center text-[11px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5 leading-none">
             1位
           </span>
           <AxisLeaderBadges leaders={axisLeaders} productUrl={product.url} maxBadges={2} />
         </div>
         {product.benefitHeading && (
-          <p className="text-[13px] text-foreground font-bold leading-snug mb-2">
+          <p className="text-[13px] text-foreground font-semibold leading-snug mb-2">
             {product.benefitHeading}
           </p>
         )}
@@ -99,7 +99,7 @@ export function ProductOfferCard({
               />
             </div>
           ) : (
-            <div className="flex-shrink-0 w-20 h-20 rounded-lg bg-secondary border border-border flex items-center justify-center text-muted-foreground/30 text-[24px] font-bold">
+            <div className="flex-shrink-0 w-20 h-20 rounded-lg bg-secondary border border-border flex items-center justify-center text-muted-foreground/30 text-[24px] font-semibold">
               {product.brand.slice(0, 1)}
             </div>
           )}
@@ -122,7 +122,7 @@ export function ProductOfferCard({
           <div>
             {cost1d != null ? (
               <>
-                <p className="text-[22px] font-bold text-rose-600 tabular-nums leading-none">
+                <p className="text-[22px] font-semibold text-rose-600 tabular-nums leading-none">
                   ¥{cost1d.toLocaleString()}<span className="text-[12px] font-normal text-muted-foreground ml-1">/日</span>
                 </p>
                 <p className="text-[11px] text-muted-foreground tabular-nums mt-0.5">
@@ -130,7 +130,7 @@ export function ProductOfferCard({
                 </p>
               </>
             ) : (
-              <p className="text-[18px] font-bold text-foreground tabular-nums">
+              <p className="text-[18px] font-semibold text-foreground tabular-nums">
                 {formatYen(product.priceJpy)}<span className="text-[11px] font-normal text-muted-foreground ml-1">〜</span>
               </p>
             )}
@@ -143,7 +143,7 @@ export function ProductOfferCard({
             aspProgram={product.aspProgram}
             aspId={product.aspId}
             commissionRateBand={product.commissionRateBand}
-            className={`inline-flex items-center justify-center gap-1.5 text-[13px] font-bold rounded-xl px-4 h-12 min-w-[10rem] transition-colors flex-shrink-0 ${PRIMARY_CTA}`}
+            className={`inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold rounded-xl px-4 h-12 min-w-[10rem] transition-colors flex-shrink-0 ${PRIMARY_CTA}`}
           >
             {platformLabel[product.platform]}で詳細を見る
             <ExternalLink className="w-3.5 h-3.5" />
@@ -194,7 +194,7 @@ export function ProductOfferCard({
           </div>
         ) : (
           <div className="mx-auto w-32 h-32 rounded-lg bg-secondary border border-border flex flex-col items-center justify-center text-muted-foreground/30 gap-1">
-            <span className="text-[28px] font-bold">{product.brand.slice(0, 1)}</span>
+            <span className="text-[28px] font-semibold">{product.brand.slice(0, 1)}</span>
             <span className="text-[9px]">画像準備中</span>
           </div>
         )}
@@ -205,7 +205,7 @@ export function ProductOfferCard({
           </p>
         </div>
 
-        <p className={`font-bold tabular-nums ${scoreColor(score.recommendationScore)}`}>
+        <p className={`font-semibold tabular-nums ${scoreColor(score.recommendationScore)}`}>
           <span className="text-[18px]">★{score.recommendationScore.toFixed(2)}</span>
           <span className="text-[10px] text-muted-foreground ml-1">/ 5.0</span>
         </p>
@@ -232,7 +232,7 @@ export function ProductOfferCard({
         <div className="mt-auto pt-2">
           {cost1d != null ? (
             <>
-              <p className="text-[20px] font-bold text-rose-600 tabular-nums leading-none">
+              <p className="text-[20px] font-semibold text-rose-600 tabular-nums leading-none">
                 ¥{cost1d.toLocaleString()}<span className="text-[11px] font-normal text-muted-foreground ml-1">/日</span>
               </p>
               <p className="text-[11px] text-muted-foreground tabular-nums mt-0.5">
@@ -240,7 +240,7 @@ export function ProductOfferCard({
               </p>
             </>
           ) : (
-            <p className="text-[18px] font-bold text-foreground tabular-nums">
+            <p className="text-[18px] font-semibold text-foreground tabular-nums">
               {formatYen(product.priceJpy)}<span className="text-[11px] font-normal text-muted-foreground ml-1">〜</span>
             </p>
           )}
@@ -254,7 +254,7 @@ export function ProductOfferCard({
           aspProgram={product.aspProgram}
           aspId={product.aspId}
           commissionRateBand={product.commissionRateBand}
-          className={`flex items-center justify-center gap-2 text-[13px] font-bold rounded-xl px-4 h-12 transition-colors w-full ${PRIMARY_CTA}`}
+          className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-xl px-4 h-12 transition-colors w-full ${PRIMARY_CTA}`}
         >
           {platformLabel[product.platform]}で詳細を見る
           <ExternalLink className="w-3.5 h-3.5" />
@@ -344,7 +344,7 @@ function CtaStack({
       <div>
         <div className="relative">
           {product.firstOrderDiscount && (
-            <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10 text-[10px] font-bold bg-orange-100 text-orange-800 border border-orange-300 rounded px-2 py-0.5 whitespace-nowrap shadow-sm">
+            <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10 text-[10px] font-semibold bg-orange-100 text-orange-800 border border-orange-300 rounded px-2 py-0.5 whitespace-nowrap shadow-sm">
               {product.firstOrderDiscount}
             </span>
           )}
@@ -356,7 +356,7 @@ function CtaStack({
             aspProgram={product.aspProgram}
             aspId={product.aspId}
             commissionRateBand={product.commissionRateBand}
-            className={`flex items-center justify-center gap-2 text-[13px] font-bold rounded-lg px-3 h-12 transition-colors w-full ${PRIMARY_CTA}`}
+            className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-lg px-3 h-12 transition-colors w-full ${PRIMARY_CTA}`}
           >
             <span className="flex flex-col items-center leading-tight">
               <span>{platformLabel[product.platform]}で詳細を見る</span>
@@ -377,7 +377,7 @@ function CtaStack({
             href={sub.searchUrl}
             platform={sub.platform}
             ingredientSlug={ingredient.slug}
-            className={`flex items-center justify-center gap-2 text-[12px] font-bold rounded-lg px-3 h-11 transition-colors w-full ${PRIMARY_CTA}`}
+            className={`flex items-center justify-center gap-2 text-[12px] font-semibold rounded-lg px-3 h-11 transition-colors w-full ${PRIMARY_CTA}`}
           >
             <span className="flex flex-col items-center leading-tight">
               <span>{sub.label ?? `${platformLabel[sub.platform]}で探す`}</span>
@@ -411,7 +411,7 @@ function HeroMybestCard({
         <div className="flex items-center gap-2 overflow-x-auto -mx-1 px-1 pb-1">
           {isOverallRank1 && (
             <span
-              className="flex-shrink-0 inline-flex items-center justify-center text-[14px] font-bold tracking-wider bg-amber-400 text-amber-950 rounded px-3 py-1.5 leading-none"
+              className="flex-shrink-0 inline-flex items-center justify-center text-[14px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-3 py-1.5 leading-none"
               title="当サイト掲載商品中・SciBase 推奨度1位"
             >
               1位
@@ -423,7 +423,7 @@ function HeroMybestCard({
             .map(l => (
               <span
                 key={l.axis}
-                className="flex-shrink-0 inline-flex items-center gap-1 text-[12px] font-bold text-amber-900 whitespace-nowrap"
+                className="flex-shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold text-amber-900 whitespace-nowrap"
                 title={`当サイト掲載商品中・${l.axisLabel}スコア最上位`}
               >
                 <span aria-hidden className="text-amber-500 text-[14px] leading-none">♛</span>
@@ -435,7 +435,7 @@ function HeroMybestCard({
         {/* ブランド + 商品名 + 総合評価1文（改善F） */}
         <div>
           <p className="text-[12px] text-muted-foreground">{product.brand}</p>
-          <h3 className="font-bold text-[20px] sm:text-[22px] text-foreground leading-tight mt-1">
+          <h3 className="font-semibold text-[20px] sm:text-[22px] text-foreground leading-tight mt-1">
             {product.name}
           </h3>
           {(() => {
@@ -457,7 +457,7 @@ function HeroMybestCard({
         <div className="bg-rose-50/50 border border-rose-100 rounded-xl px-4 py-3.5">
           <div className="flex items-baseline gap-2 mb-2">
             <p className="text-[12px] text-muted-foreground">おすすめスコア</p>
-            <p className={`font-bold tabular-nums ${score.recommendationScore >= 4 ? 'text-rose-600' : score.recommendationScore >= 3 ? 'text-amber-600' : 'text-foreground'}`}>
+            <p className={`font-semibold tabular-nums ${score.recommendationScore >= 4 ? 'text-rose-600' : score.recommendationScore >= 3 ? 'text-amber-600' : 'text-foreground'}`}>
               <span className="text-[36px] leading-none">★{score.recommendationScore.toFixed(2)}</span>
             </p>
           </div>
@@ -466,7 +466,7 @@ function HeroMybestCard({
             {axisDisplayOrder(score).map(({ axis, label, value }) => (
               <div key={axis} className="flex items-center justify-between gap-2 text-[12px]">
                 <span className="text-muted-foreground truncate">{label}</span>
-                <span className={`font-bold tabular-nums whitespace-nowrap ${axisScoreColor(value)}`}>
+                <span className={`font-semibold tabular-nums whitespace-nowrap ${axisScoreColor(value)}`}>
                   {value == null ? '★ -' : `★${value.toFixed(2)}`}
                 </span>
               </div>
@@ -491,7 +491,7 @@ function HeroMybestCard({
                   className="w-full h-full object-contain"
                 />
                 {isOverallRank1 && (
-                  <div className="absolute bottom-3 left-3 bg-amber-400 text-amber-950 text-[10px] font-bold rounded-full w-16 h-16 flex flex-col items-center justify-center border-[3px] border-amber-500 shadow-lg">
+                  <div className="absolute bottom-3 left-3 bg-amber-400 text-amber-950 text-[10px] font-semibold rounded-full w-16 h-16 flex flex-col items-center justify-center border-[3px] border-amber-500 shadow-lg">
                     <span className="text-[8px] tracking-wide leading-none mt-1.5">第</span>
                     <span className="text-[22px] font-extrabold leading-none">1</span>
                     <span className="text-[8px] tracking-wide leading-none mb-1.5">位</span>
@@ -500,7 +500,7 @@ function HeroMybestCard({
               </>
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground/30 gap-2">
-                <div className="text-[48px] font-bold">{product.brand.slice(0, 1)}</div>
+                <div className="text-[48px] font-semibold">{product.brand.slice(0, 1)}</div>
                 <p className="text-[10px]">画像準備中</p>
               </div>
             )}
@@ -513,7 +513,7 @@ function HeroMybestCard({
               {cost1d != null ? (
                 <>
                   <div className="flex items-baseline gap-2 flex-wrap">
-                    <p className="text-[28px] font-bold text-rose-600 tabular-nums leading-none">
+                    <p className="text-[28px] font-semibold text-rose-600 tabular-nums leading-none">
                       ¥{cost1d.toLocaleString()}
                     </p>
                     <p className="text-[12px] text-muted-foreground">/ 日</p>
@@ -533,7 +533,7 @@ function HeroMybestCard({
                   )}
                 </>
               ) : (
-                <p className="text-[22px] font-bold text-foreground tabular-nums">
+                <p className="text-[22px] font-semibold text-foreground tabular-nums">
                   {formatYen(product.priceJpy)}〜
                 </p>
               )}
@@ -563,10 +563,10 @@ function HeroMybestCard({
             </span>
           )}
           {product.certifications?.includes('NSF') && (
-            <span className="text-[11px] font-bold bg-blue-700 text-white rounded-md px-2 py-1 whitespace-nowrap">NSF認証</span>
+            <span className="text-[11px] font-semibold bg-blue-700 text-white rounded-md px-2 py-1 whitespace-nowrap">NSF認証</span>
           )}
           {product.certifications?.includes('USP') && (
-            <span className="text-[11px] font-bold bg-indigo-700 text-white rounded-md px-2 py-1 whitespace-nowrap">USP認証</span>
+            <span className="text-[11px] font-semibold bg-indigo-700 text-white rounded-md px-2 py-1 whitespace-nowrap">USP認証</span>
           )}
           {product.certifications?.includes('NonGMO') && (
             <span className="text-[11px] font-semibold bg-teal-50 text-teal-700 border border-teal-200 rounded-md px-2 py-1 whitespace-nowrap">Non-GMO</span>
@@ -584,13 +584,13 @@ function HeroMybestCard({
         {/* こんな人におすすめ（whoFor） */}
         {ingredient.whoFor && ingredient.whoFor.length > 0 && (
           <div className="border border-border bg-secondary/30 rounded-xl p-4">
-            <p className="text-[11px] font-bold tracking-wide text-muted-foreground mb-2">
+            <p className="text-[11px] font-semibold tracking-wide text-muted-foreground mb-2">
               こんな人におすすめ
             </p>
             <ul className="space-y-1.5">
               {ingredient.whoFor.slice(0, 4).map((w, i) => (
                 <li key={i} className="text-[13px] text-foreground leading-relaxed flex gap-2">
-                  <span aria-hidden className="text-emerald-600 flex-shrink-0 font-bold">✓</span>
+                  <span aria-hidden className="text-emerald-600 flex-shrink-0 font-semibold">✓</span>
                   <span>{w}</span>
                 </li>
               ))}
@@ -600,7 +600,7 @@ function HeroMybestCard({
 
         {/* ベネフィット見出し */}
         {product.benefitHeading && (
-          <p className="text-[15px] sm:text-[17px] font-bold text-foreground leading-snug">
+          <p className="text-[15px] sm:text-[17px] font-semibold text-foreground leading-snug">
             {product.benefitHeading}
           </p>
         )}

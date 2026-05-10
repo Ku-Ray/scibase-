@@ -76,7 +76,7 @@ export function EvidenceBadge({ rank, variant = 'chip' }: Props) {
   if (variant === 'dot') {
     return (
       <span className={`${c.solid} inline-flex items-center justify-center
-        rounded-md w-7 h-7 text-[12px] font-black border flex-shrink-0`}>
+        rounded-md w-7 h-7 text-[12px] font-bold border flex-shrink-0`}>
         {c.label}
       </span>
     )
@@ -86,7 +86,7 @@ export function EvidenceBadge({ rank, variant = 'chip' }: Props) {
     return (
       <span className={`${c.light} inline-flex items-center gap-2
         border rounded-lg px-3 py-1.5 text-[13px]`}>
-        <span className={`${c.solid} font-black text-[13px] w-5 h-5 rounded-md
+        <span className={`${c.solid} font-bold text-[13px] w-5 h-5 rounded-md
           flex items-center justify-center flex-shrink-0`}>
           {c.label}
         </span>
@@ -99,7 +99,7 @@ export function EvidenceBadge({ rank, variant = 'chip' }: Props) {
     return (
       <div className={`${c.light} border rounded-2xl p-5`}>
         <div className="flex items-center gap-2 mb-2">
-          <span className={`${c.solid} font-black text-[20px] w-9 h-9 rounded-xl
+          <span className={`${c.solid} font-bold text-[20px] w-9 h-9 rounded-xl
             flex items-center justify-center`}>
             {c.label}
           </span>
@@ -115,12 +115,12 @@ export function EvidenceBadge({ rank, variant = 'chip' }: Props) {
       <div className={`${c.light} border rounded-2xl p-5`}>
         {/* ランク + 研究種別 */}
         <div className="flex items-center gap-3 mb-4">
-          <span className={`${c.solid} font-black text-[22px] w-11 h-11 rounded-xl
+          <span className={`${c.solid} font-bold text-[22px] w-11 h-11 rounded-xl
             flex items-center justify-center flex-shrink-0`}>
             {c.label}
           </span>
           <div>
-            <p className="font-bold text-[15px]">{c.human}</p>
+            <p className="font-semibold text-[15px]">{c.human}</p>
             <p className="text-[12px] opacity-70 font-medium">{c.studyType}</p>
           </div>
         </div>
@@ -150,7 +150,7 @@ export function EvidenceBadge({ rank, variant = 'chip' }: Props) {
   /* block */
   return (
     <div className={`${c.light} border rounded-xl p-4`}>
-      <div className={`${c.solid} font-black text-[22px] w-10 h-10 rounded-xl
+      <div className={`${c.solid} font-bold text-[22px] w-10 h-10 rounded-xl
         flex items-center justify-center mb-2`}>
         {c.label}
       </div>

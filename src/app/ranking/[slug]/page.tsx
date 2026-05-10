@@ -100,7 +100,7 @@ export default async function RankingPage({ params }: Props) {
               論文エビデンスランキング
             </span>
           </div>
-          <h1 className="text-[28px] sm:text-[36px] font-bold text-foreground
+          <h1 className="text-[28px] sm:text-[36px] font-semibold text-foreground
             leading-[1.2] tracking-tight mb-3">
             {concern.nameJa}に効く成分<br className="sm:hidden" />ランキング
           </h1>
@@ -139,7 +139,7 @@ export default async function RankingPage({ params }: Props) {
                 <div className="mb-1.5">
                   <EvidenceBadge rank={topIngredient.evidenceRank} variant="chip" />
                 </div>
-                <h3 className="font-bold text-[20px] text-foreground mb-1">
+                <h3 className="font-semibold text-[20px] text-foreground mb-1">
                   {topIngredient.nameJa}
                 </h3>
                 <p className="text-[13px] text-muted-foreground mb-3">
@@ -208,7 +208,7 @@ export default async function RankingPage({ params }: Props) {
 
                     {/* Rank badge */}
                     <div className="flex-shrink-0 flex flex-col items-center gap-1 pt-0.5">
-                      <span className={`w-8 h-8 rounded-full text-[13px] font-black
+                      <span className={`w-8 h-8 rounded-full text-[13px] font-bold
                         flex items-center justify-center ${badge}`}>
                         {rank <= 3 ? icon : rank}
                       </span>

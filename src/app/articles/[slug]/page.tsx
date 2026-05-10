@@ -269,7 +269,7 @@ export default async function ArticlePage({ params }: Props) {
         </div>
 
         {/* Title */}
-        <h1 className="text-[24px] sm:text-[30px] font-bold text-foreground
+        <h1 className="text-[24px] sm:text-[30px] font-semibold text-foreground
           tracking-tight leading-[1.3] mb-6">
           {article.title}
         </h1>
@@ -285,7 +285,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="border border-border rounded-2xl p-5 sm:p-6 mb-10 flex flex-col sm:flex-row
           items-start sm:items-center gap-3 sm:gap-4">
           <div className="flex-shrink-0 max-w-full">
-            <span className="block text-[32px] sm:text-[44px] font-black text-foreground
+            <span className="block text-[32px] sm:text-[44px] font-bold text-foreground
               tabular-nums leading-[1.05] break-keep [overflow-wrap:anywhere]">
               {article.heroStat.value}
             </span>
@@ -317,7 +317,7 @@ export default async function ArticlePage({ params }: Props) {
 
         {/* ── Problem ── */}
         <section id="problem" className="mb-10 scroll-mt-20">
-          <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
+          <h2 className="text-[19px] sm:text-[21px] font-semibold text-foreground mb-4 leading-snug">
             {article.problemHeading}
           </h2>
           <RichParagraphs body={article.problemBody} />
@@ -333,7 +333,7 @@ export default async function ArticlePage({ params }: Props) {
               論文が示すこと
             </span>
           </div>
-          <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
+          <h2 className="text-[19px] sm:text-[21px] font-semibold text-foreground mb-4 leading-snug">
             {article.scienceHeading}
           </h2>
           <RichParagraphs body={article.scienceBody} />
@@ -342,7 +342,7 @@ export default async function ArticlePage({ params }: Props) {
           {article.scienceStat && (
             <div className="mt-6 bg-secondary border border-border rounded-xl px-5 py-4
               flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <span className="font-black text-[20px] text-foreground tabular-nums flex-shrink-0">
+              <span className="font-bold text-[20px] text-foreground tabular-nums flex-shrink-0">
                 {article.scienceStat.value}
               </span>
               <span className="text-[13px] text-muted-foreground leading-snug">
@@ -358,10 +358,10 @@ export default async function ArticlePage({ params }: Props) {
                 <div key={i} id={`subsection-${i}`} className="scroll-mt-20">
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="flex-shrink-0 inline-flex items-center justify-center
-                      w-7 h-7 rounded-full bg-accent text-background text-[12px] font-black tabular-nums">
+                      w-7 h-7 rounded-full bg-accent text-background text-[12px] font-bold tabular-nums">
                       {i + 1}
                     </span>
-                    <h3 className="text-[17px] sm:text-[18px] font-bold text-foreground leading-snug">
+                    <h3 className="text-[17px] sm:text-[18px] font-semibold text-foreground leading-snug">
                       {sub.heading}
                     </h3>
                   </div>
@@ -433,7 +433,7 @@ export default async function ArticlePage({ params }: Props) {
           const renderAppendixGroup = (group: typeof beforeSolution) =>
             group.map(({ ap, i }) => (
               <section key={i} id={`appendix-${i}`} className="mb-10 scroll-mt-20">
-                <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
+                <h2 className="text-[19px] sm:text-[21px] font-semibold text-foreground mb-4 leading-snug">
                   {ap.heading}
                 </h2>
 
@@ -463,7 +463,7 @@ export default async function ArticlePage({ params }: Props) {
                                 <div className="h-5" />
                               )}
                               <span className={`inline-flex items-center justify-center
-                                w-9 h-9 rounded-full text-[14px] font-black tabular-nums
+                                w-9 h-9 rounded-full text-[14px] font-bold tabular-nums
                                 ${isTop
                                   ? 'bg-accent text-background'
                                   : 'bg-secondary text-foreground border border-border'}`}>
@@ -473,13 +473,13 @@ export default async function ArticlePage({ params }: Props) {
                             <div className="min-w-0 flex-1">
                               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                                 {isTop && (
-                                  <span className="text-[10px] font-black uppercase tracking-wider
+                                  <span className="text-[10px] font-bold uppercase tracking-wider
                                     bg-accent text-background px-2 py-0.5 rounded">
                                     最推奨
                                   </span>
                                 )}
                                 <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-                                <h3 className="text-[15px] sm:text-[16px] font-bold text-foreground">
+                                <h3 className="text-[15px] sm:text-[16px] font-semibold text-foreground">
                                   {ing.nameJa}
                                 </h3>
                               </div>
@@ -517,7 +517,7 @@ export default async function ArticlePage({ params }: Props) {
                     具体的な対策
                   </span>
                 </div>
-                <h2 className="text-[19px] sm:text-[21px] font-bold text-foreground mb-4 leading-snug">
+                <h2 className="text-[19px] sm:text-[21px] font-semibold text-foreground mb-4 leading-snug">
                   {article.solutionHeading}
                 </h2>
                 <RichParagraphs body={article.solutionBody} />
@@ -536,7 +536,7 @@ export default async function ArticlePage({ params }: Props) {
 
         {/* ── Ingredient CTAs ── */}
         <section id="ingredients" className="mb-12 scroll-mt-20">
-          <h2 className="text-[17px] font-bold text-foreground mb-5">
+          <h2 className="text-[17px] font-semibold text-foreground mb-5">
             この記事で取り上げた成分
           </h2>
 
@@ -565,7 +565,7 @@ export default async function ArticlePage({ params }: Props) {
                         <div className="min-w-0">
                           <div className="flex items-center gap-2 mb-1.5">
                             <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-                            <h3 className="font-bold text-[15px] text-foreground">
+                            <h3 className="font-semibold text-[15px] text-foreground">
                               {ing.nameJa}
                             </h3>
                           </div>
@@ -630,7 +630,7 @@ export default async function ArticlePage({ params }: Props) {
 
         {/* ── FAQ ── */}
         <section id="faq" className="mb-12 scroll-mt-20">
-          <h2 className="text-[17px] font-bold text-foreground mb-5">よくある質問</h2>
+          <h2 className="text-[17px] font-semibold text-foreground mb-5">よくある質問</h2>
           <div className="space-y-3">
             {article.faqs.map((faq, i) => (
               <details
@@ -675,7 +675,7 @@ export default async function ArticlePage({ params }: Props) {
         {/* ── Related Ingredients ── */}
         {relatedIngredients.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-[17px] font-bold text-foreground mb-5">関連成分</h2>
+            <h2 className="text-[17px] font-semibold text-foreground mb-5">関連成分</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {relatedIngredients.map((ing) => (
                 <IngredientCard key={ing.slug} ingredient={ing} />
@@ -689,7 +689,7 @@ export default async function ArticlePage({ params }: Props) {
           <section className="mb-10">
             <div className="flex items-center gap-2 mb-5">
               <BookOpen className="w-4 h-4 text-muted-foreground" />
-              <h2 className="text-[17px] font-bold text-foreground">関連コラム</h2>
+              <h2 className="text-[17px] font-semibold text-foreground">関連コラム</h2>
             </div>
             <div className="space-y-3">
               {relatedArticles.map((a) => (

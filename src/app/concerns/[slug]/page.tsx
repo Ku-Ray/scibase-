@@ -205,7 +205,7 @@ export default async function ConcernPage({ params }: Props) {
                 {categoryLabel[concern.category] ?? concern.category}
               </p>
               <h1>
-                <span className="block text-[30px] sm:text-[40px] font-black text-foreground
+                <span className="block text-[30px] sm:text-[40px] font-bold text-foreground
                   leading-[1.15] tracking-tight">
                   {concern.nameJa}
                 </span>
@@ -263,7 +263,7 @@ export default async function ConcernPage({ params }: Props) {
               text-muted-foreground mb-1">
               注意プロファイル
             </p>
-            <h2 className="text-[18px] font-bold text-foreground leading-snug">
+            <h2 className="text-[18px] font-semibold text-foreground leading-snug">
               {concern.nameJa}で注意が必要な人の特徴
             </h2>
           </div>
@@ -272,7 +272,7 @@ export default async function ConcernPage({ params }: Props) {
             <ul className="space-y-2">
               {concern.riskProfile.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
-                  <span className="flex-shrink-0 text-amber-700 font-bold text-[15px] leading-[1.5]">
+                  <span className="flex-shrink-0 text-amber-700 font-semibold text-[15px] leading-[1.5]">
                     ・
                   </span>
                   <span className="text-[13px] text-foreground/85 leading-[1.8]">
@@ -296,7 +296,7 @@ export default async function ConcernPage({ params }: Props) {
               text-muted-foreground mb-1">
               メカニズム
             </p>
-            <h2 className="text-[18px] font-bold text-foreground leading-snug">
+            <h2 className="text-[18px] font-semibold text-foreground leading-snug">
               {concern.nameJa}のメカニズム
             </h2>
           </div>
@@ -310,7 +310,7 @@ export default async function ConcernPage({ params }: Props) {
                 className="bg-card border border-border rounded-xl p-4 relative">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex items-center justify-center w-6 h-6 rounded-full
-                    bg-foreground text-background text-[11px] font-bold tabular-nums">
+                    bg-foreground text-background text-[11px] font-semibold tabular-nums">
                     {step.num}
                   </span>
                   <span className="text-[11px] font-semibold text-muted-foreground
@@ -372,7 +372,7 @@ export default async function ConcernPage({ params }: Props) {
                   まず1つ選んで始める
                 </p>
               </div>
-              <h2 className="text-[18px] font-bold text-foreground leading-snug">
+              <h2 className="text-[18px] font-semibold text-foreground leading-snug">
                 {concern.nameJa}の推奨成分Top 3
               </h2>
             </div>
@@ -390,7 +390,7 @@ export default async function ConcernPage({ params }: Props) {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="text-[10px] font-bold bg-foreground text-background
+                      <span className="text-[10px] font-semibold bg-foreground text-background
                         rounded px-2 py-0.5 tracking-[0.08em]">BEST</span>
                       <EvidenceBadge rank={top.evidenceRank} variant="chip" />
                       {top.usageType && (
@@ -406,7 +406,7 @@ export default async function ConcernPage({ params }: Props) {
                         </span>
                       )}
                     </div>
-                    <h3 className={`text-[24px] font-black text-foreground mb-2
+                    <h3 className={`text-[24px] font-bold text-foreground mb-2
                       ${topRankHoverText[top.evidenceRank]} transition-colors leading-snug`}>
                       {top.nameJa}
                     </h3>
@@ -478,7 +478,7 @@ export default async function ConcernPage({ params }: Props) {
                         hover:border-foreground/30 hover:shadow-sm transition-all duration-150">
                       <Link href={`/ingredients/${ing.slug}`}
                         className="flex items-center gap-3 px-4 py-3">
-                        <span className="text-[11px] font-bold text-muted-foreground
+                        <span className="text-[11px] font-semibold text-muted-foreground
                           tabular-nums w-4">
                           {idx + 2}
                         </span>
@@ -578,7 +578,7 @@ export default async function ConcernPage({ params }: Props) {
       {/* FAQ（JSON-LDと同じ内容をUI表示） */}
       {faqMainEntity.length > 0 && (
         <section className="mt-14 pt-10 border-t border-border">
-          <h2 className="font-bold text-[18px] text-foreground mb-5">
+          <h2 className="font-semibold text-[18px] text-foreground mb-5">
             よくある質問
           </h2>
           <div className="space-y-2">
@@ -610,7 +610,7 @@ export default async function ConcernPage({ params }: Props) {
         if (relatedArticles.length === 0) return null
         return (
           <section className="mt-14 pt-10 border-t border-border">
-            <h2 className="font-bold text-[18px] text-foreground mb-5 flex items-center gap-2">
+            <h2 className="font-semibold text-[18px] text-foreground mb-5 flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-accent" />
               この悩みに関連する論文ガイド
             </h2>
@@ -626,7 +626,7 @@ export default async function ConcernPage({ params }: Props) {
                     text-muted-foreground mb-1.5">
                     {article.categoryLabel}
                   </p>
-                  <h3 className="font-bold text-[14px] text-foreground group-hover:text-accent
+                  <h3 className="font-semibold text-[14px] text-foreground group-hover:text-accent
                     leading-snug mb-1.5 transition-colors">
                     {article.title}
                   </h3>

@@ -147,7 +147,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
           SciBase コラム
         </p>
-        <h1 className="text-[28px] sm:text-[34px] font-bold text-foreground tracking-tight leading-[1.2] mb-4">
+        <h1 className="text-[28px] sm:text-[34px] font-semibold text-foreground tracking-tight leading-[1.2] mb-4">
           老化・成分・習慣を<br className="sm:hidden" />
           論文で解説
         </h1>
@@ -166,7 +166,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
             { value: String(totalPaperRefs),     label: '成分を解説' },
           ].map(({ value, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">
-              <span className="text-[22px] font-black text-foreground tabular-nums">{value}</span>
+              <span className="text-[22px] font-bold text-foreground tabular-nums">{value}</span>
               <span className="text-muted-foreground">{label}</span>
             </div>
           ))}
@@ -242,7 +242,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
               </div>
 
               {/* Title */}
-              <h2 className="font-bold text-[16px] sm:text-[17px] text-foreground leading-snug mb-2
+              <h2 className="font-semibold text-[16px] sm:text-[17px] text-foreground leading-snug mb-2
                 group-hover:opacity-80 transition-opacity">
                 {card.title}
               </h2>
@@ -256,7 +256,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
               <div className="flex items-end justify-between gap-4">
                 {card.heroStat ? (
                   <div className="bg-secondary border border-border rounded-xl px-4 py-2.5 min-w-0">
-                    <span className="block text-[18px] font-black text-foreground tabular-nums leading-none mb-0.5">
+                    <span className="block text-[18px] font-bold text-foreground tabular-nums leading-none mb-0.5">
                       {card.heroStat.value}
                     </span>
                     <span className="block text-[11px] text-muted-foreground leading-tight">

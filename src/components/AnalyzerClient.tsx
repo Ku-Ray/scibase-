@@ -501,7 +501,7 @@ function IngredientMode({
                               : 'bg-rose-50 text-rose-700'}`}>
                           {level === 'sufficient' ? '充実' : level === 'moderate' ? '普通' : '不足'}
                         </span>
-                        <span className="text-[13px] font-bold text-foreground tabular-nums w-8 text-right">
+                        <span className="text-[13px] font-semibold text-foreground tabular-nums w-8 text-right">
                           {score.toFixed(1)}
                         </span>
                       </div>
@@ -743,7 +743,7 @@ function ConcernMode({
       <section className="mb-10">
         <div className="flex items-center justify-between gap-2 mb-4">
           <div className="flex items-baseline gap-2">
-            <span className="text-[10px] font-bold tracking-wider bg-accent/10 text-accent
+            <span className="text-[10px] font-semibold tracking-wider bg-accent/10 text-accent
               px-2 py-0.5 rounded-md">STEP 1</span>
             <h2 className="font-semibold text-[15px] text-foreground">
               最も気になる悩みを1つ選ぶ
@@ -864,7 +864,7 @@ function ConcernMode({
       {primary && (
         <section className="mb-10">
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-[10px] font-bold tracking-wider bg-secondary text-muted-foreground
+            <span className="text-[10px] font-semibold tracking-wider bg-secondary text-muted-foreground
               px-2 py-0.5 rounded-md">STEP 2</span>
             <h2 className="font-semibold text-[15px] text-foreground">
               追加で気になる悩み <span className="font-normal text-muted-foreground text-[13px]">（任意・最大2つ）</span>
@@ -919,12 +919,12 @@ function ConcernMode({
         <>
           <section ref={resultsRef} className="mb-10 scroll-mt-6">
             <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-[10px] font-bold tracking-wider bg-accent text-primary-foreground
+              <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
                 px-2 py-0.5 rounded-md">STEP 3</span>
               <h2 className="font-semibold text-[15px] text-foreground">組み立て結果</h2>
             </div>
 
-            <p className="text-[17px] sm:text-[19px] font-bold text-foreground leading-snug mb-1">
+            <p className="text-[17px] sm:text-[19px] font-semibold text-foreground leading-snug mb-1">
               {stackHeadline}
             </p>
             <p className="text-[12px] text-muted-foreground mb-6">
@@ -941,7 +941,7 @@ function ConcernMode({
               return (
                 <div className="bg-card border border-accent/40 rounded-2xl p-5 shadow-sm mb-3">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[10px] font-bold tracking-wider
+                    <span className="text-[10px] font-semibold tracking-wider
                       bg-accent text-primary-foreground px-2 py-0.5 rounded-md">
                       #1 BEST
                     </span>
@@ -953,7 +953,7 @@ function ConcernMode({
                       </span>
                     )}
                   </div>
-                  <p className="font-bold text-[18px] text-foreground mb-1">{ing.nameJa}</p>
+                  <p className="font-semibold text-[18px] text-foreground mb-1">{ing.nameJa}</p>
                   <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2 mb-4">
                     {ing.tagline}
                   </p>
@@ -998,7 +998,7 @@ function ConcernMode({
                     className="bg-card border border-border rounded-xl p-3.5
                       hover:border-accent/30 transition-colors">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-bold tracking-wider bg-secondary
+                      <span className="text-[10px] font-semibold tracking-wider bg-secondary
                         text-muted-foreground px-2 py-0.5 rounded-md">
                         #{idx + 2} {rankLabel}
                       </span>

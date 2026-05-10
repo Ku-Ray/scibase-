@@ -112,7 +112,7 @@ export default function AboutPage() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
             About SciBase
           </p>
-          <h1 className="text-[30px] sm:text-[38px] font-bold text-foreground
+          <h1 className="text-[30px] sm:text-[38px] font-semibold text-foreground
             tracking-tight leading-[1.2] mb-5">
             「その成分、本当に<br />効きますか」
           </h1>
@@ -125,7 +125,7 @@ export default function AboutPage() {
 
         {/* なぜ作ったか */}
         <section className="mb-12">
-          <h2 className="text-[20px] font-bold text-foreground mb-4">なぜ作ったのか</h2>
+          <h2 className="text-[20px] font-semibold text-foreground mb-4">なぜ作ったのか</h2>
           <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9]">
             <p>
               化粧品メーカーに勤め、仕事で成分の論文を読む立場になってわかったことがあります。
@@ -186,7 +186,7 @@ export default function AboutPage() {
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
             <BookOpen className="w-5 h-5 text-accent" />
-            <h2 className="text-[20px] font-bold text-foreground">編集方針・論文選定基準</h2>
+            <h2 className="text-[20px] font-semibold text-foreground">編集方針・論文選定基準</h2>
           </div>
 
           <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9] mb-8">
@@ -208,7 +208,7 @@ export default function AboutPage() {
             <div className="divide-y divide-border">
               {EVIDENCE_RANKS.map(({ rank, label, color, desc }) => (
                 <div key={rank} className="flex items-start gap-4 px-5 py-4">
-                  <span className={`${color} text-white text-[13px] font-black
+                  <span className={`${color} text-white text-[13px] font-bold
                     w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}>
                     {rank}
                   </span>
@@ -226,7 +226,7 @@ export default function AboutPage() {
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
             <Shield className="w-5 h-5 text-accent" />
-            <h2 className="text-[20px] font-bold text-foreground">掲載しないもの</h2>
+            <h2 className="text-[20px] font-semibold text-foreground">掲載しないもの</h2>
           </div>
           <ul className="space-y-3 text-[14px] text-muted-foreground">
             {[
@@ -248,7 +248,7 @@ export default function AboutPage() {
         <section id="scoring" className="mb-12 scroll-mt-20">
           <div className="flex items-center gap-2 mb-5">
             <Calculator className="w-5 h-5 text-accent" />
-            <h2 className="text-[20px] font-bold text-foreground">
+            <h2 className="text-[20px] font-semibold text-foreground">
               商品スコア・SciBase推奨度の算出基準
             </h2>
           </div>
@@ -290,7 +290,7 @@ export default function AboutPage() {
 
           {/* SciBase推奨度の重み付け */}
           <div className="mb-8">
-            <h3 className="text-[15px] font-bold text-foreground mb-3">
+            <h3 className="text-[15px] font-semibold text-foreground mb-3">
               SciBase推奨度（★1.0〜5.0）の重み付け
             </h3>
             <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
@@ -336,7 +336,7 @@ export default function AboutPage() {
 
           {/* No.1バッジの発動条件 */}
           <div className="mb-8">
-            <h3 className="text-[15px] font-bold text-foreground mb-3">
+            <h3 className="text-[15px] font-semibold text-foreground mb-3">
               「軸別 No.1（当サイト掲載商品中）」バッジの発動条件
             </h3>
             <ul className="space-y-2.5 text-[14px] text-muted-foreground">
@@ -356,7 +356,7 @@ export default function AboutPage() {
 
           {/* BEST PICK の選定ロジック */}
           <div className="mb-8">
-            <h3 className="text-[15px] font-bold text-foreground mb-3">
+            <h3 className="text-[15px] font-semibold text-foreground mb-3">
               BEST PICK の選定ロジック
             </h3>
             <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
@@ -374,7 +374,7 @@ export default function AboutPage() {
 
           {/* データ不足時の挙動 */}
           <div className="mb-8">
-            <h3 className="text-[15px] font-bold text-foreground mb-3">
+            <h3 className="text-[15px] font-semibold text-foreground mb-3">
               データが揃わないとき
             </h3>
             <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
@@ -393,7 +393,7 @@ export default function AboutPage() {
 
           {/* 掲載基準 */}
           <div className="mb-8">
-            <h3 className="text-[15px] font-bold text-foreground mb-3">
+            <h3 className="text-[15px] font-semibold text-foreground mb-3">
               掲載基準
             </h3>
             <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9]">
@@ -418,7 +418,7 @@ export default function AboutPage() {
 
           {/* 中立性の保証 */}
           <div className="bg-secondary border border-border rounded-2xl p-5">
-            <h3 className="text-[14px] font-bold text-foreground mb-3">
+            <h3 className="text-[14px] font-semibold text-foreground mb-3">
               中立性の保証
             </h3>
             <ul className="space-y-2 text-[13px] text-muted-foreground leading-relaxed">
@@ -439,7 +439,7 @@ export default function AboutPage() {
 
         {/* アフィリエイト・収益 */}
         <section className="mb-12 bg-amber-50 border border-amber-100 rounded-2xl p-5">
-          <h2 className="text-[15px] font-bold text-foreground mb-3">
+          <h2 className="text-[15px] font-semibold text-foreground mb-3">
             アフィリエイト・商業的関係について
           </h2>
           <p className="text-[13px] text-muted-foreground leading-relaxed">
@@ -453,7 +453,7 @@ export default function AboutPage() {
 
         {/* 免責事項 */}
         <section className="mb-12">
-          <h2 className="text-[15px] font-bold text-foreground mb-3">免責事項</h2>
+          <h2 className="text-[15px] font-semibold text-foreground mb-3">免責事項</h2>
           <p className="text-[13px] text-muted-foreground leading-relaxed">
             本サイトの情報は<span className="font-semibold text-foreground">医療的アドバイスを提供するものではありません</span>。
             掲載内容は研究情報の提供を目的としており、特定成分・商品の効果・効能を保証するものではありません。

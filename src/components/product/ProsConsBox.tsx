@@ -24,7 +24,7 @@ export function ProsConsBox({ pros, cons, stackMobile = false }: Props) {
         <div className="rounded-lg border border-rose-200 bg-rose-50/40 overflow-hidden">
           <div className="flex items-center gap-1.5 bg-rose-100/60 px-3 py-1.5 border-b border-rose-200">
             <span aria-hidden className="text-[14px]">☺</span>
-            <span className="text-[12px] font-bold text-rose-800">良い</span>
+            <span className="text-[12px] font-semibold text-rose-800">良い</span>
           </div>
           <ul className="p-3 space-y-1.5">
             {pros!.map((p, i) => (
@@ -40,7 +40,7 @@ export function ProsConsBox({ pros, cons, stackMobile = false }: Props) {
         <div className="rounded-lg border border-slate-200 bg-slate-50/60 overflow-hidden">
           <div className="flex items-center gap-1.5 bg-slate-100/80 px-3 py-1.5 border-b border-slate-200">
             <span aria-hidden className="text-[14px]">☹</span>
-            <span className="text-[12px] font-bold text-slate-700">気になる</span>
+            <span className="text-[12px] font-semibold text-slate-700">気になる</span>
           </div>
           <ul className="p-3 space-y-1.5">
             {cons!.map((c, i) => (

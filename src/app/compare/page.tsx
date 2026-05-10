@@ -90,7 +90,7 @@ export default function ComparePage() {
       <div className="mb-10">
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
           text-muted-foreground mb-3">論文エビデンス比較データベース</p>
-        <h1 className="text-[28px] sm:text-[36px] font-bold text-foreground
+        <h1 className="text-[28px] sm:text-[36px] font-semibold text-foreground
           tracking-tight leading-[1.2] mb-4">
           「どっちが効くか」を<br className="sm:hidden" />
           論文で判断する
@@ -108,7 +108,7 @@ export default function ComparePage() {
             { value: `${totalPapers}`,           label: '件の論文参照' },
           ].map(({ value, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">
-              <span className="text-[20px] font-black text-foreground tabular-nums">{value}</span>
+              <span className="text-[20px] font-bold text-foreground tabular-nums">{value}</span>
               <span className="text-muted-foreground">{label}</span>
             </div>
           ))}

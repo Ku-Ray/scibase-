@@ -145,7 +145,7 @@ export function HeroSearch() {
                   >
                     {s.label}
                     {s.isNew && (
-                      <span className="text-[9px] font-bold bg-violet-100 text-violet-700
+                      <span className="text-[9px] font-semibold bg-violet-100 text-violet-700
                         rounded px-1 py-0.5 leading-none">NEW</span>
                     )}
                   </button>

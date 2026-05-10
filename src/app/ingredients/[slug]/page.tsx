@@ -419,7 +419,7 @@ export default async function IngredientPage({ params }: Props) {
 
           {/* Name */}
           <h1 className="mb-1.5">
-            <span className="block text-[34px] sm:text-[44px] font-black leading-[1.15]
+            <span className="block text-[34px] sm:text-[44px] font-bold leading-[1.15]
               tracking-tight text-foreground">
               {ing.nameJa}
             </span>
@@ -477,7 +477,7 @@ export default async function IngredientPage({ params }: Props) {
                      A: 'bg-blue-100/60 border-blue-300 shadow-blue-100',
                      B: 'bg-emerald-100/60 border-emerald-300 shadow-emerald-100',
                      C: 'bg-stone-100/60 border-stone-300 shadow-stone-100' }[ing.evidenceRank]}`}>
-                <p className={`text-[48px] font-black tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
+                <p className={`text-[48px] font-bold tabular-nums leading-none ${heroText[ing.evidenceRank]}`}>
                   {stat.value}
                 </p>
                 <p className={`text-[12px] font-medium mt-1.5 ${heroText[ing.evidenceRank]} opacity-70`}>
@@ -521,7 +521,7 @@ export default async function IngredientPage({ params }: Props) {
         {/* Description（改善D：tagline 平易要約を先頭に・専門解説は副次） */}
         <section id="description" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">この成分について</h2>
-          <p className="text-[16px] sm:text-[17px] font-bold text-foreground leading-relaxed mb-3">
+          <p className="text-[16px] sm:text-[17px] font-semibold text-foreground leading-relaxed mb-3">
             {ing.tagline}
           </p>
           <p className="text-[14px] text-muted-foreground leading-[1.85]">{ing.description}</p>
@@ -537,7 +537,7 @@ export default async function IngredientPage({ params }: Props) {
               {ing.whoFor.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center
-                    justify-center text-[10px] font-bold mt-0.5
+                    justify-center text-[10px] font-semibold mt-0.5
                     ${{ S: 'bg-amber-100 text-amber-700',
                          A: 'bg-blue-100 text-blue-700',
                          B: 'bg-emerald-100 text-emerald-700',
@@ -652,7 +652,7 @@ export default async function IngredientPage({ params }: Props) {
                 <div key={i}
                   className="bg-card border border-border rounded-2xl p-5">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                    <h3 className={`text-[18px] font-black tabular-nums leading-tight
+                    <h3 className={`text-[18px] font-bold tabular-nums leading-tight
                       ${heroText[ing.evidenceRank]}`}>
                       {lv.dose}
                     </h3>
@@ -786,7 +786,7 @@ export default async function IngredientPage({ params }: Props) {
                 return (
                   <div key={i} className={`${levelStyle.bg} border ${levelStyle.border} rounded-2xl p-5`}>
                     <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className={`${levelStyle.badge} text-[11px] font-bold rounded px-2 py-0.5`}>
+                      <span className={`${levelStyle.badge} text-[11px] font-semibold rounded px-2 py-0.5`}>
                         {levelStyle.label}
                       </span>
                       <span className="text-[11px] text-muted-foreground">
@@ -890,7 +890,7 @@ export default async function IngredientPage({ params }: Props) {
               ].map(({ step, title, body }) => (
                 <div key={step} className="flex gap-4 bg-card border border-border rounded-2xl p-5">
                   <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center
-                    text-[13px] font-black mt-0.5
+                    text-[13px] font-bold mt-0.5
                     ${{ S: 'bg-amber-100 text-amber-700', A: 'bg-blue-100 text-blue-700',
                          B: 'bg-emerald-100 text-emerald-700', C: 'bg-stone-100 text-stone-600' }[ing.evidenceRank]}`}>
                     {step}
@@ -924,7 +924,7 @@ export default async function IngredientPage({ params }: Props) {
                 <p className="text-[12px] font-semibold text-foreground mb-2">選び方のポイント</p>
                 <ul className="space-y-1.5">
                   <li className="text-[13px] text-muted-foreground flex gap-2">
-                    <span className="text-accent flex-shrink-0 font-bold">✓</span>
+                    <span className="text-accent flex-shrink-0 font-semibold">✓</span>
                     <span>
                       <strong className="text-foreground">有効量を確認：</strong>
                       {ing.dosageUnit.includes('濃度')
@@ -934,13 +934,13 @@ export default async function IngredientPage({ params }: Props) {
                     </span>
                   </li>
                   <li className="text-[13px] text-muted-foreground flex gap-2">
-                    <span className="text-accent flex-shrink-0 font-bold">✓</span>
+                    <span className="text-accent flex-shrink-0 font-semibold">✓</span>
                     <span><strong className="text-foreground">継続コストを計算：</strong>
                       効果が出るまで{ing.duration ? ing.duration.split('。')[0] : '数週間〜数ヶ月'}かかるため、月あたりのコストで比較する
                     </span>
                   </li>
                   <li className="text-[13px] text-muted-foreground flex gap-2">
-                    <span className="text-accent flex-shrink-0 font-bold">✓</span>
+                    <span className="text-accent flex-shrink-0 font-semibold">✓</span>
                     <span><strong className="text-foreground">第三者検査の有無：</strong>
                       重金属・含有量を独立機関が確認しているかは品質の重要シグナル
                     </span>
@@ -952,15 +952,15 @@ export default async function IngredientPage({ params }: Props) {
             {/* 結論ボックス：商品hero と同じ SciBase 推奨度を使用（矛盾回避） */}
             {heroProduct && heroScore && (
               <div className="mb-5 bg-foreground/[0.03] border-l-4 border-foreground/60 rounded-r-lg px-4 py-3">
-                <p className="text-[10px] font-bold tracking-wider text-muted-foreground mb-1">結論</p>
+                <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1">結論</p>
                 <p className="text-[13px] text-foreground leading-relaxed">
-                  <strong className="font-bold">迷ったら ① {heroProduct.brand} を選ぶ。</strong>
+                  <strong className="font-semibold">迷ったら ① {heroProduct.brand} を選ぶ。</strong>
                   <span className="ml-1 text-muted-foreground">
                     SciBase 推奨度
-                    <span className="font-bold tabular-nums text-foreground"> ★{heroScore.recommendationScore.toFixed(2)} / 5.0</span>
+                    <span className="font-semibold tabular-nums text-foreground"> ★{heroScore.recommendationScore.toFixed(2)} / 5.0</span>
                     （当サイト掲載商品中・最上位）。
                     {heroScore.dailyDoseMg != null && cosmeProduct == null && heroProduct.monthlyCostJpy != null && (
-                      <span> 1日<span className="font-bold tabular-nums text-foreground">¥{Math.round(heroProduct.monthlyCostJpy / 30).toLocaleString()}</span>で続けられる。</span>
+                      <span> 1日<span className="font-semibold tabular-nums text-foreground">¥{Math.round(heroProduct.monthlyCostJpy / 30).toLocaleString()}</span>で続けられる。</span>
                     )}
                   </span>
                 </p>

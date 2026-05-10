@@ -335,7 +335,7 @@ export default function Home() {
                 <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-accent mb-2">
                   Analyzer
                 </p>
-                <h2 className="font-bold text-[20px] sm:text-[24px] text-foreground leading-tight mb-2">
+                <h2 className="font-semibold text-[20px] sm:text-[24px] text-foreground leading-tight mb-2">
                   あなたの悩みに合う成分を、3つに絞る
                 </h2>
                 <p className="text-[13px] text-muted-foreground leading-relaxed">
@@ -400,7 +400,7 @@ export default function Home() {
                   hover:shadow-lg transition-all duration-200
                   hover:-translate-y-1 ${accent}`}>
                 <div className="flex items-start justify-between mb-4">
-                  <p className={`text-[36px] font-black tabular-nums leading-none ${numColor}`}>
+                  <p className={`text-[36px] font-bold tabular-nums leading-none ${numColor}`}>
                     {num}
                   </p>
                   <Icon className={`w-5 h-5 mt-1.5 ${iconColor} opacity-70`} />
@@ -447,7 +447,7 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-6 h-6 rounded-full bg-amber-400 text-white
-                    text-[11px] font-black flex items-center justify-center flex-shrink-0">
+                    text-[11px] font-bold flex items-center justify-center flex-shrink-0">
                     1
                   </span>
                   <span className="font-semibold text-[15px] text-foreground
@@ -549,7 +549,7 @@ export default function Home() {
                   {article.title}
                 </p>
                 <div className="bg-secondary rounded-lg px-3 py-2">
-                  <span className="block text-[18px] font-black text-foreground tabular-nums leading-none mb-0.5">
+                  <span className="block text-[18px] font-bold text-foreground tabular-nums leading-none mb-0.5">
                     {article.heroStat.value}
                   </span>
                   <span className="block text-[10px] text-muted-foreground leading-tight line-clamp-1">
@@ -649,7 +649,7 @@ export default function Home() {
             ].map(({ rank, label, desc }) => (
               <div key={rank}
                 className={`ev-${rank.toLowerCase()} border rounded-xl p-4 flex items-start gap-3`}>
-                <span className="font-black text-[22px] leading-none w-8 flex-shrink-0">
+                <span className="font-bold text-[22px] leading-none w-8 flex-shrink-0">
                   {rank}
                 </span>
                 <div>

@@ -144,7 +144,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             化粧品メーカー現役の論文ガイド
           </span>
 
-          <h1 className="text-[26px] sm:text-[34px] font-black text-foreground leading-[1.25] tracking-tight min-w-0 [overflow-wrap:anywhere]">
+          <h1 className="text-[26px] sm:text-[34px] font-bold text-foreground leading-[1.25] tracking-tight min-w-0 [overflow-wrap:anywhere]">
             {guide.title}
           </h1>
 
@@ -206,7 +206,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
         {/* ── [4] 3タイプメカニズム ── */}
         <section className="mb-14">
-          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+          <h2 className="text-[22px] sm:text-[26px] font-bold text-foreground leading-snug mb-2">
             {concern.nameJa}の3タイプを論文で整理する
           </h2>
           <p className="text-[14px] text-foreground/70 leading-[1.85] mb-6">
@@ -219,7 +219,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                 <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-1 uppercase">
                   TYPE {idx + 1}
                 </p>
-                <h3 className="text-[18px] sm:text-[20px] font-black text-foreground leading-snug mb-1">
+                <h3 className="text-[18px] sm:text-[20px] font-bold text-foreground leading-snug mb-1">
                   {m.typeName}
                 </h3>
                 <p className="text-[13px] text-foreground/70 leading-relaxed mb-4">
@@ -275,7 +275,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
         {/* ── [5] タイプ別の解決策 ── */}
         <section className="mb-14">
-          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+          <h2 className="text-[22px] sm:text-[26px] font-bold text-foreground leading-snug mb-2">
             タイプ別・論文で効果が確認された成分
           </h2>
           <p className="text-[14px] text-foreground/70 leading-[1.85] mb-8">
@@ -296,12 +296,12 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                   <p className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-1 uppercase">
                     TYPE {idx + 1} の解決策
                   </p>
-                  <h3 className="text-[20px] sm:text-[22px] font-black text-foreground leading-snug mb-3">
+                  <h3 className="text-[20px] sm:text-[22px] font-bold text-foreground leading-snug mb-3">
                     {s.typeName}に効く成分
                   </h3>
 
                   <div className="flex flex-wrap items-center gap-2 mb-5">
-                    <span className="text-[10px] font-bold bg-foreground text-background rounded px-2 py-0.5 tracking-[0.08em]">
+                    <span className="text-[10px] font-semibold bg-foreground text-background rounded px-2 py-0.5 tracking-[0.08em]">
                       BEST
                     </span>
                     <Link
@@ -347,7 +347,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                           <div key={pbIdx} className="border-2 border-border rounded-2xl overflow-hidden bg-background">
                             <div className="p-5">
                               <div className="flex items-center gap-2 mb-2">
-                                <span className="text-[10px] font-bold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
+                                <span className="text-[10px] font-semibold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
                                 {pb.badge && (
                                   <span className="text-[11px] font-semibold text-muted-foreground bg-secondary border border-border rounded px-2 py-0.5">
                                     {pb.badge}
@@ -357,7 +357,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                               <p className="text-[12px] text-muted-foreground mb-1">
                                 {ing.nameJa} ／ {product.brand}
                               </p>
-                              <p className="text-[15px] sm:text-[16px] font-bold text-foreground leading-snug mb-3">
+                              <p className="text-[15px] sm:text-[16px] font-semibold text-foreground leading-snug mb-3">
                                 {product.name}
                               </p>
                               <p className="text-[13px] text-foreground/80 leading-[1.9] mb-4">
@@ -414,7 +414,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                         {milestone.milestones.map((mile, mi) => (
                           <li key={mi} className="pl-5 relative">
                             <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-foreground/70 border-2 border-background" />
-                            <p className="text-[13px] font-bold text-foreground tabular-nums">{mile.period}</p>
+                            <p className="text-[13px] font-semibold text-foreground tabular-nums">{mile.period}</p>
                             <p className="text-[13px] text-foreground/80 leading-relaxed mt-0.5">{mile.sign}</p>
                           </li>
                         ))}
@@ -430,7 +430,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                           <p className="text-[11px] font-semibold tracking-[0.08em] text-blue-700 mb-1 uppercase">
                             医療ルート（補助）
                           </p>
-                          <h4 className="text-[15px] sm:text-[16px] font-bold text-foreground leading-snug">
+                          <h4 className="text-[15px] sm:text-[16px] font-semibold text-foreground leading-snug">
                             {clinic.headline}
                           </h4>
                         </div>
@@ -442,7 +442,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                         {clinic.products.map((p, pi) => (
                           <div key={pi} className="bg-background border border-border rounded-xl p-4">
                             <div className="flex items-center gap-2 mb-2 flex-wrap">
-                              <span className="text-[10px] font-bold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
+                              <span className="text-[10px] font-semibold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
                               {p.badge && (
                                 <span className="text-[11px] font-semibold text-blue-700 bg-blue-100 border border-blue-200 rounded px-2 py-0.5">
                                   {p.badge}
@@ -452,7 +452,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                             {p.brand && (
                               <p className="text-[12px] text-muted-foreground mb-1">{p.brand}</p>
                             )}
-                            <p className="text-[15px] font-bold text-foreground leading-snug mb-2">
+                            <p className="text-[15px] font-semibold text-foreground leading-snug mb-2">
                               {p.name}
                             </p>
                             <p className="text-[13px] text-foreground/80 leading-[1.9] mb-3">
@@ -485,7 +485,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
         {/* ── [6] 失敗パターン ── */}
         <section className="mb-14">
-          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+          <h2 className="text-[22px] sm:text-[26px] font-bold text-foreground leading-snug mb-2">
             化粧品メーカーで見てきた失敗パターン
           </h2>
           <p className="text-[14px] text-foreground/70 leading-[1.85] mb-6">
@@ -496,7 +496,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               <li key={i} className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 sm:p-5">
                 <div className="flex items-start gap-3 mb-2">
                   <AlertTriangle className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" />
-                  <h3 className="text-[14px] sm:text-[15px] font-bold text-foreground leading-snug">{f.title}</h3>
+                  <h3 className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">{f.title}</h3>
                 </div>
                 <p className="text-[13px] text-foreground/85 leading-[1.9] pl-7">{f.body}</p>
               </li>
@@ -507,14 +507,14 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             <div className="mt-6 bg-emerald-50/60 border-2 border-emerald-200 rounded-2xl p-5 sm:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                <h3 className="text-[14px] sm:text-[15px] font-bold text-emerald-900 leading-snug">
+                <h3 className="text-[14px] sm:text-[15px] font-semibold text-emerald-900 leading-snug">
                   逆に、うまくいく人の共通パターン
                 </h3>
               </div>
               <ul className="space-y-2 pl-1">
                 {guide.successProfile.map((sp, i) => (
                   <li key={i} className="flex items-start gap-2 text-[13px] text-foreground/85 leading-[1.9]">
-                    <span className="flex-shrink-0 text-emerald-600 font-bold mt-0.5">✓</span>
+                    <span className="flex-shrink-0 text-emerald-600 font-semibold mt-0.5">✓</span>
                     <span>{sp}</span>
                   </li>
                 ))}
@@ -525,7 +525,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
         {/* ── [7] セルフチェック ── */}
         <section className="mb-14">
-          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-2">
+          <h2 className="text-[22px] sm:text-[26px] font-bold text-foreground leading-snug mb-2">
             あなたが最初に試すべき成分
           </h2>
           <p className="text-[14px] text-foreground/75 leading-[1.85] mb-6">{guide.selfCheck.intro}</p>
@@ -535,7 +535,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               return (
                 <li key={i} className="border border-border rounded-2xl p-4 sm:p-5 bg-background">
                   <div className="flex items-start gap-3 mb-3">
-                    <span className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-[12px] font-bold tabular-nums">
+                    <span className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-[12px] font-semibold tabular-nums">
                       {i + 1}
                     </span>
                     <p className="text-[14px] sm:text-[15px] font-semibold text-foreground leading-snug">{q.q}</p>
@@ -552,7 +552,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                         return (
                           <div key={s} className="flex items-center gap-2">
                             {idx > 0 && (
-                              <span className="text-[13px] font-bold text-muted-foreground">＋</span>
+                              <span className="text-[13px] font-semibold text-muted-foreground">＋</span>
                             )}
                             <Link
                               href={`/ingredients/${s}`}
@@ -563,7 +563,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                               }`}
                             >
                               {isBest && (
-                                <span className="text-[9px] font-bold tracking-[0.08em] bg-amber-400 text-amber-950 rounded px-1 py-0.5 leading-none">
+                                <span className="text-[9px] font-semibold tracking-[0.08em] bg-amber-400 text-amber-950 rounded px-1 py-0.5 leading-none">
                                   BEST
                                 </span>
                               )}
@@ -597,7 +597,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
         {/* ── [8] FAQ ── */}
         <section className="mb-14">
-          <h2 className="text-[22px] sm:text-[26px] font-black text-foreground leading-snug mb-6">
+          <h2 className="text-[22px] sm:text-[26px] font-bold text-foreground leading-snug mb-6">
             よくある質問
           </h2>
           <div className="space-y-2">
@@ -632,7 +632,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
               className="group flex items-center justify-between gap-3 bg-card border border-border rounded-xl px-5 py-4 hover:border-accent/40 hover:bg-muted/30 transition-colors"
             >
               <div className="min-w-0">
-                <p className="text-[14px] font-bold text-foreground group-hover:text-accent transition-colors">
+                <p className="text-[14px] font-semibold text-foreground group-hover:text-accent transition-colors">
                   {concern.emoji} {concern.nameJa}に効く成分一覧を見る
                 </p>
                 <p className="text-[12px] text-muted-foreground mt-0.5 line-clamp-1">
@@ -645,7 +645,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
           {relatedArticles.length > 0 && (
             <div className="mb-10">
-              <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
+              <h2 className="font-semibold text-[16px] text-foreground mb-4 flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-accent" />
                 関連する論文ガイド記事
               </h2>
@@ -659,7 +659,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                     <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1.5">
                       {a.categoryLabel}
                     </p>
-                    <h3 className="font-bold text-[14px] text-foreground group-hover:text-accent leading-snug mb-1.5 transition-colors">
+                    <h3 className="font-semibold text-[14px] text-foreground group-hover:text-accent leading-snug mb-1.5 transition-colors">
                       {a.title}
                     </h3>
                     <p className="text-[12px] text-muted-foreground leading-relaxed line-clamp-2">
@@ -673,7 +673,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
 
           {otherGuides.length > 0 && (
             <div className="mb-10">
-              <h2 className="font-bold text-[16px] text-foreground mb-4 flex items-center gap-2">
+              <h2 className="font-semibold text-[16px] text-foreground mb-4 flex items-center gap-2">
                 <FileText className="w-4 h-4 text-rose-600" />
                 他の悩み別ガイド
               </h2>
@@ -689,7 +689,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose-700 mb-1">
                         論文ガイド · {c.nameJa}
                       </p>
-                      <h3 className="font-bold text-[14px] text-foreground group-hover:text-foreground/85 leading-snug">
+                      <h3 className="font-semibold text-[14px] text-foreground group-hover:text-foreground/85 leading-snug">
                         {g.title}
                       </h3>
                     </div>
