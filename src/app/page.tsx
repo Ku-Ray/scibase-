@@ -161,8 +161,8 @@ export default function Home() {
             論文で選ぶスキンケア・サプリ成分データベース
           </p>
 
-          <h1 className="text-[40px] sm:text-[60px] font-bold text-foreground
-            leading-[1.12] tracking-tight break-keep mb-5">
+          <h1 className="text-[32px] sm:text-[60px] font-bold text-foreground
+            leading-[1.18] sm:leading-[1.12] tracking-tight break-keep mb-5">
             本当に効く成分を、<br className="hidden sm:block" />
             論文で。
           </h1>
