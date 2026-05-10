@@ -1,16 +1,9 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP, Fraunces, Shippori_Mincho_B1 } from 'next/font/google'
+import { Fraunces, IBM_Plex_Sans_JP } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { BottomNav } from '@/components/BottomNav'
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-noto',
-})
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -19,11 +12,11 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
 })
 
-const shippori = Shippori_Mincho_B1({
+const ibmPlex = IBM_Plex_Sans_JP({
   subsets: ['latin'],
-  weight: ['600', '700'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-shippori',
+  variable: '--font-ibm-plex',
 })
 
 const BASE_URL = 'https://scibase.app'
@@ -98,7 +91,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${notoSansJP.variable} ${fraunces.variable} ${shippori.variable}`}>
+    <html lang="ja" className={`${fraunces.variable} ${ibmPlex.variable}`}>
       <head>
         <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
         <meta name="impact-site-verification" content="95344c15-5ed3-423e-8ac3-5536380adf4f" />
@@ -122,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
       </head>
-      <body className="font-[var(--font-noto),_'Hiragino_Sans',_system-ui,_sans-serif] flex flex-col min-h-screen bg-background text-foreground">
+      <body className="font-[var(--font-ibm-plex),_'Hiragino_Sans',_system-ui,_sans-serif] flex flex-col min-h-screen bg-background text-foreground">
         <p className="sr-only" aria-hidden="true">Impact-Site-Verification: 95344c15-5ed3-423e-8ac3-5536380adf4f</p>
         <Header />
         <main className="flex-1 pb-16 sm:pb-0">{children}</main>

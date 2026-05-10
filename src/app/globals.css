@@ -65,7 +65,7 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family:
-      "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+      var(--font-ibm-plex), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
       "Yu Gothic", system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.75;
@@ -120,14 +120,3 @@
   }
 }
 
-/* H1/H2 は明朝（Shippori Mincho B1）で editorial / premium に */
-@layer base {
-  h1,
-  h2 {
-    font-family:
-      var(--font-shippori),
-      "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho",
-      serif !important;
-    letter-spacing: -0.005em;
-  }
-}
