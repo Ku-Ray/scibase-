@@ -29,6 +29,11 @@
 }
 
 @theme inline {
+  --font-sans:
+    var(--font-klee), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", system-ui, sans-serif;
+  --font-serif:
+    var(--font-fraunces), "Hiragino Mincho ProN", serif;
   --color-background:         var(--background);
   --color-foreground:         var(--foreground);
   --color-card:               var(--card);
@@ -65,7 +70,7 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family:
-      var(--font-ibm-plex), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+      var(--font-klee), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
       "Yu Gothic", system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.75;
