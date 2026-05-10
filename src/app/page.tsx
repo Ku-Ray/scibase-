@@ -156,20 +156,6 @@ export default function Home() {
         {/* ─── 中央コンテンツ（mybest型）─── */}
         <div className="relative max-w-3xl mx-auto text-center">
 
-          {/* mobile 専用：hero 頭に小型イラスト（eyebrow より上） */}
-          <div className="sm:hidden flex justify-center mb-6">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/hero/lab-still-life.svg"
-              alt=""
-              width={600}
-              height={600}
-              loading="eager"
-              decoding="async"
-              className="w-[64%] max-w-[240px] h-auto select-none pointer-events-none"
-            />
-          </div>
-
           <p className="text-[12px] font-medium tracking-[0.08em]
             text-muted-foreground mb-5">
             論文で選ぶスキンケア・サプリ成分データベース
