@@ -46,32 +46,32 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────── */}
-      <section className="hero-pattern px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
+      <section className="hero-pattern px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-10 sm:gap-12 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 items-center">
 
-            {/* 左：テキスト（mobile center / desktop col-span-7 左寄せ） */}
-            <div className="sm:col-span-7 text-center sm:text-left">
+            {/* 左：テキスト（mobile center / desktop 左寄せ） */}
+            <div className="text-center sm:text-left">
 
               <p className="text-[12px] font-medium tracking-[0.08em]
-                text-muted-foreground mb-6">
+                text-muted-foreground mb-5">
                 論文で選ぶスキンケア・サプリ成分データベース
               </p>
 
-              <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
-                leading-[1.15] tracking-tight break-keep mb-5">
+              <h1 className="text-[40px] sm:text-[56px] font-bold text-foreground
+                leading-[1.12] tracking-tight break-keep mb-5">
                 本当に効く成分を、<br className="hidden sm:block" />
                 論文で。
               </h1>
 
               <p className="text-[15px] sm:text-[16px] text-muted-foreground leading-[1.85]
-                max-w-lg mx-auto sm:mx-0 mb-8">
+                max-w-lg mx-auto sm:mx-0 mb-7">
                 査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。
                 <span className="font-medium text-foreground whitespace-nowrap">{ingredients.length}成分・{totalPapers}論文</span>。
               </p>
 
               {/* インライン検索 */}
-              <div className="max-w-md mx-auto sm:mx-0 mb-5">
+              <div className="max-w-md mx-auto sm:mx-0 mb-4">
                 <HeroSearch />
               </div>
 
@@ -94,7 +94,7 @@ export default function Home() {
                   🔬 今のサプリを診断する
                 </Link>
               </div>
-              <p className="text-[12px] text-muted-foreground mb-8">
+              <p className="text-[12px] text-muted-foreground mb-6">
                 初めての方は <span className="font-medium text-foreground">「悩みから探す」</span> から
               </p>
 
@@ -109,18 +109,22 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 右：ビジュアル（mobile 非表示 / desktop col-span-5） */}
-            <div className="hidden sm:flex sm:col-span-5 justify-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/hero/lab-still-life.svg"
-                alt=""
-                width={600}
-                height={600}
-                loading="eager"
-                decoding="async"
-                className="w-full max-w-[440px] h-auto select-none pointer-events-none"
-              />
+            {/* 右：ビジュアル（card frame で浮き感を抑える） */}
+            <div className="flex justify-center sm:justify-end mt-2 sm:mt-0">
+              <div className="relative w-full max-w-[420px] sm:max-w-[520px] aspect-square
+                rounded-3xl overflow-hidden bg-gradient-to-br from-[#F5EFE3] via-[#F8F2E7] to-[#FAFAF8]
+                border border-[#E8DDC9]/60 shadow-[0_24px_60px_-30px_rgba(61,43,92,0.30)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/hero/lab-still-life.svg"
+                  alt=""
+                  width={600}
+                  height={600}
+                  loading="eager"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full select-none pointer-events-none"
+                />
+              </div>
             </div>
           </div>
 
