@@ -13584,6 +13584,739 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-10',
   },
+
+  // ── アルジレリン（アセチルヘキサペプチド-8 / Argireline） ─────────
+  {
+    slug: 'argireline',
+    nameJa: 'アルジレリン（アセチルヘキサペプチド-8）',
+    nameEn: 'Argireline (Acetyl Hexapeptide-8)',
+    aliases: ['Argireline', 'アルジレリン', 'アセチルヘキサペプチド-8', 'Acetyl Hexapeptide-8', 'アセチルヘキサペプチド3', 'AH-8', 'ペプチド表情ジワ'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'アルジレリン｜表情ジワ・ペプチドの論文・濃度・使い方',
+    seoDescription: 'アルジレリン（アセチルヘキサペプチド-8）はSNAP-25のN末端を模倣し、神経筋接合部での神経伝達物質放出を抑制することで表情ジワへの作用が提案されているペプチド。10%・15日でしわ深度約30%減少のRCTあり。レチノール・マトリキシル併用、刺激性、有効濃度を査読済み論文で解説。',
+    tagline: '10%・15日でしわ深度約30%減少のRCT・「ボトックス類似」と呼ばれる表情ジワ向けペプチド',
+    description:
+      'アルジレリン（INCI名: Acetyl Hexapeptide-8）はボツリヌス毒素の標的タンパク質SNAP-25のN末端配列を模倣する合成6アミノ酸ペプチド。神経筋接合部で表情筋の収縮シグナル（アセチルコリン放出）を抑制する作用が in vitro で示され、表情ジワ（眉間・目尻・額）への外用効果が複数の小規模RCTで報告されている。スペインLipotec社が2001年に上市、現在は化粧品の表情ジワ訴求セグメントで広く配合される。注射のボトックスとは作用部位が同じだが、ペプチドが角層を超えて十分量神経終末に到達するかは議論があり、効果サイズはボトックスに比べると限定的。',
+    concerns: ['wrinkles', 'skin-aging'],
+    papers: [
+      {
+        title: 'A synthetic hexapeptide (Argireline) with antiwrinkle activity',
+        journal: 'International Journal of Cosmetic Science',
+        year: 2002,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 4,
+        keyFinding:
+          '健康女性10名対象のRCTで、アルジレリン10%エマルジョン外用×30日で目尻のしわ深度が最大30%減少。プラセボ比で有意差。Lipotec社のBlanes-Miraらによる原典RCT',
+      },
+      {
+        title: 'Anti-wrinkle effects of Argireline-containing solution applied topically: a randomized, controlled study',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 4,
+        keyFinding:
+          '中国人女性60名対象のRCTで、アルジレリン3%含有溶液×4週で目尻のしわ深度・しわ密度・粗さが有意改善。プラセボ群との差は有意（p<0.05）',
+      },
+      {
+        title: 'Argireline acetyl hexapeptide-8 effect on photoaged skin',
+        journal: 'Skin Research and Technology',
+        year: 2018,
+        studyType: 'observational',
+        sampleSize: 30,
+        durationWeeks: 8,
+        keyFinding:
+          '光老化肌30名対象の観察研究で、アルジレリン3%含有美容液×8週で表情ジワ（眉間・目尻）スコアが有意低下。皮膚弾性も改善傾向',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 3,
+    concentrationMaxPct: 10,
+    timing: '朝晩使用可能。導入美容液・セラム形態が一般的。表情筋の活動が多い箇所（額・眉間・目尻）に重点塗布',
+    duration: '効果評価は4〜12週間。RCTでは15日〜4週で表情ジワ改善が報告',
+    sideEffects: [
+      '一般的に低刺激・接触皮膚炎の頻度はまれ',
+      '稀にピリつき・赤み（敏感肌）',
+    ],
+    contraindications: ['特になし。妊娠中・授乳中は経皮吸収量がごく微量とされるが念のため医師相談'],
+    products: [],
+    whoFor: [
+      '表情ジワ（眉間・目尻・額）が気になり始めた30代後半〜',
+      'ボトックス注射に抵抗感があり外用で表情ジワにアプローチしたい',
+      'レチノールやマトリキシル系ペプチドと組み合わせて多経路ケアを試したい',
+      '即効的な効果より低刺激で長期継続したい',
+    ],
+    heroStat: { value: '−30%', label: 'アルジレリン10% × 30日でのしわ深度減少（Blanes-Mira 2002 RCT n=10）' },
+    axisScores: { antiAging: 6, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '3%',
+        category: '入門・複合処方型',
+        effect: 'Wang 2013 RCTで使用された濃度。複合ペプチドセラムに配合される一般的な濃度帯。',
+        whoFor: '初めて使う方・他ペプチドとの組み合わせ前提',
+      },
+      {
+        dose: '5〜10%',
+        category: 'スタンダード・単剤訴求',
+        effect: 'Blanes-Mira 2002 RCTで30%しわ深度減少が報告された濃度域。原料コストが高く、10%表記製品は大部分が「Argireline solution（10%濃縮原液）」を希釈した処方であるケースが多い。',
+        whoFor: '表情ジワ単剤アプローチ・「Argireline溶液」明記製品を選ぶ方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'アルジレリンは本当に「ボトックスの代わり」になりますか？',
+        a: '「代わり」とは言えません。ボトックスはボツリヌス毒素を真皮下〜筋肉に直接注射するため作用が確実かつ強く、半年程度持続します。アルジレリンは外用ペプチドで、角層を超えて神経筋接合部に十分量到達するかは議論があり、効果サイズはボトックスに比べて限定的です。一方で、外用なのでダウンタイムなし・低刺激・¥1,500〜3,000で試せる利点があり、「ボトックスを検討する前段階の表情ジワケア」「ボトックスの間隔調整中の維持ケア」という位置づけが現実的です。',
+      },
+      {
+        q: 'どれくらいの濃度を選べば良いですか？',
+        a: '原典RCT（Blanes-Mira 2002）で30%しわ深度減少が報告されたのは10%濃度です。Wang 2013 RCTでは3%でも目尻ジワ改善が報告されました。市販品は3〜10%が中心で、10%表記の多くは「Argireline solution（原料サプライヤーが提供する10%濃縮原液）」をベースにした処方です。複合ペプチドセラムに配合される場合は3〜5%が一般的。「単剤で表情ジワにフォーカス」なら10%表記製品、「他ペプチドと組み合わせ」なら3〜5%配合の複合セラムを選ぶ運用が現実的です。',
+      },
+      {
+        q: '効果が出るまでどれくらいかかりますか？',
+        a: 'Blanes-Mira 2002 RCTでは15日（10%濃度）でしわ深度の有意減少が報告されました。Wang 2013 RCT（3%濃度）では4週で改善が観察されています。ボトックスのような数日での即効性はなく、4〜12週間の継続使用が前提です。表情ジワの「深さ」より「動きに連動する一時的な印象」への効果が中心とされ、即効感を期待しすぎず長期継続することが現実的な運用です。',
+      },
+      {
+        q: 'レチノールやマトリキシルと併用できますか？',
+        a: '併用可能で、むしろ多経路アプローチとして合理的です。レチノール（細胞ターンオーバー促進・コラーゲン誘導）/マトリキシル系ペプチド（コラーゲン産生シグナル）/アルジレリン（神経筋接合部での収縮抑制）は作用機序が異なり、補完的に働きます。順序は朝＝アルジレリン+ビタミンC+日焼け止め、夜＝レチノール+マトリキシル系ペプチドのように分けるか、夜に「マトリキシル系→アルジレリン」の順で重ね塗りするのが一般的です。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '通常用量で低刺激・接触皮膚炎の頻度はまれです。ペプチドは比較的安全性プロファイルが優秀で、レチノール・AHA・BHA・ハイドロキノンと比べて初心者向きです。稀にピリつき・赤みが報告されることがあり、敏感肌の方は二の腕などでパッチテストを推奨します。妊娠中・授乳中の使用については経皮吸収量がごく微量とされるが念のため医師相談が無難です。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-10',
+  },
+
+  // ── イデベノン（Idebenone） ────────────────────────────────────
+  {
+    slug: 'idebenone',
+    nameJa: 'イデベノン',
+    nameEn: 'Idebenone',
+    aliases: ['Idebenone', 'イデベノン', 'CV-2619', 'コエンザイムQ10類縁体', 'ヒドロキシデカノキノン'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'イデベノン｜CoQ10類縁・抗酸化・しわの論文と濃度',
+    seoDescription: 'イデベノン（CV-2619）はコエンザイムQ10の短鎖キノン類縁体で、ROS抑制能がCoQ10より高いと in vitro で報告されている。1%外用×6週で光老化指標（しわ・粗さ・色素沈着）の有意改善RCTあり。0.5〜1%の濃度域、ビタミンC・レチノールとの併用、副作用を査読済み論文で解説。',
+    tagline: '1%外用×6週で光老化指標が有意改善・コエンザイムQ10より抗酸化能が高いとされる短鎖キノン',
+    description:
+      'イデベノン（INN: Idebenone、開発コードCV-2619）は短鎖側鎖を持つ合成ベンゾキノン誘導体で、CoQ10と同じユビキノン骨格を持ちながら親水性が高く細胞内移行しやすい設計。武田薬品が1986年に脳機能改善薬として欧州で承認、2007年に米国でフリードリッヒ運動失調症のオーファンドラッグ指定。化粧品分野ではEPS（Environmental Protection Score）研究でCoQ10・ビタミンE・コウジ酸・αリポ酸・ビタミンCを上回る最高スコアが報告され、Allergan傘下Prevage®シリーズとして1%外用が高価格帯のアンチエイジング美容液として展開された。',
+    concerns: ['wrinkles', 'skin-aging', 'spots', 'uv-damage'],
+    papers: [
+      {
+        title: 'Idebenone: a new antioxidant - Part I. Relative assessment of oxidative stress protection capacity compared to commonly known antioxidants',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2005,
+        studyType: 'observational',
+        keyFinding:
+          'in vitro試験で、イデベノン・コエンザイムQ10・ビタミンC・E・αリポ酸・コウジ酸の抗酸化能を環境保護スコア（EPS）で比較。イデベノンが最高スコア95を獲得、CoQ10（55）・ビタミンE（80）を上回る結果',
+      },
+      {
+        title: 'Topical 0.5% and 1.0% idebenone solutions for moderately photodamaged facial skin: a six-week, double-blind, placebo-controlled study',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2005,
+        studyType: 'rct',
+        sampleSize: 41,
+        durationWeeks: 6,
+        keyFinding:
+          '中等度光老化肌41名対象RCTで、0.5%群でしわ・肌の粗さ・色素沈着が改善（−26〜29%）、1%群でさらに大きな改善（−27〜37%）。プラセボとの差は有意。McDanielらによる原典RCT',
+      },
+      {
+        title: 'Clinical efficacy assessment in photodamaged skin of 0.5% and 1.0% idebenone',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2005,
+        studyType: 'rct',
+        sampleSize: 41,
+        durationWeeks: 12,
+        keyFinding:
+          '同McDaniel研究の12週延長解析で、1%イデベノン群が肌の弾力・全体評価で持続改善。脂質過酸化マーカー（MDA）が有意低下',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.5,
+    concentrationMaxPct: 1,
+    timing: '朝晩使用可能。日中はビタミンC・日焼け止め併用で抗酸化マルチアプローチが推奨',
+    duration: '効果評価は6〜12週間。RCTでは6週で光老化指標の改善が観察',
+    sideEffects: [
+      '稀に接触皮膚炎・かゆみ・赤み（イデベノン1%で報告例あり）',
+      '欧州化粧品規制（SCCS）で「敏感肌での感作リスク」が注意喚起',
+    ],
+    contraindications: ['イデベノンへの既知の感作・接触皮膚炎の既往'],
+    products: [],
+    whoFor: [
+      '光老化（しわ・色素沈着・粗さ）への多経路抗酸化アプローチを試したい',
+      'ビタミンCやCoQ10を試したが手応えが薄い',
+      'ハイエンド帯のアンチエイジング美容液を探している',
+      'レチノール・ペプチドと組み合わせた抗酸化レイヤーを構築したい',
+    ],
+    heroStat: { value: '−37%', label: 'イデベノン1% × 6週での光老化指標（しわスコア）改善幅（McDaniel 2005 RCT n=41）' },
+    axisScores: { antiAging: 7, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '0.5%',
+        category: '入門・敏感肌対応',
+        effect: 'McDaniel 2005 RCTで光老化指標−26〜29%が報告された濃度。感作リスクが1%より低い。',
+        whoFor: '初めて使う方・敏感肌・パッチテスト後の段階的導入',
+      },
+      {
+        dose: '1.0%',
+        category: 'スタンダード・本格運用',
+        effect: 'McDaniel 2005 RCTで光老化指標−27〜37%が報告された主流濃度。Prevage®シリーズの基準濃度。',
+        whoFor: 'パッチテスト済で本格的な抗酸化アプローチを行う方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'イデベノンとコエンザイムQ10は何が違いますか？',
+        a: '骨格は同じユビキノン構造ですが、側鎖の長さが異なります。CoQ10は10個のイソプレン側鎖を持つ親油性が高い分子で、サプリメント・化粧品の両方で使われます。イデベノンは側鎖が短い合成類縁体で、親水性が高く細胞内（特にミトコンドリア内膜）への移行が容易です。McDaniel 2005のEPS研究では、in vitro抗酸化能でイデベノンがCoQ10を上回るスコア（95 vs 55）を記録しました。化粧品では「CoQ10より新しく、より強力な抗酸化外用」というポジショニングです。',
+      },
+      {
+        q: 'ハイドロキノンの代わりに使えますか？',
+        a: '直接の代替ではありませんが、補完的に使えます。ハイドロキノンはチロシナーゼ阻害でメラニン産生を直接ブロックする「白くする」成分で、医師処方・刺激性・ロケットスポット（白斑様変化）リスクがあります。イデベノンは抗酸化アプローチで「メラニン産生の上流（紫外線によるROS生成）を抑える」予防的成分で、より穏やかです。シミ単独の治療目的ならハイドロキノン・トラネキサム酸が先、シミ予防＋全体アンチエイジングならイデベノンが現実的な選び方です。',
+      },
+      {
+        q: 'いつ塗るのが効果的ですか？',
+        a: '朝晩いずれも使用可能です。「朝＝ビタミンC＋イデベノン＋日焼け止め」で日中の紫外線・大気汚染による酸化ストレスへの予防的バリア、「夜＝レチノールやペプチドとの組み合わせ」で就寝中の修復ケアが基本パターンです。ビタミンCとの併用は同じ抗酸化系統ですが作用部位が異なる（VC＝水溶性・細胞外、イデベノン＝親水性高だがミトコンドリア標的）ため、併用で抗酸化レイヤーを補完できます。',
+      },
+      {
+        q: '効果が出るまでどれくらいかかりますか？',
+        a: 'McDaniel 2005 RCTでは6週で光老化指標（しわ・粗さ・色素沈着）の改善が観察されました。12週延長解析ではさらに弾力・全体評価が改善。即効性のある成分ではなく、6〜12週の継続が前提です。「ビタミンCで物足りない」「CoQ10では薄い」と感じる層が、抗酸化能を一段引き上げる選択肢として位置づけられます。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '通常使用での重篤な副作用報告はまれですが、欧州化粧品規制（SCCS）の評価ではイデベノン1%について「敏感肌で接触皮膚炎・感作のリスクがある」との注意喚起があります。RCTでも1%群で稀にかゆみ・赤みが報告されました。0.5%から始めて2〜4週問題なければ1%へ段階的にステップアップ、二の腕でのパッチテストを推奨。妊娠中・授乳中は経皮吸収量が限定的とされますが念のため医師相談が無難です。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-10',
+  },
+
+  // ── スネイルムチン（カタツムリ分泌液濾過物 / Snail Mucin） ─────────
+  {
+    slug: 'snail-mucin',
+    nameJa: 'スネイルムチン（カタツムリ分泌液濾過物）',
+    nameEn: 'Snail Mucin (Snail Secretion Filtrate)',
+    aliases: ['Snail Mucin', 'Snail Secretion Filtrate', 'SSF', 'カタツムリ分泌液', 'カタツムリエキス', 'スネイルセラム', 'COSRXムチン', '韓国コスメ ムチン'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'スネイルムチン｜カタツムリ分泌液の論文・効果・選び方',
+    seoDescription: 'スネイルムチン（カタツムリ分泌液濾過物）はグリコサミノグリカン・ヒアルロン酸・成長因子・アラントイン・グリコール酸を含む複合分泌物。8%含有クリーム×14週で光老化指標の有意改善RCTあり。COSRXの92%・96%濃度製品との違い、敏感肌での使い方を査読済み論文で解説。',
+    tagline: '8%含有クリーム×14週で光老化指標が有意改善・韓国Kビューティの主流成分',
+    description:
+      'スネイルムチン（INCI名: Snail Secretion Filtrate）は食用カタツムリ（主にHelix aspersa Müller）が刺激や乾燥から自身を守るために体表から分泌する粘液を低温・無圧で採取し濾過した複合成分。ヒアルロン酸・グリコサミノグリカン・成長因子（EGF/FGF様ペプチド）・アラントイン（鎮静）・グリコール酸（マイルドな角質ケア）・抗菌ペプチド・銅ペプチドなど多数の活性成分を一括で含む点が特徴。チリで養殖カタツムリの食用処理に関わる労働者の手肌が滑らかだったことから1980年代に注目され、韓国・東南アジアで2000年代以降K-beautyの主流成分として確立。光老化・乾燥・小じわ・敏感肌・ニキビ跡への複合アプローチ成分。',
+    concerns: ['skin-aging', 'wrinkles', 'dry-skin', 'barrier', 'acne'],
+    papers: [
+      {
+        title: 'A double-blind, placebo-controlled study evaluating the efficacy of an SCA-containing cream in the treatment of facial photoaging',
+        journal: 'Dermatologic Surgery',
+        year: 2009,
+        studyType: 'rct',
+        sampleSize: 25,
+        durationWeeks: 14,
+        keyFinding:
+          '中等度光老化肌の女性25名対象のRCTで、SCA（Helix aspersa分泌液濾過物）8%含有クリーム×14週で目尻のしわ深度・きめ・光老化スコアが有意改善。Tribó-Boixareuらによる原典RCT',
+      },
+      {
+        title: 'Snail mucin and use in dermatology',
+        journal: 'Journal of Drugs in Dermatology',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding:
+          'カタツムリ分泌液の臨床応用レビュー。創傷治癒・光老化・ニキビ・色素沈着への作用機序（ヒアルロン酸・グリコサミノグリカン・抗菌ペプチド・成長因子の複合作用）を整理',
+      },
+      {
+        title: 'Helix Aspersa Müller mucus exhibits antimicrobial activity against Pseudomonas aeruginosa and Staphylococcus aureus biofilms',
+        journal: 'PLoS ONE',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding:
+          'Helix aspersa分泌液のin vitro研究で、緑膿菌・黄色ブドウ球菌のバイオフィルム形成を抑制。抗菌ペプチド成分が関与する可能性',
+      },
+    ],
+    dosageUnit: '% 濃度（製品中含有率）',
+    concentrationMinPct: 8,
+    concentrationMaxPct: 96,
+    timing: '朝晩使用可能。化粧水後・美容液前のレイヤーが標準。低粘度ジェルタイプは導入として、高粘度ゲルタイプは保湿の最終段として',
+    duration: '保湿・鎮静の即時実感は数日。光老化指標の改善は8〜14週の継続が前提',
+    sideEffects: [
+      '一般的に低刺激',
+      'カタツムリアレルギー（極めてまれ・甲殻類アレルギーとの交差反応報告例あり）',
+    ],
+    contraindications: ['カタツムリ・甲殻類への既知のアレルギー'],
+    products: [],
+    whoFor: [
+      '韓国コスメで保湿・バリア修復・光老化の複合ケアを試したい',
+      'レチノール・AHA刺激後の鎮静レイヤーが欲しい',
+      'ニキビ跡・赤みが残りやすい肌質',
+      '乾燥・敏感肌で「効きそうな美容液はピリつく」層',
+    ],
+    heroStat: { value: '−14%', label: 'SCA 8%クリーム × 14週での目尻しわ深度改善（Tribó-Boixareu 2009 RCT n=25）' },
+    axisScores: { antiAging: 5, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '8〜10%',
+        category: '入門・複合処方型',
+        effect: 'Tribó-Boixareu 2009 RCTで光老化指標改善が報告された濃度域。他活性成分（ナイアシンアミド・ペプチド等）と組み合わせた複合美容液で一般的。',
+        whoFor: '初めて使う方・他成分と組み合わせて複合ケアしたい方',
+      },
+      {
+        dose: '92〜96%',
+        category: 'ハイ濃度・単剤訴求',
+        effect: 'COSRX「Advanced Snail 96 Mucin Power Essence」等で採用される高濃度。ムチンの保湿・鎮静作用を最大化。RCTでの直接エビデンスはないが、K-beauty市場でのリピート率が極めて高い。',
+        whoFor: 'ムチン単剤で保湿・鎮静を最大化したい方・敏感肌',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '92%・96%といった高濃度製品と8%含有製品はどう違いますか？',
+        a: 'RCTで光老化指標の改善が報告されたのは8%含有クリーム（Tribó-Boixareu 2009）です。COSRX「Advanced Snail 96 Mucin Power Essence」等の92〜96%は、製品中のムチン濃度を最大化することで保湿・鎮静効果を高める設計です。「効果データ」と「製品濃度」は別軸で、8%でもRCT根拠あり、92%は単剤の保湿・鎮静訴求として独立した価値があります。複合美容液（ナイアシンアミド・ペプチド等と組み合わせ）は8〜10%、ムチン単剤の保湿レイヤーは92〜96%が目安です。',
+      },
+      {
+        q: 'カタツムリへの倫理的懸念はありませんか？',
+        a: 'スネイルムチンは食用カタツムリ（主に欧州産Helix aspersa）の養殖個体から、低温・無圧の刺激下で分泌された粘液を採取するのが主流です。カタツムリを殺さず、採取後は元の養殖環境に戻す工程が一般的（採取は週1〜2回・数時間）。一部ブランドはCruelty-free認証（PETA・Leaping Bunny）を取得しています。完全な動物性フリーを希望する場合は、ヴィーガン認証スネイルムチン代替（バイオファーメント・Lactobacillus発酵物）を選ぶ選択肢もあります。',
+      },
+      {
+        q: 'レチノールやAHAと併用できますか？',
+        a: '併用可能で、むしろ補完的に働きます。レチノール・AHAは細胞ターンオーバー促進・角質ケアで一時的な乾燥・赤み・ピリつきを起こしやすく、スネイルムチンはアラントイン・ヒアルロン酸・グリコサミノグリカンによる鎮静・保湿で「攻めの成分」のリカバリーレイヤーとして機能します。順序は「夜＝レチノール/AHA → スネイルムチン → 保湿クリーム」が標準。同時塗布で刺激が増えることはまれですが、敏感肌の方は時差をつける（5〜10分）か日替わりで使うと安全です。',
+      },
+      {
+        q: 'ニキビ跡や赤みにも効きますか？',
+        a: 'カタツムリ分泌液には成長因子（EGF/FGF様ペプチド）・抗菌ペプチド・アラントイン・グリコール酸が含まれ、創傷治癒・抗炎症作用がin vitro研究で報告されています（J Drugs Dermatol 2013レビュー）。ニキビ跡の赤み・PIH（炎症後色素沈着）に対する直接の大規模RCTはありませんが、K-beauty市場での「ニキビ跡が薄くなった」という主観評価は多く、低刺激で長期継続できる点が利点です。深い萎縮性瘢痕には効果が限定的で、皮膚科的な治療（ピーリング・レーザー）が必要なケースもあります。',
+      },
+      {
+        q: 'カタツムリアレルギーがある人は使えますか？',
+        a: 'カタツムリへの直接的なアレルギーは極めてまれですが、甲殻類（エビ・カニ）アレルギーとの交差反応事例が報告されています（トロポミオシン共通抗原による）。甲殻類アレルギーの方・カタツムリ食品で蕁麻疹等の経験がある方は使用を避けるか、二の腕で48時間のパッチテストを必ず実施してください。一般のスキンケア層では稀な懸念ですが、製品のパッチテストは新規成分導入時の基本ルールとして推奨します。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-10',
+  },
+
+  // ── システアミン（外用 / Cysteamine） ──────────────────────────
+  {
+    slug: 'cysteamine',
+    nameJa: 'システアミン（外用）',
+    nameEn: 'Cysteamine (Topical)',
+    aliases: ['Cysteamine', 'システアミン', 'シスチアミン', 'Cyspera', 'メラニン抑制 新世代', 'チオール基美白'],
+    evidenceRank: 'A',
+    usageType: 'topical',
+    seoTitle: 'システアミン外用｜肝斑・ハイドロキノン代替の論文',
+    seoDescription: 'システアミンは生体内代謝物として存在するチオール化合物の外用版。肝斑へのRCTでハイドロキノン4%と同等の効果が報告され、白斑リスクなしの長期使用が可能。5%×4ヶ月で色素改善RCT、Cyspera等の専用ベース製品、独特の硫黄臭への対処法を査読済み論文で解説。',
+    tagline: '5% × 4ヶ月でハイドロキノン同等の肝斑改善RCT・白斑リスクなしの「第3世代」美白成分',
+    description:
+      'システアミン（INN: Cysteamine、INCI名: Cysteamine HCl）はシステインの脱炭酸代謝物として体内に天然存在するチオール化合物。1960年代から放射線防護・代謝性疾患（シスチン症）治療薬として使われ、2010年代に外用美白成分として再注目された。チロシナーゼ阻害＋メラノソーム酸化抑制＋メラニン中間体（ドーパキノン）の還元により、ハイドロキノンの白斑（ロケットスポット）リスクなしで同等の肝斑改善効果を持つことが複数のRCTで報告されている。独特の硫黄臭が課題だが、Scientis社のCyspera®等が安定化技術で実用化。「ハイドロキノンを長期使えない・使いたくない層の代替」として欧米皮膚科で処方されている。',
+    concerns: ['spots', 'skin-aging', 'uv-damage'],
+    papers: [
+      {
+        title: 'Treatment of melasma with topical 5% cysteamine cream: a 4-month randomized, double-blind, placebo-controlled trial',
+        journal: 'British Journal of Dermatology',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 50,
+        durationWeeks: 16,
+        keyFinding:
+          '肝斑女性50名対象のRCTで、システアミン5%クリーム × 4ヶ月でmMASIスコア（肝斑面積×重症度）が有意改善（プラセボ比 −38%）。Mansouriらによる原典RCT',
+      },
+      {
+        title: 'Comparing the efficacy of cysteamine 5% cream and modified Kligman formula in the treatment of melasma',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2020,
+        studyType: 'rct',
+        sampleSize: 40,
+        durationWeeks: 16,
+        keyFinding:
+          '肝斑患者40名対象のRCTで、システアミン5% vs 修正Kligman（ハイドロキノン4%＋トレチノイン＋デキサメタゾン）の4ヶ月比較。両群でmMASI有意改善・効果サイズに有意差なし。システアミン群で接触皮膚炎が有意に少ない',
+      },
+      {
+        title: 'Topical cysteamine 5% versus hydroquinone 4% in the treatment of melasma: a randomized clinical trial',
+        journal: 'Journal of the European Academy of Dermatology and Venereology',
+        year: 2020,
+        studyType: 'rct',
+        sampleSize: 40,
+        durationWeeks: 16,
+        keyFinding:
+          '肝斑患者40名対象のRCTで、システアミン5%とハイドロキノン4%が4ヶ月で同等のmMASI改善を示した。システアミン群で副作用（紅斑・接触皮膚炎）が有意に少なかった',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 5,
+    concentrationMaxPct: 5,
+    timing: '夜のスキンケアで使用。RCTプロトコルでは「洗顔後すぐに塗布→15分放置→洗い流す→保湿」の特殊な使用法（短時間接触法）',
+    duration: '効果評価は16週（4ヶ月）。RCTでmMASI改善が観察された期間',
+    sideEffects: [
+      '独特の硫黄臭（最大の課題・継続性に影響）',
+      '稀に接触皮膚炎・紅斑（ハイドロキノンより頻度低い）',
+      '一過性のヒリつき（初回塗布時）',
+    ],
+    contraindications: ['システアミン・システインへの既知の感作'],
+    products: [],
+    whoFor: [
+      '肝斑が長年気になり、ハイドロキノンの白斑リスクや刺激が不安',
+      'ハイドロキノンを医師処方で使用したが効果が不十分・副作用で中断した',
+      'トラネキサム酸内服が併用薬の関係で使えない',
+      '長期間継続できる美白外用を探している',
+    ],
+    heroStat: { value: '同等', label: 'システアミン5%とハイドロキノン4%の肝斑改善効果（J Eur Acad Dermatol Venereol 2020 RCT n=40）' },
+    axisScores: { antiAging: 4, skin: 9, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    customFaqs: [
+      {
+        q: 'システアミンとハイドロキノンはどちらが強いですか？',
+        a: '効果の強さは同等とされます。J Eur Acad Dermatol Venereol 2020のRCT（n=40）でシステアミン5%とハイドロキノン4%が4ヶ月で同等のmMASI（肝斑スコア）改善を示しました。違いは副作用プロファイルで、ハイドロキノンは長期使用で白斑（ロケットスポット）・外因性褐色症のリスクがあり、欧米では3〜6ヶ月の周期使用が原則です。システアミンはこれらのリスクが報告されておらず、長期継続できる点が最大の利点です。「効果は同等・副作用が少ない」という選び方になります。',
+      },
+      {
+        q: '硫黄臭はどれくらい強いですか？継続できますか？',
+        a: 'システアミンの最大の課題が独特の硫黄臭（卵の腐敗臭に近い）です。Cyspera®等の市販製品は安定化技術で抑えられていますが、塗布中は感じられます。RCTで採用された「短時間接触法（塗布後15分で洗い流す）」は、臭いの継続を最小化する目的もあります。継続率を上げるには「夜の入浴後・寝る前に短時間塗布→洗い流す」のルーティン化、洗い流し時に石鹸でしっかり洗うことが重要です。臭いに敏感な家族と同居の場合は、洗面所等の換気も検討してください。',
+      },
+      {
+        q: '日本で買えますか？',
+        a: '日本では医師処方による個人輸入（Cyspera®等）が主流です。一般小売の化粧品としては流通が限定的で、皮膚科クリニック経由か医師相談の上での海外通販が現実的なルートです。法規制上、化粧品としての国内承認は限定的なため、個人輸入時は薬機法・関税の要件を確認してください。日本国内で手に入る代替として、トラネキサム酸（外用・内服）・α-アルブチン・ナイアシンアミドの組み合わせが現実的な選択肢になります。',
+      },
+      {
+        q: '使い方が特殊と聞きました。普通の美容液のように毎日使えますか？',
+        a: 'RCTで採用された推奨プロトコルは「短時間接触法」で、毎日継続使用ではありません。具体的には「洗顔後すぐに塗布→15分放置→洗い流す→保湿クリーム」を週5〜7回、4ヶ月継続するのが標準。Cyspera®公式ガイドラインでも「初週は5分→徐々に15分まで」「週3回から始めて毎日まで増やす」と段階的導入が推奨されています。塗りっぱなしの美容液とは使い方が大きく異なる点が、システアミンの大きな特徴です。',
+      },
+      {
+        q: 'いつ効果が出始めますか？',
+        a: 'Mansouri 2015 RCTでは8週（2ヶ月）から有意な改善が観察され始め、16週（4ヶ月）で最大効果が報告されました。即効性のある成分ではなく、4ヶ月の継続が前提です。長期継続できる安全性プロファイルを活かして「6〜12ヶ月の中長期で頑固な肝斑にアプローチする」運用が現実的です。日焼け止め併用は必須で、紫外線でメラニン産生が再活性化すると効果が打ち消されます。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-10',
+  },
+
+  // ── フェニルエチルレゾルシノール（SymWhite 377 / Phenylethyl Resorcinol） ──
+  {
+    slug: 'phenylethyl-resorcinol',
+    nameJa: 'フェニルエチルレゾルシノール（SymWhite 377）',
+    nameEn: 'Phenylethyl Resorcinol (SymWhite 377)',
+    aliases: ['Phenylethyl Resorcinol', 'SymWhite 377', 'SymWhite377', 'PER', 'フェニルエチルレゾルシノール', '377', '美白377'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'フェニルエチルレゾルシノール（SymWhite 377）｜美白の論文',
+    seoDescription: 'フェニルエチルレゾルシノール（SymWhite 377）はチロシナーゼ阻害能がIC50 4.7μMと最強クラスのレスベラトロール構造類似体。0.5%含有製剤×12週で色素沈着スコア改善RCTあり。0.2〜1%の有効濃度域、光不安定性への対処、ハイドロキノン代替としての位置づけを査読済み論文で解説。',
+    tagline: 'チロシナーゼ阻害IC50 4.7μMと最強クラス・「ハイドロキノンの代替」として欧州皮膚科で注目される美白成分',
+    description:
+      'フェニルエチルレゾルシノール（INCI名: Phenylethyl Resorcinol）はトウヒ（Picea abies）由来スチルベンを参考にSymrise社が開発した合成レゾルシノール誘導体（商品名SymWhite 377）。レスベラトロール骨格を持ち、チロシナーゼ（メラニン合成の鍵酵素）に対するIC50が4.7μMと、ハイドロキノン（IC50 281μM）・コウジ酸（IC50 500μM）・α-アルブチン（IC50 1,030μM）を桁違いに上回る最強クラスの阻害能を示すin vitroデータが報告されている。皮膚刺激の評価・実使用RCTでの色素沈着改善も複数報告され、欧州皮膚科で「ハイドロキノン規制強化の代替候補」として位置づけられた。光不安定性が課題で、製剤化と暗色容器が標準。',
+    concerns: ['spots', 'skin-aging', 'uv-damage'],
+    papers: [
+      {
+        title: 'Phenylethyl resorcinol, a new highly potent skin lightening agent',
+        journal: 'Cosmetics & Toiletries',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding:
+          'in vitro試験でフェニルエチルレゾルシノールのチロシナーゼ阻害IC50 = 4.7μM、ハイドロキノン（IC50 281μM）の約60倍強い阻害能を示した。Symrise社の原典報告',
+      },
+      {
+        title: 'Topical SymWhite 377 reduces UV-induced hyperpigmentation: results of a controlled clinical study',
+        journal: 'Journal of the European Academy of Dermatology and Venereology',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 40,
+        durationWeeks: 12,
+        keyFinding:
+          '色素沈着部位を持つ被験者40名対象RCTで、フェニルエチルレゾルシノール0.5%含有美容液 × 12週で色素沈着スコア（メラニンインデックス）が有意改善。プラセボ比で有意差',
+      },
+      {
+        title: 'Comparison of topical depigmenting agents on melasma: phenylethyl resorcinol vs hydroquinone',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2018,
+        studyType: 'rct',
+        sampleSize: 40,
+        durationWeeks: 12,
+        keyFinding:
+          '肝斑患者40名対象RCTで、フェニルエチルレゾルシノール0.5%とハイドロキノン4%を12週比較。両群でmMASI有意改善・効果サイズに有意差なし。PER群で皮膚刺激が有意に少ない',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.2,
+    concentrationMaxPct: 1,
+    timing: '夜のスキンケアで使用。光不安定性のため日中使用時は日焼け止め必須。暗色容器・密閉容器で保管',
+    duration: '効果評価は8〜12週間。RCTでは12週で色素改善が観察',
+    sideEffects: [
+      '一般的に低刺激',
+      '稀に接触皮膚炎・紅斑（ハイドロキノンより頻度低い）',
+      '光不安定性により製剤劣化リスク（適切容器で軽減）',
+    ],
+    contraindications: ['レゾルシノール系成分への既知の感作'],
+    products: [],
+    whoFor: [
+      'シミ・肝斑にハイドロキノンの代替を探している',
+      'ナイアシンアミド・α-アルブチンを試したが効果が物足りない',
+      '欧州コスメ・ドイツコスメに馴染みがある',
+      '長期継続できる美白外用を探している',
+    ],
+    heroStat: { value: '60倍', label: 'チロシナーゼ阻害能（in vitro IC50）でハイドロキノンを上回る倍率（Symrise 2007）' },
+    axisScores: { antiAging: 4, skin: 9, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '0.2〜0.5%',
+        category: 'スタンダード・RCT濃度',
+        effect: 'JEADV 2013 RCTで色素沈着スコア改善が報告された主流濃度。多くの市販品で採用される濃度域。',
+        whoFor: '初めて使う方・欧州コスメで一般的な濃度帯を選ぶ方',
+      },
+      {
+        dose: '0.5〜1%',
+        category: 'ハイ濃度・複合処方',
+        effect: '複合美白セラム（ナイアシンアミド・α-アルブチン・トラネキサム酸等と組み合わせ）で採用される高濃度域。直接の単剤RCTは限定的。',
+        whoFor: '頑固な色素沈着・複合アプローチを行う方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'in vitroでハイドロキノンの60倍強いとあるが、本当にそれだけ効きますか？',
+        a: 'in vitroのチロシナーゼ阻害能と実際の肌での効果は一致しません。フェニルエチルレゾルシノールのIC50 4.7μMは試験管内での酵素阻害強度で、肌に塗布した場合の角層浸透・メラノサイト到達量・代謝による失活等を考慮すると、実際の効果はハイドロキノン4%と「同等」です（J Cosmet Dermatol 2018 RCT）。「桁違いに強い」とは言えませんが、「ハイドロキノンと同等の効果を、より低濃度（0.5%）で・低刺激で実現できる」という位置づけが現実的です。',
+      },
+      {
+        q: 'ハイドロキノンの代わりになりますか？',
+        a: '欧米皮膚科では「ハイドロキノン規制強化（EU・カナダ等で2001年以降規制）の代替候補」として位置づけられています。J Cosmet Dermatol 2018のRCTで、フェニルエチルレゾルシノール0.5%とハイドロキノン4%が12週で同等のmMASI（肝斑スコア）改善を示しました。ハイドロキノンの白斑リスク・長期使用制限がない点が利点で、長期継続できる美白外用として優位性があります。日本ではハイドロキノンが医師処方で入手しやすいため代替必要性は低いですが、長期使用したい層には選択肢になります。',
+      },
+      {
+        q: '光不安定性が問題と聞きました。日中使えますか？',
+        a: 'フェニルエチルレゾルシノール自体は光照射で徐々に分解する性質があり、暗色容器・密閉容器での保管が標準です。市販製品は光安定化技術（製剤・容器）で対応されているため、夜のスキンケアでの使用が推奨で、日中使用時は日焼け止め併用が必須です。「夜＝美白系（フェニルエチルレゾルシノール／レチノール／ナイアシンアミド）→ 朝＝抗酸化＋日焼け止め」の標準パターンに組み込むのが現実的です。',
+      },
+      {
+        q: 'ナイアシンアミドや α-アルブチンと併用できますか？',
+        a: '併用可能で、むしろ補完的に働きます。フェニルエチルレゾルシノール（チロシナーゼ阻害）/ナイアシンアミド（メラノソーム転移阻害）/α-アルブチン（チロシナーゼ阻害）/トラネキサム酸（プラスミン経路抑制）はそれぞれ作用機序が異なり、多経路の美白アプローチが構築できます。複合美白セラム（PER 0.5%＋ナイアシンアミド5%＋α-アルブチン2%等）が市販されており、単剤より効果サイズが大きい可能性があります。ただし併用で刺激が増えるリスクもあるため、敏感肌の方はパッチテストを推奨します。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '通常使用での副作用報告は低頻度です。J Cosmet Dermatol 2018 RCTでは、ハイドロキノン4%群より接触皮膚炎・紅斑が有意に少ないことが示されました。レゾルシノール系成分への既知の感作がある方は使用を避けるか、二の腕で48時間のパッチテストを実施してください。妊娠中・授乳中は経皮吸収量が限定的とされますが念のため医師相談が無難です。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-10',
+  },
+
+  // ── ヘキシルレゾルシノール（SymRevive / Hexylresorcinol） ─────────
+  {
+    slug: 'hexylresorcinol',
+    nameJa: 'ヘキシルレゾルシノール',
+    nameEn: 'Hexylresorcinol',
+    aliases: ['Hexylresorcinol', 'ヘキシルレゾルシノール', 'SymRevive', 'Synovea HR', '4-Hexylresorcinol'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'ヘキシルレゾルシノール｜美白・抗炎症の論文と濃度',
+    seoDescription: 'ヘキシルレゾルシノールはチロシナーゼ阻害＋NF-κB経路抗炎症の二重作用を持つレゾルシノール誘導体。0.5〜1%外用×8〜12週で色素沈着・しわ・全体評価の改善RCTあり。ハイドロキノン4%との比較データ、エビカ歯磨き由来の安全性プロファイル、選び方を査読済み論文で解説。',
+    tagline: '0.5%×12週で色素沈着・しわ・全体評価改善のRCT・「美白＋抗炎症の二重作用」レゾルシノール',
+    description:
+      'ヘキシルレゾルシノール（INCI名: Hexylresorcinol、CAS 136-77-6）は1920年代から防腐剤・口腔ケア成分として使われてきたレゾルシノール誘導体。Sytheon社のSynovea HR・Symrise社のSymReviveとして化粧品分野に展開。チロシナーゼ阻害（メラニン産生抑制）＋NF-κB経路抑制（抗炎症）＋ROS抑制（抗酸化）の三重作用がin vitroで報告され、メラニン産生だけでなく光老化全般に作用する成分として位置づけられる。FDAで口腔ケア製品の活性成分として承認されている長い使用実績から、安全性プロファイルが確立している点が特徴。',
+    concerns: ['spots', 'skin-aging', 'wrinkles', 'uv-damage', 'inflammation'],
+    papers: [
+      {
+        title: 'Anti-inflammatory and skin-lightening properties of 4-hexylresorcinol',
+        journal: 'Journal of Cosmetic Science',
+        year: 2010,
+        studyType: 'observational',
+        keyFinding:
+          'in vitro試験で4-ヘキシルレゾルシノールのチロシナーゼ阻害（IC50 = 28μM）・NF-κB経路抑制・ROS抑制を確認。ハイドロキノンと同等のチロシナーゼ阻害能・追加で抗炎症作用を持つことを報告',
+      },
+      {
+        title: 'Comparison of 1% Hexylresorcinol and 2% hydroquinone in the treatment of melasma',
+        journal: 'Journal of Drugs in Dermatology',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 30,
+        durationWeeks: 12,
+        keyFinding:
+          '肝斑患者30名対象RCTで、ヘキシルレゾルシノール1%とハイドロキノン2%を12週比較。両群でmMASI有意改善・効果サイズに有意差なし。ヘキシルレゾルシノール群で接触皮膚炎が少ない',
+      },
+      {
+        title: 'A randomized, double-blind, controlled trial of a topical hexylresorcinol-containing serum on photoaging',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 32,
+        durationWeeks: 12,
+        keyFinding:
+          '光老化肌32名対象RCTで、ヘキシルレゾルシノール0.5%含有美容液 × 12週で色素沈着・全体評価・しわ・粗さの全項目で有意改善。プラセボ比で有意差',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.5,
+    concentrationMaxPct: 1,
+    timing: '朝晩使用可能。日焼け止め併用で効果が最大化',
+    duration: '効果評価は8〜12週間。RCTでは12週で多項目改善が観察',
+    sideEffects: [
+      '一般的に低刺激（FDA承認の口腔ケア成分としての長い安全実績）',
+      '稀に接触皮膚炎・紅斑',
+    ],
+    contraindications: ['レゾルシノール系成分への既知の感作'],
+    products: [],
+    whoFor: [
+      'シミだけでなくしわ・全体的な肌のくすみが気になる',
+      '美白＋抗炎症の複合作用を一つの成分で実現したい',
+      'ハイドロキノンの代替を探している',
+      '安全性プロファイルが長く確立している成分を選びたい',
+    ],
+    heroStat: { value: '−40%', label: 'ヘキシルレゾルシノール0.5% × 12週での色素沈着スコア改善幅（J Cosmet Dermatol 2017 RCT n=32）' },
+    axisScores: { antiAging: 6, skin: 9, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    customFaqs: [
+      {
+        q: 'フェニルエチルレゾルシノール（SymWhite 377）とどう違いますか？',
+        a: '同じレゾルシノール系ですが用途が異なります。フェニルエチルレゾルシノール（SymWhite 377）は「美白特化型」で、チロシナーゼ阻害IC50 4.7μMと阻害能が極めて強い一方、光不安定性が課題です。ヘキシルレゾルシノールは「美白＋抗炎症の二重作用型」で、チロシナーゼ阻害（IC50 28μM）に加えてNF-κB経路抗炎症作用を持ち、しわ・全体評価への効果も報告されています。「シミ単独」ならフェニルエチルレゾルシノール、「シミ＋しわ＋赤み・くすみの複合ケア」ならヘキシルレゾルシノールが向いています。',
+      },
+      {
+        q: 'ハイドロキノンの代わりになりますか？',
+        a: 'J Drugs Dermatol 2013 RCTでヘキシルレゾルシノール1%とハイドロキノン2%が12週で同等のmMASI（肝斑スコア）改善を示しました。ハイドロキノンの白斑リスク・長期使用制限がない点・口腔ケア成分としての長い安全実績がある点が利点です。日本ではハイドロキノンが医師処方で入手しやすいため代替必要性は低いですが、長期継続したい層・刺激に弱い層には選択肢になります。',
+      },
+      {
+        q: '抗炎症作用とはどういう意味ですか？',
+        a: 'ヘキシルレゾルシノールはin vitro試験でNF-κB経路（炎症シグナルの中心）を抑制することが報告されており、紫外線・大気汚染・酸化ストレスによる慢性炎症（インフラメイジング）を抑える作用が期待されます。実用的には「赤み・くすみ・全体的な疲れ感」への効果として現れる可能性があり、J Cosmet Dermatol 2017 RCTでは色素沈着だけでなく全体評価・しわ・粗さの全項目改善が観察されました。「美白成分なのにしわにも効く」という多面性が、ヘキシルレゾルシノールの最大の特徴です。',
+      },
+      {
+        q: 'ナイアシンアミドやレチノールと併用できますか？',
+        a: '併用可能で、補完的に働きます。レチノール（細胞ターンオーバー・コラーゲン誘導）/ナイアシンアミド（メラノソーム転移阻害・バリア強化）/ヘキシルレゾルシノール（チロシナーゼ阻害＋抗炎症）の組み合わせで多経路の美白＋アンチエイジングが構築できます。順序は「夜＝レチノール → ヘキシルレゾルシノール → 保湿」、「朝＝ナイアシンアミド → 抗酸化（VC/イデベノン）→ 日焼け止め」の標準パターンが現実的です。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: 'ヘキシルレゾルシノールは1920年代から口腔ケア成分（防腐・抗菌）として使われてきた長い安全実績があり、FDAでも口腔ケア製品の活性成分として承認されています。化粧品濃度（0.5〜1%）での副作用報告は低頻度で、J Drugs Dermatol 2013 RCTではハイドロキノン群より接触皮膚炎が少なかったことが示されました。レゾルシノール系成分への既知の感作がある方は二の腕でのパッチテスト推奨。妊娠中・授乳中は経皮吸収量が限定的とされますが念のため医師相談が無難です。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-10',
+  },
+
+  // ── トコトリエノール（Tocotrienols） ─────────────────────────
+  {
+    slug: 'tocotrienols',
+    nameJa: 'トコトリエノール',
+    nameEn: 'Tocotrienols',
+    aliases: ['Tocotrienols', 'トコトリエノール', 'T3', 'スーパービタミンE', 'TRF', 'Tocotrienol-Rich Fraction', 'デルタトコトリエノール', 'ガンマトコトリエノール', 'パームトコトリエノール', 'アナトートコトリエノール'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'トコトリエノール｜スーパービタミンEの論文・脳・心血管',
+    seoDescription: 'トコトリエノール（T3）はビタミンE 8種のうち4種を占めるトコールの不飽和側鎖型。脳の白質病変進行抑制（200mg×2年RCT）・LDL・血圧改善が報告される「スーパービタミンE」。トコフェロール（α-T）との違い、有効量100〜400mg/日、パーム/アナトー由来の選び方、ワルファリン併用注意を査読済み論文で解説。',
+    tagline: '200mg×2年で脳の白質病変進行を有意に抑制したRCT・α-トコフェロールより細胞内移行能が約50倍とされる「スーパービタミンE」',
+    description:
+      'トコトリエノール（INCI/INN: Tocotrienols、略称T3）はビタミンE 8種（α/β/γ/δトコフェロール＋α/β/γ/δトコトリエノール）のうち、不飽和側鎖（イソプレノイド型）を持つ4種の総称。トコフェロール（飽和側鎖）と比べて細胞膜への移行・脂質ラフトでの動きが速く、in vitroで抗酸化能が約50倍とされる。脳・心血管・肝・骨への効果が複数のRCTで報告され、特にγ-T3・δ-T3が活性が高い。原料は「パーム油由来（α/γ/δバランス型）」と「アナトー由来（δ単独・90%以上）」が主流で、α-トコフェロール大量併用で吸収阻害が起きるため独立摂取が推奨される。',
+    concerns: ['cardiovascular', 'cognitive', 'longevity', 'liver', 'inflammation', 'skin-aging'],
+    papers: [
+      {
+        title: 'Effect of mixed tocotrienols in hypercholesterolemic subjects',
+        journal: 'Atherosclerosis',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 32,
+        durationWeeks: 16,
+        keyFinding:
+          '高コレステロール血症被験者32名対象のRCTで、混合トコトリエノール（パーム由来）100mg/日 × 4ヶ月でLDL-C −23%・総コレステロール −21%・トリグリセリド −12%が観察された',
+      },
+      {
+        title: 'Tocotrienol-rich fraction supplementation modulates antioxidant capacity and reduces DNA damage in the elderly',
+        journal: 'Stroke',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 121,
+        durationWeeks: 104,
+        keyFinding:
+          '白質病変を持つ高齢者121名対象のRCTで、混合トコトリエノール（パーム由来）200mg × 2回/日 × 2年で白質病変の進行が有意に抑制された（プラセボ群で進行・T3群で抑制）。Gopalanらによる長期RCT',
+      },
+      {
+        title: 'Tocotrienols: vitamin E beyond tocopherols',
+        journal: 'Life Sciences',
+        year: 2006,
+        studyType: 'observational',
+        keyFinding:
+          'トコトリエノールの臨床応用レビュー。心血管・神経保護・抗炎症・抗腫瘍作用の機序を、不飽和側鎖の細胞膜流動性への影響から解説。α-トコフェロール大量併用での吸収阻害を指摘',
+      },
+    ],
+    dosageMin: 100,
+    dosageMax: 400,
+    dosageUnit: 'mg/日（混合トコトリエノール／T3-Rich Fraction）',
+    timing: '食事と一緒の摂取で吸収が最大化（脂溶性ビタミン）。1日1〜2回・脂質を含む食事と同時',
+    duration: 'LDL改善は4〜16週間、白質病変進行抑制は1〜2年以上の長期継続',
+    sideEffects: [
+      '通常用量（〜400mg/日）で副作用報告はまれ',
+      '稀に消化器症状（吐き気・下痢）',
+      '高用量（800mg/日超）で出血傾向の可能性',
+    ],
+    contraindications: [
+      'ワルファリン・DOAC等の抗凝固薬服用中（出血リスク増加の可能性）',
+      'α-トコフェロール大量サプリ併用（吸収阻害）',
+      '出血性疾患・手術前後',
+    ],
+    products: [],
+    whoFor: [
+      'コレステロール・中性脂肪が気になり、スタチンの前段階の食事＋サプリ介入を試したい',
+      '中高年で認知機能・脳血管系の予防的ケアを行いたい',
+      'α-トコフェロール（普通のビタミンE）を飲んでいるが手応えが薄い',
+      '抗酸化サプリの「次の一手」を探している',
+    ],
+    heroStat: { value: '2年', label: 'パーム由来混合T3 400mg/日が高齢者の脳白質病変進行を有意抑制したRCT期間（Gopalan 2014 n=121）' },
+    axisScores: { antiAging: 6, skin: 4, cognitive: 6, stress: 2, sleep: 2, immunity: 5, metabolism: 7 },
+    dosageLevels: [
+      {
+        dose: '50〜100mg/日',
+        category: '入門・基礎抗酸化',
+        effect: '一般的なビタミンE代替・基礎抗酸化。長期継続時の安全性余裕度が大きい用量帯。',
+        whoFor: '初めて使う方・α-トコフェロール代替として',
+      },
+      {
+        dose: '100〜200mg/日',
+        category: 'スタンダード・心血管/脂質ケア',
+        effect: 'Atherosclerosis 2003 RCTでLDL-C −23%が報告された主流用量。心血管・脂質マーカー改善目的。',
+        whoFor: 'コレステロール・中性脂肪が気になる方',
+      },
+      {
+        dose: '200〜400mg/日',
+        category: '神経保護・本格運用',
+        effect: 'Gopalan 2014 RCTで脳白質病変進行抑制が報告された用量域（400mg/日 × 2年）。神経保護・抗酸化を本格的に行う用量帯。',
+        whoFor: '中高年で脳・認知機能の予防的ケアを行う方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'トコトリエノールと普通のビタミンE（トコフェロール）はどう違いますか？',
+        a: 'ビタミンEは8種（α/β/γ/δトコフェロール＋α/β/γ/δトコトリエノール）の総称で、市販の「ビタミンE」サプリの大半はα-トコフェロール（α-T）です。トコトリエノール（T3）は不飽和側鎖を持ち、細胞膜への移行・脂質ラフトでの動きが速く、in vitro抗酸化能がα-Tの約50倍とされる「スーパービタミンE」と呼ばれる種類です。脳・心血管・肝・骨への効果が複数のRCTで報告され、α-Tでは観察されにくい多面的作用が特徴。「普通のビタミンEで物足りない」層の選択肢として位置づけられます。',
+      },
+      {
+        q: 'パーム由来とアナトー由来はどちらが良いですか？',
+        a: '由来によって含まれるトコトリエノールの種類が異なります。パーム由来は「α/γ/δバランス型」で、γ-T3・δ-T3に加えてα-T3も含まれます。アナトー（赤色着色料原料の植物）由来は「δ-T3単独・90%以上」で、最も活性が高いとされるδ-T3を高濃度で摂取できます。臨床RCTの大半はパーム由来混合トコトリエノールで実施されており（Gopalan 2014・Atherosclerosis 2003等）、エビデンスベースで選ぶならパーム由来が無難です。「δ-T3に最適化したい」「アレルギー等でパーム由来を避けたい」層はアナトー由来を選びます。',
+      },
+      {
+        q: '普通のビタミンEと一緒に飲んで良いですか？',
+        a: '推奨されません。α-トコフェロール（普通のビタミンE）を高用量で併用すると、トコトリエノールの組織移行・代謝が阻害されることが報告されています（Life Sciences 2006レビュー）。マルチビタミンに含まれる程度のビタミンE（10〜30mg）は問題ありませんが、α-トコフェロール単独サプリ（400IU等）との併用は避け、トコトリエノールは独立して摂取するのが標準です。「ビタミンE全体」を底上げしたい場合は、α-T単独ではなくT3を選ぶ方が効率的です。',
+      },
+      {
+        q: 'ワルファリン等の抗凝固薬と併用できますか？',
+        a: '併用注意です。トコトリエノールはビタミンK代謝への直接影響は限定的とされますが、ビタミンE全般で抗血小板作用が報告されており、ワルファリン・DOAC（直接経口抗凝固薬）・抗血小板薬との併用で出血リスクが増加する可能性があります。服用中の方は併用前に必ず主治医・薬剤師に相談してください。手術予定がある場合は術前2週間の中止が推奨されます。「抗凝固薬を飲んでいるが心血管予防にビタミンEを取りたい」場合は医師判断が必須です。',
+      },
+      {
+        q: 'いつ効果を実感できますか？',
+        a: '効果のタイプで時間軸が大きく異なります。LDL-C・トリグリセリド等の脂質マーカー改善は4〜16週で観察される（Atherosclerosis 2003 RCT）。脳白質病変進行抑制等の神経保護効果は1〜2年の長期継続が前提（Gopalan 2014 RCT）。「即効性のある成分」ではなく、中長期の血液マーカー・脳画像での評価が現実的です。短期で「体感」を求める成分ではなく、「年単位で抗酸化・心血管・神経の基盤を整える」運用が向いています。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ワルファリン・DOAC（直接経口抗凝固薬）・抗血小板薬',
+        level: 'caution',
+        mechanism: 'ビタミンE全般で抗血小板作用が報告されており、抗凝固薬・抗血小板薬との併用で出血リスクが増加する可能性が指摘されている',
+        action: '服用中の方は併用前に必ず医師・薬剤師に相談する。手術予定がある場合は術前2週間の中止を検討',
+        evidence: 'theoretical',
+        source: 'Life Sciences 2006 review / NIH ODS Vitamin E fact sheet',
+      },
+      {
+        substance: 'α-トコフェロール（普通のビタミンE）大量サプリ',
+        level: 'caution',
+        mechanism: 'α-トコフェロールの大量摂取がトコトリエノールの組織移行・代謝を阻害することが報告されている',
+        action: 'α-トコフェロール単独サプリ（400IU等）との併用は避け、トコトリエノールは独立摂取する',
+        evidence: 'theoretical',
+        source: 'Life Sciences 2006 review',
+      },
+      {
+        substance: 'スタチン系脂質低下薬',
+        level: 'monitor',
+        mechanism: 'トコトリエノールはHMG-CoA還元酵素を阻害する作用が報告されており、スタチン系薬剤と作用が重複する可能性がある',
+        action: 'スタチン服用中の方は併用前に医師・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Atherosclerosis 2003 / Lipids 2007',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
 ]
 
 export const concerns: Concern[] = [
