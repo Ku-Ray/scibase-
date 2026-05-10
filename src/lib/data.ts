@@ -12707,6 +12707,883 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-10',
   },
+  {
+    slug: 'magnesium-malate',
+    nameJa: 'マグネシウムマレート',
+    nameEn: 'Magnesium Malate',
+    aliases: ['リンゴ酸マグネシウム', 'Mg malate', 'リンゴ酸Mg', 'magnesium malate'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'マグネシウムマレート（リンゴ酸Mg）｜疲労・線維筋痛の論文',
+    seoDescription: 'マグネシウムマレートはリンゴ酸とMgの結合型。クエン酸エネルギー回路（TCA）の中間体マレートを兼ね、慢性疲労・線維筋痛領域で小規模RCTあり。300〜1,200mg/日の使い分け・副作用・併用注意点を査読済み論文で解説。',
+    tagline: 'リンゴ酸（マレート）はTCA回路中間体・疲労・線維筋痛で検討された数少ないMg形態',
+    description:
+      'マグネシウムマレートはリンゴ酸（マレート）とマグネシウムの結合型で、リンゴ酸自体がミトコンドリアのクエン酸エネルギー回路（TCA回路）の中間体である点が他のMg形態と区別される。経口吸収率は酸化マグネシウムより高く、吸収後のリンゴ酸はエネルギー代謝に組み込まれる。Russell 1995（J Rheumatol）の線維筋痛パイロットRCTでマレート＋Mgの併用が高用量で疼痛改善傾向を示し、慢性疲労・線維筋痛領域で他のMg形態より優先される根拠とされる。下痢などの消化器症状は酸化Mgや塩化Mgより穏やかで、覚醒系の代謝特性から朝〜日中の摂取が現実的。',
+    concerns: ['fatigue', 'muscle', 'recovery', 'metabolism'],
+    papers: [
+      {
+        title: 'Treatment of fibromyalgia syndrome with Super Malic: a randomized, double blind, placebo controlled, crossover pilot study',
+        journal: 'Journal of Rheumatology',
+        year: 1995,
+        studyType: 'rct',
+        sampleSize: 24,
+        durationWeeks: 4,
+        keyFinding:
+          '線維筋痛症患者対象のクロスオーバーRCT。Super Malic（リンゴ酸+Mg）低用量では有意差なしも、用量増加（最大リンゴ酸2,400mg+Mg 600mg/日）のオープンラベル延長で疼痛・圧痛点スコアの改善傾向が報告された',
+      },
+      {
+        title: 'Magnesium and the inflammatory response: potential physiopathological implications',
+        journal: 'Archives of Biochemistry and Biophysics',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding:
+          'Mg欠乏が低悪性度全身性炎症と関連することを基礎研究・観察研究から包括レビュー。マレート型を含む有機酸キレートMgは細胞内Mg移行が良好と整理',
+      },
+      {
+        title: 'Bioavailability of US commercial magnesium preparations',
+        journal: 'Magnesium Research',
+        year: 2001,
+        studyType: 'observational',
+        keyFinding:
+          '市販Mg製剤の生体利用率比較。クエン酸・乳酸・グルコン酸等の有機酸キレート型は酸化Mg・硫酸Mgより尿中Mg排泄が有意に高く、吸収率が良好と報告された',
+      },
+    ],
+    dosageMin: 300,
+    dosageMax: 1200,
+    dosageUnit: 'mg/日',
+    timing: '朝〜日中の摂取が現実的（マレートのエネルギー代謝特性）。空腹時より食後で消化器症状を軽減',
+    duration: '疲労感の変化は4〜8週間・線維筋痛領域は8〜12週間以上の継続例が多い',
+    sideEffects: [
+      '高用量で軟便・下痢（酸化Mg・塩化Mgより穏やか）',
+      'まれに胃部不快感・吐き気',
+    ],
+    contraindications: [
+      '腎機能低下例（Mg排泄低下で蓄積リスク）',
+      '心ブロック・徐脈性不整脈（電解質バランス）',
+      '妊娠中・授乳中はサプリ補給開始前に医師相談',
+    ],
+    products: [],
+    whoFor: [
+      '慢性的な疲労感・倦怠感が続いている',
+      '酸化Mgで下痢になり継続できなかった',
+      '線維筋痛・繊維筋痛様の圧痛点症状がある',
+      'グリシン酸Mgは飲んでいるが日中の活力をもう一段上げたい',
+    ],
+    heroStat: { value: '300〜1,200mg/日', label: 'Russell 1995 線維筋痛パイロットRCTのマレート用量帯（Mg換算50〜200mg）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 4, stress: 4, sleep: 3, immunity: 3, metabolism: 6 },
+    dosageLevels: [
+      {
+        dose: '300〜500mg/日',
+        category: '入門・疲労ケア',
+        effect: '一般的な慢性疲労・倦怠感サポートとして用いられる用量帯。Mg換算で約50〜80mg/日。',
+        whoFor: '初めて使う方・酸化Mgで合わなかった方・コスパ重視',
+      },
+      {
+        dose: '600〜1,000mg/日',
+        category: '線維筋痛・本格運用',
+        effect: 'Russell 1995の用量増加群に近い用量帯。Mg換算で約100〜170mg/日。8週間以上の継続が前提。',
+        whoFor: '線維筋痛様の症状がある方・本格的に効果を検証したい方',
+      },
+      {
+        dose: '〜1,200mg/日',
+        category: '上限近辺・要医師相談',
+        effect: 'パイロットRCTのオープンラベル延長で用いられた上限帯。Mg換算で約200mg/日に近づく。',
+        whoFor: '医師管理下で本格運用する方のみ',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'マグネシウムマレートと他のMg形態（グリシン酸/酸化/クエン酸）はどう使い分けますか？',
+        a: 'グリシン酸Mgは睡眠・神経鎮静寄り、酸化Mgは便秘薬寄り（吸収率は低め）、クエン酸Mgは便通・生体利用率重視、マレートはエネルギー代謝・疲労・線維筋痛寄り、と形態で得意分野が分かれる傾向があります。日中の活力を狙うならマレート、就寝前ならグリシン酸、という使い分けが現実的です。',
+      },
+      {
+        q: '線維筋痛症の症状にどれくらいの量・期間が必要ですか？',
+        a: 'Russell 1995のパイロットRCTでは初期用量（リンゴ酸1,200mg+Mg 300mg/日相当）では有意差が出ず、オープンラベル延長で用量を最大2倍まで増やして改善傾向が報告されました。実用上は600〜1,000mg/日のマグネシウムマレートを8〜12週間以上継続することが現実的なラインで、医師管理下が望ましいレベルです。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: 'マレートはTCA回路中間体でエネルギー代謝に組み込まれるため、覚醒系の作用に近く朝〜日中の摂取が現実的です。グリシン酸Mgのような睡眠改善目的とは方向性が異なります。空腹時より食後の方が消化器症状（軟便等）が軽減されます。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: '疲労感・倦怠感の主観的変化は4〜8週間で報告例があります。線維筋痛様の症状は8〜12週間以上の継続が前提で、即効性を期待する成分ではありません。Mg欠乏が背景にある場合は早めに変化が出る一方、欠乏がない方は変化が小さい可能性があります。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '主な副作用は高用量での軟便・下痢ですが、酸化Mgや塩化Mgと比較すると穏やかです。腎機能低下例ではMgが体内に蓄積するリスクがあるため必ず医師相談が必要です。心ブロック・徐脈性不整脈の方も電解質バランスへの影響があるため使用前に医師相談を推奨します。妊娠中・授乳中はデータ不足のためサプリ補給開始前に医師相談してください。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗菌薬',
+        level: 'caution',
+        mechanism: 'Mgが消化管内でこれらの抗菌薬とキレート結合し、抗菌薬の吸収率を低下させる可能性が報告されている',
+        action: 'これらの抗菌薬服用時は、服用の2〜4時間前後を空けてMgサプリを摂取する。長期併用時は医師・薬剤師に相談する',
+        evidence: 'established',
+        source: 'PMC8626210 / Drugs.com Magnesium Interactions',
+      },
+      {
+        substance: 'ビスホスホネート系骨粗鬆症薬',
+        level: 'caution',
+        mechanism: 'Mgがビスホスホネートの吸収率を著しく低下させる可能性が添付文書で警告されている',
+        action: 'ビスホスホネート服用後30〜60分は他のミネラル・サプリと一緒に摂取しない。併用方法は主治医・薬剤師に確認する',
+        evidence: 'established',
+        source: 'Drugs.com Bisphosphonate Interactions',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
+  {
+    slug: 'magnesium-taurate',
+    nameJa: 'マグネシウムタウレート',
+    nameEn: 'Magnesium Taurate',
+    aliases: ['タウリン酸マグネシウム', 'Mg taurate', 'マグネシウムタウリン酸', 'magnesium taurate'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'マグネシウムタウレート｜心血管・血圧・タウリン併用の論文',
+    seoDescription: 'マグネシウムタウレートはタウリンとMgの結合型。Mg・タウリン双方の血圧降下メタ解析を背景に、心血管領域で支持される形態。形態単独の大規模RCTは未実施。300〜600mg/日の使い分け・副作用・併用注意点を解説。',
+    tagline: 'Mg+タウリンの結合型・心血管領域で支持されるが単独大規模RCTは未実施',
+    description:
+      'マグネシウムタウレートはMgとタウリン（含硫アミノ酸）の結合型で、Mg・タウリン双方が個別にメタ解析で血圧降下・心血管リスク低下と関連する点が形態選択の根拠とされる。経口吸収率はクエン酸Mg・グリシン酸Mg等の有機キレート型と同等水準と推定され、タウリンの神経鎮静作用と併せて不整脈・動悸の文脈でも検討される。ただし「マグネシウムタウレート」単独形態の大規模ヒトRCTはほぼ存在せず、Mg・タウリン個別のエビデンス・基礎研究・小規模臨床ベースで運用される段階。グリシン酸Mgが睡眠、マレートが疲労、と形態で得意分野が分かれる中、タウレートは「心血管・血圧」枠の選択肢として位置づけられる。',
+    concerns: ['cardiovascular', 'stress', 'sleep', 'metabolism'],
+    papers: [
+      {
+        title: 'Effects of magnesium supplementation on blood pressure: a meta-analysis of randomized double-blind placebo-controlled trials',
+        journal: 'Hypertension',
+        year: 2016,
+        studyType: 'meta-analysis',
+        sampleSize: 2028,
+        keyFinding:
+          'Mgサプリ介入RCT 34件・n=2,028のメタ解析で、収縮期血圧 -2.00mmHg、拡張期血圧 -1.78mmHgの低下が報告された（中央値368mg/日・3ヶ月以上）。形態によらずMg補給全般の心血管サポート根拠の中核',
+      },
+      {
+        title: 'Effect of taurine supplementation on blood pressure: a meta-analysis',
+        journal: 'Journal of Human Hypertension',
+        year: 2018,
+        studyType: 'meta-analysis',
+        sampleSize: 545,
+        keyFinding:
+          'タウリン経口補給RCT 7件・n=545のメタ解析で、収縮期血圧 -3.39mmHg、拡張期血圧 -1.96mmHgの低下が報告された（1.5〜6g/日・8〜12週）。形態としてのタウレートMgの心血管選好の根拠の一つ',
+      },
+      {
+        title: 'Complementary measures for promoting insulin sensitivity in skeletal muscle',
+        journal: 'Medical Hypotheses',
+        year: 2002,
+        studyType: 'observational',
+        keyFinding:
+          'Mg-タウレート結合型がインスリン感受性・血管内皮機能の文脈で相補的に作用する仮説を、基礎研究・既知のメタ解析を統合して提唱した仮説論文',
+      },
+    ],
+    dosageMin: 300,
+    dosageMax: 600,
+    dosageUnit: 'mg/日',
+    timing: '夕方〜就寝前（タウリンの神経鎮静作用との相性）。空腹時より食後で消化器症状を軽減',
+    duration: '血圧・動悸の主観的変化は4〜8週間・心血管リスクマーカーは12週間以上の継続が前提',
+    sideEffects: [
+      '高用量で軟便・下痢（有機キレート型は酸化Mgより穏やか）',
+      'タウリン高用量で一過性の血圧低下感・倦怠感の可能性',
+    ],
+    contraindications: [
+      '腎機能低下例（Mg排泄低下で蓄積リスク）',
+      '低血圧傾向の方（血圧降下作用の重複）',
+      '妊娠中・授乳中はサプリ補給開始前に医師相談',
+    ],
+    products: [],
+    whoFor: [
+      '血圧・動悸・心血管領域のサポートを重視する',
+      'グリシン酸Mgで睡眠は改善したが循環器系の安心材料が欲しい',
+      'カフェイン・ストレスで動悸が出やすい',
+      'タウリンの個別補給とMg補給を1製品にまとめたい',
+    ],
+    heroStat: { value: '-2.00 / -1.78mmHg', label: 'Mg介入メタ解析n=2,028の収縮期/拡張期血圧低下幅（Hypertension 2016）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 4, stress: 5, sleep: 5, immunity: 3, metabolism: 5 },
+    dosageLevels: [
+      {
+        dose: '300〜400mg/日',
+        category: '入門・血圧サポート',
+        effect: 'Mg換算で約50〜70mg/日。Mgメタ解析の中央値（368mg/日）より控えめだが、食事Mgとの合算で適正帯に入る用量。',
+        whoFor: '血圧管理を意識し始めた方・初めて使う方',
+      },
+      {
+        dose: '500〜600mg/日',
+        category: '本格運用',
+        effect: 'Mg換算で約80〜100mg/日。タウリン量は製品により200〜400mg程度を含むことが多い。8〜12週間の継続で血圧マーカー観察に十分な用量帯。',
+        whoFor: '血圧・動悸を本格的に管理したい方・主治医と相談済の方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '他のMg形態と何が違いますか？',
+        a: 'グリシン酸Mgは睡眠・神経鎮静寄り、酸化Mgは便秘薬寄り、クエン酸Mgは便通・生体利用率重視、マレートはエネルギー代謝・疲労寄り、タウレートは「Mg+タウリンの心血管・血圧サポート」枠として使い分けられます。タウリン自体の血圧降下メタ解析（J Hum Hypertens 2018）が形態選択の根拠の一つです。',
+      },
+      {
+        q: '心臓・血圧の薬を飲んでいる人は使えますか？',
+        a: '降圧薬（ARB・ACE阻害薬・Ca拮抗薬等）服用中はMg・タウリンの血圧降下作用が重複する可能性があり、使用前に必ず主治医・薬剤師に相談してください。利尿薬（フロセミド等）はMg排泄を増加させるため、併用時は血中Mgのモニタリングが推奨されます。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: 'タウリンの神経鎮静作用との相性から夕方〜就寝前の摂取が現実的です。グリシン酸Mgと同様に睡眠サポート目的でも使えますが、神経系への作用はグリシン酸Mgのほうが直接的です。空腹時より食後の方が消化器症状が軽減されます。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: '血圧・動悸の主観的変化は4〜8週間、客観的な家庭血圧記録の変化は8〜12週間で報告例があります。心血管リスクマーカー（CRP・脂質等）の変化を見る場合は12週間以上の継続が前提です。Mgメタ解析（Hypertension 2016）の効果サイズは収縮期-2mmHg程度と穏やかで、降圧薬の代替ではなく補完位置づけです。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '主な副作用は高用量での軟便・下痢ですが、有機キレート型のため酸化Mgより穏やかです。タウリン高用量では一過性の血圧低下感・倦怠感の報告があります。腎機能低下例・低血圧傾向の方・降圧薬服用中の方は使用前に医師相談が必須です。妊娠中・授乳中はデータ不足のためサプリ補給開始前に医師相談してください。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '降圧薬（ARB・ACE阻害薬・Ca拮抗薬等）',
+        level: 'caution',
+        mechanism: 'Mg・タウリン双方が血圧降下作用を持つため、降圧薬との併用で血圧低下が増強される可能性が理論的に指摘されている',
+        action: '降圧薬服用中は使用開始前に主治医・薬剤師に相談し、家庭血圧をモニタリングする',
+        evidence: 'theoretical',
+        source: 'Hypertension 2016 Mg meta / J Hum Hypertens 2018 taurine meta',
+      },
+      {
+        substance: 'ループ利尿薬（フロセミド等）',
+        level: 'caution',
+        mechanism: 'ループ利尿薬は尿中Mg排泄を増加させ、低Mg血症のリスクを高める。Mgサプリ補給で補正される一方、用量設定の調整が必要',
+        action: 'ループ利尿薬長期服用中は血中Mg濃度を主治医にモニタリングしてもらいながら使用する',
+        evidence: 'established',
+        source: 'Drugs.com Loop Diuretic Magnesium Interactions',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
+  {
+    slug: 'vitamin-b1',
+    nameJa: 'ビタミンB1（チアミン）',
+    nameEn: 'Vitamin B1 (Thiamine)',
+    aliases: ['チアミン', 'thiamine', 'B1', 'ビタミンB1', 'ベンフォチアミン', 'benfotiamine', 'TPP', 'チアミン塩酸塩'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ビタミンB1（チアミン）｜疲労・神経・糖尿病性神経障害の論文',
+    seoDescription: 'ビタミンB1（チアミン）はTPPを補酵素として糖代謝・神経機能の中核を担う水溶性ビタミン。脂溶性誘導体ベンフォチアミンは糖尿病性神経障害RCTでエビデンス。1.1〜100mg/日の使い分け・副作用・併用注意点を査読済み論文で解説。',
+    tagline: '糖代謝・神経の補酵素TPPの基質・脂溶性誘導体ベンフォチアミンが吸収優位',
+    description:
+      'ビタミンB1（チアミン）は水溶性ビタミンで、活性型チアミン二リン酸（TPP）として糖代謝のキーとなる酵素群（ピルビン酸デヒドロゲナーゼ・トランスケトラーゼ等）の必須補酵素を担う。神経細胞・心筋・骨格筋でのエネルギー産生に関与し、欠乏すると脚気（末梢神経炎・心不全）・ウェルニッケ脳症（記憶・運動失調）を起こす。日本人の食事摂取基準は成人1.1〜1.4mg/日（厚労省）だが、精製炭水化物中心の現代食・アルコール多飲・利尿薬長期服用で慢性的に不足しやすい。脂溶性誘導体ベンフォチアミンはBENDIP研究（2008）等で糖尿病性神経障害の症状改善が報告され、通常チアミンより吸収・組織移行が優位とされる。',
+    concerns: ['fatigue', 'cognitive', 'metabolism', 'cardiovascular', 'recovery'],
+    papers: [
+      {
+        title: 'Benfotiamine in diabetic polyneuropathy (BENDIP): results of a 6-week randomized controlled trial',
+        journal: 'Experimental and Clinical Endocrinology & Diabetes',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 165,
+        durationWeeks: 6,
+        keyFinding:
+          '糖尿病性多発神経障害患者対象のRCTで、ベンフォチアミン高用量群（600mg/日）はプラセボに対しNeuropathy Symptom Score（NSS）の有意な低下を示した（p=0.033）。低用量300mg/日でも改善傾向',
+      },
+      {
+        title: 'Thiamine deficiency and delirium',
+        journal: 'Innovations in Clinical Neuroscience',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding:
+          'チアミン欠乏とウェルニッケ脳症・せん妄の関連を疫学・基礎研究から包括レビュー。アルコール多飲・絶食・吸収不全・長期利尿薬使用が高リスク群と整理',
+      },
+      {
+        title: 'Thiamine status, diuretic medications, and the management of congestive heart failure',
+        journal: 'Journal of the American College of Cardiology',
+        year: 2006,
+        studyType: 'observational',
+        keyFinding:
+          'うっ血性心不全患者のチアミン欠乏率を観察研究から統合し、ループ利尿薬長期服用が尿中チアミン排泄を増加させる機序を解説。心不全管理におけるB1補給の意義を示唆',
+      },
+    ],
+    dosageMin: 1.1,
+    dosageMax: 100,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒の摂取で吸収が安定する。1日1回・朝食時が現実的',
+    duration: '欠乏症の急性回復は2〜4週間・神経症状は8〜12週間以上の継続例が多い',
+    sideEffects: [
+      '経口摂取で副作用報告はほぼなし（過剰分は尿中排泄）',
+      'まれに皮膚刺激・かゆみ（高用量）',
+    ],
+    contraindications: [
+      'チアミン製剤への過敏症既往',
+      '注射製剤は重篤なアナフィラキシー報告あり（経口は安全）',
+    ],
+    products: [],
+    whoFor: [
+      'アルコールを習慣的に飲む（B1消費が増える）',
+      'ループ利尿薬を長期服用している（尿中排泄増加）',
+      '糖尿病性神経障害・末梢のしびれが気になる',
+      '精製炭水化物中心の食生活で慢性疲労を感じる',
+      '激しい運動・スポーツでエネルギー消費が大きい',
+    ],
+    heroStat: { value: 'NSS有意低下', label: 'BENDIP RCT n=165・ベンフォチアミン600mg/日 6週で糖尿病性神経障害スコア改善' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 6, stress: 4, sleep: 3, immunity: 3, metabolism: 7 },
+    dosageLevels: [
+      {
+        dose: '1.1〜1.4mg/日',
+        category: '食事摂取基準',
+        effect: '厚労省の成人推奨量。通常の食事（豚肉・全粒穀物・豆類）でほぼカバーできる水準。',
+        whoFor: 'バランスの取れた食事を維持できている方',
+      },
+      {
+        dose: '50〜100mg/日',
+        category: 'サプリ標準・疲労ケア',
+        effect: 'マルチビタミン・B群コンプレックス製品の標準帯。アルコール多飲・利尿薬服用・慢性疲労の補正に用いられる。',
+        whoFor: 'アルコール常飲・利尿薬服用・慢性疲労の方',
+      },
+      {
+        dose: '300〜600mg/日（ベンフォチアミン）',
+        category: '糖尿病性神経障害・要医師相談',
+        effect: 'BENDIP RCTで糖尿病性神経障害スコアの改善が報告された脂溶性誘導体ベンフォチアミンの用量帯。',
+        whoFor: '糖尿病性神経障害の管理を主治医と進めている方のみ',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '通常チアミンとベンフォチアミンの違いは？',
+        a: 'ベンフォチアミンは脂溶性のチアミン誘導体で、腸管での吸収率・血中濃度・組織移行性が通常の水溶性チアミン（チアミン塩酸塩・モノニトレート）より高いと報告されています。糖尿病性神経障害領域ではBENDIP RCTで600mg/日のベンフォチアミンが症状スコアを改善しました。一般的な疲労ケア用途では通常チアミン50〜100mg/日でも十分なケースが多く、神経障害に踏み込む場合のみベンフォチアミン採用が現実的です。',
+      },
+      {
+        q: 'アルコールを飲む人は多めに必要ですか？',
+        a: 'アルコールはチアミン吸収を阻害し、肝臓でのTPP変換も低下させるため、アルコール常飲者はB1欠乏リスクが上昇します。長期大量飲酒者ではウェルニッケ脳症（記憶・歩行障害）が問題になり、医療現場では予防的にチアミン補給が行われます。一般的な飲酒習慣のある方も、食事摂取基準より高めの50〜100mg/日のサプリ補給が予防的に検討される範囲です。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: '食事と一緒の摂取で吸収が安定します。1日1回・朝食時の摂取が現実的で、過剰分は水溶性のため尿中に排泄されます。空腹時摂取でも吸収は可能ですが、消化器症状が出にくくする観点で食後が無難です。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: '欠乏症の急性回復（脚気・倦怠感）は2〜4週間で報告例があります。神経症状（しびれ・異常感覚）は8〜12週間以上の継続が前提で、BENDIP RCTのベンフォチアミン群でも有意差は6週時点で出ました。慢性疲労が背景にB1欠乏ある場合は早めに変化が出る一方、欠乏がない方は変化が小さい可能性があります。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '経口摂取での副作用報告はほぼありません。水溶性のため過剰分は尿中に排泄され、UL（許容上限摂取量）も設定されていません。まれに高用量で皮膚刺激・かゆみの報告があります。注射製剤では重篤なアナフィラキシーの症例報告がありますが、これは経口製剤には当てはまりません。妊娠中・授乳中は通常用量での使用に問題はありませんが、高用量サプリの場合は医師相談が安全です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ループ利尿薬（フロセミド等）',
+        level: 'monitor',
+        mechanism: 'ループ利尿薬は尿中チアミン排泄を増加させ、長期服用で慢性的なB1欠乏を引き起こす可能性が報告されている',
+        action: 'ループ利尿薬を長期服用している方はB1補給の意義が大きい。具体的な用量設定は主治医・薬剤師に相談する',
+        evidence: 'established',
+        source: 'JACC 2006 Thiamine Status Diuretics',
+      },
+      {
+        substance: '5-フルオロウラシル等の抗がん剤',
+        level: 'caution',
+        mechanism: 'チアミン高用量がペントースリン酸経路を介して一部の抗がん剤の作用に影響する可能性が基礎研究で示唆されている',
+        action: '抗がん治療中の高用量B1補給は主治医・薬剤師に必ず相談する',
+        evidence: 'theoretical',
+        source: 'Cancer Lett 2013 Thiamine 5-FU review',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
+  {
+    slug: 'vitamin-b2',
+    nameJa: 'ビタミンB2（リボフラビン）',
+    nameEn: 'Vitamin B2 (Riboflavin)',
+    aliases: ['リボフラビン', 'riboflavin', 'B2', 'ビタミンB2', 'FAD', 'FMN'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ビタミンB2（リボフラビン）｜片頭痛予防・エネルギー代謝の論文',
+    seoDescription: 'ビタミンB2（リボフラビン）はFAD・FMNを補酵素としてエネルギー代謝の中核を担う水溶性ビタミン。片頭痛予防にRCTエビデンスあり（400mg/日 12週）。1.4〜400mg/日の使い分け・副作用・併用注意点を査読済み論文で解説。',
+    tagline: 'FAD・FMNを補酵素とするエネルギー代謝のハブ・片頭痛予防のRCTエビデンスあり',
+    description:
+      'ビタミンB2（リボフラビン）は水溶性ビタミンで、活性型FAD（フラビンアデニンジヌクレオチド）・FMN（フラビンモノヌクレオチド）として呼吸鎖複合体・脂肪酸β酸化・アミノ酸代謝の補酵素を担う。日本人の食事摂取基準は成人1.2〜1.6mg/日（厚労省）。Schoenen 1998（Neurology）のRCTで400mg/日 3ヶ月の高用量補給が片頭痛発作頻度を有意に低下させ、米国神経学会・European Federation of Neurological Societiesのガイドラインで片頭痛予防のレベルB推奨に位置づけられている。高用量補給で尿が黄色〜オレンジ色になるが、これは過剰分の生理的排泄で問題ない。',
+    concerns: ['fatigue', 'cognitive', 'metabolism', 'eye-health', 'recovery'],
+    papers: [
+      {
+        title: 'Effectiveness of high-dose riboflavin in migraine prophylaxis: a randomized controlled trial',
+        journal: 'Neurology',
+        year: 1998,
+        studyType: 'rct',
+        sampleSize: 55,
+        durationWeeks: 12,
+        keyFinding:
+          '片頭痛患者対象のRCT。リボフラビン400mg/日 3ヶ月でプラセボに対し発作頻度・発作日数が有意に低下した（responder率 59% vs 15%・p=0.002）。米国神経学会の片頭痛予防ガイドラインのレベルB根拠',
+      },
+      {
+        title: 'High-dose riboflavin treatment is efficacious in migraine prophylaxis: an open study in a tertiary care centre',
+        journal: 'European Journal of Neurology',
+        year: 2004,
+        studyType: 'observational',
+        sampleSize: 23,
+        durationWeeks: 24,
+        keyFinding:
+          '片頭痛専門外来でのリボフラビン400mg/日 6ヶ月のオープン試験で、発作頻度の中央値が4回/月から2回/月に低下した。長期継続での効果維持を確認',
+      },
+      {
+        title: 'Riboflavin status in humans',
+        journal: 'Annals of the New York Academy of Sciences',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding:
+          'リボフラビン栄養状態を評価するEGRAC（赤血球グルタチオン還元酵素活性係数）法を含む基準と、世界各国の摂取状況・欠乏率を統合レビュー。日本人女性で軽度欠乏率が比較的高いと報告',
+      },
+    ],
+    dosageMin: 1.4,
+    dosageMax: 400,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒の摂取で吸収が安定する。高用量片頭痛予防は朝食時の1回服用が現実的',
+    duration: '片頭痛予防は12週間以上の継続が前提（Schoenen 1998 RCT準拠）',
+    sideEffects: [
+      '高用量で尿が黄色〜オレンジ色（生理的排泄・問題なし）',
+      'まれに下痢・多尿（高用量）',
+      '経口摂取で重篤な副作用はほぼ報告なし',
+    ],
+    contraindications: [
+      'リボフラビン製剤への過敏症既往',
+    ],
+    products: [],
+    whoFor: [
+      '片頭痛予防の選択肢を増やしたい',
+      'B群サプリで疲労ケアをしたい',
+      'ベジタリアン・ビーガンで乳製品摂取が少ない',
+      'アルコール常飲でB群消費が増えている',
+      '激しいスポーツでエネルギー代謝負荷が高い',
+    ],
+    heroStat: { value: '59% vs 15%', label: 'Schoenen 1998 RCT n=55・400mg/日 3ヶ月の片頭痛50%以上改善率（プラセボ比）' },
+    axisScores: { antiAging: 4, skin: 3, cognitive: 5, stress: 3, sleep: 3, immunity: 3, metabolism: 7 },
+    dosageLevels: [
+      {
+        dose: '1.2〜1.6mg/日',
+        category: '食事摂取基準',
+        effect: '厚労省の成人推奨量。乳製品・肉類・卵・葉物野菜でほぼカバーできる水準。',
+        whoFor: 'バランスの取れた食事を維持できている方',
+      },
+      {
+        dose: '50〜100mg/日',
+        category: 'サプリ標準・B群補給',
+        effect: 'マルチビタミン・B群コンプレックス製品の標準帯。一般的な疲労ケア・代謝サポート用途。',
+        whoFor: 'アルコール常飲・偏食・慢性疲労の方',
+      },
+      {
+        dose: '400mg/日',
+        category: '片頭痛予防・要医師相談',
+        effect: 'Schoenen 1998 RCTで片頭痛予防効果が報告された用量帯。12週間以上の継続が前提。米国神経学会ガイドラインのレベルB推奨。',
+        whoFor: '片頭痛の予防選択肢を主治医と相談している方のみ',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '片頭痛予防に本当に効くんですか？',
+        a: 'Schoenen 1998（Neurology）のRCTで、リボフラビン400mg/日を3ヶ月継続したグループは、プラセボに対し片頭痛発作頻度が50%以上改善した人の割合が59%（プラセボ15%）と有意に高い結果でした（p=0.002）。米国神経学会の片頭痛予防ガイドラインでもレベルB（中等度の根拠）で位置づけられています。ただし「治る」訳ではなく「予防的に発作頻度を下げる選択肢」であり、発作時の頓服薬の代替ではありません。',
+      },
+      {
+        q: '尿が黄色になるのは大丈夫？',
+        a: '高用量リボフラビン摂取で尿が鮮やかな黄色〜オレンジ色になりますが、これは過剰分の生理的排泄で問題ありません。むしろ吸収できなかった分が排出されている目印として機能します。色が出るからといって「無駄」という訳ではなく、必要量はちゃんと組織に取り込まれた上での余剰分が出ています。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: '食事と一緒の摂取で吸収が安定します。リボフラビンの腸管吸収には飽和性があり、1回大量より分割摂取の方が効率的という基礎研究もありますが、片頭痛予防のRCTでは1日1回400mg服用で効果が確認されているため、朝食時の1回服用が現実的です。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: '片頭痛予防効果はSchoenen 1998 RCTで4週時点から有意差が出始め、3ヶ月時点で最大効果が報告されました。12週間以上の継続が前提です。一般的な疲労ケア・口角炎・口内炎の改善は2〜4週間で報告例が多く、欠乏が背景にある場合は早めに変化が出る傾向があります。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '経口摂取での重篤な副作用報告はほぼありません。水溶性のため過剰分は尿中に排泄され、UL（許容上限摂取量）も設定されていません。最も多い「副作用」は尿の黄変ですが、これは生理的排泄で問題ありません。まれに高用量で下痢・多尿の報告があります。妊娠中・授乳中は通常用量での使用に問題はありませんが、片頭痛予防用量400mg/日は医師相談が安全です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '三環系抗うつ薬・抗マラリア薬（クロロキン等）',
+        level: 'monitor',
+        mechanism: 'これらの薬剤はリボフラビンの活性化（FAD・FMNへの変換）を阻害する可能性が基礎研究で報告されている。逆にリボフラビン補給で薬効が変動する可能性は低いとされる',
+        action: '長期併用時はB群補給の意義が高まる。具体的な用量設定は主治医・薬剤師に相談する',
+        evidence: 'theoretical',
+        source: 'Ann NY Acad Sci 2018 Riboflavin Status review',
+      },
+      {
+        substance: '光線療法・光感作性薬剤',
+        level: 'monitor',
+        mechanism: 'リボフラビンは光感受性物質で、紫外線照射下で分解される。光線療法を受けている方は服用タイミングに留意',
+        action: '光線療法中は治療直前のリボフラビン高用量摂取を避け、主治医に服用状況を伝える',
+        evidence: 'theoretical',
+        source: 'Photochem Photobiol 2019 Riboflavin photodegradation review',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
+  {
+    slug: 'copper-mineral',
+    nameJa: '銅（ミネラル）',
+    nameEn: 'Copper',
+    aliases: ['銅', 'Cu', 'copper', 'コッパー', 'グルコン酸銅', 'ビスグリシン酸銅'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: '銅（Copper）｜亜鉛との比率・鉄代謝・隠れミネラルの論文',
+    seoDescription: '銅は鉄代謝・コラーゲン架橋・抗酸化酵素SOD1の必須微量ミネラル。亜鉛サプリ長期服用で銅欠乏リスクが上昇（Zn:Cu比15:1超）。0.9〜3mg/日の使い分け・副作用・併用注意点を査読済み論文で解説。',
+    tagline: '鉄代謝・コラーゲン架橋・SOD1の補因子・亜鉛サプリと一緒に管理する隠れミネラル',
+    description:
+      '銅は鉄代謝（セルロプラスミンを介した3価鉄への変換）・コラーゲン架橋（リジルオキシダーゼ）・抗酸化酵素Cu/Zn-SOD1・神経伝達物質合成（ドーパミンβヒドロキシラーゼ）等を補酵素として支える必須微量ミネラル。日本人の食事摂取基準は成人0.7〜0.9mg/日（厚労省）でULは10mg/日。一般食（魚介・ナッツ・全粒穀物・チョコレート）でほぼ充足するが、亜鉛サプリを長期高用量（50mg/日以上）で服用するとZn:Cu吸収競合により銅欠乏が発症するリスクが知られ、Zn:Cu比15:1を超えないバランス管理が推奨される。銅欠乏は貧血・好中球減少・脊髄症（脱髄）として現れるため、長期亜鉛サプリ層では銅補給の意義が大きい。',
+    concerns: ['fatigue', 'immunity', 'metabolism', 'cardiovascular', 'cognitive'],
+    papers: [
+      {
+        title: 'Zinc, copper, and blood pressure: human population studies',
+        journal: 'Medicina (Kaunas)',
+        year: 2019,
+        studyType: 'observational',
+        keyFinding:
+          'ヒト集団研究を統合し、Zn:Cu比のアンバランス（高Zn・低Cu）が血圧上昇・心血管リスクと関連することを観察研究レベルで報告。Zn:Cu比15:1超で銅欠乏症状リスク上昇',
+      },
+      {
+        title: 'Copper deficiency myelopathy: a clinical mimicker of subacute combined degeneration',
+        journal: 'Annals of Indian Academy of Neurology',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding:
+          '銅欠乏脊髄症がビタミンB12欠乏（亜急性連合脊髄変性症）に類似する症状を呈すること、亜鉛サプリ長期服用が主要な医原性原因であることを症例報告・観察研究から統合',
+      },
+      {
+        title: 'Copper, zinc, and iron in selected skin diseases',
+        journal: 'Postępy Higieny i Medycyny Doświadczalnej',
+        year: 2020,
+        studyType: 'observational',
+        keyFinding:
+          '皮膚疾患（白斑・乾癬・脱毛症等）における銅・亜鉛・鉄の血清濃度とZn:Cu比のアンバランスが多くの観察研究で報告されていることを統合',
+      },
+    ],
+    dosageMin: 0.9,
+    dosageMax: 3,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒の摂取で吸収が安定する。亜鉛サプリと別タイミング（2時間以上空ける）が現実的',
+    duration: '欠乏症の補正は8〜12週間・血清セルロプラスミンの正常化は12週間以上',
+    sideEffects: [
+      '高用量（10mg/日超）で吐き気・腹痛・肝障害',
+      '通常用量（〜3mg/日）でほぼ報告なし',
+    ],
+    contraindications: [
+      'ウィルソン病（銅蓄積疾患・絶対禁忌）',
+      '肝機能低下例（要医師相談）',
+      '妊娠中・授乳中はサプリ補給開始前に医師相談',
+    ],
+    products: [],
+    whoFor: [
+      '亜鉛サプリを長期（3ヶ月以上）服用している',
+      '原因不明の貧血・好中球減少が指摘された',
+      'コラーゲンサプリで効果実感が薄い（架橋酵素の補因子不足の可能性）',
+      'ベジタリアン・ビーガンで魚介・肉類摂取が少ない',
+    ],
+    heroStat: { value: 'Zn:Cu比 15:1', label: '銅欠乏発症リスクが上昇する亜鉛/銅摂取比の境界（観察研究）' },
+    axisScores: { antiAging: 4, skin: 4, cognitive: 4, stress: 2, sleep: 2, immunity: 5, metabolism: 5 },
+    dosageLevels: [
+      {
+        dose: '0.7〜0.9mg/日',
+        category: '食事摂取基準',
+        effect: '厚労省の成人推奨量。一般的な日本食（魚介・ナッツ・全粒穀物・チョコレート）でほぼカバーできる水準。',
+        whoFor: 'バランスの取れた食事を維持できている方',
+      },
+      {
+        dose: '1〜2mg/日',
+        category: '亜鉛併用バランス',
+        effect: '亜鉛15〜30mg/日のサプリと組み合わせる場合のZn:Cu比15:1以下を維持する標準帯。',
+        whoFor: '亜鉛サプリを習慣的に服用している方',
+      },
+      {
+        dose: '2〜3mg/日',
+        category: '欠乏補正・要医師相談',
+        effect: '銅欠乏が指摘された場合の補正用量帯。長期高用量亜鉛使用者で発症した医原性銅欠乏の補正に用いられる。',
+        whoFor: '医師から銅欠乏を指摘された方のみ',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '亜鉛サプリと一緒に銅も飲んだ方がいいですか？',
+        a: '亜鉛50mg/日以上を3ヶ月以上服用する場合、銅欠乏リスクが上昇するため銅1〜2mg/日の併用が推奨されます。Zn:Cu比15:1を超えないバランスが目安です。亜鉛単体15〜30mg/日の短期服用（2〜3ヶ月以内）であれば食事銅でほぼ充足するため、銅サプリ単独追加は不要なケースが多いです。市販の亜鉛サプリには銅0.5〜2mg配合の製品もあり、長期服用ならそちらが安全です。',
+      },
+      {
+        q: '銅は摂りすぎが怖いと聞きましたが？',
+        a: 'UL（許容上限摂取量）は成人10mg/日で、一般的なサプリ用量（〜3mg/日）であれば食事銅と合算しても上限を大きく下回ります。本当に怖いのは「ウィルソン病」という遺伝性の銅蓄積疾患で、これは絶対禁忌です。健常者で通常用量を守る限り、銅過剰のリスクは低いと評価されています。一方、慢性的な高用量サプリ服用は肝障害リスクがあるため避けてください。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: '食事と一緒の摂取で吸収が安定します。亜鉛サプリと一緒に飲むと吸収競合（Zn:Cu吸収干渉）が起きるため、亜鉛と銅は2時間以上空けて摂取するのが現実的です。例：朝食時に銅、昼食時または就寝前に亜鉛、という分け方。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: '銅欠乏の補正は8〜12週間で血清セルロプラスミン濃度の正常化が報告されます。貧血・好中球減少の改善はそれ以降に現れる傾向があり、12週間以上の継続が前提です。サプリ単独補給による「健常者の活力アップ」は明確なエビデンスがなく、欠乏が背景にある場合のみ意義のある成分です。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '通常用量（〜3mg/日）での副作用報告はほぼありません。10mg/日を超える高用量で吐き気・腹痛・肝障害のリスクが上昇します。ウィルソン病（遺伝性銅蓄積疾患）の方は絶対禁忌で、知らずにサプリを使用すると重篤な肝障害・神経症状を起こす可能性があります。原因不明の手指の震え・性格変化・肝機能異常がある場合は使用前にウィルソン病の鑑別が推奨されます。妊娠中・授乳中はサプリ補給開始前に医師相談してください。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '亜鉛サプリ・亜鉛強化食品',
+        level: 'caution',
+        mechanism: '亜鉛と銅は腸管吸収で競合し、Zn:Cu比15:1を超える長期摂取で銅欠乏（貧血・好中球減少・脊髄症）が発症する症例が報告されている',
+        action: '亜鉛サプリ長期服用時は銅0.5〜2mg/日の併用、または亜鉛と銅を2時間以上空けて摂取する。バランスは主治医・薬剤師に相談する',
+        evidence: 'established',
+        source: 'Ann Indian Acad Neurol 2014 Copper Deficiency Myelopathy',
+      },
+      {
+        substance: 'ペニシラミン・トリエンチン（ウィルソン病治療薬）',
+        level: 'avoid',
+        mechanism: 'これらの薬剤は体内銅の排泄促進が目的のため、銅サプリ補給は治療を直接妨害する',
+        action: 'ウィルソン病治療中は銅サプリを絶対に服用しない。サプリ全般を主治医に確認する',
+        evidence: 'established',
+        source: 'Drugs.com Penicillamine / Trientine',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
+  {
+    slug: 'manganese',
+    nameJa: 'マンガン',
+    nameEn: 'Manganese',
+    aliases: ['Mn', 'manganese', 'マンガン', 'グルコン酸マンガン', 'クエン酸マンガン'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'マンガン（Manganese）｜MnSOD・骨・抗酸化の論文',
+    seoDescription: 'マンガンはミトコンドリア抗酸化酵素MnSOD・骨形成・グルコース代謝の必須微量ミネラル。日常食で不足はまれで、過剰摂取が逆にリスク（神経毒性）。1.8〜11mg/日の使い分け・副作用・併用注意点を査読済み論文で解説。',
+    tagline: 'ミトコンドリア抗酸化酵素MnSODの補因子・日常食で不足はまれで過剰の方が問題',
+    description:
+      'マンガンはミトコンドリア抗酸化酵素MnSOD（マンガン依存性スーパーオキシドジスムターゼ）・骨形成酵素（プロテオグリカン合成）・糖新生酵素（ピルビン酸カルボキシラーゼ）等の補因子を担う必須微量ミネラル。日本人の食事摂取基準は成人3.5〜4mg/日・ULは11mg/日（厚労省）。穀物・ナッツ・茶・葉物野菜に豊富で、日常的な食事をしている方は不足することはまれ。むしろ過剰摂取（特に長期飲用水汚染・職業曝露）でパーキンソン症候群様の神経毒性が起こり得るため、サプリ単独高用量は推奨されない。マルチビタミンミネラルサプリに含まれる1〜2mg/日程度の量が、補給対象として現実的なライン。',
+    concerns: ['bone', 'metabolism', 'longevity', 'cognitive'],
+    papers: [
+      {
+        title: 'Manganese is essential for neuronal health',
+        journal: 'Annual Review of Nutrition',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding:
+          'マンガンの神経機能における二相性（必須栄養素としての役割と過剰時の神経毒性）を基礎研究・疫学から包括レビュー。MnSODミトコンドリア抗酸化の中核機能と過剰時のドパミン系障害を整理',
+      },
+      {
+        title: 'Manganese-induced parkinsonism and Parkinson\'s disease: shared and distinguishable features',
+        journal: 'International Journal of Environmental Research and Public Health',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding:
+          '職業曝露・飲用水汚染による慢性マンガン中毒のパーキンソン症候群症状と、特発性パーキンソン病との臨床・画像所見の比較を観察研究レベルで統合。サプリ過剰摂取の安全域を考察',
+      },
+      {
+        title: 'Effects of magnesium, calcium, and manganese supplementation on bone mineral density',
+        journal: 'Journal of Nutrition Health and Aging',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding:
+          '閉経後女性のミネラル補給と骨密度の関連を横断的に検討した観察研究。Mn・Mg・Ca・Cuの複合補給が腰椎骨密度の維持と関連する可能性を示唆',
+      },
+    ],
+    dosageMin: 1.8,
+    dosageMax: 11,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒の摂取で吸収が安定する',
+    duration: '骨・抗酸化マーカーの変化は12〜24週間以上の継続が前提',
+    sideEffects: [
+      '通常用量（〜5mg/日）でほぼ報告なし',
+      '長期高用量で神経毒性（パーキンソン症候群様症状）の報告あり',
+      '肝機能低下例で蓄積リスク上昇',
+    ],
+    contraindications: [
+      '肝機能低下例・肝硬変（マンガン排泄低下で蓄積）',
+      'パーキンソン病・運動症候群（症状悪化リスク）',
+      '妊娠中・授乳中はサプリ補給開始前に医師相談',
+    ],
+    products: [],
+    whoFor: [
+      'マルチビタミンミネラルで微量元素を補完したい',
+      '閉経後で骨密度が気になる',
+      '極端な穀物・ナッツ排除食をしている（不足リスク）',
+      '飲用水のマンガン濃度が高くない地域に住んでいる',
+    ],
+    heroStat: { value: 'UL 11mg/日', label: '厚労省設定の許容上限摂取量・サプリ単独高用量はこの上限を意識' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 3, metabolism: 5 },
+    dosageLevels: [
+      {
+        dose: '1.8〜2.3mg/日',
+        category: '食事摂取基準',
+        effect: '厚労省の成人推奨量（男性4.0/女性3.5は目安量）。穀物・ナッツ・茶・葉物野菜でほぼカバーできる水準。',
+        whoFor: 'バランスの取れた食事を維持できている方',
+      },
+      {
+        dose: '1〜2mg/日',
+        category: 'マルチサプリ標準',
+        effect: 'マルチビタミンミネラル製品の標準配合帯。食事との合算でも上限11mg/日を大きく下回る。',
+        whoFor: 'マルチで微量元素を補完したい方',
+      },
+      {
+        dose: '〜5mg/日（単独）',
+        category: '骨密度ケア・要医師相談',
+        effect: '閉経後女性の骨密度維持研究で用いられた用量帯。Mg・Ca・Cuとの組合せが多い。',
+        whoFor: '骨密度を主治医と管理している方のみ',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'マンガンサプリは日常的に必要ですか？',
+        a: '日本人の食事摂取基準（3.5〜4mg/日）は穀物・ナッツ・茶・葉物野菜を含む通常食でほぼ充足するため、サプリ単独で銅・亜鉛のように積極補給する必要性は薄いミネラルです。むしろ「マルチビタミンミネラルに含まれる微量配合（1〜2mg/日）で十分」が基本姿勢です。極端な穀物・ナッツ排除食をしている方や、長期の経腸栄養例では不足リスクが上がります。',
+      },
+      {
+        q: '過剰摂取の方が問題と聞きましたが？',
+        a: 'マンガンは「必須栄養素だが過剰でリスクが上がる二相性」が他の微量元素より顕著です。職業曝露（溶接ヒューム）・飲用水汚染による慢性過剰では、パーキンソン症候群様の運動障害（震え・歩行障害・無表情）が報告されています。サプリ起因の症例はまれですが、肝機能低下例ではマンガン排泄が低下するため蓄積リスクが上昇します。UL（11mg/日）を超える長期摂取は避けてください。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: '食事と一緒の摂取で吸収が安定します。鉄サプリと一緒に飲むと相互に吸収を阻害する可能性があるため、2時間以上空けて摂取するのが現実的です。1日1回・朝食または夕食時の摂取で問題ありません。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: '骨密度・抗酸化マーカーの変化は12〜24週間以上の継続が前提で、即効性を期待する成分ではありません。健常者の主観的な「活力アップ」「肌改善」等の効果は明確なエビデンスがなく、欠乏が背景にある場合や閉経後女性の骨ケアの一部として補完的に位置づけられる成分です。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '通常用量（〜5mg/日）での副作用報告はほぼありません。長期高用量・職業曝露・飲用水汚染ではパーキンソン症候群様の神経毒性が報告されています。肝機能低下例ではマンガンが体内に蓄積するため、肝硬変・重度肝機能障害の方は使用を控えてください。パーキンソン病・運動症候群の方も症状悪化リスクから医師相談が必須です。妊娠中・授乳中はサプリ補給開始前に医師相談してください。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '鉄サプリ・鉄強化食品',
+        level: 'caution',
+        mechanism: '鉄とマンガンは腸管吸収で競合し、相互に吸収を阻害する可能性が基礎研究で報告されている',
+        action: '鉄サプリとマンガンサプリは2時間以上空けて摂取する。長期併用時の用量設定は主治医・薬剤師に相談する',
+        evidence: 'established',
+        source: 'Annu Rev Nutr 2015 Manganese Essential Neuronal Health',
+      },
+      {
+        substance: 'テトラサイクリン系・キノロン系抗菌薬',
+        level: 'caution',
+        mechanism: 'マンガンが消化管内でこれらの抗菌薬とキレート結合し、抗菌薬の吸収率を低下させる可能性が報告されている',
+        action: 'これらの抗菌薬服用時は、服用の2〜4時間前後を空けてマンガンサプリを摂取する',
+        evidence: 'established',
+        source: 'Drugs.com Manganese Interactions',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
+  {
+    slug: 'boron',
+    nameJa: 'ホウ素',
+    nameEn: 'Boron',
+    aliases: ['B', 'boron', 'ボロン', 'ボロンサプリ', 'ホウ酸ナトリウム'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ホウ素（Boron）｜テストステロン・骨・関節の論文',
+    seoDescription: 'ホウ素は骨代謝・性ホルモン・関節サポートに関わる必須に近い微量ミネラル。6mg/日 7日でテストステロン上昇・SHBG低下のRCTあり。3〜10mg/日の使い分け・副作用・併用注意点を査読済み論文で解説。',
+    tagline: '6mg/日 7日でテストステロン上昇・SHBG低下のRCT・男性ホルモン系の隠れ柱',
+    description:
+      'ホウ素は骨代謝（カルシウム・マグネシウム・ビタミンD代謝の調整）・性ホルモン（テストステロン・エストロゲンの代謝）・関節（変形性関節症の疫学関連）に関わる微量ミネラル。FDAは「条件付き必須」と位置づけ、UL（許容上限摂取量）は成人20mg/日。Naghii 2011（J Trace Elem Med Biol）のRCTで健康成人男性に6mg/日を7日投与した結果、血中遊離テストステロン上昇・SHBG（性ホルモン結合グロブリン）低下・ジヒドロテストステロン低下傾向が報告され、男性ホルモン系サプリの「隠れ柱」として位置づけられる。骨密度・関節炎の疫学関連も観察研究で示唆され、3〜10mg/日が標準帯。',
+    concerns: ['bone', 'metabolism', 'menopause', 'longevity', 'muscle'],
+    papers: [
+      {
+        title: 'Comparative effects of daily and weekly boron supplementation on plasma steroid hormones and proinflammatory cytokines',
+        journal: 'Journal of Trace Elements in Medicine and Biology',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 8,
+        durationWeeks: 1,
+        keyFinding:
+          '健康成人男性対象のRCTで、ホウ素6mg/日を7日投与した結果、遊離テストステロンの増加・SHBG低下・エストラジオール低下・炎症性サイトカイン（hsCRP・TNF-α・IL-6）低下が観察された。Bray・Naghii研究の核となるRCT',
+      },
+      {
+        title: 'Nothing boring about boron',
+        journal: 'Integrative Medicine: A Clinician\'s Journal',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding:
+          'ホウ素のヒト臨床研究を統合した包括レビュー。骨密度・関節炎・性ホルモン・認知機能・創傷治癒における3〜10mg/日のエビデンスを整理。FDA「条件付き必須」位置づけと21の生理機能を総括',
+      },
+      {
+        title: 'Boron and its physiological effects',
+        journal: 'Nutrition Today',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding:
+          'ホウ素のCa・Mg・ビタミンD代謝への影響、閉経後女性の骨密度との関連、関節炎発症率の地域差（土壌ホウ素濃度との相関）等を観察研究・疫学から統合',
+      },
+    ],
+    dosageMin: 3,
+    dosageMax: 10,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒の摂取で吸収が安定する。1日1回・朝食または昼食時が現実的',
+    duration: 'ホルモン系の変化は1〜4週間・骨密度マーカーは12〜24週間以上の継続が前提',
+    sideEffects: [
+      '通常用量（〜10mg/日）でほぼ報告なし',
+      '高用量（20mg/日超）で吐き気・下痢・皮膚刺激',
+      '極端高用量（数百mg）で生殖毒性の動物実験報告あり',
+    ],
+    contraindications: [
+      'ホルモン感受性疾患既往（前立腺癌・乳癌等）はテストステロン・エストロゲン代謝への影響から要医師相談',
+      '妊娠中・授乳中（高用量での生殖毒性懸念・通常食事量は問題なし）',
+      '腎機能低下例（ホウ素排泄低下で蓄積）',
+    ],
+    products: [],
+    whoFor: [
+      '中高年男性で活力・筋力低下を感じる',
+      '閉経後で骨密度が気になる',
+      '変形性関節症・関節痛が気になる',
+      'D-アスパラギン酸・トンカットアリ等の男性ホルモン系サプリの基盤を整えたい',
+      '亜鉛・マグネシウムは飲んでいるが活力面の手応えが薄い',
+    ],
+    heroStat: { value: '+25%', label: 'Naghii 2011 RCT n=8・6mg/日 7日での遊離テストステロン増加幅の例' },
+    axisScores: { antiAging: 5, skin: 2, cognitive: 3, stress: 3, sleep: 2, immunity: 3, metabolism: 6 },
+    dosageLevels: [
+      {
+        dose: '3mg/日',
+        category: '入門・骨/関節サポート',
+        effect: '一般食事ホウ素（1〜2mg/日）に上乗せして10mg/日上限を大きく下回る用量帯。',
+        whoFor: '初めて使う方・関節や骨の予防的ケア',
+      },
+      {
+        dose: '6mg/日',
+        category: 'ホルモン系・本格運用',
+        effect: 'Naghii 2011 RCTで遊離テストステロン上昇・SHBG低下が報告された用量帯。男性ホルモン系の「隠れ柱」用量。',
+        whoFor: '中高年男性で活力・筋力ケア重視の方',
+      },
+      {
+        dose: '10mg/日',
+        category: '上限近辺・要医師相談',
+        effect: 'IM Clinicians Journal 2015 レビューで上限的に紹介される用量帯。食事と合算してUL 20mg/日には十分余裕がある。',
+        whoFor: '医師相談済の方のみ',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ホウ素サプリで本当にテストステロンが上がりますか？',
+        a: 'Naghii 2011（J Trace Elem Med Biol）のRCT n=8で、健康成人男性にホウ素6mg/日を7日投与したところ、遊離テストステロン増加・SHBG低下・hsCRP/TNF-α/IL-6の低下が観察されました。サンプル数が小さく短期RCTのため大規模再現は限定的ですが、「テストステロン製剤の代替」ではなく「数あるサプリの中で確立した男性ホルモン系の隠れ柱」という位置づけです。亜鉛・マグネシウム・ビタミンD3との併用で基盤を整える運用が現実的。',
+      },
+      {
+        q: '骨や関節にも効きますか？',
+        a: 'ホウ素はCa・Mg・ビタミンDの代謝を支える役割があり、土壌ホウ素濃度が低い地域で変形性関節症の発症率が高いという疫学観察があります（Nutrition Today 2014）。閉経後女性の骨密度研究では、ホウ素3mg/日が尿中Ca排泄を抑制したという報告があります。Ca・Mg・ビタミンD3との併用で骨ケアの「補助的な柱」として位置づけられる成分で、ホウ素単独で骨折予防が立証されているわけではありません。',
+      },
+      {
+        q: 'いつ飲むのが効果的ですか？',
+        a: '食事と一緒の摂取で吸収が安定します。1日1回・朝食または昼食時が現実的で、テストステロンの日内変動（朝高い）を考えると朝の摂取が理に適うとされます。空腹時でも吸収可能ですが消化器症状を避けるため食後が無難です。',
+      },
+      {
+        q: 'どれくらいで効果を実感できますか？',
+        a: 'ホルモン系の血中マーカー変化はNaghii 2011 RCTで7日後に観察されており、1〜4週間で変化が出る可能性があります。骨密度・関節症状の主観的変化は12〜24週間以上の継続が前提です。サプリの「即効感」を期待する成分ではなく、亜鉛・Mg・ビタミンD3と組み合わせた中長期の基盤整備として運用するのが現実的です。',
+      },
+      {
+        q: '副作用はありますか？',
+        a: '通常用量（〜10mg/日）での副作用報告はほぼありません。20mg/日（UL）を大きく超える高用量で吐き気・下痢・皮膚刺激の報告があります。動物実験では極端高用量（数百mg）で生殖毒性が報告されているため、妊娠中・授乳中は通常食事量を超えるサプリ補給を避けてください。前立腺癌・乳癌等のホルモン感受性疾患既往の方はテストステロン・エストロゲン代謝への影響から使用前に医師相談が必須です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ホルモン補充療法（HRT）・テストステロン製剤',
+        level: 'caution',
+        mechanism: 'ホウ素はSHBG低下・遊離テストステロン増加・エストロゲン代謝への影響が報告されているため、ホルモン製剤との併用で内因性ホルモン動態が変動する可能性が理論的に指摘されている',
+        action: 'HRT・テストステロン補充療法中は使用前に主治医に相談する',
+        evidence: 'theoretical',
+        source: 'J Trace Elem Med Biol 2011 / Integr Med 2015 review',
+      },
+      {
+        substance: 'エストロゲン受容体陽性乳癌・前立腺癌の治療薬',
+        level: 'avoid',
+        mechanism: 'ホウ素のホルモン代謝への影響により、ホルモン感受性疾患の治療を妨害する可能性が懸念される',
+        action: 'ホルモン感受性癌の既往・治療中の方はサプリ使用前に必ず主治医に相談する',
+        evidence: 'theoretical',
+        source: 'Integr Med 2015 review',
+      },
+    ],
+    updatedAt: '2026-05-10',
+  },
 ]
 
 export const concerns: Concern[] = [
