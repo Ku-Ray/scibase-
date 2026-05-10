@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fraunces, Klee_One } from 'next/font/google'
+import { Fraunces, Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -12,11 +12,11 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
 })
 
-const klee = Klee_One({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '600'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-klee',
+  variable: '--font-inter',
 })
 
 const BASE_URL = 'https://scibase.app'
@@ -91,7 +91,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${fraunces.variable} ${klee.variable}`}>
+    <html lang="ja" className={`${fraunces.variable} ${inter.variable}`}>
       <head>
         <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
         <meta name="impact-site-verification" content="95344c15-5ed3-423e-8ac3-5536380adf4f" />
