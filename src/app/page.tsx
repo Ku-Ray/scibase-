@@ -45,29 +45,137 @@ export default function Home() {
 
   return (
     <>
-      {/* ── Hero ───────────────────────────────────── */}
-      <section className="hero-pattern px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
-        <div className="max-w-2xl mx-auto text-center">
+      {/* ── Hero ──（mybest型 centered + 大判散らし）────── */}
+      <section className="hero-pattern relative px-5 py-20 sm:py-32 overflow-hidden">
+
+        {/* ─── 大判ハーフブリード装飾（左右）─── */}
+
+        {/* 左：hex 大型ネットワーク + 紙片重ね（縦長） */}
+        <div aria-hidden="true"
+          className="hidden md:block absolute left-[-6%] top-1/2 -translate-y-1/2
+            w-[36%] max-w-[460px] aspect-square pointer-events-none select-none
+            opacity-90">
+          <svg viewBox="0 0 460 460" fill="none" className="w-full h-full">
+            {/* 紙片 大型 */}
+            <g transform="rotate(-8 230 230)">
+              <rect x="40" y="80" width="220" height="280" rx="3"
+                fill="#FFFFFF" stroke="#D4C4A6" strokeWidth="1.4"/>
+              <line x1="62" y1="118" x2="240" y2="118" stroke="#3D2B5C" strokeWidth="1.4" opacity="0.55"/>
+              <line x1="62" y1="138" x2="220" y2="138" stroke="#3D2B5C" strokeWidth="1.4" opacity="0.45"/>
+              <line x1="62" y1="158" x2="232" y2="158" stroke="#3D2B5C" strokeWidth="1.4" opacity="0.45"/>
+              <rect x="62" y="180" width="178" height="40" rx="2" fill="#3D2B5C" opacity="0.08"/>
+              <line x1="62" y1="244" x2="226" y2="244" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.32"/>
+              <line x1="62" y1="262" x2="200" y2="262" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.32"/>
+              <line x1="62" y1="280" x2="218" y2="280" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.28"/>
+              <line x1="62" y1="298" x2="160" y2="298" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.24"/>
+            </g>
+            {/* hex 大型クラスター（紙片に重ねる） */}
+            <g transform="translate(290 280)">
+              <g stroke="#3D2B5C" strokeWidth="1.8" fill="none" opacity="0.85">
+                <polygon points="0,-50 43.3,-25 43.3,25 0,50 -43.3,25 -43.3,-25" fill="#3D2B5C" fillOpacity="1" stroke="#3D2B5C"/>
+                <polygon points="86.6,0 129.9,-25 129.9,25 86.6,50 43.3,25 43.3,-25" opacity="0.85"/>
+                <polygon points="-43.3,-75 0,-100 43.3,-75 43.3,-25 0,-50 -43.3,-25" opacity="0.55"/>
+              </g>
+              <circle cx="43.3" cy="-25" r="4" fill="#C4A882"/>
+              <circle cx="43.3" cy="25" r="4" fill="#C4A882"/>
+              <circle cx="0" cy="-50" r="3.5" fill="#C4A882"/>
+            </g>
+          </svg>
+        </div>
+
+        {/* 右：カプセル + 水滴 + hex 中型 */}
+        <div aria-hidden="true"
+          className="hidden md:block absolute right-[-4%] top-1/2 -translate-y-1/2
+            w-[32%] max-w-[420px] aspect-square pointer-events-none select-none
+            opacity-90">
+          <svg viewBox="0 0 420 420" fill="none" className="w-full h-full">
+            {/* 紙片 中型 (背面) */}
+            <g transform="rotate(12 210 210)">
+              <rect x="120" y="50" width="180" height="240" rx="3"
+                fill="#FFFFFF" stroke="#D4C4A6" strokeWidth="1.2" opacity="0.85"/>
+              <line x1="140" y1="86" x2="280" y2="86" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.35"/>
+              <line x1="140" y1="104" x2="262" y2="104" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.32"/>
+              <line x1="140" y1="122" x2="270" y2="122" stroke="#3D2B5C" strokeWidth="1.2" opacity="0.28"/>
+              <rect x="140" y="148" width="140" height="30" rx="2" fill="#3D2B5C" opacity="0.06"/>
+            </g>
+            {/* カプセル 大 */}
+            <g transform="translate(110 130) rotate(-22)">
+              <rect x="-58" y="-16" width="116" height="32" rx="16" fill="#C4A882"/>
+              <path d="M -42 -16 L -58 -16 A 16 16 0 0 0 -58 16 L -42 16 Z" fill="#3D2B5C"/>
+              <line x1="-12" y1="-12" x2="42" y2="-12" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.65"/>
+            </g>
+            {/* カプセル 小 */}
+            <g transform="translate(80 230) rotate(8)">
+              <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#C4A882" opacity="0.7"/>
+              <path d="M -22 -10 L -34 -10 A 10 10 0 0 0 -34 10 L -22 10 Z" fill="#3D2B5C" opacity="0.7"/>
+            </g>
+            {/* hex 中型 */}
+            <g transform="translate(280 320)">
+              <g stroke="#3D2B5C" strokeWidth="1.6" fill="none" opacity="0.7">
+                <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16"/>
+                <polygon points="55.4,0 83.1,-16 83.1,16 55.4,32 27.7,16 27.7,-16" opacity="0.7" strokeDasharray="3 2"/>
+              </g>
+              <circle cx="27.7" cy="-16" r="3" fill="#C4A882"/>
+              <circle cx="27.7" cy="16" r="3" fill="#C4A882"/>
+            </g>
+            {/* 水滴 */}
+            <g transform="translate(150 340)">
+              <path d="M 0 0 C -8 -14, -13 -22, 0 -32 C 13 -22, 8 -14, 0 0 Z" fill="#3D2B5C" opacity="0.7"/>
+            </g>
+          </svg>
+        </div>
+
+        {/* 上中央：ドット constellation（左右の橋渡し） */}
+        <svg aria-hidden="true"
+          className="hidden md:block absolute left-[44%] top-[10%] w-20 h-12 opacity-50 select-none pointer-events-none"
+          viewBox="0 0 80 48" fill="#3D2B5C">
+          <circle cx="6" cy="6" r="2"/>
+          <circle cx="22" cy="16" r="1.5"/>
+          <circle cx="40" cy="6" r="1.8"/>
+          <circle cx="58" cy="20" r="1.5"/>
+          <circle cx="74" cy="10" r="1.8"/>
+          <circle cx="14" cy="32" r="1.4"/>
+          <circle cx="34" cy="38" r="1.6"/>
+          <circle cx="52" cy="34" r="1.2"/>
+          <circle cx="68" cy="40" r="1.4"/>
+        </svg>
+
+        {/* 下中央：小さな hex pair（地面の余白） */}
+        <svg aria-hidden="true"
+          className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-[6%] w-32 h-12 opacity-50 select-none pointer-events-none"
+          viewBox="0 0 128 48" fill="none">
+          <g stroke="#3D2B5C" strokeWidth="1.4" fill="none">
+            <polygon points="20,4 38,14 38,34 20,44 2,34 2,14"/>
+            <polygon points="56,14 74,24 74,44 56,54 38,44 38,24" opacity="0.7" strokeDasharray="3 2"/>
+            <polygon points="92,4 110,14 110,34 92,44 74,34 74,14" opacity="0.55"/>
+          </g>
+          <circle cx="38" cy="24" r="2.2" fill="#C4A882"/>
+          <circle cx="74" cy="34" r="2" fill="#C4A882"/>
+        </svg>
+
+        {/* ─── 中央コンテンツ（mybest型）─── */}
+        <div className="relative max-w-3xl mx-auto text-center">
 
           <p className="text-[12px] font-medium tracking-[0.08em]
-            text-muted-foreground mb-6">
+            text-muted-foreground mb-5">
             論文で選ぶスキンケア・サプリ成分データベース
           </p>
 
-          <h1 className="text-[38px] sm:text-[52px] font-bold text-foreground
-            leading-[1.15] tracking-tight break-keep mb-5">
+          <h1 className="text-[32px] sm:text-[60px] font-semibold text-foreground
+            leading-[1.22] sm:leading-[1.18] tracking-tight break-keep mb-5">
             本当に効く成分を、<br className="hidden sm:block" />
             論文で。
           </h1>
 
-          <p className="text-[15px] sm:text-[16px] text-muted-foreground leading-[1.85]
-            max-w-lg mx-auto mb-8">
-            査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。<br />
-            <span className="font-medium text-foreground whitespace-nowrap">{ingredients.length}成分・{totalPapers}論文</span>。広告でも口コミでもない。
+          <p className="text-[15px] sm:text-[17px] text-muted-foreground leading-[1.85]
+            max-w-xl mx-auto mb-8">
+            査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。
+            <span className="font-medium text-foreground whitespace-nowrap">{ingredients.length}成分・{totalPapers}論文</span>。
           </p>
 
-          {/* インライン検索 */}
-          <div className="max-w-md mx-auto mb-5">
+          {/* 大型検索（mybest式・主役） */}
+          <div className="max-w-xl mx-auto mb-6
+            shadow-[0_20px_48px_-24px_rgba(61,43,92,0.30)] rounded-2xl">
             <HeroSearch />
           </div>
 
@@ -90,12 +198,12 @@ export default function Home() {
               🔬 今のサプリを診断する
             </Link>
           </div>
-          <p className="text-[12px] text-muted-foreground mb-8">
+          <p className="text-[12px] text-muted-foreground mb-7">
             初めての方は <span className="font-medium text-foreground">「悩みから探す」</span> から
           </p>
 
-          {/* 統計 */}
-          <div className="flex items-center justify-center gap-6 mb-10
+          {/* 統計（中央 inline） */}
+          <div className="flex items-center justify-center gap-6
             text-[12px] text-muted-foreground">
             <span><strong className="text-foreground font-semibold">{ingredients.length}</strong> 成分</span>
             <span className="w-px h-3 bg-border" />
@@ -103,9 +211,10 @@ export default function Home() {
             <span className="w-px h-3 bg-border" />
             <span><strong className="text-foreground font-semibold">{totalPapers}</strong> 論文</span>
           </div>
+        </div>
 
-          {/* 悩みタグ */}
-          <div>
+          {/* 悩みタグ：grid 下にフル幅で配置 */}
+          <div className="mt-12 sm:mt-16 text-center">
             <p className="text-[11px] text-muted-foreground mb-3 tracking-wider font-medium">
               悩みから探す
             </p>
@@ -124,7 +233,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* ── よく見られている悩み（データ駆動ショートカット） ─── */}

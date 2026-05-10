@@ -97,12 +97,12 @@
     @apply bg-stone-100 text-stone-500 border-stone-300;
   }
 
-  /* Hero gradient — stronger visual */
+  /* Hero gradient — brand-aligned (暗紫 × ベージュ・dramatic) */
   .hero-pattern {
     background:
-      radial-gradient(ellipse 80% 60% at 10% 60%, rgba(74,124,89,0.22) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 90% 10%, rgba(30,58,95,0.16) 0%, transparent 55%),
-      radial-gradient(ellipse 50% 40% at 50% 90%, rgba(245,176,84,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 90% 70% at 8% 70%, rgba(196, 168, 130, 0.32) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 55% at 92% 15%, rgba(61, 43, 92, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 45% at 50% 95%, rgba(196, 168, 130, 0.16) 0%, transparent 50%),
       #FAFAF8;
   }
 
@@ -117,5 +117,17 @@
   /* Mobile safe area for bottom nav */
   .safe-area-pb {
     padding-bottom: max(env(safe-area-inset-bottom, 0px), 0px);
+  }
+}
+
+/* H1/H2 は明朝（Shippori Mincho B1）で editorial / premium に */
+@layer base {
+  h1,
+  h2 {
+    font-family:
+      var(--font-shippori),
+      "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho",
+      serif !important;
+    letter-spacing: -0.005em;
   }
 }

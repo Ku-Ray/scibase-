@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP, Fraunces } from 'next/font/google'
+import { Noto_Sans_JP, Fraunces, Shippori_Mincho_B1 } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -17,6 +17,13 @@ const fraunces = Fraunces({
   weight: ['500', '600', '700'],
   display: 'swap',
   variable: '--font-fraunces',
+})
+
+const shippori = Shippori_Mincho_B1({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  display: 'swap',
+  variable: '--font-shippori',
 })
 
 const BASE_URL = 'https://scibase.app'
@@ -91,7 +98,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${notoSansJP.variable} ${fraunces.variable}`}>
+    <html lang="ja" className={`${notoSansJP.variable} ${fraunces.variable} ${shippori.variable}`}>
       <head>
         <meta name="google-site-verification" content="vKNWnktI9eLuZQD_5X2mxxo9ujtpQjFuteHgfq55Cpc" />
         <meta name="impact-site-verification" content="95344c15-5ed3-423e-8ac3-5536380adf4f" />
