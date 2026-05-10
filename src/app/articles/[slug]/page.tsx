@@ -412,7 +412,7 @@ export default async function ArticlePage({ params }: Props) {
                     {ing.urgencyNote && (
                       <div className="bg-secondary px-5 pt-4 pb-2">
                         <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
-                          {ing.urgencyNote}
+                          <RichInline text={ing.urgencyNote} />
                         </p>
                       </div>
                     )}
@@ -606,7 +606,7 @@ export default async function ArticlePage({ params }: Props) {
                             {ing.urgencyNote && (
                               <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
                                 <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
-                                  {ing.urgencyNote}
+                                  <RichInline text={ing.urgencyNote} />
                                 </p>
                               </div>
                             )}
