@@ -45,14 +45,140 @@ export default function Home() {
 
   return (
     <>
-      {/* ── Hero ───────────────────────────────────── */}
-      <section className="hero-pattern relative px-5 pt-20 pb-16 sm:pt-28 sm:pb-24 overflow-hidden">
+      {/* ── Hero ──（mybest型 centered + 装飾散らし）─────── */}
+      <section className="hero-pattern relative px-5 py-20 sm:py-28 overflow-hidden">
 
-        {/* ── 装飾レイヤー（desktop のみ・余白を埋めるフローティング素材） ── */}
-        {/* 大判イラスト（右側にbleed・カード枠なし） */}
+        {/* ─── 装飾散らし（desktop のみ・テキスト周辺の余白を埋める） ─── */}
+        {/* 左上：単体 hex */}
+        <svg aria-hidden="true"
+          className="hidden md:block absolute left-[5%] top-[14%] w-16 h-16 opacity-35 select-none pointer-events-none"
+          viewBox="0 0 64 64" fill="none">
+          <polygon points="32,4 56,18 56,46 32,60 8,46 8,18"
+            stroke="#3D2B5C" strokeWidth="1.5" fill="none"/>
+          <circle cx="32" cy="32" r="3" fill="#C4A882"/>
+        </svg>
+
+        {/* 右上：紙片 + カプセル */}
         <div aria-hidden="true"
-          className="hidden sm:block absolute right-[-4%] top-1/2 -translate-y-1/2
-            w-[58%] max-w-[820px] aspect-square pointer-events-none select-none">
+          className="hidden md:block absolute right-[6%] top-[10%] w-32 opacity-55 select-none pointer-events-none">
+          <svg viewBox="0 0 100 124" fill="none" className="w-full">
+            <g transform="rotate(8 50 62)">
+              <rect x="6" y="6" width="88" height="112" rx="2" fill="#FFFFFF" stroke="#D4C4A6" strokeWidth="1"/>
+              <line x1="14" y1="24" x2="78" y2="24" stroke="#3D2B5C" strokeWidth="1" opacity="0.45"/>
+              <line x1="14" y1="36" x2="70" y2="36" stroke="#3D2B5C" strokeWidth="1" opacity="0.45"/>
+              <line x1="14" y1="48" x2="76" y2="48" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
+              <line x1="14" y1="60" x2="60" y2="60" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
+              <line x1="14" y1="72" x2="72" y2="72" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
+              <line x1="14" y1="84" x2="50" y2="84" stroke="#3D2B5C" strokeWidth="1" opacity="0.3"/>
+              <rect x="14" y="96" width="52" height="6" rx="1" fill="#3D2B5C" opacity="0.08"/>
+            </g>
+          </svg>
+        </div>
+
+        {/* 左下：hex 連結ネットワーク */}
+        <svg aria-hidden="true"
+          className="hidden md:block absolute left-[4%] bottom-[10%] w-56 h-32 opacity-40 select-none pointer-events-none"
+          viewBox="0 0 224 128" fill="none">
+          <g stroke="#3D2B5C" strokeWidth="1.5" fill="none">
+            <polygon points="40,8 68,24 68,56 40,72 12,56 12,24"/>
+            <polygon points="96,24 124,40 124,72 96,88 68,72 68,40" opacity="0.7"/>
+            <polygon points="152,8 180,24 180,56 152,72 124,56 124,24" opacity="0.55" strokeDasharray="3 2"/>
+            <polygon points="68,72 96,88 96,120 68,136 40,120 40,88" opacity="0.45"/>
+          </g>
+          <circle cx="68" cy="24" r="3" fill="#C4A882"/>
+          <circle cx="68" cy="56" r="3" fill="#C4A882"/>
+          <circle cx="124" cy="40" r="3" fill="#C4A882" opacity="0.7"/>
+        </svg>
+
+        {/* 右下：カプセル + 水滴 */}
+        <div aria-hidden="true"
+          className="hidden md:block absolute right-[5%] bottom-[14%] opacity-55 select-none pointer-events-none">
+          <svg viewBox="0 0 120 80" fill="none" className="w-32 h-20">
+            <g transform="rotate(-18 60 32)">
+              <rect x="6" y="22" width="92" height="22" rx="11" fill="#C4A882"/>
+              <path d="M 36 22 L 17 22 A 11 11 0 0 0 17 44 L 36 44 Z" fill="#3D2B5C"/>
+              <line x1="50" y1="26" x2="84" y2="26" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+            </g>
+            <g transform="translate(78 60)">
+              <path d="M 0 0 C -5 -8, -8 -13, 0 -19 C 8 -13, 5 -8, 0 0 Z" fill="#3D2B5C" opacity="0.55"/>
+            </g>
+          </svg>
+        </div>
+
+        {/* ドット constellation（中央上の余白） */}
+        <svg aria-hidden="true"
+          className="hidden md:block absolute right-[34%] top-[8%] w-12 h-12 opacity-30 select-none pointer-events-none"
+          viewBox="0 0 48 48" fill="#3D2B5C">
+          <circle cx="6" cy="6" r="1.6"/>
+          <circle cx="20" cy="14" r="1.2"/>
+          <circle cx="36" cy="6" r="1.4"/>
+          <circle cx="12" cy="28" r="1"/>
+          <circle cx="30" cy="32" r="1.4"/>
+          <circle cx="42" cy="22" r="1"/>
+        </svg>
+
+        {/* ─── 中央コンテンツ（mybest型）─── */}
+        <div className="relative max-w-3xl mx-auto text-center">
+
+          <p className="text-[12px] font-medium tracking-[0.08em]
+            text-muted-foreground mb-5">
+            論文で選ぶスキンケア・サプリ成分データベース
+          </p>
+
+          <h1 className="text-[40px] sm:text-[60px] font-bold text-foreground
+            leading-[1.12] tracking-tight break-keep mb-5">
+            本当に効く成分を、<br className="hidden sm:block" />
+            論文で。
+          </h1>
+
+          <p className="text-[15px] sm:text-[17px] text-muted-foreground leading-[1.85]
+            max-w-xl mx-auto mb-8">
+            査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。
+            <span className="font-medium text-foreground whitespace-nowrap">{ingredients.length}成分・{totalPapers}論文</span>。
+          </p>
+
+          {/* 大型検索（mybest式・主役） */}
+          <div className="max-w-xl mx-auto mb-6
+            shadow-[0_20px_48px_-24px_rgba(61,43,92,0.30)] rounded-2xl">
+            <HeroSearch />
+          </div>
+
+          {/* 2択CTA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
+            <Link
+              href="/concerns"
+              className="inline-flex items-center gap-2 bg-foreground text-background
+                text-[13px] font-semibold rounded-xl px-5 py-3 min-h-[44px]
+                hover:opacity-85 transition-opacity w-full sm:w-auto justify-center"
+            >
+              🔍 悩みから成分を探す
+            </Link>
+            <Link
+              href="/analyzer"
+              className="inline-flex items-center gap-2 bg-card border border-border text-foreground
+                text-[13px] font-medium rounded-xl px-5 py-3 min-h-[44px]
+                hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
+            >
+              🔬 今のサプリを診断する
+            </Link>
+          </div>
+          <p className="text-[12px] text-muted-foreground mb-7">
+            初めての方は <span className="font-medium text-foreground">「悩みから探す」</span> から
+          </p>
+
+          {/* 統計（中央 inline） */}
+          <div className="flex items-center justify-center gap-6
+            text-[12px] text-muted-foreground">
+            <span><strong className="text-foreground font-semibold">{ingredients.length}</strong> 成分</span>
+            <span className="w-px h-3 bg-border" />
+            <span><strong className="text-foreground font-semibold">{concerns.length}</strong> 悩みカテゴリ</span>
+            <span className="w-px h-3 bg-border" />
+            <span><strong className="text-foreground font-semibold">{totalPapers}</strong> 論文</span>
+          </div>
+        </div>
+
+        {/* mobile 専用：main SVG をテキスト下に表示（card なし） */}
+        <div className="sm:hidden flex justify-center mt-10 relative">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/hero/lab-still-life.svg"
@@ -61,106 +187,9 @@ export default function Home() {
             height={600}
             loading="eager"
             decoding="async"
-            className="w-full h-full"
+            className="w-[90%] max-w-[360px] h-auto select-none pointer-events-none"
           />
         </div>
-
-        {/* 左上の hex 単独デコ（テキスト上部の余白を埋める） */}
-        <svg aria-hidden="true"
-          className="hidden md:block absolute left-[6%] top-[14%] w-16 h-16 opacity-40"
-          viewBox="0 0 64 64" fill="none">
-          <polygon points="32,4 56,18 56,46 32,60 8,46 8,18"
-            stroke="#3D2B5C" strokeWidth="1.4" fill="none"/>
-          <circle cx="32" cy="32" r="3" fill="#C4A882"/>
-        </svg>
-
-        {/* テキスト下の小さな hex 群（左下余白） */}
-        <svg aria-hidden="true"
-          className="hidden md:block absolute left-[3%] bottom-[8%] w-32 h-16 opacity-35"
-          viewBox="0 0 128 64" fill="none">
-          <polygon points="20,4 38,14 38,34 20,44 2,34 2,14"
-            stroke="#3D2B5C" strokeWidth="1.2" fill="none" opacity="0.8"/>
-          <polygon points="56,14 74,24 74,44 56,54 38,44 38,24"
-            stroke="#3D2B5C" strokeWidth="1.2" fill="none" opacity="0.55"/>
-          <polygon points="92,4 110,14 110,34 92,44 74,34 74,14"
-            stroke="#3D2B5C" strokeWidth="1.2" stroke-dasharray="3 2" fill="none" opacity="0.4"/>
-          <circle cx="38" cy="24" r="2" fill="#C4A882"/>
-          <circle cx="74" cy="34" r="2" fill="#C4A882"/>
-        </svg>
-
-        <div className="relative max-w-6xl mx-auto">
-          {/* mobile: テキスト center / desktop: 左寄せ・最大幅 lg */}
-          <div className="text-center sm:text-left sm:max-w-[560px]">
-
-            <p className="text-[12px] font-medium tracking-[0.08em]
-              text-muted-foreground mb-5">
-              論文で選ぶスキンケア・サプリ成分データベース
-            </p>
-
-            <h1 className="text-[40px] sm:text-[56px] font-bold text-foreground
-              leading-[1.12] tracking-tight break-keep mb-5">
-              本当に効く成分を、<br className="hidden sm:block" />
-              論文で。
-            </h1>
-
-            <p className="text-[15px] sm:text-[16px] text-muted-foreground leading-[1.85]
-              max-w-lg mx-auto sm:mx-0 mb-7">
-              査読済み論文だけで評価した、スキンケア・サプリ成分のデータベース。
-              <span className="font-medium text-foreground whitespace-nowrap">{ingredients.length}成分・{totalPapers}論文</span>。
-            </p>
-
-            {/* インライン検索 */}
-            <div className="max-w-md mx-auto sm:mx-0 mb-4">
-              <HeroSearch />
-            </div>
-
-            {/* 2択CTA */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-center sm:justify-start gap-3 mb-3">
-              <Link
-                href="/concerns"
-                className="inline-flex items-center gap-2 bg-foreground text-background
-                  text-[13px] font-semibold rounded-xl px-5 py-3 min-h-[44px]
-                  hover:opacity-85 transition-opacity w-full sm:w-auto justify-center"
-              >
-                🔍 悩みから成分を探す
-              </Link>
-              <Link
-                href="/analyzer"
-                className="inline-flex items-center gap-2 bg-card border border-border text-foreground
-                  text-[13px] font-medium rounded-xl px-5 py-3 min-h-[44px]
-                  hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
-              >
-                🔬 今のサプリを診断する
-              </Link>
-            </div>
-            <p className="text-[12px] text-muted-foreground mb-6">
-              初めての方は <span className="font-medium text-foreground">「悩みから探す」</span> から
-            </p>
-
-            {/* 統計 */}
-            <div className="flex items-center justify-center sm:justify-start gap-6
-              text-[12px] text-muted-foreground">
-              <span><strong className="text-foreground font-semibold">{ingredients.length}</strong> 成分</span>
-              <span className="w-px h-3 bg-border" />
-              <span><strong className="text-foreground font-semibold">{concerns.length}</strong> 悩みカテゴリ</span>
-              <span className="w-px h-3 bg-border" />
-              <span><strong className="text-foreground font-semibold">{totalPapers}</strong> 論文</span>
-            </div>
-          </div>
-
-          {/* mobile: SVG main をテキスト下に縮小表示（card 化はしない） */}
-          <div className="sm:hidden flex justify-center mt-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/hero/lab-still-life.svg"
-              alt=""
-              width={600}
-              height={600}
-              loading="eager"
-              decoding="async"
-              className="w-[88%] max-w-[360px] h-auto select-none pointer-events-none"
-            />
-          </div>
 
           {/* 悩みタグ：grid 下にフル幅で配置 */}
           <div className="mt-12 sm:mt-16 text-center">
@@ -182,7 +211,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* ── よく見られている悩み（データ駆動ショートカット） ─── */}
