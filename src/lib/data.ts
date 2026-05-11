@@ -777,6 +777,34 @@ export const ingredients: Ingredient[] = [
         a: '血清25(OH)D（ヒドロキシビタミンD）が標準指標です。一般的な目安は、20ng/mL未満で欠乏、20〜30ng/mLで不足、30〜50ng/mLで充足、50〜80ng/mLが至適、100ng/mL超で過剰のリスク域とされています。日本では検査保険適用の条件が限定されており自費検査になりやすいですが、サプリ補充の妥当性を判断するには有用な指標です。',
       },
     ],
+    testKitCTA: {
+      headline: '血中ビタミンD濃度を測ると、必要量がわかる',
+      body: '日本人の約8割が25(OH)D不足とされる。30ng/mL未満は不足・20ng/mL未満は欠乏とする目安が広く使われており、自分の数値を知ると1,000IU・2,000IU・4,000IUのどの用量から始めるかの判断材料になる。サプリ補充の妥当性を客観データで把握するための栄養素検査。',
+      products: [
+        {
+          name: '栄養素検査キット ビタミンD（25(OH)D）',
+          brand: 'VitaNote',
+          url: '#asp-pending',
+          priceJpy: 7980,
+          testType: 'nutrient',
+          sampleType: '血液',
+          resultDays: 14,
+          whyJa: '血清25(OH)D を自宅採血で測定。日本人の不足層が広く、サプリ用量を決める前段の参考データとして有用。',
+          isSponsored: true,
+        },
+        {
+          name: '栄養検査セルフチェック（血液）',
+          brand: 'おうちでドック',
+          url: '#asp-pending',
+          priceJpy: 9800,
+          testType: 'nutrient',
+          sampleType: '血液',
+          resultDays: 10,
+          whyJa: '微量採血でビタミンDを含む栄養素を測定。受診ハードルが高い人の参考データとして。',
+          isSponsored: true,
+        },
+      ],
+    },
     updatedAt: '2026-05-11',
   },
   {
@@ -1311,6 +1339,26 @@ export const ingredients: Ingredient[] = [
         source: 'PMC11473484（NMN多機能性レビュー）',
       },
     ],
+    testKitCTA: {
+      headline: '自分の老化加速タイプを、データで把握する',
+      body: 'NMN・NR の補充を検討する前に、自分のNAD+消費プロファイル・SIRT遺伝子型・老化加速関連の遺伝的傾向を把握しておくと、月¥6,000-12,000の継続投資の判断材料になる。検査結果は医療診断ではなく、将来予測は確率であって運命ではない。長期戦略のアンカーとして参考にする情報。',
+      products: [
+        {
+          name: 'GeneLife Genesis 2.0 Plus（遺伝子検査）',
+          brand: 'GeneLife',
+          url: '#asp-pending',
+          priceJpy: 29800,
+          testType: 'dna',
+          sampleType: '唾液',
+          resultDays: 30,
+          whyJa: '老化関連を含む数百項目の遺伝的傾向を把握する。NMN介入の事前情報・長期戦略のアンカーとして。',
+          privacyPolicyUrl: 'https://genelife.jp/privacy/',
+          isSponsored: true,
+        },
+      ],
+      medicalDisclaimer:
+        '※検査結果は医療診断ではありません。心配な数値・症状は医師に相談してください。\n※遺伝子検査の結果は将来予測であって運命や治療指針ではありません。検査会社の個人情報・遺伝情報管理方針を必ず確認してください。\n※PR：当サイトはアフィリエイトプログラムに参加しています。',
+    },
     updatedAt: '2026-05-11',
   },
   {
@@ -1416,6 +1464,25 @@ export const ingredients: Ingredient[] = [
         source: 'PubMed 37260310 Probiotic-Associated CVC Bloodstream Infections in ICU',
       },
     ],
+    testKitCTA: {
+      headline: '自分の腸内フローラ構成で、合う菌株が変わる',
+      body: 'Lactobacillus rhamnosus・Bifidobacterium longum 等、菌株ごとに研究で確認されている効果は異なる。自分の腸内フローラ構成を把握すれば、不足している菌種を補う「置換戦略」の参考になる。汎用プロバイオティクスを試行錯誤するより、データドリブンに選ぶ判断材料として活用できる。',
+      products: [
+        {
+          name: 'Mykinso 腸内フローラ検査',
+          brand: 'サイキンソー',
+          url: '#asp-pending',
+          priceJpy: 19800,
+          testType: 'gut',
+          sampleType: '便',
+          resultDays: 30,
+          whyJa: '腸内細菌叢の構成を把握。短鎖脂肪酸産生菌・乳酸産生菌の比率からプロバイオ選択の参考に。',
+          isSponsored: true,
+        },
+      ],
+      medicalDisclaimer:
+        '※検査結果は医療診断ではありません。心配な数値・症状は医師に相談してください。\n※腸内フローラ検査は研究が進む新しい分野で、解釈の幅が比較的大きい点に留意してください。\n※PR：当サイトはアフィリエイトプログラムに参加しています。',
+    },
     updatedAt: '2026-04-21',
   },
   {
@@ -5152,6 +5219,26 @@ export const ingredients: Ingredient[] = [
         source: 'MASI Longevity Science clinical guidance / DrugBank DB03566',
       },
     ],
+    testKitCTA: {
+      headline: 'オートファジー関連の遺伝的傾向を確認する',
+      body: 'スペルミジンはオートファジー誘導が研究の中心となる成分。自分のオートファジー関連遺伝子・代謝経路の遺伝的傾向を把握しておくと、長期スキンケア・抗老化戦略の判断材料になる。検査結果は医療診断ではなく、将来予測も確率であって運命ではない。あくまで参考情報として活用する。',
+      products: [
+        {
+          name: 'GeneLife Genesis 2.0 Plus（遺伝子検査）',
+          brand: 'GeneLife',
+          url: '#asp-pending',
+          priceJpy: 29800,
+          testType: 'dna',
+          sampleType: '唾液',
+          resultDays: 30,
+          whyJa: '老化・代謝関連を含む数百項目の遺伝的傾向を把握。スペルミジン介入の長期戦略の参考データとして。',
+          privacyPolicyUrl: 'https://genelife.jp/privacy/',
+          isSponsored: true,
+        },
+      ],
+      medicalDisclaimer:
+        '※検査結果は医療診断ではありません。心配な数値・症状は医師に相談してください。\n※遺伝子検査の結果は将来予測であって運命や治療指針ではありません。検査会社の個人情報・遺伝情報管理方針を必ず確認してください。\n※PR：当サイトはアフィリエイトプログラムに参加しています。',
+    },
     updatedAt: '2026-04-21',
   },
   {
@@ -5752,6 +5839,34 @@ export const ingredients: Ingredient[] = [
         a: '黒色便は鉄サプリ服用中の典型的な変化で、副作用というより吸収されなかった鉄の酸化による色調変化です。健康上の問題はありません。一方、便秘・腹痛・吐き気などの消化器症状は副作用として起きることがあり、この場合はキレート型（Ferrochel等）への変更、用量を半分にして頻度を上げる、食事と一緒に摂るなどの調整が現実的です。出血を疑う黒色便（タール状で悪臭）と区別が付かない場合は医師に相談してください。',
       },
     ],
+    testKitCTA: {
+      headline: 'サプリで補う前に、フェリチンを測る',
+      body: '日本女性の20-30%が潜在的鉄欠乏とされる。ヘモグロビンが正常でも、フェリチン12ng/mL未満は明らかな貯蔵鉄不足・30-50ng/mLは「貯蔵が少なめ」と判断する臨床医も多い。自分の数値を知ると、ビスグリシン酸鉄36mg/フマル酸鉄/ヘム鉄のどの形態が最適かを論文ベースで判断する材料になる。',
+      products: [
+        {
+          name: '栄養素検査キット フェリチン（鉄貯蔵量）',
+          brand: 'VitaNote',
+          url: '#asp-pending',
+          priceJpy: 7980,
+          testType: 'nutrient',
+          sampleType: '血液',
+          resultDays: 14,
+          whyJa: '隠れ貧血の指標であるフェリチンを自宅採血で測定。月経のある女性・抜け毛が気になる人の優先検査項目。',
+          isSponsored: true,
+        },
+        {
+          name: '貧血セルフチェック（血液）',
+          brand: 'おうちでドック',
+          url: '#asp-pending',
+          priceJpy: 4980,
+          testType: 'nutrient',
+          sampleType: '血液',
+          resultDays: 10,
+          whyJa: 'ヘモグロビン・フェリチン等の貧血関連指標を測定。サプリ介入前の現状把握に。',
+          isSponsored: true,
+        },
+      ],
+    },
     updatedAt: '2026-05-11',
   },
   {
@@ -6286,6 +6401,23 @@ export const ingredients: Ingredient[] = [
         source: 'PMC6054240 / Springer Nature',
       },
     ],
+    testKitCTA: {
+      headline: 'ベジタリアン・40代以降は不足が起きやすい',
+      body: 'ビタミンB12不足は神経症状・貧血で現れるが自覚しにくい。動物性食品の摂取が少ない方・PPIやメトホルミン長期服用中・40代以降は、血液検査で把握しておくとメチルB12かシアノB12かの形態選択も論文ベースで判断する材料になる。',
+      products: [
+        {
+          name: '栄養素検査キット ビタミンB群（B12含む）',
+          brand: 'VitaNote',
+          url: '#asp-pending',
+          priceJpy: 7980,
+          testType: 'nutrient',
+          sampleType: '血液',
+          resultDays: 14,
+          whyJa: '血清B12濃度を自宅採血で測定。自覚しにくい不足の把握・形態選択の参考データとして。',
+          isSponsored: true,
+        },
+      ],
+    },
     updatedAt: '2026-04-21',
   },
   {
@@ -6897,6 +7029,25 @@ export const ingredients: Ingredient[] = [
         source: 'PMC8744443（イソフラボン薬物動態レビュー）',
       },
     ],
+    testKitCTA: {
+      headline: 'エクオール産生能・自分のホルモンタイプを把握',
+      body: '日本人女性のエクオール産生能保持率は約50%とされる。非産生者が大豆イソフラボン単独に期待しても効果が出にくい傾向がある。自分のエクオール産生能を測ってから、エクオール直接補給か大豆イソフラボン経口かを判断する材料になる。',
+      products: [
+        {
+          name: 'ソイチェック（エクオール産生能検査）',
+          brand: 'ヘルスケアシステムズ',
+          url: '#asp-pending',
+          priceJpy: 4180,
+          testType: 'hormone',
+          sampleType: '尿',
+          resultDays: 14,
+          whyJa: '尿中エクオールから産生能を判定。産生者か非産生者かでサプリ選択（イソフラボン vs エクオール直接補給）が変わる。',
+          isSponsored: true,
+        },
+      ],
+      medicalDisclaimer:
+        '※検査結果は医療診断ではありません。心配な数値・症状は医師に相談してください。\n※ホルモン関連の不調・更年期症状については婦人科の受診が原則です。検査結果は医師との相談材料として活用してください。\n※PR：当サイトはアフィリエイトプログラムに参加しています。',
+    },
     updatedAt: '2026-04-22',
   },
   {

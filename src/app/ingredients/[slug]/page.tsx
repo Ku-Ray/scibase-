@@ -10,6 +10,7 @@ import { TableOfContents } from '@/components/TableOfContents'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
+import { IngredientTestKitCTACard } from '@/components/product/IngredientTestKitCTACard'
 import { ComparisonTable } from '@/components/product/ComparisonTable'
 import { scoreProduct, computeAxisLeaders } from '@/lib/productScore'
 import type { TocSection } from '@/components/TableOfContents'
@@ -965,6 +966,11 @@ export default async function IngredientPage({ params }: Props) {
                   </span>
                 </p>
               </div>
+            )}
+
+            {/* Pattern A 検査キットCTA：商品オファーカードの手前で「測ってから選ぶ」を訴求 */}
+            {ing.testKitCTA && (
+              <IngredientTestKitCTACard cta={ing.testKitCTA} ingredientSlug={ing.slug} />
             )}
 
             {/* ヒーロー：BEST PICK 縦長 v4 */}
