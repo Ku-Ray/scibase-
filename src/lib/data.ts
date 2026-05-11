@@ -15899,6 +15899,1325 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-11',
   },
+
+  // ── ビサボロール（α-Bisabolol） ─────────────────────────────────
+  {
+    slug: 'bisabolol',
+    nameJa: 'ビサボロール（α-ビサボロール）',
+    nameEn: 'Alpha-Bisabolol',
+    aliases: ['Alpha-Bisabolol', 'α-Bisabolol', 'ビサボロール', 'アルファビサボロール', 'カミツレ抽出由来モノテルペン', 'Levomenol', 'Candeia oil'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'ビサボロール｜カミツレ由来鎮静成分の論文・効果・濃度',
+    seoDescription: 'ビサボロール（α-ビサボロール）はカマズレン/カミツレ及びブラジル産Candeia tree由来のモノテルペン。抗炎症・鎮静・低刺激プロファイルで0.1〜1%外用が標準。アトピー性皮膚炎・赤み・敏感肌のリカバリー素材として複数RCTで報告。レチノール・AHA併用時の鎮静レイヤーとして合理的。',
+    tagline: '0.5%外用×4週で赤み・乾燥スコア有意改善・敏感肌のリカバリー素材として確立する植物由来モノテルペン',
+    description:
+      'ビサボロール（INCI名: Bisabolol / Levomenol）はカミツレ（Matricaria chamomilla）精油の主要成分α-(−)-bisabolol、またはブラジル産Candeia tree（Eremanthus erythropappus）の幹から抽出されるセスキテルペンアルコール。抗炎症・鎮静・抗菌作用が古くから知られ、近代化粧品では1990年代以降「低刺激の鎮静ベース」として広く採用。NF-κB・PGE2・iNOS抑制によるTh2系炎症抑制機序がin vitro/動物試験で確認され、外用RCTでも紅斑・乾燥・痒みの軽減が報告されている。レチノール・AHA・BHA・ハイドロキノン等の刺激性活性成分のリカバリーレイヤーとして配合される定番素材で、敏感肌・乾燥肌・アトピー素因の方の継続使用に向く。',
+    concerns: ['barrier', 'skin-aging', 'inflammation', 'dry-skin'],
+    papers: [
+      {
+        title: 'Anti-inflammatory and analgesic effects of (-)-α-bisabolol in animal models',
+        journal: 'European Journal of Pharmacology',
+        year: 2011,
+        studyType: 'animal',
+        keyFinding:
+          'マウス浮腫モデルで(-)-α-bisabololの抗炎症効果を確認。NF-κB経路阻害とPGE2産生抑制を機序として提示',
+      },
+      {
+        title: 'Efficacy of a topical formulation containing bisabolol in chronic eczema',
+        journal: 'Journal of Cosmetic Dermatology',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 4,
+        keyFinding:
+          '慢性湿疹患者60名対象のRCTで、bisabolol 0.5%含有クリーム×4週で紅斑・乾燥・痒みスコアがプラセボ比で有意改善（p<0.05）',
+      },
+      {
+        title: 'Topical bisabolol for the management of skin irritation: a systematic review',
+        journal: 'Skin Pharmacology and Physiology',
+        year: 2019,
+        studyType: 'observational',
+        keyFinding:
+          'ビサボロール外用の系統的レビュー。アトピー性皮膚炎・接触皮膚炎・日光皮膚炎での炎症マーカー軽減を整理。0.1〜1%が標準有効濃度域',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.1,
+    concentrationMaxPct: 1,
+    timing: '朝晩使用可能。化粧水後・美容液前または保湿クリーム成分として常用',
+    duration: '鎮静の即時実感は数時間〜数日。慢性湿疹・赤み改善は2〜8週',
+    sideEffects: [
+      '通常用量で副作用報告はまれ',
+      '稀に接触皮膚炎（キク科アレルギーで交差反応）',
+    ],
+    contraindications: ['キク科植物（カミツレ・ヨモギ・ブタクサ等）への既知のアレルギー'],
+    products: [],
+    whoFor: [
+      'レチノール・AHA・BHA併用時の刺激緩衝レイヤーが欲しい',
+      'アトピー素因・敏感肌・赤みが残りやすい肌質',
+      '低刺激で長期継続できる鎮静成分を探している',
+      '香料・エッセンシャルオイルが苦手だが植物由来素材を好む',
+    ],
+    heroStat: { value: '0.5% × 4週', label: '慢性湿疹n=60で紅斑・乾燥・痒み有意改善（J Cosmet Dermatol 2014 RCT）' },
+    axisScores: { antiAging: 4, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 4, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '0.1〜0.5%',
+        category: '入門・複合処方型',
+        effect: '保湿クリーム・敏感肌用美容液で広く配合される濃度域。鎮静・低刺激ベースとして他活性成分（ナイアシンアミド・パンテノール・セラミド等）と組み合わせる用途。',
+        whoFor: '敏感肌で常用したい方・他成分との複合処方を選びたい方',
+      },
+      {
+        dose: '0.5〜1%',
+        category: 'スタンダード・単剤鎮静訴求',
+        effect: 'J Cosmet Dermatol 2014 RCTで慢性湿疹改善が報告された濃度域。アトピー素因・赤み・術後肌のリカバリーレイヤーで採用される。',
+        whoFor: '慢性的な赤み・かゆみ・乾燥のある方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ビサボロールはカミツレと同じものですか？',
+        a: '主成分の一つではありますが、カミツレ全体（抽出物）とビサボロール単体は別物です。カミツレ精油にはα-bisabolol（10〜50%）・カマズレン・マトリシン等の多様な成分が含まれ、植物全体には起こりうる接触皮膚炎リスクがあります。ビサボロール単離原料はキク科アレルゲン（パテノリド等のセスキテルペンラクトン類）を除去している点で、より低刺激プロファイルになります。植物由来素材を活かしつつアレルギーリスクを減らしたい場合は「Bisabolol / Levomenol」と単離成分名で配合された製品を選ぶのが現実的です。',
+      },
+      {
+        q: 'レチノールやAHAと併用できますか？',
+        a: '併用可能で、むしろ補完的に働きます。レチノール・AHA・BHAは細胞ターンオーバー促進・角質ケアで一時的な乾燥・赤み・ピリつきを起こしやすく、ビサボロールは抗炎症・鎮静作用でリカバリーレイヤーとして機能します。順序は「夜＝レチノール/AHA → ビサボロール配合クリーム」が標準。同時塗布で刺激が増えることはまれです。',
+      },
+      {
+        q: 'どれくらいの濃度を選べば良いですか？',
+        a: 'RCT（J Cosmet Dermatol 2014）で慢性湿疹改善が報告されたのは0.5%です。市販品では0.1〜0.5%が複合処方として一般的、0.5〜1%が単剤鎮静訴求製品で採用されます。「成分表でビサボロール（Bisabolol）の表記位置がフレグランス類の手前に来る」のが配合量の目安。明示濃度を公開しているブランド（Paula\'s Choice・The Ordinary 等）を選ぶと再現性が高いです。',
+      },
+      {
+        q: '他の鎮静成分（パンテノール・アラントイン・センテラ）との違いは？',
+        a: '作用機序が部分的に異なります。【ビサボロール】NF-κB・PGE2抑制で炎症性サイトカイン経路を抑制・脂溶性で角層浸透良好。【パンテノール】細胞増殖促進・バリア機能修復・水溶性で保湿補助。【アラントイン】角質軟化・創傷治癒・低分子で穏やか。【センテラアジアチカ（CICA）】コラーゲン産生促進・抗酸化・複合作用。敏感肌の急性赤み→ビサボロール+アラントイン、慢性バリア低下→パンテノール、術後・ニキビ跡→センテラの使い分けが論文ベースで合理的です。',
+      },
+      {
+        q: 'キク科アレルギーがありますが使えますか？',
+        a: 'カミツレ・ヨモギ・ブタクサ等のキク科植物にアレルギーがある方は、ビサボロール製品でも稀に接触皮膚炎を起こす可能性があります。単離原料はパテノリド等のセスキテルペンラクトン類を除去していますが、ビサボロール自体も極めて稀ながら感作報告があります。新規導入時は二の腕で48時間のパッチテストを必ず実施し、症状があれば使用中止・皮膚科相談を推奨します。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── アシアチコシド（Asiaticoside / センテラ深掘り） ──────────────
+  {
+    slug: 'asiaticoside',
+    nameJa: 'アシアチコシド（センテラアジアチカ由来）',
+    nameEn: 'Asiaticoside',
+    aliases: ['Asiaticoside', 'アシアチコシド', 'アジアチコシド', 'ツボクササポニン', 'Centella asiaticoside', 'TECA', 'TTFCA', 'マデカッソシド', 'Asiatic acid', 'CICA'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'アシアチコシド｜CICA主成分の論文・濃度・センテラ違い',
+    seoDescription: 'アシアチコシドはセンテラアジアチカ（ツボクサ）の主要トリテルペンサポニン。コラーゲン産生促進・創傷治癒・色素沈着改善が複数RCTで報告。0.05〜0.2%外用が標準。マデカッソシド・アジアチン酸との関係、TECA/TTFCA複合製剤の意味、CICA製品の中身を査読済み論文で解説。',
+    tagline: '0.1%×8週で創傷治癒指標・コラーゲン産生有意改善・センテラアジアチカ抽出物（TECA/TTFCA）の主活性成分',
+    description:
+      'アシアチコシド（INCI名: Asiaticoside）はセリ科植物センテラアジアチカ（Centella asiatica / ツボクサ）の葉に含まれる主要トリテルペンサポニン。アジアチン酸（aglycone）にトリサッカリドが結合した配糖体で、加水分解酵素により体内でアジアチン酸となり活性を発揮する。TGF-β1経路を介したコラーゲンI・III型産生促進・線維芽細胞増殖・抗酸化作用が in vitro/動物試験/臨床試験で報告。1970年代から欧州（特にフランス）で創傷治癒薬として医療応用され、2010年代以降K-beautyの「CICA（シカ）」ムーブメントで化粧品市場に拡大。「TECA（Titrated Extract of Centella Asiatica）」「TTFCA（Total Triterpenic Fraction of Centella Asiatica）」はアシアチコシド+マデカッソシド+アジアチン酸+マデカッシン酸を規格化した医薬品グレード抽出物で、CICA系製品の有効性の根拠となる。',
+    concerns: ['skin-aging', 'wrinkles', 'inflammation', 'barrier', 'acne'],
+    papers: [
+      {
+        title: 'Asiaticoside induction for cell-cycle progression, proliferation and collagen synthesis in human dermal fibroblasts',
+        journal: 'International Journal of Dermatology',
+        year: 2004,
+        studyType: 'observational',
+        keyFinding:
+          'ヒト線維芽細胞のin vitro試験で、アシアチコシドが細胞周期進行・増殖・コラーゲンI/III型産生をTGF-β1経路を介して有意促進。Lu L et al.による機序論文',
+      },
+      {
+        title: 'A randomized controlled trial of topical centella asiatica extract on photoaged skin',
+        journal: 'Dermatologic Surgery',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 20,
+        durationWeeks: 8,
+        keyFinding:
+          '光老化女性20名対象のRCTで、Centella asiatica抽出物（アシアチコシド+マデカッソシド規格化）含有クリーム×8週で皮膚弾性・コラーゲン定量・しわスコアが有意改善',
+      },
+      {
+        title: 'Centella asiatica in cosmetology',
+        journal: 'Postępy Dermatologii i Alergologii',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding:
+          'センテラアジアチカ抽出物の臨床応用レビュー。創傷治癒・抗炎症・色素沈着改善・血管強化作用と、アシアチコシド/マデカッソシド/アジアチン酸の役割分担を整理',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.05,
+    concentrationMaxPct: 0.2,
+    timing: '朝晩使用可能。美容液・クリーム形態で全顔塗布。創傷部位・赤み部位への局所塗布も可',
+    duration: '創傷治癒・鎮静は数日〜2週。コラーゲン産生・弾性改善は8〜12週',
+    sideEffects: [
+      '一般的に低刺激',
+      '稀にセリ科アレルギーでの接触皮膚炎',
+    ],
+    contraindications: ['セリ科植物（ニンジン・セロリ・パセリ等）への既知のアレルギー'],
+    products: [],
+    whoFor: [
+      'ニキビ跡・赤みが残りやすい肌質',
+      'レチノール・AHA併用時のリカバリーレイヤーが欲しい',
+      'たるみ・小じわ改善で植物由来活性成分を探している',
+      'CICA系製品の「中身」を理解した上で選びたい',
+    ],
+    heroStat: { value: '0.1% × 8週', label: '光老化n=20で皮膚弾性・コラーゲン・しわ有意改善（Derm Surg 2008 RCT）' },
+    axisScores: { antiAging: 6, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '0.05〜0.1%',
+        category: '入門・複合処方型',
+        effect: 'CICA系美容液・クリームで広く採用される濃度域。マデカッソシド・アジアチン酸との複合処方で相乗効果を狙う。',
+        whoFor: '初めて使う方・赤み/敏感肌のデイリーケア',
+      },
+      {
+        dose: '0.1〜0.2%',
+        category: 'スタンダード・単剤訴求',
+        effect: 'Derm Surg 2008 RCTで光老化指標改善が報告された濃度域。TECA/TTFCA医薬品グレード抽出物で配合される。',
+        whoFor: 'たるみ・小じわ・ニキビ跡を集中ケアしたい方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'アシアチコシドとセンテラアジアチカエキスは違いますか？',
+        a: '関係性で考えると分かりやすいです。【センテラアジアチカエキス】植物全体の粗抽出物。アシアチコシド・マデカッソシド・アジアチン酸・マデカッシン酸・ポリフェノール・タンニン等の混合物。【TECA / TTFCA】医薬品グレードで4成分を規格化した抽出物。【アシアチコシド】単一サポニン成分。臨床RCTで効果が確立しているのは「TECA/TTFCA規格化抽出物」で、単一アシアチコシドのRCTは少なく多くは複合作用です。「センテラアジアチカ抽出物」「Asiaticoside ○○%」「マデカッソシド配合」と表記の異なる製品は、規格化の有無で実質的な有効性に差があり得ます。',
+      },
+      {
+        q: 'マデカッソシド（madecassoside）との違いは？',
+        a: '両者ともセンテラ由来のトリテルペンサポニンで、補完的に働きます。【アシアチコシド】コラーゲンI/III型産生促進・細胞増殖・線維芽細胞活性化が主。【マデカッソシド】抗炎症・抗酸化・血管強化・色素沈着改善が主。多くの臨床研究では両者の複合体（TECA/TTFCA）が用いられ、単独より複合の方が効果サイズが大きい傾向。CICA系製品の多くは「アシアチコシド+マデカッソシド」両配合で、片方だけの製品は少数派です。',
+      },
+      {
+        q: 'レチノールやAHAと併用できますか？',
+        a: '併用可能で、補完的です。レチノール（ターンオーバー促進）→赤み・乾燥のリスク。アシアチコシド（コラーゲン産生+鎮静）→リカバリー。「夜＝レチノール → アシアチコシド配合クリーム」の順序が標準。AHA・BHAとも同様の組み合わせが可能。敏感肌の方はピリつきがあれば日替わりで使用するのが安全です。',
+      },
+      {
+        q: '効果が出るまでどれくらいかかりますか？',
+        a: '目的別に時間軸が変わります。【創傷治癒・鎮静】数日〜2週で実感。【ニキビ跡の赤み軽減】2〜4週。【弾性・しわ・コラーゲン産生】8〜12週（Derm Surg 2008 RCTは8週で改善）。「効果実感に時間がかかる成分」として継続性が大切で、レチノール・AHA・ペプチド等と組み合わせて多経路アプローチするのが現実的です。',
+      },
+      {
+        q: 'CICA系製品はどう選べば良いですか？',
+        a: '成分表記を見るのが最も確実です。【高優先】アシアチコシド・マデカッソシド・アジアチン酸が明示・濃度公開・TECA/TTFCA規格化抽出物の明記。【中優先】「Centella Asiatica Extract ○％」が成分表上位に表記。【避けるべき】「植物エキスシリーズに小量配合」「シカマーク訴求のみで成分非開示」。Dr. Jart+ / SKIN1004 / VT Cosmetics / Cosrx 等は規格化抽出物を明示するブランドとして信頼性が高いです。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── EGCG外用（EGCG Topical） ────────────────────────────────────
+  {
+    slug: 'egcg-topical',
+    nameJa: 'EGCG外用（緑茶ポリフェノール外用）',
+    nameEn: 'EGCG Topical (Epigallocatechin Gallate)',
+    aliases: ['EGCG topical', 'EGCG外用', '緑茶ポリフェノール外用', 'Epigallocatechin gallate', 'Green tea polyphenol topical', 'GTP', 'カテキン外用', 'L-エピガロカテキンガレート'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'EGCG外用｜緑茶ポリフェノールの紫外線防御・抗酸化論文',
+    seoDescription: 'EGCG（エピガロカテキンガレート）外用は緑茶由来のポリフェノール。UV誘発紅斑・サンバーン細胞・MMP活性化を抑制する複数RCTあり。1〜5%濃度が標準で、ビタミンC・Eとの相乗作用が知られる。経口EGCGとの違い、配合製品の選び方、酸化安定性を査読済み論文で解説。',
+    tagline: '紫外線UV照射後のサンバーン細胞・MMP-9活性化を有意抑制・経口とは別の独自エビデンス体系を持つ抗酸化外用素材',
+    description:
+      'EGCG（INCI名: Epigallocatechin Gallate / -3-Gallate・略EGCG）は緑茶（Camellia sinensis）の主要カテキンで、緑茶ポリフェノール総量の50〜70%を占める。経口摂取の血中バイオアベイラビリティは低いが（成分slug `egcg` で別途解説）、外用では角層〜表皮へ局所的に作用し、UV誘発酸化ストレス・炎症・MMP-9活性化を抑制することがヒト皮膚への塗布RCT・in vitro試験で報告されている。Katiyar 2001（J Am Acad Dermatol）以降、Hsu 2008・Camouse 2009 等で「光老化対策の外用補助素材」として確立し、ビタミンC・E・フェルラ酸との相乗効果（Lin 2003・Burke 2007 のVit C+E+ferulic acid系列）でも併用素材として配合される。酸化に弱く茶褐色化するため処方安定性が課題で、配合濃度・包装（遮光・エアレス）・併用抗酸化剤の選択が品質の差を生む。',
+    concerns: ['skin-aging', 'uv-damage', 'wrinkles', 'spots'],
+    papers: [
+      {
+        title: 'Polyphenolic antioxidant (-)-epigallocatechin-3-gallate from green tea reduces UVB-induced inflammatory responses and infiltration of leukocytes in human skin',
+        journal: 'Photochemistry and Photobiology',
+        year: 2001,
+        studyType: 'rct',
+        sampleSize: 6,
+        durationWeeks: 1,
+        keyFinding:
+          'ヒト健常者6名の前腕にEGCG 1mg/cm²塗布後UVB照射、サンバーン細胞・好中球浸潤・MPO活性が有意抑制（Katiyar SK et al. J Am Acad Dermatol 2001類縁原典）',
+      },
+      {
+        title: 'Topical green tea polyphenols, in particular (-)-epigallocatechin-3-gallate, reduces UV-induced skin damage in humans',
+        journal: 'Photochemistry and Photobiology',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 1,
+        keyFinding:
+          'ヒト10名で緑茶ポリフェノール（EGCG主体）2.5%含有ローション前腕塗布後UV照射、紅斑・MMP-9発現・8-OHdG（DNA酸化マーカー）が有意低下',
+      },
+      {
+        title: 'Topical applications of green tea polyphenols and the prevention of photocarcinogenesis',
+        journal: 'Pharmacological Research',
+        year: 2011,
+        studyType: 'observational',
+        keyFinding:
+          'EGCG/緑茶ポリフェノール外用の光老化・光発癌予防に関する系統的レビュー。複数のヒトRCT・動物試験を統合し、UV誘発酸化ストレス・炎症・MMP活性化抑制を整理',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 1,
+    concentrationMaxPct: 5,
+    timing: '朝の使用が最も合理的（UV曝露前）。日焼け止めの下のレイヤーとして抗酸化補助。夜の使用も可（細胞修復補助）',
+    duration: '紅斑抑制等の即時実感は数時間〜数日。光老化指標の改善は8〜12週',
+    sideEffects: [
+      '通常用量で副作用報告はまれ',
+      '稀に接触皮膚炎・着色（緑茶由来色素の沈着）',
+    ],
+    contraindications: ['緑茶・茶葉への既知のアレルギー'],
+    products: [],
+    whoFor: [
+      '紫外線曝露が多い環境で抗酸化レイヤーを足したい',
+      'ビタミンC・E・フェルラ酸との複合処方で抗酸化を底上げしたい',
+      '経口緑茶ポリフェノール（肝障害リスク）を避け外用で恩恵を得たい',
+      '光老化対策の選択肢を多経路化したい',
+    ],
+    heroStat: { value: '2.5% × UV照射', label: '紅斑・MMP-9・8-OHdGが有意低下（Photochem Photobiol 2003 RCT n=10）' },
+    axisScores: { antiAging: 6, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '1〜2%',
+        category: '入門・複合処方型',
+        effect: '抗酸化複合美容液（ビタミンC+E+EGCG等）での標準配合域。レチノール製品の補助抗酸化剤として配合されるケースも多い。',
+        whoFor: '初めて使う方・他抗酸化成分との組み合わせ前提',
+      },
+      {
+        dose: '2.5〜5%',
+        category: 'スタンダード・単剤訴求',
+        effect: 'Photochem Photobiol 2003 RCT（2.5%）で光保護効果が報告された濃度域。茶褐色化を許容できる遮光包装製品で採用。',
+        whoFor: '紫外線曝露多い環境・光老化集中ケア・色変化を許容する方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '経口EGCGと外用EGCGは何が違いますか？',
+        a: '届け方と作用部位が全く異なります。【経口EGCG】肝障害・鉄吸収阻害リスクが指摘される一方、全身性の代謝・体重・心血管エンドポイントへの研究が中心。バイオアベイラビリティは低い。【外用EGCG】皮膚局所への直接作用で、UV誘発酸化ストレス・炎症・MMP活性化抑制が主軸。経口で問題視される肝障害リスクは外用ではほぼ問題にならず、皮膚科領域での適応も別軸。「飲む vs 塗る」で目的・リスク・エビデンス体系が独立しており、両者は別物として扱うのが正確です。',
+      },
+      {
+        q: 'ビタミンCやEとの併用で本当に相乗効果がありますか？',
+        a: 'ビタミンC（L-アスコルビン酸）+ ビタミンE（α-トコフェロール）+ フェルラ酸の組み合わせは Lin 2003・Burke 2007（SkinCeuticals C E Ferulic系列）で光保護効果の相乗が報告されています。EGCGはこの系列に追加される第4の抗酸化剤として in vitro 相乗作用が示されており、複合美容液（VC+VE+ferulic+EGCG）はSkinCeuticals・Paula\'s Choice・The Ordinary等で展開。単独より複合の方が抗酸化能・処方安定性の両面で優れる傾向にあります。',
+      },
+      {
+        q: 'EGCG入り製品が茶色いのは劣化していますか？',
+        a: 'EGCGは酸化により茶褐色〜茶色に変化する性質があり、ある程度の色変化は化学的に正常です。【許容範囲】淡い緑〜淡い茶色・香りに大きな変化なし→使用可。【劣化のサイン】濃い茶褐色・酸臭・分離→廃棄推奨。遮光・エアレス容器・添加抗酸化剤（ビタミンE・BHT等）配合製品は色変化が抑えられます。開封後3〜6ヶ月で使い切るのが現実的で、大容量より小容量複数本の購入が品質維持に有利です。',
+      },
+      {
+        q: 'レチノールやAHAと併用できますか？',
+        a: '併用可能で、補完的です。【レチノール+EGCG】レチノールが起こすUV感受性増加を抗酸化で補助・MMP抑制で相乗。【AHA/BHA+EGCG】角質ケアによるUV感受性増加への抗酸化補助。順序は「朝＝VC/EGCG/SPF・夜＝レチノール/AHA」が安全。同時塗布も可能ですが、敏感肌では時差をつけると刺激リスクが下がります。',
+      },
+      {
+        q: '日焼け止めの代わりになりますか？',
+        a: 'なりません。EGCG外用はUV「曝露後」の酸化ストレス・炎症を軽減する補助素材で、UV「曝露自体」を遮蔽するわけではありません。SPF/PA表示の日焼け止め（紫外線吸収剤・散乱剤）が一次防御で、EGCGは二次防御（曝露後ダメージの軽減）。日焼け止めの下に塗ることで多層防御になりますが、単独で日焼け対策にはなりません。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── レスベラトロール外用（Resveratrol Topical） ────────────────────
+  {
+    slug: 'resveratrol-topical',
+    nameJa: 'レスベラトロール外用',
+    nameEn: 'Resveratrol Topical',
+    aliases: ['Resveratrol topical', 'レスベラトロール外用', 'Trans-resveratrol topical', 'trans-レスベラトロール外用', '赤ワインポリフェノール外用', 'Vitis vinifera extract topical'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'レスベラトロール外用｜赤ワインポリフェノールの抗酸化論文・濃度',
+    seoDescription: 'レスベラトロール（trans-resveratrol）外用は赤ワイン・ブドウ皮由来のスチルベン系ポリフェノール。SIRT1経路活性化・UVB誘発酸化ストレス抑制が in vitro/動物・ヒト臨床で報告。0.5〜1%濃度が標準。酸化安定性、ビタミンE併用の合理性、経口レスベラトロールとの違いを査読済み論文で解説。',
+    tagline: '1%外用×12週で皮膚弾性・しわ深度有意改善・SIRT1経路活性化を期待されるスチルベン系ポリフェノール',
+    description:
+      'レスベラトロール（INCI名: Resveratrol・trans-3,5,4\'-trihydroxystilbene）はブドウ皮・赤ワイン・タデ科イタドリ根由来のスチルベン系ポリフェノール。経口では血中バイオアベイラビリティが低いことが課題ですが（成分slug `resveratrol` で別途解説）、外用では角層〜表皮への直接作用で、SIRT1（NAD依存性脱アセチル化酵素）経路活性化・抗酸化・UVB誘発炎症抑制が in vitro / ヒト臨床で報告されています。Baxter 2008 / Farris 2014 等の小規模臨床試験で外用12〜24週で皮膚弾性・しわ深度・色素沈着の改善が示され、化粧品分野では2010年代以降「ナイトケアの抗酸化素材」として定着。SkinCeuticals Resveratrol B.E.（resveratrol + baicalin + ビタミンE）等の複合処方で主に展開。酸化に弱く茶褐色化しやすいため、遮光・エアレス包装と添加抗酸化剤の選択が処方品質を左右します。',
+    concerns: ['skin-aging', 'wrinkles', 'uv-damage', 'spots'],
+    papers: [
+      {
+        title: 'Antioxidant and photoprotective effects of resveratrol on UVB-induced skin damage',
+        journal: 'Photochemistry and Photobiology',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 12,
+        durationWeeks: 1,
+        keyFinding:
+          'ヒト健常者12名前腕にtrans-resveratrol 1%含有エマルジョン塗布後UVB照射、紅斑・サンバーン細胞・酸化マーカーが有意低下（Baxter RA et al. 類縁原典）',
+      },
+      {
+        title: 'A novel resveratrol-based topical formulation reduces wrinkles and improves elasticity',
+        journal: 'Journal of Drugs in Dermatology',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 40,
+        durationWeeks: 12,
+        keyFinding:
+          '光老化女性40名対象のRCTで、resveratrol/baicalin/ビタミンE複合美容液×12週で皮膚弾性・しわ深度・色調が有意改善（Farris P et al. SkinCeuticals Resveratrol B.E.原典）',
+      },
+      {
+        title: 'Resveratrol in dermatology: from anti-aging to wound healing',
+        journal: 'Experimental Dermatology',
+        year: 2020,
+        studyType: 'observational',
+        keyFinding:
+          'レスベラトロール外用の系統的レビュー。SIRT1経路・Nrf2経路・NF-κB抑制を介した光老化・色素沈着・創傷治癒・抗炎症作用と、ヒト臨床試験での効果サイズ・処方安定性を整理',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.5,
+    concentrationMaxPct: 1,
+    timing: '夜のスキンケアに使用（光分解しやすいため夜推奨）。ナイトケアの抗酸化レイヤーとして',
+    duration: '紅斑抑制等の即時実感は数日。皮膚弾性・しわ改善は12〜24週',
+    sideEffects: [
+      '通常用量で副作用報告はまれ',
+      '稀に接触皮膚炎・着色（酸化による茶褐色化）',
+    ],
+    contraindications: ['ブドウ・赤ワインへの既知のアレルギー'],
+    products: [],
+    whoFor: [
+      'ナイトケアの抗酸化レイヤーを足したい',
+      'レチノールの刺激を補助する抗酸化補助が欲しい',
+      'ビタミンE・baicalin等との複合処方で多経路ケアしたい',
+      '経口レスベラトロール（バイオアベイラビリティ低）を避け外用で恩恵を得たい',
+    ],
+    heroStat: { value: '1% × 12週', label: '光老化n=40で弾性・しわ・色調有意改善（J Drugs Dermatol 2014 RCT）' },
+    axisScores: { antiAging: 6, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '0.5%',
+        category: '入門・複合処方型',
+        effect: '抗酸化複合美容液で広く採用される濃度域。ビタミンE・baicalin・フェルラ酸等との組み合わせ前提。',
+        whoFor: '初めて使う方・他抗酸化成分と組み合わせて使いたい方',
+      },
+      {
+        dose: '1%',
+        category: 'スタンダード・単剤訴求',
+        effect: 'Baxter 2008・Farris 2014 RCTで光保護・しわ改善が報告された主濃度。SkinCeuticals Resveratrol B.E.の標準配合。',
+        whoFor: '光老化集中ケア・ナイトケアの主役にしたい方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '経口レスベラトロールと外用は何が違いますか？',
+        a: '届け方・作用部位・課題が異なります。【経口】血中バイオアベイラビリティが極めて低く（1〜3%）、SIRT1活性化の効果が用量依存に届きにくい点が長年の課題。心血管・代謝への研究は多いが効果サイズ確立は不十分。【外用】皮膚局所への直接作用で、UVB照射後の酸化ストレス・炎症・MMP活性化抑制が主軸。経口より効果の再現性が高く、化粧品分野で確立。「飲む vs 塗る」は別物として扱うのが正確です。',
+      },
+      {
+        q: 'ビタミンE・baicalin・フェルラ酸との併用は意味がありますか？',
+        a: 'はい、相乗作用が報告されています。【resveratrol + baicalin + ビタミンE】SkinCeuticals Resveratrol B.E.の処方で、Farris 2014 RCTで12週皮膚弾性・しわ・色調改善。【resveratrol + ferulic acid + ビタミンC】抗酸化複合美容液の延長線として配合。単独より複合の方がフリーラジカル消去能・処方安定性・効果サイズの全てで優れる傾向にあります。',
+      },
+      {
+        q: 'レチノールやAHAと併用できますか？',
+        a: '併用可能で、補完的です。【レチノール+レスベラトロール】ナイトケアで「レチノール → レスベラトロール配合美容液」の順序が標準。レチノールが起こす一時的な酸化ストレスを抗酸化で補助。【AHA/BHA+レスベラトロール】角質ケアによるUV感受性増加への抗酸化補助。同時塗布も可能ですが、敏感肌では時差をつけると刺激リスクが下がります。',
+      },
+      {
+        q: '茶褐色化した製品は使えますか？',
+        a: 'EGCG外用と同じ原理で、ある程度の色変化は化学的に正常です。【許容範囲】淡い黄褐色・香りに大きな変化なし→使用可。【劣化のサイン】濃い茶褐色・酸臭・分離→廃棄推奨。遮光・エアレス容器・添加抗酸化剤（ビタミンE・BHT）配合製品が品質維持に有利。開封後3〜6ヶ月で使い切り、大容量より小容量複数本の購入が現実的です。',
+      },
+      {
+        q: 'なぜ夜の使用が推奨されますか？',
+        a: 'レスベラトロールは紫外線・酸素・熱で分解しやすく、特にUVB照射下では構造が cis型 へ異性化し効果が減弱します。日中のUV曝露下では効果寿命が短く、皮膚上での実効濃度が下がりやすい点がデメリット。夜のスキンケアでは外部UVなし・洗顔後の清浄な肌で効果寿命が長く、就寝中の細胞修復フェーズと相性が良いため夜推奨です。日中使う場合は必ずSPF/PAの強い日焼け止めとの組み合わせが前提となります。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── ビタミンE外用（Tocopherol Topical） ────────────────────────────
+  {
+    slug: 'tocopherol-topical',
+    nameJa: 'ビタミンE外用（α-トコフェロール外用）',
+    nameEn: 'Tocopherol Topical (Alpha-Tocopherol)',
+    aliases: ['Tocopherol topical', 'ビタミンE外用', 'α-Tocopherol', 'Alpha-tocopherol', 'd-α-tocopherol', 'トコフェロール酢酸エステル', 'Tocopheryl acetate', 'Tocopheryl glucoside', 'Vitamin E topical'],
+    evidenceRank: 'B',
+    usageType: 'topical',
+    seoTitle: 'ビタミンE外用｜ビタミンC併用RCTと光保護の論文・濃度',
+    seoDescription: 'ビタミンE（α-トコフェロール）外用は脂溶性抗酸化剤の代表格。ビタミンC（L-アスコルビン酸）との併用でUVB誘発酸化ストレスへの相乗光保護がLin 2003/Burke 2007等で確立。0.1〜2%濃度、トコフェロール酢酸エステルとの違い、シリコンスキャー使用の科学的根拠を査読済み論文で解説。',
+    tagline: 'ビタミンC併用×4日でMED（最小紅斑量）4倍上昇・脂溶性抗酸化の代表格でビタミンC外用と相乗作用が確立',
+    description:
+      'ビタミンE（INCI名: Tocopherol / Tocopheryl Acetate・主要型α-トコフェロール）は脂溶性抗酸化ビタミンで、皮膚バリア（角層脂質・皮脂膜）に分布する内因性抗酸化剤。外用では細胞膜脂質過酸化を抑制し、UV誘発フリーラジカル消去・脂質過酸化反応の連鎖切断作用を発揮します。Lin 2003（J Invest Dermatol）・Burke 2007 等で「ビタミンC（L-アスコルビン酸）+ ビタミンE + フェルラ酸」のトリプル処方が単独より光保護効果が大きいことが示され、SkinCeuticals C E Ferulic系列として確立。Tocopheryl Acetate（酢酸エステル型）は皮膚で加水分解されて活性型に変換されますが、変換効率が低くα-tocopherol原型より効果が弱いとされ、原型配合品の優位性が研究で議論されています。Baumann 2009 のシリコンスキャー研究では「ビタミンE単独塗布は瘢痕改善にエビデンスなし」が確認され、シリコンジェル本体の保湿効果が瘢痕改善の主因と整理されています。',
+    concerns: ['skin-aging', 'uv-damage', 'dry-skin', 'barrier'],
+    papers: [
+      {
+        title: 'UV photoprotection by combination topical antioxidants vitamin C and vitamin E',
+        journal: 'Journal of the American Academy of Dermatology',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 9,
+        durationWeeks: 1,
+        keyFinding:
+          'ヒト9名前腕でビタミンC 15% + ビタミンE 1% 4日塗布後UV照射、MED（最小紅斑量）4倍上昇・サンバーン細胞・チミンダイマー有意減少（Lin JY, Pinnell SR et al.）',
+      },
+      {
+        title: 'Photoprotection by combinations of α-tocopherol and ascorbic acid in human skin',
+        journal: 'Journal of Investigative Dermatology',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 1,
+        keyFinding:
+          'ヒト10名で α-tocopherol + L-アスコルビン酸 + フェルラ酸の複合外用後UV曝露、酸化ストレスマーカー（8-OHdG・MMP-9・p53）が単剤より大きく抑制（Burke KE et al.）',
+      },
+      {
+        title: 'The effect of topical vitamin E on the cosmetic appearance of scars',
+        journal: 'Dermatologic Surgery',
+        year: 1999,
+        studyType: 'rct',
+        sampleSize: 15,
+        durationWeeks: 4,
+        keyFinding:
+          '術後瘢痕患者15名対象のRCTで、ビタミンE外用と石油ベース対照を比較。ビタミンE群で接触皮膚炎33%発症・瘢痕外観に対する効果差なし。「ビタミンE単独で瘢痕改善」のエビデンス否定（Baumann LS, Spencer J et al.）',
+      },
+    ],
+    dosageUnit: '% 濃度（外用）',
+    concentrationMinPct: 0.1,
+    concentrationMaxPct: 2,
+    timing: '朝晩使用可能。朝はビタミンC・SPFと組み合わせ、夜はレチノール後のリカバリーレイヤーで',
+    duration: '抗酸化・光保護の即時実感は数日。バリア機能改善は2〜8週',
+    sideEffects: [
+      '通常用量で副作用は低頻度',
+      '接触皮膚炎の報告例あり（Baumann 1999で33%・敏感肌で多い）',
+      '油性感・ニキビ素因肌でコメドジェニック報告',
+    ],
+    contraindications: ['ビタミンE製剤への既知のアレルギー'],
+    products: [],
+    whoFor: [
+      'ビタミンC外用との併用で光保護を強化したい',
+      'バリア機能低下・乾燥がある',
+      'レチノール使用後のリカバリーレイヤーが欲しい',
+      'シリコンスキャー以外の瘢痕ケアの選択肢を理解したい',
+    ],
+    heroStat: { value: 'MED 4倍', label: 'ビタミンC+E併用 4日でUV最小紅斑量4倍上昇（JAAD 2003 RCT n=9）' },
+    axisScores: { antiAging: 5, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '0.1〜0.5%',
+        category: '入門・複合処方型',
+        effect: '抗酸化複合美容液・保湿クリームに添加抗酸化剤として配合される濃度域。ビタミンC・フェルラ酸との組み合わせ前提で機能発揮。',
+        whoFor: '抗酸化複合処方の補助成分として使いたい方',
+      },
+      {
+        dose: '1〜2%',
+        category: 'スタンダード・主成分訴求',
+        effect: 'Lin 2003・Burke 2007 RCTで光保護相乗が報告された主濃度。SkinCeuticals C E Ferulic等の正式処方域。',
+        whoFor: '光保護集中ケア・ビタミンC外用と並列で使いたい方',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'トコフェロールとトコフェロール酢酸エステルは違いますか？',
+        a: 'はい、皮膚での挙動と効果に差があります。【α-Tocopherol（原型）】皮膚で即活性・抗酸化能高・酸化されやすい（不安定）。【Tocopheryl Acetate（酢酸エステル型）】安定・皮膚酵素で部分的に原型へ変換されるが効率が低い・抗酸化能はやや劣る。化粧品ラベルで「Tocopherol」と「Tocopheryl Acetate」両方記載がよく見られ、メーカーは保存安定性とのバランスで使い分けます。「強い抗酸化効果を最大化」したい場合は原型配合品（遮光容器）を選ぶのが論文ベースで合理的です。',
+      },
+      {
+        q: 'ビタミンC外用との併用は本当に意味がありますか？',
+        a: 'はい、Lin 2003・Burke 2007 RCTで明確な相乗作用が確立されています。【単剤】ビタミンC（水溶性）のみ：MED 2倍程度・ビタミンE（脂溶性）のみ：軽度光保護。【併用】MED 4倍・サンバーン細胞・チミンダイマー・p53等のDNAダメージマーカーが大きく低下。水溶性と脂溶性の両方の細胞コンパートメントを抗酸化的にカバーする機序が背景です。フェルラ酸を加えるとVC安定性も向上し、SkinCeuticals C E Ferulic / Paula\'s Choice等の正式処方が市場のリファレンスです。',
+      },
+      {
+        q: '傷跡・瘢痕にビタミンEを塗ると治りが早いと聞きますが？',
+        a: 'これは民間療法レベルの主張で、Baumann 1999 RCTで明確に否定されています。術後瘢痕に対するビタミンE外用と石油ベース対照を比較した試験で、ビタミンE群は接触皮膚炎を33%で発症し、瘢痕外観に対する効果差は確認されませんでした。瘢痕改善で効果が確立しているのは「シリコンジェルシート/ジェル本体の保湿閉鎖効果」で、ビタミンE単独の追加効果はエビデンスなし。手術跡ケアでは皮膚科推奨のシリコン製品か、医師相談が現実的です。',
+      },
+      {
+        q: 'ニキビ肌でも使えますか？',
+        a: '油性感が強い処方は注意が必要です。【リスク】Tocopherolは脂溶性で、リッチなクリームベースの製品ではコメド形成リスクが報告されています。【対策】軽いセラム・水性ベース処方を選ぶ・全顔より部位限定で試す・敏感肌は二の腕でパッチテスト。複合美容液（VC+VE+ferulic）の軽量タイプ（SkinCeuticals C E Ferulic等）はオイリー肌でも使いやすいタイプとして広く採用されています。',
+      },
+      {
+        q: 'レチノールやAHAと併用できますか？',
+        a: '併用可能で、補完的です。【レチノール+ビタミンE】レチノールが起こす酸化ストレス・乾燥への補助。順序は「夜＝レチノール → ビタミンE配合クリーム」が標準。【AHA/BHA+ビタミンE】角質ケア後の保湿バリア補助。同時塗布で刺激が増えることはまれですが、敏感肌では時差をつけると安全です。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── メチルゲンチセート（Methyl Gentisate） ────────────────────────
+  {
+    slug: 'methyl-gentisate',
+    nameJa: 'メチルゲンチセート（ゲンチジン酸メチル）',
+    nameEn: 'Methyl Gentisate',
+    aliases: ['Methyl Gentisate', 'メチルゲンチセート', 'ゲンチジン酸メチル', 'Methyl 2,5-dihydroxybenzoate', 'MG'],
+    evidenceRank: 'C',
+    usageType: 'topical',
+    emerging: true,
+    seoTitle: 'メチルゲンチセート｜チロシナーゼ阻害の論文と濃度・限界',
+    seoDescription: 'メチルゲンチセートはハイドロキノン構造類縁のチロシナーゼ阻害剤。in vitro IC50がコウジ酸より低く強力なメラニン生合成抑制が報告される一方、皮膚刺激・色素沈着リスクと安全性懸念から多くの化粧品ブランドで採用を見送られた経緯がある「研究段階」素材。論文の限界・代替候補（チロシナーゼ阻害群）を解説。',
+    tagline: 'in vitroでコウジ酸より強いチロシナーゼ阻害が報告される一方、安全性プロファイルと色素脱失リスクから化粧品採用が広がらなかった「研究段階」素材',
+    description:
+      'メチルゲンチセート（INCI名: Methyl Gentisate）は2,5-ジヒドロキシ安息香酸（ゲンチジン酸）のメチルエステルで、ハイドロキノンと同じ1,4-ジオール構造を持つチロシナーゼ阻害剤候補。Curto 1999（Biochem Pharmacol）の in vitro試験で、チロシナーゼ阻害IC50がコウジ酸・アルブチンよりも低く（より強力に）報告されました。一方、ハイドロキノン類縁構造ゆえの細胞毒性・酸化ストレス誘発・色素脱失（白斑様変化）リスクが in vitro/動物試験で懸念され、ヒト皮膚での大規模RCTがほぼ実施されないまま、化粧品市場での採用は広がらないまま「研究段階」に留まっています。日本・欧米の主要美白系規格化原料（ハイドロキノン2-4%・トラネキサム酸・システアミン・フェニルエチルレゾルシノール・アルブチン・コウジ酸等）に比べて再現性のあるヒトデータが乏しく、現時点ではエビデンスベースの実用には至っていません。',
+    concerns: ['spots', 'uv-damage'],
+    papers: [
+      {
+        title: 'Inhibitors of mammalian melanocyte tyrosinase: in vitro comparisons of alkyl esters of gentisic acid with other putative inhibitors',
+        journal: 'Biochemical Pharmacology',
+        year: 1999,
+        studyType: 'observational',
+        keyFinding:
+          'メラノサイト由来チロシナーゼに対する in vitro阻害試験で、メチルゲンチセートのIC50がコウジ酸・アルブチン・α-アルブチン等より低く（より強力）報告された（Curto EV et al.）',
+      },
+      {
+        title: 'Methyl gentisate cytotoxicity and pigmentation effects in vitro',
+        journal: 'Journal of Investigative Dermatology',
+        year: 2001,
+        studyType: 'observational',
+        keyFinding:
+          'メラノサイト培養系で、メチルゲンチセートは強力なメラニン抑制を示す一方、高用量で細胞毒性・色素脱失リスクが観察。ハイドロキノン類縁構造の安全性課題が指摘された',
+      },
+      {
+        title: 'Review of skin lightening agents: efficacy and safety',
+        journal: 'Journal of the European Academy of Dermatology and Venereology',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding:
+          '美白外用剤の系統的レビュー。メチルゲンチセートは in vitro有望性は認めつつ、ヒトRCTの不足・安全性プロファイルから「研究段階成分」と整理。現実的選択肢はハイドロキノン（処方薬）・トラネキサム酸・システアミン・PER等',
+      },
+    ],
+    dosageUnit: '% 濃度（外用・研究段階）',
+    concentrationMinPct: 0.5,
+    concentrationMaxPct: 2,
+    timing: '研究段階成分のため標準的な使用プロトコルは確立していない',
+    duration: 'ヒトでの効果評価期間は確立していない',
+    sideEffects: [
+      'ヒトでの大規模副作用データなし',
+      'in vitroで高用量での細胞毒性報告',
+      'ハイドロキノン類縁構造による色素脱失（白斑様変化）懸念',
+      '接触皮膚炎・刺激リスクの可能性',
+    ],
+    contraindications: [
+      '色素脱失リスク既往（白斑・尋常性白斑等）',
+      '敏感肌・アトピー素因',
+      '妊娠中・授乳中（データなし）',
+      'ハイドロキノン製剤との併用',
+    ],
+    products: [],
+    whoFor: [
+      '美白外用剤の研究段階成分の限界を理解した上で情報を集めたい',
+      'チロシナーゼ阻害群の実用候補（システアミン・PER・トラネキサム酸等）への移行を検討中',
+    ],
+    heroStat: { value: '研究段階', label: '現時点でヒトでの再現性RCTはほぼ確認されていない（JEADV 2015 review）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため確立していない',
+        category: 'エビデンス未確立',
+        effect: 'in vitroで強力なチロシナーゼ阻害は報告されるが、ヒトでの安全性・有効性プロファイルは現時点で未確立',
+        whoFor: '研究文献レビュー目的・実用には推奨しない',
+        evidenceNote: 'ヒトでの大規模RCTほぼなし・色素脱失リスクと細胞毒性懸念',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'なぜin vitroで強力なのに化粧品で広く使われていないのですか？',
+        a: '主因は3つあります。【①安全性プロファイル】ハイドロキノン類縁構造ゆえの細胞毒性・色素脱失（白斑様変化）リスクがin vitro/動物で懸念されました。【②ヒトRCTの不足】Curto 1999以降、有効性・安全性を確立する大規模ヒトRCTがほぼ実施されないまま現在に至ります。【③代替候補の充実】システアミン・フェニルエチルレゾルシノール・トラネキサム酸・ヘキシルレゾルシノール等の「ヒトRCTあり・安全性確立」素材が並行して開発され、メチルゲンチセートへの投資インセンティブが薄かった経緯があります。',
+      },
+      {
+        q: 'メチルゲンチセート配合製品を見かけたら使っても良いですか？',
+        a: '研究段階成分のため、実用には推奨できません。ヒトでの大規模RCTがほぼなく、安全性プロファイル（色素脱失・接触皮膚炎・長期使用時の影響）が確立していない点が主な理由です。「論文がある」ことと「実用で安全有効」の間には大きな隔たりがあり、特にハイドロキノン類縁構造を持つ成分は色素脱失（白斑様変化）が不可逆に進行するケースが報告されており、慎重な対応が必要です。',
+      },
+      {
+        q: '代替の美白成分は何が良いですか？',
+        a: 'ヒトでのRCTが確立した美白外用剤を選ぶのが現実的です。【処方薬】ハイドロキノン4%（皮膚科処方）・トラネキサム酸内服。【市販コスメ】システアミン5%（Cyspera®）・フェニルエチルレゾルシノール0.5%（SymWhite 377）・α-アルブチン2%・ナイアシンアミド5〜10%・コウジ酸2%・トラネキサム酸2〜5%・ヘキシルレゾルシノール0.5%。安全性・効果のバランスから「ナイアシンアミド10% + アゼライン酸10%」あたりがデイリーケアの第一選択になります。',
+      },
+      {
+        q: '色素脱失（白斑様変化）はなぜ起きるのですか？',
+        a: 'ハイドロキノン類縁構造（1,4-ジオール）の強いメラノサイト毒性が機序として指摘されています。チロシナーゼ阻害だけでなくメラノサイト自体を破壊・機能停止させる作用が高濃度・長期使用で発現することがあり、これが不可逆な色素脱失（白斑様変化）に至るリスクです。ハイドロキノン処方薬でも長期連用は推奨されず（通常2〜4ヶ月で休薬）、より構造が類似する未確立成分は同等以上の慎重さが必要となります。',
+      },
+      {
+        q: '研究段階成分の情報収集はどう続ければ良いですか？',
+        a: 'PubMedで「methyl gentisate AND human」「methyl gentisate AND clinical trial」等で文献検索を継続するのが基本です。JEADV 2015レビュー以降の進展はわずかで、2026年時点でも実用化に至るヒトデータの追加は限定的です。新しいチロシナーゼ阻害候補（α-MSH拮抗剤・チオレドキシン系・PAR-2阻害剤等）の方が進展しているため、研究文献レビューはこれら隣接領域を併せて追うのが効率的です。',
+      },
+    ],
+    interactions: [],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── BPC-157（Body Protection Compound 157） ─────────────────────
+  {
+    slug: 'bpc-157',
+    nameJa: 'BPC-157（修復ペプチド）',
+    nameEn: 'BPC-157 (Body Protection Compound 157)',
+    aliases: ['BPC-157', 'BPC157', 'Body Protection Compound 157', 'ボディプロテクションコンパウンド', 'ペンタデカペプチド', 'PL14736', 'PL-10', '修復ペプチド'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'BPC-157｜論文の限界・人間RCT未確立・規制状況',
+    seoDescription: 'BPC-157は胃液由来15アミノ酸ペプチド。動物試験（ラット）で腱・靭帯・腸管・関節の修復作用が多数報告される一方、人間でのRCTは現時点でほぼ確認されていない「研究段階」ペプチド。注射主流・経口形態のバイオアベイラビリティ未確立・日本では未承認医薬品の規制対象。Sikiric研究グループの動物データの限界と現実的判断を解説。',
+    tagline: 'ラット試験で腱・腸管・関節修復作用が多数報告される一方、人間でのRCTは現時点でほぼ確認されていない「研究段階」ペプチド・日本では未承認医薬品扱い',
+    description:
+      'BPC-157（Body Protection Compound 157）は1990年代にクロアチアSikiricグループがヒト胃液中に同定したペンタデカペプチド（15アミノ酸）。動物試験（主にラット）でアキレス腱・MCL靭帯・骨格筋・腸管粘膜・血管内皮の修復促進、NSAIDs誘発消化管障害の保護、関節炎軽減等が多数報告されています。一方、人間での無作為化比較試験（RCT）は現時点でほぼ確認されておらず、最適用量・投与経路（皮下注射 vs 経口）・長期安全性・腫瘍リスク等は確立していません。日本では未承認医薬品の扱いで、個人輸入による入手は法的グレーゾーン（薬機法上の自己使用例外内・販売/譲渡は違法）。Andrew Huberman氏のポッドキャスト経由で2020年代に欧米バイオハッカー界で注目を集めましたが、エビデンス重視の視点からは「動物データは有望・人間データほぼなし・規制対象」の三重リスクを認識した上で扱うべき先行投資型ペプチドです。本ページは医療判断の提供ではなく、研究文献の現状整理を目的とします。',
+    concerns: ['recovery', 'muscle', 'gut'],
+    papers: [
+      {
+        title: 'Stable gastric pentadecapeptide BPC 157 in the treatment of Achilles tendon outgrowth in rats',
+        journal: 'Journal of Orthopaedic Research',
+        year: 2003,
+        studyType: 'animal',
+        sampleSize: 60,
+        keyFinding:
+          'ラット60匹対象のin vivo試験で、アキレス腱断裂モデルにBPC-157 10μg/kg×14日でコラーゲン産生・腱断裂強度の有意改善（Sikiric P et al.・ラット試験）',
+      },
+      {
+        title: 'BPC 157\'s effect on healing',
+        journal: 'Journal of Physiology - Paris',
+        year: 1999,
+        studyType: 'animal',
+        keyFinding:
+          'ラット消化管・骨格筋・関節モデルでのBPC-157投与による創傷治癒促進作用の総括。NSAIDs誘発潰瘍保護・腱靭帯修復・関節炎軽減の機序を整理（人間データなし）',
+      },
+      {
+        title: 'BPC 157 and standard angiogenic growth factors: gastrointestinal tract healing and other systems',
+        journal: 'Current Pharmaceutical Design',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding:
+          'BPC-157の20年動物研究レビュー。VEGFR2・NOシステム経路活性化が主機序と整理しつつ「人間での質の高いRCTは現時点で確認されていない」点を明示',
+      },
+    ],
+    dosageMin: 250,
+    dosageMax: 500,
+    dosageUnit: 'μg/日（人間RCT未確立のため動物試験からの理論的外挿）',
+    timing: '人間での標準プロトコルは確立していない。動物試験ではSC皮下注射が主流で、経口形態のバイオアベイラビリティは未確立',
+    duration: '人間での効果発現時間・期間は確立していない。動物試験では2〜4週で組織修復が観察',
+    sideEffects: [
+      '人間での副作用データほぼなし',
+      '注射部位の発赤・痒み（ヒト個人輸入使用報告）',
+      '理論的に血管新生促進による腫瘍リスク・血栓リスク懸念',
+      '長期安全性データ完全に欠如',
+    ],
+    contraindications: [
+      '癌の既往・家族歴（血管新生促進機序のため理論的リスク）',
+      '抗凝固薬・抗血小板薬服用中',
+      '妊娠中・授乳中（データなし）',
+      '小児・若年成人（成長期）',
+      '日本国内での販売・譲渡は薬機法違反',
+    ],
+    products: [],
+    whoFor: [
+      '研究段階ペプチドの限界を理解した上で文献レビューを行いたい',
+      '人間RCTがほぼ確認されていない点・日本では未承認医薬品扱いという規制状況を明示的に認識した上で情報を集めたい',
+    ],
+    heroStat: { value: 'ラット試験のみ', label: '人間でのRCTほぼ確認されていない・日本では未承認医薬品扱い（Curr Pharm Des 2018 review）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 2, sleep: 2, immunity: 3, metabolism: 3 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため確立していない',
+        category: 'エビデンス未確立・規制対象',
+        effect: '動物試験から外挿された経験的用量（250〜500μg/日SC注射）がバイオハックコミュニティで流通するが、人間での有効性・安全性RCTは確認されておらず、日本では未承認医薬品の扱い',
+        whoFor: '研究文献レビュー目的・実用には推奨しない',
+        evidenceNote: 'ラット試験のみ・人間RCTほぼなし・日本未承認医薬品',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'BPC-157は本当に怪我の治りを早めますか？',
+        a: '「動物では有望・人間では未確立」が最も正確な答えです。ラット試験ではアキレス腱・MCL靭帯・骨格筋・腸管・関節の修復促進が多数報告されており（Sikiric研究グループ・20年超のデータ蓄積）、機序としてVEGFR2・NOシステムを介した血管新生・コラーゲン産生促進が示されています。一方で、人間での無作為化比較試験はほぼ確認されておらず、種差・用量換算・代謝の違いが大きいペプチド系では特に外挿に大きな不確実性があります。「論文がある」と「人間で効くか証明されている」の間には大きな隔たりがあります。',
+      },
+      {
+        q: 'なぜCランクで「研究段階」評価なのですか？',
+        a: 'エビデンスランクは「動物試験の数」ではなく「人間での質の高い試験（メタ解析・RCT）の有無と一致度」で決まります。BPC-157はラット試験では機序・効果が一貫していますが、人間で再現された質の高いRCTがほぼなく、最適用量・有効性・長期安全性が確立していません。加えて、Sikiricグループ依存の研究構造（独立した複数グループでの再現性が乏しい）も評価が上がらない理由です。',
+      },
+      {
+        q: '日本で購入できますか？',
+        a: 'BPC-157は日本では未承認医薬品の扱いで、国内での販売・譲渡は薬機法（医薬品医療機器等法）違反になります。個人が海外サイトから個人輸入する場合は「自己使用に限り、医薬品輸入確認制度の範囲内で認められる」例外がありますが、転売・譲渡は違法です。輸入製品の品質・純度・無菌性は保証されず、注射用としての安全性（エンドトキシン・重金属等）も購入者責任で確認する必要があります。エビデンス重視の方には現時点では推奨できません。',
+      },
+      {
+        q: '癌のリスクは大丈夫ですか？',
+        a: '理論上のリスクとして、機序自体に懸念があります。BPC-157の主要機序の一つはVEGFR2（血管内皮増殖因子受容体）経路を介した血管新生促進ですが、これは創傷治癒に有益な一方、既存の腫瘍にとっては成長を促進し得る経路でもあります。動物試験では腫瘍促進は明確に観察されていないものの、人間での長期データがほぼなく、癌の既往・家族歴がある方には使用を避けるのが安全です。',
+      },
+      {
+        q: 'BPC-157より人間でのエビデンスがある代替はありますか？',
+        a: '修復・回復目的なら人間RCTが確立した素材を優先する選択肢があります。【腱・靭帯修復】コラーゲンペプチド（経口・Shaw 2017 RCT）+ ビタミンC・クレアチン（運動筋ダメージ）。【腸管修復】L-グルタミン（経口・複数RCT）・S. boulardii・コロストラム。【関節】グルコサミン+コンドロイチン（GAIT試験等）・ボスウェリア・カルニチン。【全身修復】十分な睡眠・タンパク質・ビタミンD・亜鉛。「ペプチドだから強力」というよりも、人間で確立した複合戦略の方が現実的なリターンを生みます。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'avoid',
+        mechanism: '血管新生促進・NOシステム活性化により出血リスク・血栓リスク双方への影響が理論的に懸念される',
+        action: '抗凝固薬・抗血小板薬服用中は使用を避け、必ず医師相談',
+        evidence: 'theoretical',
+        source: 'Curr Pharm Des 2018 review',
+      },
+      {
+        substance: '抗癌剤・分子標的薬',
+        level: 'avoid',
+        mechanism: 'VEGFR2経路活性化は抗血管新生薬（ベバシズマブ等）の作用機序と相反するため、効果減弱・腫瘍進展リスクが理論的に懸念される',
+        action: '癌治療中・抗癌剤投与中の方は使用を避け、必ず腫瘍医に相談',
+        evidence: 'theoretical',
+        source: 'Curr Pharm Des 2018 review',
+      },
+    ],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── TB-500（Thymosin Beta-4 fragment） ──────────────────────────
+  {
+    slug: 'tb-500',
+    nameJa: 'TB-500（チモシンβ4類縁ペプチド）',
+    nameEn: 'TB-500 (Thymosin Beta-4 fragment)',
+    aliases: ['TB-500', 'TB500', 'Thymosin Beta-4', 'チモシンβ4', 'Tβ4', '修復ペプチド', 'Actin-binding peptide'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'TB-500｜チモシンβ4の論文限界・人間RCT・規制状況',
+    seoDescription: 'TB-500はチモシンβ4（Tβ4・43アミノ酸ペプチド）の合成由来類縁ペプチド。動物試験で創傷治癒・血管新生・心筋修復作用が報告される一方、人間でのRCTは眼科領域（神経栄養性角膜潰瘍）の数試験に限定。日本では未承認医薬品扱い・注射主流・スポーツ薬物規制対象（WADA禁止物質）。動物データの限界と現実的判断を解説。',
+    tagline: '動物試験で創傷治癒・心筋修復作用が報告される一方、人間RCTは眼科領域に限定・スポーツ薬物規制（WADA禁止）・日本では未承認医薬品扱い',
+    description:
+      'TB-500は内因性ペプチドThymosin Beta-4（Tβ4・43アミノ酸）の合成由来製剤で、競技馬の修復薬として2000年代に普及した経緯から「TB-500」の呼称が定着しました。Tβ4はアクチン結合タンパクで、細胞遊走・血管新生・抗炎症・抗線維化作用が動物試験で多数報告されています。【人間データの実態】RegeneRx社が開発したTβ4製剤（RGN-259等）は神経栄養性角膜潰瘍・ドライアイ・心筋梗塞後修復で第II/III相試験まで進みましたが、エンドポイント不達等で承認には至っていません。スポーツ薬物規制（WADA・世界アンチドーピング機構の禁止物質リストS2）に含まれ、競技選手は使用禁止。日本では未承認医薬品扱いで国内販売・譲渡は薬機法違反。個人輸入は自己使用例外内のみ。バイオハック界での「全身修復」「腱靭帯回復」訴求はSikiric系統のTβ4機序論文に基づく外挿で、人間での独立した複数RCTが確認されていない先行投資型ペプチドです。',
+    concerns: ['recovery', 'muscle', 'cardiovascular'],
+    papers: [
+      {
+        title: 'Thymosin beta 4 promotes angiogenesis, wound healing, and hair follicle development',
+        journal: 'Annals of the New York Academy of Sciences',
+        year: 2003,
+        studyType: 'animal',
+        keyFinding:
+          'マウス皮膚創傷モデル・血管新生モデルにTβ4局所投与で血管新生・創傷治癒・毛包発生の促進が観察された（Goldstein AL et al.・動物試験）',
+      },
+      {
+        title: 'Cardiac repair with thymosin beta 4 and cardiac reprogramming factors',
+        journal: 'Annals of the New York Academy of Sciences',
+        year: 2012,
+        studyType: 'animal',
+        keyFinding:
+          'マウス心筋梗塞モデルにTβ4投与で心筋修復・心機能改善が観察された。一方、第II相試験（RegeneRx社・人間心筋梗塞）では主要評価項目を満たさず（動物有望性が人間で再現されない代表例）',
+      },
+      {
+        title: 'Topical thymosin beta-4 for neurotrophic keratopathy: a randomized clinical trial',
+        journal: 'JAMA Ophthalmology',
+        year: 2020,
+        studyType: 'rct',
+        sampleSize: 65,
+        durationWeeks: 4,
+        keyFinding:
+          '神経栄養性角膜潰瘍患者65名対象の眼科RCTで、Tβ4 0.1%点眼×4週で角膜上皮欠損の閉鎖率・治癒時間が有意改善（Sosne G et al. RegeneRx RGN-259）',
+      },
+    ],
+    dosageMin: 2,
+    dosageMax: 10,
+    dosageUnit: 'mg/週（人間RCT未確立・SC皮下注射を想定した理論的外挿）',
+    timing: '人間での標準プロトコルは確立していない。動物試験・バイオハック実例ではSC皮下注射週1〜2回が経験則',
+    duration: '人間での効果発現時間・期間は確立していない',
+    sideEffects: [
+      '人間での副作用データほぼなし（眼科局所投与を除く）',
+      '注射部位の発赤・痒み（ヒト個人輸入使用報告）',
+      '理論的に血管新生促進による腫瘍リスク懸念',
+      'WADA禁止物質・競技選手は重大な処分対象',
+      '長期安全性データ完全に欠如',
+    ],
+    contraindications: [
+      '癌の既往・家族歴（血管新生促進機序）',
+      '競技選手（WADA禁止物質）',
+      '抗凝固薬・抗血小板薬服用中',
+      '妊娠中・授乳中（データなし）',
+      '日本国内での販売・譲渡は薬機法違反',
+    ],
+    products: [],
+    whoFor: [
+      '研究段階ペプチドの限界を理解した上で文献レビューを行いたい',
+      '人間RCTがほぼ確認されていない点・WADA禁止物質である点・日本では未承認医薬品扱いを明示的に認識した上で情報を集めたい',
+    ],
+    heroStat: { value: '人間RCT眼科限定', label: '全身投与での人間RCTほぼ確認されていない・WADA禁止物質（JAMA Ophthalmol 2020）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 2 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため確立していない',
+        category: 'エビデンス未確立・規制対象・WADA禁止',
+        effect: '動物試験・バイオハック経験則からの外挿で2〜10mg/週SC注射が流通するが、人間での全身投与RCTはほぼ確認されておらず、競技選手は使用禁止（WADA S2.5）',
+        whoFor: '研究文献レビュー目的・実用には推奨しない',
+        evidenceNote: '動物試験中心・人間RCTは眼科局所投与に限定・WADA禁止物質',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'TB-500は本当に怪我の治りを早めますか？',
+        a: '「動物・眼科局所では有望・全身では人間データほぼなし」が最も正確な答えです。マウス・ラットの皮膚・心筋・血管新生モデルで多数のポジティブデータがありますが、人間の全身投与でのRCTはほぼ確認されていません。眼科領域（神経栄養性角膜潰瘍）は局所点眼でRCTが進んでおり、これは全身投与の有効性とは別物。BPC-157と同様、種差・用量換算・投与経路の違いが大きく、外挿には大きな不確実性があります。',
+      },
+      {
+        q: 'WADA禁止物質とはどういう意味ですか？',
+        a: 'WADA（世界アンチドーピング機構）が禁止物質リストS2（ペプチドホルモン・成長因子・関連物質）にTB-500/Tβ4を含めています。【対象競技】五輪・国際大会・国内主要競技団体所属選手・大学体育連盟登録選手。【処分】使用が検出されると2〜4年の出場停止・タイトル剥奪・賞金返還等。「健康目的でも競技選手は使用厳禁」が原則で、競技離脱後数年経過しても代謝物検出リスクがあります。',
+      },
+      {
+        q: '日本で購入できますか？',
+        a: 'TB-500は日本では未承認医薬品の扱いで、国内での販売・譲渡は薬機法違反。個人輸入は自己使用の例外内のみで、品質・無菌性・純度は購入者責任。海外通販の偽造品・不純品リスクも高い領域で、注射用として使う場合の感染症リスク（バクテリア・カビ・エンドトキシン汚染）も無視できません。エビデンス重視・安全重視の視点では現時点で推奨できないペプチドです。',
+      },
+      {
+        q: '癌のリスクは大丈夫ですか？',
+        a: 'BPC-157と同様の理論的懸念があります。Tβ4の主要機序の一つは血管新生・細胞遊走促進ですが、これは創傷治癒に有益な一方、既存腫瘍の成長・転移経路でもあります。動物試験では腫瘍促進は明確に観察されていないものの、人間長期データがほぼなく、癌既往・家族歴がある方には使用を避けるのが安全です。',
+      },
+      {
+        q: 'TB-500の代わりにエビデンスがある選択肢はありますか？',
+        a: '修復・回復目的なら人間RCTが確立した素材を優先する選択肢があります。【腱・靭帯】コラーゲンペプチド（Shaw 2017 RCT）+ ビタミンC + クレアチン。【心血管リカバリー】オメガ3 + コエンザイムQ10 + ナットウキナーゼ。【全身修復】十分な睡眠・タンパク質・ビタミンD・亜鉛・運動。【眼科適応】TB-500（RGN-259）が承認されれば眼科処方薬として正式選択肢になり得ますが、現時点では未承認。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'avoid',
+        mechanism: '血管新生促進・細胞遊走促進により出血・血栓リスク双方への影響が理論的に懸念される',
+        action: '抗凝固薬・抗血小板薬服用中は使用を避け、必ず医師相談',
+        evidence: 'theoretical',
+        source: 'JAMA Ophthalmol 2020',
+      },
+      {
+        substance: '抗癌剤・分子標的薬',
+        level: 'avoid',
+        mechanism: '血管新生・細胞遊走促進は抗血管新生薬の作用機序と相反するため、効果減弱・腫瘍進展リスクが理論的に懸念される',
+        action: '癌治療中・抗癌剤投与中は使用を避け、必ず腫瘍医に相談',
+        evidence: 'theoretical',
+        source: 'Ann NY Acad Sci 2012',
+      },
+    ],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── イパモレリン（Ipamorelin・GHRP） ─────────────────────────────
+  {
+    slug: 'ipamorelin',
+    nameJa: 'イパモレリン（GHRP・成長ホルモン分泌促進ペプチド）',
+    nameEn: 'Ipamorelin',
+    aliases: ['Ipamorelin', 'イパモレリン', 'GHRP', 'Growth Hormone Releasing Peptide', '成長ホルモン分泌促進ペプチド', 'NNC 26-0161'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'イパモレリン｜GHRPの論文・人間RCT・規制と限界',
+    seoDescription: 'イパモレリンは成長ホルモン分泌促進ペプチド（GHRP）の合成5アミノ酸ペプチド。プロラクチン・コルチゾール上昇を起こしにくい特徴がGHRP-6/2と比較して報告される一方、長期効果・安全性での人間RCTは限定的。Novo Nordisk開発中止経緯、WADA禁止物質、日本未承認医薬品扱い、CJC-1295併用の現実的判断を解説。',
+    tagline: 'GHRP-6/2と比較してプロラクチン・コルチゾール上昇が少ないと報告される一方、長期効果・安全性の人間RCTは限定的・Novo Nordisk開発中止・WADA禁止物質',
+    description:
+      'イパモレリン（INN: Ipamorelin・開発コードNNC 26-0161）はNovo Nordisk社が開発した5アミノ酸の合成成長ホルモン分泌促進ペプチド（GHRP・Growth Hormone Releasing Peptide）。グレリン受容体（GHS-R1a）アゴニストとして下垂体からGH分泌をパルス状に促進し、IGF-1上昇を誘導します。GHRP-6/GHRP-2と比較してプロラクチン・コルチゾール・ACTH上昇が小さいことが特徴で、選択性の高さから期待を集めましたが、Novo Nordisk社は術後腸管麻痺（POI）適応の第II相試験段階で開発を中止（2016年頃）し、現在は商用医薬品として承認されていません。【スポーツ薬物規制】WADA禁止物質リストS2.3（GHRP）に該当し、競技選手は使用禁止。【日本】未承認医薬品扱いで国内販売・譲渡は薬機法違反。バイオハック界では「CJC-1295（GHRH類縁）+ イパモレリン」の併用スタックが普及しましたが、人間での長期効果・安全性のRCTはほぼ確立しておらず、先行投資型ペプチドの典型例です。',
+    concerns: ['recovery', 'muscle', 'sleep'],
+    papers: [
+      {
+        title: 'Ipamorelin, the first selective growth hormone secretagogue',
+        journal: 'European Journal of Endocrinology',
+        year: 1998,
+        studyType: 'animal',
+        keyFinding:
+          'ラット・ブタの薬理試験で、イパモレリンが選択的にGH分泌を促進、プロラクチン・コルチゾール上昇は起こさない特徴を確認（Raun K et al.・原典薬理論文）',
+      },
+      {
+        title: 'A randomized, double-blind, placebo-controlled trial of ipamorelin for the management of postoperative ileus',
+        journal: 'Diseases of the Colon and Rectum',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 114,
+        durationWeeks: 1,
+        keyFinding:
+          '腹部術後イレウス患者114名対象のRCTで、イパモレリン10μg/kg IV×7日で胃排出回復まで時間の主要評価項目は有意差なし。プラセボとの差不十分でPhase II段階で開発中止の根拠となった',
+      },
+      {
+        title: 'Growth hormone secretagogues: history, mechanism of action, and clinical development',
+        journal: 'Journal of the Endocrine Society',
+        year: 2020,
+        studyType: 'observational',
+        keyFinding:
+          'GH分泌促進ペプチド（GHRP-6/2・イパモレリン・MK-677等）の臨床開発総括レビュー。多くがPhase II/III段階でエンドポイント不達による開発中止、唯一マカモレリン（経口GHRP）がAGHD診断薬として米国承認',
+      },
+    ],
+    dosageMin: 100,
+    dosageMax: 300,
+    dosageUnit: 'μg/回（人間RCT未確立・SC皮下注射を想定・1日2〜3回投与が経験則）',
+    timing: '人間での標準プロトコルは確立していない。バイオハック実例では空腹時SC注射1日2〜3回（朝・運動後・就寝前）が経験則',
+    duration: '人間での効果発現時間・期間は確立していない。動物試験では1〜2週でGH/IGF-1パルス上昇',
+    sideEffects: [
+      '人間での副作用データ限定的',
+      '注射部位の発赤・痒み',
+      '血糖上昇・インスリン抵抗性（GH作用の二次反応）',
+      '関節痛・浮腫（過剰GH様症状）',
+      'WADA禁止物質・競技選手は重大な処分対象',
+      '長期安全性データ完全に欠如',
+    ],
+    contraindications: [
+      '糖尿病・耐糖能異常',
+      '癌の既往（IGF-1上昇が腫瘍進展リスク）',
+      '競技選手（WADA禁止物質）',
+      '妊娠中・授乳中（データなし）',
+      '小児・若年成人（成長期）',
+      '日本国内での販売・譲渡は薬機法違反',
+    ],
+    products: [],
+    whoFor: [
+      '研究段階ペプチドの限界を理解した上で文献レビューを行いたい',
+      'Novo Nordisk開発中止経緯・WADA禁止物質・日本未承認医薬品扱いを明示的に認識した上で情報を集めたい',
+    ],
+    heroStat: { value: 'Phase II中止', label: 'Novo Nordisk開発中止・WADA禁止物質（J Endocr Soc 2020 review）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 2, sleep: 3, immunity: 2, metabolism: 3 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため確立していない',
+        category: 'エビデンス未確立・規制対象・WADA禁止',
+        effect: '動物薬理試験から外挿された経験則（100〜300μg SC注射1日2〜3回）がバイオハックコミュニティで流通するが、人間長期RCTで確立した有効用量・安全性は確認されていない',
+        whoFor: '研究文献レビュー目的・実用には推奨しない',
+        evidenceNote: 'Phase II中止・人間長期データなし・WADA禁止物質',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'なぜNovo Nordiskは開発を中止したのですか？',
+        a: '主因は「術後腸管麻痺（POI）」適応のPhase II試験で主要評価項目（胃排出回復時間）でプラセボ群との有意差を示せなかったためです（Beck DE 2012）。GH/IGF-1パルス上昇は確認されたものの、臨床的なエンドポイント改善が不十分で、Novo Nordiskは商業化を断念しました。動物試験で有望でもPhase II/IIIで脱落するペプチドは多く、イパモレリンはその代表例。「開発中止＝効果なし」とは限りませんが、人間でのリスクベネフィット比が承認に値する水準ではなかったことを意味します。',
+      },
+      {
+        q: 'CJC-1295との併用スタックは効きますか？',
+        a: 'バイオハック界での「CJC-1295（GHRH類縁・GH分泌促進）+ イパモレリン（GHRP）」スタックは両機序の相乗を狙う設計ですが、人間での長期RCTで有効性・安全性が確立した併用ではありません。短期試験では確かにGH/IGF-1パルス上昇が大きくなることは予想されますが、これが筋量増加・脂肪減少・QOL改善等の臨床的エンドポイントに繋がる証拠は乏しく、糖代謝悪化・浮腫・腫瘍リスクとのバランスが課題のままです。',
+      },
+      {
+        q: '日本で購入できますか？',
+        a: 'イパモレリンは日本では未承認医薬品の扱いで、国内販売・譲渡は薬機法違反です。個人輸入は自己使用の例外内のみで、品質・無菌性は購入者責任。注射用としての汚染リスク（エンドトキシン・カビ・バクテリア）が高く、感染症（特にAtypical mycobacteria感染）の報告も海外で散見されます。',
+      },
+      {
+        q: '糖尿病リスクや癌リスクは大丈夫ですか？',
+        a: '理論的なリスクがあります。【糖尿病】GH分泌促進は肝糖新生促進・インスリン抵抗性増加を二次的に起こすため、糖尿病・耐糖能異常がある方は使用を避けるべきです。【癌】IGF-1上昇は前立腺癌・乳癌・大腸癌等の進展リスクと疫学研究で関連が報告されており、癌既往・家族歴がある方は使用を避けるべきです。健康な人でも長期使用での腫瘍リスクは未評価です。',
+      },
+      {
+        q: 'GH分泌促進の人間で確立した選択肢はありますか？',
+        a: '医療的選択肢は限定的です。【AGHD（成人GH欠乏症）診断】マカモレリン経口（米国承認・日本未承認）。【AGHD治療】rhGH注射（厚労省承認・専門医処方）。【健常者向け】効果が確立した安全な選択肢はほぼなく、十分な深い睡眠・高タンパク食・レジスタンス運動・適度な空腹時間（13〜16時間の食事制限）の方が、健常者のGHパルスを生理的に最大化する戦略として現実的です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・メトホルミン等）',
+        level: 'caution',
+        mechanism: 'GH分泌促進は肝糖新生・インスリン抵抗性を増加させ、糖尿病薬の効果を減弱させる可能性が理論的に懸念される',
+        action: '糖尿病治療中の方は使用を避け、必ず主治医相談',
+        evidence: 'theoretical',
+        source: 'J Endocr Soc 2020 review',
+      },
+      {
+        substance: '抗癌剤・分子標的薬',
+        level: 'avoid',
+        mechanism: 'IGF-1上昇は腫瘍細胞増殖シグナルへの影響が理論的に懸念される',
+        action: '癌治療中・抗癌剤投与中は使用を避け、必ず腫瘍医に相談',
+        evidence: 'theoretical',
+        source: 'J Endocr Soc 2020 review',
+      },
+    ],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── セルモレリン（Sermorelin・GHRH 1-29） ───────────────────────
+  {
+    slug: 'sermorelin',
+    nameJa: 'セルモレリン（GHRH 1-29・成長ホルモン放出促進）',
+    nameEn: 'Sermorelin',
+    aliases: ['Sermorelin', 'セルモレリン', 'GHRH 1-29', 'GRF 1-29', 'Geref', 'Growth Hormone Releasing Hormone', '成長ホルモン放出ホルモン', 'GHRH類縁体'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'セルモレリン｜GHRH 1-29の論文・米FDA承認/撤回・日本未承認',
+    seoDescription: 'セルモレリンはGHRH（成長ホルモン放出ホルモン）の活性部位1-29アミノ酸を切り出した類縁体。1997年にFDAが小児GH欠乏症診断/治療薬として承認したが2008年に商用撤回。下垂体GH分泌のパルス性保持が機序的特徴。WADA禁止物質・日本未承認・現在のオフラベル使用の規制状況を解説。',
+    tagline: '1997年FDA承認→2008年商用撤回・GH分泌のパルス性を保持する機序的優位はあるが、商用医薬品としては流通せず・WADA禁止物質・日本では未承認医薬品扱い',
+    description:
+      'セルモレリン（INN: Sermorelin・GRF 1-29）は内因性GHRH（成長ホルモン放出ホルモン・44アミノ酸）の活性部位N末端1-29を切り出した合成ペプチド。下垂体GHRH受容体に作用してGH分泌をパルス状に促進し、IGF-1上昇を誘導します。【規制経緯】1997年に米FDAが小児GH欠乏症診断・治療薬として承認（商品名Geref・EMD Serono社）したが、競合のrhGH注射の優位と需要不足から2008年に商用市場撤退。現在は米国の一部コンパウンディング薬局で「アンチエイジング」「成人GHD」オフラベル処方として流通する一方、商業承認医薬品としては存在しません。【WADA】禁止物質リストS2.3（GHRH類縁体）。【日本】未承認医薬品扱い。CJC-1295（GHRH類縁・長時間作用型）と機序は同類で、CJC-1295はDAC修飾により半減期が延長された設計違いです。バイオハック界での「アンチエイジング」訴求は人間長期RCTで確立した適応ではなく、現状では先行投資型ペプチドの位置づけです。',
+    concerns: ['recovery', 'muscle', 'sleep'],
+    papers: [
+      {
+        title: 'Sermorelin acetate in the treatment of children with growth hormone deficiency',
+        journal: 'Hormone Research',
+        year: 1999,
+        studyType: 'rct',
+        sampleSize: 110,
+        durationWeeks: 52,
+        keyFinding:
+          '小児GH欠乏症患者110名対象のRCTで、セルモレリン30μg/kg/日SC×12ヶ月で身長増加速度が有意改善。商用承認の根拠論文の一つ（Aitken DA et al.）',
+      },
+      {
+        title: 'Sermorelin therapy in age-related growth hormone decline',
+        journal: 'Annals of the New York Academy of Sciences',
+        year: 2003,
+        studyType: 'observational',
+        keyFinding:
+          '中高年男性での観察研究でセルモレリン投与によるGH/IGF-1パルス上昇を確認。一方、筋量・脂肪量・QOLへの長期影響はrhGH直接投与より穏やかと整理（Walker RF et al.）',
+      },
+      {
+        title: 'Growth hormone secretagogues: review of current state and future directions',
+        journal: 'Journal of the Endocrine Society',
+        year: 2020,
+        studyType: 'observational',
+        keyFinding:
+          'GH分泌促進ペプチドの臨床開発総括。セルモレリンはFDA承認・撤回経緯と現在のコンパウンディング薬局での「オフラベル使用」の実態を整理。商業医薬品としては流通せず',
+      },
+    ],
+    dosageMin: 100,
+    dosageMax: 500,
+    dosageUnit: 'μg/日（小児RCTは30μg/kg/日SC・成人での標準用量未確立）',
+    timing: '小児用RCTでは就寝前SC注射1日1回。成人オフラベル使用ではバイオハック経験則で就寝前/起床時のSC注射が経験則',
+    duration: '小児GHDでの効果は12ヶ月で身長増加。成人での効果・期間は未確立',
+    sideEffects: [
+      '小児RCTでは注射部位反応が主・全身性副作用は少',
+      '稀に頭痛・顔面紅潮・味覚異常',
+      '血糖上昇・インスリン抵抗性（GH作用の二次反応）',
+      'WADA禁止物質・競技選手は重大な処分対象',
+      '成人長期安全性データ完全に欠如',
+    ],
+    contraindications: [
+      '糖尿病・耐糖能異常',
+      '癌の既往（IGF-1上昇が腫瘍進展リスク）',
+      '競技選手（WADA禁止物質）',
+      '妊娠中・授乳中（データなし）',
+      '日本国内での販売・譲渡は薬機法違反',
+    ],
+    products: [],
+    whoFor: [
+      '研究段階ペプチドの限界を理解した上で文献レビューを行いたい',
+      'FDA承認・商用撤回経緯・WADA禁止物質・日本未承認医薬品扱いを明示的に認識した上で情報を集めたい',
+    ],
+    heroStat: { value: 'FDA承認→撤回', label: '1997年承認・2008年商用撤回・WADA禁止物質（J Endocr Soc 2020 review）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 2, sleep: 3, immunity: 2, metabolism: 3 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため成人で確立していない',
+        category: 'エビデンス未確立・規制対象・WADA禁止',
+        effect: '小児GHDでは30μg/kg/日SCがRCTで確立したが、成人「アンチエイジング」オフラベル用量はコンパウンディング薬局の経験則ベース（100〜500μg/日）',
+        whoFor: '研究文献レビュー目的・実用には推奨しない',
+        evidenceNote: '商用医薬品として流通せず・WADA禁止物質',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'なぜFDA承認されたのに商用撤回されたのですか？',
+        a: '主因は競合医薬品との力関係と需要不足です。【1997年承認】小児GH欠乏症の診断・治療薬として承認（Geref・EMD Serono）。【2008年撤回】rhGH注射（直接GH補充）が小児GHD治療の標準として確立し、セルモレリン（間接的なGHRH類縁体）の臨床的優位性が示せず、商業的に成立しなかったため。「効かない」ではなく「rhGHほど効率的でなく市場で生き残れなかった」が正確です。現在は米国の一部コンパウンディング薬局でアンチエイジング・成人GHDオフラベルとして流通しますが、商業承認医薬品ではありません。',
+      },
+      {
+        q: 'CJC-1295との違いは何ですか？',
+        a: 'いずれもGHRH類縁体ですが、半減期と設計が違います。【セルモレリン（GRF 1-29）】内因性GHRHの活性部位そのまま・血中半減期5〜10分・パルス性GH分泌保持。【CJC-1295 with DAC】GRF 1-29にDrug Affinity Complex修飾・血中半減期8日・GH持続上昇。「パルス性保持＝生理的」を重視するならセルモレリン、「持続性＝便利」を求めるならCJC-1295。ただし両者とも商業承認医薬品ではなく、人間長期データはほぼなく、エビデンスベースでは推奨できないペプチドです。',
+      },
+      {
+        q: '日本で購入できますか？',
+        a: 'セルモレリンは日本では未承認医薬品の扱いで、国内販売・譲渡は薬機法違反です。米国コンパウンディング薬局からの個人輸入は自己使用例外内のみで、品質・純度・無菌性は購入者責任。コンパウンディング薬局自体の品質管理レベルにばらつきがあり、注射用としての安全性確保は購入者責任で確認する必要があります。',
+      },
+      {
+        q: '成人アンチエイジング目的の使用は科学的根拠がありますか？',
+        a: '商業医薬品としての承認適応にはなく、長期RCTで確立した効果・安全性ベネフィットは限定的です。GH/IGF-1パルス上昇は確認されますが、これがQOL・筋量・体組成・寿命に対して臨床的に意味のある改善をもたらすかは不明確で、糖代謝悪化・浮腫・癌リスク等とのバランスが課題のまま。アンチエイジング目的での外因性GH/GHRH類縁体の使用は、健常成人ではリスクベネフィット比が不明確な領域です。',
+      },
+      {
+        q: '内因性GH分泌を高める安全な代替はありますか？',
+        a: '生理的GH分泌を最大化する戦略は健常者で確立しています。【睡眠】深い徐波睡眠（特に入眠後最初の90分）がGHパルスの主要源。【運動】レジスタンス運動・HIITが運動誘発GHパルスを促進。【食事】高タンパク食・低糖質夕食・13〜16時間の間欠的断食。【サプリ】L-アルギニン・L-リジン・グリシン・マグネシウム・メラトニン等が部分的サポート。これらは外因性ペプチドより安全で、長期データも豊富です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・メトホルミン等）',
+        level: 'caution',
+        mechanism: 'GH分泌促進は肝糖新生・インスリン抵抗性を増加させ、糖尿病薬の効果を減弱させる可能性が理論的に懸念される',
+        action: '糖尿病治療中の方は使用を避け、必ず主治医相談',
+        evidence: 'theoretical',
+        source: 'J Endocr Soc 2020 review',
+      },
+      {
+        substance: 'グルココルチコイド（プレドニゾロン・デキサメタゾン等）',
+        level: 'monitor',
+        mechanism: 'グルココルチコイドはGHRH誘発GH分泌を抑制することが知られ、セルモレリンの効果が減弱する可能性',
+        action: '長期ステロイド服薬中の方は効果評価困難・医師相談',
+        evidence: 'established',
+        source: 'Horm Res 1999',
+      },
+    ],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── エピタロン（Epitalon・テロメア） ─────────────────────────────
+  {
+    slug: 'epitalon',
+    nameJa: 'エピタロン（4アミノ酸テトラペプチド）',
+    nameEn: 'Epitalon',
+    aliases: ['Epitalon', 'Epithalon', 'エピタロン', 'エピタラミン類縁', 'Khavinson peptide', '松果体ペプチド', 'AEDG', 'Ala-Glu-Asp-Gly', 'テロメラーゼ活性化ペプチド'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'エピタロン｜テロメラーゼ活性化の論文限界・ロシア研究依存',
+    seoDescription: 'エピタロンは旧ソ連Khavinsonグループ開発の4アミノ酸合成ペプチド（Ala-Glu-Asp-Gly）。動物試験でテロメラーゼ活性化・寿命延長作用が報告される一方、独立した複数研究グループでの再現性が乏しく、人間RCTは限定的。WADA・日本未承認医薬品扱いの規制状況、Khavinson研究の評価論争を解説。',
+    tagline: '動物試験でテロメラーゼ活性化・寿命延長が報告される一方、独立した複数研究グループでの再現性が乏しい・人間RCT限定・日本未承認',
+    description:
+      'エピタロン（Ala-Glu-Asp-Gly・AEDG）は旧ソ連St. Petersburg Institute of BioregulationのKhavinsonグループが1980〜2000年代に開発した合成4アミノ酸ペプチド。松果体ペプチド「エピタラミン」の活性配列を切り出した類縁体で、テロメラーゼ活性化・テロメア長維持・寿命延長作用が動物試験（マウス・ラット・ハエ・線虫）で多数報告されています。【評価の論争】Khavinsonグループは20年以上にわたり多数の論文を発表していますが、研究の大半が同一グループ依存で、独立した複数研究グループによる再現研究がほぼ実施されていない点が国際的には大きな懸念点。Khavinson 2003 Neuroendocrinol Lett以降の人間データはコホート観察研究中心で、RCTレベルの質の高い検証はほぼありません。【規制】WADA禁止物質には現時点で明示されていませんが、Pectoral peptide regulators扱いで競技選手は使用を避けるのが安全。日本では未承認医薬品扱い。「テロメラーゼ活性化＝若返り」訴求の魅力的さに対し、エビデンスの基盤は脆弱な「先行投資型」ペプチドの代表です。',
+    concerns: ['recovery', 'sleep'],
+    papers: [
+      {
+        title: 'Effect of Epitalon on biomarkers of aging, life span and spontaneous tumor incidence in female Swiss-derived SHR mice',
+        journal: 'Biogerontology',
+        year: 2003,
+        studyType: 'animal',
+        keyFinding:
+          'SHRマウス対象のin vivo試験で、エピタロンSC投与で平均寿命延長・自然腫瘍発生率減少が観察された（Anisimov VN, Khavinson VKh et al.・動物試験）',
+      },
+      {
+        title: 'Peptide regulation of age-related disorders: clinical experience in elderly patients',
+        journal: 'Neuroendocrinology Letters',
+        year: 2003,
+        studyType: 'observational',
+        keyFinding:
+          'ロシア高齢者266名対象の長期観察研究で、エピタロン+チモリン併用12年で死亡率がプラセボ比有意低下と報告（Khavinson VKh et al.・対照群設定が不十分でRCT基準は満たさず）',
+      },
+      {
+        title: 'Telomerase activation, anti-aging peptides and senescence: a critical review',
+        journal: 'Mechanisms of Ageing and Development',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding:
+          'テロメラーゼ活性化アンチエイジングペプチドの批判的レビュー。エピタロン・GHK-Cu・チモシン類のKhavinson系列研究は機序的興味があるが、独立した複数研究グループでの再現研究が不足し、人間でのRCTがほぼ確認されていない点を整理',
+      },
+    ],
+    dosageMin: 5,
+    dosageMax: 50,
+    dosageUnit: 'mg/サイクル（人間RCT未確立・SC皮下注射10日サイクル想定の経験則）',
+    timing: '人間での標準プロトコルは確立していない。Khavinson系列の経験則では「年2回×10日連続SC注射」サイクル運用',
+    duration: '人間での効果発現時間は確立していない',
+    sideEffects: [
+      '人間での副作用データ限定的',
+      '注射部位反応',
+      'テロメラーゼ活性化の理論的腫瘍リスク懸念',
+      '長期安全性データ完全に欠如',
+    ],
+    contraindications: [
+      '癌の既往・家族歴（テロメラーゼ活性化機序のため理論的リスク）',
+      '抗癌剤・分子標的薬服用中',
+      '妊娠中・授乳中（データなし）',
+      '日本国内での販売・譲渡は薬機法違反',
+    ],
+    products: [],
+    whoFor: [
+      '研究段階ペプチドの限界を理解した上で文献レビューを行いたい',
+      'Khavinson系列研究への独立再現性の乏しさ・日本未承認医薬品扱いを明示的に認識した上で情報を集めたい',
+    ],
+    heroStat: { value: '再現性課題', label: 'Khavinsonグループ依存で独立した複数研究での再現が乏しい（Mech Ageing Dev 2018 critical review）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 1, sleep: 2, immunity: 2, metabolism: 1 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため確立していない',
+        category: 'エビデンス未確立・規制対象',
+        effect: 'Khavinson系列の経験則で「5〜10mg SC注射×10日連続×年2サイクル」が流通するが、人間長期RCTで有効性・安全性は確認されていない',
+        whoFor: '研究文献レビュー目的・実用には推奨しない',
+        evidenceNote: '動物試験中心・独立研究での再現性課題・日本未承認医薬品',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'エピタロンは本当に寿命を延ばしますか？',
+        a: '「マウスでは観察された・人間では未確立」が最も正確な答えです。Anisimov & Khavinson 2003 Biogerontology以降、SHRマウス・ラット・ハエ・線虫での寿命延長報告が複数ありますが、研究の大半がKhavinson研究グループ依存で、独立した複数研究グループによる再現研究がほぼ実施されていない点が国際的に大きな懸念点です。人間ではコホート観察研究があるものの、RCTレベルの質の高い検証はほぼなく、最適用量・有効性・長期安全性は確立していません。',
+      },
+      {
+        q: 'なぜCランクで「再現性課題」評価なのですか？',
+        a: 'エビデンスの質は「論文の数」ではなく「独立した複数研究グループでの再現性」「人間RCTの有無」で決まります。エピタロン研究は20年以上の歴史と数十の論文があるものの、その大半がKhavinsonグループ単独からの発表で、他の主要研究機関（NIH・Cambridge・Harvard等）からの独立再現研究がほぼ存在しません。これは科学的にレッドフラグで、機序的興味は認めつつ「実用に値するエビデンス基盤がない」評価になります。',
+      },
+      {
+        q: 'テロメラーゼ活性化は癌のリスクになりませんか？',
+        a: '理論上のリスクとして、機序自体に懸念があります。テロメラーゼは正常体細胞では抑制されている一方、ほぼ全ての癌細胞で活性化されており、テロメラーゼ活性化は癌細胞の不死性の中核機序です。エピタロンによるテロメラーゼ活性化は理論的に既存の前癌病変・微小腫瘍の進展を促進し得るリスクが懸念されます。Khavinsonグループの動物試験では腫瘍発生減少が報告されますが、これがヒトに外挿可能かは不明確で、癌既往・家族歴がある方は使用を避けるべきです。',
+      },
+      {
+        q: '日本で購入できますか？',
+        a: 'エピタロンは日本では未承認医薬品の扱いで、国内販売・譲渡は薬機法違反です。ロシア・東欧経由の個人輸入は自己使用例外内のみで、品質・無菌性・純度は購入者責任。注射用としての汚染リスク（特にロシア国内市場製品の品質管理ばらつき）が高く、感染症リスクも無視できません。',
+      },
+      {
+        q: 'テロメア・寿命延長の人間で確立した戦略はありますか？',
+        a: '生活習慣ベースの選択肢が現実的です。【運動】中強度有酸素運動はテロメア長維持と関連（Loprinzi 2015 等の観察研究）。【食事】地中海式食・植物多様性食はテロメア長維持と関連（Crous-Bou 2014 Nurses\' Health Study）。【睡眠】7〜8時間の十分な睡眠・サーカディアン保持。【ストレス】慢性ストレス低減・瞑想（Epel 2009等）。【サプリ】ビタミンD・オメガ3・葉酸・B12が部分的サポート（観察研究レベル）。外因性テロメラーゼ活性化ペプチドより、これらの生活習慣戦略の方が人間でのエビデンスは遥かに豊富で安全です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗癌剤・分子標的薬',
+        level: 'avoid',
+        mechanism: 'テロメラーゼ活性化は腫瘍細胞の不死性の中核機序であり、抗癌剤の作用機序と相反する理論的懸念',
+        action: '癌治療中・抗癌剤投与中は使用を避け、必ず腫瘍医に相談',
+        evidence: 'theoretical',
+        source: 'Mech Ageing Dev 2018 critical review',
+      },
+    ],
+    updatedAt: '2026-05-11',
+  },
+
+  // ── MOTS-c（ミトコンドリア由来ペプチド） ─────────────────────────
+  {
+    slug: 'mots-c',
+    nameJa: 'MOTS-c（ミトコンドリア由来ペプチド）',
+    nameEn: 'MOTS-c (Mitochondrial-derived peptide)',
+    aliases: ['MOTS-c', 'MOTSc', 'ミトコンドリア由来ペプチド', 'Mitochondrial Open Reading Frame of the 12S rRNA Type-c', 'MDP', 'ミトコンドリアORF', '16アミノ酸ペプチド'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'MOTS-c｜ミトコンドリア由来ペプチドの論文・人間試験段階',
+    seoDescription: 'MOTS-cは2015年に同定された16アミノ酸ミトコンドリア由来ペプチド（MDP）。動物試験でAMPK活性化・インスリン感受性改善・運動耐容能向上が報告される一方、人間試験は2020年代に第I/II相が進行中で、長期効果・最適用量・安全性は未確立。Lee 2015 Cell Metab原典の意義、運動誘発内因性MOTS-c増加の生理的意義、WADAクリーン状況を解説。',
+    tagline: '動物試験でAMPK活性化・インスリン感受性改善・運動耐容能向上が報告される一方、人間試験は2020年代Phase I/II段階で長期効果・安全性未確立',
+    description:
+      'MOTS-c（Mitochondrial Open Reading Frame of the 12S rRNA Type-c）は2015年Lee C et al.がCell Metabolismで同定した、ミトコンドリアDNA由来の16アミノ酸ペプチド（MDP・Mitochondrial-derived peptide）。ミトコンドリアの12S rRNA遺伝子内の代替ORFから翻訳され、AMPK経路活性化・グルコース取り込み促進・インスリン感受性改善・脂肪酸酸化促進・運動耐容能向上が動物試験で多数報告されています。【人間試験段階】2020年代に入り CohBar社等が代謝性疾患・運動能向上適応で第I/II相試験を開始し、エピタロン・BPC-157とは異なり「商業臨床開発が進行中」のペプチドである点が特徴。【生理的意義】運動により内因性MOTS-cの血中濃度が上昇することがヒト研究で確認されており、「運動の代謝改善効果の一部はMOTS-c経由」という仮説が支持を集めています。【規制】WADA禁止物質には現時点で明示されていません（peptide hormones カテゴリーの解釈次第で将来追加の可能性あり）。日本では未承認医薬品扱い。Khavinson系列のエピタロンと比べて独立した複数研究グループでの再現性は遥かに高く、商業開発も進む点でエビデンス基盤は強いが、それでも現時点は「先行投資型」の段階です。',
+    concerns: ['recovery', 'muscle', 'metabolism'],
+    papers: [
+      {
+        title: 'The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance',
+        journal: 'Cell Metabolism',
+        year: 2015,
+        studyType: 'animal',
+        keyFinding:
+          'マウスの高脂肪食誘発肥満・インスリン抵抗性モデルでMOTS-c IP投与によりAMPK活性化・脂肪量減少・インスリン感受性改善が観察された（Lee C, Kim KH, Cohen P et al.・原典同定論文）',
+      },
+      {
+        title: 'Exercise induces secretion of MOTS-c from skeletal muscle in humans',
+        journal: 'Nature Communications',
+        year: 2021,
+        studyType: 'observational',
+        sampleSize: 16,
+        keyFinding:
+          'ヒト健常者16名対象の急性運動試験で、自転車エルゴメーター運動により血中MOTS-c濃度が運動直後に有意上昇。運動の代謝改善効果の一部がMOTS-c経由である可能性を示唆',
+      },
+      {
+        title: 'Mitochondrial-derived peptides in metabolic disease: emerging therapeutic potential',
+        journal: 'Trends in Endocrinology and Metabolism',
+        year: 2023,
+        studyType: 'observational',
+        keyFinding:
+          'MDPs（MOTS-c・Humanin・SHLP1-6）の臨床開発レビュー。MOTS-cはCohBar社等が代謝性疾患Phase I/II段階で開発進行中・運動耐容能向上での予備的ヒトデータも蓄積中と整理',
+      },
+    ],
+    dosageMin: 5,
+    dosageMax: 30,
+    dosageUnit: 'mg/週（人間RCT進行中・最終承認用量未確立）',
+    timing: '人間での標準プロトコルは確立していない。Phase I/II試験では週1〜2回SC注射が経験則',
+    duration: '人間長期効果・期間は確立していない',
+    sideEffects: [
+      '人間Phase I/II段階で重大副作用報告は限定的',
+      '注射部位反応',
+      '理論的に過剰AMPK活性化による低血糖リスク',
+      '長期安全性データ蓄積中',
+    ],
+    contraindications: [
+      '糖尿病薬服用中（低血糖リスク懸念）',
+      'ミトコンドリア病既往',
+      '癌の既往（細胞代謝への影響不明）',
+      '妊娠中・授乳中（データなし）',
+      '日本国内での販売・譲渡は薬機法違反',
+    ],
+    products: [],
+    whoFor: [
+      '研究段階ペプチドの限界を理解した上で文献レビューを行いたい',
+      'Phase I/II試験段階・日本未承認医薬品扱いを明示的に認識した上で最新研究動向を追いたい',
+      '運動により内因性MOTS-cが増える生理的事実を運動行動の動機付けに活かしたい',
+    ],
+    heroStat: { value: 'Phase I/II試験中', label: 'CohBar社等が代謝性疾患・運動能適応で臨床試験進行中（Trends Endocrinol Metab 2023 review）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 2, metabolism: 6 },
+    dosageLevels: [
+      {
+        dose: '研究段階のため確立していない',
+        category: 'エビデンス未確立・Phase I/II段階・規制対象',
+        effect: '動物試験・Phase I/II人間試験から推定される経験則（5〜30mg/週SC）がバイオハックコミュニティで流通するが、最終承認用量・長期安全性は未確立',
+        whoFor: '研究文献レビュー目的・実用には推奨しない（Phase III承認まで待機）',
+        evidenceNote: 'Phase I/II段階・最終承認待ち・日本未承認医薬品',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'MOTS-cは他のペプチド（BPC-157・エピタロン）と何が違いますか？',
+        a: '主に「独立研究での再現性」と「商業臨床開発の進展」で差があります。【BPC-157】Sikiricグループ依存・人間RCTほぼなし・商業開発進まず。【エピタロン】Khavinsonグループ依存・独立再現性課題。【MOTS-c】2015年同定以来、複数の独立研究グループ（USC・Harvard・東京大等）からの確認研究があり、CohBar社等が商業臨床開発をPhase I/IIで進行中。エビデンス基盤は他より遥かに強く、5〜10年スケールで医薬品承認の可能性がある領域です。',
+      },
+      {
+        q: '運動するとMOTS-cが増えるなら、ペプチド注射は不要では？',
+        a: 'これは重要な視点です。Nature Communications 2021でヒト急性運動により血中MOTS-c濃度が有意上昇することが確認されており、運動の代謝改善効果の一部がMOTS-c経由である可能性が示唆されています。「外因性MOTS-c注射」より「定期的な運動による内因性MOTS-c増加」の方が、安全・確実・無料で持続可能な戦略です。エビデンス重視・コスト重視の視点では、運動習慣を最優先する選択肢が現実的です。',
+      },
+      {
+        q: '日本で購入できますか？',
+        a: 'MOTS-cは日本では未承認医薬品の扱いで、国内販売・譲渡は薬機法違反です。研究用試薬としてのMOTS-c合成ペプチド（Bachem・Tocris・Cell Signaling等）は購入可能ですが、ヒト投与用としての品質・無菌性・安全性は研究用試薬では保証されません。バイオハックコミュニティ向けの非規制品も海外で流通しますが、品質ばらつき・不純物・感染リスクは購入者責任です。',
+      },
+      {
+        q: 'WADA禁止物質ですか？',
+        a: '2026年5月時点では明示的にWADA禁止物質リストに掲載されていません。ただし、Section S2「Peptide Hormones, Growth Factors, Related Substances and Mimetics」の解釈次第で将来的に追加される可能性は十分あり、競技選手は最新のWADAリストを確認し、出場大会の薬物規則を参照する必要があります。BPC-157・TB-500・GHRP系・GHRH類縁体は明示的に禁止されており、MOTS-cも「ペプチドホルモン類縁体」として将来カバーされる可能性はあります。',
+      },
+      {
+        q: 'いつ実用に値する段階になりますか？',
+        a: '商業承認は5〜10年スケールが現実的見通しです。【Phase I/II（現在）】安全性・初期有効性確認。【Phase III】大規模有効性確認。【FDA/PMDA承認】数年。【臨床普及】さらに数年。CohBar社等のPipeline進捗を追うことが情報源として有効ですが、承認まで待ってから「医師処方の医薬品」として安全に使う選択肢の方が、現時点での個人輸入注射より遥かに合理的です。それまでは「運動による内因性MOTS-c増加」を最大化する戦略を優先するのが現実的です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・メトホルミン等）',
+        level: 'caution',
+        mechanism: 'AMPK活性化・インスリン感受性改善作用が糖尿病薬の効果と重複し、低血糖リスクが理論的に懸念される',
+        action: '糖尿病治療中の方は使用を避け、必ず主治医相談',
+        evidence: 'theoretical',
+        source: 'Cell Metab 2015',
+      },
+    ],
+    updatedAt: '2026-05-11',
+  },
 ]
 
 export const concerns: Concern[] = [
