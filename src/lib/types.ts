@@ -92,6 +92,44 @@ export interface AxisScores {
   metabolism?: number
 }
 
+/**
+ * 検査キット商品（Pattern A=成分ページ / Pattern B=悩みガイド 共通型）。
+ * Phase B 高単価ASP収益基盤。ASP URL確定前は '#asp-pending' プレースホルダで運用。
+ */
+export interface TestKitProduct {
+  name: string
+  brand: string
+  /** ASPアフィURL（未確定時は '#asp-pending'） */
+  url: string
+  /** 1キット単価 */
+  priceJpy: number
+  /** 検査タイプ */
+  testType: 'dna' | 'gut' | 'nutrient' | 'hormone' | 'allergy'
+  /** 検体タイプ */
+  sampleType: '唾液' | '血液' | '便' | '尿' | '毛髪'
+  /** 結果出るまで日数 */
+  resultDays: number
+  /** なぜこの検査か・80-120字 */
+  whyJa: string
+  /** 「初回送料無料」等の特典 */
+  badge?: string
+  /** Legal: 個人情報管理方針URL（DNA検査は必須） */
+  privacyPolicyUrl?: string
+  /** Legal: PR・rel=sponsored 必須フラグ（常にtrue） */
+  isSponsored: true
+}
+
+/** 成分ページ用 検査キットCTA（Pattern A・ProductOfferCard 手前配置） */
+export interface IngredientTestKitCTA {
+  /** 例:「サプリを買う前に、まず測る」 */
+  headline: string
+  /** 80-150字・なぜこの成分で検査が有用か */
+  body: string
+  products: TestKitProduct[]
+  /** Legal: 検査キット固有の必須併記文（全表示） */
+  medicalDisclaimer?: string
+}
+
 export interface Ingredient {
   slug: string
   nameJa: string
@@ -165,6 +203,8 @@ export interface Ingredient {
     /** 避けるべきフォーム（吸収率低・副作用多等） */
     avoidForms?: string[]
   }
+  /** Pattern A 検査キットCTA（任意・該当成分のみ設定・ProductOfferCard 手前に描画） */
+  testKitCTA?: IngredientTestKitCTA
   updatedAt: string
 }
 

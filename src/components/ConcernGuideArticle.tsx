@@ -8,6 +8,7 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { RichParagraphs } from '@/components/RichText'
 import { PageViewTracker } from '@/components/PageViewTracker'
+import { ConcernGuideTestKitCTACard } from '@/components/ConcernGuideTestKitCTACard'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 
 const BASE_URL = 'https://scibase.app'
@@ -290,6 +291,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                 .map((slug) => getIngredient(slug))
                 .filter((ing): ing is NonNullable<typeof ing> => Boolean(ing))
               const milestone = guide.milestonesByType?.find((m) => m.typeName === s.typeName)
+              const testKit = guide.testKitCTAByType?.find((t) => t.typeName === s.typeName)
               const clinic = guide.clinicCTAByType?.find((c) => c.typeName === s.typeName)
               return (
                 <div key={s.typeName} id={`solution-type-${idx}`} className="scroll-mt-20">
@@ -422,12 +424,16 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                     </div>
                   )}
 
+                  {testKit && testKit.products.length > 0 && (
+                    <ConcernGuideTestKitCTACard cta={testKit} concernSlug={concernSlug} />
+                  )}
+
                   {clinic && clinic.products.length > 0 && (
-                    <div className="mt-6 border-2 border-blue-300 bg-blue-50/40 rounded-2xl p-5">
+                    <div className="mt-6 border-2 border-rose-300 bg-rose-50/40 rounded-2xl p-5">
                       <div className="flex items-start gap-2 mb-3">
-                        <Stethoscope className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
+                        <Stethoscope className="w-4 h-4 text-rose-700 flex-shrink-0 mt-1" />
                         <div className="min-w-0">
-                          <p className="text-[11px] font-semibold tracking-[0.08em] text-blue-700 mb-1 uppercase">
+                          <p className="text-[11px] font-semibold tracking-[0.08em] text-rose-700 mb-1 uppercase">
                             医療ルート（補助）
                           </p>
                           <h4 className="text-[15px] sm:text-[16px] font-semibold text-foreground leading-snug">
@@ -444,7 +450,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                             <div className="flex items-center gap-2 mb-2 flex-wrap">
                               <span className="text-[10px] font-semibold bg-amber-500 text-white rounded px-2 py-0.5 tracking-[0.08em]">PR</span>
                               {p.badge && (
-                                <span className="text-[11px] font-semibold text-blue-700 bg-blue-100 border border-blue-200 rounded px-2 py-0.5">
+                                <span className="text-[11px] font-semibold text-rose-700 bg-rose-100 border border-rose-200 rounded px-2 py-0.5">
                                   {p.badge}
                                 </span>
                               )}
@@ -467,7 +473,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                               href={p.url}
                               target="_blank"
                               rel="nofollow sponsored noopener"
-                              className="inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-background bg-blue-700 rounded-lg px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity w-full sm:w-auto"
+                              className="inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-background bg-rose-700 rounded-lg px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity w-full sm:w-auto"
                             >
                               公式サイトを見る
                               <ChevronRight className="w-3.5 h-3.5" />

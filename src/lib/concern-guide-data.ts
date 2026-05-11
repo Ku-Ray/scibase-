@@ -11,6 +11,10 @@
  *  - /articles/[slug]                                  → 個別成分・テーマの縦深掘り（既存21記事）
  */
 
+import type { TestKitProduct } from './types'
+
+export type { TestKitProduct }
+
 export interface ConcernGuidePaperRef {
   /** 引用論文タイトル（英文） */
   title: string
@@ -92,6 +96,22 @@ export interface ConcernGuideMilestoneByType {
   milestones: { period: string; sign: string }[]
 }
 
+/**
+ * タイプ別 検査キットCTA（Phase C で導入・Pattern B）
+ * solutionByType → testKitCTAByType（測る）→ clinicCTAByType（治療）の3段階配置
+ */
+export interface ConcernGuideTestKitCTAByType {
+  /** mechanismByType[].typeName と一致 */
+  typeName: string
+  /** 例:「タイプを見極めるなら、まず測る」 */
+  headline: string
+  /** 80-150字・サプリ選びの前段としての意義を明記 */
+  body: string
+  products: TestKitProduct[]
+  /** Legal: 検査キット固有の必須併記文（未指定時はデフォルト文言を使用） */
+  medicalDisclaimer?: string
+}
+
 /** タイプ別 高単価アフィCTA（Phase C で導入） */
 export interface ConcernGuideClinicCTAByType {
   /** mechanismByType[].typeName と一致 */
@@ -156,6 +176,8 @@ export interface ConcernGuide {
   successProfile?: string[]
   /** タイプ別 高単価アフィCTA（typeName単位で配置・全TYPEに置かないこと） */
   clinicCTAByType?: ConcernGuideClinicCTAByType[]
+  /** タイプ別 検査キットCTA（typeName単位・全TYPEに置かないこと・solution→testKit→clinicの順で描画） */
+  testKitCTAByType?: ConcernGuideTestKitCTAByType[]
 }
 
 const concernGuides: ConcernGuide[] = [
@@ -1036,6 +1058,48 @@ const concernGuides: ConcernGuide[] = [
       '抜け毛量を写真や本数で記録し続けられた人',
       '8週で諦めず、6ヶ月単位で評価できた人',
     ],
+
+    testKitCTAByType: [
+      {
+        typeName: 'AGA（男性型脱毛）',
+        headline: '「AGA体質」を遺伝子で参考把握する',
+        body: '男性型脱毛症（AGA）はDHT（ジヒドロテストステロン）感受性の遺伝子多型が関与するとされる。事前に体質傾向を把握しておくと、ノコギリヤシ・亜鉛等のサプリ介入とフィナステリド等の医療ルートを選ぶ判断材料になる。AGAクリニック受診前の情報整理にも使える。検査結果は将来予測ではなく確率的な傾向情報。',
+        products: [
+          {
+            name: 'AGA体質遺伝子検査',
+            brand: 'ASP申請中',
+            url: '#asp-pending',
+            priceJpy: 9900,
+            testType: 'dna',
+            sampleType: '唾液',
+            resultDays: 21,
+            whyJa: '唾液からAGA関連遺伝子（アンドロゲン受容体・5α-リダクターゼ等）の体質傾向を解析する検査。クリニック受診前に持参すれば、フィナステリド処方判断・効果予測の参考材料になる。データ管理方針は事業者の公式情報を確認の上で利用すること。',
+            privacyPolicyUrl: '#asp-pending',
+            isSponsored: true,
+          },
+        ],
+      },
+      {
+        typeName: 'CTE（慢性休止期脱毛）',
+        headline: 'フェリチン値を確認してから栄養補正に入る',
+        body: 'CTE（慢性休止期脱毛）は鉄欠乏・甲状腺機能低下・タンパク質不足等の栄養性要因が背景にあることが多い。健診ヘモグロビンが正常でもフェリチン低値（いわゆる「隠れ貧血」）で抜け毛が続くケースもあるため、栄養素検査で参考数値を把握してからサプリ・食事介入に入るのが現実的。',
+        products: [
+          {
+            name: 'おうちでドック 栄養＋肝機能セット',
+            brand: 'おうちでドック',
+            url: '#asp-pending',
+            priceJpy: 12100,
+            testType: 'nutrient',
+            sampleType: '血液',
+            resultDays: 7,
+            whyJa: '少量の血液（指先穿刺）でフェリチン・ヘモグロビン・血清鉄等を直接測定する自宅検査。M5鉄サプリ選び方ガイドのフェリチン12／30／50ng/mL基準と照合できる。CTE型脱毛の鉄欠乏要因切り分け材料として有用。',
+            badge: '血液版',
+            isSponsored: true,
+          },
+        ],
+      },
+      // 加齢髪質劣化は検査ベース判断ではなく、既存clinicCTA（皮膚科・育毛医療）で対応する判断
+    ],
   },
   {
     concernSlug: 'fatigue',
@@ -1348,6 +1412,57 @@ const concernGuides: ConcernGuide[] = [
       '最低12週続け、複数を同時開始せず1成分ずつ評価した人',
       '鉄欠乏型は血液検査でフェリチン値を確認してから始めた人（ヘモクロマトーシス回避）',
       '睡眠時間6時間以上＋カフェイン午後カットの基本生活を併走した人（HPA軸型）',
+    ],
+
+    testKitCTAByType: [
+      {
+        typeName: '鉄欠乏栄養型',
+        headline: '「隠れ貧血」かどうか、まず数値で確認する',
+        body: '日本女性の約20〜30%が潜在的鉄欠乏とされ、健診ヘモグロビンが正常でもフェリチン低値（いわゆる「隠れ貧血」）で疲労・冷え・抜け毛が続くケースは多い。サプリで補う前に自分のフェリチン値を把握しておくと、用量・形態（ヘム鉄／非ヘム鉄／キレート鉄）を論文ベースで選びやすくなる。検査結果は医療診断ではなく、医師相談の材料として活用する位置づけ。',
+        products: [
+          {
+            name: '尿検査による栄養素チェック',
+            brand: 'VitaNote',
+            url: '#asp-pending',
+            priceJpy: 7980,
+            testType: 'nutrient',
+            sampleType: '尿',
+            resultDays: 10,
+            whyJa: '自宅で尿を採取し、ビタミン・ミネラル等15項目をスコア化する栄養素検査。フェリチン直接測定ではないが、鉄・タンパク質充足度の参考指標になる。サプリ選びの前段に位置づけられる。',
+            isSponsored: true,
+          },
+          {
+            name: 'おうちでドック 栄養＋肝機能セット',
+            brand: 'おうちでドック',
+            url: '#asp-pending',
+            priceJpy: 12100,
+            testType: 'nutrient',
+            sampleType: '血液',
+            resultDays: 7,
+            whyJa: '少量の血液（指先穿刺）でフェリチン・ヘモグロビン・血清鉄等を直接測定。M5鉄サプリ選び方ガイドで言及するフェリチン12／30／50ng/mL基準と直接照合できる。',
+            badge: '血液版',
+            isSponsored: true,
+          },
+        ],
+      },
+      {
+        typeName: 'HPA軸ストレス型',
+        headline: 'コルチゾール日内リズムを参考データで把握する',
+        body: '「朝起きられない・夜眠れない・常にだるい」というHPA軸ストレス型は、コルチゾール・DHEAの日内変動を唾液で4時点測定すると参考データが得られる。アシュワガンダ等のアダプトゲン介入の前後比較材料にも使える。検査結果は医療診断ではなく、症状が重い場合は医師相談を優先する。',
+        products: [
+          {
+            name: '唾液コルチゾールリズム検査',
+            brand: 'ASP申請中',
+            url: '#asp-pending',
+            priceJpy: 16500,
+            testType: 'hormone',
+            sampleType: '唾液',
+            resultDays: 14,
+            whyJa: '朝・正午・夕方・就寝前の4時点で唾液を採取し、コルチゾール日内リズムを把握する参考検査。慢性ストレスでの日内リズム平坦化の自覚材料・アシュワガンダ介入の効果測定アンカーになる。',
+            isSponsored: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -1688,6 +1803,40 @@ const concernGuides: ConcernGuide[] = [
         products: [],
       },
       // アンドロゲン低下型はサプリで対応する範囲が中心。DHEAは日本では医師処方必須のためclinicCTAを置かない判断
+    ],
+
+    testKitCTAByType: [
+      {
+        typeName: 'エストロゲン低下型',
+        headline: '「更年期かもしれない」を、参考数値で確認する',
+        body: 'ほてり・発汗・睡眠の変化が始まる時期は、エストロゲン（E2）・FSH・LHのホルモン推移を自宅検査で参考把握できる。婦人科オンライン受診前の事前情報として持参すれば、エクオール・大豆イソフラボン等のサプリ介入とHRT・低用量ピル等の医療ルートの選択判断がしやすくなる。検査結果は医療診断ではなく、医師相談の材料として活用する。',
+        products: [
+          {
+            name: '女性ホルモンチェック（E2／FSH／LH）',
+            brand: 'ASP申請中',
+            url: '#asp-pending',
+            priceJpy: 9900,
+            testType: 'hormone',
+            sampleType: '血液',
+            resultDays: 10,
+            whyJa: '少量の血液で女性ホルモン3項目を測定する自宅検査。閉経前後のホルモン推移は個人差が大きく、医療機関での評価が必要になる場面もあるため、結果は婦人科オンライン受診時の参考データとして使うのが現実的。',
+            isSponsored: true,
+          },
+          {
+            name: '甲状腺機能チェック（TSH／FT4）',
+            brand: 'ASP申請中',
+            url: '#asp-pending',
+            priceJpy: 7700,
+            testType: 'hormone',
+            sampleType: '血液',
+            resultDays: 10,
+            whyJa: '更年期症状と紛らわしい甲状腺機能低下症の鑑別材料。だるさ・冷え・むくみ・うつ症状が更年期と重なる時期は、TSH・FT4の参考測定で甲状腺要因を切り分ける材料になる。',
+            isSponsored: true,
+          },
+        ],
+      },
+      // 精神症状型は心療内科領域・SSRI処方判断は医師領域のため検査CTAを置かない判断
+      // アンドロゲン低下型は対応する自宅検査の選択肢が限定的のため配置しない
     ],
   },
   {
@@ -2033,6 +2182,68 @@ const concernGuides: ConcernGuide[] = [
         body: 'カルノシン・αリポ酸での対応に加えて、AGEs測定（皮膚自家蛍光法・AGE Reader等）や糖代謝の血液検査を提供するクリニックもあります。糖化年齢を可視化して進行度合いを自覚したい方向けの選択肢です。サプリでの対応に物足りなさを感じている方は、まずクリニックで現状の糖化レベルを把握することから始めるのが現実的です。',
         // TODO: ASP案件URL未取得（AGEs測定可能なアンチエイジング系クリニック）。取得後にproducts配列に投入する
         products: [],
+      },
+    ],
+
+    // 肌老化は紫外線蓄積・ホルモン変動・糖質摂取等の複合要因で、メカニズム別に直接検査できる項目は限定的。
+    // 全タイプ共通でDNA検査による「肌老化の体質傾向」把握を配置する（同一カード×3タイプ）。
+    testKitCTAByType: [
+      {
+        typeName: 'コラーゲン合成低下型',
+        headline: '「自分の肌の傾向」を遺伝子で把握する',
+        body: 'シミができやすい体質・しわの深さに関わる遺伝子・コラーゲン分解速度に関わる遺伝子は、DNA検査である程度参考把握できる。検査結果は将来予測ではなく確率的な傾向情報で、論文ベースのサプリ・成分から「自分に合いそうな優先順位」を決める材料になる。医療診断・運命予測ではない。',
+        products: [
+          {
+            name: 'GeneLife Genesis 2.0 Plus',
+            brand: 'GeneLife（Genesis Healthcare）',
+            url: '#asp-pending',
+            priceJpy: 14900,
+            testType: 'dna',
+            sampleType: '唾液',
+            resultDays: 30,
+            whyJa: '唾液から360項目以上の体質傾向（肌老化・シミ・しわ・脂質代謝・栄養素吸収等）を解析するDNA検査。結果は確率的な傾向で、長期スキンケア戦略のアンカー情報として活用できる。データ管理方針は公式サイトで確認可能。',
+            privacyPolicyUrl: 'https://genelife.jp/privacy/',
+            isSponsored: true,
+          },
+        ],
+      },
+      {
+        typeName: '酸化ストレス型',
+        headline: '「自分の肌の傾向」を遺伝子で把握する',
+        body: '抗酸化酵素（SOD・カタラーゼ・GPx等）の遺伝子多型は、紫外線・大気汚染への肌の耐性傾向を参考把握できる項目に含まれる。アスタキサンチン・グルタチオン等の抗酸化サプリ選定のアンカーとして使う位置づけ。検査結果は医療診断ではなく確率的な傾向情報。',
+        products: [
+          {
+            name: 'GeneLife Genesis 2.0 Plus',
+            brand: 'GeneLife（Genesis Healthcare）',
+            url: '#asp-pending',
+            priceJpy: 14900,
+            testType: 'dna',
+            sampleType: '唾液',
+            resultDays: 30,
+            whyJa: '唾液から360項目以上の体質傾向を解析するDNA検査。抗酸化酵素・メラニン合成関連の遺伝子傾向を確認することで、サプリ選定の優先順位を決める材料になる。データ管理方針は公式サイトで確認可能。',
+            privacyPolicyUrl: 'https://genelife.jp/privacy/',
+            isSponsored: true,
+          },
+        ],
+      },
+      {
+        typeName: '糖化AGEs型',
+        headline: '「自分の肌の傾向」を遺伝子で把握する',
+        body: '糖代謝関連遺伝子・AGEs受容体（RAGE）関連遺伝子は、糖化リスクの参考把握に使われる項目。生活習慣改善とカルノシン・αリポ酸等のサプリ介入を決める材料として活用できる。検査結果は将来予測ではなく確率的な傾向情報で、運命を決めるものではない。',
+        products: [
+          {
+            name: 'GeneLife Genesis 2.0 Plus',
+            brand: 'GeneLife（Genesis Healthcare）',
+            url: '#asp-pending',
+            priceJpy: 14900,
+            testType: 'dna',
+            sampleType: '唾液',
+            resultDays: 30,
+            whyJa: '唾液から360項目以上の体質傾向を解析するDNA検査。糖代謝・脂質代謝の遺伝子傾向を確認することで、糖化対策の重要度を判断する材料になる。データ管理方針は公式サイトで確認可能。',
+            privacyPolicyUrl: 'https://genelife.jp/privacy/',
+            isSponsored: true,
+          },
+        ],
       },
     ],
   },
