@@ -197,6 +197,85 @@ export default async function ArticlePage({ params }: Props) {
       .filter(Boolean),
   } : null
 
+  /* HowTo JSON-LD（Session G Phase 2-B・AI Overview用）
+   * choice-guide 9本 + 補助2本（supplement-diagnosis-method-guide / situation-supplement-decision-guide）
+   * article.ingredients 配列を HowToStep に変換（name=ingredient.nameJa・text=reason先頭・url=ingredient page）
+   */
+  const HOWTO_TARGET_SLUGS = new Set<string>([
+    'vitamin-d-choice-guide',
+    'folic-acid-choice-guide',
+    'omega3-choice-guide',
+    'ashwagandha-choice-guide',
+    'magnesium-choice-guide',
+    'creatine-choice-guide',
+    'iron-choice-guide',
+    'vitamin-c-oral-choice-guide',
+    'melatonin-choice-guide',
+    'supplement-diagnosis-method-guide',
+    'situation-supplement-decision-guide',
+  ])
+  const howToJsonLd = HOWTO_TARGET_SLUGS.has(slug) && article.ingredients.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type':    'HowTo',
+    name:       article.title,
+    description: article.description,
+    step: article.ingredients.map((c, idx) => {
+      const ing = getIngredient(c.slug)
+      return {
+        '@type': 'HowToStep',
+        position: idx + 1,
+        name:    c.nameJa,
+        text:    c.reason.slice(0, 250),
+        ...(ing && { url: `${BASE_URL}/ingredients/${ing.slug}` }),
+      }
+    }),
+  } : null
+
+  /* Product JSON-LD（Session G Phase 2-B・choice-guide 9本のみ・Tier1=rank:1 商品）
+   * 最初の article.ingredients[0] の slug から getIngredient().products の rank:1 を採用
+   * /s?k=（Amazon等の検索URL）は除外・price未設定は offers を省略
+   * Review/aggregateRating は実装しない（Google manual action リスク回避）
+   */
+  const PRODUCT_TARGET_SLUGS = new Set<string>([
+    'vitamin-d-choice-guide',
+    'folic-acid-choice-guide',
+    'omega3-choice-guide',
+    'ashwagandha-choice-guide',
+    'magnesium-choice-guide',
+    'creatine-choice-guide',
+    'iron-choice-guide',
+    'vitamin-c-oral-choice-guide',
+    'melatonin-choice-guide',
+  ])
+  const productsJsonLd = (() => {
+    if (!PRODUCT_TARGET_SLUGS.has(slug)) return null
+    const firstIng = article.ingredients[0] && getIngredient(article.ingredients[0].slug)
+    if (!firstIng || !firstIng.products?.length) return null
+    const tier1 = firstIng.products.find((p) => p.rank === 1) ?? firstIng.products[0]
+    if (!tier1) return null
+    if (tier1.url.includes('/s?k=')) return null
+    return {
+      '@context': 'https://schema.org',
+      '@type':    'Product',
+      name:        tier1.name,
+      ...(tier1.reasonJa && { description: tier1.reasonJa }),
+      brand:       { '@type': 'Brand', name: tier1.brand },
+      image:       `${BASE_URL}/ingredients/${firstIng.slug}/opengraph-image`,
+      ...(tier1.certifications?.length && {
+        hasCertification: tier1.certifications.map((c) => ({ '@type': 'Certification', name: c })),
+      }),
+      ...(tier1.priceJpy && {
+        offers: {
+          '@type':       'Offer',
+          price:         tier1.priceJpy,
+          priceCurrency: 'JPY',
+          url:           tier1.url,
+          availability:  'https://schema.org/InStock',
+        },
+      }),
+    }
+  })()
+
   /* 目次（TOC）の動的生成：問題・科学・サブセクション・付録・解決策・FAQ */
   const tocItems: { id: string; label: string }[] = [
     { id: 'problem', label: article.problemHeading },
@@ -240,6 +319,18 @@ export default async function ArticlePage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+        />
+      )}
+      {howToJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+        />
+      )}
+      {productsJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productsJsonLd) }}
         />
       )}
 
