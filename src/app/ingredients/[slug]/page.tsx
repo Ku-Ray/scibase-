@@ -525,7 +525,11 @@ export default async function IngredientPage({ params }: Props) {
           <p className="text-[16px] sm:text-[17px] font-semibold text-foreground leading-relaxed mb-3">
             {ing.tagline}
           </p>
-          <p className="text-[14px] text-muted-foreground leading-[1.85]">{ing.description}</p>
+          <div className="text-[14px] text-muted-foreground leading-[1.85] space-y-3">
+            {ing.description.split(/\n{2,}/).map((para, i) => (
+              <p key={i}>{para.trim()}</p>
+            ))}
+          </div>
         </section>
 
         {/* こんな人に特に関係する */}
