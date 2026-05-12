@@ -1,6 +1,7 @@
 'use client'
 
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
+import { trackProductOfferCardClick } from '@/lib/analytics'
 
 declare global {
   interface Window {
@@ -20,6 +21,10 @@ interface Props extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'target' |
   aspId?: string
   /** 料率帯（'<5%' / '5-10%' / '10-15%' / '15-20%' / '>20%'）。実料率は規約上の第三者開示NGリスク回避のため帯化 */
   commissionRateBand?: string
+  /** 商品オファーカード経由クリック時に click_product_offer_card を併発火する（CV診断ファネル ステージ4） */
+  productOfferCardId?: string
+  productName?: string
+  priceJpy?: number
   children: ReactNode
 }
 
@@ -31,6 +36,9 @@ export function OutboundProductLink({
   aspProgram,
   aspId,
   commissionRateBand,
+  productOfferCardId,
+  productName,
+  priceJpy,
   onClick,
   children,
   ...rest
@@ -46,6 +54,15 @@ export function OutboundProductLink({
           asp_program: aspProgram,
           asp_id: aspId,
           commission_rate_band: commissionRateBand,
+        })
+      }
+      if (productOfferCardId && productName) {
+        trackProductOfferCardClick({
+          cardId: productOfferCardId,
+          productName,
+          aspId,
+          priceJpy,
+          ingredientSlug,
         })
       }
     } catch {}

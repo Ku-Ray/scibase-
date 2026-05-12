@@ -6,6 +6,7 @@ import { getArticle } from '@/lib/articles'
 import { getConcernGuide, concernGuides } from '@/lib/concern-guide-data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { ClinicCTALink } from '@/components/ClinicCTALink'
 import { RichParagraphs } from '@/components/RichText'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { ConcernGuideTestKitCTACard } from '@/components/ConcernGuideTestKitCTACard'
@@ -469,15 +470,17 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                                 目安：<strong className="text-foreground tabular-nums">¥{p.priceJpy.toLocaleString()}</strong>
                               </p>
                             )}
-                            <a
+                            <ClinicCTALink
                               href={p.url}
-                              target="_blank"
-                              rel="nofollow sponsored noopener"
+                              ctaId={`${concernSlug}__${s.typeName}__${pi}`}
+                              clinicName={p.name}
+                              concernSlug={concernSlug}
+                              typeName={s.typeName}
                               className="inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-background bg-rose-700 rounded-lg px-4 py-2.5 min-h-[44px] hover:opacity-90 transition-opacity w-full sm:w-auto"
                             >
                               公式サイトを見る
                               <ChevronRight className="w-3.5 h-3.5" />
-                            </a>
+                            </ClinicCTALink>
                           </div>
                         ))}
                       </div>

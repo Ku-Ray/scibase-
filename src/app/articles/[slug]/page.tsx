@@ -15,6 +15,7 @@ import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
+import { AppendixSectionTracker } from '@/components/AppendixSectionTracker'
 import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
 import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
@@ -431,8 +432,27 @@ export default async function ArticlePage({ params }: Props) {
           }
 
           const renderAppendixGroup = (group: typeof beforeSolution) =>
-            group.map(({ ap, i }) => (
-              <section key={i} id={`appendix-${i}`} className="mb-10 scroll-mt-20">
+            group.map(({ ap, i }) => {
+              // [[PRODUCT:]] が含まれていれば product 型、[[INGREDIENT:]] のみなら ingredient 型
+              // どちらも無ければ general 型として扱う（記事 slug を slug に格納）
+              const hasProduct = /\[\[PRODUCT:[a-z0-9-]+\]\]/.test(ap.body)
+              const hasIngredient = /\[\[INGREDIENT:[a-z0-9-]+\]\]/.test(ap.body)
+              const productMatch = ap.body.match(/\[\[PRODUCT:([a-z0-9-]+)\]\]/)
+              const ingredientMatch = ap.body.match(/\[\[INGREDIENT:([a-z0-9-]+)\]\]/)
+              const sectionType = hasProduct ? 'product' : hasIngredient ? 'ingredient' : 'general'
+              const sectionSlug = hasProduct
+                ? (productMatch?.[1] ?? article.slug)
+                : hasIngredient
+                  ? (ingredientMatch?.[1] ?? article.slug)
+                  : `${article.slug}__${i}`
+              return (
+              <AppendixSectionTracker
+                key={i}
+                sectionType={sectionType}
+                slug={sectionSlug}
+                id={`appendix-${i}`}
+                className="mb-10 scroll-mt-20"
+              >
                 <h2 className="text-[19px] sm:text-[21px] font-semibold text-foreground mb-4 leading-snug">
                   {ap.heading}
                 </h2>
@@ -496,8 +516,9 @@ export default async function ArticlePage({ params }: Props) {
                 )}
 
                 {renderAppendixBody(ap.body)}
-              </section>
-            ))
+              </AppendixSectionTracker>
+              )
+            })
 
           return (
             <>

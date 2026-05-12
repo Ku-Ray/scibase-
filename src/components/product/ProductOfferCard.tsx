@@ -3,12 +3,27 @@ import type { Ingredient, Product } from '@/lib/types'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { RichInline } from '@/components/RichText'
 import { scoreProduct, AXIS_LABEL, axisDisplayOrder, type AxisLeader, type ProductScore, type ScoreAxis } from '@/lib/productScore'
+import type { ProductOfferCardPosition } from '@/lib/analytics'
 import { ScoreBar } from './ScoreBar'
 import { EffectiveDoseBadge } from './EffectiveDoseBadge'
 import { AxisLeaderBadges } from './AxisLeaderBadges'
 import { ProsConsBox } from './ProsConsBox'
 import { SpecTable } from './SpecTable'
 import { SafetyDisclosureCollapse } from './SafetyDisclosureCollapse'
+import { CardViewTracker } from './CardViewTracker'
+
+/** CV診断ファネル ステージ3〜4用のカード識別子（同一商品が複数カードで描画されるケースを分離） */
+function makeCardId(ingredientSlug: string, productUrl: string, variant: Props['variant']): string {
+  // url の host+path 末尾だけ採れば実用十分（URLヒット数とカード位置を一意化）
+  const tail = productUrl.replace(/^https?:\/\//, '').slice(0, 60)
+  return `${ingredientSlug}__${variant}__${tail}`
+}
+
+const VARIANT_POSITION: Record<Props['variant'], ProductOfferCardPosition> = {
+  hero: 'top',
+  secondary: 'middle',
+  'article-compact': 'compact',
+}
 
 const platformLabel: Record<Product['platform'], string> = {
   iherb: 'iHerb',
@@ -69,10 +84,13 @@ export function ProductOfferCard({
   const score = scoreProduct(product, ingredient)
   const cost1d = dailyCost(product.monthlyCostJpy)
   const isOverallRank1 = showOverallRank ?? variant === 'hero'
+  const cardId = makeCardId(ingredient.slug, product.url, variant)
+  const cardPosition = VARIANT_POSITION[variant]
 
   // ───────────── article-compact ─────────────
   if (variant === 'article-compact') {
     return (
+      <CardViewTracker cardId={cardId} ingredientSlug={ingredient.slug} position={cardPosition}>
       <div className="border-t border-border bg-card px-5 py-4">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           <span className="inline-flex items-center justify-center text-[11px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5 leading-none">
@@ -143,6 +161,9 @@ export function ProductOfferCard({
             aspProgram={product.aspProgram}
             aspId={product.aspId}
             commissionRateBand={product.commissionRateBand}
+            productOfferCardId={cardId}
+            productName={product.name}
+            priceJpy={product.priceJpy}
             className={`inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold rounded-xl px-4 h-12 min-w-[10rem] transition-colors flex-shrink-0 ${PRIMARY_CTA}`}
           >
             {platformLabel[product.platform]}で詳細を見る
@@ -155,25 +176,32 @@ export function ProductOfferCard({
           </p>
         )}
       </div>
+      </CardViewTracker>
     )
   }
 
   // ───────────── hero (v7・mybest レイアウト) ─────────────
   if (variant === 'hero') {
-    return <HeroMybestCard
-      product={product}
-      ingredient={ingredient}
-      score={score}
-      cost1d={cost1d}
-      isOverallRank1={isOverallRank1}
-      axisLeaders={axisLeaders}
-      subPlatformLinks={subPlatformLinks}
-      bestPickReason={bestPickReason}
-    />
+    return (
+      <CardViewTracker cardId={cardId} ingredientSlug={ingredient.slug} position={cardPosition}>
+        <HeroMybestCard
+          product={product}
+          ingredient={ingredient}
+          score={score}
+          cost1d={cost1d}
+          isOverallRank1={isOverallRank1}
+          axisLeaders={axisLeaders}
+          subPlatformLinks={subPlatformLinks}
+          bestPickReason={bestPickReason}
+          cardId={cardId}
+        />
+      </CardViewTracker>
+    )
   }
 
   // ───────────── secondary ─────────────
   return (
+    <CardViewTracker cardId={cardId} ingredientSlug={ingredient.slug} position={cardPosition}>
     <div className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
       <div className="px-4 py-2 border-b border-border flex items-center justify-between gap-2">
         <span className="text-[11px] font-semibold text-muted-foreground">
@@ -254,6 +282,9 @@ export function ProductOfferCard({
           aspProgram={product.aspProgram}
           aspId={product.aspId}
           commissionRateBand={product.commissionRateBand}
+          productOfferCardId={cardId}
+          productName={product.name}
+          priceJpy={product.priceJpy}
           className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-xl px-4 h-12 transition-colors w-full ${PRIMARY_CTA}`}
         >
           {platformLabel[product.platform]}で詳細を見る
@@ -261,6 +292,7 @@ export function ProductOfferCard({
         </OutboundProductLink>
       </div>
     </div>
+    </CardViewTracker>
   )
 }
 
@@ -289,6 +321,7 @@ interface HeroMybestProps {
   axisLeaders: AxisLeader[]
   subPlatformLinks: SubPlatformLink[] | undefined
   bestPickReason: string | undefined
+  cardId: string
 }
 
 function axisDisplayValue(axis: ScoreAxis, score: ProductScore): { value: number | null } {
@@ -334,10 +367,12 @@ function CtaStack({
   product,
   ingredient,
   subPlatformLinks,
+  cardId,
 }: {
   product: Product
   ingredient: Ingredient
   subPlatformLinks: SubPlatformLink[] | undefined
+  cardId: string
 }) {
   return (
     <div className="flex flex-col gap-2">
@@ -356,6 +391,9 @@ function CtaStack({
             aspProgram={product.aspProgram}
             aspId={product.aspId}
             commissionRateBand={product.commissionRateBand}
+            productOfferCardId={cardId}
+            productName={product.name}
+            priceJpy={product.priceJpy}
             className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-lg px-3 h-12 transition-colors w-full ${PRIMARY_CTA}`}
           >
             <span className="flex flex-col items-center leading-tight">
@@ -403,6 +441,7 @@ function HeroMybestCard({
   axisLeaders,
   subPlatformLinks,
   bestPickReason,
+  cardId,
 }: HeroMybestProps) {
   return (
     <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -541,7 +580,7 @@ function HeroMybestCard({
 
             {/* CTA 縦並び（mybest 形式・モール名 + 価格） */}
             <div className="pt-1">
-              <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} />
+              <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} cardId={cardId} />
             </div>
           </div>
         </div>
@@ -633,7 +672,7 @@ function HeroMybestCard({
           <p className="text-[11px] text-muted-foreground text-center mb-3">
             ここまで読んだ方へ・購入はこちら
           </p>
-          <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} />
+          <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} cardId={cardId} />
         </div>
 
         {bestPickReason && (
