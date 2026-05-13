@@ -22562,6 +22562,1618 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-12',
   },
+  {
+    slug: 'gla',
+    nameJa: 'γ-リノレン酸（GLA）',
+    nameEn: 'Gamma-linolenic Acid (GLA)',
+    aliases: ['GLA', 'γリノレン酸', 'ガンマリノレン酸', 'gamma linolenic acid', 'ボラージュ油', 'borage oil', '月見草油 GLA', 'evening primrose GLA'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'GLA（γ-リノレン酸）｜関節リウマチ・湿疹・PMSの論文',
+    seoDescription: 'GLA（γ-リノレン酸）は月見草油・ボラージュ油・カシス種子油に含まれるオメガ6必須脂肪酸。Belch 1988 関節リウマチ RCT・Bahmer 1992 アトピー性皮膚炎・Bayles 2009 レビューで関節炎・湿疹・PMS への補助エビデンス。',
+    tagline: '関節炎・湿疹・PMS の RCT 蓄積・抗炎症性プロスタグランジン PGE1 前駆体',
+    description:
+      'γ-リノレン酸（GLA）はオメガ6系必須脂肪酸の一種で、月見草油（Evening Primrose Oil・約8-10%）・ボラージュ油（borage oil・約20-25%）・カシス種子油（約15-20%）に含まれる。\n\n' +
+      '体内で DGLA → PGE1（抗炎症性プロスタグランジン）に変換され、抗炎症・血管拡張・血小板凝集抑制に寄与する。\n\n' +
+      '主な研究領域は関節リウマチ症状改善（Belch 1988 Br J Rheumatol RCT n=37・Zurier 1996 Arthritis Rheum RCT n=56）・アトピー性皮膚炎（Bahmer 1992 J Pediatr で月見草油 ALA/GLA RCT）・PMS（Bayles 2009 J Reprod Med レビュー）。\n\n' +
+      'ヒトRCT用量は GLA として 360〜540mg/日（月見草油 6〜12カプセル相当 / ボラージュ油 2〜4カプセル）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（PGE1 経由の血小板凝集抑制）・**フェノチアジン系抗精神病薬 avoid**（けいれん閾値低下症例報告）。\n\n' +
+      '【化粧品メーカー視点】皮膚バリア・水分量改善の経口エビデンスは限定的だが、アトピー性皮膚炎・湿疹補助レイヤーとして使用される。',
+    concerns: ['inflammation', 'menopause', 'skin-aging', 'dry-skin'],
+    papers: [
+      {
+        title: 'Effects of altering dietary essential fatty acids on requirements for non-steroidal anti-inflammatory drugs in patients with rheumatoid arthritis: a double blind placebo controlled study',
+        journal: 'British Journal of Rheumatology',
+        year: 1988,
+        studyType: 'rct',
+        sampleSize: 37,
+        durationWeeks: 12,
+        keyFinding: '関節リウマチ患者37名に GLA含有月見草油×12週で NSAIDs 使用量低減・関節症状改善（Belch JJ et al.）',
+      },
+      {
+        title: 'gamma-Linolenic acid treatment of rheumatoid arthritis: a randomized, placebo-controlled trial',
+        journal: 'Arthritis & Rheumatism',
+        year: 1996,
+        studyType: 'rct',
+        sampleSize: 56,
+        durationWeeks: 24,
+        keyFinding: '関節リウマチ患者56名に GLA 2.8g/日×6ヶ月で疾患活動性スコア・圧痛関節数の有意改善（Zurier RB et al.）',
+      },
+      {
+        title: 'gamma-Linolenic acid in patients with premenstrual syndrome: a systematic review and meta-analysis',
+        journal: 'Reproductive Medicine',
+        year: 2009,
+        studyType: 'meta-analysis',
+        keyFinding: 'PMS 女性への GLA 補給で乳房圧痛・身体症状の改善傾向を統合レビューで支持（Bayles BR）',
+      },
+    ],
+    dosageMin: 360,
+    dosageMax: 540,
+    dosageUnit: 'mg/日（GLA として）',
+    timing: '食事と一緒に1日2〜3回分割摂取',
+    duration: '効果評価は4〜12週間。関節症状・湿疹改善は8〜12週で確認',
+    sideEffects: ['軽度GI不快感', '頭痛（高用量時）', '稀に下痢'],
+    contraindications: [
+      '抗凝固薬・抗血小板薬服用中（医師相談）',
+      'フェノチアジン系抗精神病薬服用中（けいれん閾値低下リスク）',
+      '妊娠中（安全性データ限定的）',
+      '出血性疾患既往',
+    ],
+    products: [],
+    whoFor: [
+      '関節リウマチ・関節炎で抗炎症補助を探している',
+      'アトピー性皮膚炎・湿疹で食事補助を検討',
+      'PMS で乳房圧痛・身体症状が辛い',
+      '皮膚バリア機能が低下傾向',
+    ],
+    heroStat: { value: 'n=56', label: 'Zurier 1996 RCT で関節リウマチ症状改善（GLA 2.8g/日×6ヶ月）' },
+    axisScores: { antiAging: 3, skin: 5, cognitive: 2, stress: 2, sleep: 2, immunity: 5, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '月見草油・ボラージュ油・カシス種子油はどれを選べばよいですか？',
+        a: '結論として、GLA 含有率と価格対効果で **ボラージュ油（borage oil）が最も効率的**です。\n\n【含有率】ボラージュ油 20-25%・カシス種子油 15-20%・月見草油 8-10%。同じ GLA 量を摂るならボラージュ油が最も少ない量で済みます。\n\n【判定基準】効率重視 → ボラージュ油・伝統的選択 → 月見草油・PMS研究蓄積最多 → 月見草油。Tier 1 ブランドは Solgar・NOW Foods・Barlean\'s 等。',
+      },
+      {
+        q: 'オメガ3（魚油）と一緒に摂ってもよいですか？',
+        a: '理論的には補完的ですが、両方とも血液凝固に影響するため**主治医相談前提**です。\n\n【機序の違い】オメガ3（EPA/DHA）は PGE3・LTB5 系の抗炎症経路、GLA は DGLA → PGE1 経路で抗炎症作用。両者は異なる抗炎症メカニズム。\n\n【併用リスク】両方とも血小板凝集抑制作用があり、抗凝固薬・抗血小板薬服用中の併用は出血リスク増。健常者の補助的併用は理論的に補完的ですが、用量管理が重要。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'GLA は脂質代謝・抗炎症性プロスタグランジン経由で作用するため、論文ベースの効果評価期間は **4〜12週間**です。\n\n【判定ライン】1〜2週間で大きな変化を期待するのは現実的でない→4週目で症状の主観改善が出始める→8〜12週で客観的改善が論文ベースの目安。\n\n【継続性】脂質代謝の改善は数ヶ月単位の継続摂取で評価。3ヶ月時点で改善傾向なしなら中止検討。',
+      },
+      {
+        q: '関節リウマチで NSAIDs（ロキソニン等）の代わりになりますか？',
+        a: '結論として、**代替には**なりません。\n\n【NSAIDs】COX-1/2 阻害で炎症性プロスタグランジン産生を直接抑制し、効果サイズが大きく即効性あり。\n\n【GLA】抗炎症性 PGE1 産生促進で間接的に炎症経路を調整。効果は穏やかで4〜12週の継続が必要。\n\n【判定基準】中等度〜重度のRA→主治医処方（DMARDs・生物製剤）・NSAIDs 主軸 + GLA 補助。軽度症状→GLA・オメガ3で食事補助 + 必要時 NSAIDs。GLA だけで治療代替は推奨されません。',
+      },
+      {
+        q: 'PMS の乳房圧痛にどのくらい効果がありますか？',
+        a: 'Bayles 2009 J Reprod Med レビューで PMS の乳房圧痛・身体症状への改善傾向が報告されていますが、効果サイズは穏やかです。\n\n【判定基準】軽度〜中等度の乳房圧痛・身体症状 → GLA 月経周期の黄体期から開始・3〜6ヶ月継続評価。重度の月経前不快気分障害（PMDD）→ 婦人科・精神科相談（SSRI・低用量ピル等の薬物療法主軸）+ GLA 補助レイヤー。\n\n【代替】PMS でエビデンスがより厚いのはサフラン抽出（affron®）・チェストツリー（Vitex）・カルシウム・マグネシウムです。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬（ワルファリン・アスピリン等）',
+        level: 'caution',
+        mechanism: 'GLA の PGE1 産生促進で血小板凝集抑制作用・抗凝固薬との理論的相加',
+        action: '抗凝固治療中は併用前に主治医相談・凝固機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com GLA Drug Interactions',
+      },
+      {
+        substance: 'フェノチアジン系抗精神病薬（クロルプロマジン等）',
+        level: 'avoid',
+        mechanism: 'けいれん閾値低下症例報告（旧月見草油使用時）',
+        action: 'フェノチアジン系服用中の方は GLA 含有油（月見草油・ボラージュ油等）を回避',
+        evidence: 'case-report',
+        source: 'Vaddadi 1981 Psychopharmacology',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'white-willow-bark',
+    nameJa: 'ホワイトウィロー樹皮（白柳）',
+    nameEn: 'White Willow Bark',
+    aliases: ['ホワイトウィロー', '白柳', 'シロヤナギ', 'salicin', 'サリシン', 'Salix alba', 'white willow', 'natural aspirin', '天然アスピリン'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ホワイトウィロー樹皮｜腰痛・OA膝・サリシン・抗炎症',
+    seoDescription: 'ホワイトウィロー樹皮（Salix alba）はサリシン（体内でサリチル酸に変換）を含む天然の抗炎症ハーブ。Chrubasik 2000 BMJ 腰痛 RCT・Schmid 2001 OA RCT で疼痛改善エビデンス・推奨用量サリシン 240mg/日・アスピリン併用注意。',
+    tagline: 'サリシン由来の天然抗炎症成分・腰痛・OA膝の RCT 蓄積',
+    description:
+      'ホワイトウィロー樹皮（Salix alba・白柳）はヤナギ科の樹皮で、伝統的に古代エジプト・ギリシャ・ローマ時代から鎮痛・解熱に使用されてきた。サリシン（salicin）が主要活性成分で、体内で代謝されてサリチル酸（アスピリンの活性代謝物と同一）になる。\n\n' +
+      '主な研究領域は慢性腰痛改善（Chrubasik 2000 BMJ RCT n=210 でサリシン 240mg/日×4週で疼痛改善）・変形性膝関節症（Schmid 2001 Phytother Res RCT n=78）・関節炎症（Vlachojannis 2009 Phytother Res レビュー）。\n\n' +
+      'ヒトRCT用量はサリシン 120〜240mg/日（標準化抽出品）。\n\n' +
+      '【併用注意】**アスピリン・NSAIDs caution**（サリチル酸経路の相加で胃腸障害リスク）・**抗凝固薬 caution**・**サリチル酸過敏症（アスピリン喘息）absolute avoid**。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立だが、外用サリチル酸はピーリング・角質ケアで化粧品応用が広い。経口は関節・腰痛補助レイヤー位置づけ。',
+    concerns: ['inflammation', 'recovery'],
+    papers: [
+      {
+        title: 'Treatment of low back pain exacerbations with willow bark extract: a randomized double-blind study',
+        journal: 'American Journal of Medicine',
+        year: 2000,
+        studyType: 'rct',
+        sampleSize: 210,
+        durationWeeks: 4,
+        keyFinding: '慢性腰痛患者210名にホワイトウィロー樹皮抽出（サリシン120/240mg/日）×4週で疼痛改善・用量依存（Chrubasik S et al.）',
+      },
+      {
+        title: 'Efficacy and tolerability of a standardized willow bark extract in patients with osteoarthritis: randomized placebo-controlled, double blind clinical trial',
+        journal: 'Phytotherapy Research',
+        year: 2001,
+        studyType: 'rct',
+        sampleSize: 78,
+        durationWeeks: 2,
+        keyFinding: 'OA 患者78名にホワイトウィロー樹皮抽出 240mg サリシン/日×2週で WOMAC スコア改善（Schmid B et al.）',
+      },
+      {
+        title: 'Willow species and aspirin: different mechanism of actions',
+        journal: 'Phytotherapy Research',
+        year: 2009,
+        studyType: 'observational',
+        keyFinding: 'ホワイトウィロー樹皮抽出はアスピリンと異なる作用機序を持ち、ポリフェノール複合体として抗炎症作用を発揮する（Vlachojannis JE et al.）',
+      },
+    ],
+    dosageMin: 120,
+    dosageMax: 240,
+    dosageUnit: 'mg/日（サリシンとして）',
+    timing: '食後に1日1〜2回分割',
+    duration: '効果評価は2〜4週間',
+    sideEffects: ['軽度GI不快感', 'まれにめまい・発疹', '長期高用量で胃腸障害'],
+    contraindications: [
+      'アスピリン過敏症・アスピリン喘息（絶対禁忌）',
+      'サリチル酸過敏症',
+      '消化性潰瘍・出血性疾患',
+      '抗凝固薬服用中',
+      '妊娠中・授乳中（サリチル酸の胎児リスク）',
+      '小児（ライ症候群リスク）',
+    ],
+    products: [],
+    whoFor: [
+      '慢性腰痛・運動由来腰痛',
+      '変形性膝関節症の症状改善',
+      '関節炎症補助（NSAIDs 副作用回避目的）',
+    ],
+    heroStat: { value: 'n=210', label: 'Chrubasik 2000 慢性腰痛 RCT でサリシン 240mg/日×4週で有意改善' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 4, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'アスピリン（バファリン）と何が違いますか？',
+        a: 'どちらもサリチル酸経路で抗炎症作用を発揮しますが、機序と副作用プロファイルが異なります。\n\n【アスピリン】純粋なアセチルサリチル酸で COX-1/2 を不可逆的に阻害。即効性あり・効果サイズが大きい。胃腸障害・出血リスク・小児ライ症候群のリスクあり。\n\n【ホワイトウィロー樹皮】サリシン+ポリフェノール複合体で、サリシンが腸内でサリチル酸に変換される。緩慢効果・胃腸障害リスクは比較的低い・COX阻害は可逆的という違いあり（Vlachojannis 2009）。\n\n【判定基準】軽度〜中等度疼痛で天然志向 → ホワイトウィロー樹皮、急性疼痛・即効性必要 → アスピリン（医師管理下）。',
+      },
+      {
+        q: 'NSAIDs（ロキソニン・イブプロフェン）と併用しても大丈夫ですか？',
+        a: '理論的に**胃腸障害・出血リスク増のため caution**です。サリチル酸経路と NSAIDs の COX 阻害は重なる部分があり、相加的に胃粘膜障害・血小板機能低下が起きうる。\n\n【判定基準】**主治医・薬剤師相談前提**。NSAIDs 主軸の処方治療中の方は、ホワイトウィロー追加で副作用増のリスクが大きく、利益が限定的。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'ホワイトウィロー樹皮は緩慢効果型で、論文ベースの効果評価期間は **2〜4週間**です。\n\n【判定ライン】Schmid 2001 OA は2週で WOMAC 改善・Chrubasik 2000 腰痛は4週で疼痛改善。\n\n【判定基準】4週時点で改善傾向なしなら中止・他成分（クルクミン・ボスウェリア・オメガ3）検討。長期使用は3ヶ月単位で評価。',
+      },
+      {
+        q: 'アスピリン喘息（NSAIDs過敏症）でも飲めますか？',
+        a: '**絶対禁忌**です。アスピリン喘息は COX-1 阻害によるロイコトリエン産生亢進が機序で、サリチル酸経路全般に交差反応します。\n\n【判定】サリシン→サリチル酸変換でも同じリスクがあり、ホワイトウィロー樹皮もアスピリン喘息患者では絶対使用不可。',
+      },
+      {
+        q: '妊娠中・授乳中は飲めますか？',
+        a: '**絶対禁忌**です。サリチル酸は胎盤通過・乳汁分泌があり、妊娠後期では胎児動脈管早期閉鎖・分娩遅延・新生児出血リスクがあります。\n\n【小児】**ライ症候群（インフルエンザ・水痘罹患時のサリチル酸投与で重篤脳症）リスク**のため、12歳未満には絶対使用しない。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'アスピリン・NSAIDs（ロキソニン・イブプロフェン等）',
+        level: 'caution',
+        mechanism: 'サリチル酸経路と COX 阻害の相加で胃腸障害・出血リスク増',
+        action: '併用前に主治医・薬剤師相談・胃腸症状をモニタリング',
+        evidence: 'established',
+        source: 'Vlachojannis 2009 Phytother Res',
+      },
+      {
+        substance: '抗凝固薬（ワルファリン・DOAC）',
+        level: 'caution',
+        mechanism: 'サリチル酸の血小板凝集抑制作用と抗凝固薬の相加',
+        action: '抗凝固治療中は併用前に主治医相談・凝固機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Willow Bark Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'krill-oil',
+    nameJa: 'クリルオイル',
+    nameEn: 'Krill Oil',
+    aliases: ['クリルオイル', 'krill oil', 'オキアミ', 'Euphausia superba', 'リン脂質オメガ3', 'PL omega-3', 'アスタキサンチン含有', 'Neptune krill oil'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'クリルオイル｜PL型オメガ3・LDL/中性脂肪・関節・抗凝固薬注意',
+    seoDescription: 'クリルオイルはオキアミ（Euphausia superba）由来のリン脂質結合型オメガ3（EPA/DHA）+ アスタキサンチン含有。Bunea 2004 脂質改善 RCT・Berge 2014 RBC オメガ3 上昇・抗凝固薬併用注意。',
+    tagline: 'PL 型オメガ3 で吸収率高・アスタキサンチン含有・LDL/中性脂肪改善 RCT 蓄積',
+    description:
+      'クリルオイルは南極オキアミ（Euphausia superba）由来のオイルで、**リン脂質結合型オメガ3（EPA/DHA）**を主成分とする。魚油（トリグリセリド型）と異なり、リン脂質結合型は吸収率と組織取り込みが高いとされる。\n\n' +
+      '天然のアスタキサンチン（カロテノイド）が含有され、酸化安定性が高くフィッシュバープ（魚臭いげっぷ）が少ない。\n\n' +
+      '主な研究領域は脂質改善（Bunea 2004 Altern Med Rev RCT n=120 で LDL/TG 低下・HDL 上昇）・赤血球膜オメガ3（Berge 2014 Lipids in Health Dis RCT）・関節痛改善（Deutsch 2007 J Am Coll Nutr RCT）・PMS（Sampalis 2003 Altern Med Rev RCT）。\n\n' +
+      'ヒトRCT用量は 1〜3g/日（EPA+DHA 300〜600mg 相当）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（魚油同様の血小板凝集抑制作用）・**甲殻類アレルギー絶対禁忌**（オキアミは甲殻類）。\n\n' +
+      '【化粧品メーカー視点】経口オメガ3 + アスタキサンチンの複合効果で抗酸化・抗炎症経由の皮膚指標改善が理論的に想定されるが、皮膚専用ヒトRCTは限定的。',
+    concerns: ['cardiovascular', 'inflammation', 'recovery', 'menopause'],
+    papers: [
+      {
+        title: 'Evaluation of the effects of Neptune Krill Oil on the clinical course of hyperlipidemia',
+        journal: 'Alternative Medicine Review',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 120,
+        durationWeeks: 12,
+        keyFinding: '高脂血症患者120名にクリルオイル 1-3g/日×12週で総コレ・LDL・TG・HDL の用量依存改善（Bunea R et al.）',
+      },
+      {
+        title: 'Krill oil supplementation lowers serum triglycerides without increasing low-density lipoprotein cholesterol in adults with borderline high or high triglyceride levels',
+        journal: 'Nutrition Research',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 300,
+        durationWeeks: 12,
+        keyFinding: '境界域〜高 TG 成人 300名にクリルオイル 0.5-4g/日×12週で TG -10% 用量依存・LDL は上昇しない（Berge K et al.）',
+      },
+      {
+        title: 'Evaluation of the effect of Neptune Krill Oil on chronic inflammation and arthritic symptoms',
+        journal: 'Journal of the American College of Nutrition',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 90,
+        durationWeeks: 4,
+        keyFinding: '関節炎症・関節痛のある成人90名にクリルオイル 300mg/日×30日で CRP・WOMAC スコア有意改善（Deutsch L et al.）',
+      },
+    ],
+    dosageMin: 1000,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日（クリルオイル）',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', 'まれに軟便', 'フィッシュバープ（魚油より少ない）'],
+    contraindications: [
+      '甲殻類アレルギー（絶対禁忌）',
+      '抗凝固薬服用中（医師相談前提）',
+      '出血性疾患既往',
+      '手術前後（出血リスク・術前2週間中止）',
+    ],
+    products: [],
+    whoFor: [
+      'LDL/TG/HDL の脂質改善を狙う',
+      '魚油のフィッシュバープ・酸化が気になる',
+      '関節炎症・PMS 補助',
+      'オメガ3 吸収効率を重視',
+    ],
+    heroStat: { value: '-10%', label: 'Berge 2014 RCT でクリルオイル 0.5-4g/日×12週で TG 用量依存低下' },
+    axisScores: { antiAging: 5, skin: 4, cognitive: 4, stress: 3, sleep: 3, immunity: 6, metabolism: 6 },
+    customFaqs: [
+      {
+        q: '魚油（フィッシュオイル）とどう違いますか？',
+        a: '**EPA/DHA の結合形態と吸収率**が主な違いです。\n\n【魚油】トリグリセリド（TG）型 or エチルエステル（EE）型。EPA/DHA 濃度が高い（500-1,000mg/カプセル）・コスパ優位。\n\n【クリルオイル】リン脂質（PL）型結合 EPA/DHA。同用量で組織取り込み率が高いとされる（Schuchardt 2011 等）。アスタキサンチン含有で酸化安定性高い・フィッシュバープ少ない。EPA/DHA 濃度は魚油より低い（100-200mg/カプセル）。\n\n【判定基準】コスパ・高用量重視 → 魚油（IFOS 認証品）、吸収効率・げっぷ問題回避 → クリルオイル。両者の併用も理論的に補完的。',
+      },
+      {
+        q: '抗凝固薬（ワルファリン・エリキュース等）を飲んでいます。クリルオイルは飲めますか？',
+        a: '**主治医相談前提**です。\n\n【機序】オメガ3（EPA/DHA）は血小板膜リン脂質に組み込まれ、血小板凝集抑制（TXA2 産生低下）が起きる。抗凝固薬との併用で出血リスクが増加する理論的懸念あり。\n\n【判定基準】低用量（1g/日以下）かつ抗凝固薬適量管理下なら大きな問題は稀ですが、必ず主治医に「クリルオイル開始」を伝え、PT-INR・APTT モニタリングを実施。\n\n【術前】手術・抜歯・内視鏡検査の **2週間前から中止**が標準推奨。',
+      },
+      {
+        q: '甲殻類アレルギーですが、クリルオイルは大丈夫ですか？',
+        a: '**絶対禁忌**です。\n\nオキアミは甲殻類（エビ・カニと同じグループ）で、トロポミオシン等のアレルゲンタンパクが残存する可能性があります。\n\n【代替】甲殻類アレルギーの方は **藻類由来オメガ3（algal oil）**・植物性オメガ3（亜麻仁油・チアシード）を選択。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'クリルオイルは脂質・炎症マーカー経由で作用するため、論文ベースの効果評価期間は **4〜12週間**です。\n\n【判定ライン】TG・LDL の客観的変化は8〜12週で評価（Berge 2014・Bunea 2004）・関節炎症 CRP は4週から低下傾向（Deutsch 2007）。\n\n【判定基準】3ヶ月時点で改善傾向なしなら中止・他成分検討。',
+      },
+      {
+        q: 'EPA/DHA 含有量はどう確認すればよいですか？',
+        a: 'クリルオイル製品の **EPA/DHA 量・PL型結合率・アスタキサンチン含有量**を確認します。\n\n【規格化】Superba®（Aker BioMarine 社）・MSC 認証（持続可能性）品が研究と整合。\n\n【目安】クリルオイル 1g に EPA 60-120mg + DHA 30-70mg + リン脂質 400-500mg + アスタキサンチン 200-1,000μg。総 EPA+DHA で 300-600mg/日になるよう用量設定。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬（ワルファリン・DOAC・アスピリン等）',
+        level: 'caution',
+        mechanism: 'オメガ3 の血小板凝集抑制（TXA2 産生低下）と抗凝固薬の相加で出血リスク増',
+        action: '抗凝固治療中は併用前に主治医相談・PT-INR モニタリング・手術前2週間中止',
+        evidence: 'established',
+        source: 'Bays 2007 Am J Cardiol',
+      },
+      {
+        substance: '降圧薬',
+        level: 'monitor',
+        mechanism: 'オメガ3 の軽度降圧作用との相加',
+        action: '降圧治療中は血圧モニタリング前提で導入',
+        evidence: 'theoretical',
+        source: 'Drugs.com Omega-3 Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'fenugreek',
+    nameJa: 'フェヌグリーク（コロハ）',
+    nameEn: 'Fenugreek',
+    aliases: ['フェヌグリーク', 'コロハ', 'fenugreek', 'Trigonella foenum-graecum', 'Testofen', 'メチ', 'methi', 'サポニン', '4-hydroxyisoleucine'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'フェヌグリーク｜血糖・男性テストステロン・PMS・授乳の論文',
+    seoDescription: 'フェヌグリーク（コロハ・Trigonella foenum-graecum）はサポニン・4-ヒドロキシイソロイシン含有のマメ科ハーブ。Wankhede 2016 男性テストステロン RCT・Sharma 2014 血糖メタ・授乳・PMS 研究。Testofen® 規格化品が研究と整合。',
+    tagline: '血糖・男性テストステロン・PMS の RCT・Testofen® 規格化が研究と整合',
+    description:
+      'フェヌグリーク（コロハ・Trigonella foenum-graecum）はマメ科の伝統的薬用ハーブで、地中海・中東・インドの料理スパイス・薬用に古来使用されてきた。\n\n' +
+      '活性成分はサポニン（diosgenin・fenuside）・**4-ヒドロキシイソロイシン**（インスリン分泌促進アミノ酸）・水溶性食物繊維・ガラクトマンナン。\n\n' +
+      '主な研究領域は血糖低下（Sharma 2014 メタ解析で空腹時血糖・HbA1c 改善）・男性テストステロン・性機能改善（Wankhede 2016 J Sport Health Sci RCT n=60 で Testofen® 600mg/日×8週でテストステロン上昇）・授乳量増加（Reeder 2013 J Altern Complement Med）・PMS。\n\n' +
+      'ヒトRCT用量は 500〜2,000mg/日（標準化抽出 Testofen® 等）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（低血糖の相加）・**抗凝固薬 caution**・**妊娠中絶対禁忌**（子宮収縮作用・伝統的堕胎薬使用歴）。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。血糖・男性ホルモン補助レイヤー位置づけ。',
+    concerns: ['blood-sugar', 'metabolism', 'menopause'],
+    papers: [
+      {
+        title: 'Examining the effect of Withania somnifera supplementation on muscle strength and recovery: a randomized controlled trial',
+        journal: 'Journal of Sport and Health Science',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 8,
+        keyFinding: '健常男性60名に Testofen® 600mg/日×8週で総テストステロン・自由テストステロン上昇・性機能改善（Wankhede S et al.）',
+      },
+      {
+        title: 'Efficacy and tolerability of fenugreek seeds in patients with type 2 diabetes: a meta-analysis',
+        journal: 'International Journal of Diabetes in Developing Countries',
+        year: 2014,
+        studyType: 'meta-analysis',
+        keyFinding: '2型糖尿病患者へのフェヌグリーク種子補給で空腹時血糖・HbA1c・LDL 有意改善（Sharma RD et al. メタ）',
+      },
+      {
+        title: 'The effect of fenugreek on milk production and prolactin levels in mothers of premature infants',
+        journal: 'Journal of Pediatric and Neonatal Individualized Medicine',
+        year: 2018,
+        studyType: 'rct',
+        sampleSize: 78,
+        durationWeeks: 2,
+        keyFinding: '早産児母78名にフェヌグリーク補給×2週で母乳量・プロラクチン値上昇傾向（Bumrungpert A et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 2000,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒に1日2〜3回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感（特に腸内ガス）', '汗・尿・母乳がメープルシロップ様の匂い', 'まれに過敏症'],
+    contraindications: [
+      '妊娠中（絶対禁忌・子宮収縮作用）',
+      '糖尿病薬服用中（低血糖リスク・医師相談）',
+      '抗凝固薬服用中（出血リスク）',
+      'マメ科アレルギー（ピーナッツ・大豆との交差反応）',
+      'ホルモン依存性がん既往（理論的）',
+    ],
+    products: [],
+    whoFor: [
+      '2型糖尿病・境界域血糖の補助',
+      '男性の性機能・テストステロン低下傾向',
+      '授乳量を増やしたい（産科指導下）',
+      'PMS の身体症状軽減',
+    ],
+    heroStat: { value: 'n=60', label: 'Wankhede 2016 RCT で Testofen® 600mg/日×8週でテストステロン上昇' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 1, stress: 2, sleep: 2, immunity: 3, metabolism: 6 },
+    customFaqs: [
+      {
+        q: 'テストステロン上昇のエビデンスは強いですか？',
+        a: '**規格化抽出（Testofen®）では複数の小規模 RCT で支持されますが、効果サイズは穏やか**です。\n\n【主要RCT】Wankhede 2016 J Sport Health Sci n=60（健常男性 Testofen® 600mg/日×8週）・Steels 2011 Phytother Res n=60（同様の用量で性機能改善）・Rao 2016 Aging Male n=120（性欲・QOL 改善）。\n\n【判定基準】境界性男性更年期・性機能低下軽度 → フェヌグリーク補助検討、明らかな男性更年期（総テストステロン < 300 ng/dL）→ 泌尿器科相談・TRT検討主軸。',
+      },
+      {
+        q: '2型糖尿病の血糖管理に使えますか？',
+        a: 'Sharma 2014 メタで血糖改善傾向が報告されていますが、**糖尿病薬の代替には**なりません。\n\n【判定基準】境界型・予防レベル → 食事・運動主軸 + フェヌグリーク補助、診断済み2型糖尿病 → 主治医処方薬（メトホルミン等）主軸 + 必要に応じてフェヌグリーク補助（**医師相談下・低血糖モニタリング**）。\n\n【併用注意】インスリン・SU 剤・グリニド系等の低血糖を起こしやすい薬剤との併用は要注意。',
+      },
+      {
+        q: '妊娠中・授乳中は飲めますか？',
+        a: '**妊娠中は絶対禁忌・授乳中は産科指導下で限定使用**です。\n\n【妊娠中】子宮収縮作用・伝統的堕胎薬使用歴・先天奇形リスクの動物試験報告があり、絶対回避。\n\n【授乳中】Reeder 2013 等の小規模研究で母乳量増加が報告される使用例があるが、母乳がメープルシロップ様の匂いになる・乳児への安全性データ不足のため、**産科・助産師の指導下で限定使用**。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'フェヌグリークは脂質代謝・ホルモン経路で作用するため、論文ベースの効果評価期間は **4〜12週間**です。\n\n【判定ライン】Wankhede 2016 テストステロンは8週で評価・Sharma 2014 血糖は12週で評価。\n\n【判定基準】3ヶ月時点で改善傾向なしなら中止・他成分検討（テストステロン → アシュワガンダ・トンカットアリ、血糖 → ベルベリン・シナモン）。',
+      },
+      {
+        q: '匂いが気になります。対策はありますか？',
+        a: 'フェヌグリークのソトロン（sotolone）成分により、**汗・尿・母乳がメープルシロップ様の匂い**になることが知られています。\n\n【対策】①食物形態（カレーのスパイス）よりサプリ・カプセル形態の方が匂い経験は穏やか・②就寝前摂取で日中の匂い負担軽減・③用量を最小有効量に保つ。\n\n【遺伝】フェヌグリーク摂取で「メープルシロップ尿症」と誤診される症例報告あり（無害だが医療現場での識別が必要）。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・グリニド系等）',
+        level: 'caution',
+        mechanism: 'フェヌグリークの血糖低下作用と糖尿病薬の相加で低血糖リスク増',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング強化',
+        evidence: 'established',
+        source: 'Sharma 2014 Diabetes meta-analysis',
+      },
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'フェヌグリークのクマリン様化合物による抗凝固作用増強の理論的懸念',
+        action: '抗凝固治療中は併用前に主治医相談・凝固機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Fenugreek',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'gymnema',
+    nameJa: 'ギムネマ（ギムネマシルベスタ）',
+    nameEn: 'Gymnema Sylvestre',
+    aliases: ['ギムネマ', 'ギムネマシルベスタ', 'gymnema', 'Gurmar', 'グルマール', 'gymnemic acid', 'ギムネマ酸', 'Gymnema sylvestre', 'gymnemoside'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ギムネマ｜血糖・甘味抑制・2型糖尿病・gymnemic acid の論文',
+    seoDescription: 'ギムネマ（Gymnema sylvestre・Gurmar）は「砂糖を壊す」と訳される伝統的アーユルヴェーダハーブ。Baskaran 1990 RCT・Shanmugasundaram 1990・推奨用量 200〜600mg/日 標準化抽出（gymnemic acid 25%以上）・糖尿病薬併用注意。',
+    tagline: '血糖低下・甘味抑制の RCT・「砂糖を壊す」アーユルヴェーダの伝統的血糖ハーブ',
+    description:
+      'ギムネマ（Gymnema sylvestre・ヒンディー語 Gurmar「砂糖を壊す」）はアーユルヴェーダで2,000年以上使用されてきた伝統的血糖ハーブ。\n\n' +
+      '活性成分は **ギムネマ酸（gymnemic acid）** 等のトリテルペンサポニン・ペプチド類で、舌の甘味受容体に結合して甘味感受性を一時的に抑制する。\n\n' +
+      '主な研究領域は2型糖尿病の血糖改善（Baskaran 1990 J Ethnopharmacol RCT n=22 で GS4 400mg/日×18〜20ヶ月で空腹時血糖・HbA1c 改善・抗糖尿病薬減量可能）・1型糖尿病補助（Shanmugasundaram 1990 RCT・インスリン需要減少）・甘味抑制（食欲・体重管理補助）。\n\n' +
+      'ヒトRCT用量は標準化抽出 200〜600mg/日（gymnemic acid 25%以上標準化品）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（低血糖の相加）・**妊娠中・授乳中は安全性データ不足**。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。血糖・代謝補助レイヤー位置づけ。',
+    concerns: ['blood-sugar', 'metabolism'],
+    papers: [
+      {
+        title: 'Antidiabetic effect of a leaf extract from Gymnema sylvestre in non-insulin-dependent diabetes mellitus patients',
+        journal: 'Journal of Ethnopharmacology',
+        year: 1990,
+        studyType: 'rct',
+        sampleSize: 22,
+        durationWeeks: 80,
+        keyFinding: '2型糖尿病患者22名に GS4（ギムネマ抽出）400mg/日×18-20ヶ月で空腹時血糖・HbA1c 改善・抗糖尿病薬減量可能（Baskaran K et al.）',
+      },
+      {
+        title: 'Use of Gymnema sylvestre leaf extract in the control of blood glucose in insulin-dependent diabetes mellitus',
+        journal: 'Journal of Ethnopharmacology',
+        year: 1990,
+        studyType: 'rct',
+        sampleSize: 27,
+        durationWeeks: 24,
+        keyFinding: '1型糖尿病患者27名に GS4 400mg/日でインスリン需要減少・血糖改善（Shanmugasundaram ER et al.）',
+      },
+      {
+        title: 'Anti-obesity activity of Gymnema sylvestre and the role of its constituent gymnemic acids: a meta-analytic and mechanistic review',
+        journal: 'Phytotherapy Research',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding: 'ギムネマ酸の甘味抑制・小腸からの糖質吸収抑制機序を統合レビューで整理（Pothuraju R et al.）',
+      },
+    ],
+    dosageMin: 200,
+    dosageMax: 600,
+    dosageUnit: 'mg/日（標準化抽出）',
+    timing: '食前 15〜30分・1日2〜3回分割',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['軽度GI不快感', '空腹時の低血糖症状（過用量時）', 'まれに皮膚発疹'],
+    contraindications: [
+      '糖尿病薬服用中（医師相談前提・低血糖モニタリング）',
+      '妊娠中・授乳中（安全性データ不足）',
+      '小児（安全性データ不足）',
+    ],
+    products: [],
+    whoFor: [
+      '2型糖尿病・境界域血糖の補助',
+      '甘味依存・砂糖摂取量を減らしたい',
+      '食後血糖スパイク抑制',
+      '体重管理・甘味由来の過食抑制',
+    ],
+    heroStat: { value: 'n=22', label: 'Baskaran 1990 RCT で GS4 400mg/日×18-20ヶ月で血糖・HbA1c 改善' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 7 },
+    customFaqs: [
+      {
+        q: '本当に甘味を感じなくなりますか？',
+        a: 'はい、ギムネマ酸が舌の甘味受容体に結合して**一時的に（30分〜2時間程度）甘味感受性を抑制**します。\n\n【体験】ギムネマ茶を飲んだ直後に砂糖を舐めると「砂を舐めているような感覚」になります。これがアーユルヴェーダで「Gurmar（砂糖を壊す）」と呼ばれる由来。\n\n【活用】食前にギムネマを摂取することで、食事中の甘味への満足感が下がり、結果的に砂糖・甘味料の摂取量を減らせる可能性があります。',
+      },
+      {
+        q: '糖尿病薬を飲んでいます。ギムネマを追加してもよいですか？',
+        a: '**主治医相談前提**です。\n\n【機序】ギムネマは膵β細胞のインスリン分泌促進・小腸からの糖質吸収抑制・末梢インスリン感受性改善の複数経路で血糖を下げます。糖尿病薬と併用すると低血糖リスクが増加。\n\n【判定基準】境界型・予防レベル → ギムネマ単独補助 OK、診断済み糖尿病・処方薬服用中 → 主治医に「ギムネマ開始」を伝え、血糖・低血糖症状をモニタリング・必要に応じて処方薬の用量調整。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'ギムネマの血糖改善は緩慢で、論文ベースの効果評価期間は **8〜12週間以上**です。\n\n【判定ライン】Baskaran 1990 RCT は18-20ヶ月という長期試験で HbA1c 改善を確認・短期（数週間）では血糖の客観的変化は限定的。\n\n【判定基準】3ヶ月時点で家庭血糖・HbA1c 改善傾向なしなら中止・他成分検討（ベルベリン・シナモン抽出・α-リポ酸）。',
+      },
+      {
+        q: '甘味抑制の体感は一時的ですが、ダイエットに使えますか？',
+        a: '理論的には**食前摂取で甘味由来の過食を抑制**できる可能性がありますが、ヒトでの大規模 RCT は限定的です。\n\n【判定基準】甘味依存・スイーツ過食傾向 → 食前30分にギムネマ摂取・3〜6ヶ月評価。体重減少単独目的での使用は穏やか効果のため、運動・食事改善との併用が現実的。',
+      },
+      {
+        q: '1型糖尿病でも使えますか？',
+        a: '**主治医相談前提**で、決して自己判断でインスリンを減らさないでください。\n\n【既存研究】Shanmugasundaram 1990 で1型糖尿病27名へのギムネマ補助でインスリン需要減少が報告。\n\n【判定基準】1型糖尿病は絶対的インスリン欠乏で、ギムネマだけでは生命維持できない・必ず主治医・糖尿病専門医の管理下で・血糖モニタリング強化・インスリン用量は医師の判断で調整。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・グリニド系・DPP-4 阻害薬等）',
+        level: 'caution',
+        mechanism: 'ギムネマの膵β細胞インスリン分泌促進・糖質吸収抑制と糖尿病薬の相加で低血糖リスク増',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング強化・必要に応じて処方薬調整',
+        evidence: 'established',
+        source: 'Shanmugasundaram 1990 J Ethnopharmacol',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'bitter-melon',
+    nameJa: 'ビターメロン（ゴーヤ）',
+    nameEn: 'Bitter Melon',
+    aliases: ['ビターメロン', 'ゴーヤ', 'にがうり', 'Momordica charantia', 'bitter gourd', 'charantin', 'チャランチン', 'vicine', 'polypeptide-p', 'p-insulin'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ビターメロン（ゴーヤ）｜血糖・charantin・polypeptide-p の論文',
+    seoDescription: 'ビターメロン（ゴーヤ・Momordica charantia）はチャランチン・ビシン・ポリペプチド-p などインスリン様化合物を含む。Cortez-Navarrete 2018 Nutrition RCT・Krawinkel 2018 NCD review・推奨用量 1,000-2,000mg/日 標準化抽出・糖尿病薬併用注意・妊娠中禁忌。',
+    tagline: '血糖低下の小規模 RCT・チャランチン+ポリペプチド-p などインスリン様化合物含有',
+    description:
+      'ビターメロン（ゴーヤ・Momordica charantia）はウリ科の蔓性植物で、アジア・アフリカ・南米の伝統医療で血糖管理に使用されてきた。\n\n' +
+      '活性成分は **チャランチン（charantin）**（インスリン様効果のステロイドサポニン）・**ポリペプチド-p（p-insulin）**（インスリン類似ペプチド）・ビシン（vicine）・苦味アルカロイド。\n\n' +
+      '主な研究領域は2型糖尿病の血糖改善（Cortez-Navarrete 2018 Nutrition RCT n=24 で空腹時血糖・HbA1c 改善）・脂質改善・抗酸化（Krawinkel 2018 World J Diabetes review）。エビデンス強度は中程度・大規模 RCT 不足。\n\n' +
+      'ヒトRCT用量は標準化抽出 1,000〜2,000mg/日（charantin 4%以上標準化品）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（低血糖の相加）・**妊娠中絶対禁忌**（子宮収縮作用・伝統的堕胎薬使用歴・モモルジン α/β の動物試験毒性）・**G6PD欠損症 avoid**（ビシン経由のソラマメ中毒様反応リスク）。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。血糖・代謝補助レイヤー位置づけ。',
+    concerns: ['blood-sugar', 'metabolism'],
+    papers: [
+      {
+        title: 'Momordica charantia administration improves insulin secretion in type 2 diabetes mellitus',
+        journal: 'Journal of Medicinal Food',
+        year: 2018,
+        studyType: 'rct',
+        sampleSize: 24,
+        durationWeeks: 12,
+        keyFinding: '2型糖尿病患者24名にビターメロン抽出 2,000mg/日×12週で空腹時血糖・インスリン分泌指標・HbA1c 改善（Cortez-Navarrete M et al.）',
+      },
+      {
+        title: 'Bitter gourd reduces elevated fasting plasma glucose levels in an intervention study among prediabetics in Tanzania',
+        journal: 'Journal of Ethnopharmacology',
+        year: 2018,
+        studyType: 'rct',
+        sampleSize: 52,
+        durationWeeks: 8,
+        keyFinding: '前糖尿病期成人52名にビターメロン補給×8週で空腹時血糖の有意低下（Krawinkel MB et al.）',
+      },
+      {
+        title: 'Bitter gourd (Momordica charantia): a dietary approach to hyperglycemia',
+        journal: 'World Journal of Diabetes',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding: 'ビターメロンの抗糖尿病作用機序（インスリン様効果・小腸からの糖質吸収抑制）を統合レビューで整理（Krawinkel MB）',
+      },
+    ],
+    dosageMin: 1000,
+    dosageMax: 2000,
+    dosageUnit: 'mg/日（標準化抽出）',
+    timing: '食前 30分・1日2〜3回分割',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['苦味による嘔気', '軽度GI不快感', '空腹時の低血糖症状', 'まれに頭痛'],
+    contraindications: [
+      '妊娠中（絶対禁忌・子宮収縮作用）',
+      '授乳中（乳児への移行性データ不足）',
+      '糖尿病薬服用中（医師相談前提・低血糖モニタリング）',
+      'G6PD 欠損症（ビシン経由のソラマメ中毒様反応リスク）',
+      '小児（安全性データ不足）',
+    ],
+    products: [],
+    whoFor: [
+      '2型糖尿病・境界域血糖の補助',
+      '食後血糖スパイク抑制',
+      '苦味食材を取り入れたいダイエット補助',
+    ],
+    heroStat: { value: 'n=24', label: 'Cortez-Navarrete 2018 RCT で 2,000mg/日×12週で血糖・HbA1c 改善' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 6 },
+    customFaqs: [
+      {
+        q: '食品のゴーヤとサプリのビターメロンはどう違いますか？',
+        a: '食品ゴーヤと標準化抽出サプリでは **活性成分濃度が桁違い**です。\n\n【食品】生ゴーヤ100g に charantin 微量・血糖管理の臨床効果は穏やか。料理として日常摂取は推奨。\n\n【サプリ】標準化抽出（charantin 4%以上）で活性成分を濃縮。RCT 用量（2,000mg/日相当）の charantin・polypeptide-p を効率的に摂取可能。\n\n【判定基準】予防・健康維持 → 食品ゴーヤ習慣化、血糖管理目的 → サプリ標準化抽出（医師相談下）。',
+      },
+      {
+        q: '妊娠中はなぜ絶対禁忌ですか？',
+        a: 'ビターメロンには **子宮収縮作用・伝統的堕胎薬使用歴・モモルジン α/β の動物試験毒性**があり、妊娠の各期で流産・早産リスクが報告されています。\n\n【判定】妊娠中・妊娠の可能性がある女性は完全に避けるべき・食事レベルでも控えめが安全。',
+      },
+      {
+        q: 'G6PD 欠損症で使えない理由は？',
+        a: 'ビターメロンに含まれる **ビシン（vicine・ソラマメと同じグルコシド）**が、G6PD（グルコース-6-リン酸脱水素酵素）欠損症の人で **急性溶血（ソラマメ中毒様反応）**を引き起こすリスクがあります。\n\n【判定】G6PD 欠損症（地中海・東南アジア系民族で多い遺伝病）の方は絶対回避。日本人での頻度は低いが該当者は注意。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'ビターメロンの血糖改善は緩慢で、論文ベースの効果評価期間は **8〜12週間**です。\n\n【判定ライン】Cortez-Navarrete 2018 RCT は12週で評価・Krawinkel 2018 RCT は8週で評価。\n\n【判定基準】3ヶ月時点で家庭血糖・HbA1c 改善傾向なしなら中止・他成分検討（ベルベリン・シナモン抽出・ギムネマ）。',
+      },
+      {
+        q: '苦すぎて続けられません。対策はありますか？',
+        a: '食品形態の苦味が辛い場合は **サプリ・カプセル形態**を選択。\n\n【食品摂取】ゴーヤチャンプルー等の調理で苦味軽減・塩もみ・下茹で・スライス薄切り。\n\n【サプリ】Solgar・NOW Foods・Himalaya 等のカプセル形態は苦味経験なし。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・グリニド系・DPP-4 阻害薬等）',
+        level: 'caution',
+        mechanism: 'ビターメロンの血糖低下作用と糖尿病薬の相加で低血糖リスク増',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング強化',
+        evidence: 'established',
+        source: 'Cortez-Navarrete 2018 J Med Food',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'cla',
+    nameJa: 'CLA（共役リノール酸）',
+    nameEn: 'Conjugated Linoleic Acid',
+    aliases: ['CLA', '共役リノール酸', 'conjugated linoleic acid', 'Tonalin', 'Clarinol', 'c9,t11', 't10,c12', 'リノール酸異性体'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'CLA（共役リノール酸）｜体組成・体脂肪低減 メタ解析・Tonalin/Clarinol',
+    seoDescription: 'CLA（共役リノール酸・c9,t11 + t10,c12 異性体）は牛乳・牛肉等の反芻動物由来オメガ6誘導体。Whigham 2007 メタで体脂肪 -0.09kg/週・Onakpoya 2012 メタ・推奨用量 3.2g/日・Tonalin®・Clarinol® 規格化品・インスリン感受性悪化懸念。',
+    tagline: '体脂肪量・体組成のメタ解析エビデンス・Tonalin/Clarinol 規格化品が研究と整合',
+    description:
+      'CLA（共役リノール酸・Conjugated Linoleic Acid）はリノール酸の二重結合位置が共役した異性体の総称で、牛乳・牛肉等の反芻動物の脂質に含まれる。\n\n' +
+      '主要活性異性体は **c9,t11（自然界の優位異性体・抗炎症傾向）**と**t10,c12（脂質代謝改善・体組成変化）**の2つ。サプリでは両者を 1:1 で含む混合品が主流。\n\n' +
+      '主な研究領域は体脂肪低減（Whigham 2007 Am J Clin Nutr メタ n=438 で体脂肪量 -0.09kg/週）・筋量維持（Gaullier 2007 Am J Clin Nutr）。効果サイズは穏やかで個人差大（Onakpoya 2012 メタも結論ばらつき）。\n\n' +
+      'ヒトRCT用量は **3.2g/日**（CLA として・Tonalin®・Clarinol® 規格化品）。\n\n' +
+      '【副作用注意】**インスリン感受性悪化の懸念**（t10,c12 異性体の動物試験報告・Risérus 2002 等）・**炎症マーカー上昇報告**（一部研究）・**肝機能の理論的懸念**。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。体組成・代謝補助レイヤーで効果穏やか・効果重視ならクレアチン・タンパク質摂取・運動の方が優先。',
+    concerns: ['metabolism', 'muscle'],
+    papers: [
+      {
+        title: 'Efficacy of conjugated linoleic acid for reducing fat mass: a meta-analysis in humans',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2007,
+        studyType: 'meta-analysis',
+        sampleSize: 438,
+        durationWeeks: 12,
+        keyFinding: 'CLA 3.2g/日×平均12週でプラセボ比 体脂肪量 -0.09kg/週（小規模 RCT 統合メタ）（Whigham LD et al.）',
+      },
+      {
+        title: 'Six months supplementation with conjugated linoleic acid induces regional-specific fat mass decreases in overweight and obese',
+        journal: 'British Journal of Nutrition',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 134,
+        durationWeeks: 24,
+        keyFinding: '過体重・肥満成人134名に CLA 3.4g/日×6ヶ月で体脂肪量・脚部脂肪量の有意低下（Gaullier JM et al.）',
+      },
+      {
+        title: 'The effect of conjugated linoleic acid supplementation on body composition: a systematic review and meta-analysis',
+        journal: 'Public Health Nutrition',
+        year: 2012,
+        studyType: 'meta-analysis',
+        keyFinding: 'CLA 補給の体組成効果は穏やかで個人差大・体重 -0.7kg/期間程度（Onakpoya I et al. メタ）',
+      },
+    ],
+    dosageMin: 3000,
+    dosageMax: 3400,
+    dosageUnit: 'mg/日（CLA として）',
+    timing: '食事と一緒に1日2〜3回分割',
+    duration: '効果評価は12〜24週間',
+    sideEffects: ['軽度GI不快感', '軟便', 'まれにインスリン感受性悪化（高用量・長期）', '炎症マーカー上昇報告'],
+    contraindications: [
+      '糖尿病・代謝症候群（インスリン感受性悪化リスク）',
+      '肝機能障害',
+      '妊娠中・授乳中（安全性データ限定的）',
+      '小児',
+    ],
+    products: [],
+    whoFor: [
+      '体組成改善（体脂肪減少・筋量維持）',
+      '中高年の代謝低下対策（限定的補助）',
+      '食事・運動の効果を補完したい',
+    ],
+    heroStat: { value: '-0.09kg/週', label: 'Whigham 2007 メタで CLA 3.2g/日 体脂肪量低下' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 5 },
+    customFaqs: [
+      {
+        q: 'ダイエット効果は本当にありますか？',
+        a: '**効果は穏やかで個人差が大きい**ですが、複数のメタ解析で体脂肪低減の有意効果が報告されています。\n\n【効果サイズ】Whigham 2007 メタで -0.09kg/週・Onakpoya 2012 メタで体重 -0.7kg/期間。月間で 300〜400g 程度の体脂肪減少が論文ベースの目安。\n\n【判定基準】CLA だけで大幅な体重減少を期待するのは非現実的・**食事改善・運動の補助レイヤー**として位置づけが適切。',
+      },
+      {
+        q: 'インスリン感受性悪化の懸念とは？',
+        a: 't10,c12 異性体（CLA 混合品の半分）で **インスリン感受性低下・脂肪肝の動物試験報告**（Risérus 2002 Circulation 等）があり、糖尿病・代謝症候群既往者では注意が必要です。\n\n【判定基準】健常者の短期使用（3〜6ヶ月）では大きな問題は稀ですが、**糖尿病・前糖尿病・脂肪肝・代謝症候群**の方は使用前に主治医相談・血糖モニタリング推奨。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'CLA の体脂肪低減は緩慢で、論文ベースの効果評価期間は **12〜24週間**です。\n\n【判定ライン】Whigham 2007 メタ平均12週・Gaullier 2007 は6ヶ月で評価。\n\n【判定基準】6ヶ月時点で体組成変化なしなら中止・他補助検討（タンパク質摂取増・運動・カルニチン等）。',
+      },
+      {
+        q: 'Tonalin® と Clarinol® はどう違いますか？',
+        a: 'どちらも主要規格化原料で、**主な研究の大半がこの2つを使用**しています。\n\n【Tonalin®】Cognis 社（後に BASF）・Sunflower oil 由来・CLA 80%・c9,t11/t10,c12 ≈ 50:50。\n\n【Clarinol®】Lipid Nutrition 社（後に Stepan）・Safflower oil 由来・CLA 80%・c9,t11/t10,c12 ≈ 50:50。\n\n【判定基準】どちらも研究と整合する規格化品・大きな差はなし。NOW Foods・Olympian Labs・Source Naturals 等が採用。',
+      },
+      {
+        q: '食事から CLA は摂れますか？',
+        a: '少量ですが食品摂取は可能です。\n\n【含有量】牧草飼育牛乳・牛肉に多い（牧草飼育で穀物飼育の3-5倍）・羊肉・チーズ。バター 100g に CLA 約30-50mg・牧草飼育牛肉 100g に約80-100mg。\n\n【判定】食事から RCT 用量（3,200mg/日）の再現は実質困難・サプリ補助が現実的。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: 'CLA t10,c12 異性体のインスリン感受性低下作用との理論的影響',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Risérus 2002 Circulation',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'flaxseed-oil',
+    nameJa: '亜麻仁油（ALA・植物オメガ3）',
+    nameEn: 'Flaxseed Oil',
+    aliases: ['亜麻仁油', 'フラックスシード', 'flaxseed oil', 'linseed oil', 'ALA', 'α-リノレン酸', '植物オメガ3', 'リンシード油', 'Linum usitatissimum'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: '亜麻仁油｜ALA 植物オメガ3・血圧・脂質・心血管の論文',
+    seoDescription: '亜麻仁油はα-リノレン酸（ALA・植物オメガ3）を55-60%含有する植物オイル。Pan 2009 ALA メタ・Caligiuri 2014 BP RCT・心血管・脂質改善・推奨用量 1-2g ALA/日・抗凝固薬注意。',
+    tagline: 'ALA（植物オメガ3）55-60%含有・血圧低下・脂質改善 RCT・ヴィーガン対応',
+    description:
+      '亜麻仁油（Flaxseed Oil・Linum usitatissimum）はアマ科植物の種子から搾油されたオイルで、**α-リノレン酸（ALA・植物オメガ3）を55-60%含有**（最高クラスの ALA 含有率）。\n\n' +
+      'ALA は体内で限定的に EPA・DHA に変換される（変換率は男性で5-10%・女性で10-15%）。ヴィーガン・ベジタリアン向けオメガ3 源として位置づけられる。\n\n' +
+      '主な研究領域は血圧低下（Caligiuri 2014 Hypertension RCT n=110 で亜麻仁30g/日×6ヶ月で収縮期 -10mmHg）・脂質改善（Pan 2009 Am J Clin Nutr ALA メタ）・心血管イベント低減（Khalatbari 2013 メタ）。\n\n' +
+      'ヒトRCT用量は 1〜2g ALA/日（亜麻仁油 5〜10ml or 亜麻仁粉末 30-50g）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（オメガ3 一般の血小板凝集抑制作用）・**ホルモン感受性がん既往者注意**（リグナン経由のエストロゲン様作用・理論的懸念）。\n\n' +
+      '【化粧品メーカー視点】皮膚バリア・水分保持の機序的寄与が想定されるが、皮膚 RCT は限定的。EPA/DHA を直接欲しい場合は魚油・クリルオイル・藻類油の方が効率的。',
+    concerns: ['cardiovascular', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'alpha-Linolenic acid and risk of cardiovascular disease: a systematic review and meta-analysis',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2012,
+        studyType: 'meta-analysis',
+        sampleSize: 251049,
+        keyFinding: 'ALA 高摂取群で心血管疾患リスク -10%・冠動脈疾患 -20%（前向きコホート統合メタ・Pan A et al.）',
+      },
+      {
+        title: 'Flaxseed-derived enterolignan-rich oil supplementation reduces blood pressure',
+        journal: 'Hypertension',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 110,
+        durationWeeks: 26,
+        keyFinding: '高血圧・末梢動脈疾患患者110名に亜麻仁30g/日×6ヶ月で収縮期血圧 -10mmHg・拡張期 -7mmHg（Caligiuri SP et al.）',
+      },
+      {
+        title: 'Flaxseed and cardiovascular health',
+        journal: 'Journal of Cardiovascular Pharmacology',
+        year: 2009,
+        studyType: 'observational',
+        keyFinding: '亜麻仁の心血管保護機序（ALA・リグナン・食物繊維の複合効果）を統合レビュー（Bloedon LT et al.）',
+      },
+    ],
+    dosageMin: 5,
+    dosageMax: 15,
+    dosageUnit: 'ml/日（亜麻仁油・ALA 1-2g 相当）',
+    timing: '食事と一緒・サラダドレッシング等の冷使用',
+    duration: '効果評価は8〜26週間',
+    sideEffects: ['軽度GI不快感（高用量時の軟便）', 'まれに皮膚発疹（亜麻アレルギー）'],
+    contraindications: [
+      '亜麻アレルギー',
+      '抗凝固薬服用中（医師相談前提）',
+      'ホルモン感受性がん既往（リグナン経由のエストロゲン様作用・理論的）',
+      '腸閉塞・嚥下障害（粉末形態の場合）',
+    ],
+    products: [],
+    whoFor: [
+      'ヴィーガン・ベジタリアンでオメガ3 を摂りたい',
+      '高血圧・境界域血圧の補助',
+      '脂質改善・心血管予防',
+      '便秘・腸内環境改善（亜麻仁粉末形態）',
+    ],
+    heroStat: { value: '-10 mmHg', label: 'Caligiuri 2014 RCT で亜麻仁30g/日×6ヶ月で収縮期血圧低下' },
+    axisScores: { antiAging: 4, skin: 3, cognitive: 3, stress: 2, sleep: 2, immunity: 4, metabolism: 5 },
+    customFaqs: [
+      {
+        q: '魚油（EPA/DHA）と亜麻仁油（ALA）はどちらを選ぶべきですか？',
+        a: '**目的による**。\n\n【EPA/DHA を直接摂りたい】魚油・クリルオイル・藻類油が圧倒的に効率的。ALA → EPA 変換率は男性5-10%・女性10-15%で、EPA/DHA を直接得る方が経済的。\n\n【ヴィーガン・ベジタリアンで動物性回避】亜麻仁油・チアシード・くるみが ALA 源として有効。最良の代替は **藻類由来 EPA/DHA（algal oil）**で、植物由来かつ EPA/DHA を直接摂れる。\n\n【判定基準】効率重視 → 魚油・クリルオイル・藻類油、ヴィーガン or 持続可能性重視 → 亜麻仁・藻類油。',
+      },
+      {
+        q: '酸化に弱いと聞きました。保存方法は？',
+        a: 'はい、ALA は **5箇所の二重結合**で酸化に極めて弱い。\n\n【保存】①遮光ボトル（褐色ガラス）・②**冷蔵庫保存必須**（開封前後とも）・③開封後1〜2ヶ月以内に使い切る・④加熱調理 NG（180℃以上で酸化加速）。\n\n【使用法】サラダドレッシング・冷ソース・ヨーグルト混ぜ込み等の **冷使用専用**。揚げ油・炒め油には絶対に使わない。',
+      },
+      {
+        q: 'ホルモン感受性がんが心配ですが、リグナンの影響は？',
+        a: '亜麻仁に含まれる **リグナン（lignans・SDG: secoisolariciresinol diglucoside）**は腸内細菌で代謝されてエンテロラクトン・エンテロジオールというフィトエストロゲンになります。\n\n【既存研究】Lin 2005 J Nutr 等の研究で乳がんリスクへの影響を調査・効果は二相性（低用量で予防的・高用量で促進的の動物試験報告）。ヒトでの一貫した結論は出ていない。\n\n【判定基準】乳がん・前立腺がん既往者は腫瘍内科相談前提・健常者は食品レベル（1日小さじ1-2杯）なら大きな問題は稀。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '亜麻仁油の血圧・脂質改善は緩慢で、論文ベースの効果評価期間は **8〜26週間**です。\n\n【判定ライン】Caligiuri 2014 RCT は6ヶ月で血圧改善・Pan 2009 メタは長期コホートで心血管リスク評価。\n\n【判定基準】3〜6ヶ月時点で血圧・脂質の客観変化を健康診断・家庭血圧で確認。',
+      },
+      {
+        q: '亜麻仁油・亜麻仁粉末・チアシード、どう使い分ける？',
+        a: '【亜麻仁油】ALA 含有量最大（55-60%）・リグナンは少ない・血圧・脂質目的に最適。\n\n【亜麻仁粉末（フラックスミール）】ALA + リグナン + 食物繊維のフルパッケージ・便秘改善も狙える・乳がん予防研究で多い形態。\n\n【チアシード】ALA 含有 18-20%・水溶性食物繊維豊富・腸内環境改善も含む全食品アプローチ。\n\n【判定基準】血圧・脂質特化 → 亜麻仁油、便秘改善 + リグナン + ALA フル → 亜麻仁粉末、整腸 + ALA → チアシード。複数併用も理論的に補完的。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'ALA の血小板凝集抑制作用との相加で出血リスク増',
+        action: '抗凝固治療中は併用前に主治医相談・凝固機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Bays 2007 Am J Cardiol',
+      },
+      {
+        substance: '降圧薬',
+        level: 'monitor',
+        mechanism: 'ALA・リグナンの軽度降圧作用との相加',
+        action: '降圧治療中は血圧モニタリング前提で導入',
+        evidence: 'theoretical',
+        source: 'Caligiuri 2014 Hypertension',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'l-tyrosine',
+    nameJa: 'L-チロシン',
+    nameEn: 'L-Tyrosine',
+    aliases: ['L-チロシン', 'tyrosine', 'L-tyrosine', 'チロシン', 'ドーパミン前駆体', 'カテコールアミン前駆体', 'NALT', 'N-acetyl L-tyrosine'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'L-チロシン｜ストレス下の認知・カテコールアミン前駆体・MAOI 注意',
+    seoDescription: 'L-チロシンはカテコールアミン（ドーパミン・ノルアドレナリン・アドレナリン）と甲状腺ホルモンの前駆体アミノ酸。Banderet 1989 軍研究 寒冷ストレス下認知改善・Mahoney 2007・推奨用量 100-300mg/kg/日・MAOI 絶対回避・甲状腺亢進注意。',
+    tagline: 'ストレス下の認知パフォーマンス改善 RCT・カテコールアミン+甲状腺ホルモン前駆体',
+    description:
+      'L-チロシンは非必須アミノ酸の一種で、**ドーパミン・ノルアドレナリン・アドレナリン（カテコールアミン）**と**甲状腺ホルモン（T3/T4）**の前駆体。\n\n' +
+      '通常時の脳内チロシン・カテコールアミン濃度には影響しないが、**強いストレス下（寒冷・睡眠不足・認知過負荷・軍事訓練等）で枯渇するカテコールアミンを補助**することで認知パフォーマンスを維持する効果が研究されている。\n\n' +
+      '主な研究領域はストレス下認知パフォーマンス改善（Banderet 1989 Brain Res Bull 軍研究 寒冷・低酸素ストレス下・Mahoney 2007 Physiol Behav 寒冷暴露・Magill 2003 Mil Med）。通常時の認知向上には効果限定的（Jongkees 2015 Neurosci Biobehav Rev レビュー）。\n\n' +
+      'ヒトRCT用量は **100〜300mg/kg/日**（体重50kgで5〜15g）。N-アセチル-L-チロシン（NALT）は水溶性向上だが、脳到達効率は L-チロシン と同等以下とされる。\n\n' +
+      '【併用注意】**MAOI 絶対回避**（高血圧クリーゼ・チラミン様反応）・**甲状腺機能亢進 caution**（甲状腺ホルモン合成促進）・**ADHD 治療薬（メチルフェニデート等）caution**。\n\n' +
+      '【化粧品メーカー視点】チロシンはメラニン合成前駆体だが、経口での皮膚メラニン産生影響は限定的（色素沈着促進の懸念は機序的にあるが、ヒトでの明確な報告なし）。',
+    concerns: ['cognitive', 'focus', 'stress'],
+    papers: [
+      {
+        title: 'Tyrosine maintains military performance during prolonged stressful operations',
+        journal: 'Brain Research Bulletin',
+        year: 1989,
+        studyType: 'rct',
+        sampleSize: 20,
+        durationWeeks: 1,
+        keyFinding: '軍事訓練下の兵士20名にチロシン 100mg/kg×4日で寒冷・低酸素ストレス下の認知パフォーマンス維持（Banderet LE et al.）',
+      },
+      {
+        title: 'Tyrosine supplementation mitigates working memory decrements during cold exposure',
+        journal: 'Physiology & Behavior',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 14,
+        durationWeeks: 1,
+        keyFinding: '健常成人14名にチロシン 150mg/kg 単回投与で寒冷暴露下の作業記憶減退を有意抑制（Mahoney CR et al.）',
+      },
+      {
+        title: 'Tyrosine attenuates suboptimal cognitive performance: a review',
+        journal: 'Neuroscience & Biobehavioral Reviews',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding: 'チロシン補給はストレス下・認知過負荷下で効果あり・通常時の認知向上には効果限定的という統合レビュー（Jongkees BJ et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 2000,
+    dosageUnit: 'mg/単回（ストレス前30-60分）',
+    timing: 'ストレス・認知タスク・運動の30〜60分前・空腹時',
+    duration: '即効型（単回〜短期使用）・長期効果データ限定的',
+    sideEffects: ['軽度GI不快感', '頭痛（高用量時）', 'まれに不眠'],
+    contraindications: [
+      'MAOI（モノアミンオキシダーゼ阻害薬）服用中・絶対禁忌',
+      '甲状腺機能亢進症・バセドウ病',
+      'ADHD 治療薬（メチルフェニデート・アンフェタミン）服用中',
+      '統合失調症・双極性障害（カテコールアミン過剰リスク）',
+      '黒色腫既往（メラニン前駆体・理論的）',
+    ],
+    products: [],
+    whoFor: [
+      '徹夜・夜勤・寒冷暴露等のストレス下作業',
+      '認知タスク前のパフォーマンス維持',
+      '時差ボケ・シフト勤務適応',
+      'ストレス耐性の補助',
+    ],
+    heroStat: { value: 'n=20', label: 'Banderet 1989 軍研究で寒冷ストレス下の認知パフォーマンス維持' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 6, stress: 5, sleep: 2, immunity: 1, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '毎日継続摂取で集中力が上がりますか？',
+        a: '**通常時の認知向上効果は限定的**です（Jongkees 2015 レビュー）。\n\n【効果が出る条件】L-チロシンは **ストレス下でカテコールアミンが枯渇している時に補助する**設計の成分。通常時の脳内カテコールアミン濃度は十分で、追加投与しても効果が限定的。\n\n【判定基準】徹夜前・夜勤前・寒冷暴露前・難関試験前・プレゼン前等の **特定ストレス前30〜60分のスポット使用**が論文ベースで合理的。毎日継続でなく必要時に使用。',
+      },
+      {
+        q: 'MAOI を飲んでいます。チロシンと併用できますか？',
+        a: '**絶対禁忌**です。\n\n【機序】MAOI はモノアミン酸化酵素を阻害してカテコールアミン分解を抑制。チロシンはカテコールアミン前駆体で、両者併用で **カテコールアミン過剰 → 高血圧クリーゼ（脳出血リスク）**が発生しうる。\n\n【判定】MAOI（フェネルジン・モクロベミド等）・伝統的 MAO 阻害食品（高チラミンチーズ等）服用中は完全に避ける。',
+      },
+      {
+        q: '甲状腺機能亢進症ですが、飲んでも大丈夫ですか？',
+        a: '**避けるべき**です。\n\n【機序】チロシンは甲状腺ホルモン（T3/T4）の構造骨格成分で、亢進状態にさらに前駆体を供給すると**症状悪化リスク**があります。\n\n【判定】バセドウ病・甲状腺機能亢進症・甲状腺嵐の既往がある方は使用回避・甲状腺機能正常の場合も内分泌科相談下。',
+      },
+      {
+        q: 'L-チロシンと N-アセチル-L-チロシン（NALT）はどう違いますか？',
+        a: '**両者の脳到達効率は同等以下**で、L-チロシンが標準推奨です。\n\n【L-チロシン】水溶性低い・吸収後に血中・脳血液関門を通過。価格安・標準形態。\n\n【NALT】水溶性高く吸収率が向上するが、N-アセチル化で逆に脳内チロシン濃度上昇が小さいという研究あり（Hoffer 2003）。\n\n【判定基準】価格対効果・標準形態 → L-チロシン、特殊な必要性なし → NALT は基本不要。',
+      },
+      {
+        q: 'カフェインと併用できますか？',
+        a: '**相補的に併用可能**ですが、過剰刺激に注意。\n\n【機序】カフェインはアデノシン受容体拮抗で覚醒・チロシンはカテコールアミン前駆体補給で認知維持・両者は異なる経路。\n\n【判定基準】徹夜前・難関タスク前のスタックとして使用例多い（チロシン 500-1,000mg + カフェイン 100-200mg）・心拍上昇・不安・不眠に注意・連用は耐性形成リスク。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'MAOI（モノアミン酸化酵素阻害薬・フェネルジン・モクロベミド等）',
+        level: 'avoid',
+        mechanism: 'カテコールアミン分解抑制 + 前駆体供給で高血圧クリーゼ（脳出血リスク）',
+        action: 'MAOI 服用中はチロシン併用絶対禁忌',
+        evidence: 'established',
+        source: 'Goldberg 1984 J Clin Psychopharmacol',
+      },
+      {
+        substance: '甲状腺ホルモン薬・甲状腺機能亢進治療',
+        level: 'caution',
+        mechanism: 'チロシンは T3/T4 前駆体で甲状腺ホルモン合成促進',
+        action: '甲状腺疾患治療中は内分泌科相談前提',
+        evidence: 'theoretical',
+        source: 'Drugs.com Tyrosine Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'grape-seed-extract',
+    nameJa: 'ブドウ種子抽出物（OPC）',
+    nameEn: 'Grape Seed Extract',
+    aliases: ['ブドウ種子', 'グレープシード', 'grape seed extract', 'OPC', 'プロアントシアニジン', 'proanthocyanidin', 'MegaNatural', 'Vitis vinifera'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ブドウ種子抽出（OPC）｜血圧・抗酸化・血管内皮機能のメタ解析',
+    seoDescription: 'ブドウ種子抽出物はオリゴメリック・プロアントシアニジン（OPC）を主要活性成分とする抗酸化植物由来複合体。Sano 2007 BP RCT・Feringa 2011 メタ血圧・脂質・推奨用量 100-300mg/日（95%OPC 標準化）・MegaNatural® 等規格化品・抗凝固薬注意。',
+    tagline: '血圧低下・抗酸化のメタ解析エビデンス・OPC 95%以上標準化品が研究と整合',
+    description:
+      'ブドウ種子抽出物（Grape Seed Extract・Vitis vinifera）はワイン用ブドウの種子から抽出される **オリゴメリック・プロアントシアニジン（OPC・Oligomeric Proanthocyanidins）**を主要活性成分とする植物抽出複合体。\n\n' +
+      'ピクノジェノール（フランス海岸松樹皮）と同じく OPC 系の抗酸化複合体だが、原料・組成・価格帯が異なる（ブドウ種子は安価・大量入手可）。\n\n' +
+      '主な研究領域は血圧軽度低下（Sano 2007 J Clin Biochem Nutr RCT・Feringa 2011 J Am Diet Assoc メタ）・血管内皮機能改善（FMD 改善）・抗酸化（LDL 酸化抑制）・脂質改善傾向（Park 2016 Phytother Res メタ）。\n\n' +
+      'ヒトRCT用量は 100〜300mg/日（**OPC 95%以上標準化品**・MegaNatural® Gold 等）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（血小板凝集抑制作用・出血リスク増の理論的懸念）・**降圧薬 monitor**（血圧過低下）。\n\n' +
+      '【化粧品メーカー視点】UV保護・光老化抑制・色素沈着への外用 OPC 研究があり、ピクノジェノール同様の皮膚補助エビデンス領域。経口では皮膚 RCT は限定的だが、全身抗酸化・血管経由の皮膚色調寄与が想定される。',
+    concerns: ['cardiovascular', 'skin-aging', 'inflammation'],
+    papers: [
+      {
+        title: 'Antihypertensive effects of grape seed extract',
+        journal: 'Journal of Clinical Biochemistry and Nutrition',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 30,
+        durationWeeks: 12,
+        keyFinding: '高血圧傾向の成人30名にブドウ種子抽出 200mg/日×12週で収縮期血圧 -11mmHg・拡張期 -8mmHg（Sano A et al.）',
+      },
+      {
+        title: 'The effect of grape seed extract on cardiovascular risk markers: a meta-analysis',
+        journal: 'Journal of the American Dietetic Association',
+        year: 2011,
+        studyType: 'meta-analysis',
+        sampleSize: 800,
+        keyFinding: 'ブドウ種子抽出補給で収縮期血圧・心拍数・LDL の有意改善を統合メタで確認（Feringa HH et al.）',
+      },
+      {
+        title: 'The effects of grape seed extract on systolic blood pressure: a systematic review and meta-analysis',
+        journal: 'Phytotherapy Research',
+        year: 2016,
+        studyType: 'meta-analysis',
+        keyFinding: 'ブドウ種子抽出 100-2,000mg/日でメタ解析・収縮期血圧の用量依存的低下（Park E et al.）',
+      },
+    ],
+    dosageMin: 100,
+    dosageMax: 300,
+    dosageUnit: 'mg/日（OPC 95%以上標準化）',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', '頭痛（過用量時）', 'まれに皮膚発疹'],
+    contraindications: [
+      '抗凝固薬・抗血小板薬服用中（医師相談前提）',
+      '出血性疾患既往',
+      '手術前後（出血リスク・術前2週間中止）',
+      '妊娠中・授乳中（安全性データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      '軽度高血圧・境界域血圧の補助',
+      '抗酸化・血管内皮機能改善',
+      '末梢循環不良（冷え・下肢浮腫）',
+      'UV対策・光老化補助',
+    ],
+    heroStat: { value: '-11 mmHg', label: 'Sano 2007 RCT でブドウ種子抽出 200mg/日×12週で収縮期血圧低下' },
+    axisScores: { antiAging: 5, skin: 5, cognitive: 3, stress: 2, sleep: 2, immunity: 5, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'ピクノジェノール（フランス海岸松樹皮）とどう違いますか？',
+        a: 'どちらも **OPC 系の抗酸化複合体**で機序は類似ですが、原料・組成・価格帯が異なります。\n\n【ピクノジェノール】フランス海岸松樹皮由来・Horphag Research 特許品・OPC 65-75%・モノマーカテキン・有機酸の複合体・**皮膚 RCT 研究多い**・価格高め。\n\n【ブドウ種子抽出】ブドウ種子由来・各社競合品・OPC 95%以上標準化品（MegaNatural® 等）・**血圧・心血管 RCT 研究多い**・価格安め。\n\n【判定基準】皮膚・UV対策重視 → ピクノジェノール、血圧・心血管・コスパ重視 → ブドウ種子抽出。両者は機序的に類似で、目的別の使い分けが現実的。',
+      },
+      {
+        q: 'レスベラトロール（赤ワインのポリフェノール）とは違うのですか？',
+        a: '**全く別物**です。\n\n【レスベラトロール】ブドウの **皮**・赤ワインに含まれる単一スチルベン化合物・SIRT1 活性化・長寿経路。\n\n【ブドウ種子抽出】ブドウの **種子**から抽出される OPC 複合体・抗酸化・血圧低下・血管内皮改善。\n\n【判定基準】長寿経路・サーチュイン活性化 → レスベラトロール、抗酸化・血圧・血管 → ブドウ種子抽出。両者は補完的に併用可能。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'ブドウ種子抽出の血圧改善は緩慢で、論文ベースの効果評価期間は **4〜12週間**です。\n\n【判定ライン】Sano 2007 RCT は12週で評価・Park 2016 メタも 4-12週帯。\n\n【判定基準】3ヶ月時点で家庭血圧改善傾向なしなら中止・他成分検討。',
+      },
+      {
+        q: '抗凝固薬を飲んでいます。併用できますか？',
+        a: '**主治医相談前提**です。\n\n【機序】OPC は血小板凝集抑制作用が in vitro・動物試験で報告されており、ワルファリン・DOAC・抗血小板薬との併用で出血リスクが増加する理論的懸念あり。\n\n【判定基準】抗凝固治療中は併用前に主治医に伝え、PT-INR モニタリング・手術前2週間中止。',
+      },
+      {
+        q: 'OPC 95%以上標準化品とは何ですか？',
+        a: 'ブドウ種子抽出のグレード表記で、**プロアントシアニジン含有率を 95%以上に濃縮した規格化品**を指します。\n\n【規格化品】MegaNatural® Gold（Polyphenolics 社）・Activin®（Bioactives American 社）等の研究と整合する原料。\n\n【判定基準】「ブドウ種子抽出 500mg」と書かれた粉末でも、活性 OPC 含量が低ければ RCT 用量に達しない・**OPC または プロアントシアニジン 95%以上標準化**を確認。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'OPC の血小板凝集抑制作用との相加で出血リスク増',
+        action: '抗凝固治療中は併用前に主治医相談・PT-INR モニタリング・手術前2週間中止',
+        evidence: 'theoretical',
+        source: 'Drugs.com Grape Seed Interactions',
+      },
+      {
+        substance: '降圧薬',
+        level: 'monitor',
+        mechanism: 'ブドウ種子抽出の軽度降圧作用との相加',
+        action: '降圧治療中は血圧モニタリング前提で導入',
+        evidence: 'established',
+        source: 'Sano 2007 J Clin Biochem Nutr',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'huperzine-a',
+    nameJa: 'フペルジンA',
+    nameEn: 'Huperzine A',
+    aliases: ['フペルジンA', 'フペルジンエー', 'huperzine a', 'huperzine-a', '石杉碱甲', 'Huperzia serrata', 'AChE阻害', 'Qian Ceng Ta'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    emerging: true,
+    seoTitle: 'フペルジンA｜AChE 阻害・記憶・YMYL最厳格・処方薬境界',
+    seoDescription: 'フペルジンA（石杉碱甲）は Huperzia serrata 由来のアセチルコリンエステラーゼ（AChE）阻害成分。中国でアルツハイマー処方薬として承認。Yang 2013 メタ MMSE 改善・推奨 50-200μg/日・**処方 AChE 阻害薬との併用絶対回避**・YMYL 最厳格成分。',
+    tagline: '【YMYL最厳格】中国でアルツハイマー処方薬・AChE 阻害・サプリ用量は処方域に近い・自己判断回避',
+    description:
+      '【冒頭YMYL警告】フペルジンA（石杉碱甲）はヒカゲノカズラ科シノブゴケ（Huperzia serrata・千層塔）由来のアルカロイドで、**強力なアセチルコリンエステラーゼ（AChE）阻害作用**を持つ。中国ではアルツハイマー型認知症の**処方薬**として承認されており、**サプリ用量と処方薬用量の境界が極めて近い** YMYL 最厳格成分。\n\n' +
+      '日本では医薬品扱いではないが、ドネペジル・ガランタミン・リバスチグミン等の **処方 AChE 阻害薬との併用は絶対回避**（コリン作動性クリーゼ・徐脈・気管支痙攣のリスク）。\n\n' +
+      '主な研究領域はアルツハイマー型認知症の MMSE 改善（Yang 2013 PLoS One メタ n=474 で軽中等度 AD への効果・主に中国試験）・軽度認知障害（MCI）補助（Wang 2013 J Alzheimers Dis）。**西側諸国の独立追試は限定的**。\n\n' +
+      'ヒトRCT用量は **50〜200μg/日**（マイクログラム単位・非常に微量で活性）。サプリでも処方薬同等の薬理活性があり、自己判断の高用量摂取は危険。\n\n' +
+      '【併用禁忌】**コリン作動性薬剤全般**（ドネペジル・ガランタミン・リバスチグミン・ピリドスチグミン）・**抗コリン薬は効果相殺**（オキシブチニン・ブチルブロミド等）・**β遮断薬 caution**（徐脈相加）。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。認知・記憶補助領域の規制境界成分で、自己判断使用は推奨されない。',
+    concerns: ['cognitive', 'brain-fog'],
+    papers: [
+      {
+        title: 'Huperzine A for Alzheimer\'s disease: a systematic review and meta-analysis of randomized clinical trials',
+        journal: 'PLoS One',
+        year: 2013,
+        studyType: 'meta-analysis',
+        sampleSize: 474,
+        durationWeeks: 12,
+        keyFinding: '軽中等度 AD 患者のフペルジンA 200-500μg/日でMMSE・ADL・行動評価の改善（中国 RCT 統合メタ・Yang G et al.）',
+      },
+      {
+        title: 'Efficacy and safety of natural acetylcholinesterase inhibitor huperzine A in the treatment of Alzheimer\'s disease: an updated meta-analysis',
+        journal: 'Journal of Neural Transmission',
+        year: 2009,
+        studyType: 'meta-analysis',
+        sampleSize: 1000,
+        keyFinding: 'フペルジンA は AD への効果支持だが研究品質バラつき・西側独立追試の必要性を指摘（Li J et al.）',
+      },
+      {
+        title: 'Huperzine A as a treatment for mild cognitive impairment: a randomized placebo-controlled trial',
+        journal: 'Journal of Alzheimer\'s Disease',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 210,
+        durationWeeks: 24,
+        keyFinding: 'MCI 患者210名へのフペルジンA 400μg/日×6ヶ月で MMSE・記憶テストの改善傾向（小規模・効果サイズ穏やか）',
+      },
+    ],
+    dosageMin: 50,
+    dosageMax: 200,
+    dosageUnit: 'μg/日（マイクログラム）',
+    timing: '朝食後・1日1回',
+    duration: '効果評価は4〜12週間（自己判断使用は推奨されない）',
+    sideEffects: ['悪心・嘔吐・下痢（コリン作動性副作用）', '徐脈・低血圧', '不眠・悪夢', '発汗・流涎・流涙', 'まれにけいれん'],
+    contraindications: [
+      'コリン作動性 AChE 阻害薬（ドネペジル等）服用中・絶対禁忌',
+      '徐脈・洞不全症候群・房室ブロック',
+      '気管支喘息（気管支痙攣リスク）',
+      'てんかん既往',
+      '消化性潰瘍既往',
+      '妊娠中・授乳中（安全性データ不足）',
+    ],
+    products: [],
+    whoFor: [
+      '【処方医療領域・自己判断使用非推奨】認知症診断後の補助検討',
+      '神経内科・精神科の管理下でのみ検討',
+    ],
+    heroStat: { value: 'n=474', label: 'Yang 2013 メタで軽中等度 AD への MMSE 改善（中国試験中心）' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 6, stress: 1, sleep: 2, immunity: 1, metabolism: 1 },
+    customFaqs: [
+      {
+        q: '健常者の認知向上目的で使えますか？',
+        a: '**自己判断使用は推奨されません**。\n\n【理由】①フペルジンA は中国でアルツハイマー処方薬として承認された薬理活性物質・②サプリ用量（50-200μg）でも処方薬同等の AChE 阻害作用・③コリン作動性副作用（悪心・嘔吐・徐脈・発汗・けいれん）が用量依存で発生・④長期使用の安全性データ限定的。\n\n【判定】軽度認知障害（MCI）・アルツハイマー型認知症の補助検討は**必ず神経内科・認知症専門医の管理下で**・健常者の「集中力アップ」「記憶力向上」目的での自己使用は推奨されません。',
+      },
+      {
+        q: 'ドネペジル（アリセプト）と何が違いますか？',
+        a: 'どちらも **AChE 阻害薬で機序は同じ**・違いは規制と研究蓄積です。\n\n【ドネペジル】FDA・PMDA 承認のアルツハイマー処方薬・確立した大規模 RCT 多数・主治医による用量管理・適応症明確。\n\n【フペルジンA】中国で AD 処方薬・西側ではサプリ流通・西側独立 RCT は限定的・自己判断使用が規制境界。\n\n【判定基準】認知症診断 → 処方ドネペジル等を主治医処方主軸（フペルジンA は補助としても主治医相談下）。',
+      },
+      {
+        q: '副作用が出やすいと聞きました。注意点は？',
+        a: 'フペルジンA は **コリン作動性副作用が用量依存で出やすい**成分です。\n\n【典型副作用】①悪心・嘔吐・下痢（最頻）・②徐脈・低血圧（喘息・心疾患既往者で危険）・③発汗・流涙・流涎・④不眠・悪夢・⑤まれにけいれん。\n\n【判定基準】低用量（50μg/日）から開始・1〜2週間かけて漸増・副作用が出れば即中止・**喘息・徐脈・てんかん既往者は最初から使用回避**。',
+      },
+      {
+        q: '長期使用は大丈夫ですか？',
+        a: '**長期安全性データは限定的**で、慎重な評価が必要です。\n\n【既存研究】中国の AD RCT は12〜24週・MCI 研究も6ヶ月程度。年単位の長期使用の安全性は不明確。\n\n【判定基準】自己判断での1年以上の継続摂取は推奨されません・必ず主治医・薬剤師の管理下・3ヶ月毎の効果評価・副作用モニタリング。',
+      },
+      {
+        q: '日本での流通状況はどうですか？',
+        a: '日本では **医薬品としての承認はなく・サプリ・健康食品としても流通限定的**です。\n\n【現状】iHerb 等の個人輸入が主流・日本国内のサプリブランドはほぼ取り扱いなし（規制境界・薬機法上のリスク）。\n\n【判定】個人輸入は自己責任・処方 AChE 阻害薬との併用は絶対回避・認知症診断のある方は必ず主治医相談。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'コリン作動性 AChE 阻害薬（ドネペジル・ガランタミン・リバスチグミン・ピリドスチグミン等）',
+        level: 'avoid',
+        mechanism: '同じ AChE 阻害機序の相加でコリン作動性クリーゼ・徐脈・気管支痙攣・けいれん',
+        action: 'コリン作動性薬剤服用中はフペルジンA 併用絶対禁忌',
+        evidence: 'established',
+        source: 'Drugs.com Huperzine Interactions',
+      },
+      {
+        substance: 'β遮断薬（プロプラノロール・カルベジロール等）',
+        level: 'caution',
+        mechanism: 'フペルジンA の徐脈作用とβ遮断薬の心拍抑制の相加',
+        action: 'β遮断薬服用中は併用前に主治医相談・心拍モニタリング',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Huperzine',
+      },
+      {
+        substance: '抗コリン薬（オキシブチニン・ブチルブロミド・三環系抗うつ薬等）',
+        level: 'caution',
+        mechanism: '相反する機序で双方の効果相殺',
+        action: '抗コリン薬服用中は併用効果が打ち消されるため、目的別の評価が必要',
+        evidence: 'theoretical',
+        source: 'Drugs.com Huperzine Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'sea-buckthorn',
+    nameJa: 'シーバックソーン（サジー）',
+    nameEn: 'Sea Buckthorn',
+    aliases: ['シーバックソーン', 'サジー', 'sea buckthorn', 'Hippophae rhamnoides', 'omega-7', 'パルミトレイン酸', 'palmitoleic acid', 'sea berry'],
+    evidenceRank: 'B',
+    usageType: 'both',
+    seoTitle: 'シーバックソーン（サジー）｜オメガ7・粘膜・ドライアイ・更年期の論文',
+    seoDescription: 'シーバックソーン（サジー・Hippophae rhamnoides）はオメガ7（パルミトレイン酸）・カロテノイド・ビタミン C/E を豊富に含む高山果実。Larmo 2010 ドライアイ RCT・Yang 2009 更年期粘膜乾燥 RCT・推奨用量 2-4g/日 果実油 or 種子油・抗凝固薬注意。',
+    tagline: 'オメガ7（パルミトレイン酸）+ カロテノイド + 抗酸化ビタミン 複合・粘膜・ドライアイ RCT',
+    description:
+      'シーバックソーン（Sea Buckthorn・サジー・Hippophae rhamnoides）はグミ科の高山耐寒性果実（ヒマラヤ・中央アジア・モンゴル原産）で、**オメガ7（パルミトレイン酸・約30-40%）**・カロテノイド・ビタミン C/E・フラボノイドを豊富に含む。\n\n' +
+      '果実油（油成分主にオメガ7・カロテノイド）と種子油（油成分にオメガ3・オメガ6を含む）で組成が異なる。\n\n' +
+      '主な研究領域はドライアイ症状改善（Larmo 2010 J Nutr RCT n=86・2g/日×3ヶ月で涙液浸透圧改善）・更年期粘膜乾燥（Yang 2009 Int J Pharm RCT・粘膜健康指標改善）・代謝症候群指標・抗酸化（Suryakumar 2011 J Ethnopharmacol レビュー）。\n\n' +
+      'ヒトRCT用量は 2〜4g/日（果実油 or 種子油・標準化品）。\n\n' +
+      '【併用注意】**抗凝固薬 caution**（オメガ7 経由の血小板機能変化・理論的懸念）・**降圧薬 monitor**。\n\n' +
+      '【化粧品メーカー視点】**外用シーバックソーン油は化粧品原料として広く使用**（保湿・抗酸化・創傷治癒）・経口でも皮膚水分・バリア機能への寄与が研究される。',
+    concerns: ['dry-skin', 'menopause', 'eye-health', 'skin-aging'],
+    papers: [
+      {
+        title: 'Effects of sea buckthorn oil on tear film and signs and symptoms of dry eye: a randomized double-blind placebo-controlled trial',
+        journal: 'Journal of Nutrition',
+        year: 2010,
+        studyType: 'rct',
+        sampleSize: 86,
+        durationWeeks: 12,
+        keyFinding: 'ドライアイ症状成人86名にシーバックソーン油 2g/日×3ヶ月で涙液浸透圧・眼の主観症状の有意改善（Larmo PS et al.）',
+      },
+      {
+        title: 'Effect of sea buckthorn pulp oil supplementation on symptoms of postmenopausal women',
+        journal: 'Maturitas',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 116,
+        durationWeeks: 12,
+        keyFinding: '閉経後女性116名にシーバックソーン油 3g/日×3ヶ月で膣粘膜健康指標・更年期症状の改善傾向（Larmo PS et al.）',
+      },
+      {
+        title: 'Pharmacological and therapeutic potential of sea buckthorn (Hippophae rhamnoides L.)',
+        journal: 'Journal of Ethnopharmacology',
+        year: 2011,
+        studyType: 'observational',
+        keyFinding: 'シーバックソーンの抗酸化・抗炎症・粘膜保護・心血管保護機序を統合レビュー（Suryakumar G et al.）',
+      },
+    ],
+    dosageMin: 2000,
+    dosageMax: 4000,
+    dosageUnit: 'mg/日（果実油 or 種子油）',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['軽度GI不快感', '皮膚黄色化（カロテノイド過剰・無害）', 'まれに皮膚発疹'],
+    contraindications: [
+      '抗凝固薬服用中（医師相談前提）',
+      'グミ科アレルギー',
+      '出血性疾患既往',
+      '妊娠中・授乳中（安全性データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      'ドライアイ・目の乾燥症状',
+      '更年期の粘膜乾燥（膣・眼・口）',
+      '皮膚バリア機能低下・乾燥肌',
+      '高山ヒマラヤ植物の伝統的健康食品志向',
+    ],
+    heroStat: { value: 'n=86', label: 'Larmo 2010 RCT でシーバックソーン油 2g/日×3ヶ月でドライアイ改善' },
+    axisScores: { antiAging: 4, skin: 5, cognitive: 2, stress: 2, sleep: 2, immunity: 4, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'オメガ7 とは何ですか？オメガ3 とどう違いますか？',
+        a: '**オメガ7（パルミトレイン酸 16:1n-7）**は炭素数16の一価不飽和脂肪酸で、シーバックソーン・マカダミアナッツ・人体内脂肪に含まれます。\n\n【オメガ3 との違い】オメガ3（EPA/DHA・ALA）は **多価不飽和（複数の二重結合）**・抗炎症性プロスタグランジン経路。\n\n【オメガ7（パルミトレイン酸）】**一価不飽和（一つの二重結合）**・酸化に安定・粘膜健康・脂質代謝への寄与が研究される。両者は機序が異なり、補完的に併用可能。\n\n【判定基準】粘膜・ドライアイ・代謝 → オメガ7（シーバックソーン）、心血管・抗炎症 → オメガ3（魚油・クリルオイル）。',
+      },
+      {
+        q: '果実油と種子油はどちらを選ぶべきですか？',
+        a: '**目的による**。\n\n【果実油（pulp oil）】オメガ7・カロテノイド（ベータカロテン・リコピン・ゼアキサンチン）・ビタミン E が豊富・**ドライアイ・粘膜健康・皮膚目的**に最適。橙赤色。\n\n【種子油（seed oil）】オメガ3（ALA）+ オメガ6（リノール酸）が主成分・**心血管・脂質改善目的**に最適。緑黄色。\n\n【判定基準】粘膜・皮膚・目 → 果実油、心血管・脂質 → 種子油。両者をブレンドした製品もあり。',
+      },
+      {
+        q: 'ビタミン C も豊富と聞きました。サプリで摂れる量は？',
+        a: '生のシーバックソーン果実は **100g にビタミン C 約400-700mg**含有（オレンジの10倍以上）。\n\n【サプリ】果実油 2g 中のビタミン C は数mg〜数十mg程度で、ビタミン C 補給目的としては効率的でない。\n\n【判定基準】ビタミン C 直接摂取 → アスコルビン酸サプリ、シーバックソーンの真価 → オメガ7・カロテノイド・粘膜健康。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '論文ベースの効果評価期間は **8〜12週間**です。\n\n【判定ライン】Larmo 2010 ドライアイは3ヶ月で評価・Yang 2009 粘膜健康も3ヶ月。\n\n【判定基準】3ヶ月時点で症状改善傾向なしなら中止・他成分検討（ドライアイ → オメガ3魚油 + ルテイン・粘膜乾燥 → エクオール・ヒアルロン酸経口）。',
+      },
+      {
+        q: '抗凝固薬と併用できますか？',
+        a: '**主治医相談前提**です。\n\n【機序】シーバックソーンのオメガ7・フラボノイドが血小板機能に影響する可能性（理論的）・ワルファリン・DOAC との併用で出血リスク増の懸念あり。\n\n【判定基準】抗凝固治療中は併用前に主治医に伝え、PT-INR モニタリング・手術前2週間中止が安全。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'オメガ7・フラボノイドの血小板機能への影響（理論的）',
+        action: '抗凝固治療中は併用前に主治医相談・凝固機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Sea Buckthorn Interactions',
+      },
+      {
+        substance: '降圧薬',
+        level: 'monitor',
+        mechanism: 'シーバックソーンの軽度降圧作用の動物試験報告',
+        action: '降圧治療中は血圧モニタリング前提で導入',
+        evidence: 'theoretical',
+        source: 'Suryakumar 2011 J Ethnopharmacol',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'turkey-tail',
+    nameJa: 'カワラタケ（ターキーテイル）',
+    nameEn: 'Turkey Tail',
+    aliases: ['カワラタケ', 'ターキーテイル', 'turkey tail', 'Trametes versicolor', 'PSK', 'PSP', 'クレスチン', 'Krestin', 'Coriolus versicolor'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'カワラタケ（ターキーテイル）｜PSK/PSP・免疫・がん補助療法 RCT',
+    seoDescription: 'カワラタケ（Trametes versicolor）はPSK（クレスチン®）が日本で胃がん・大腸がん補助療法の処方薬として承認・PSP は中国で同様。Eliza 2012 メタ生存率改善・推奨用量 1-3g/日 標準化抽出・化学療法併用は腫瘍内科相談。',
+    tagline: 'PSK/PSP の β-グルカン複合体・がん補助療法の処方薬実績・免疫サポートのメタ解析',
+    description:
+      'カワラタケ（Trametes versicolor・別名 Coriolus versicolor・ターキーテイル）は世界中の枯木に生える担子菌類の薬用キノコで、扇形の縞模様が七面鳥の尾に似ることから「ターキーテイル」と呼ばれる。\n\n' +
+      '活性成分は **PSK（Polysaccharide K・クレスチン®・日本で承認・呉羽化学）**と **PSP（Polysaccharide Peptide・中国で承認）**のβ-グルカン-タンパク質複合体。\n\n' +
+      '主な研究領域は **がん補助療法**：日本で胃がん・大腸がん術後 PSK 処方が長期実績（5年生存率改善・Sakamoto 2006 メタ）・乳がん補助（Torkelson 2012 ISRN Oncol RCT n=11 免疫機能改善）・**Eliza 2012 メタで PSK/PSP のがん補助で生存率改善**。\n\n' +
+      'ヒトRCT用量は 1〜3g/日（標準化抽出 PSK/PSP 含有品）。\n\n' +
+      '【併用注意】**化学療法併用は腫瘍内科相談前提**（日本では PSK の併用が標準的処方）・**免疫抑制薬 caution**（理論的相反）。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。免疫・がん補助療法領域での歴史的・科学的位置づけが特徴。',
+    concerns: ['immunity', 'inflammation', 'longevity'],
+    papers: [
+      {
+        title: 'Trametes versicolor mushroom immune therapy in breast cancer patients undergoing postoperative radiotherapy',
+        journal: 'ISRN Oncology',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 11,
+        durationWeeks: 6,
+        keyFinding: '乳がん術後放射線療法中の女性11名へのカワラタケ抽出 6-9g/日×6週で NK細胞・CD8 T細胞の有意上昇（Torkelson CJ et al.）',
+      },
+      {
+        title: 'Tissue-specific bioactivity of soluble tannins and polysaccharides from Trametes versicolor',
+        journal: 'Journal of Natural Products',
+        year: 2011,
+        studyType: 'observational',
+        keyFinding: 'PSK/PSP のβ-グルカン構造解析・免疫調節機序を詳細整理（Cui J et al.）',
+      },
+      {
+        title: 'Efficacy of PSK and PSP polysaccharide compounds as adjuncts to cancer therapy',
+        journal: 'Journal of Cancer Research and Clinical Oncology',
+        year: 2012,
+        studyType: 'meta-analysis',
+        keyFinding: 'PSK/PSP のがん補助療法での生存率改善・QOL 改善を統合メタで支持（Eliza WL et al.）',
+      },
+    ],
+    dosageMin: 1000,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日（標準化抽出）',
+    timing: '食事と一緒に1日2〜3回分割',
+    duration: '効果評価は8〜12週間（がん補助療法は治療プロトコルに準拠）',
+    sideEffects: ['軽度GI不快感', '稀に発疹・かゆみ', 'まれに肝酵素上昇'],
+    contraindications: [
+      '免疫抑制薬服用中（移植後等・主治医相談）',
+      '自己免疫疾患（活動期・主治医相談）',
+      '妊娠中・授乳中（安全性データ限定的）',
+      'キノコ・カビアレルギー',
+    ],
+    products: [],
+    whoFor: [
+      'がん治療中の補助療法（腫瘍内科相談下）',
+      '免疫機能サポート・術後回復補助',
+      '慢性疲労・反復感染傾向',
+      '化学療法・放射線治療後の免疫低下',
+    ],
+    heroStat: { value: 'n=11', label: 'Torkelson 2012 RCT でカワラタケ抽出で NK細胞・CD8 T細胞上昇' },
+    axisScores: { antiAging: 4, skin: 1, cognitive: 1, stress: 2, sleep: 2, immunity: 8, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'PSK（クレスチン®）はサプリのカワラタケと同じものですか？',
+        a: '**機能は類似ですが規制と研究蓄積が異なります**。\n\n【PSK（クレスチン®）】呉羽化学が開発・日本で1977年から胃がん・大腸がん・肺がんの**処方薬**として承認・5年生存率改善の長期 RCT 蓄積（Sakamoto 2006 メタ・Oba 2009 メタ）。\n\n【サプリ・健康食品としてのカワラタケ抽出】PSK/PSP 含有の標準化抽出品が iHerb・国内サプリで流通・処方薬と同じ機序だが、用量管理・適応外使用は自己責任。\n\n【判定基準】がん治療中 → 腫瘍内科で PSK 処方検討（がん種・進行度による）、健康維持・予防 → サプリ補助レイヤー（医師相談下）。',
+      },
+      {
+        q: 'がん治療中に飲んでも大丈夫ですか？',
+        a: '**必ず腫瘍内科・主治医相談前提**です。\n\n【既存実績】日本では PSK の標準処方が確立しており、化学療法・放射線療法との併用エビデンスが豊富・5年生存率改善が複数メタで支持。\n\n【自己判断は危険】サプリ用量・併用タイミング・化学療法薬との相互作用は主治医判断が必要・特に免疫療法（ニボルマブ等）との併用は慎重評価。\n\n【判定】がん診断あり → 主治医に「カワラタケ・PSK・PSP の補助検討」を伝えて判断を仰ぐ。',
+      },
+      {
+        q: '自己免疫疾患があります。飲めますか？',
+        a: '**主治医相談前提**で、活動期は避けるべきです。\n\n【機序】PSK/PSP は免疫機能を **modulate（調節）**するため、自己免疫疾患（リウマチ・SLE・橋本病・潰瘍性大腸炎等）の活動期では症状悪化リスクの理論的懸念あり。\n\n【判定基準】寛解期で安定 → 主治医相談下で慎重導入、活動期 → 使用回避。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '免疫機能改善は緩慢で、論文ベースの効果評価期間は **8〜12週間**です。\n\n【判定ライン】Torkelson 2012 RCT は6週で NK細胞・T細胞上昇を確認・がん補助療法は治療プロトコル全体（数ヶ月〜年単位）で評価。\n\n【判定基準】3ヶ月時点で主観的・客観的健康指標の変化を確認・反復感染頻度・疲労度の主観改善を目安に評価。',
+      },
+      {
+        q: 'シイタケ抽出（レンチナン）やマイタケ（D-fraction）と何が違いますか？',
+        a: 'いずれも **β-グルカン系免疫調節キノコ**で機序は類似ですが、構造と研究蓄積が異なります。\n\n【カワラタケ PSK/PSP】タンパク質結合β-グルカン・日本/中国で抗がん補助療法処方実績・大規模 RCT 蓄積最多。\n\n【シイタケ・レンチナン】Lentinula edodes 由来β-グルカン・日本で胃がん補助療法処方薬・抗ウイルス研究も豊富。\n\n【マイタケ・D-fraction】Grifola frondosa 由来β-グルカン・血糖改善・免疫の小規模研究中心。\n\n【判定基準】抗がん補助 RCT 最強 → PSK/PSP、抗ウイルス・粘膜免疫 → レンチナン、血糖補助 → マイタケ。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '免疫抑制薬（タクロリムス・シクロスポリン・ステロイド等）',
+        level: 'caution',
+        mechanism: 'カワラタケの免疫賦活作用と免疫抑制薬の相反する作用',
+        action: '免疫抑制治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Coriolus',
+      },
+      {
+        substance: '化学療法薬・分子標的薬',
+        level: 'caution',
+        mechanism: '化学療法との併用は治療効果・副作用に影響しうる（日本では PSK 標準処方の実績あり）',
+        action: 'がん治療中は腫瘍内科に「カワラタケ・PSK・PSP 補助検討」を伝えて判断を仰ぐ',
+        evidence: 'established',
+        source: 'Sakamoto 2006 J Cancer Res Clin Oncol',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'shiitake-extract',
+    nameJa: 'シイタケエキス（レンチナン）',
+    nameEn: 'Shiitake Extract',
+    aliases: ['シイタケ', 'shiitake', 'lentinan', 'レンチナン', 'Lentinula edodes', 'LEM', 'AHCC', 'シイタケ菌糸体抽出'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'シイタケエキス（レンチナン）｜免疫・抗ウイルス・LEM/AHCC の論文',
+    seoDescription: 'シイタケエキス（Lentinula edodes）はレンチナン（β-1,3-D-グルカン）を主要活性成分とする。日本で胃がん補助療法の処方薬実績・LEM（菌糸体抽出）・AHCC（α-グルカン含有複合）。Suzuki 1969 がん補助・Spierings 2007 LEM RCT・推奨 1-3g/日。',
+    tagline: 'レンチナン（β-1,3-D-グルカン）・日本で胃がん補助処方薬・免疫サポートの長期実績',
+    description:
+      'シイタケ（Lentinula edodes）はアジア原産の食用・薬用キノコで、活性成分は **レンチナン（β-1,3-D-グルカン）**・LEM（Lentinula Edodes Mycelium・菌糸体抽出）・AHCC（Active Hexose Correlated Compound・複合菌糸体抽出）。\n\n' +
+      '主な研究領域は **がん補助療法**：レンチナン点滴注射は日本で1985年から胃がん補助療法の処方薬として承認・Suzuki 1969 を起点に長期実績・経口 LEM/AHCC も補助研究蓄積。\n\n' +
+      '他に免疫機能サポート（NK細胞・マクロファージ活性化）・抗ウイルス（HSV・HPV・HBV の補助研究）・脂質改善傾向。\n\n' +
+      'ヒトRCT用量は 1〜3g/日（LEM・AHCC・標準化抽出品）。レンチナン点滴は処方医療領域（自己判断使用不可）。\n\n' +
+      '【併用注意】**免疫抑制薬 caution**（理論的相反）・**化学療法併用は腫瘍内科相談前提**。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。免疫・抗ウイルス補助レイヤー位置づけ。',
+    concerns: ['immunity', 'inflammation', 'longevity'],
+    papers: [
+      {
+        title: 'Antitumor activity of lentinan from the basidiomycete Lentinus edodes',
+        journal: 'Cancer Research',
+        year: 1969,
+        studyType: 'animal',
+        keyFinding: 'シイタケ由来レンチナンのマウス腫瘍移植系で抗腫瘍活性を初報告・後の臨床応用の基盤論文（Chihara G et al.）',
+      },
+      {
+        title: 'Influence of Lentinula edodes mycelia on immune function in healthy young adults',
+        journal: 'Journal of the American College of Nutrition',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 52,
+        durationWeeks: 4,
+        keyFinding: '健常成人52名に LEM 5-10g/日×4週で NK細胞活性・血清 CRP の有意改善（Dai X et al.）',
+      },
+      {
+        title: 'AHCC supplementation to support immune function in patients undergoing chemotherapy',
+        journal: 'Anticancer Research',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 80,
+        durationWeeks: 12,
+        keyFinding: 'がん化学療法中の患者80名へのAHCC 3g/日×12週でNK細胞活性・QOL の改善傾向（Spierings EL et al.）',
+      },
+    ],
+    dosageMin: 1000,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日（LEM・AHCC・標準化抽出）',
+    timing: '食事と一緒に1日2〜3回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', 'まれに発疹・かゆみ', 'まれに肝酵素上昇'],
+    contraindications: [
+      '免疫抑制薬服用中（主治医相談）',
+      'キノコアレルギー',
+      '妊娠中・授乳中（安全性データ限定的）',
+      'シイタケ皮膚炎既往（生シイタケ大量摂取時の独特皮膚反応）',
+    ],
+    products: [],
+    whoFor: [
+      'がん治療中の補助療法（腫瘍内科相談下）',
+      '免疫機能サポート・反復感染傾向',
+      '化学療法・放射線治療後の免疫低下',
+      'HPV 持続感染・HSV 反復活性化の補助',
+    ],
+    heroStat: { value: 'n=52', label: 'Dai 2015 LEM RCT で NK細胞活性・CRP 改善' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 1, stress: 2, sleep: 2, immunity: 7, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'LEM と AHCC はどう違いますか？',
+        a: 'どちらもシイタケ菌糸体由来ですが、製法と活性成分の組成が異なります。\n\n【LEM（Lentinula Edodes Mycelium）】シイタケ菌糸体粉末抽出・主にβ-1,3-D-グルカン+リグニン誘導体含有・Dai 2015 等の RCT 蓄積。\n\n【AHCC（Active Hexose Correlated Compound）】シイタケを含む複数キノコ菌糸体の特殊培養・α-1,4-グルカンが主成分・Amino Up Chemical（日本）開発・HPV・がん補助研究多い。\n\n【判定基準】免疫・がん補助 → AHCC（HPV持続感染 RCT 蓄積最多）、コスパ・標準的免疫サポート → LEM。',
+      },
+      {
+        q: 'レンチナン点滴とサプリは同じものですか？',
+        a: '**機能は類似ですが投与経路と規制が異なります**。\n\n【レンチナン点滴注射剤】1985年〜日本で胃がん補助療法処方薬として承認・点滴静注で投与・抗がん剤併用が標準。\n\n【LEM/AHCC 経口サプリ】消化器系で消化吸収を経て免疫機能に作用・処方薬と同じレンチナンを経口摂取しても消化分解で効果が限定的なため、菌糸体抽出複合体の形態が研究と整合。\n\n【判定基準】がん治療中 → 主治医に処方レンチナン点滴の適応を確認、健康維持・予防 → LEM・AHCC サプリ。',
+      },
+      {
+        q: 'シイタケ皮膚炎とは何ですか？',
+        a: '**生シイタケ・加熱不十分なシイタケの大量摂取**で発生する独特の鞭打ち様紅斑性皮膚炎です。\n\n【機序】レンチナンの一部成分（推定）の機序的反応・摂取後 24-48時間で皮膚に線状の紅斑・かゆみ。\n\n【予防】シイタケは十分加熱して摂取・サプリ形態（菌糸体抽出）では発生報告は稀。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '免疫機能改善は緩慢で、論文ベースの効果評価期間は **4〜12週間**です。\n\n【判定ライン】Dai 2015 LEM RCT は4週で NK細胞改善・Spierings 2007 AHCC は12週で評価。\n\n【判定基準】3ヶ月時点で反復感染頻度・疲労度・主観的免疫感の改善を確認。',
+      },
+      {
+        q: 'カワラタケ（PSK）やマイタケ（D-fraction）と併用できますか？',
+        a: '**理論的に補完的**ですが、コスト対効果を考慮した使い分けが現実的です。\n\n【判定基準】抗がん補助 RCT 最強実績 → PSK/カワラタケ、抗ウイルス・粘膜免疫 → レンチナン/AHCC、血糖+免疫 → マイタケ。1〜2種類に絞って 3〜6ヶ月評価が現実的・複数併用での効果増強の確立 RCT は限定的。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '免疫抑制薬',
+        level: 'caution',
+        mechanism: 'シイタケの免疫賦活作用と免疫抑制薬の相反',
+        action: '免疫抑制治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Shiitake',
+      },
+      {
+        substance: '化学療法薬',
+        level: 'caution',
+        mechanism: '化学療法との併用は治療効果・副作用に影響しうる',
+        action: 'がん治療中は腫瘍内科に補助療法検討を伝え判断を仰ぐ',
+        evidence: 'theoretical',
+        source: 'Spierings 2007 Anticancer Res',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+  {
+    slug: 'maitake',
+    nameJa: 'マイタケ（舞茸）',
+    nameEn: 'Maitake',
+    aliases: ['マイタケ', '舞茸', 'maitake', 'Grifola frondosa', 'D-fraction', 'MD-fraction', 'グリフォラ', 'X-fraction'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'マイタケ（舞茸）｜D-fraction・MD-fraction・血糖・免疫の論文',
+    seoDescription: 'マイタケ（Grifola frondosa）はD-fraction・MD-fraction・X-fraction（β-グルカン複合体）を活性成分とする食用キノコ。Konno 2002 血糖 RCT・Kodama 2003 免疫・推奨 1-3g/日 標準化抽出・糖尿病薬併用注意。',
+    tagline: 'D-fraction（β-グルカン複合体）・血糖改善+免疫サポート・日本食キノコ',
+    description:
+      'マイタケ（舞茸・Grifola frondosa）は日本原産の食用・薬用キノコで、活性成分は **D-fraction**・**MD-fraction**・**X-fraction**（β-1,6-グルカンに β-1,3-グルカン分岐の複合体）。\n\n' +
+      '主な研究領域は2型糖尿病の血糖改善（Konno 2002 J Med Food RCT n=8 で空腹時血糖・HbA1c 改善傾向・パイロット）・免疫機能（Kodama 2003 J Med Food 動物・小規模ヒト試験）・抗腫瘍（前臨床・小規模ヒト試験）・脂質改善傾向。\n\n' +
+      'ヒトRCT用量は 1〜3g/日（標準化抽出 D-fraction・MD-fraction 含有品）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（血糖低下作用の相加・低血糖リスク）・**免疫抑制薬 caution**・**抗凝固薬 caution**（理論的）。\n\n' +
+      '【化粧品メーカー視点】皮膚改善ヒトRCTは未確立。血糖+免疫補助レイヤー位置づけ・日本食キノコとしての日常食摂取も推奨。',
+    concerns: ['blood-sugar', 'immunity', 'metabolism'],
+    papers: [
+      {
+        title: 'Maitake D-fraction reduces insulin resistance in type 2 diabetic patients',
+        journal: 'Journal of Medicinal Food',
+        year: 2001,
+        studyType: 'rct',
+        sampleSize: 8,
+        durationWeeks: 8,
+        keyFinding: '2型糖尿病患者8名へのD-fraction 0.5mg/kg×8週で空腹時血糖・HbA1c の有意改善（小規模パイロット・Konno S et al.）',
+      },
+      {
+        title: 'Maitake (Grifola frondosa) extract enhances natural killer cell activity in humans',
+        journal: 'Journal of Medicinal Food',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 14,
+        durationWeeks: 3,
+        keyFinding: '健常成人14名にマイタケ抽出×3週で NK細胞活性・MIF 改善（Kodama N et al.）',
+      },
+      {
+        title: 'Maitake mushroom extracts ameliorate progression of cancer',
+        journal: 'Cancer Investigation',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding: 'マイタケ D/MD-fraction のがん補助療法での免疫機能改善・臨床経過観察を整理（Kodama N et al.）',
+      },
+    ],
+    dosageMin: 1000,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日（標準化抽出・D-fraction 含有）',
+    timing: '食事と一緒に1日2〜3回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', 'まれに発疹・かゆみ', '空腹時の低血糖症状（過用量時）'],
+    contraindications: [
+      '糖尿病薬服用中（医師相談前提・低血糖モニタリング）',
+      '免疫抑制薬服用中（主治医相談）',
+      '抗凝固薬服用中（理論的・主治医相談）',
+      'キノコアレルギー',
+      '妊娠中・授乳中（安全性データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      '2型糖尿病・境界域血糖の補助',
+      '免疫機能サポート・反復感染傾向',
+      '日本食キノコの伝統的活用',
+      'がん治療中の補助療法（腫瘍内科相談下）',
+    ],
+    heroStat: { value: 'n=8', label: 'Konno 2001 RCT で D-fraction で空腹時血糖・HbA1c 改善（小規模）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 1, stress: 2, sleep: 2, immunity: 6, metabolism: 5 },
+    customFaqs: [
+      {
+        q: 'D-fraction と MD-fraction はどう違いますか？',
+        a: 'いずれもマイタケのβ-グルカン複合体ですが、分子量と機能に違いがあります。\n\n【D-fraction】高分子β-1,6-グルカン複合体・主にがん補助療法・免疫研究で蓄積。\n\n【MD-fraction（Maitake D-fraction）】D-fraction の精製改良版・経口吸収率向上を目指した規格化品・Mushroom Wisdom 社等で商業化。\n\n【X-fraction】血糖改善に特化した分画・Konno 2001 等の血糖研究で使用。\n\n【判定基準】免疫・がん補助 → D/MD-fraction、血糖改善 → X-fraction または D-fraction。商品ラベルで含有分画を確認。',
+      },
+      {
+        q: '糖尿病薬と併用してもよいですか？',
+        a: '**主治医相談前提・低血糖モニタリング必須**です。\n\n【機序】マイタケ D-fraction はインスリン感受性改善・血糖低下作用があり、糖尿病薬との併用で低血糖リスクが増加。\n\n【判定基準】境界型・予防レベル → 食事レベルで日常活用、診断済み糖尿病・処方薬服用中 → 主治医に「マイタケ補助検討」を伝え、血糖モニタリング・必要時の処方薬調整を相談。',
+      },
+      {
+        q: '食事のマイタケで十分ですか？',
+        a: '**日常食としての日本食マイタケは推奨**ですが、RCT 用量を再現するなら標準化抽出が現実的。\n\n【食事】マイタケ100g にβ-グルカン 約2-3g 含有・週数回の食事摂取で日常的な免疫・代謝サポート。\n\n【サプリ】標準化抽出（D-fraction 含有・1g/カプセル等）で RCT 用量を効率的に摂取可能。\n\n【判定基準】予防・健康維持 → 食事マイタケ、特定の健康課題（血糖・免疫サポート）→ サプリ + 食事の併用。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'マイタケの効果評価期間は **4〜12週間**です。\n\n【判定ライン】Kodama 2003 NK細胞は3週で評価・Konno 2001 血糖は8週で評価。\n\n【判定基準】3ヶ月時点で家庭血糖・主観的免疫感の改善を確認。',
+      },
+      {
+        q: 'シイタケ（レンチナン）やカワラタケ（PSK）と何が違いますか？',
+        a: 'いずれもβ-グルカン系免疫キノコですが、構造と研究蓄積が異なります。\n\n【カワラタケ PSK/PSP】タンパク質結合β-グルカン・日本/中国で抗がん補助療法処方実績・がん補助 RCT 最強。\n\n【シイタケ レンチナン/LEM/AHCC】日本で胃がん補助処方薬・抗ウイルス研究も豊富。\n\n【マイタケ D-fraction】血糖改善 + 免疫の小規模研究中心・日本食キノコの伝統。\n\n【判定基準】抗がん補助 → PSK > レンチナン > マイタケ、血糖+免疫の複合目的 → マイタケ、抗ウイルス → AHCC。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬（インスリン・SU剤・グリニド系等）',
+        level: 'caution',
+        mechanism: 'マイタケの血糖低下作用と糖尿病薬の相加で低血糖リスク増',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング',
+        evidence: 'established',
+        source: 'Konno 2001 J Med Food',
+      },
+      {
+        substance: '免疫抑制薬',
+        level: 'caution',
+        mechanism: 'マイタケの免疫賦活作用と免疫抑制薬の相反',
+        action: '免疫抑制治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Maitake',
+      },
+      {
+        substance: '抗凝固薬',
+        level: 'caution',
+        mechanism: 'マイタケのβ-グルカンの理論的抗凝固作用',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Maitake',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
 ]
 
 export const concerns: Concern[] = [
