@@ -128,12 +128,13 @@ export default async function ArticlePage({ params }: Props) {
     description: article.description,
     image: `${BASE_URL}/articles/${slug}/opengraph-image`,
     datePublished: article.publishedAt,
-    dateModified: article.updatedAt ?? article.publishedAt,
+    dateModified: article.dateModified ?? article.updatedAt ?? article.publishedAt,
     author: {
       '@type': 'Person',
-      name: 'SciBase 編集者',
-      url: `${BASE_URL}/about`,
-      jobTitle: '化粧品メーカー研究職',
+      '@id': `${BASE_URL}/about#author`,
+      name: article.author?.name ?? 'SciBase 編集者',
+      url: `${BASE_URL}/about#author`,
+      jobTitle: article.author?.role ?? '化粧品メーカー現役研究者',
       sameAs: ['https://x.com/r_evidence_'],
     },
     publisher: {
@@ -834,6 +835,34 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* ── Author Box（E-E-A-T author signature） ── */}
+        <section className="mt-12 pt-8 border-t border-border">
+          <div className="bg-secondary rounded-2xl p-6 border border-border flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-primary/10 border border-border
+              flex items-center justify-center flex-shrink-0">
+              <FlaskConical className="w-5 h-5 text-accent" />
+            </div>
+            <div>
+              <p className="text-[13px] font-semibold text-foreground mb-1">
+                執筆：{article.author?.name ?? 'SciBase 編集者'}
+              </p>
+              <p className="text-[12px] text-muted-foreground mb-2">
+                {article.author?.role ?? '化粧品メーカー現役研究者'}
+              </p>
+              <p className="text-[12px] text-muted-foreground leading-relaxed mb-2">
+                査読済み論文のみを参照し、メタ解析・RCT を中心に成分エビデンスを評価しています。
+                業界倫理上、勤務先社名は開示していません。
+              </p>
+              <Link
+                href={article.author?.url ?? '/about#author'}
+                className="text-[12px] text-accent hover:underline"
+              >
+                編集方針・著者プロフィール →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* ── Navigation ── */}
         <div className="pt-8 border-t border-border flex flex-wrap items-center

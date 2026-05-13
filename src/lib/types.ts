@@ -315,4 +315,12 @@ export interface Article {
   relatedArticleSlugs?: string[]
   /** 関連する悩みカテゴリ（concern slug）。悩みページの「関連記事」表示で使用 */
   concerns?: string[]
+  /** 著者署名（E-E-A-T／Article JSON-LD author 用・省略時はデフォルト編集者を採用） */
+  author?: {
+    name: string
+    role: string
+    url: string
+  }
+  /** Article JSON-LD dateModified。省略時は updatedAt → publishedAt の順でフォールバック */
+  dateModified?: string
 }

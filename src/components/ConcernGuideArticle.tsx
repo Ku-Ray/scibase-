@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle, CheckCircle2, Stethoscope } from 'lucide-react'
+import { ChevronRight, BookOpen, FileText, ArrowRight, AlertTriangle, CheckCircle2, Stethoscope, FlaskConical } from 'lucide-react'
 import { getConcern, getIngredient, concerns } from '@/lib/data'
 import { getArticle } from '@/lib/articles'
 import { getConcernGuide, concernGuides } from '@/lib/concern-guide-data'
@@ -114,8 +114,20 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
     description: guide.summary,
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
-    author: { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
-    publisher: { '@type': 'Organization', name: 'SciBase', url: BASE_URL },
+    author: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}/about#author`,
+      name: 'SciBase 編集者',
+      url: `${BASE_URL}/about#author`,
+      jobTitle: '化粧品メーカー現役研究者',
+      sameAs: ['https://x.com/r_evidence_'],
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SciBase',
+      url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo/symbol-dark-512.png` },
+    },
     mainEntityOfPage: articleUrl,
   }
 
@@ -722,6 +734,26 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                   {c.nameJa}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* ── Author Box（E-E-A-T author signature） ── */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <div className="bg-secondary rounded-2xl p-6 border border-border flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 border border-border flex items-center justify-center flex-shrink-0">
+                <FlaskConical className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <p className="text-[13px] font-semibold text-foreground mb-1">執筆：SciBase 編集者</p>
+                <p className="text-[12px] text-muted-foreground mb-2">化粧品メーカー現役研究者</p>
+                <p className="text-[12px] text-muted-foreground leading-relaxed mb-2">
+                  査読済み論文のみを参照し、メタ解析・RCT を中心に成分エビデンスを評価しています。
+                  業界倫理上、勤務先社名は開示していません。
+                </p>
+                <Link href="/about#author" className="text-[12px] text-accent hover:underline">
+                  編集方針・著者プロフィール →
+                </Link>
+              </div>
             </div>
           </div>
         </section>

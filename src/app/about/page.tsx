@@ -13,13 +13,34 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${BASE_URL}/about#author`,
   name: 'SciBase 編集者',
+  alternateName: '化粧品メーカー現役研究者',
   jobTitle: '化粧品メーカー研究職',
-  description: '化粧品・サプリメント成分の論文エビデンスを独立した立場で評価・発信。メタ解析・RCT・コホート研究を中心に査読済み論文のみを参照。',
+  additionalType: 'https://schema.org/Researcher',
+  description: '化粧品メーカーに現役で勤務する成分研究職。職務上、化粧品成分の有効性評価・論文調査を日常的に実施。加えて個人の研究関心として、皮膚老化・サプリメント・栄養学・脳科学の査読済み論文を継続的に読解。SciBase ではこの一次情報的アクセスを活かし、メタ解析・RCT・コホート研究を中心に成分を独立評価。業界倫理および雇用契約上の配慮から、勤務先社名・部署名・実名は開示しません。アフィリエイト収益は成分・商品の評価とは完全に独立して運用されています。',
   url: `${BASE_URL}/about`,
+  worksFor: {
+    '@type': 'Organization',
+    name: '化粧品メーカー（社名非公開）',
+    industry: '化粧品・パーソナルケア',
+  },
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: '化粧品成分研究',
+    occupationalCategory: 'Cosmetic Chemistry / R&D',
+    responsibilities: '成分の有効性評価・論文調査・配合設計・規制対応',
+  },
   knowsAbout: [
-    '成分科学', '皮膚科学', 'スキンケア成分', 'サプリメント', '栄養学',
-    'メタ解析', 'ランダム化比較試験（RCT）', 'エビデンスに基づく医療（EBM）',
+    '成分科学', '皮膚科学', 'スキンケア成分', 'サプリメント評価', '栄養学',
+    'メタ解析', 'ランダム化比較試験（RCT）', 'コホート研究', 'システマティックレビュー',
+    'エビデンスに基づく医療（EBM）', '薬機法', '景品表示法',
+    '老化科学', 'ホルモン研究', '神経科学', '進化生物学',
+    'ナイアシンアミド', 'レチノール', 'ビタミンC', 'ビタミンD', 'オメガ3',
+    'クレアチン', 'アシュワガンダ', 'マグネシウム', 'NMN', 'メラトニン',
+  ],
+  sameAs: [
+    'https://x.com/r_evidence_',
   ],
 }
 
@@ -146,22 +167,25 @@ export default function AboutPage() {
         </section>
 
         {/* 著者プロフィール */}
-        <section className="mb-12 bg-secondary rounded-2xl p-6 border border-border">
+        <section id="author" className="mb-12 bg-secondary rounded-2xl p-6 border border-border scroll-mt-20">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-full bg-primary/10 border border-border
               flex items-center justify-center flex-shrink-0">
               <FlaskConical className="w-5 h-5 text-accent" />
             </div>
-            <div>
+            <div className="flex-1">
               <p className="font-semibold text-[15px] text-foreground mb-0.5">SciBase 編集者</p>
-              <p className="text-[12px] text-muted-foreground mb-3">化粧品メーカー勤務・成分研究担当</p>
+              <p className="text-[12px] text-muted-foreground mb-3">化粧品メーカー現役研究者（社名非公開）</p>
               <div className="space-y-2 text-[13px] text-muted-foreground leading-relaxed">
                 <p>
-                  化粧品メーカーに現役で勤務。職務上、成分の有効性評価・論文調査を日常的に行っています。
+                  化粧品メーカーに現役で勤務する成分研究職。職務上、成分の有効性評価・論文調査を日常的に行っています。
                 </p>
                 <p>
-                  老化科学・栄養学・脳科学に個人的に深い関心を持ち、
-                  皮膚老化・成分エビデンス・サプリメントの研究文献を継続的に読んでいます。
+                  個人の研究関心として、皮膚老化・サプリメント・栄養学・脳科学の査読済み論文を継続的に読解。SciBase ではこの一次情報的アクセスを活かし、メタ解析・RCT・コホート研究を中心に成分を独立評価しています。
+                </p>
+                <p>
+                  <span className="font-semibold text-foreground">業界倫理および雇用契約上の配慮から、勤務先社名・部署名・実名は開示していません。</span>
+                  アフィリエイト収益は成分・商品の評価とは完全に独立して運用されています。
                 </p>
                 <p className="text-[12px]">
                   専門領域：スキンケア成分科学 / サプリメント評価 / 老化科学 / 論文エビデンス評価
@@ -178,6 +202,22 @@ export default function AboutPage() {
                   @r_evidence_
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* 数値カード3枚 */}
+          <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-border">
+            <div className="text-center">
+              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">400<span className="text-accent">+</span></p>
+              <p className="text-[10px] text-muted-foreground leading-tight">参照論文（査読済み）</p>
+            </div>
+            <div className="text-center border-x border-border">
+              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">225</p>
+              <p className="text-[10px] text-muted-foreground leading-tight">成分DB エントリ数</p>
+            </div>
+            <div className="text-center">
+              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">100<span className="text-accent">%</span></p>
+              <p className="text-[10px] text-muted-foreground leading-tight">査読済み論文ベース</p>
             </div>
           </div>
         </section>
