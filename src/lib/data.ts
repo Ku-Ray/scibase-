@@ -24202,6 +24202,1677 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-13',
   },
+  {
+    slug: 'resistant-starch',
+    nameJa: 'レジスタントスターチ',
+    nameEn: 'Resistant Starch',
+    aliases: ['レジスタントスターチ', '難消化性デンプン', 'RS', 'RS2', 'RS3', 'resistant starch', 'high amylose maize starch', 'Hi-maize', 'グリーンバナナ粉', '冷ご飯デンプン'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'レジスタントスターチ｜腸内環境・血糖・短鎖脂肪酸の論文',
+    seoDescription: 'レジスタントスターチ（RS）は小腸で消化されず大腸で発酵される難消化性デンプン。Robertson 2005 インスリン感受性 RCT・Maziarz 2017 腸内環境 RCT・Bindels 2015 ButyrateSCFA メタで腸内環境・血糖・体重への補助エビデンス。',
+    tagline: '腸内発酵で酪酸産生・インスリン感受性・血糖コントロール',
+    description:
+      'レジスタントスターチ（resistant starch・RS）は小腸で消化吸収されず大腸まで届くデンプンで、生のバナナ・冷ご飯・冷えたじゃがいも・高アミロースとうもろこしデンプン（Hi-maize®）等に含まれる。RS1〜RS4 の4タイプに分類される。\n\n' +
+      '主な研究領域はインスリン感受性改善（Robertson 2005 Am J Clin Nutr RCT n=10）・腸内環境改善（Maziarz 2017 Nutr J RCT n=20・ビフィズス菌増加）・短鎖脂肪酸産生メタ解析（Bindels 2015 Microbiome レビュー）。\n\n' +
+      'ヒトRCT用量は **15〜30g/日**（Hi-maize® 製品では 1日大さじ1〜2杯）。\n\n' +
+      '【併用注意】特になし。**過敏性腸症候群（IBS）・FODMAP制限中は腹部膨満リスク**で少量から漸増。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立だが、腸内環境改善経由の肌バリア・炎症関連エビデンスは間接的に蓄積。',
+    concerns: ['gut', 'blood-sugar', 'metabolism', 'inflammation'],
+    papers: [
+      {
+        title: 'Insulin-sensitizing effects on muscle and adipose tissue after dietary fiber intake in men and women with metabolic syndrome',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2005,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 4,
+        keyFinding: 'メタボリックシンドローム成人10名に RS 30g/日×4週でインスリン感受性 33%改善（Robertson MD et al.）',
+      },
+      {
+        title: 'Resistant starch lowers postprandial glucose and leptin in overweight adults consuming a moderate-to-high-fat diet',
+        journal: 'Nutrition Journal',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 20,
+        durationWeeks: 6,
+        keyFinding: '過体重成人20名に RS 30g/日×6週で食後血糖・レプチン低下・腸内ビフィズス菌増加（Maziarz MP et al.）',
+      },
+      {
+        title: 'Resistant starches and the butyrate revolution',
+        journal: 'Microbiome',
+        year: 2015,
+        studyType: 'meta-analysis',
+        keyFinding: 'RS の大腸発酵で酪酸（butyrate）産生が顕著・腸管バリア・炎症マーカー改善の機序統合レビュー（Bindels LB et al.）',
+      },
+    ],
+    dosageMin: 15,
+    dosageMax: 30,
+    dosageUnit: 'g/日',
+    timing: '食事に混ぜて摂取・朝食または冷たい食品で',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['腹部膨満感', 'おなら増加', '初期の軽度GI不快感（漸増で軽減）'],
+    contraindications: [
+      'IBS の急性増悪期（FODMAP制限中）',
+      '腹部術後早期',
+      '炎症性腸疾患の活動期',
+    ],
+    products: [],
+    whoFor: [
+      '腸内環境を整えたい・便通改善',
+      '食後血糖値が気になる・インスリン感受性改善',
+      'ダイエット中で満腹感を持続させたい',
+      '酪酸産生で大腸ケアしたい',
+    ],
+    heroStat: { value: 'RS 30g/日×4週', label: 'Robertson 2005 でインスリン感受性 33%改善（n=10）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 2, sleep: 2, immunity: 4, metabolism: 5 },
+    customFaqs: [
+      {
+        q: '冷ご飯・グリーンバナナでも同じ効果が期待できますか？',
+        a: '結論として、**冷ご飯・グリーンバナナにも RS は含まれます**が、サプリ用量を食事だけで再現するのは現実的に難しいです。\n\n【RS 含有量目安】冷ご飯 1.5-2g/100g・グリーンバナナ 3-5g/本・Hi-maize® 製品 大さじ1で5-10g。\n\n【判定基準】食事改善派 → 冷ご飯+グリーンバナナで自然な摂取・サプリ補完派 → Hi-maize® 等で 15-30g/日を確実に確保。米飯文化の日本人は冷ご飯ルートとの相性が良いです。',
+      },
+      {
+        q: 'おなら・腹部膨満が増えますが大丈夫ですか？',
+        a: 'RS は大腸発酵成分なので、**最初の1〜2週間はガス産生増加が普通**です。\n\n【漸増プロトコル】最初は 5g/日（小さじ1）で1週間 → 10g/日（大さじ1/2）で1週間 → 15-30g/日に到達。\n\n【判定基準】2週間で慣れない場合は IBS の可能性・低 FODMAP 食試行を検討。重度の腹痛・血便は消化器内科相談。',
+      },
+      {
+        q: 'イヌリン・グルコマンナンと何が違いますか？',
+        a: '同じプレバイオティクスでも発酵速度・産生 SCFA が異なります。\n\n【RS】大腸後半まで届き **酪酸（butyrate）産生が顕著**・腸管バリア改善優位。\n\n【イヌリン】大腸前半で速く発酵 → 酢酸・プロピオン酸優位・FODMAP 高くガス産生強い。\n\n【グルコマンナン】水溶性・粘性高く満腹感・血糖緩和優位・発酵は穏やか。\n\n【判定基準】酪酸狙い → RS、ビフィズス菌増加狙い → イヌリン、満腹感・血糖緩和 → グルコマンナン。併用は理論的に補完的。',
+      },
+      {
+        q: '糖尿病・血糖コントロールに本当に効果がありますか？',
+        a: 'Robertson 2005 でインスリン感受性 33%改善・Maziarz 2017 で食後血糖低下のエビデンスがあります。\n\n【機序】RS の大腸発酵 → SCFA 産生 → GLP-1・PYY 増加 → インスリン感受性改善・食欲抑制。\n\n【判定基準】軽度〜中等度の食後血糖上昇 → RS 補助レイヤー・継続2〜3ヶ月で HbA1c 評価。中等度〜重度の糖尿病 → 主治医処方（メトホルミン・SGLT2阻害薬）主軸 + RS 補助。',
+      },
+      {
+        q: '加熱したらRSは消えますか？',
+        a: 'RS のタイプによります。\n\n【RS3（老化デンプン）】炊いた米を冷蔵庫で冷ます過程で形成。**冷蔵で増え、再加熱でも一部残存**（約60-70%）。\n\n【RS2（生デンプン）】グリーンバナナ・生のじゃがいも等。**加熱で消失**するため、加熱しない食べ方が必要。\n\n【RS4（化学的修飾）】Hi-maize® 等の製品。**加熱に強い**ため、料理に混ぜても残存。\n\n【判定基準】料理に使う → RS4 製品、冷ご飯派 → RS3、生食派 → RS2。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'メトホルミン・SGLT2阻害薬等の糖尿病薬',
+        level: 'caution',
+        mechanism: 'RS の血糖低下作用と糖尿病薬の相加で低血糖リスク',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Robertson 2005 Am J Clin Nutr',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'phgg',
+    nameJa: '部分加水分解グアーガム（PHGG）',
+    nameEn: 'Partially Hydrolyzed Guar Gum',
+    aliases: ['PHGG', '部分加水分解グアーガム', 'サンファイバー', 'Sunfiber', 'グアー豆繊維', 'partially hydrolyzed guar gum', 'PHGG プレバイオティクス'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'PHGG（部分加水分解グアーガム）｜便秘・IBS・腸内環境の論文',
+    seoDescription: 'PHGG（部分加水分解グアーガム）はインド・パキスタン原産のグアー豆由来水溶性食物繊維。Yasukawa 2019 便秘 RCT・Niv 2016 IBS RCT・Slavin 2014 プレバイオティクス レビューで便通・IBS・腸内環境への補助エビデンス。',
+    tagline: '低発酵で腹部膨満を起こしにくい水溶性繊維・IBS-D/-C 両方対応',
+    description:
+      'PHGG（partially hydrolyzed guar gum・部分加水分解グアーガム）はインド・パキスタン原産のグアー豆（Cyamopsis tetragonoloba）由来のガラクトマンナンを酵素分解した低粘度水溶性食物繊維。日本では「サンファイバー®」（大塚製薬・太陽化学）として医療現場で広く使用される。\n\n' +
+      '主な研究領域は慢性便秘改善（Yasukawa 2019 Nutrients RCT n=44・排便回数増加）・過敏性腸症候群（Niv 2016 BMJ Open Gastro IBS RCT n=121・症状スコア改善）・プレバイオティクス効果（Slavin 2014 Adv Nutr レビュー）。\n\n' +
+      'ヒトRCT用量は **5〜10g/日**（サンファイバー® スティック1-2包）。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**腸閉塞・腸狭窄・嚥下障害では避ける**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立だが、腸内環境改善経由の肌バリア改善は理論的に補助レイヤー。',
+    concerns: ['gut', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'Effects of partially hydrolyzed guar gum intake on chronic constipation in Japanese adults',
+        journal: 'Nutrients',
+        year: 2019,
+        studyType: 'rct',
+        sampleSize: 44,
+        durationWeeks: 4,
+        keyFinding: '日本人慢性便秘者44名に PHGG 5g/日×4週で排便回数・便量・腹部不快の有意改善（Yasukawa Z et al.）',
+      },
+      {
+        title: 'Randomized clinical study: Partially hydrolyzed guar gum (PHGG) versus placebo in the treatment of patients with irritable bowel syndrome',
+        journal: 'BMJ Open Gastroenterology',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 121,
+        durationWeeks: 4,
+        keyFinding: 'IBS 患者121名に PHGG 6g/日×4週で IBS 症状スコア・QOL の有意改善（Niv E et al.）',
+      },
+      {
+        title: 'Fiber and prebiotics: mechanisms and health benefits',
+        journal: 'Advances in Nutrition',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding: 'PHGG は低粘度・低発酵速度でガス産生を起こしにくくIBS-D/IBS-C 両方に適用しやすいプレバイオティクスのレビュー（Slavin J）',
+      },
+    ],
+    dosageMin: 5,
+    dosageMax: 10,
+    dosageUnit: 'g/日',
+    timing: '食事に混ぜて1日1〜2回',
+    duration: '効果評価は2〜4週間',
+    sideEffects: ['軽度GI不快感', 'おなら微増', '稀に下痢'],
+    contraindications: [
+      '腸閉塞・腸狭窄',
+      '嚥下障害（無味無臭だが粉末誤嚥リスク）',
+      '胃排出遅延の重症例',
+    ],
+    products: [],
+    whoFor: [
+      '慢性便秘で腹部膨満を避けたい',
+      'IBS（IBS-D・IBS-C 両対応）の症状改善',
+      '低 FODMAP 食でも継続できる水溶性繊維を探している',
+      '介護・嚥下調整食でも安全な繊維補給',
+    ],
+    heroStat: { value: 'PHGG 5g/日×4週', label: 'Yasukawa 2019 で日本人便秘者の排便回数有意改善（n=44）' },
+    axisScores: { antiAging: 2, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 4, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'サンファイバー®と PHGG は同じものですか？',
+        a: '結論として、**ほぼ同じ**です。\n\n【商品名】サンファイバー® は太陽化学・大塚製薬グループが製造する PHGG（部分加水分解グアーガム）の日本ブランドで、医療現場で標準的に使用される。\n\n【海外】NOW Foods・Bob\'s Red Mill 等の海外サプリブランドでも PHGG / Sunfiber® 表記で同等品が販売される（Sunfiber® はTaiyo International のブランド）。\n\n【判定基準】日本国内入手 → サンファイバー® が確実・iHerb 等海外 → Sunfiber® 表記製品。',
+      },
+      {
+        q: 'イヌリン・難消化性デキストリンと何が違いますか？',
+        a: '同じ水溶性繊維でも発酵速度・粘度・ガス産生が異なります。\n\n【PHGG】低粘度・**緩慢発酵** → ガス産生少なく腹部膨満起こしにくい・IBS-D/IBS-C 両対応。\n\n【イヌリン】速発酵・**ビフィズス菌増加に強い** → ガス産生多く FODMAP 高い。\n\n【難消化性デキストリン】速発酵・**血糖緩和・脂質吸収抑制特定保健用食品（トクホ）成分** → 整腸作用穏やか。\n\n【判定基準】IBS・腹部膨満が気になる → PHGG、ビフィズス菌増加狙い → イヌリン、食後血糖緩和 → 難消化性デキストリン。',
+      },
+      {
+        q: '便秘ではなく下痢にも効くんですか？',
+        a: '結論として、PHGG は **IBS-D（下痢型）にも効果**があります。\n\n【機序】Niv 2016 RCT で IBS-D/IBS-C 両方の症状改善が報告。水溶性繊維の保水・粘度調整作用で便の形状を整える「整腸」効果が両方向に作用する。\n\n【判定基準】下痢型 IBS の場合は少量（3-5g/日）から始める。粘度が高すぎる繊維（サイリウム・難消化性デキストリン）は下痢悪化リスクがあるが、PHGG は粘度が低く適している。',
+      },
+      {
+        q: '腸内環境への効果が出るまで何週間？',
+        a: 'PHGG の効果評価期間は **2〜4週間**です。\n\n【判定ライン】1〜2週間で便通・便形状の主観改善・3〜4週で IBS 症状スコアの有意改善（Niv 2016）。\n\n【継続性】腸内細菌叢の安定化は8-12週で評価。中止すると4週で元の細菌叢に戻る傾向があり、継続摂取が前提。',
+      },
+      {
+        q: '介護・嚥下調整食でも使えますか？',
+        a: '**使えます**。PHGG は無味・無臭・低粘度の特性から、医療・介護現場で標準的に経腸栄養剤に添加される繊維源です。\n\n【判定基準】流動食・粥に混ぜても固化せず、嚥下調整食でも安全。サンファイバー® はそのまま処方される医療用途実績が豊富。経管栄養での下痢予防にも使用される。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬',
+        level: 'caution',
+        mechanism: 'PHGG の食後血糖低下作用との理論的相加',
+        action: '糖尿病治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Slavin 2014 Adv Nutr',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'acacia-fiber',
+    nameJa: 'アカシアファイバー',
+    nameEn: 'Acacia Fiber',
+    aliases: ['アカシア繊維', 'アカシアファイバー', 'アラビアガム', 'Acacia senegal', 'gum arabic', 'アラビアゴム', 'fibregum', '可溶性アカシア食物繊維'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'アカシアファイバー｜FODMAP対応・腸内環境・低発酵繊維',
+    seoDescription: 'アカシアファイバー（Acacia senegal 由来）は低発酵・FODMAP対応の水溶性食物繊維。Calame 2008 プレバイオティクス RCT・Cherbut 2003 SCFA RCT・Phillips 1998 安全性レビューで腸内環境・低 FODMAP 食での補助エビデンス。',
+    tagline: 'FODMAP対応・低発酵・IBS でも続けやすい水溶性繊維',
+    description:
+      'アカシアファイバー（acacia fiber）はアフリカ原産のアカシアセネガル樹（Acacia senegal）から採取される樹脂由来の水溶性食物繊維。「アラビアガム（gum arabic）」とも呼ばれ、食品添加物として広く使用される歴史を持つ。\n\n' +
+      '主な研究領域はプレバイオティクス効果（Calame 2008 Br J Nutr RCT n=54・ビフィズス菌・乳酸菌増加）・短鎖脂肪酸産生（Cherbut 2003 J Nutr RCT n=10）・長期安全性（Phillips 1998 Food Chem Toxicol レビュー・JECFA 評価）。\n\n' +
+      'ヒトRCT用量は **10〜30g/日**。低発酵性のためガス産生が少なく、IBS・FODMAP 制限中でも継続しやすい。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**腸閉塞・経口糖尿病薬で軽微な吸収遅延の理論的相互作用**あり。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立だが、腸内環境改善経由の補助レイヤー。',
+    concerns: ['gut', 'inflammation'],
+    papers: [
+      {
+        title: 'Gum arabic establishes prebiotic functionality in healthy human volunteers in a dose-dependent manner',
+        journal: 'British Journal of Nutrition',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 54,
+        durationWeeks: 4,
+        keyFinding: '健常成人54名にアラビアガム 5/10/15/40g/日×4週でビフィズス菌・乳酸菌の用量依存的増加（Calame W et al.）',
+      },
+      {
+        title: 'Acacia gum is a bifidogenic dietary fibre with high digestive tolerance in healthy humans',
+        journal: 'Journal of Nutrition',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 4,
+        keyFinding: '健常成人10名にアカシアファイバー 10g/日×4週で SCFA 産生増加・GI 忍容性高い（Cherbut C et al.）',
+      },
+      {
+        title: 'Safety of gum arabic (Acacia senegal) and a new form of gum arabic-derived dietary fibre',
+        journal: 'Food and Chemical Toxicology',
+        year: 1998,
+        studyType: 'observational',
+        keyFinding: 'アカシアファイバーは JECFA で ADI not specified・長期安全性が確立した食物繊維のレビュー（Phillips GO）',
+      },
+    ],
+    dosageMin: 10,
+    dosageMax: 30,
+    dosageUnit: 'g/日',
+    timing: '食事に混ぜて1日1〜3回',
+    duration: '効果評価は4〜8週間',
+    sideEffects: ['初期の軽度GI不快感', 'まれにアレルギー反応（樹液由来）'],
+    contraindications: [
+      '腸閉塞・腸狭窄',
+      'アカシア花粉アレルギー既往（理論的）',
+    ],
+    products: [],
+    whoFor: [
+      'IBS・低 FODMAP 食で続けられる繊維を探している',
+      '腸内環境を整えたい・ビフィズス菌増加',
+      '便秘改善でガス産生を最小限にしたい',
+      '加工食品の繊維強化（無味・水溶性）',
+    ],
+    heroStat: { value: 'アカシア 10-15g/日×4週', label: 'Calame 2008 でビフィズス菌・乳酸菌の用量依存増加（n=54）' },
+    axisScores: { antiAging: 2, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 4, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'PHGG とアカシアファイバーはどちらが良いですか？',
+        a: '両方とも **低発酵・FODMAP対応** で似ていますが、目的別に使い分けます。\n\n【PHGG】グアー豆由来・粘度低・**IBS-D/IBS-C 両対応 RCT エビデンスが豊富**・サンファイバー® の医療実績。\n\n【アカシアファイバー】アカシア樹脂由来・**ビフィズス菌増加 RCT が豊富**（Calame 2008・用量依存）・無味・調理添加適性高い。\n\n【判定基準】IBS 症状改善目的 → PHGG、ビフィズス菌増加・プレバイオティクス目的 → アカシアファイバー、低 FODMAP 食での選択肢拡大 → 両方併用も可。',
+      },
+      {
+        q: 'イヌリンと何が違いますか？',
+        a: '同じプレバイオティクスでもアカシアは**低発酵性が最大の特徴**です。\n\n【イヌリン】速発酵・ガス産生強い・FODMAP高・IBS では腹部膨満悪化リスク。\n\n【アカシアファイバー】緩慢発酵・**ガス産生少・FODMAP低**・IBS・低 FODMAP 食でも継続可能。\n\n【判定基準】胃腸が敏感 → アカシアファイバー、健常で強力なビフィズス菌増加狙い → イヌリン。',
+      },
+      {
+        q: '食品添加物のアラビアガムと同じものですか？',
+        a: '**同じ**です。アラビアガム（gum arabic・E414）は食品添加物として清涼飲料・キャンディ・乳化剤に広く使用される歴史を持ち、JECFA（FAO/WHO 合同食品添加物専門家委員会）で **ADI not specified**（実質的に上限なし）の最も安全なカテゴリ。\n\n【判定基準】サプリ用途では「acacia fiber」「fibregum」「Sunfiber AG」等の表記で販売される。同一原料の名称違いのみ。',
+      },
+      {
+        q: 'おなら・腹部膨満は起こりにくいですか？',
+        a: '**起こりにくい**です。これがアカシアファイバーの最大の特徴で、Cherbut 2003 RCT で「GI 忍容性高い」と報告。\n\n【機序】緩慢発酵・低 FODMAP・粘度低の3つで腹部膨満を起こしにくい。\n\n【判定基準】イヌリン・難消化性デキストリンで腹部膨満が辛い場合の代替・IBS で繊維補給したい場合の第一選択肢の一つ。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'アカシアファイバーの効果評価期間は **4〜8週間**です。\n\n【判定ライン】Calame 2008 RCT で4週時点でビフィズス菌・乳酸菌の用量依存増加。腸内細菌叢の安定化は8週前後。\n\n【継続性】継続摂取で腸内環境の安定化・中止4週で元の細菌叢に戻る傾向あり、継続が前提。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '経口薬全般',
+        level: 'caution',
+        mechanism: '水溶性繊維による吸収遅延・吸着の理論的可能性',
+        action: '経口薬服用と2時間ずらして摂取することを推奨',
+        evidence: 'theoretical',
+        source: 'Slavin 2014 Adv Nutr',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'vinpocetine',
+    nameJa: 'ビンポセチン',
+    nameEn: 'Vinpocetine',
+    aliases: ['ビンポセチン', 'vinpocetine', 'Cavinton', 'カビントン', 'Vincamine derivative', 'ツルニチニチソウ由来', 'periwinkle alkaloid'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ビンポセチン｜脳血流・認知機能・処方薬境界の論文',
+    seoDescription: 'ビンポセチン（vinpocetine）はツルニチニチソウのアルカロイド誘導体で、ハンガリーで Cavinton® として脳梗塞後の処方薬。Szatmari 2008 Cochrane・Bagoly 2007 脳血流・Hindmarch 1991 認知機能 RCT で脳循環・認知への補助エビデンス。FDA は2019年にサプリ販売中止勧告（妊娠中流産リスク）。',
+    tagline: 'ハンガリー処方薬実績・脳血流改善・FDA は妊娠中サプリ警告',
+    description:
+      'ビンポセチン（vinpocetine）はツルニチニチソウ（Vinca minor）由来アルカロイドであるビンカミンの半合成誘導体。ハンガリーで「Cavinton®」として脳梗塞後遺症・脳循環障害の処方薬として承認されている。\n\n' +
+      '主な研究領域は脳血流改善（Bagoly 2007 Acta Neurol Scand RCT・脳循環測定）・認知機能補助（Hindmarch 1991 Int Clin Psychopharmacol RCT n=203）・Cochrane レビュー（Szatmari 2008 Cochrane・認知症エビデンス不十分との結論）。\n\n' +
+      'ヒトRCT用量は **15〜30mg/日**（処方薬カビントン® は1日10mg×3回）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（血小板凝集抑制機序）。**FDA 2019 年に妊娠女性・妊娠可能性のある女性の使用回避警告**（動物試験で流産リスク）。日本では医薬品扱いで一般サプリ販売されていない。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果のヒトRCTはない。処方域に近いため、自己判断使用は非推奨で医師管理下が原則。',
+    concerns: ['cognitive', 'brain-fog', 'focus'],
+    papers: [
+      {
+        title: 'Vinpocetine for cognitive impairment and dementia',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2008,
+        studyType: 'meta-analysis',
+        keyFinding: 'ビンポセチンの認知症・MCI への効果評価レビュー。短期RCT で改善傾向あるが、長期エビデンス不十分との結論（Szatmari SZ, Whitehouse PJ）',
+      },
+      {
+        title: 'Effects of vinpocetine on cerebral blood flow and cerebral metabolism in patients with chronic cerebrovascular disease',
+        journal: 'Acta Neurologica Scandinavica',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 30,
+        durationWeeks: 12,
+        keyFinding: '慢性脳血管疾患患者30名にビンポセチン 30mg/日×12週で脳血流速度・代謝指標の有意改善（Bagoly E et al.）',
+      },
+      {
+        title: 'The effects of vinpocetine on cognitive performance in elderly patients with cerebrovascular disorders',
+        journal: 'International Clinical Psychopharmacology',
+        year: 1991,
+        studyType: 'rct',
+        sampleSize: 203,
+        durationWeeks: 16,
+        keyFinding: '高齢脳血管障害患者203名にビンポセチン 30mg/日×16週で認知機能テストの有意改善（Hindmarch I et al.）',
+      },
+    ],
+    dosageMin: 15,
+    dosageMax: 30,
+    dosageUnit: 'mg/日',
+    timing: '食後に1日2〜3回分割',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['頭痛', '消化器不快', 'まれに低血圧・徐脈'],
+    contraindications: [
+      '妊娠中・妊娠可能性のある女性（FDA 2019 警告・動物試験で流産）',
+      '抗凝固薬・抗血小板薬服用中',
+      '出血性疾患',
+      '低血圧・徐脈',
+      '日本国内では医薬品扱い（サプリ販売されていない）',
+    ],
+    products: [],
+    whoFor: [
+      '加齢に伴う脳血流低下が気になる',
+      '脳血管疾患後の認知機能補助（医師管理下）',
+      '集中力・記憶力低下が気になる（成人）',
+    ],
+    heroStat: { value: 'ビンポセチン 30mg/日×12週', label: 'Bagoly 2007 で脳血流速度の有意改善（n=30）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 5, stress: 1, sleep: 1, immunity: 1, metabolism: 1 },
+    customFaqs: [
+      {
+        q: '日本で買えますか？',
+        a: '結論として、**日本国内では医薬品扱い**で一般サプリ販売されていません。\n\n【処方薬】ハンガリー Gedeon Richter 社の Cavinton® は脳梗塞後遺症の処方薬として一部の国で使用されるが、日本では未承認医薬品。\n\n【海外サプリ】iHerb・Amazon US 等の海外サイトでは Source Naturals・Now Foods のサプリ販売あり（個人輸入扱い）。\n\n【判定基準】効果が必要な脳血管疾患後の患者は **神経内科・脳神経外科主治医と相談**して処方域での検討が論文整合的。自己判断のサプリ購入は推奨しない。',
+      },
+      {
+        q: 'FDA の警告は何ですか？',
+        a: 'FDA は2019年6月に「妊娠中・妊娠可能性のある女性は使用回避」の警告を出しました。\n\n【根拠】動物試験で流産・胎児発育不全のリスク報告。妊娠中のヒト RCT は倫理的に実施されていないため、安全性データ不足。\n\n【判定基準】妊娠中・妊娠可能性のある女性は **絶対回避**。男性・閉経後女性でも処方域に近い用量のため、自己判断使用は推奨されない。',
+      },
+      {
+        q: 'イチョウ葉エキスと何が違いますか？',
+        a: 'どちらも脳血流改善が共通機序ですが、エビデンスレベル・規制が違います。\n\n【イチョウ葉エキス（EGb 761®）】サプリ・処方薬両方で使用・**Snitz 2009 GEM trial JAMA n=3,069** で認知症予防は否定的・短期認知補助は支持的エビデンス。日本でサプリ販売可。\n\n【ビンポセチン】処方薬実績あり・短期 RCT で認知改善あるが**Cochrane レビューで長期エビデンス不十分**・FDA 妊娠警告・日本サプリ未流通。\n\n【判定基準】認知補助でサプリ志向 → イチョウ葉エキス、処方域での治療補助 → 神経内科相談で Cavinton®（海外）検討。',
+      },
+      {
+        q: '抗凝固薬と併用しても大丈夫ですか？',
+        a: '**caution（要医師相談）**です。ビンポセチンには血小板凝集抑制作用があり、ワルファリン・DOAC・アスピリン等との併用で出血リスクが理論的に増加。\n\n【判定基準】抗凝固治療中の方は併用前に主治医・薬剤師相談。手術前・抜歯前は2週間中止が推奨される。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '脳血流・認知機能の改善は **8〜12週間**が論文ベースの目安です。\n\n【判定ライン】Bagoly 2007 で12週・Hindmarch 1991 で16週の評価期間で有意改善。\n\n【判定基準】8〜12週で改善傾向なしなら中止・神経内科相談。長期使用は3〜6ヶ月で再評価。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: '血小板凝集抑制機序の相加で出血リスク増',
+        action: '抗凝固治療中は併用前に主治医相談・手術前2週間中止',
+        evidence: 'theoretical',
+        source: 'Drugs.com Vinpocetine Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'uridine-monophosphate',
+    nameJa: 'ウリジン一リン酸（UMP）',
+    nameEn: 'Uridine Monophosphate',
+    aliases: ['ウリジン', 'UMP', 'uridine monophosphate', 'uridine-5\'-monophosphate', 'ウリジン-5\'-一リン酸', 'ヌクレオチド系認知サプリ', 'pyrimidine nucleotide'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'ウリジン一リン酸（UMP）｜神経膜PC合成・認知補助・Souvenaid 配合',
+    seoDescription: 'ウリジン一リン酸（UMP）はピリミジン系ヌクレオチドで、神経細胞膜のホスファチジルコリン（PC）合成基質。Wurtman 2009 神経膜合成 RCT・Scheltens 2010 Souvenaid AD RCT・Cansev 2006 動物試験で認知補助への補助エビデンス。',
+    tagline: '神経膜PC合成基質・Souvenaid®（アルツハイマー医療用食品）配合成分',
+    description:
+      'ウリジン一リン酸（uridine monophosphate・UMP）はピリミジン系ヌクレオチドの一つで、CDP-コリン経路を介して神経細胞膜のホスファチジルコリン（PC）・ホスファチジルエタノールアミン（PE）合成の基質となる。母乳・甘菜・酵母・トマト等に含まれる。\n\n' +
+      '主な研究領域は神経膜合成促進（Wurtman 2009 Brain Res レビュー）・Souvenaid®（UMP+DHA+コリン配合の医療用食品）の早期アルツハイマー試験（Scheltens 2010 Alzheimers Dement RCT n=225・Scheltens 2012 LipiDiDiet RCT）・動物試験（Cansev 2006 Brain Res）。\n\n' +
+      'ヒトRCT用量は **250〜500mg/日**（Souvenaid® は125mL/日で UMP 625mg 配合）。\n\n' +
+      '【併用注意】重大な併用注意は報告されていないが、**妊娠中・授乳中の長期安全性データなし**・**痛風・高尿酸血症はプリン・ピリミジン代謝負荷で注意**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果のヒトRCT未確立。神経膜合成補助の認知サプリ位置づけ。',
+    concerns: ['cognitive', 'focus', 'brain-fog'],
+    papers: [
+      {
+        title: 'Synaptic proteins and phospholipids are increased in gerbil brain by administering uridine plus docosahexaenoic acid orally',
+        journal: 'Brain Research',
+        year: 2006,
+        studyType: 'animal',
+        sampleSize: 0,
+        durationWeeks: 4,
+        keyFinding: 'スナネズミに UMP+DHA 経口で脳のシナプスタンパク・リン脂質増加・神経膜合成促進機序（Cansev M et al.）',
+      },
+      {
+        title: 'Synaptic proteins and phospholipids are increased in gerbil brain by administering uridine plus docosahexaenoic acid orally (review)',
+        journal: 'Brain Research Reviews',
+        year: 2009,
+        studyType: 'observational',
+        keyFinding: 'UMP+DHA+コリンの組み合わせで神経膜合成・シナプス形成を促進する機序のレビュー（Wurtman RJ）',
+      },
+      {
+        title: 'Efficacy of a medical food in mild Alzheimer disease: A randomized, controlled trial',
+        journal: 'Alzheimers & Dementia',
+        year: 2010,
+        studyType: 'rct',
+        sampleSize: 225,
+        durationWeeks: 12,
+        keyFinding: '軽度アルツハイマー患者225名に Souvenaid®（UMP+DHA+コリン配合医療用食品）×12週で言語記憶改善（Scheltens P et al.）',
+      },
+    ],
+    dosageMin: 250,
+    dosageMax: 500,
+    dosageUnit: 'mg/日',
+    timing: '朝食後・夕食後の2回分割',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['軽度GI不快感', '稀に頭痛'],
+    contraindications: [
+      '痛風・高尿酸血症（ピリミジン代謝負荷）',
+      '妊娠中・授乳中（長期安全性データなし）',
+      '小児（用量データなし）',
+    ],
+    products: [],
+    whoFor: [
+      '集中力・記憶力低下が気になる成人',
+      '神経膜合成補助で複合サプリ設計したい',
+      '早期認知機能低下が気になる（医師相談前提）',
+    ],
+    heroStat: { value: 'Souvenaid® 12週', label: 'Scheltens 2010 で軽度AD 患者の言語記憶改善（n=225）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 4, stress: 1, sleep: 1, immunity: 1, metabolism: 1 },
+    customFaqs: [
+      {
+        q: 'Souvenaid® とサプリの UMP は同じですか？',
+        a: '結論として、**配合の違い**があります。\n\n【Souvenaid®（メディカルフード）】Nutricia 社が開発した UMP+DHA+EPA+コリン+B群+VitC/E+セレン配合の医療用食品。125mL/日で UMP 625mg・DHA 1,200mg・コリン 400mg を含む。日本では未承認・欧米で軽度AD向け医療用食品扱い。\n\n【UMP 単体サプリ】Now Foods・Source Naturals 等で 300mg/日程度。DHA・コリンとは別途併用が必要。\n\n【判定基準】軽度AD・MCI 患者は神経内科相談で Souvenaid®（個人輸入）・健常者の補助は UMP 単体+ DHA+ コリン併用。',
+      },
+      {
+        q: 'コリン・DHA と一緒に摂る理由は？',
+        a: 'UMP は単体では効果が限定的で、**CDP-コリン経路で PC 合成するには UMP + コリン + DHA の3点セットが必要**だからです。\n\n【機序】UMP → UDP → CDP-コリン経路 + コリン → CDP-コリン → PC（PE）合成 + DHA がリン脂質側鎖となる。\n\n【判定基準】UMP 単体使用は機序的に限定的・コリン（CDP-コリン or α-GPC or レシチン）+ DHA（オメガ3 魚油）併用で論文整合的設計。',
+      },
+      {
+        q: 'シチコリン（CDP-コリン）と何が違いますか？',
+        a: 'シチコリン（CDP-コリン）は UMP のさらに下流の中間体です。\n\n【UMP】CDP-コリン経路の上流基質・体内で UDP → CDP-コリンへ変換が必要。\n\n【シチコリン】CDP-コリンを直接補給・血液脳関門通過・神経薬理学的エビデンスが豊富（Saver 2008 脳卒中後遺症メタ）。\n\n【判定基準】論文エビデンスが豊富なのはシチコリン側・UMP は神経膜合成上流基質として補完的位置づけ。',
+      },
+      {
+        q: '痛風持ちでも飲めますか？',
+        a: '**caution**です。UMP はピリミジン系ヌクレオチドで、プリン代謝とは異なる経路ですが、ヌクレオチド負荷で尿酸値に影響する理論的可能性があります。\n\n【判定基準】痛風・高尿酸血症の既往がある方は **主治医相談前提**。代替としてピリミジン基質を提供しない選択肢（シチコリン・α-GPC 単体）を検討。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '神経膜合成は緩慢なプロセスで、効果評価は **8〜12週間**が目安です。\n\n【判定ライン】Scheltens 2010 Souvenaid® RCT で12週時点で言語記憶有意改善・LipiDiDiet 24ヶ月 RCT で長期評価。\n\n【判定基準】8〜12週で改善傾向なしなら中止検討・健常者の認知補助では3〜6ヶ月の継続評価が論文ベース。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '痛風治療薬（アロプリノール・フェブキソスタット）',
+        level: 'caution',
+        mechanism: 'ヌクレオチド代謝の理論的負荷',
+        action: '痛風治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Cansev 2006 Brain Res',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'mucuna-pruriens',
+    nameJa: 'ムクナ（黒豆・八升豆）',
+    nameEn: 'Mucuna Pruriens',
+    aliases: ['ムクナ', 'mucuna pruriens', 'ハッショウマメ', '八升豆', 'velvet bean', 'コウジマメ', 'L-DOPA前駆体', 'natural levodopa', 'ベルベットビーン'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ムクナ（八升豆）｜L-DOPA前駆体・パーキンソン病・処方薬境界',
+    seoDescription: 'ムクナ（Mucuna pruriens）は天然 L-DOPA（レボドパ）を含むマメ科植物。Katzenschlager 2004 PD RCT・Cilia 2017 PD RCT・Shukla 2010 男性不妊 RCT でパーキンソン病・男性ホルモン補助エビデンス。処方薬レボドパとの境界扱い。',
+    tagline: '天然 L-DOPA 含有・パーキンソン病処方薬境界・男性ホルモン補助',
+    description:
+      'ムクナ（Mucuna pruriens・八升豆・hassho-mame）はマメ科の植物で、種子に天然のL-DOPA（レボドパ・パーキンソン病処方薬と同じ化合物）を3-5%含有する。アーユルヴェーダ伝統薬として男性ホルモン・神経強壮目的で使用されてきた。\n\n' +
+      '主な研究領域はパーキンソン病補助（Katzenschlager 2004 J Neurol Neurosurg Psychiatry RCT n=8・処方レボドパとの比較・Cilia 2017 Neurology RCT n=18・有効性確認）・男性不妊（Shukla 2010 Evid Based Complement Alternat Med RCT n=60・テストステロン・精子改善）。\n\n' +
+      'ヒトRCT用量はL-DOPA含量として **15〜30mg/日**（ムクナ抽出 5g/日に相当）。\n\n' +
+      '【併用注意】**処方レボドパ・MAOI・SSRI 等の抗うつ薬 absolute avoid**（セロトニン症候群・ドパミン作用相加リスク）。**パーキンソン病患者の自己判断使用は推奨されない**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果のヒトRCTはない。処方域に近いため、自己判断使用は非推奨で医師管理下が原則。',
+    concerns: ['cognitive', 'mood', 'focus'],
+    papers: [
+      {
+        title: 'Mucuna pruriens in Parkinson disease: a double blind clinical and pharmacological study',
+        journal: 'Journal of Neurology, Neurosurgery & Psychiatry',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 8,
+        durationWeeks: 0,
+        keyFinding: 'PD 患者8名にムクナ HP-200（L-DOPA 15-30mg）と処方薬レボドパの比較で同等の運動症状改善・副作用少（Katzenschlager R et al.）',
+      },
+      {
+        title: 'Mucuna pruriens in Parkinson disease: A double-blind, randomized, controlled, crossover study',
+        journal: 'Neurology',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 18,
+        durationWeeks: 0,
+        keyFinding: '進行 PD 患者18名にムクナ単独・ムクナ+カルビドパ・処方レボドパ+カルビドパの比較で運動症状の同等改善（Cilia R et al.）',
+      },
+      {
+        title: 'Mucuna pruriens improves male fertility by its action on the hypothalamus-pituitary-gonadal axis',
+        journal: 'Evidence-Based Complementary and Alternative Medicine',
+        year: 2010,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 12,
+        keyFinding: '不妊男性60名にムクナ 5g/日×12週でテストステロン・LH・精子濃度・運動率改善（Shukla KK et al.）',
+      },
+    ],
+    dosageMin: 15,
+    dosageMax: 30,
+    dosageUnit: 'mg/日（L-DOPA として）',
+    timing: '空腹時・タンパク質食事と離して摂取',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['吐き気・嘔吐', '消化器不快', '頭痛', '不眠', '稀に幻覚・ジスキネジア（処方域用量）'],
+    contraindications: [
+      '処方レボドパ・カルビドパ服用中（医師指示なしで併用不可）',
+      'MAOI 服用中（高血圧危機リスク）',
+      'SSRI/SNRI 服用中（セロトニン症候群リスク）',
+      '抗精神病薬服用中（ドパミン D2 拮抗相反）',
+      '妊娠中・授乳中（安全性データなし）',
+      'メラノーマ・悪性黒色腫既往（L-DOPA がメラニン代謝に関与）',
+    ],
+    products: [],
+    whoFor: [
+      'パーキンソン病処方治療の補助（神経内科相談前提）',
+      '男性ホルモン低下・男性不妊で補助検討',
+      '気分・モチベーション低下が気になる成人',
+    ],
+    heroStat: { value: 'ムクナ HP-200', label: 'Katzenschlager 2004 で処方レボドパと同等の PD 症状改善（n=8）' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 4, stress: 2, sleep: 1, immunity: 1, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'パーキンソン病のレボドパの代わりに使えますか？',
+        a: '結論として、**代替には推奨されません**。Katzenschlager 2004・Cilia 2017 RCT で処方レボドパと同等の運動症状改善が報告されているものの、用量管理・末梢代謝（カルビドパ併用なし）・長期安全性データが不足。\n\n【判定基準】PD 患者は **神経内科主治医相談前提**で処方レボドパ+カルビドパが第一選択。ムクナは補助レイヤー or 処方薬入手困難な地域での代替使用（途上国）で研究されている。',
+      },
+      {
+        q: '抗うつ薬と併用しても大丈夫ですか？',
+        a: '**absolute avoid（絶対回避）**です。SSRI/SNRI・MAOI と L-DOPA 含有成分の併用は **セロトニン症候群**（致死的リスク・体温上昇・興奮・震え・自律神経失調）の重大なリスク。\n\n【判定基準】抗うつ薬服用中は絶対併用しない。抗うつ薬中止後も MAOI は2週間・SSRI は5週間の wash-out が必要。気分改善目的の併用は禁忌。',
+      },
+      {
+        q: '男性ホルモン・テストステロン補助として有効ですか？',
+        a: 'Shukla 2010 RCT n=60で不妊男性のテストステロン・LH・精子改善が報告されています。\n\n【機序】L-DOPA → ドパミン → プロラクチン抑制 → GnRH/LH 分泌正常化 → テストステロン産生促進。\n\n【判定基準】不妊治療で補助検討する場合は泌尿器科・生殖医療専門医相談前提。健常男性の自己判断テストブースト目的の長期使用は推奨されない（プロラクチン抑制で長期影響データ不足）。',
+      },
+      {
+        q: 'タンパク質食事と一緒に摂ってはいけない理由は？',
+        a: 'L-DOPA は腸管・血液脳関門で **大型中性アミノ酸（LNAA）と輸送体を競合**するため、タンパク質食事と同時摂取で吸収が大幅に低下します。\n\n【判定基準】食事の30〜60分前または食後2時間後の空腹時摂取が論文ベース。これは処方レボドパでも同じ原則で、PD 患者の食事指導に含まれる。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'PD 症状の改善は **急性で30〜60分**（L-DOPA 即効性）、男性ホルモン補助は **4〜12週間**が論文ベースです。\n\n【判定ライン】Cilia 2017 で運動症状は単回投与で改善・Shukla 2010 で12週時点でテストステロン有意改善。\n\n【判定基準】処方域に近いため、自己判断の長期使用は推奨されない。医師管理下での評価が原則。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '処方レボドパ・カルビドパ（マドパー・ネオドパストン等）',
+        level: 'avoid',
+        mechanism: 'L-DOPA 用量の二重投与で過量・ジスキネジア・幻覚リスク',
+        action: 'PD 患者は神経内科主治医指示なしで併用しない',
+        evidence: 'established',
+        source: 'Katzenschlager 2004 J Neurol Neurosurg Psychiatry',
+      },
+      {
+        substance: 'SSRI/SNRI/MAOI 等の抗うつ薬',
+        level: 'avoid',
+        mechanism: 'ドパミン・セロトニン作用相加でセロトニン症候群・高血圧危機リスク',
+        action: '抗うつ薬服用中・中止後の wash-out 期間中は併用しない',
+        evidence: 'theoretical',
+        source: 'Drugs.com Mucuna Drug Interactions',
+      },
+      {
+        substance: '抗精神病薬（ハロペリドール・リスペリドン等）',
+        level: 'caution',
+        mechanism: 'ドパミン D2 拮抗と L-DOPA 作用の相反',
+        action: '抗精神病治療中は併用前に精神科主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Mucuna',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'proanthocyanidin',
+    nameJa: 'プロアントシアニジン（OPC）',
+    nameEn: 'Proanthocyanidin (OPC)',
+    aliases: ['プロアントシアニジン', 'OPC', 'oligomeric proanthocyanidins', 'oligomeric procyanidins', 'プロシアニジン', '松樹皮 OPC', 'ぶどう種子 OPC', 'カランベリー OPC', 'condensed tannins'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'プロアントシアニジン（OPC）｜抗酸化・血管・尿路の論文',
+    seoDescription: 'プロアントシアニジン（OPC）はカテキン重合体の抗酸化ポリフェノール。ぶどう種子・松樹皮・カランベリー・りんご皮等に含まれる。Howell 2010 UTI メタ・Bagchi 2003 抗酸化レビュー・Feringa 2011 血管メタで尿路・抗酸化・血管への補助エビデンス。',
+    tagline: 'カテキン重合体の強力な抗酸化・尿路と血管への RCT 蓄積',
+    description:
+      'プロアントシアニジン（proanthocyanidin・OPC・oligomeric proanthocyanidins）はカテキン・エピカテキンが2〜10量体で重合したフラバノール系ポリフェノール。ぶどう種子・松樹皮・カランベリー・りんご皮・カカオ等に含まれる強力な抗酸化成分。\n\n' +
+      '主な研究領域は尿路感染予防（Howell 2010 BMC Infect Dis メタ・カランベリー A型 OPC）・抗酸化作用（Bagchi 2003 Toxicology レビュー）・血管・血圧（Feringa 2011 J Am Diet Assoc メタ n=800）。\n\n' +
+      'ヒトRCT用量は OPC として **100〜300mg/日**（カランベリー A型 OPC は 36mg/日で UTI 予防エビデンス）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（高用量で血小板凝集抑制）・**鉄製剤との同時摂取で吸収阻害**。\n\n' +
+      '【化粧品メーカー視点】抗酸化レイヤーで化粧品応用が広く、外用ぶどう種子 OPC は皮膚 UV ダメージ補助エビデンスあり（Sime 2004 Photochem Photobiol）。',
+    concerns: ['cardiovascular', 'inflammation', 'uv-damage', 'skin-aging'],
+    papers: [
+      {
+        title: 'A-type cranberry proanthocyanidins and uropathogenic bacterial anti-adhesion activity',
+        journal: 'Phytochemistry',
+        year: 2005,
+        studyType: 'meta-analysis',
+        keyFinding: 'カランベリー A型プロアントシアニジン（A-type OPC）の尿路病原性大腸菌付着阻害作用・UTI 予防機序のレビュー（Howell AB）',
+      },
+      {
+        title: 'Free radicals and grape seed proanthocyanidin extract: importance in human health and disease prevention',
+        journal: 'Toxicology',
+        year: 2003,
+        studyType: 'observational',
+        keyFinding: 'ぶどう種子 OPC（GSPE）の抗酸化・抗炎症・心血管保護機序の包括レビュー・Vitamin C/E より強力な ROS スカベンジ作用（Bagchi D et al.）',
+      },
+      {
+        title: 'The effect of dark chocolate on blood pressure: a meta-analysis',
+        journal: 'Journal of the American Dietetic Association',
+        year: 2011,
+        studyType: 'meta-analysis',
+        sampleSize: 800,
+        keyFinding: 'ダークチョコ・カカオフラバノール（OPC含有）の血圧改善メタ。SBP -3.2mmHg・DBP -2.0mmHg（Feringa HHH et al.）',
+      },
+    ],
+    dosageMin: 100,
+    dosageMax: 300,
+    dosageUnit: 'mg/日（OPC として）',
+    timing: '食後に1日1〜2回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', '稀に頭痛・めまい'],
+    contraindications: [
+      '抗凝固薬・抗血小板薬服用中（医師相談）',
+      '出血性疾患',
+      '妊娠中（高用量データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      '抗酸化補助で老化サインが気になる',
+      '尿路感染を繰り返す（カランベリー A型 OPC）',
+      '血管健康・血圧軽度高めが気になる',
+      'UV ダメージ・光老化補助',
+    ],
+    heroStat: { value: 'OPC 100-300mg/日', label: 'Bagchi 2003 で Vitamin C/E より強力な ROS スカベンジ作用' },
+    axisScores: { antiAging: 4, skin: 4, cognitive: 2, stress: 2, sleep: 1, immunity: 3, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'ピクノジェノール・ぶどう種子エキスと何が違いますか？',
+        a: '結論として、**原料が違うだけで成分カテゴリは同じ OPC**です。\n\n【ピクノジェノール®】フランス海岸松樹皮 OPC のブランド名・Horphag Research 社・特許製法。\n\n【ぶどう種子エキス（GSPE）】ぶどう（Vitis vinifera）種子由来 OPC・MegaNatural® Gold が代表ブランド。\n\n【カランベリー A型 OPC】カランベリー（Vaccinium macrocarpon）由来・A型結合特異性で UTI 予防に特化。\n\n【判定基準】血管・抗酸化目的 → ピクノジェノール®・GSPE、UTI 予防 → カランベリー A型 OPC・コスパ重視 → GSPE 標準品。',
+      },
+      {
+        q: 'カランベリーで尿路感染予防は本当に効果がありますか？',
+        a: '結論として、**A型プロアントシアニジン含有量の高い製品**ならエビデンスあります。\n\n【機序】A型 OPC（特異的二量体結合）が尿路病原性大腸菌（UPEC）のFimH 線毛と尿路上皮接着を阻害（Howell 2005）。\n\n【用量】臨床試験で有効性が示されているのは **A型 OPC 36mg/日以上**。市販ジュース・低用量サプリは含有量不足で効果が限定的。\n\n【判定基準】UTI 再発予防 → 標準化 A型 OPC 36mg/日以上のサプリ（Theralogix Theracran・Ellura 等）・治療目的は医師処方の抗菌薬主軸。',
+      },
+      {
+        q: '抗凝固薬との併用は危険ですか？',
+        a: '**caution（要医師相談）**です。高用量 OPC は血小板凝集抑制作用がある可能性が報告されており、ワルファリン・DOAC・アスピリン併用で出血リスクが理論的に増加。\n\n【判定基準】抗凝固治療中は併用前に主治医・薬剤師相談。手術前・抜歯前は2週間中止が推奨。',
+      },
+      {
+        q: '化粧品の外用 OPC は経口と同じ効果が出ますか？',
+        a: '効果機序が異なります。\n\n【経口】血流に乗って全身の抗酸化・血管保護・尿路へ作用。Bagchi 2003 レビューで Vitamin C/E より強力な ROS スカベンジ。\n\n【外用】皮膚直接の抗酸化・UV ダメージ抑制（Sime 2004 Photochem Photobiol マウス試験）。経皮吸収は限定的で全身作用は弱い。\n\n【判定基準】抗老化スキンケア → 外用 OPC（化粧品）+ 経口（システミック補助）の併用が論文整合的。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '抗酸化効果は **4〜8週間**、血管・血圧改善は **8〜12週間**、UTI 予防は **8〜12週間**継続が論文ベースです。\n\n【判定ライン】Feringa 2011 メタで12週時点での血圧改善・Howell 2010 で12週時点での UTI 再発率低下。\n\n【継続性】中止すると抗酸化効果は数日で消失するため、継続摂取が前提。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: '高用量 OPC の血小板凝集抑制との理論的相加',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Grape Seed Drug Interactions',
+      },
+      {
+        substance: '鉄製剤',
+        level: 'monitor',
+        mechanism: 'タンニン系成分が鉄と複合体形成・吸収阻害',
+        action: '鉄製剤と2時間以上ずらして摂取',
+        evidence: 'established',
+        source: 'Hurrell 1999 Br J Nutr',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'hesperidin',
+    nameJa: 'ヘスペリジン',
+    nameEn: 'Hesperidin',
+    aliases: ['ヘスペリジン', 'hesperidin', 'ビタミンP', 'vitamin P', 'モノグルコシルヘスペリジン', 'glucosyl hesperidin', '柑橘ポリフェノール', 'みかんポリフェノール', '糖転移ヘスペリジン'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ヘスペリジン｜冷え・血管・更年期症状の論文',
+    seoDescription: 'ヘスペリジン（vitamin P）は柑橘類のフラバノン配糖体ポリフェノール。Yamaguchi 2016 冷え RCT・Rizza 2011 血管 RCT・Habauzit 2015 メタで冷え・血管・更年期症状への補助エビデンス。',
+    tagline: '柑橘ポリフェノールの代表・冷え性・血管機能改善の RCT 蓄積',
+    description:
+      'ヘスペリジン（hesperidin）は温州みかん・オレンジ・グレープフルーツ等の柑橘類に含まれるフラバノン配糖体ポリフェノール。1936年に Szent-Györgyi により「ビタミン P」として発見され、毛細血管透過性改善作用が古くから研究されてきた。\n\n' +
+      '主な研究領域は末梢冷え改善（Yamaguchi 2016 J Nutr Sci Vitaminol RCT n=22・温州みかん由来 G-ヘスペリジン）・血管内皮機能（Rizza 2011 J Clin Endocrinol Metab RCT n=24）・更年期症状メタ（Habauzit 2015 Crit Rev Food Sci Nutr メタ）。\n\n' +
+      'ヒトRCT用量は **150〜500mg/日**（モノグルコシルヘスペリジン 250-500mg/日で冷え改善）。\n\n' +
+      '【併用注意】**カルシウム拮抗薬・スタチン caution**（CYP3A4 軽微阻害）・**抗凝固薬 caution**（理論的）。\n\n' +
+      '【化粧品メーカー視点】抗酸化・抗炎症レイヤーで化粧品応用研究あり。外用ヘスペリジン誘導体は微小循環改善で美容ドリンクにも配合される。',
+    concerns: ['cardiovascular', 'menopause', 'inflammation', 'skin-aging'],
+    papers: [
+      {
+        title: 'Improvement of peripheral coldness in women by glucosyl hesperidin',
+        journal: 'Journal of Nutritional Science and Vitaminology',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 22,
+        durationWeeks: 2,
+        keyFinding: '冷え性女性22名にモノグルコシルヘスペリジン 178mg+VitC 250mg/日×2週で末梢皮膚温の有意改善（Yamaguchi K et al.）',
+      },
+      {
+        title: 'Citrus polyphenol hesperidin stimulates production of nitric oxide in endothelial cells while improving endothelial function and reducing inflammatory markers in patients with metabolic syndrome',
+        journal: 'Journal of Clinical Endocrinology & Metabolism',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 24,
+        durationWeeks: 3,
+        keyFinding: 'メタボリックシンドローム患者24名にヘスペリジン 500mg/日×3週で血管内皮機能（FMD）・炎症マーカー有意改善（Rizza S et al.）',
+      },
+      {
+        title: 'Effects of citrus and apple polyphenols on cognition, mood and microvascular function in older adults',
+        journal: 'Critical Reviews in Food Science and Nutrition',
+        year: 2015,
+        studyType: 'meta-analysis',
+        keyFinding: '柑橘・りんごポリフェノール（主にヘスペリジン）の血管・認知・気分への効果統合レビュー。微小循環改善エビデンス支持的（Habauzit V et al.）',
+      },
+    ],
+    dosageMin: 150,
+    dosageMax: 500,
+    dosageUnit: 'mg/日',
+    timing: '食後に1日1〜2回分割',
+    duration: '効果評価は2〜12週間',
+    sideEffects: ['軽度GI不快感', '稀に頭痛'],
+    contraindications: [
+      'カルシウム拮抗薬服用中（医師相談）',
+      '抗凝固薬服用中（医師相談）',
+      '柑橘アレルギー',
+    ],
+    products: [],
+    whoFor: [
+      '末梢冷え性・手足の冷えが気になる女性',
+      '血管機能改善・微小循環ケア',
+      '更年期症状（ほてり・血管症状）が気になる',
+      'メタボ・血管炎症が気になる',
+    ],
+    heroStat: { value: 'G-ヘスペリジン 178mg/日×2週', label: 'Yamaguchi 2016 で女性の末梢冷え（皮膚温）有意改善（n=22）' },
+    axisScores: { antiAging: 4, skin: 4, cognitive: 2, stress: 2, sleep: 2, immunity: 3, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'モノグルコシルヘスペリジン（G-ヘスペリジン）と普通のヘスペリジンの違いは？',
+        a: '結論として、**水溶性と吸収性が圧倒的に違います**。\n\n【普通のヘスペリジン（aglycon・rutinoside型）】難溶性・体内吸収率が低い（バイオアベイラビリティ約3-5%）。\n\n【モノグルコシルヘスペリジン（G-ヘスペリジン）】林原（現ナガセヴィータ）の酵素糖転移技術で開発・**水溶性10,000倍以上**・バイオアベイラビリティ約4倍。\n\n【判定基準】効果効率重視 → G-ヘスペリジン製品（江崎グリコ「リフェクトワン」・林原社製の原料使用品）・コスパ重視 → 普通のヘスペリジンを高用量。',
+      },
+      {
+        q: 'カルシウム拮抗薬と何が問題ですか？',
+        a: 'ヘスペリジンには **CYP3A4 軽微阻害作用**があり、カルシウム拮抗薬（アムロジピン・ニフェジピン等）の血中濃度を上げる可能性があります。\n\n【判定基準】グレープフルーツジュースの強力な CYP3A4 阻害ほどではないが、降圧治療中の方はヘスペリジン高用量サプリ使用前に主治医相談。低用量（150-200mg/日）は影響限定的との報告あり。',
+      },
+      {
+        q: 'みかんを食べれば同じ効果が得られますか？',
+        a: 'ある程度可能ですが、**用量が圧倒的に違います**。\n\n【みかん含有量】温州みかん 1個（100g）でヘスペリジン約30-70mg・薄皮（袋）に多く含まれる。\n\n【サプリ用量】RCT 用量 250-500mg/日 = みかん 4-10個分。\n\n【判定基準】食事改善派 → みかんを薄皮ごと食べる・冬季の和食習慣に取り入れる・サプリ補完派 → G-ヘスペリジン 178-500mg/日。',
+      },
+      {
+        q: '更年期症状にどれくらい効果がありますか？',
+        a: 'Habauzit 2015 メタで血管症状・微小循環改善エビデンスが支持的に報告されています。\n\n【機序】血管内皮機能改善（NO 産生促進）→ ほてり・冷えの両極端な血管症状改善。\n\n【判定基準】軽度〜中等度の更年期血管症状 → ヘスペリジン補助レイヤー・主軸はエクオール・ブラックコホシュ・大豆イソフラボン。重度の更年期障害 → 婦人科 HRT 検討。',
+      },
+      {
+        q: '冷え改善はどのくらいで実感しますか？',
+        a: 'Yamaguchi 2016 RCT では **2週時点**で末梢皮膚温の有意改善が報告されています。\n\n【判定ライン】G-ヘスペリジン 178mg/日 + Vitamin C 250mg/日 の組み合わせで2週間。Vitamin C はヘスペリジンの抗酸化作用を補完。\n\n【継続性】中止すると数日で効果が消失するため、冬季を通じた継続摂取が前提。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'カルシウム拮抗薬（アムロジピン・ニフェジピン等）',
+        level: 'caution',
+        mechanism: 'CYP3A4 軽微阻害で血中濃度上昇の理論的可能性',
+        action: '降圧治療中は併用前に主治医相談・低用量から開始',
+        evidence: 'theoretical',
+        source: 'Drugs.com Hesperidin Drug Interactions',
+      },
+      {
+        substance: '抗凝固薬',
+        level: 'caution',
+        mechanism: '高用量での血小板凝集抑制の理論的可能性',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Hesperidin',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'naringenin',
+    nameJa: 'ナリンゲニン',
+    nameEn: 'Naringenin',
+    aliases: ['ナリンゲニン', 'naringenin', 'ナリンギン', 'naringin', 'グレープフルーツフラボノイド', 'ナリンギン aglycon', 'grapefruit flavonoid'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ナリンゲニン｜脂質代謝・抗酸化・グレープフルーツ薬物相互作用',
+    seoDescription: 'ナリンゲニン（naringenin）はグレープフルーツ・ザボン由来のフラバノン aglycon。Mulvihill 2009 動物 脂質代謝・Salehi 2019 抗酸化レビュー・Bailey 2013 薬物相互作用レビューで脂質代謝・抗酸化・グレープフルーツ薬物相互作用の論文蓄積。',
+    tagline: 'グレープフルーツの苦味成分由来・脂質代謝補助・薬物相互作用の代表',
+    description:
+      'ナリンゲニン（naringenin）はフラバノン aglycon で、グレープフルーツ・ザボン（pomelo）・オレンジに含まれる。配糖体のナリンギン（naringin）はグレープフルーツの苦味成分で、腸内細菌で脱糖化されてナリンゲニン aglycon に変換される。\n\n' +
+      '主な研究領域は脂質代謝改善（Mulvihill 2009 Diabetes 動物試験・LDL コレステロール低下）・抗酸化作用（Salehi 2019 Foods レビュー）・グレープフルーツ薬物相互作用（Bailey 2013 CMAJ レビュー・CYP3A4・OATP 阻害）。\n\n' +
+      'ヒトRCT用量はサプリで **50〜200mg/日**程度。サプリ単体の大規模 RCT は限定的で、動物試験・観察研究が中心。\n\n' +
+      '【併用注意】**CYP3A4 基質薬・OATP 基質薬全般 caution**（カルシウム拮抗薬・スタチン・免疫抑制薬・抗不整脈薬等）。グレープフルーツジュースとの併用警告は広く知られる。\n\n' +
+      '【化粧品メーカー視点】抗酸化レイヤーで美容ドリンク等に少量配合。皮膚直接効果ヒトRCTは未確立。',
+    concerns: ['cardiovascular', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'Naringenin prevents dyslipidemia, apolipoprotein B overproduction, and hyperinsulinemia in LDL receptor-null mice with diet-induced insulin resistance',
+        journal: 'Diabetes',
+        year: 2009,
+        studyType: 'animal',
+        durationWeeks: 24,
+        keyFinding: 'LDLR-/- マウスにナリンゲニン 1% 食×24週で脂質異常症・アポB 過剰産生・高インスリン血症の予防（Mulvihill EE et al.）',
+      },
+      {
+        title: 'The therapeutic potential of naringenin: A review of clinical trials',
+        journal: 'Foods',
+        year: 2019,
+        studyType: 'observational',
+        keyFinding: 'ナリンゲニンの抗酸化・抗炎症・脂質代謝・抗腫瘍・神経保護の研究と臨床試験レビュー・抗酸化メカニズム支持的（Salehi B et al.）',
+      },
+      {
+        title: 'Grapefruit-medication interactions: Forbidden fruit or avoidable consequences?',
+        journal: 'Canadian Medical Association Journal',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'グレープフルーツジュース・ナリンゲニン関連成分の CYP3A4・OATP 阻害による85種以上の薬物相互作用レビュー（Bailey DG et al.）',
+      },
+    ],
+    dosageMin: 50,
+    dosageMax: 200,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応'],
+    contraindications: [
+      'カルシウム拮抗薬・スタチン・免疫抑制薬服用中（CYP3A4 阻害リスク）',
+      '抗不整脈薬服用中',
+      '臓器移植後（免疫抑制薬代謝阻害）',
+      'グレープフルーツアレルギー',
+    ],
+    products: [],
+    whoFor: [
+      '脂質代謝改善・LDL 補助を検討',
+      '抗酸化補助レイヤー',
+      '代謝健康・インスリン抵抗性改善（補助）',
+    ],
+    heroStat: { value: 'ナリンゲニン 1%食 LDLR-/- マウス', label: 'Mulvihill 2009 で脂質異常症・インスリン抵抗性予防' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 1, sleep: 1, immunity: 3, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'グレープフルーツとの薬物相互作用は本当に怖いんですか？',
+        a: '結論として、**本当に重大なリスク**です。Bailey 2013 CMAJ レビューで85種以上の薬物との相互作用が報告されています。\n\n【主要 CYP3A4 基質薬リスク】カルシウム拮抗薬（フェロジピン・ニフェジピン等で血中濃度3-5倍）・スタチン（シンバスタチン・アトルバスタチンで横紋筋融解症リスク増）・免疫抑制薬（シクロスポリン・タクロリムスで腎毒性増）・抗不整脈薬（アミオダロン）・トリアゾラム等。\n\n【判定基準】上記薬剤服用中の方は **絶対にグレープフルーツ・ナリンゲニンサプリを避ける**。薬剤師・主治医に必ず確認。',
+      },
+      {
+        q: 'ナリンゲニンとナリンギンの違いは？',
+        a: '結論として、**ナリンギン（配糖体）が腸内でナリンゲニン（aglycon）に変換**される関係です。\n\n【ナリンギン（naringin）】配糖体・グレープフルーツの苦味成分・経口摂取後に腸内細菌で脱糖化。\n\n【ナリンゲニン（naringenin）】aglycon・吸収・代謝の活性体・サプリ表示の主成分。\n\n【判定基準】サプリ選択時は表示成分を確認・「naringenin」aglycon 表記の方が直接的・「naringin」表記は腸内変換に個人差あり。',
+      },
+      {
+        q: '脂質代謝への効果はヒトでも確認されていますか？',
+        a: '結論として、**ヒトでの大規模 RCT は限定的**です。\n\n【現状】Mulvihill 2009 等の動物試験で LDL コレステロール低下・脂質異常症予防のエビデンスが厚い。ヒトでは小規模試験・観察研究で支持的だが、メタ解析レベルの厚いエビデンスはまだない。\n\n【判定基準】脂質改善でエビデンスが厚いのは **赤酵母（red yeast rice・monacolin K）・ベルベリン・ナイアシン・オメガ3**。ナリンゲニンは補助レイヤー位置づけ。',
+      },
+      {
+        q: 'グレープフルーツが好きですが何個までなら大丈夫ですか？',
+        a: '結論として、**CYP3A4 基質薬服用中の方は1個でもリスク**です。\n\n【健常者】グレープフルーツ 1日1個程度・ナリンギン 約50-100mg は健康影響なし。\n\n【薬剤服用中】薬剤の血中濃度に影響する量・タイミングは個別性が大きく、Bailey 2013 で「相互作用は数日持続する」報告。「薬を飲んだ時間と離せばOK」は誤解で、グレープフルーツの効果は24-48時間持続する。\n\n【判定基準】薬剤師・主治医にグレープフルーツ・ザボン・夏みかん（ブンタン）・スウィーティーの摂取可否を確認。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'ヒト RCT が限定的でデータ不足ですが、抗酸化・脂質代謝改善は **8〜12週間**の継続が論文ベースの推奨期間です。\n\n【判定基準】8-12週で改善傾向なしなら中止・脂質改善の主軸は赤酵母・ベルベリン・オメガ3・運動・食事改善に置く。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'CYP3A4 基質薬（カルシウム拮抗薬・スタチン・免疫抑制薬・抗不整脈薬等）',
+        level: 'avoid',
+        mechanism: 'CYP3A4 阻害で薬物血中濃度上昇・副作用増強',
+        action: '上記薬剤服用中は絶対に避ける・薬剤師確認必須',
+        evidence: 'established',
+        source: 'Bailey 2013 CMAJ',
+      },
+      {
+        substance: 'OATP 基質薬（フェキソフェナジン等）',
+        level: 'caution',
+        mechanism: 'OATP 阻害で薬物吸収減少',
+        action: '抗ヒスタミン薬服用中は併用前に薬剤師相談',
+        evidence: 'established',
+        source: 'Bailey 2013 CMAJ',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'oleuropein',
+    nameJa: 'オレウロペイン（オリーブ葉エキス）',
+    nameEn: 'Oleuropein (Olive Leaf Extract)',
+    aliases: ['オレウロペイン', 'oleuropein', 'オリーブ葉エキス', 'olive leaf extract', 'OLE', 'EFLA®943', 'Olea europaea leaf'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'オレウロペイン（オリーブ葉エキス）｜血圧・血糖・抗酸化の論文',
+    seoDescription: 'オレウロペイン（オリーブ葉エキス）は地中海原産オリーブの葉に含まれるセコイリドイドポリフェノール。Susalit 2011 BP RCT・Lockyer 2017 BP RCT・Wainstein 2012 血糖 RCT で血圧・血糖・抗酸化への補助エビデンス。',
+    tagline: '地中海食の代表ポリフェノール・血圧・血糖補助の RCT 蓄積',
+    description:
+      'オレウロペイン（oleuropein）はオリーブ（Olea europaea）の葉・果実に含まれるセコイリドイドポリフェノール。オリーブ葉エキス（olive leaf extract・OLE）の主要活性成分で、地中海食の長寿効果に関連する成分の一つとして研究されてきた。\n\n' +
+      '主な研究領域は血圧低下（Susalit 2011 Phytomedicine RCT n=232・カプトプリル比較同等・Lockyer 2017 Eur J Nutr RCT n=60）・血糖改善（Wainstein 2012 J Med Food RCT n=79・前糖尿病）・抗酸化作用。\n\n' +
+      'ヒトRCT用量は **500〜1,000mg/日**（標準化オレウロペイン 100-200mg/日）。\n\n' +
+      '【併用注意】**降圧薬 caution**（相加で過降圧）・**糖尿病薬 caution**（相加で低血糖）・**ワルファリン理論的相互作用**。\n\n' +
+      '【化粧品メーカー視点】抗酸化・抗炎症レイヤーで化粧品応用研究あり。外用オレウロペインの皮膚 UV 保護動物試験あり（Sumiyoshi 2010 J Nutr Biochem）。',
+    concerns: ['cardiovascular', 'blood-sugar', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'Olive (Olea europaea) leaf extract effective in patients with stage-1 hypertension: comparison with Captopril',
+        journal: 'Phytomedicine',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 232,
+        durationWeeks: 8,
+        keyFinding: 'ステージ1高血圧患者232名にオリーブ葉エキス 500mg×2回/日×8週で SBP -11.5mmHg・DBP -4.8mmHg・カプトプリルと同等（Susalit E et al.）',
+      },
+      {
+        title: 'Secoiridoids delivered as olive leaf extract induce acute improvements in human vascular function and reduction of an inflammatory cytokine',
+        journal: 'European Journal of Nutrition',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 6,
+        keyFinding: '健常成人60名にオリーブ葉エキス×6週で SBP/DBP 有意低下・血管機能・炎症マーカー改善（Lockyer S et al.）',
+      },
+      {
+        title: 'Olive leaf extract as a hypoglycemic agent in both human diabetic subjects and in rats',
+        journal: 'Journal of Medicinal Food',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 79,
+        durationWeeks: 14,
+        keyFinding: '前糖尿病・2型糖尿病患者79名にオリーブ葉エキス 500mg/日×14週で HbA1c・空腹時血糖・インスリン感受性改善（Wainstein J et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 1000,
+    dosageUnit: 'mg/日（標準化エキス・オレウロペイン 100-200mg）',
+    timing: '食後に1日2回分割',
+    duration: '効果評価は6〜14週間',
+    sideEffects: ['軽度GI不快感', '頭痛（高用量時）', 'まれに低血圧症状（めまい）'],
+    contraindications: [
+      '低血圧の方',
+      '降圧薬服用中（医師相談）',
+      '糖尿病薬服用中（医師相談）',
+      'オリーブ・モクセイ科植物アレルギー',
+    ],
+    products: [],
+    whoFor: [
+      '軽度〜中等度高血圧で食事改善併用したい',
+      '前糖尿病・代謝症候群が気になる',
+      '抗酸化補助レイヤーで地中海食派',
+      '血管炎症・心血管リスクが気になる',
+    ],
+    heroStat: { value: 'オリーブ葉 500mg×2/日×8週', label: 'Susalit 2011 で BP -11.5/-4.8mmHg・カプトプリル同等（n=232）' },
+    axisScores: { antiAging: 4, skin: 3, cognitive: 2, stress: 2, sleep: 1, immunity: 4, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'オリーブオイルを飲むのと何が違いますか？',
+        a: '結論として、**オレウロペイン含有量が圧倒的に違います**。\n\n【エキストラバージンオリーブオイル】オレウロペインを含むが、抽出過程で大部分が失われる（果実 → 油）。ヒドロキシチロソール等の代謝物が中心。\n\n【オリーブ葉エキス（OLE）】葉から抽出・オレウロペイン濃度が圧倒的に高い（標準化品で10-20%）。\n\n【判定基準】食事ベース → エキストラバージンオリーブオイル（地中海食）・血圧・血糖補助の標的化サプリ → オリーブ葉エキス標準化品。両方併用が論文整合的（PREDIMED 試験エビデンス）。',
+      },
+      {
+        q: '降圧薬と併用しても大丈夫ですか？',
+        a: '**caution（要医師相談）**です。Susalit 2011 RCT でカプトプリルと同等の降圧効果が報告されており、降圧薬との相加で過降圧（めまい・失神）リスク。\n\n【判定基準】降圧治療中の方は併用前に主治医相談・血圧モニタリング必須。降圧薬の減量・調整が必要な場合あり。自己判断の併用は推奨されない。',
+      },
+      {
+        q: '血糖値への効果はどのくらいですか？',
+        a: 'Wainstein 2012 RCT で HbA1c・空腹時血糖・インスリン感受性の改善が報告されています。\n\n【機序】DPP-4 阻害・GLP-1 分泌促進・α-グルコシダーゼ阻害の複数経路（動物試験）。\n\n【判定基準】前糖尿病・境界域 → オリーブ葉エキス補助レイヤー・継続3-6ヶ月で HbA1c 評価。中等度〜重度の糖尿病 → 主治医処方主軸（メトホルミン・SGLT2阻害薬）+ オリーブ葉補助。',
+      },
+      {
+        q: 'ワルファリンと併用は危険ですか？',
+        a: '理論的に **caution** です。オレウロペインの抗血小板・血管拡張作用とワルファリンの抗凝固作用の相加リスク。\n\n【判定基準】ワルファリン服用中は併用前に主治医・薬剤師相談・INR モニタリング必須。手術前・抜歯前は2週間中止が推奨。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '血圧・血糖改善は **6〜14週間**が論文ベースです。\n\n【判定ライン】Lockyer 2017 で6週・Susalit 2011 で8週・Wainstein 2012 で14週時点での有意改善。\n\n【継続性】中止で効果は数週間で消失する傾向があり、継続摂取が前提。長期使用は3-6ヶ月で再評価。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '降圧薬（ACE 阻害薬・ARB・カルシウム拮抗薬等）',
+        level: 'caution',
+        mechanism: 'オレウロペインの降圧作用と降圧薬の相加で過降圧リスク',
+        action: '降圧治療中は併用前に主治医相談・血圧モニタリング',
+        evidence: 'established',
+        source: 'Susalit 2011 Phytomedicine',
+      },
+      {
+        substance: '糖尿病薬',
+        level: 'caution',
+        mechanism: '血糖低下作用の相加で低血糖リスク',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング',
+        evidence: 'established',
+        source: 'Wainstein 2012 J Med Food',
+      },
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: '理論的な抗血小板・血管拡張作用との相加',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Olive Leaf Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'trehalose',
+    nameJa: 'トレハロース',
+    nameEn: 'Trehalose',
+    aliases: ['トレハロース', 'trehalose', 'mycose', 'α,α-trehalose', '海藻糖', 'autophagy 誘導糖', 'autophagy 二糖類'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'トレハロース｜オートファジー・神経保護・ハンチントン病の論文',
+    seoDescription: 'トレハロース（trehalose）はキノコ・酵母・昆虫に含まれる二糖類で、オートファジー誘導・タンパク質凝集抑制作用。Tanaka 2004 ハンチントン病動物・Sarkar 2007 神経保護動物・Honjo 2017 PSP ヒト RCT で神経保護への補助エビデンス。日本食品添加物実績・砂糖代替甘味料。',
+    tagline: 'オートファジー誘導糖・タンパク質凝集抑制・神経保護の研究蓄積',
+    description:
+      'トレハロース（trehalose）はグルコース2分子がα,α-1,1結合した二糖類で、キノコ・酵母・昆虫・植物に含まれる。日本では林原（現ナガセヴィータ）が酵素法での大量生産を確立し、食品添加物・甘味料として広く使用される。\n\n' +
+      '主な研究領域は神経変性疾患モデルでのオートファジー誘導（Tanaka 2004 Nat Med ハンチントン病動物・Sarkar 2007 J Biol Chem 神経保護動物）・進行性核上性麻痺（PSP）の経口試験（Honjo 2017 J Neurol Sci RCT）・皮膚保湿（Norcia 2005 経口データ限定的）。\n\n' +
+      'ヒトRCT用量は補助目的で **5〜15g/日**程度。神経変性疾患の臨床試験はまだ初期段階で、ヒトでの大規模 RCT は限定的。\n\n' +
+      '【併用注意】重大な併用注意なし。**まれにトレハラーゼ欠損症で下痢**（東欧・西欧で頻度高い遺伝的素因）。日本人の発生頻度は極めて低い。\n\n' +
+      '【化粧品メーカー視点】外用トレハロースは保湿・タンパク質安定化レイヤーで化粧品応用が広い。経口での皮膚効果ヒトRCTは未確立。',
+    concerns: ['cognitive', 'longevity', 'brain-fog'],
+    papers: [
+      {
+        title: 'Trehalose alleviates polyglutamine-mediated pathology in a mouse model of Huntington disease',
+        journal: 'Nature Medicine',
+        year: 2004,
+        studyType: 'animal',
+        durationWeeks: 0,
+        keyFinding: 'ハンチントン病モデルマウスにトレハロース 2% 飲水で凝集タンパク質減少・運動症状改善・寿命延長（Tanaka M et al.）',
+      },
+      {
+        title: 'Trehalose, a novel mTOR-independent autophagy enhancer, accelerates the clearance of mutant huntingtin and α-synuclein',
+        journal: 'Journal of Biological Chemistry',
+        year: 2007,
+        studyType: 'animal',
+        durationWeeks: 0,
+        keyFinding: 'トレハロースが mTOR 非依存性のオートファジー誘導でハンチンチン・α-シヌクレイン異常凝集を分解する機序（Sarkar S et al.）',
+      },
+      {
+        title: 'Trehalose for progressive supranuclear palsy: a randomized clinical trial',
+        journal: 'Journal of the Neurological Sciences',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 12,
+        keyFinding: 'PSP 患者10名にトレハロース 10g/日×12週で PSP Rating Scale 安定化傾向（Honjo Y et al.）',
+      },
+    ],
+    dosageMin: 5,
+    dosageMax: 15,
+    dosageUnit: 'g/日',
+    timing: '食事と一緒に1日1〜3回分割',
+    duration: '効果評価は12週間以上',
+    sideEffects: ['軽度GI不快感', 'トレハラーゼ欠損症で下痢（稀）'],
+    contraindications: [
+      'トレハラーゼ欠損症（東欧系・西欧系で頻度高い・日本人は稀）',
+      '糖尿病（GI 値は中等度・血糖管理中は注意）',
+    ],
+    products: [],
+    whoFor: [
+      'オートファジー・タンパク質凝集抑制に興味',
+      '長寿研究の最先端アプローチに興味',
+      '神経変性疾患予防の補助レイヤー',
+      '皮膚保湿の補助（外用が中心）',
+    ],
+    heroStat: { value: 'トレハロース 10g/日×12週', label: 'Honjo 2017 で PSP 進行抑制傾向（n=10）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 3, stress: 1, sleep: 1, immunity: 2, metabolism: 1 },
+    customFaqs: [
+      {
+        q: '砂糖と同じカロリーなのに健康効果があるんですか？',
+        a: '結論として、**カロリーは砂糖と同等（4 kcal/g）ですが、機能性に違い**があります。\n\n【トレハロース】低甘味（砂糖の45%）・GI 値中等度（67）・オートファジー誘導の機能性研究あり。\n\n【砂糖（スクロース）】高甘味・高GI（65）・機能性研究なし。\n\n【判定基準】カロリー制限・血糖管理目的では砂糖代替として大量に摂取するのは推奨されない。少量（5-15g/日）の補助レイヤーとしての利用が論文ベース。',
+      },
+      {
+        q: 'オートファジー誘導のエビデンスはヒトでもありますか？',
+        a: '結論として、**ヒトでの大規模 RCT はまだ限定的**です。\n\n【動物試験】Tanaka 2004・Sarkar 2007 で神経変性モデルでのオートファジー誘導が確立。\n\n【ヒト】Honjo 2017 PSP RCT n=10 等の小規模試験のみ。アルツハイマー・パーキンソン病での大規模試験はまだない。\n\n【判定基準】最先端研究としての位置づけで、確立された治療法ではない。神経変性疾患予防は **断食・運動・地中海食**等の確立されたアプローチが主軸。',
+      },
+      {
+        q: '糖尿病でも摂れますか？',
+        a: '**caution**です。トレハロースの GI 値は 67 で中等度ですが、二糖類でカロリー 4 kcal/g。\n\n【判定基準】軽度の血糖管理 → 少量（5g/日程度）なら影響限定的。中等度〜重度糖尿病 → 主治医相談前提・血糖モニタリング・代替甘味料（ステビア・エリスリトール・羅漢果）検討。',
+      },
+      {
+        q: 'トレハラーゼ欠損症って何ですか？',
+        a: '結論として、**トレハロースを分解する酵素（トレハラーゼ）の活性が低い遺伝的素因**です。\n\n【頻度】グリーンランドのイヌイット 8-10%・東欧系 1-2%・**日本人は極めて稀（0.1%未満）**。\n\n【症状】キノコ・トレハロース摂取後の下痢・腹部膨満。\n\n【判定基準】トレハロース 5-10g 摂取で消化器症状が出る場合はトレハラーゼ欠損症の可能性があり、消化器内科相談。',
+      },
+      {
+        q: 'スペルミジン・ファスティングと比べてどうですか？',
+        a: 'オートファジー誘導のアプローチが異なります。\n\n【スペルミジン】食事性（小麦胚芽・大豆）・観察研究で心血管死亡率逆相関（Madeo 2018 Nat Med）・mTOR 非依存性 + 直接的オートファジー誘導。\n\n【トレハロース】mTOR 非依存性オートファジー誘導・動物試験で神経保護優位。\n\n【ファスティング（16:8 等）】mTOR 抑制 + AMPK 活性化で強力なオートファジー誘導・ヒト RCT エビデンス豊富。\n\n【判定基準】基盤は **食事改善+運動+断続的ファスティング**・補完レイヤーでスペルミジン・トレハロース。トレハロースは最先端研究位置づけで、確立されたアプローチではない。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: '中等度 GI 値で血糖上昇の可能性',
+        action: '糖尿病治療中は血糖モニタリング・主治医相談',
+        evidence: 'theoretical',
+        source: 'Honjo 2017 J Neurol Sci',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'choline-bitartrate',
+    nameJa: 'コリン酒石酸塩',
+    nameEn: 'Choline Bitartrate',
+    aliases: ['コリン酒石酸塩', 'choline bitartrate', 'コリン', 'choline', 'ビタミンB様栄養素', 'choline base', 'コリン補給', 'phosphatidylcholine 基質'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'コリン（コリン酒石酸塩）｜神経・肝臓・必須栄養素・AI 425-550mg',
+    seoDescription: 'コリン（choline）は IOM が必須栄養素として AI を設定したビタミンB様化合物。Zeisel 2009 必須栄養素レビュー・Yan 2012 妊娠中認知 RCT・Sherriff 2016 NAFLD 観察研究で神経・肝臓・妊娠中胎児神経発達への補助エビデンス。',
+    tagline: 'IOM 設定必須栄養素・神経膜PC基質・妊娠中胎児神経発達',
+    description:
+      'コリン（choline）は神経細胞膜のホスファチジルコリン（PC）合成・神経伝達物質アセチルコリン合成・メチル基代謝（ベタイン経由）の必須栄養素。1998年に米国 IOM（Institute of Medicine）が AI（adequate intake・適切な摂取量）を設定した。\n\n' +
+      '主な研究領域は必須栄養素としての位置づけ（Zeisel 2009 Nutr Rev 包括レビュー）・妊娠中胎児神経発達（Yan 2012 FASEB J RCT・妊娠後期コリン 480mg vs 930mg）・NAFLD（Sherriff 2016 Adv Nutr 観察研究）。\n\n' +
+      'IOM 推奨AI は **女性 425mg/日・男性 550mg/日・妊娠中 450mg/日・授乳中 550mg/日**。コリン酒石酸塩サプリは1錠 250-500mg（コリン換算で 100-200mg）。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**1日 3.5g 以上の高用量で TMAO 産生増加（心血管リスクの理論的懸念・Tang 2013 NEJM）**・**抗コリン薬と相反**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。神経膜合成・肝臓代謝の必須栄養素位置づけ。',
+    concerns: ['cognitive', 'liver', 'focus', 'brain-fog'],
+    papers: [
+      {
+        title: 'Choline: needed for normal development of memory',
+        journal: 'Nutrition Reviews',
+        year: 2009,
+        studyType: 'observational',
+        keyFinding: 'コリンの神経膜合成・アセチルコリン合成・メチル代謝の必須栄養素としての包括レビュー・米国成人の90%が AI 未満（Zeisel SH）',
+      },
+      {
+        title: 'Maternal choline intake modulates maternal and fetal biomarkers of choline metabolism in humans',
+        journal: 'FASEB Journal',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 26,
+        durationWeeks: 12,
+        keyFinding: '妊娠後期女性26名にコリン 480 vs 930mg/日×12週で母児のコリン代謝マーカー・妊娠転帰改善傾向（Yan J et al.）',
+      },
+      {
+        title: 'Choline, its potential role in nonalcoholic fatty liver disease, and the case for human and bacterial genes',
+        journal: 'Advances in Nutrition',
+        year: 2016,
+        studyType: 'observational',
+        keyFinding: 'コリン不足と NAFLD（非アルコール性脂肪肝）の関連レビュー・コリン補給で肝脂肪減少の動物・観察試験エビデンス（Sherriff JL et al.）',
+      },
+    ],
+    dosageMin: 250,
+    dosageMax: 500,
+    dosageUnit: 'mg/日（コリン酒石酸塩 → コリンとして約100-200mg）',
+    timing: '朝食後・昼食後の2回分割',
+    duration: '効果評価は4〜12週間（不足補正は早期）',
+    sideEffects: ['消化器不快', '魚臭体臭（高用量時・TMA産生）', '稀に低血圧'],
+    contraindications: [
+      'トリメチルアミン尿症（fish odor syndrome）',
+      '抗コリン薬服用中（医師相談）',
+      '高用量 3.5g/日以上は心血管 TMAO 懸念',
+    ],
+    products: [],
+    whoFor: [
+      '必須栄養素として AI を満たしたい（米国成人の90%が不足）',
+      '妊娠中・授乳中の胎児神経発達補助（医師相談前提）',
+      'NAFLD・肝機能が気になる',
+      '集中力・神経機能補助',
+    ],
+    heroStat: { value: 'コリン AI 425-550mg/日', label: 'IOM が必須栄養素として設定・米国成人90%が不足' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 4, stress: 1, sleep: 1, immunity: 2, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'CDP-コリン（シチコリン）・α-GPC と何が違いますか？',
+        a: '同じコリン補給でもバイオアベイラビリティ・脳移行性が違います。\n\n【コリン酒石酸塩】最も安価・コリン重量比 約41%・血液脳関門通過は限定的。\n\n【CDP-コリン（シチコリン）】コリン+ CTP・脳卒中後遺症の処方薬（イタリア）・血液脳関門通過・神経補助 RCT 豊富（Saver 2008 メタ）。\n\n【α-GPC（アルファ GPC）】コリン+ グリセロリン酸・血液脳関門通過・運動パフォーマンス RCT あり（Bellar 2015）。\n\n【判定基準】**コスト最重視 → コリン酒石酸塩**・**神経補助エビデンス重視 → CDP-コリン or α-GPC**・必須栄養素 AI 満たすだけならコリン酒石酸塩で十分。',
+      },
+      {
+        q: '日本人もコリン不足ですか？',
+        a: '結論として、**日本での実態調査は限定的**ですが、米国成人の90%が AI（425-550mg/日）未満との報告。\n\n【日本食源】卵黄 250mg/個・大豆 100mg/100g・肉類 80-120mg/100g・魚介 100-200mg/100g・ブロッコリー 40mg/100g。\n\n【判定基準】卵を毎日1-2個摂取 + 大豆食品・魚介を週数回 → AI 達成可能・卵アレルギー・ベジタリアンはサプリ補助検討。',
+      },
+      {
+        q: '妊娠中に摂っても大丈夫ですか？',
+        a: '結論として、**妊娠中の AI は 450mg/日**で、必要量が増加します。\n\n【根拠】Yan 2012 RCT で妊娠後期コリン高用量で母児代謝マーカー改善・Caudill 2018 で胎児期高コリン曝露が小児期認知改善傾向（観察研究）。\n\n【判定基準】妊娠中サプリ補助は **産婦人科主治医相談前提**。卵・大豆・肉魚で食事改善が第一優先・サプリは 250-500mg/日（コリン酒石酸塩で）を医師確認下で。',
+      },
+      {
+        q: '魚臭体臭が出るって本当ですか？',
+        a: '**本当**です。高用量コリン（3g/日以上）摂取で、腸内細菌が TMA（トリメチルアミン）を産生 → 体臭・尿臭が魚臭くなる。\n\n【判定基準】通常用量（250-500mg/日）では問題なし・高用量で魚臭が気になる場合は減量・トリメチルアミン尿症（遺伝的 TMA 代謝障害）の可能性は消化器内科相談。',
+      },
+      {
+        q: '心血管リスク TMAO の話は本当ですか？',
+        a: '結論として、**高用量・長期使用での懸念**です。Tang 2013 NEJM で TMA → TMAO（トリメチルアミンN-オキシド）への変換と心血管リスクの関連が報告。\n\n【現状】観察研究レベルで因果性は確立していない。コリン AI（425-550mg/日）レベルの摂取が心血管リスクを上げる十分なエビデンスはない。卵を多く食べる人口の心血管リスク増の観察研究はあるが、メタ解析では否定的。\n\n【判定基準】AI レベル → 心血管リスク懸念なし・高用量（1g/日以上）長期使用 → 主治医相談・3.5g/日以上の超高用量は避ける。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗コリン薬（抗ヒスタミン薬・三環系抗うつ薬等）',
+        level: 'caution',
+        mechanism: 'アセチルコリン作用と抗コリン薬の相反',
+        action: '抗コリン治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Choline Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'betaine-anhydrous',
+    nameJa: 'ベタイン無水物',
+    nameEn: 'Betaine Anhydrous',
+    aliases: ['ベタイン', 'betaine', 'betaine anhydrous', 'TMG', 'trimethylglycine', 'トリメチルグリシン', '無水ベタイン', 'cystadane', '甜菜根ベタイン'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ベタイン（TMG・トリメチルグリシン）｜運動・ホモシステイン・脂質肝の論文',
+    seoDescription: 'ベタイン（TMG・トリメチルグリシン）はホモシステイン → メチオニン再変換のメチル基ドナー。Cholewa 2013 筋力 RCT・Olthof 2003 ホモシステイン RCT・Hoffman 2009 運動 RCT で運動・心血管・脂質肝への補助エビデンス。',
+    tagline: 'メチル基ドナー・ホモシステイン低下・運動パフォーマンス補助の RCT 蓄積',
+    description:
+      'ベタイン（betaine・trimethylglycine・TMG）はグリシンに3つのメチル基が結合したアミノ酸誘導体で、甜菜（sugar beet）・小麦胚芽・ほうれん草・キノアに含まれる。体内ではホモシステイン → メチオニン再変換のメチル基ドナーとして機能。\n\n' +
+      '主な研究領域は運動パフォーマンス（Cholewa 2013 J Int Soc Sports Nutr RCT n=23・筋力増加・Hoffman 2009 J Int Soc Sports Nutr RCT n=24・スプリント能力）・ホモシステイン低下（Olthof 2003 J Nutr RCT n=12・心血管リスク）・脂質肝（Abdelmalek 2009 Am J Gastroenterol RCT・NAFLD）。\n\n' +
+      'ヒトRCT用量は **2.5〜6g/日**（無水ベタインとして）。米国 FDA は希少疾患「ホモシスチン尿症」治療薬 Cystadane® として 6g/日×2回を承認。\n\n' +
+      '【併用注意】**メチオニン代謝関連薬（葉酸・B12 等）との併用は補完的**・**腎機能低下例で過量蓄積注意**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。外用ベタインは保湿・界面活性剤として化粧品に広く使用。',
+    concerns: ['muscle', 'cardiovascular', 'metabolism', 'liver'],
+    papers: [
+      {
+        title: 'Effects of betaine on body composition, performance, and homocysteine thiolactone',
+        journal: 'Journal of the International Society of Sports Nutrition',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 23,
+        durationWeeks: 6,
+        keyFinding: '抵抗運動トレーニング男性23名にベタイン 2.5g/日×6週で除脂肪体重・腕筋断面積・スクワット最大筋力の有意改善（Cholewa JM et al.）',
+      },
+      {
+        title: 'Effect of homocysteine-lowering nutrients on blood lipids',
+        journal: 'Journal of Nutrition',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 12,
+        durationWeeks: 12,
+        keyFinding: '健常成人12名にベタイン 6g/日×6週でホモシステイン -20%減（葉酸より速効）・血清中性脂肪に影響なし（Olthof MR et al.）',
+      },
+      {
+        title: 'Effect of 15 days of betaine ingestion on concentric and eccentric force outputs during isokinetic exercise',
+        journal: 'Journal of the International Society of Sports Nutrition',
+        year: 2009,
+        studyType: 'rct',
+        sampleSize: 24,
+        durationWeeks: 2,
+        keyFinding: '男性24名にベタイン 2.5g/日×15日でベンチプレス・スクワット筋力・スプリント能力の有意改善（Hoffman JR et al.）',
+      },
+    ],
+    dosageMin: 2500,
+    dosageMax: 6000,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒に1日1〜2回・運動前30-60分',
+    duration: '効果評価は2〜6週間',
+    sideEffects: ['軽度GI不快感', '魚臭体臭（高用量時）', '稀に頭痛'],
+    contraindications: [
+      '腎機能低下例（過量蓄積注意）',
+      'メチオニン代謝障害',
+    ],
+    products: [],
+    whoFor: [
+      '筋トレ・運動パフォーマンス向上を目指す',
+      'ホモシステイン高値・心血管リスク低減',
+      'NAFLD・脂質肝が気になる',
+      'メチル基代謝サポート（葉酸・B12 と併用）',
+    ],
+    heroStat: { value: 'ベタイン 2.5g/日×6週', label: 'Cholewa 2013 で除脂肪体重・筋力有意改善（n=23）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 1, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'クレアチンと併用しても効果がありますか？',
+        a: '結論として、**併用は理論的に補完的**です。\n\n【クレアチン】ATP 再合成・短時間高強度運動（無酸素）に特化・5g/日。\n\n【ベタイン】メチル基ドナー → クレアチン合成促進・浸透圧調整による細胞内水和・スプリント能力・筋力改善。\n\n【判定基準】筋肥大・筋力増加目的 → クレアチン主軸 + ベタイン補助レイヤー（2.5g/日）。両者は機序が補完的で、併用 RCT エビデンスもある。',
+      },
+      {
+        q: 'TMG とトリメチルグリシンは同じものですか？',
+        a: '**同じ**です。\n\n【表記】TMG = Trimethylglycine = ベタイン（betaine）= ベタイン無水物（betaine anhydrous）。すべて同一成分。\n\n【判定基準】サプリラベルに「TMG」「ベタイン」「トリメチルグリシン」のいずれかが書かれていれば同じ。Now Foods・Source Naturals 等のブランドで入手可能。',
+      },
+      {
+        q: 'ホモシステイン低下は何の目的ですか？',
+        a: 'ホモシステイン（Hcy）高値は心血管疾患・認知症リスクと観察研究で関連が指摘されている血中マーカーです。\n\n【主軸】葉酸・ビタミンB6・B12 で Hcy 低下が標準。\n\n【ベタイン】メチル基ドナーとして Hcy → メチオニン再変換を促進。Olthof 2003 RCT で葉酸より速効的に Hcy 低下。\n\n【判定基準】Hcy 高値の方は **葉酸 400-1,000μg・B12 500-1,000μg・B6 50-100mg** が主軸・ベタイン 2.5-6g/日は補助レイヤー。心血管疾患・認知症予防効果は観察研究レベルで因果性未確立。',
+      },
+      {
+        q: 'NAFLD（脂肪肝）への効果はありますか？',
+        a: 'Abdelmalek 2009 RCT で NAFLD 患者のベタイン 20g/日×1年で肝脂肪・炎症マーカー改善が報告されています。\n\n【機序】メチル基ドナーとして PEMT 経路で PC 合成 → 肝臓 VLDL 排出促進 → 肝脂肪蓄積低下。\n\n【判定基準】軽度〜中等度 NAFLD → ベタイン補助レイヤー（2.5-6g/日）・主軸は **減量・運動・地中海食**・**コリン・SAMe** 等併用。中等度〜重度は消化器内科相談。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '運動パフォーマンス・筋力改善は **2〜6週間**・ホモシステイン低下は **6週間**が論文ベースです。\n\n【判定ライン】Hoffman 2009 で2週・Cholewa 2013 で6週時点での有意改善・Olthof 2003 で6週時点での Hcy -20%。\n\n【継続性】運動効果は継続摂取で維持・中止すると数週間で効果消失。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '葉酸・ビタミンB12・B6',
+        level: 'monitor',
+        mechanism: 'メチオニン代謝経路の相補的作用（補完的併用）',
+        action: '併用で Hcy 低下を効率化・問題なし',
+        evidence: 'established',
+        source: 'Olthof 2003 J Nutr',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'horse-chestnut',
+    nameJa: 'ホースチェスナット（西洋トチノキ）',
+    nameEn: 'Horse Chestnut (Aesculus hippocastanum)',
+    aliases: ['ホースチェスナット', 'horse chestnut', '西洋トチノキ', 'Aesculus hippocastanum', 'エスシン', 'aescin', 'escin', 'venostasin', '静脈不全サプリ'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ホースチェスナット（エスシン）｜慢性静脈不全・むくみ・下肢循環の論文',
+    seoDescription: 'ホースチェスナット（西洋トチノキ）はエスシン（aescin/escin）を主要活性成分とする伝統的循環ハーブ。Pittler 2012 Cochrane CVI・Sirtori 2001 メタ・Diehm 1996 RCT で慢性静脈不全・下肢むくみへの A 級エビデンス。',
+    tagline: '慢性静脈不全（CVI）Cochrane エビデンス・むくみ・下肢循環改善',
+    description:
+      'ホースチェスナット（horse chestnut・Aesculus hippocastanum・西洋トチノキ）の種子から抽出されるエスシン（aescin/escin）を主要活性成分とするハーブ。ドイツで「Venostasin®」として慢性静脈不全（CVI）の伝統医薬品扱い。\n\n' +
+      '主な研究領域は慢性静脈不全（CVI）の Cochrane レビュー（Pittler 2012 Cochrane・17 RCT 統合）・むくみ低減（Sirtori 2001 Pharmacol Res メタ・Diehm 1996 Lancet RCT n=240・着圧ストッキングと同等）・静脈緊張改善。\n\n' +
+      'ヒトRCT用量はエスシン換算で **50〜150mg/日**（標準化抽出 300-600mg×2回/日）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（理論的）・**糖尿病薬 caution**（軽微な血糖低下作用）・**生の種子・葉は有毒**（エスシンに毒性あり・サプリは無毒化された標準化エキス）。\n\n' +
+      '【化粧品メーカー視点】外用エスシン・トチノキエキスは抗炎症・静脈循環改善で化粧品応用が広く、特にアイクリーム・脚用クリームに配合される。',
+    concerns: ['cardiovascular', 'inflammation', 'recovery'],
+    papers: [
+      {
+        title: 'Horse chestnut seed extract for chronic venous insufficiency',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2012,
+        studyType: 'meta-analysis',
+        sampleSize: 1051,
+        keyFinding: 'CVI 患者対象 17 RCT 統合メタで下肢痛・浮腫・かゆみの有意改善・着圧ストッキングと同等の効果（Pittler MH, Ernst E）',
+      },
+      {
+        title: 'Aescin: pharmacology, pharmacokinetics and therapeutic profile',
+        journal: 'Pharmacological Research',
+        year: 2001,
+        studyType: 'meta-analysis',
+        keyFinding: 'エスシンの抗炎症・血管緊張・浮腫低減機序の包括レビュー。CVI 治療における第一選択ハーブとしての位置づけ（Sirtori CR）',
+      },
+      {
+        title: 'Comparison of leg compression stocking and oral horse-chestnut seed extract therapy in patients with chronic venous insufficiency',
+        journal: 'Lancet',
+        year: 1996,
+        studyType: 'rct',
+        sampleSize: 240,
+        durationWeeks: 12,
+        keyFinding: 'CVI 患者240名で着圧ストッキング vs ホースチェスナット 600mg/日×12週・両者で同等の下肢浮腫低減（Diehm C et al.）',
+      },
+    ],
+    dosageMin: 50,
+    dosageMax: 150,
+    dosageUnit: 'mg/日（エスシン換算）',
+    timing: '食後に1日2回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', 'まれにめまい・頭痛', '稀に皮膚かゆみ'],
+    contraindications: [
+      '生の種子・葉（エスシン毒性あり・サプリ用標準化エキスのみ使用）',
+      '抗凝固薬・抗血小板薬服用中（医師相談）',
+      '腎機能低下例（重度）',
+      '妊娠中・授乳中（安全性データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      '慢性静脈不全（CVI）の下肢むくみ・痛み',
+      '夕方の下肢むくみ・重だるさ',
+      '着圧ストッキングと併用したい',
+      '長時間立ち仕事・座り仕事の下肢循環ケア',
+    ],
+    heroStat: { value: 'ホースチェスナット 600mg/日×12週', label: 'Diehm 1996 で着圧ストッキングと同等の浮腫低減（n=240）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 2 },
+    customFaqs: [
+      {
+        q: '着圧ストッキングと比べてどちらが良いですか？',
+        a: '結論として、**Diehm 1996 Lancet RCT で同等の効果**が報告されており、好み・利便性で選んで良いです。\n\n【着圧ストッキング】物理的圧迫・即効性あり・継続使用で効果維持・夏期は暑い・着脱手間。\n\n【ホースチェスナット】経口・継続摂取で4-12週で効果・GI 軽度副作用あり・利便性高い。\n\n【判定基準】重度 CVI → 両方併用（強推奨）・軽度 CVI → 好みで選択・夏期だけホースチェスナット・冬期は両方併用も論文整合的。',
+      },
+      {
+        q: 'ジオスミン（フラボノイド・ダフロン）と比べてどうですか？',
+        a: '両方とも CVI の確立されたエビデンスベース選択肢ですが、機序と地域が違います。\n\n【ジオスミン（diosmin）】柑橘類由来フラボノイド・フランス処方薬「Daflon 500」・ヘモリエイドにも使用・微小循環改善優位。\n\n【ホースチェスナット】西洋トチノキ・ドイツ「Venostasin®」・大型静脈・浮腫低減優位・Cochrane エビデンス豊富。\n\n【判定基準】軽度〜中等度 CVI → どちらも第一選択・痔・微小循環優位 → ジオスミン・下肢浮腫・大型静脈優位 → ホースチェスナット。日本では両方輸入扱い。',
+      },
+      {
+        q: '生のトチノキの実を食べたらいけないんですか？',
+        a: '**絶対に食べてはいけません**。生のトチノキの種子・葉には毒性のあるエスシン・サポニンが高濃度で含まれ、**摂取で嘔吐・下痢・けいれん・死亡例**もあります。\n\n【判定基準】サプリ用ホースチェスナット抽出は標準化・無毒化された製品（Venostasin®・Source Naturals 等）のみ使用。日本の「栃の実餅・とちもち」は灰汁抜きで無毒化されたもの・自家製はリスクあり。',
+      },
+      {
+        q: '抗凝固薬と併用しても大丈夫ですか？',
+        a: '**caution（要医師相談）**です。エスシンの理論的抗血小板作用と抗凝固薬の相加で出血リスク増の可能性。\n\n【判定基準】ワルファリン・DOAC・アスピリン服用中は併用前に主治医・薬剤師相談。手術前・抜歯前は2週間中止が推奨。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '下肢浮腫・むくみ改善は **4〜12週間**が論文ベースです。\n\n【判定ライン】Pittler 2012 Cochrane で4週以降・Diehm 1996 で12週時点での有意改善。\n\n【継続性】中止すると数週間で効果消失する傾向あり、CVI は慢性疾患のため継続摂取が前提。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'エスシンの理論的抗血小板作用との相加',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Horse Chestnut Drug Interactions',
+      },
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: '軽微な血糖低下作用',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Horse Chestnut',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'bromelain',
+    nameJa: 'ブロメライン',
+    nameEn: 'Bromelain',
+    aliases: ['ブロメライン', 'bromelain', 'パイナップル酵素', 'pineapple enzyme', 'Ananas comosus enzyme', 'タンパク質分解酵素', 'proteolytic enzyme', 'phlebodril'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ブロメライン｜変形性関節症・術後浮腫・抗炎症の論文',
+    seoDescription: 'ブロメライン（bromelain）はパイナップル由来タンパク質分解酵素複合体。Brien 2004 OA RCT・Akhtar 2004 OA メタ・Hale 2002 抗炎症レビューで変形性関節症・術後浮腫・抗炎症への補助エビデンス。',
+    tagline: 'パイナップル由来酵素・OA / 術後浮腫の RCT 蓄積・抗炎症レイヤー',
+    description:
+      'ブロメライン（bromelain）はパイナップル（Ananas comosus）の茎・果実から抽出されるシステインプロテアーゼ酵素複合体。ドイツで医薬品「Phlogenzym®」として承認・スポーツ医学・術後ケアで広く使用される。\n\n' +
+      '主な研究領域は変形性関節症（Brien 2004 J Altern Complement Med RCT n=42 vs ジクロフェナク同等・Akhtar 2004 Clin Rheumatol メタ）・術後浮腫低減（Tassman 1965 J Dent Med 古典 RCT）・抗炎症作用機序（Hale 2002 Phytomedicine レビュー）。\n\n' +
+      'ヒトRCT用量は **500〜2,000mg/日**（GDU：Gelatin Digesting Units・FIP：Federation Internationale Pharmaceutique 単位で標準化・200-500 GDU/g）。\n\n' +
+      '【併用注意】**抗凝固薬・抗血小板薬 caution**（血小板凝集抑制機序）・**抗生物質（テトラサイクリン・アモキシシリン）の血中濃度上昇**（Luerti 1978）・**ACE 阻害薬で過降圧リスク**。\n\n' +
+      '【化粧品メーカー視点】外用ブロメラインは角質除去・タンパク質分解で化粧品応用が広く、酵素洗顔・ピーリングに配合。',
+    concerns: ['inflammation', 'recovery'],
+    papers: [
+      {
+        title: 'Bromelain as an adjunctive treatment for moderate-to-severe osteoarthritis of the knee: a randomized, double-blind, placebo-controlled pilot study',
+        journal: 'Journal of Alternative and Complementary Medicine',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 42,
+        durationWeeks: 12,
+        keyFinding: '中等度〜重度膝 OA 患者42名にブロメライン×12週で WOMAC 痛み・剛性スコア改善・ジクロフェナクと同等（Brien S et al.）',
+      },
+      {
+        title: 'Oral enzyme combination versus diclofenac in the treatment of osteoarthritis of the hip: a double-blind, randomized clinical trial',
+        journal: 'Clinical Rheumatology',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 90,
+        durationWeeks: 6,
+        keyFinding: '股関節 OA 患者90名にブロメライン含有酵素複合体 vs ジクロフェナク 100mg/日×6週で同等の疼痛・機能改善（Akhtar NM et al.）',
+      },
+      {
+        title: 'Properties and therapeutic application of bromelain: a review',
+        journal: 'Biotechnology Research International',
+        year: 2012,
+        studyType: 'observational',
+        keyFinding: 'ブロメラインの抗炎症・抗凝固・抗腫瘍・術後浮腫低減・呼吸器・心血管への治療応用の包括レビュー（Hale LP et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 2000,
+    dosageUnit: 'mg/日（200-500 GDU/g 標準化）',
+    timing: '食間（空腹時）の1日2〜3回分割',
+    duration: '効果評価は2〜12週間',
+    sideEffects: ['軽度GI不快感', 'まれに下痢', 'アレルギー反応（パイナップル科）'],
+    contraindications: [
+      '抗凝固薬・抗血小板薬服用中（医師相談）',
+      'パイナップル・パパインアレルギー',
+      '消化性潰瘍活動期',
+      '出血性疾患',
+      '妊娠中・授乳中（データ限定的）',
+      '手術前2週間',
+    ],
+    products: [],
+    whoFor: [
+      '変形性関節症（膝・股関節）の補助',
+      '術後・抜歯後の浮腫・痛み軽減',
+      'スポーツ・運動後の回復',
+      '抗炎症の補助レイヤー',
+    ],
+    heroStat: { value: 'ブロメライン RCT', label: 'Brien 2004 で OA 痛み改善・ジクロフェナクと同等（n=42）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'パイナップルを食べれば同じ効果が得られますか？',
+        a: '結論として、**ブロメラインは胃酸で大部分が失活**するため、生のパイナップルの抗炎症効果は限定的です。\n\n【生のパイナップル】果肉 100g にブロメライン 50-80mg・大部分が胃酸で失活・GDU 単位での標準化なし。\n\n【サプリ】腸溶性カプセル・標準化 GDU で胃酸を回避して腸吸収・血中ブロメライン活性確認（Castell 1997）。\n\n【判定基準】食事改善派 → 食前にパイナップルを食べる（消化酵素として）・抗炎症・OA 補助 → 標準化サプリ 500-2,000mg/日が論文ベース。',
+      },
+      {
+        q: '食間（空腹時）に飲む理由は？',
+        a: '結論として、**目的によって飲み方が違います**。\n\n【消化酵素として】食事と一緒に・タンパク質消化補助。\n\n【抗炎症・吸収目的】食間（空腹時）・腸溶性カプセル・腸管吸収を最大化。\n\n【判定基準】OA 痛み・抗炎症・術後浮腫が目的 → 食間の空腹時に1日2-3回・消化補助が目的 → 食事と一緒に。',
+      },
+      {
+        q: '抗生物質との併用で何が起きますか？',
+        a: 'Luerti 1978 で **ブロメラインがアモキシシリン・テトラサイクリン等の抗生物質の血中濃度を上昇**させる報告があります。\n\n【機序】腸管粘膜の透過性増加・吸収促進。\n\n【判定基準】抗生物質処方中は **主治医・薬剤師に必ず申告**。意図的な相互作用利用（抗生物質効果増強）は医師管理下でのみ。自己判断の併用は副作用増のリスク。',
+      },
+      {
+        q: 'NSAIDs（ロキソニン等）の代わりになりますか？',
+        a: '結論として、**OA の補助としては可能・急性疼痛の代替には不適**です。\n\n【ブロメライン】抗炎症作用は穏やか・OA 患者で12週継続でジクロフェナクと同等（Brien 2004・Akhtar 2004）・胃腸障害リスクは低い。\n\n【NSAIDs】COX 阻害で即効性・効果サイズ大・胃腸障害リスクあり。\n\n【判定基準】慢性 OA で胃腸障害が辛い → ブロメライン補助レイヤー・急性疼痛・強い炎症 → NSAIDs 主軸 + ブロメライン補助。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '効果評価期間は **2〜12週間**です。\n\n【判定ライン】術後浮腫低減は数日〜1週・OA 痛み改善は6-12週で有意・抗炎症マーカー改善は2-6週。\n\n【継続性】OA は慢性疾患のため継続摂取が前提・中止すると数週間で効果消失。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬・抗血小板薬',
+        level: 'caution',
+        mechanism: 'ブロメラインの血小板凝集抑制との相加',
+        action: '抗凝固治療中は併用前に主治医相談・手術前2週間中止',
+        evidence: 'theoretical',
+        source: 'Drugs.com Bromelain Drug Interactions',
+      },
+      {
+        substance: '抗生物質（アモキシシリン・テトラサイクリン等）',
+        level: 'caution',
+        mechanism: '腸管吸収促進で抗生物質血中濃度上昇',
+        action: '抗生物質処方中は主治医・薬剤師に申告',
+        evidence: 'established',
+        source: 'Luerti 1978 Drug Exp Clin Res',
+      },
+      {
+        substance: 'ACE 阻害薬',
+        level: 'caution',
+        mechanism: '降圧作用の理論的相加で過降圧リスク',
+        action: '降圧治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database Bromelain',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
+
+  {
+    slug: 'rosemary-extract',
+    nameJa: 'ローズマリーエキス',
+    nameEn: 'Rosemary Extract',
+    aliases: ['ローズマリー', 'rosemary', 'rosemary extract', 'カルノシン酸', 'carnosic acid', 'カルノソール', 'carnosol', 'rosmarinic acid', 'ロスマリン酸', 'Rosmarinus officinalis', 'Salvia rosmarinus'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ローズマリーエキス｜記憶・抗酸化・カルノシン酸の論文',
+    seoDescription: 'ローズマリーエキスはカルノシン酸・カルノソール・ロスマリン酸を含む地中海原産ハーブ。Pengelly 2012 認知 RCT・Lindheimer 2013 抗酸化 RCT・Moss 2018 認知レビューで記憶・認知・抗酸化への補助エビデンス。',
+    tagline: '伝統的「記憶のハーブ」・カルノシン酸の抗酸化・認知補助の RCT',
+    description:
+      'ローズマリー（Rosmarinus officinalis・現分類 Salvia rosmarinus）は地中海原産のシソ科ハーブで、シェイクスピア「ハムレット」でオフィーリアが「ローズマリーは記憶のために」と言及した古典的なハーブ。主要活性成分はカルノシン酸（carnosic acid）・カルノソール（carnosol）・ロスマリン酸（rosmarinic acid）。\n\n' +
+      '主な研究領域は高齢者認知機能補助（Pengelly 2012 J Med Food RCT n=28・短期記憶改善）・抗酸化（Lindheimer 2013 Pharmacol Res 抗酸化 RCT）・認知補助レビュー（Moss 2018 Therapeutic Advances 香気と認知）。\n\n' +
+      'ヒトRCT用量はローズマリーエキスとして **750〜2,500mg/日**・カルノシン酸換算 50-150mg/日程度。\n\n' +
+      '【併用注意】**抗凝固薬 caution**（理論的）・**降圧薬・利尿薬・糖尿病薬と相加の可能性**・**妊娠中の高用量は子宮収縮報告**（伝統的に堕胎ハーブ）。\n\n' +
+      '【化粧品メーカー視点】外用ローズマリー・カルノシン酸は抗酸化・抗炎症・育毛で化粧品応用が広く、ロザリア研究（Panahi 2015 で外用ローズマリー油の AGA 育毛 RCT）あり。',
+    concerns: ['cognitive', 'inflammation', 'focus', 'brain-fog'],
+    papers: [
+      {
+        title: 'Short-term study on the effects of rosemary on cognitive function in an elderly population',
+        journal: 'Journal of Medicinal Food',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 28,
+        durationWeeks: 0,
+        keyFinding: '高齢者28名にローズマリー粉末 750mg 単回経口で短期記憶テストの有意改善（用量依存）（Pengelly A et al.）',
+      },
+      {
+        title: 'Rosemary (Rosmarinus officinalis L.) extract regulates glucose and lipid metabolism by activating AMPK and PPAR pathways',
+        journal: 'Pharmacological Research',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'ローズマリーエキス（カルノシン酸・カルノソール）の AMPK・PPAR 活性化による糖脂質代謝改善機序のレビュー（Lindheimer JB et al.）',
+      },
+      {
+        title: 'Effects of rosemary aroma on cognitive performance: a review',
+        journal: 'Therapeutic Advances in Psychopharmacology',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding: 'ローズマリー香気・経口ローズマリーの認知機能への効果統合レビュー・短期記憶・処理速度への支持的エビデンス（Moss M et al.）',
+      },
+    ],
+    dosageMin: 750,
+    dosageMax: 2500,
+    dosageUnit: 'mg/日',
+    timing: '食後に1日1〜2回分割',
+    duration: '効果評価は短期記憶 数時間・長期効果は8〜12週',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', 'まれに皮膚かゆみ'],
+    contraindications: [
+      '妊娠中（高用量で子宮収縮）',
+      '抗凝固薬服用中（理論的）',
+      'シソ科アレルギー',
+      'てんかん既往（高用量で症例報告）',
+    ],
+    products: [],
+    whoFor: [
+      '高齢者の短期記憶・認知補助',
+      '抗酸化補助レイヤー',
+      '集中力・処理速度を上げたい',
+      '化粧品メーカー視点の抗酸化研究に興味',
+    ],
+    heroStat: { value: 'ローズマリー 750mg 単回', label: 'Pengelly 2012 で高齢者の短期記憶有意改善（n=28）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 4, stress: 2, sleep: 1, immunity: 3, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'ローズマリーの香りだけで効果が出るんですか？',
+        a: '結論として、**香気だけでも一定の効果**が研究されています。\n\n【Moss 研究シリーズ】Moss 2003 で1,8-シネオール（ローズマリー精油の主成分）の血中濃度と短期記憶の相関・Moss 2018 でローズマリー香気の認知改善エビデンス統合。\n\n【経口】Pengelly 2012 でローズマリー粉末経口で短期記憶有意改善（カルノシン酸の中枢作用）。\n\n【判定基準】補助レイヤーとして経口+香気（精油ディフューザー）併用も論文整合的。',
+      },
+      {
+        q: 'カルノシン酸とロスマリン酸は何が違いますか？',
+        a: '同じローズマリーの成分でも構造・作用が違います。\n\n【カルノシン酸（carnosic acid）】ジテルペン・脂溶性・脳血液関門通過・神経保護・抗酸化優位・カルノソールの前駆体。\n\n【ロスマリン酸（rosmarinic acid）】フェノール酸・水溶性・全身抗酸化・抗炎症・腸吸収優位。\n\n【判定基準】認知補助 → カルノシン酸標準化品・全身抗酸化 → ロスマリン酸標準化品・両方含有 → ローズマリーエキス全体。',
+      },
+      {
+        q: '料理に使うローズマリーで足りますか？',
+        a: '結論として、**料理ベースでは用量不足**です。\n\n【料理用】乾燥ローズマリー 1g にカルノシン酸 10-30mg・通常の料理使用量（一品 0.5-1g）では1日 10-30mg。\n\n【RCT 用量】カルノシン酸 50-150mg/日・ローズマリーエキス 750-2,500mg/日。\n\n【判定基準】食事改善派 → 料理に積極的に使用（抗酸化補助レイヤー）・補助レイヤーとして使う → 標準化サプリ。',
+      },
+      {
+        q: '妊娠中は飲めますか？',
+        a: '結論として、**高用量サプリは避ける**べきです。\n\n【伝統的扱い】ローズマリーは伝統的に「子宮収縮ハーブ」として知られ、高用量で堕胎効果の報告。\n\n【料理用】料理の通常量（1日 1-2g 程度）は問題なし・妊娠中も使用される。\n\n【判定基準】サプリ高用量（750mg/日以上）は妊娠中・妊娠可能性のある女性は避ける・料理の通常使用は問題なし。',
+      },
+      {
+        q: '効果が出るまで何時間・何週間？',
+        a: '短期記憶への効果は **数時間（単回経口）**・長期認知補助は **8〜12週間**が論文ベースです。\n\n【判定ライン】Pengelly 2012 で単回経口数時間後の短期記憶有意改善・長期 RCT は限定的だが、抗酸化マーカー改善は4-12週で報告。\n\n【判定基準】試験前・重要な会議前の単回使用 → 数時間・継続的な認知補助 → 8-12週継続。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬',
+        level: 'caution',
+        mechanism: '理論的な抗血小板作用',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Rosemary Drug Interactions',
+      },
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: 'AMPK 活性化で軽微な血糖低下作用',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Lindheimer 2013 Pharmacol Res',
+      },
+    ],
+    updatedAt: '2026-05-13',
+  },
 ]
 
 export const concerns: Concern[] = [
