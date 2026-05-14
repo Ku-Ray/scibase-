@@ -27588,6 +27588,1718 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-14',
   },
+
+  {
+    slug: 'sam-e',
+    nameJa: 'S-アデノシルメチオニン（SAMe）',
+    nameEn: 'S-Adenosyl-L-Methionine (SAMe)',
+    aliases: ['SAMe', 'SAM-e', 'S-アデノシルメチオニン', 's-adenosyl methionine', 'AdoMet', 'ademetionine', 'メチル供与体', 'methyl donor'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'SAMe（S-アデノシルメチオニン）｜うつ・OA・肝機能の論文',
+    seoDescription: 'SAMe（S-アデノシルメチオニン）は体内メチオニン代謝の中間体で、生体メチル化反応の主要供与体。Soeken 2002 OA メタ・Papakostas 2010 SSRI抵抗うつ RCT・Anstee 2012 肝レビューで関節・気分・肝への補助エビデンス。',
+    tagline: 'メチル供与体・関節OA NSAIDs同等・SSRI抵抗うつアドオン',
+    description:
+      'S-アデノシルメチオニン（SAMe・サミー）は体内メチオニン代謝の中間体で、**生体メチル化反応の主要メチル供与体**。神経伝達物質合成（ドパミン・セロトニン）・関節軟骨プロテオグリカン合成・肝臓グルタチオン産生に関与する。\n\n' +
+      '主な研究領域は変形性関節症（Soeken 2002 J Fam Pract メタ 11 RCT 統合・NSAIDs と同等の疼痛・機能改善）・うつ病補助（Papakostas 2010 Am J Psychiatry RCT n=73・SSRI 抵抗うつ患者で SAMe 800mg×2/日アドオンが有意改善）・肝機能（Anstee 2012 J Hepatol レビュー・アルコール性肝障害補助）。\n\n' +
+      'ヒトRCT用量は **OA 補助で 600〜1,200mg/日**・**うつアドオンで 800〜1,600mg/日**・腸溶錠で空腹時。\n\n' +
+      '【YMYL注意】**双極性障害躁転リスク**（複数症例報告）・**MAOI 系抗うつ薬併用 avoid**（セロトニン症候群）・**SSRI/SNRI 併用は医師管理下のみ**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果のヒトRCTは限定的。経口での全身代謝改善経路としての位置づけ。',
+    concerns: ['mood', 'inflammation', 'liver'],
+    papers: [
+      {
+        title: 'Safety and efficacy of S-adenosylmethionine for osteoarthritis: a meta-analysis',
+        journal: 'Journal of Family Practice',
+        year: 2002,
+        studyType: 'meta-analysis',
+        sampleSize: 1442,
+        keyFinding: 'OA 患者対象 11 RCT 統合メタで SAMe 1,200mg/日と NSAIDs の疼痛・機能改善が同等・副作用 SAMe で有意に少（Soeken KL et al.）',
+      },
+      {
+        title: 'S-adenosyl methionine (SAMe) augmentation of serotonin reuptake inhibitors for antidepressant nonresponders with major depressive disorder: a double-blind, randomized clinical trial',
+        journal: 'American Journal of Psychiatry',
+        year: 2010,
+        studyType: 'rct',
+        sampleSize: 73,
+        durationWeeks: 6,
+        keyFinding: 'SSRI/SNRI 抵抗性うつ患者73名に SAMe 800mg×2/日×6週アドオンで HAM-D・寛解率有意改善（Papakostas GI et al.）',
+      },
+      {
+        title: 'S-adenosylmethionine (SAMe) therapy in liver disease: a review of current evidence and clinical utility',
+        journal: 'Journal of Hepatology',
+        year: 2012,
+        studyType: 'observational',
+        keyFinding: 'アルコール性肝障害・原発性胆汁性肝硬変・コレステロール胆汁うっ滞での SAMe 補助の臨床根拠を整理（Anstee QM, Day CP）',
+      },
+    ],
+    dosageMin: 600,
+    dosageMax: 1600,
+    dosageUnit: 'mg/日',
+    timing: '空腹時・腸溶錠を分割服用（朝・昼・夜）',
+    duration: 'OA は4〜8週・うつは2〜6週で評価',
+    sideEffects: ['軽度GI不快感', '不眠', '不安感', '稀に双極性障害躁転'],
+    contraindications: [
+      '双極性障害（躁転リスク）',
+      'MAOI 系抗うつ薬服用中（セロトニン症候群）',
+      '妊娠・授乳（データ不足）',
+      'パーキンソン病でレボドパ服用中（理論的拮抗）',
+    ],
+    products: [],
+    whoFor: [
+      'NSAIDs 副作用を避けたい OA 患者',
+      'SSRI/SNRI 抵抗うつでアドオン検討中（医師管理下）',
+      'アルコール性肝障害の補助（医師相談）',
+      'メチル化サイクル支援（葉酸・B12 と併用）',
+    ],
+    heroStat: { value: 'SAMe 1,200mg/日', label: 'Soeken 2002 OA メタ 11 RCT 統合で疼痛・機能改善が NSAIDs と同等（n=1,442）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 4, stress: 4, sleep: 2, immunity: 2, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'うつに飲んでも安全ですか？',
+        a: '結論として、**SSRI/SNRI 服用中のアドオンは医師管理下のみ・MAOI 併用は禁忌**です。\n\n【背景】SAMe は脳内セロトニン・ドパミン合成に関与するため、抗うつ薬と併用でセロトニン症候群リスク。\n\n【判定基準】医師処方の抗うつ薬を服用中の方は自己判断追加せず・必ず精神科・心療内科医師に相談。双極性障害の既往は躁転リスクで原則避ける。',
+      },
+      {
+        q: 'OA でグルコサミン・コンドロイチンとどう違う？',
+        a: '結論として、**機序が異なる補完関係**です。\n\n【SAMe】メチル化を介したプロテオグリカン合成支援・抗炎症・**NSAIDs 同等の疼痛改善エビデンス**（Soeken 2002）。\n\n【グルコサミン/コンドロイチン】軟骨基質合成促進・GAG 補給。\n\n【判定基準】NSAIDs 副作用を避けたい OA → SAMe 第一選択候補・グルコサミン+CS 併用も可・コスト面で SAMe は高価。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '**OA は4〜8週で評価・うつアドオンは2〜6週**で評価。\n\n【急性効果】不安感・GI 不快感が初期数日で出る場合あり・低用量から漸増推奨。\n\n【判定基準】8週で改善傾向なしなら中止検討・継続中も双極性傾向（不眠・多動・気分高揚）が出たら即中止し医師相談。',
+      },
+      {
+        q: '腸溶錠と通常錠どちらが良い？',
+        a: '**腸溶錠（enteric-coated）一択**です。\n\n【背景】SAMe は胃酸で急速に分解されるため、通常錠は吸収率が著しく低下。臨床試験はすべて腸溶錠で実施されている。\n\n【判定基準】サプリ表示で「enteric-coated」「腸溶錠」明記製品を選択・粉末や通常錠は論文用量再現不可。',
+      },
+      {
+        q: '葉酸・B12 と併用したほうがいい？',
+        a: '結論として、**併用が論文整合的**です。\n\n【背景】SAMe はメチル化サイクルでホモシステイン → メチオニン → SAMe への変換が回るため、**葉酸（できれば 5-MTHF）・B12・B6 が補因子として必要**。これら欠乏下では SAMe 単独投与の効果が減弱。\n\n【判定基準】MTHFR 多型・B12 欠乏既往例は **5-MTHF + メチルコバラミン併用**で SAMe の効果を底上げ。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'MAOI 系抗うつ薬',
+        level: 'avoid',
+        mechanism: 'セロトニン作動性の相加でセロトニン症候群リスク',
+        action: 'MAOI 服用中は併用回避・処方変更後も2週間以上空ける',
+        evidence: 'established',
+        source: 'NIH NCCIH SAMe Fact Sheet',
+      },
+      {
+        substance: 'SSRI/SNRI 系抗うつ薬',
+        level: 'caution',
+        mechanism: 'セロトニン作動性の相加でセロトニン症候群リスク',
+        action: '精神科・心療内科医の管理下のみ併用・自己判断追加禁止',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH SAMe Fact Sheet',
+      },
+      {
+        substance: 'レボドパ',
+        level: 'caution',
+        mechanism: 'SAMe がレボドパのメチル化代謝を促進し、薬効減弱の可能性',
+        action: 'パーキンソン病でレボドパ服用中は処方医に相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com SAMe Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'uc-ii',
+    nameJa: 'UC-II（非変性II型コラーゲン）',
+    nameEn: 'UC-II (Undenatured Type II Collagen)',
+    aliases: ['UC-II', 'uc-ii', 'undenatured type II collagen', '非変性II型コラーゲン', 'ucii', '経口免疫寛容', 'oral tolerance', 'native collagen'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'UC-II（非変性II型コラーゲン）｜変形性関節症・関節炎の論文',
+    seoDescription: 'UC-II（undenatured type II collagen）は非変性で経口免疫寛容を誘導するII型コラーゲン素材。Lugo 2013/2016 OA RCT・Crowley 2009 OA RCT で 40mg/日の低用量でグルコサミン+CS 1,500mg と同等の関節快適性改善エビデンス。',
+    tagline: 'わずか 40mg/日でグルコサミン+CS 1,500mg と同等の関節快適性 RCT',
+    description:
+      'UC-II（undenatured type II collagen・非変性II型コラーゲン）はニワトリの胸骨軟骨から低温抽出される非変性II型コラーゲン素材で、加水分解コラーゲンとは異なり**三重らせん構造を保持**したまま小腸パイエル板で経口免疫寛容を誘導する。InterHealth USA 社（現 Lonza）の特許素材。\n\n' +
+      '主な研究領域は変形性関節症（Lugo 2013 Nutr J RCT n=52・40mg/日×90日でグルコサミン 1,500mg+CS 1,200mg と同等以上の WOMAC 改善）・運動誘発関節痛（Lugo 2016 Nutr J RCT n=191・健常人 40mg/日×120日で運動後関節快適性改善）・Crowley 2009 Int J Med Sci 膝 OA RCT。\n\n' +
+      'ヒトRCT用量は **40mg/日（標準化 UC-II・10mg type II collagen 含有）**。グルコサミン・コンドロイチン1,500mg+1,200mg と比較して**用量が 1/40 以下**で同等以上の効果が報告されているのが特徴。\n\n' +
+      '【併用注意】鶏肉・卵アレルギー avoid（鶏胸骨軟骨由来）・**ワルファリン併用は理論的 caution**。\n\n' +
+      '【化粧品メーカー視点】経口免疫寛容機序はコラーゲンペプチドの皮膚直接補給とは別経路。皮膚効果は限定的・関節特化サプリ。',
+    concerns: ['inflammation', 'recovery', 'bone'],
+    papers: [
+      {
+        title: 'Undenatured type II collagen (UC-II®) for joint support: a randomized, double-blind, placebo-controlled study in healthy volunteers',
+        journal: 'Journal of the International Society of Sports Nutrition / Nutrition Journal',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 52,
+        durationWeeks: 13,
+        keyFinding: '膝 OA 患者52名に UC-II 40mg/日 vs グルコサミン1,500mg+CS 1,200mg×90日：UC-II 群で WOMAC 総合スコアが グルコサミン+CS 群より33%強く改善（Lugo JP et al.）',
+      },
+      {
+        title: 'Efficacy and tolerability of an undenatured type II collagen supplement in modulating knee osteoarthritis symptoms: a multicenter randomized, double-blind, placebo-controlled study',
+        journal: 'Nutrition Journal',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 191,
+        durationWeeks: 17,
+        keyFinding: '健常人191名に UC-II 40mg/日×120日 vs プラセボ：運動後の関節快適性（疲労前後の膝可動域・痛み）有意改善（Lugo JP et al.）',
+      },
+      {
+        title: 'Safety and efficacy of undenatured type II collagen in the treatment of osteoarthritis of the knee: a clinical trial',
+        journal: 'International Journal of Medical Sciences',
+        year: 2009,
+        studyType: 'rct',
+        sampleSize: 52,
+        durationWeeks: 24,
+        keyFinding: '膝 OA 患者52名に UC-II 40mg/日×24週で WOMAC スコア・歩行 VAS 痛み有意改善（Crowley DC et al.）',
+      },
+    ],
+    dosageMin: 40,
+    dosageMax: 40,
+    dosageUnit: 'mg/日',
+    timing: '就寝前・空腹時（経口免疫寛容のためタンパク質食事と離す）',
+    duration: '効果評価は2〜4ヶ月',
+    sideEffects: ['軽度GI不快感（稀）', '頭痛（稀）'],
+    contraindications: [
+      '鶏肉・卵アレルギー（鶏胸骨軟骨由来）',
+      'ワルファリン服用中（理論的 caution）',
+      '妊娠・授乳（データ不足）',
+      '自己免疫疾患（関節リウマチ等）で免疫抑制剤服用中（医師相談）',
+    ],
+    products: [],
+    whoFor: [
+      '膝・股関節 OA でグルコサミン+CS の用量が負担',
+      'スポーツ後の関節快適性改善希望（健常人ライフスタイル予防）',
+      'グルコサミン+CS で効果実感が乏しい',
+      '錠剤の数を減らしたい（1日1錠で済む）',
+    ],
+    heroStat: { value: 'UC-II 40mg/日', label: 'Lugo 2013 で OA WOMAC スコアがグルコサミン+CS 1,500mg より33%強く改善（n=52）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 1 },
+    customFaqs: [
+      {
+        q: 'なぜ 40mg だけでグルコサミン 1,500mg と同等以上に効くのですか？',
+        a: '結論として、**作用機序が根本的に異なる**ためです。\n\n【グルコサミン・コンドロイチン】軟骨基質の構成材料を経口補給する「材料補給型」・体内のGAG として再利用される量は限定的。\n\n【UC-II】**経口免疫寛容**機序。小腸パイエル板で非変性 II 型コラーゲンを免疫学的に「自己と認識させる」ことで、自己免疫反応的な軟骨破壊を抑制する制御性T細胞（Treg）を誘導する。材料補給ではなく免疫調節アプローチ。\n\n【判定基準】どちらが優位とは言えず、機序が違うため**併用も論文整合的**（ただし UC-II の経口免疫寛容には少量・空腹時が重要）。',
+      },
+      {
+        q: '加水分解コラーゲン（コラーゲンペプチド）とどう違いますか？',
+        a: '結論として、**全く別の素材・別の目的**です。\n\n【加水分解コラーゲン】低分子ペプチドに分解された素材・5〜10g/日で皮膚・関節への補給。\n\n【UC-II】非変性で三重らせん構造保持・40mg/日で経口免疫寛容誘導・関節特化。\n\n【判定基準】皮膚目的 → 加水分解コラーゲン・関節 OA 目的 → UC-II 単独 or 併用。',
+      },
+      {
+        q: '何時に飲むのが良いですか？',
+        a: '**就寝前・空腹時**が推奨です。\n\n【理由】経口免疫寛容を誘導するには、消化されない状態でパイエル板に到達する必要があり、食事のタンパク質と一緒だと胃のプロテアーゼで分解されやすい。\n\n【判定基準】就寝前または食後2〜3時間空けて空腹時に水で。プロテインや高タンパク質食事の直前後は避ける。',
+      },
+      {
+        q: '効果が出るまで何ヶ月？',
+        a: '**2〜4ヶ月で評価**。Lugo 2016 で4ヶ月時点で運動後関節快適性の有意差。\n\n【判定基準】1〜2ヶ月で初期変化・3〜4ヶ月で安定改善・効果なしなら中止検討。短期2-4週では効果評価困難。',
+      },
+      {
+        q: '鶏肉アレルギーがあっても飲めますか？',
+        a: '**鶏胸骨軟骨由来のため、鶏肉・卵アレルギーは avoid**。\n\n【判定基準】鶏アレルギーの方はビーフ由来（魚由来）コラーゲンや他の関節サポート成分（グルコサミン HCl・MSM）に切り替え。アレルギー素因のある方はパッチテストや低用量からスタート。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ワルファリン',
+        level: 'monitor',
+        mechanism: '理論的な血液凝固への軽微な影響（症例報告は少）',
+        action: 'ワルファリン服用中は INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Collagen Type II Interactions',
+      },
+      {
+        substance: '免疫抑制剤（タクロリムス・シクロスポリン等）',
+        level: 'caution',
+        mechanism: '経口免疫寛容機序と免疫抑制剤の相互作用は理論的に複雑',
+        action: '自己免疫疾患で免疫抑制剤服用中は処方医に相談',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH UC-II Fact Sheet',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'methyl-folate',
+    nameJa: 'メチルフォレート（5-MTHF）',
+    nameEn: 'Methylfolate (5-MTHF / L-5-MTHF)',
+    aliases: ['5-MTHF', 'methylfolate', 'メチルフォレート', 'l-methylfolate', 'L-メチル葉酸', 'Quatrefolic', 'Metafolin', '活性型葉酸', 'active folate', '5-methyltetrahydrofolate'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'メチルフォレート（5-MTHF）｜MTHFR・うつ・葉酸活性型の論文',
+    seoDescription: 'メチルフォレート（5-MTHF・L-5-メチルテトラヒドロ葉酸）は葉酸の活性型で、MTHFR 酵素を介さず直接利用可能。Papakostas 2012 SSRI抵抗うつ RCT・Pietrzik 2010 吸収薬物動態メタ・Greenberg 2011 妊娠レビューでうつ・神経管閉鎖不全予防の補助エビデンス。',
+    tagline: 'MTHFR 多型でも吸収・活性型葉酸・SSRI 抵抗うつアドオン',
+    description:
+      'メチルフォレート（5-MTHF・L-5-メチルテトラヒドロ葉酸）は葉酸（folic acid）の**活性型で体内ですぐ使える形態**。葉酸は MTHFR（メチレンテトラヒドロ葉酸還元酵素）で 5-MTHF に変換されてから利用されるが、**日本人の約15%が持つ MTHFR C677T 多型では酵素活性が30〜70%低下し、葉酸変換効率が下がる**ことが報告されている。\n\n' +
+      '主な研究領域はうつ病補助（Papakostas 2012 Am J Psychiatry RCT n=148・SSRI 抵抗うつ患者で 5-MTHF 15mg/日アドオンで HAM-D 有意改善）・妊娠期神経管閉鎖不全予防（Greenberg 2011 Rev Obstet Gynecol レビュー・MTHFR 多型妊婦への 5-MTHF 優位性）・吸収薬物動態（Pietrzik 2010 Clin Pharmacokinet メタ・5-MTHF は folic acid 比 70〜80%の血漿濃度向上）。\n\n' +
+      'ヒトRCT用量は **健常人で 400〜800μg/日**（妊娠 600μg/日）・**MTHFR 多型 + うつ補助で 5〜15mg/日**（医師管理下）。\n\n' +
+      '【併用注意】**メトトレキサート併用 avoid**（葉酸拮抗薬・薬効減弱）・**フェニトイン・カルバマゼピン併用は薬効減弱の可能性**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果は限定的。メチル化サイクル支援で全身代謝レベルからの位置づけ。',
+    concerns: ['mood', 'cardiovascular', 'longevity'],
+    papers: [
+      {
+        title: 'L-methylfolate as adjunctive therapy for SSRI-resistant major depression: results of two randomized, double-blind, parallel-sequential trials',
+        journal: 'American Journal of Psychiatry',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 148,
+        durationWeeks: 12,
+        keyFinding: 'SSRI 抵抗うつ患者148名に L-メチルフォレート 15mg/日 vs プラセボアドオン×12週で HAM-D 寛解率有意改善・MTHFR 多型例で効果顕著（Papakostas GI et al.）',
+      },
+      {
+        title: 'Comparison of folic acid and 5-methyltetrahydrofolate (5-MTHF) regarding their pharmacokinetics and pharmacodynamics',
+        journal: 'Clinical Pharmacokinetics',
+        year: 2010,
+        studyType: 'meta-analysis',
+        keyFinding: '5-MTHF は folic acid と比較して血漿活性葉酸濃度を 70〜80% 高く・MTHFR 多型でも吸収影響なし（Pietrzik K et al.）',
+      },
+      {
+        title: 'Folic acid supplementation and pregnancy: more than just neural tube defect prevention',
+        journal: 'Reviews in Obstetrics and Gynecology',
+        year: 2011,
+        studyType: 'observational',
+        keyFinding: 'MTHFR 多型妊婦への 5-MTHF 補給は folic acid より神経管閉鎖不全予防効果が安定・妊娠中のうつ・流産リスク低下傾向（Greenberg JA et al.）',
+      },
+    ],
+    dosageMin: 400,
+    dosageMax: 1000,
+    dosageUnit: 'μg/日',
+    timing: '朝食時に水で・脂溶性ではないため食事影響少',
+    duration: '4〜12週で評価（うつアドオン）',
+    sideEffects: ['不眠（高用量時）', '焦燥感', '稀にアレルギー反応'],
+    contraindications: [
+      'メトトレキサート服用中（葉酸拮抗薬・薬効減弱）',
+      '未診断のビタミンB12 欠乏（5-MTHF は B12 欠乏症状をマスクする可能性）',
+      '双極性障害躁転リスク（高用量時）',
+    ],
+    products: [],
+    whoFor: [
+      'MTHFR C677T/A1298C 多型既往（遺伝子検査陽性）',
+      'SSRI/SNRI 抵抗うつでアドオン検討（医師管理下）',
+      '妊娠予定・妊娠中（神経管閉鎖不全予防）',
+      'ホモシステイン高値（心血管リスク）',
+    ],
+    heroStat: { value: '5-MTHF 15mg/日', label: 'Papakostas 2012 で SSRI 抵抗うつの HAM-D 寛解率が有意改善（n=148）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 4, stress: 3, sleep: 2, immunity: 2, metabolism: 4 },
+    customFaqs: [
+      {
+        q: '通常の葉酸（folic acid）とどちらが良いですか？',
+        a: '結論として、**MTHFR 多型・うつ・妊娠中は 5-MTHF 優位**・健常人通常用量なら folic acid でも可です。\n\n【folic acid】合成葉酸・体内で MTHFR 酵素を介して 5-MTHF に変換される必要・MTHFR 多型で変換効率低下。\n\n【5-MTHF】活性型・酵素変換不要・MTHFR 多型でも吸収。\n\n【判定基準】MTHFR 遺伝子検査陽性・うつアドオン・妊娠予定 → 5-MTHF。一般予防（健常人） → folic acid 400μg/日で十分。',
+      },
+      {
+        q: 'MTHFR 多型はどうやって調べる？',
+        a: '結論として、**遺伝子検査（直販DTC）or 医療機関検査**で測定可能です。\n\n【DTC 遺伝子検査】MyHeritage / 23andMe / GeneLife 等で MTHFR C677T・A1298C を解析（数千円〜数万円）。\n\n【医療機関】循環器内科・産婦人科で保険外検査・**血漿ホモシステイン高値が代理マーカー**。\n\n【判定基準】ホモシステイン > 15μmol/L は MTHFR 多型 + B 群欠乏を疑い・遺伝子検査で確定。',
+      },
+      {
+        q: 'B12 と一緒に飲んだほうが良い？',
+        a: '結論として、**併用必須**です。\n\n【背景】5-MTHF はメチル化サイクルで B12 と共役して機能・B12 欠乏下で 5-MTHF 単独投与は「メチル葉酸トラップ」を悪化させる可能性。さらに、未診断 B12 欠乏で 5-MTHF を飲むと血液所見は改善するが神経症状はマスクされ進行する症例報告あり。\n\n【判定基準】**メチルコバラミン 500〜1,000μg/日 + 5-MTHF 400〜800μg/日**の組み合わせが標準。シニア・ヴィーガン・メトホルミン服用中は事前に B12 値測定。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '**ホモシステイン低下は 4〜8週・うつ症状改善は 6〜12週**で評価。\n\n【判定基準】4週で初期変化・8〜12週で安定改善・12週改善なしなら中止検討・MTHFR 多型例でアドオン併用の効果が顕著。',
+      },
+      {
+        q: '副作用や注意点は？',
+        a: '**メトトレキサート服用中は併用回避**・**未診断 B12 欠乏で単独投与しない**・**双極性障害躁転リスク（高用量時）**。\n\n【判定基準】抗がん剤・リウマチでメトトレキサート服用中は処方医必須相談。シニアは B12 値先測。気分高揚・不眠・多動が出たら中止し医師相談。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'メトトレキサート',
+        level: 'avoid',
+        mechanism: '葉酸拮抗薬・5-MTHF 補給で薬効減弱',
+        action: 'リウマチ・抗がん治療でメトトレキサート服用中は処方医に必ず相談',
+        evidence: 'established',
+        source: 'FDA Methotrexate Prescribing Information',
+      },
+      {
+        substance: 'フェニトイン・カルバマゼピン・バルプロ酸（抗てんかん薬）',
+        level: 'caution',
+        mechanism: '葉酸補給で抗てんかん薬の血漿濃度が低下する可能性',
+        action: '抗てんかん薬服用中は神経内科医に相談・血漿濃度モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Folate Interactions',
+      },
+      {
+        substance: '5-フルオロウラシル（抗がん剤）',
+        level: 'caution',
+        mechanism: '葉酸補給で 5-FU の細胞毒性が修飾される可能性',
+        action: '抗がん治療中は腫瘍内科医に相談',
+        evidence: 'theoretical',
+        source: 'NIH NCI Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'r-alpha-lipoic-acid',
+    nameJa: 'R-αリポ酸（R-ALA）',
+    nameEn: 'R-Alpha-Lipoic Acid (R-ALA)',
+    aliases: ['R-ALA', 'r-alpha lipoic acid', 'R-αリポ酸', 'R-リポ酸', 'r-lipoic acid', 'Na-RALA', '右旋性リポ酸', 'natural alpha lipoic acid'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'R-αリポ酸（R-ALA）｜血糖・神経・抗酸化の論文',
+    seoDescription: 'R-αリポ酸（R-ALA）はαリポ酸の天然 R 体異性体で、合成 DL 体（DL-ALA）より血漿濃度・生物学的活性が高い。Carlson 2007 薬物動態 RCT・Ziegler 2006 SYDNEY 2 糖尿病性ニューロパチー RCT・Mijnhout 2012 メタで神経・血糖への補助エビデンス。',
+    tagline: 'DL 体の約2倍の血漿濃度・天然異性体・糖尿病性ニューロパチー RCT',
+    description:
+      'R-αリポ酸（R-ALA・R-alpha-lipoic acid）は **αリポ酸の天然立体異性体（R体）** で、ミトコンドリアのピルビン酸脱水素酵素複合体の補酵素として体内で合成・利用される。サプリで主流の合成 αリポ酸は R 体と S 体の **DL ラセミ混合物（50:50）** で、S 体は生理活性が低く競合阻害も起こすため、R-ALA 単独が論文用量再現に優位。\n\n' +
+      '主な研究領域は薬物動態（Carlson 2007 Diabetes Care RCT・R-ALA は DL-ALA 比で血漿 Cmax 約2倍）・糖尿病性ニューロパチー（Ziegler 2006 Diabetes Care SYDNEY 2 RCT n=181・ALA 600mg/日×5週で TSS スコア有意改善）・メタ解析（Mijnhout 2012 Int J Endocrinol 4 RCT 統合・糖尿病性ニューロパチー疼痛改善）。\n\n' +
+      'ヒトRCT用量は **R-ALA 100〜300mg/日（食前空腹時・DL-ALA 換算 600mg/日相当）**・スタビライズ型（Na-RALA）が酸化されにくく推奨。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（低血糖増強）・**甲状腺薬 caution**（T4 吸収阻害の可能性）・**化学療法薬 caution**（抗酸化作用で薬効修飾の理論的可能性）。\n\n' +
+      '【化粧品メーカー視点】外用 ALA はリポソーム化で皮膚浸透・抗糖化目的の機能性化粧品原料として使用される。経口は全身抗酸化レイヤー。',
+    concerns: ['blood-sugar', 'glycation', 'longevity'],
+    papers: [
+      {
+        title: 'The plasma pharmacokinetics of R-(+)-lipoic acid administered as sodium R-(+)-lipoate to healthy human subjects',
+        journal: 'Alternative Medicine Review',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 12,
+        keyFinding: 'R-ALA（Na 塩スタビライズ型）は DL-ALA と比較して血漿 Cmax が約2倍・AUC で生物学的利用能優位（Carlson DA et al.）',
+      },
+      {
+        title: 'Oral treatment with alpha-lipoic acid improves symptomatic diabetic polyneuropathy: the SYDNEY 2 trial',
+        journal: 'Diabetes Care',
+        year: 2006,
+        studyType: 'rct',
+        sampleSize: 181,
+        durationWeeks: 5,
+        keyFinding: '糖尿病性ニューロパチー患者181名に ALA 600mg/日 vs プラセボ×5週で TSS（疼痛・しびれ・灼熱感）スコア有意改善（Ziegler D et al. SYDNEY 2 trial）',
+      },
+      {
+        title: 'Alpha lipoic acid for symptomatic peripheral neuropathy in patients with diabetes: a meta-analysis of randomized controlled trials',
+        journal: 'International Journal of Endocrinology',
+        year: 2012,
+        studyType: 'meta-analysis',
+        sampleSize: 653,
+        keyFinding: '糖尿病性ニューロパチー対象 4 RCT 統合・ALA 600mg/日で TSS スコア有意改善・神経症候（しびれ・疼痛・反射）改善（Mijnhout GS et al.）',
+      },
+    ],
+    dosageMin: 100,
+    dosageMax: 300,
+    dosageUnit: 'mg/日',
+    timing: '食前空腹時・分割服用（吸収率向上）',
+    duration: '神経症状は4〜8週・血糖管理は12週で評価',
+    sideEffects: ['軽度GI不快感', '皮膚発疹', '稀に低血糖症状'],
+    contraindications: [
+      '糖尿病薬服用中（低血糖モニタリング）',
+      'チアミン欠乏（理論的相互作用・併用補給推奨）',
+      '妊娠・授乳（データ不足）',
+      '化学療法中（抗酸化作用で薬効修飾の可能性）',
+    ],
+    products: [],
+    whoFor: [
+      '糖尿病性ニューロパチー（疼痛・しびれ・灼熱感）',
+      'インスリン抵抗性・糖化リスク高',
+      'DL-ALA で効果が乏しい（R 体単独で再評価）',
+      '糖化ストレス対策（抗糖化 + 抗酸化二重作用）',
+    ],
+    heroStat: { value: 'R-ALA 血漿 Cmax 約2倍', label: 'Carlson 2007 で R-ALA は DL-ALA と比較して生物学的利用能が約2倍（n=12）' },
+    axisScores: { antiAging: 5, skin: 3, cognitive: 3, stress: 2, sleep: 1, immunity: 2, metabolism: 5 },
+    customFaqs: [
+      {
+        q: '通常のαリポ酸（DL-ALA）とどう違いますか？',
+        a: '結論として、**R-ALA が生物学的に優位・DL-ALA は半分が S 体（活性低）**です。\n\n【DL-ALA】合成ラセミ混合物（R体50%+S体50%）・S 体は活性低・R 体と競合阻害も。\n\n【R-ALA】天然異性体単独・血漿濃度約2倍・酵素活性も R 体特異的。\n\n【判定基準】論文用量再現したいなら R-ALA 100-300mg/日（DL-ALA 600mg/日相当）・コスト重視で DL-ALA を選ぶ場合は用量を倍に。',
+      },
+      {
+        q: '糖尿病薬と一緒に飲んでも大丈夫？',
+        a: '**caution（要医師相談・血糖モニタリング）**です。\n\n【背景】R-ALA はインスリン感受性を高めるため、メトホルミン・SU 剤・インスリン併用で低血糖リスク。\n\n【判定基準】糖尿病治療中は処方医・薬剤師相談・血糖モニタリング併用・初期は低用量（50mg/日）から漸増。',
+      },
+      {
+        q: 'スタビライズ型（Na-RALA）と通常 R-ALA の違いは？',
+        a: '結論として、**Na-RALA 推奨**です。\n\n【背景】R-ALA は熱・湿気で重合反応を起こし不安定。Na 塩スタビライズ型（Na-RALA・GeroNova 等）は分子安定性・吸収率が改善されている。\n\n【判定基準】Na-RALA・stabilized R-ALA 表記製品を選択・通常 R-ALA は保存状態（暗所・低湿）に注意。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '**神経症状は4〜8週・血糖管理は12週**で評価。\n\n【判定基準】2〜4週で初期変化・5〜8週で症状改善・12週改善なしなら中止検討・併用薬の調整も検討。',
+      },
+      {
+        q: '抗酸化サプリ（CoQ10 等）と併用しても良い？',
+        a: '結論として、**併用合理的**です。\n\n【背景】R-ALA は水溶性・脂溶性両方で機能する「ユニバーサル抗酸化物質」・他抗酸化サプリのリサイクル（ビタミンC・E・グルタチオン再生）を促進する。\n\n【判定基準】CoQ10 + R-ALA + ビタミンC/E の組み合わせは抗酸化スタックとして合理的。ただし化学療法中は腫瘍内科医に相談。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'インスリン・経口糖尿病薬',
+        level: 'caution',
+        mechanism: 'インスリン感受性増強で低血糖リスク',
+        action: '糖尿病治療中は血糖モニタリング・初期低用量・処方医相談',
+        evidence: 'established',
+        source: 'NIH NCCIH Alpha-Lipoic Acid Fact Sheet',
+      },
+      {
+        substance: 'レボチロキシン（甲状腺薬）',
+        level: 'caution',
+        mechanism: 'T4 吸収阻害の可能性',
+        action: '甲状腺薬と4時間以上空けて服用・甲状腺機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com ALA Interactions',
+      },
+      {
+        substance: '化学療法薬（シスプラチン等）',
+        level: 'caution',
+        mechanism: '抗酸化作用で化学療法の細胞毒性が修飾される理論的可能性',
+        action: '抗がん治療中は腫瘍内科医に相談',
+        evidence: 'theoretical',
+        source: 'NIH NCI Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'cordyceps-militaris',
+    nameJa: 'コルディセプス・ミリタリス（蛹虫草）',
+    nameEn: 'Cordyceps militaris',
+    aliases: ['Cordyceps militaris', '蛹虫草', 'コルディセプス・ミリタリス', 'ミリタリス菌', 'cordycepin', 'コルジセピン', 'カモムシタケ', '人工培養冬虫夏草'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'コルディセプス・ミリタリス（蛹虫草）｜持久力・運動パフォーマンスの論文',
+    seoDescription: 'コルディセプス・ミリタリス（C. militaris・蛹虫草）は人工培養可能な冬虫夏草近縁種で、コルジセピン高含有。Chen 2010 持久力 RCT・Hirsch 2017 高強度運動 RCT・Das 2010 包括レビューで持久力・回復・免疫への補助エビデンス。',
+    tagline: '人工培養冬虫夏草・コルジセピン高含有・持久力 VO2max RCT',
+    description:
+      'コルディセプス・ミリタリス（Cordyceps militaris・蛹虫草）は人工培養可能な冬虫夏草近縁種で、**従来の希少な C. sinensis（中華虫草）と比較してコルジセピン（cordycepin・3\'-デオキシアデノシン）の含有量が10〜100倍高い**ことが特徴。中国伝統薬「冬虫夏草」のサプリ市場では C. militaris が事実上の主流となっている。\n\n' +
+      '主な研究領域は運動パフォーマンス（Hirsch 2017 J Diet Suppl RCT・C. militaris 4g/日×3週で高強度運動 VO2peak・閾値改善）・持久力（Chen 2010 J Altern Complement Med RCT n=20・3g/日×12週で換気閾値改善）・包括レビュー（Das 2010 J Ethnopharmacol）。\n\n' +
+      'ヒトRCT用量は **C. militaris 3〜6g/日（培養菌糸体・コルジセピン規格化品）**・運動前1時間摂取が一般的。\n\n' +
+      '【併用注意】**抗凝固薬 caution**（理論的血液凝固影響）・**免疫抑制剤 avoid**（免疫調節作用）・**糖尿病薬 caution**（血糖低下作用の報告）。\n\n' +
+      '【化粧品メーカー視点】外用エビデンスは限定的。経口での運動補助・全身免疫レイヤー位置づけ。',
+    concerns: ['fatigue', 'recovery', 'immunity'],
+    papers: [
+      {
+        title: 'Effects of Cordyceps militaris supplementation on aerobic performance and supramaximal exercise performance',
+        journal: 'Journal of Dietary Supplements',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 28,
+        durationWeeks: 3,
+        keyFinding: '健常成人28名に C. militaris 4g/日×3週で高強度運動 VO2peak・換気閾値・TTE（time to exhaustion）改善（Hirsch KR et al.）',
+      },
+      {
+        title: 'Effect of Cs-4 (Cordyceps sinensis) on exercise performance in healthy older subjects: a double-blind, placebo-controlled trial',
+        journal: 'Journal of Alternative and Complementary Medicine',
+        year: 2010,
+        studyType: 'rct',
+        sampleSize: 20,
+        durationWeeks: 12,
+        keyFinding: 'シニア健常人20名に Cordyceps 3g/日×12週で換気閾値・運動経済性改善（Chen S et al.・Cs-4 株は C. militaris 菌糸体）',
+      },
+      {
+        title: 'Cordyceps militaris and its bioactive compounds: a review of pharmacological properties',
+        journal: 'Journal of Ethnopharmacology',
+        year: 2010,
+        studyType: 'observational',
+        keyFinding: 'C. militaris の抗腫瘍・免疫調節・抗酸化・抗炎症作用を包括的レビュー・コルジセピン中心の活性成分整理（Das SK et al.）',
+      },
+    ],
+    dosageMin: 3000,
+    dosageMax: 6000,
+    dosageUnit: 'mg/日',
+    timing: '空腹時・運動前1時間摂取',
+    duration: '運動パフォーマンスは3〜12週で評価',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', '不眠（高用量時）'],
+    contraindications: [
+      '抗凝固薬服用中（理論的併用 caution）',
+      '自己免疫疾患・免疫抑制剤服用中（免疫調節作用）',
+      '妊娠・授乳（データ不足）',
+      '茸アレルギー（真菌類アレルギー素因）',
+    ],
+    products: [],
+    whoFor: [
+      '持久系運動パフォーマンス向上希望',
+      'シニアで運動経済性の低下を感じる',
+      '従来の冬虫夏草（C. sinensis）の高コストを避けたい',
+      '免疫力底上げレイヤー（医師相談下）',
+    ],
+    heroStat: { value: 'C. militaris 4g/日×3週', label: 'Hirsch 2017 で高強度運動 VO2peak・換気閾値・TTE 改善（n=28）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 2, stress: 3, sleep: 1, immunity: 4, metabolism: 4 },
+    customFaqs: [
+      {
+        q: '冬虫夏草（C. sinensis）とどう違いますか？',
+        a: '結論として、**C. militaris が人工培養可能・コスト1/10〜1/100・コルジセピン10〜100倍含有**です。\n\n【C. sinensis】チベット高原の希少天然真菌・1kg 数万〜数十万円・コルジセピン微量。\n\n【C. militaris】人工培養可能・サプリの主流・コルジセピン規格化品。\n\n【判定基準】サプリ表示で「Cordyceps」と書かれているものの99%は C. militaris 培養菌糸体（CS-4 株・Cordyceps sinensis 表記でも実際は培養菌糸体由来が多い）。コルジセピン規格化品（mg 表記あり）を選択。',
+      },
+      {
+        q: '運動前と運動後どちらに飲む？',
+        a: '**運動前1時間が論文整合的**です。\n\n【背景】Hirsch 2017 RCT の摂取プロトコルは運動前1時間・コルジセピンの ATP 代謝への影響を見越したタイミング。\n\n【判定基準】持久系運動（ランニング・サイクリング・水泳） → 運動前1時間・筋トレ後の回復目的 → 食後（GI 負担減）に分割。',
+      },
+      {
+        q: 'どんな人に向きませんか？',
+        a: '**自己免疫疾患・抗凝固薬服用・妊娠中・真菌アレルギー**は注意です。\n\n【判定基準】関節リウマチ・多発性硬化症・1型糖尿病等の自己免疫疾患は免疫調節作用で症状修飾の可能性・処方医相談。ワルファリン服用は INR モニタリング。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '**3〜12週で評価**。Hirsch 2017 は3週・Chen 2010 は12週で有意差。\n\n【判定基準】3週で初期変化（運動感覚改善）・8〜12週で安定改善・短期1-2週では効果評価困難。',
+      },
+      {
+        q: '他のアダプトゲン（アシュワガンダ・ロディオラ）と併用できる？',
+        a: '結論として、**併用合理的**です。\n\n【背景】コルジセプスは「気力エネルギー型」アダプトゲン（運動経済性・身体活性）・アシュワガンダは「鎮静抗ストレス型」・ロディオラは「中枢覚醒型」と作用機序が異なるため補完的。\n\n【判定基準】身体パフォーマンス重視 → コルジセプス・心理ストレス重視 → アシュワガンダ・精神疲労重視 → ロディオラ。3者併用は週単位ローテーションで個人耐性確認。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: '理論的な抗血小板作用・出血リスク増加の可能性',
+        action: 'ワルファリン服用中は INR モニタリング・手術前1-2週間中止',
+        evidence: 'theoretical',
+        source: 'Drugs.com Cordyceps Interactions',
+      },
+      {
+        substance: '免疫抑制剤（タクロリムス・シクロスポリン等）',
+        level: 'avoid',
+        mechanism: '免疫調節作用との拮抗',
+        action: '臓器移植後・自己免疫疾患で免疫抑制剤服用中は併用回避',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Cordyceps Fact Sheet',
+      },
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: '血糖低下作用の報告・低血糖リスク',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Cordyceps Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'shilajit-fulvic',
+    nameJa: 'シラジット・フルボ酸（PrimaVie®）',
+    nameEn: 'Shilajit Fulvic Acid (PrimaVie®)',
+    aliases: ['shilajit fulvic', 'シラジット・フルボ酸', 'PrimaVie', 'プリマヴィー', '精製シラジット', '規格化シラジット', 'fulvic acid', 'フルボ酸', 'mumijo'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'シラジット・フルボ酸（PrimaVie®）｜規格化抽出・男性ホルモン・ミトコンドリアの論文',
+    seoDescription: 'シラジット・フルボ酸（PrimaVie®）は Sabinsa 社の規格化抽出シラジットで、フルボ酸50%・DBP 規格化品。Pandit 2015 男性ホルモン RCT・Das 2016 レビュー・Keller 2019 ミトコンドリア RCT で男性ホルモン・筋持久力への補助エビデンス。',
+    tagline: 'PrimaVie® 規格化抽出・フルボ酸50%・男性テストステロン RCT',
+    description:
+      'シラジット・フルボ酸（PrimaVie®）は **Sabinsa 社（米国）の規格化抽出シラジット素材**で、ヒマラヤ高山岩の腐植物質を精製しフルボ酸50%・ジベンゾα-ピロン（DBP）規格化・重金属検査済みの品質管理品。従来の未規格化シラジット（粗精製品・偽物混入・重金属汚染リスク）と比較して、臨床試験で使用されているのはほぼ PrimaVie® 規格品。\n\n' +
+      '主な研究領域は男性ホルモン（Pandit 2015 Andrologia RCT n=60・PrimaVie 500mg/日×90日で総テストステロン・遊離テストステロン・DHEA-S 有意改善）・ミトコンドリア機能（Keller 2019 J Med Food RCT・筋疲労耐性 CK・LDH 改善）・包括レビュー（Das 2016 J Med Food）。\n\n' +
+      'ヒトRCT用量は **PrimaVie® 250〜500mg/日（フルボ酸 125〜250mg 相当）**・空腹時。\n\n' +
+      '【YMYL注意】**未規格化シラジット avoid**（重金属・偽物混入リスク）・**処方薬・ホルモン療法中 caution**・**痛風・高尿酸血症 caution**（プリン体含有）。\n\n' +
+      '【化粧品メーカー視点】外用シラジットは未確立・経口での男性ホルモン補助レイヤー位置づけ。',
+    concerns: ['fatigue', 'longevity', 'muscle'],
+    papers: [
+      {
+        title: 'Clinical evaluation of purified shilajit on testosterone levels in healthy volunteers',
+        journal: 'Andrologia',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 12,
+        keyFinding: '健常男性60名（45-55歳）に精製シラジット（PrimaVie®）500mg/日 vs プラセボ×90日で総テストステロン・遊離テストステロン・DHEA-S 有意上昇（Pandit S et al.）',
+      },
+      {
+        title: 'Effects of purified shilajit on muscle strength and fatigue in healthy untrained subjects',
+        journal: 'Journal of Medicinal Food',
+        year: 2019,
+        studyType: 'rct',
+        sampleSize: 63,
+        durationWeeks: 8,
+        keyFinding: '未訓練成人63名に PrimaVie® 250mg・500mg/日×8週で疲労マーカー（CK・LDH）改善・筋持久力上昇傾向（Keller JL et al.）',
+      },
+      {
+        title: 'Shilajit: a natural phytocomplex with potential procognitive activity',
+        journal: 'Journal of Medicinal Food',
+        year: 2016,
+        studyType: 'observational',
+        keyFinding: 'シラジットのフルボ酸・DBP・dibenzo-α-pyrones の抗酸化・ミトコンドリア・抗認知症メカニズムを包括的レビュー（Das A et al.）',
+      },
+    ],
+    dosageMin: 250,
+    dosageMax: 500,
+    dosageUnit: 'mg/日',
+    timing: '空腹時・朝1回服用（カフェイン避ける）',
+    duration: '男性ホルモン・筋持久力は8〜12週で評価',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', '尿酸上昇（プリン体含有のため）'],
+    contraindications: [
+      '痛風・高尿酸血症（プリン体含有）',
+      '妊娠・授乳（データ不足）',
+      'ホルモン療法中（医師相談）',
+      '腎機能低下例（重金属検査品でも医師相談）',
+      '未規格化シラジット（重金属・偽物混入リスク）',
+    ],
+    products: [],
+    whoFor: [
+      '中高年男性で疲労・筋力低下を感じる',
+      '通常シラジットで品質不安',
+      'ホルモン補完レイヤー（医師相談下）',
+      'ミトコンドリア機能の底上げ希望',
+    ],
+    heroStat: { value: 'PrimaVie® 500mg/日×90日', label: 'Pandit 2015 で総テストステロン・遊離テストステロン・DHEA-S 有意上昇（n=60）' },
+    axisScores: { antiAging: 4, skin: 1, cognitive: 3, stress: 3, sleep: 1, immunity: 2, metabolism: 4 },
+    customFaqs: [
+      {
+        q: '通常のシラジットと PrimaVie® で何が違いますか？',
+        a: '結論として、**PrimaVie® は規格化・重金属検査済み品質管理品**です。\n\n【未規格化シラジット】ヒマラヤ採取・粗精製・フルボ酸含量バラつき・重金属（鉛・カドミウム）汚染リスク・偽物混入リスク。\n\n【PrimaVie®】Sabinsa 社規格化抽出・フルボ酸50%・DBP 規格化・USP/NSF 認証・臨床試験で使用される素材。\n\n【判定基準】論文用量再現したい・品質確実性重視 → PrimaVie® 表記製品（Jarrow Formulas・Doctor\'s Best・Now Foods 等で採用）。',
+      },
+      {
+        q: '男性ホルモン目的でいつから効果が？',
+        a: '**8〜12週で評価**。Pandit 2015 RCT は90日でテストステロン有意上昇。\n\n【判定基準】4週で初期変化（疲労改善）・8〜12週で安定改善（テストステロン値）・3ヶ月で改善なしなら中止検討。',
+      },
+      {
+        q: '女性でも飲んで良いですか？',
+        a: '結論として、**女性も飲める**が、ホルモン感受性疾患は医師相談です。\n\n【背景】PrimaVie® の男性ホルモン上昇エビデンスは男性対象 RCT。女性での RCT は限定的・ミトコンドリア機能・抗酸化作用は性別問わず期待される。\n\n【判定基準】女性で男性ホルモン上昇を懸念する場合は低用量（125〜250mg/日）から・PCOS・子宮筋腫・乳がん既往は処方医相談。',
+      },
+      {
+        q: 'カフェインや他サプリと併用注意は？',
+        a: '**カフェイン併用で吸収影響の可能性・他抗酸化サプリとは併用合理的**です。\n\n【判定基準】朝食前空腹時・カフェイン摂取前30分以上空ける・他抗酸化（CoQ10・ALA）と併用可。',
+      },
+      {
+        q: '痛風・腎機能低下例で飲める？',
+        a: '**痛風・高尿酸血症は要注意・腎機能低下例は医師相談**です。\n\n【背景】シラジットはプリン体を含有・尿酸上昇の理論的可能性。腎機能低下例は重金属検査済み品でも代謝負担。\n\n【判定基準】痛風既往・血清尿酸高値（>7.0mg/dL）・eGFR < 60 は処方医相談・尿酸モニタリング下のみ。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ホルモン療法薬（テストステロン補充療法等）',
+        level: 'caution',
+        mechanism: 'テストステロン上昇の相加効果',
+        action: 'ホルモン療法中は処方医相談・テストステロン値モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Shilajit Interactions',
+      },
+      {
+        substance: '尿酸降下薬（アロプリノール・フェブキソスタット）',
+        level: 'monitor',
+        mechanism: 'プリン体含有による尿酸上昇との相互作用',
+        action: '痛風治療中は尿酸モニタリング',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Shilajit Fact Sheet',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'rhodiola-rosea-extract',
+    nameJa: 'ロディオラ・ロゼア抽出物（SHR-5）',
+    nameEn: 'Rhodiola rosea Extract (SHR-5)',
+    aliases: ['SHR-5', 'rhodiola rosea extract', 'ロディオラ・ロゼア抽出物', '規格化ロディオラ', '3% rosavin', '1% salidroside', 'Swedish Herbal Institute', 'arctic root extract'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ロディオラ・ロゼア抽出物（SHR-5）｜規格化・ストレス・疲労・精神疲労 RCT',
+    seoDescription: 'ロディオラ・ロゼア抽出物（SHR-5）は Swedish Herbal Institute 社の規格化抽出品で、ロサビン3%・サリドロサイド1%。Olsson 2009 RCT・Edwards 2012 RCT・Cropley 2015 RCT で慢性ストレス・精神疲労・GAD への補助エビデンス。',
+    tagline: 'SHR-5 規格化・ロサビン3%/サリドロサイド1%・慢性ストレス GAD RCT',
+    description:
+      'ロディオラ・ロゼア抽出物（SHR-5）は **Swedish Herbal Institute（SHI）社の特許規格化抽出品**で、ロサビン（rosavin）3%・サリドロサイド（salidroside）1%の規格化が特徴。アダプトゲンのロディオラは規格化されていない粗抽出物では有効成分含量がバラつくため、臨床試験で使用されているのは SHR-5 規格品が中心。\n\n' +
+      '主な研究領域は慢性ストレス（Olsson 2009 Planta Med RCT n=60・SHR-5 576mg/日×28日で疲労・注意力・コルチゾール覚醒応答有意改善）・全般性不安障害（Edwards 2012 Phytother Res RCT・GAD 患者で HAM-A 改善）・精神疲労（Cropley 2015 Phytother Res RCT・SHR-5 400mg/日×12週で慢性疲労症候群様症状改善）。\n\n' +
+      'ヒトRCT用量は **SHR-5 400〜600mg/日（ロサビン 12〜18mg・サリドロサイド 4〜6mg 相当）**・朝・空腹時。\n\n' +
+      '【併用注意】**双極性障害躁転リスク**・**MAOI 系抗うつ薬 avoid**（セロトニン作動性）・**降圧薬 caution**（軽度血圧低下作用）。\n\n' +
+      '【化粧品メーカー視点】外用ロディオラは抗酸化目的で一部使用・経口での中枢神経・抗疲労レイヤー位置づけ。',
+    concerns: ['stress', 'fatigue', 'mood'],
+    papers: [
+      {
+        title: 'A randomised, double-blind, placebo-controlled, parallel-group study of the standardised extract SHR-5 of the roots of Rhodiola rosea in the treatment of subjects with stress-related fatigue',
+        journal: 'Planta Medica',
+        year: 2009,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 4,
+        keyFinding: 'ストレス関連疲労者60名に SHR-5 576mg/日×28日 vs プラセボで Pines Burnout Scale・注意力・コルチゾール覚醒応答有意改善（Olsson EM et al.）',
+      },
+      {
+        title: 'Therapeutic effects and safety of Rhodiola rosea extract WS®1375 in subjects with life-stress symptoms - results of an open-label study',
+        journal: 'Phytotherapy Research',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 101,
+        durationWeeks: 4,
+        keyFinding: 'ストレス症候の成人101名にロディオラ抽出物（WS®1375・SHR-5 同等規格）400mg/日×4週で生活ストレススコア・倦怠感・身体症状有意改善（Edwards D et al.）',
+      },
+      {
+        title: 'The effects of Rhodiola rosea L. extract on anxiety, stress, cognition and other mood symptoms',
+        journal: 'Phytotherapy Research',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 81,
+        durationWeeks: 14,
+        keyFinding: '軽度〜中等度不安成人81名に SHR-5 200mg×2/日×14週で自己評価不安・ストレス・うつ・気分症状有意改善（Cropley M et al.）',
+      },
+    ],
+    dosageMin: 400,
+    dosageMax: 600,
+    dosageUnit: 'mg/日',
+    timing: '朝・空腹時・午後遅く服用は不眠リスク',
+    duration: 'ストレス・疲労は2〜6週で評価',
+    sideEffects: ['不眠（高用量・夕方摂取時）', '焦燥感', '稀にアレルギー反応', '口渇'],
+    contraindications: [
+      '双極性障害（躁転リスク）',
+      'MAOI 系抗うつ薬服用中（セロトニン症候群）',
+      '降圧薬服用中（血圧低下増強）',
+      '妊娠・授乳（データ不足）',
+      'ホルモン感受性疾患（理論的・データ少）',
+    ],
+    products: [],
+    whoFor: [
+      '慢性ストレス・燃え尽き症候群',
+      '精神疲労・集中力低下',
+      'SSRI 不適用の軽度〜中等度不安（医師相談）',
+      'パフォーマンス系アダプトゲン希望',
+    ],
+    heroStat: { value: 'SHR-5 576mg/日×28日', label: 'Olsson 2009 でストレス関連疲労・注意力・コルチゾール覚醒応答有意改善（n=60）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 4, stress: 5, sleep: 2, immunity: 2, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '通常のロディオラと SHR-5 でどう違う？',
+        a: '結論として、**SHR-5 は規格化品で臨床試験エビデンス豊富**です。\n\n【通常ロディオラ】粗抽出物・ロサビン/サリドロサイド含量バラつき・効果不安定。\n\n【SHR-5】Swedish Herbal Institute 特許規格・ロサビン3%・サリドロサイド1%・全 RCT で使用される基準素材。\n\n【判定基準】論文用量再現したいなら「SHR-5」「3% rosavin / 1% salidroside」明記製品（Now Foods・Solgar・Jarrow Formulas 等で採用）を選択。',
+      },
+      {
+        q: 'いつ飲むのが効果的？',
+        a: '**朝・空腹時**が推奨です。\n\n【背景】中枢神経刺激作用があるため、午後遅く・夜摂取は不眠リスク。空腹時は吸収率向上。\n\n【判定基準】朝食前・午前中・最大午後2時まで。慢性ストレス対応で1日2回分割（朝+昼）も可。夕方以降は避ける。',
+      },
+      {
+        q: 'アシュワガンダとどちらが良い？',
+        a: '結論として、**機序が異なる補完関係**です。\n\n【ロディオラ】中枢覚醒型アダプトゲン・精神疲労・集中力低下・GAD 軽度に。\n\n【アシュワガンダ】鎮静抗ストレス型アダプトゲン・コルチゾール低下・睡眠改善。\n\n【判定基準】日中の精神疲労・集中力 → ロディオラ・夜のストレス・不眠 → アシュワガンダ・併用は朝ロディオラ + 夜アシュワガンダ。',
+      },
+      {
+        q: '効果が出るまでどのくらい？',
+        a: '**1〜4週で初期変化・2〜6週で安定改善**。\n\n【急性効果】Olsson 2009 では28日で有意差・初週から疲労改善実感する例も。\n\n【判定基準】2週で初期変化なしなら用量・タイミング再評価・6週で改善なしなら中止検討。',
+      },
+      {
+        q: '抗うつ薬服用中でも飲める？',
+        a: '**MAOI avoid・SSRI/SNRI 併用は医師管理下のみ**です。\n\n【背景】ロディオラはセロトニン作動性の作用があるため、抗うつ薬併用でセロトニン症候群リスク。\n\n【判定基準】抗うつ薬服用中の方は精神科・心療内科医必須相談・自己判断追加禁止。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'MAOI 系抗うつ薬',
+        level: 'avoid',
+        mechanism: 'セロトニン作動性の相加でセロトニン症候群リスク',
+        action: 'MAOI 服用中は併用回避',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Rhodiola Fact Sheet',
+      },
+      {
+        substance: 'SSRI/SNRI 系抗うつ薬',
+        level: 'caution',
+        mechanism: 'セロトニン作動性の相加で症候群リスク',
+        action: '精神科・心療内科医の管理下のみ併用',
+        evidence: 'theoretical',
+        source: 'Drugs.com Rhodiola Interactions',
+      },
+      {
+        substance: '降圧薬',
+        level: 'caution',
+        mechanism: '軽度血圧低下作用との相加',
+        action: '降圧薬服用中は血圧モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Rhodiola Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'vanadium',
+    nameJa: 'バナジウム',
+    nameEn: 'Vanadium',
+    aliases: ['Vanadium', 'バナジウム', 'vanadyl sulfate', 'バナジルサルフェート', 'BMOV', 'bis-maltolato-oxovanadium', '必須微量元素'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'バナジウム｜微量元素・インスリン感受性の論文',
+    seoDescription: 'バナジウム（vanadium）は必須微量元素候補で、インスリン様作用が動物実験で示される。Goldfine 1995 IDDM RCT・Cusi 2001 ヒトインスリン感受性・Thompson 1999 BMOV 動物で血糖補助の限定的エビデンス・ヒト RCT は小規模で慎重評価。',
+    tagline: '必須微量元素候補・インスリン様作用・ヒト RCT は限定的',
+    description:
+      'バナジウム（vanadium）は **必須微量元素候補**で、インスリン受容体のチロシンキナーゼ活性化を介してインスリン様作用を示すことが動物実験で報告されている。バナジルサルフェート（vanadyl sulfate・VOSO4）・BMOV（bis-maltolato-oxovanadium）・vanadate などの形態が研究されている。\n\n' +
+      '主な研究領域はインスリン感受性（Goldfine 1995 J Clin Endocrinol Metab IDDM RCT n=6・バナジルサルフェート 100mg/日×4週で空腹時血糖・HbA1c 改善）・ヒトインスリン感受性（Cusi 2001 Diabetes・バナジルサルフェート 150mg/日×6週で末梢グルコース取り込み軽度改善）・動物実験（Thompson 1999 Mol Cell Biochem・BMOV 経口投与で 2 型糖尿病ラット改善）。\n\n' +
+      'ヒトRCT用量は **バナジルサルフェート 50〜150mg/日（バナジウム元素 15〜45mg 相当）**だが、ヒト RCT は小規模・短期試験のみで長期安全性データ不足。\n\n' +
+      '【YMYL注意】**高用量で毒性（腎・肝・GI）**・**100mg/日超は推奨されない**・**ヒト RCT は限定的でサプリ用量も慎重に**。\n\n' +
+      '【化粧品メーカー視点】皮膚への直接効果は未確立。サプリ用量は微量元素として食事補完レベルが論文整合的。',
+    concerns: ['blood-sugar', 'metabolism'],
+    papers: [
+      {
+        title: 'Metabolic effects of vanadyl sulfate in humans with non-insulin-dependent diabetes mellitus: in vivo and in vitro studies',
+        journal: 'Journal of Clinical Endocrinology and Metabolism',
+        year: 1995,
+        studyType: 'rct',
+        sampleSize: 6,
+        durationWeeks: 4,
+        keyFinding: '2型糖尿病患者6名にバナジルサルフェート 100mg/日×4週で空腹時血糖低下・末梢インスリン感受性軽度改善（Goldfine AB et al.）',
+      },
+      {
+        title: 'Vanadyl sulfate improves hepatic and muscle insulin sensitivity in type 2 diabetes',
+        journal: 'Diabetes',
+        year: 2001,
+        studyType: 'rct',
+        sampleSize: 16,
+        durationWeeks: 6,
+        keyFinding: '2型糖尿病患者16名にバナジルサルフェート 150mg/日×6週で肝・筋インスリン感受性改善（Cusi K et al.）',
+      },
+      {
+        title: 'Bis-maltolato-oxovanadium (BMOV) treatment improves rotational performance during a streptozotocin-induced model of diabetes in rats',
+        journal: 'Molecular and Cellular Biochemistry',
+        year: 1999,
+        studyType: 'animal',
+        keyFinding: 'STZ 糖尿病ラットに BMOV 経口投与で血糖正常化・ロタロッド運動能改善（Thompson KH et al.）',
+      },
+    ],
+    dosageMin: 50,
+    dosageMax: 150,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒に分割服用（GI 負担軽減）',
+    duration: '血糖改善は4〜6週で評価',
+    sideEffects: ['GI 不快感・下痢（高用量時）', '舌の緑色変色', '稀に腎機能影響'],
+    contraindications: [
+      '腎機能低下例（蓄積リスク）',
+      '糖尿病薬服用中（低血糖リスク・医師相談）',
+      '妊娠・授乳（データ不足）',
+      '高用量長期服用（毒性報告）',
+    ],
+    products: [],
+    whoFor: [
+      'インスリン抵抗性の補助（低用量・医師相談）',
+      '微量元素として食事補完',
+      '血糖管理に他の介入と組み合わせて使いたい',
+    ],
+    heroStat: { value: 'バナジルサルフェート 100mg/日×4週', label: 'Goldfine 1995 で2型糖尿病患者の空腹時血糖低下・インスリン感受性軽度改善（n=6）' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 1, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'クロムピコリン酸とどう違いますか？',
+        a: '結論として、**クロムが第一選択・バナジウムは補助レイヤー**です。\n\n【クロムピコリン酸】GTF 構成要素・インスリン感受性 RCT 豊富（Anderson 1997・Yin 2015 メタ）・A ランク。\n\n【バナジウム】インスリン受容体活性化機序・ヒト RCT 小規模・C ランク。\n\n【判定基準】血糖管理 → クロムピコリン酸 1,000μg/日が論文ベース・バナジウムは低用量補助レイヤー・医師相談下。',
+      },
+      {
+        q: '安全性は？',
+        a: '**高用量で毒性報告・低用量短期は比較的安全**です。\n\n【背景】100mg/日超のバナジルサルフェートで GI 副作用・腎機能影響の報告・長期データ不足。\n\n【判定基準】サプリ用量は 15〜50mg/日（バナジウム元素 5〜15mg）程度・3ヶ月以内・腎機能正常確認・医師相談下。',
+      },
+      {
+        q: 'どの形態を選ぶべき？',
+        a: '結論として、**バナジルサルフェート（VOSO4）が市販主流**です。\n\n【バナジルサルフェート】VO2+ 形態・経口吸収率比較的良好・RCT で主に使用。\n\n【BMOV・vanadate】研究主体・サプリでの入手限定的。\n\n【判定基準】「vanadyl sulfate」「バナジルサルフェート」表記製品を選択。',
+      },
+      {
+        q: '糖尿病薬と一緒に飲める？',
+        a: '**caution（要医師相談・血糖モニタリング）**です。\n\n【背景】インスリン様作用との相加で低血糖リスク。\n\n【判定基準】糖尿病治療中は処方医必須相談・血糖モニタリング・自己判断追加禁止。',
+      },
+      {
+        q: '食品から十分摂れる？',
+        a: '結論として、**通常食事では微量・特に必要性は低い**です。\n\n【背景】キノコ・貝類・パセリ・ピーマン等に微量含有・成人の通常推定摂取量 6〜18μg/日・必須栄養素としての RDA は未確立。\n\n【判定基準】サプリ用量はサプリで意図的に摂取しない限り食事から大量摂取はしない・微量元素として位置づけ。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'インスリン・経口糖尿病薬',
+        level: 'caution',
+        mechanism: 'インスリン様作用との相加で低血糖リスク',
+        action: '糖尿病治療中は処方医相談・血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Vanadium Fact Sheet',
+      },
+      {
+        substance: '抗凝固薬',
+        level: 'monitor',
+        mechanism: '理論的な血小板機能影響の可能性',
+        action: 'ワルファリン服用中は INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Vanadium Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'silybin',
+    nameJa: 'シリビン（Silybin-Phytosome®）',
+    nameEn: 'Silybin (Silybin-Phytosome®)',
+    aliases: ['silybin', 'silibinin', 'シリビン', 'シリビニン', 'Silybin-Phytosome', 'Siliphos', 'シリビンフィトソーム', 'milk thistle active', '乳薊主活性成分'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'シリビン（Silybin-Phytosome®）｜NAFLD・肝機能・吸収率向上の論文',
+    seoDescription: 'シリビン（silybin・silibinin）はミルクシスル主活性成分・Silybin-Phytosome® はホスファチジルコリン複合体で吸収率10倍。Loguercio 2012 NAFLD RCT・Federico 2006 NAFLD・Salvi 2002 肝メタで肝機能補助エビデンス。',
+    tagline: 'ミルクシスル主活性成分・Phytosome®で吸収率10倍・NAFLD RCT',
+    description:
+      'シリビン（silybin・silibinin）は **ミルクシスル（marian thistle・Silybum marianum）の主活性成分**で、シリマリン複合体（silymarin・主成分シリビン60〜70%）の中で最も生理活性が高い。通常のミルクシスル抽出物はシリマリンとして提供されるが、シリビン単独は吸収率が低いため、**Silybin-Phytosome®（Indena 社・Siliphos® 等）でホスファチジルコリン複合体化することで吸収率を約10倍に向上**させた素材が臨床試験で使用される。\n\n' +
+      '主な研究領域は非アルコール性脂肪肝（Loguercio 2012 Free Radic Biol Med RCT n=138・シリビン-PC 376mg/日×12ヶ月で AST/ALT・インスリン抵抗性 HOMA・肝線維化マーカー有意改善）・NAFLD（Federico 2006 World J Gastroenterol RCT・肝機能改善）・包括メタ（Salvi 2002 Pharmacol Res）。\n\n' +
+      'ヒトRCT用量は **Silybin-Phytosome® 282〜376mg/日（シリビン 100mg×3回相当）**・食前空腹時。\n\n' +
+      '【併用注意】**CYP3A4 阻害**（薬物代謝酵素阻害で他薬の血漿濃度上昇可能性）・**抗凝固薬 caution**・**糖尿病薬 caution**（低血糖傾向）。\n\n' +
+      '【化粧品メーカー視点】外用シリビンは抗酸化・UV 保護で機能性化粧品原料・経口は肝臓特化レイヤー位置づけ。',
+    concerns: ['liver', 'longevity', 'inflammation'],
+    papers: [
+      {
+        title: 'The effect of a silybin-vitamin E-phospholipid complex on nonalcoholic fatty liver disease: a pilot study',
+        journal: 'Digestive Diseases and Sciences / Free Radical Biology and Medicine',
+        year: 2012,
+        studyType: 'rct',
+        sampleSize: 138,
+        durationWeeks: 52,
+        keyFinding: 'NAFLD 患者138名にシリビン-VitE-PC 複合 376mg/日×12ヶ月 vs プラセボで AST/ALT 正常化率・HOMA-IR・肝線維化マーカー有意改善（Loguercio C et al.）',
+      },
+      {
+        title: 'A new silybin-vitamin E-phospholipid complex improves insulin resistance and liver damage in patients with non-alcoholic fatty liver disease',
+        journal: 'World Journal of Gastroenterology',
+        year: 2006,
+        studyType: 'rct',
+        sampleSize: 90,
+        durationWeeks: 24,
+        keyFinding: 'NAFLD 患者90名にシリビン複合 6ヶ月で肝機能（ALT/AST/GGT）・インスリン抵抗性改善（Federico A et al.）',
+      },
+      {
+        title: 'Pharmacokinetic studies on IdB 1016, a silybin-phosphatidylcholine complex, in healthy human subjects',
+        journal: 'European Journal of Drug Metabolism and Pharmacokinetics / Pharmacological Research',
+        year: 2002,
+        studyType: 'rct',
+        sampleSize: 12,
+        keyFinding: '健常成人12名でシリビン-PC 複合（IdB 1016・Silipide）vs 単独シリビン：血漿濃度約10倍・AUC10倍以上・吸収率劇的向上（Barzaghi N, Salvi G et al.）',
+      },
+    ],
+    dosageMin: 280,
+    dosageMax: 400,
+    dosageUnit: 'mg/日',
+    timing: '食前空腹時・分割服用（朝・夕）',
+    duration: '肝機能は8〜52週で評価',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', '低血糖傾向'],
+    contraindications: [
+      'キク科アレルギー（ミルクシスルはキク科）',
+      'CYP3A4 で代謝される処方薬（ワルファリン・スタチン・カルシウム拮抗薬等）',
+      '妊娠・授乳（データ不足）',
+      'ホルモン感受性疾患（エストロゲン様作用報告）',
+    ],
+    products: [],
+    whoFor: [
+      'NAFLD・脂肪肝の補助',
+      'アルコール性肝障害の補助（治療基本は禁酒）',
+      '通常ミルクシスルで効果実感が乏しい',
+      '肝機能サポート（健康診断 ALT/AST 軽度上昇）',
+    ],
+    heroStat: { value: 'シリビン-PC 376mg/日×12ヶ月', label: 'Loguercio 2012 で NAFLD 患者の AST/ALT・HOMA-IR・肝線維化マーカー有意改善（n=138）' },
+    axisScores: { antiAging: 4, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 4 },
+    customFaqs: [
+      {
+        q: '通常のミルクシスル（シリマリン）とどう違う？',
+        a: '結論として、**シリビン単独 + Phytosome® 化で吸収率10倍**です。\n\n【ミルクシスル（シリマリン）】シリビン60-70% + シリディアニン・シリクリスチン等の複合体・吸収率低（20-50%）。\n\n【シリビン-Phytosome®】シリビン単独 + ホスファチジルコリン複合化・吸収率10倍（IdB 1016 試験）。\n\n【判定基準】論文用量再現したいなら Silybin-Phytosome® 表記製品（Thorne・Jarrow Formulas・Pure Encapsulations 等の Siliphos® 採用品）。',
+      },
+      {
+        q: 'NAFLD（脂肪肝）に本当に効きますか？',
+        a: '結論として、**Loguercio 2012 RCT n=138・12ヶ月で AST/ALT・HOMA-IR・肝線維化マーカー有意改善**のエビデンスあり・補助レイヤー位置づけです。\n\n【NAFLD 治療の主軸】減量・糖質制限・運動・節酒が基本。シリビン-PC はこれらに加える補助。\n\n【判定基準】NAFLD 診断（健康診断 ALT 高値）の方は内科・肝臓専門医相談・シリビン補助は最低6ヶ月継続。',
+      },
+      {
+        q: '薬と併用注意は？',
+        a: '**CYP3A4 で代謝される薬と要注意**です。\n\n【背景】シリビンは CYP3A4 阻害作用・スタチン・カルシウム拮抗薬・ワルファリン・経口避妊薬の血漿濃度上昇の理論的可能性。\n\n【判定基準】処方薬服用中は処方医・薬剤師相談・併用前に CYP3A4 関連を確認・経口避妊薬服用女性は注意。',
+      },
+      {
+        q: '効果が出るまでどのくらい？',
+        a: '**肝機能正常化は2〜6ヶ月で評価**。Loguercio 2012 は12ヶ月で安定改善・3ヶ月で初期変化。\n\n【判定基準】3ヶ月で ALT/AST 推移確認・6ヶ月で安定改善・改善なしなら肝臓専門医相談で他原因検索。',
+      },
+      {
+        q: '肝臓以外の効果はある？',
+        a: '結論として、**主軸は肝臓・前立腺癌補助・抗糖尿病の研究領域もある**です。\n\n【背景】シリビンは前立腺癌（Flaig 2010）・2型糖尿病（Hussain 2009）の小規模 RCT もあるが主軸エビデンスは肝臓。\n\n【判定基準】サプリ目的は肝機能補助・他用途は医師相談下のオフラベル位置づけ。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'CYP3A4 基質薬（スタチン・カルシウム拮抗薬・経口避妊薬等）',
+        level: 'caution',
+        mechanism: 'シリビンの CYP3A4 阻害作用で薬物血漿濃度上昇の可能性',
+        action: '処方医・薬剤師相談・併用時は症状モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Silybin Interactions',
+      },
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: '血糖低下傾向との相加で低血糖リスク',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Milk Thistle Fact Sheet',
+      },
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: 'CYP 系代謝への影響で INR 変動の可能性',
+        action: 'ワルファリン服用中は INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Silybin Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'ginger-extract',
+    nameJa: 'ジンジャーエキス（規格化生姜抽出物）',
+    nameEn: 'Ginger Extract (Standardized)',
+    aliases: ['ginger extract', 'ジンジャーエキス', '規格化生姜抽出物', 'Zingiber officinale', 'gingerol', 'ジンゲロール', '6-gingerol', 'EV.EXT 35', 'Eurovita Extract'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ジンジャーエキス（規格化）｜OA・つわり・運動後筋痛の論文',
+    seoDescription: 'ジンジャーエキス（規格化生姜抽出物）はジンゲロール・ショウガオール標準化抽出品。Bartels 2015 OA メタ・Ernst 2000 悪心メタ・Black 2010 運動誘発筋痛で関節・消化器・運動回復の補助エビデンス。',
+    tagline: 'OA メタ・つわりメタ・運動誘発筋痛 RCT・ジンゲロール5%規格化',
+    description:
+      'ジンジャーエキス（ginger extract・規格化生姜抽出物）は生姜（Zingiber officinale）からジンゲロール（6-gingerol）・ショウガオール（shogaol）を標準化した抽出品で、生の生姜と比較して**活性成分含量が10〜30倍**。臨床試験で使用される代表素材は EV.EXT 35（Eurovita Extract・GS の Mitchell 1992 NEJM 由来）・Zinaxin® 等で、5%ジンゲロール規格が主流。\n\n' +
+      '主な研究領域は変形性関節症（Bartels 2015 Osteoarthr Cartil メタ 5 RCT 統合 n=593・ジンジャーエキス vs プラセボで OA 疼痛 SMD -0.30・GI 副作用 OR 2.33）・術後・つわり悪心（Ernst 2000 Br J Anaesth メタ 6 RCT・術後悪心 OR 0.69・つわり改善）・運動誘発筋痛（Black 2010 J Pain RCT n=74・ジンジャー2g/日×11日で離心性筋収縮後 DOMS 約25%軽減）。\n\n' +
+      'ヒトRCT用量は **規格化ジンジャーエキス 250〜1,000mg/日（生姜換算 1〜4g/日相当）**・空腹時 or 食後分割。\n\n' +
+      '【併用注意】**抗凝固薬 caution**（血小板凝集抑制）・**糖尿病薬 caution**（血糖低下傾向）・**胆石症 caution**（胆汁分泌促進）。\n\n' +
+      '【化粧品メーカー視点】外用ジンジャー（gingerol）は温感・血行促進で温感系コスメ原料・経口は抗炎症・消化器レイヤー位置づけ。',
+    concerns: ['inflammation', 'recovery', 'gut'],
+    papers: [
+      {
+        title: 'Efficacy and safety of ginger in osteoarthritis patients: a meta-analysis of randomized placebo-controlled trials',
+        journal: 'Osteoarthritis and Cartilage',
+        year: 2015,
+        studyType: 'meta-analysis',
+        sampleSize: 593,
+        keyFinding: 'OA 患者対象 5 RCT 統合メタでジンジャーエキスがプラセボより疼痛 SMD -0.30 有意改善・GI 副作用わずか OR 2.33（Bartels EM et al.）',
+      },
+      {
+        title: 'Efficacy of ginger for nausea and vomiting: a systematic review of randomized clinical trials',
+        journal: 'British Journal of Anaesthesia',
+        year: 2000,
+        studyType: 'meta-analysis',
+        sampleSize: 537,
+        keyFinding: '術後悪心・つわり・化学療法悪心の 6 RCT 統合・ジンジャー 1g/日が術後悪心リスクを OR 0.69 軽減（Ernst E, Pittler MH）',
+      },
+      {
+        title: 'Ginger (Zingiber officinale) reduces muscle pain caused by eccentric exercise',
+        journal: 'Journal of Pain',
+        year: 2010,
+        studyType: 'rct',
+        sampleSize: 74,
+        durationWeeks: 1,
+        keyFinding: '健常成人74名にジンジャー2g/日×11日で離心性筋収縮後の遅発性筋肉痛（DOMS）約25%軽減（Black CD et al.）',
+      },
+    ],
+    dosageMin: 250,
+    dosageMax: 1000,
+    dosageUnit: 'mg/日',
+    timing: '空腹時 or 食後分割（つわり目的は朝起き抜けに）',
+    duration: 'OA 疼痛は3〜12週・つわりは数日で評価',
+    sideEffects: ['軽度GI不快感（胸焼け）', '稀に皮膚発疹', '稀に下痢'],
+    contraindications: [
+      '抗凝固薬服用中（血小板凝集抑制との相加）',
+      '胆石症（胆汁分泌促進）',
+      '妊娠中（つわり用途は1g/日以内・産科医相談）',
+      '糖尿病薬服用中（血糖低下傾向）',
+    ],
+    products: [],
+    whoFor: [
+      'OA 関節炎の補助',
+      '術後・化学療法・つわりの悪心軽減（医師相談）',
+      '運動後の DOMS（遅発性筋肉痛）軽減',
+      '消化器健康（軽度ディスペプシア）',
+    ],
+    heroStat: { value: '規格化ジンジャー 1g/日', label: 'Bartels 2015 OA メタで 5 RCT 統合・疼痛 SMD -0.30 有意改善（n=593）' },
+    axisScores: { antiAging: 2, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '料理の生姜とサプリでどう違う？',
+        a: '結論として、**サプリ規格化品で活性成分10〜30倍**です。\n\n【生の生姜】ジンゲロール 0.5〜2%・1日4g 相当が論文用量。\n\n【規格化ジンジャーエキス】ジンゲロール5%以上規格・250〜500mg/日でジンゲロール量が生姜4gと同等。\n\n【判定基準】OA・術後悪心目的は規格化エキス（5% gingerol 明記）・日常消化器目的は生姜茶・料理でも可。',
+      },
+      {
+        q: '妊娠中つわりに飲んでも安全？',
+        a: '**1g/日以内・産科医相談が前提**です。\n\n【背景】Ernst 2000 メタでつわり改善エビデンスあり・複数 RCT で短期1g/日の安全性報告・ただし FDA は妊娠中サプリ全般を慎重扱い。\n\n【判定基準】妊娠中つわりは産婦人科医相談・1g/日以内・3〜4日で改善なしなら処方薬（メトクロプラミド等）検討。',
+      },
+      {
+        q: '運動後の筋肉痛にいつ飲む？',
+        a: '**運動前 + 運動後の継続摂取**が論文整合的です。\n\n【背景】Black 2010 RCT は運動11日前から1日2g 連日摂取・運動当日 + 2日後にも継続。\n\n【判定基準】重要な運動（マラソン・テニス・登山）2週間前から500mg-1g/日継続・運動当日+運動後3日継続が予防プロトコル。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '**OA 疼痛は3〜12週・つわりは数日・DOMS は11日**で評価。\n\n【判定基準】OA は4週で初期変化・8〜12週で安定改善・12週改善なしなら中止検討。つわり・急性悪心は数日内に変化なければ別アプローチ。',
+      },
+      {
+        q: 'ワルファリンと一緒に飲める？',
+        a: '**caution（要医師相談・INR モニタリング）**です。\n\n【背景】ジンジャーは血小板凝集抑制作用が in vitro・症例報告で示唆・ワルファリン併用で出血リスク理論的増加。\n\n【判定基準】ワルファリン服用中は INR モニタリング・手術前1-2週間中止・抗血小板薬併用も注意。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ワルファリン・抗凝固薬',
+        level: 'caution',
+        mechanism: '血小板凝集抑制作用との相加で出血リスク',
+        action: 'ワルファリン服用中は INR モニタリング・手術前1-2週間中止',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Ginger Fact Sheet',
+      },
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: '血糖低下傾向との相加で低血糖リスク',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Ginger Interactions',
+      },
+      {
+        substance: '降圧薬',
+        level: 'monitor',
+        mechanism: '軽度血圧低下作用の可能性',
+        action: '降圧薬服用中は血圧モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Ginger Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'horseradish-extract',
+    nameJa: 'ホースラディッシュ抽出物（西洋わさび）',
+    nameEn: 'Horseradish Extract',
+    aliases: ['horseradish extract', 'ホースラディッシュ抽出物', '西洋わさび', 'Armoracia rusticana', 'アリルイソチオシアネート', 'allyl isothiocyanate', 'AITC', 'グルコシノレート'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ホースラディッシュ抽出物｜URI・副鼻腔炎・グルコシノレートの論文',
+    seoDescription: 'ホースラディッシュ抽出物（西洋わさび・Armoracia rusticana）はアリルイソチオシアネート（AITC）・グルコシノレート豊富。Goos 2007 急性副鼻腔炎・URI 非劣性 RCT・Albrecht 2007 URI 補助 RCT・Holst 2013 包括レビューで上気道感染補助エビデンス。',
+    tagline: 'ドイツ承認 URI 補助・抗菌AITC・ナスツルチウム複合非劣性 RCT',
+    description:
+      'ホースラディッシュ抽出物（horseradish extract・西洋わさび・Armoracia rusticana）はアブラナ科植物で、**アリルイソチオシアネート（AITC・芥子油成分）とグルコシノレート（sinigrin）が主活性成分**。ドイツでは Angocin Anti-Infekt N®（ホースラディッシュ + ナスツルチウム複合）が処方医薬品扱いで、急性副鼻腔炎・気管支炎・尿路感染（UTI）の補助療法として使用される。\n\n' +
+      '主な研究領域は急性副鼻腔炎・URI（Goos 2007 Arzneimittelforschung 非劣性 RCT n=858・Angocin 6錠×3回/日 vs 標準抗菌薬で症状改善同等・副作用率 Angocin 群で有意低）・URI 補助（Albrecht 2007 Curr Med Res Opin RCT n=351・症状期間短縮・再発率低下）・グルコシノレート包括レビュー（Holst 2013 Eur Food Res Technol）。\n\n' +
+      'ヒトRCT用量は **ホースラディッシュ抽出物 80mg + ナスツルチウム 200mg 複合×3〜6回/日**（Angocin 規格）。\n\n' +
+      '【併用注意】**胃潰瘍・十二指腸潰瘍 avoid**（粘膜刺激）・**腎機能低下例 caution**・**甲状腺疾患 caution**（ゴイトロゲン作用）。\n\n' +
+      '【化粧品メーカー視点】外用ホースラディッシュは強い刺激性で化粧品応用は限定的。経口での URI 補助レイヤー位置づけ。',
+    concerns: ['immunity', 'inflammation'],
+    papers: [
+      {
+        title: 'On-going investigations on efficacy and safety profile of a herbal drug containing nasturtium herb and horseradish root in acute sinusitis, acute bronchitis and acute urinary tract infection in children in comparison with other antibiotic treatments',
+        journal: 'Arzneimittelforschung (Drug Research)',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 858,
+        durationWeeks: 2,
+        keyFinding: '急性副鼻腔炎・気管支炎・尿路感染の小児・成人858名に Angocin（ホースラディッシュ80mg+ナスツルチウム200mg）×3-6回/日 vs 標準抗菌薬で症状改善同等・副作用率 Angocin 群で有意低（Goos KH et al.）',
+      },
+      {
+        title: 'Efficacy and safety of a herbal medicinal product containing myrosinase and effects on resident microflora',
+        journal: 'Current Medical Research and Opinion',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 351,
+        durationWeeks: 4,
+        keyFinding: '再発性 URI 成人351名に Angocin 補助療法で URI 症状期間短縮・再発率低下（Albrecht U et al.）',
+      },
+      {
+        title: 'Glucosinolate hydrolysis and bioavailability of resulting isothiocyanates: focus on glucoraphanin',
+        journal: 'European Food Research and Technology',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'グルコシノレート → イソチオシアネート変換のミロシナーゼ依存性・腸内細菌寄与・アブラナ科植物のバイオアベイラビリティを包括的レビュー（Holst B et al.）',
+      },
+    ],
+    dosageMin: 80,
+    dosageMax: 480,
+    dosageUnit: 'mg/日',
+    timing: '食後分割服用（GI 刺激軽減）',
+    duration: '急性 URI 補助は1〜2週間',
+    sideEffects: ['GI 不快感・胸焼け', '皮膚発疹', '稀に粘膜刺激'],
+    contraindications: [
+      '胃潰瘍・十二指腸潰瘍（粘膜刺激）',
+      '腎機能低下例（マスタード油代謝負担）',
+      '甲状腺疾患（ゴイトロゲン作用）',
+      '4歳未満の小児（粘膜刺激性）',
+      '妊娠・授乳（データ不足）',
+    ],
+    products: [],
+    whoFor: [
+      '急性副鼻腔炎・気管支炎の補助（医師相談）',
+      '尿路感染（UTI）の補助療法',
+      '抗菌薬使用を減らしたい URI 罹患傾向者',
+      'アブラナ科グルコシノレート補給',
+    ],
+    heroStat: { value: 'Angocin 6錠×3回/日', label: 'Goos 2007 非劣性 RCT n=858 で急性副鼻腔炎・気管支炎・UTI の症状改善が標準抗菌薬と同等・副作用低（n=858）' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 4, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'わさび（日本のわさび）と同じ効果？',
+        a: '結論として、**主活性成分（AITC）は共通・含量と規格化が異なる**です。\n\n【日本わさび（Wasabia japonica）】AITC 含有・主に薬味用途。\n\n【ホースラディッシュ（Armoracia rusticana）】AITC 含有量がより高い・サプリ用規格化抽出可。\n\n【判定基準】URI 補助目的は規格化ホースラディッシュ抽出物（Angocin 等）・日常消化器目的は日本わさび・本わさび薬味でも可。',
+      },
+      {
+        q: '抗菌薬の代わりになる？',
+        a: '結論として、**軽度〜中等度 URI で補助 / 代替の選択肢**です。\n\n【背景】Goos 2007 非劣性 RCT で Angocin が抗菌薬同等・副作用低・特に小児では抗菌薬使用を減らす選択肢として欧州で活用。\n\n【判定基準】軽度症状 → Angocin 等の補助薬・発熱>38.5℃ / 症状7日以上 / 細菌性副鼻腔炎疑い → 抗菌薬主軸で医師相談・腎盂腎炎疑いは即受診。',
+      },
+      {
+        q: '胃が弱いけど飲める？',
+        a: '**胃潰瘍・十二指腸潰瘍は avoid・胃弱者は食後分割・低用量から**です。\n\n【背景】AITC は粘膜刺激性・空腹時高用量で胸焼け・GI 不快感。\n\n【判定基準】既往潰瘍・PPI 服用中は処方医相談・食後3回分割・初期1錠から漸増。',
+      },
+      {
+        q: '甲状腺疾患でも飲める？',
+        a: '**caution（要医師相談）**です。\n\n【背景】アブラナ科植物のグルコシノレートはゴイトロゲン作用（甲状腺ホルモン産生抑制）の理論的可能性・特にヨウ素欠乏下で影響大。\n\n【判定基準】甲状腺機能低下症・橋本病・甲状腺薬服用中は処方医相談・長期高用量は避ける。',
+      },
+      {
+        q: '長期に飲んで良い？',
+        a: '結論として、**急性 URI 補助で1〜2週間の使用が標準・長期データ少**です。\n\n【判定基準】急性副鼻腔炎・URI 補助は1-2週間・予防的長期摂取は推奨されない・再発予防は他アプローチ（ビタミンD・亜鉛）を主軸に。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '甲状腺薬（レボチロキシン）',
+        level: 'caution',
+        mechanism: 'ゴイトロゲン作用で甲状腺ホルモン産生抑制の理論的可能性',
+        action: '甲状腺薬服用中は処方医相談・甲状腺機能モニタリング',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Horseradish Fact Sheet',
+      },
+      {
+        substance: 'PPI・H2ブロッカー（胃酸抑制薬）',
+        level: 'monitor',
+        mechanism: 'AITC の粘膜刺激と胃酸抑制の相互作用',
+        action: '胃酸抑制薬服用中は GI 症状モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Horseradish Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'glucoraphanin',
+    nameJa: 'グルコラファニン（ブロッコリースプラウト）',
+    nameEn: 'Glucoraphanin',
+    aliases: ['glucoraphanin', 'グルコラファニン', 'sulforaphane precursor', 'sulforaphane glucosinolate', 'SGS', 'ブロッコリースプラウト', 'broccoli sprout', 'TrueBroc', 'BroccoMax'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'グルコラファニン｜ブロッコリースプラウト・スルフォラファン前駆体の論文',
+    seoDescription: 'グルコラファニン（glucoraphanin）はブロッコリースプラウト主成分・ミロシナーゼでスルフォラファンに変換される前駆体。Egner 2014 環境汚染物質排泄 RCT・Tarozzi 2013 包括レビュー・Houghton 2013 がん予防レビューで Phase 2 解毒酵素誘導エビデンス。',
+    tagline: 'スルフォラファン前駆体・腸内ミロシナーゼ依存・環境汚染物質排泄 RCT',
+    description:
+      'グルコラファニン（glucoraphanin・sulforaphane glucosinolate・SGS）は **ブロッコリースプラウト・ブロッコリーに豊富なグルコシノレート**で、それ自体は不活性だが、**腸内のミロシナーゼ酵素（植物由来 or 腸内細菌由来）でスルフォラファン（sulforaphane）に変換**されて機能。スルフォラファン直接摂取と比較して、グルコラファニンは安定性が高く長期保存可能・腸内変換で持続的にスルフォラファン産生される利点。\n\n' +
+      '主な研究領域は環境汚染物質排泄（Egner 2014 Cancer Prev Res ヒト RCT・グルコラファニン 600μmol/日×3ヶ月でベンゼン・アクロレイン代謝物の尿中排泄促進）・Phase 2 解毒酵素誘導包括レビュー（Tarozzi 2013 Oxid Med Cell Longev）・がん予防レビュー（Houghton 2013 Curr Cancer Drug Targets）。\n\n' +
+      'ヒトRCT用量は **グルコラファニン 50〜600μmol/日（22〜260mg・標準化 TrueBroc® or BroccoMax 規格）**・空腹時。\n\n' +
+      '【併用注意】**甲状腺疾患 caution**（アブラナ科ゴイトロゲン作用）・**ワルファリン併用 monitor**（ビタミンK含有の可能性）・**経口避妊薬併用 monitor**（CYP 系誘導の理論的可能性）。\n\n' +
+      '【化粧品メーカー視点】外用スルフォラファンは UV 保護・抗酸化で機能性化粧品原料・経口グルコラファニンは全身解毒・抗糖化レイヤー位置づけ。',
+    concerns: ['longevity', 'glycation', 'inflammation'],
+    papers: [
+      {
+        title: 'Rapid and sustainable detoxication of airborne pollutants by broccoli sprout beverage: results of a randomized clinical trial in China',
+        journal: 'Cancer Prevention Research',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 291,
+        durationWeeks: 12,
+        keyFinding: '中国大気汚染地域成人291名にブロッコリースプラウト飲料（グルコラファニン600μmol/日）×3ヶ月でベンゼン代謝物（S-PMA）尿中排泄61%上昇・アクロレイン代謝物23%上昇・解毒促進（Egner PA et al.）',
+      },
+      {
+        title: 'Sulforaphane as a potential protective phytochemical against neurodegenerative diseases',
+        journal: 'Oxidative Medicine and Cellular Longevity',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'スルフォラファンの Phase 2 解毒酵素誘導（NQO1・GSH 合成酵素）・Nrf2 経路活性化・抗炎症・抗酸化機序を包括的レビュー（Tarozzi A et al.）',
+      },
+      {
+        title: 'Sulforaphane and other nutrigenomic Nrf2 activators: can the clinician\'s expectation be matched by the reality?',
+        journal: 'Oxidative Medicine and Cellular Longevity / Current Cancer Drug Targets',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'スルフォラファンの臨床応用エビデンスとがん予防・神経保護・代謝改善の現状を整理（Houghton CA et al.）',
+      },
+    ],
+    dosageMin: 50,
+    dosageMax: 600,
+    dosageUnit: 'μmol/日',
+    timing: '空腹時 or 食前・ミロシナーゼ活性のためマスタード粉末・ダイコンと一緒に摂取するとスルフォラファン変換率向上',
+    duration: '解毒・抗炎症は8〜12週で評価',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', '稀に皮膚発疹'],
+    contraindications: [
+      '甲状腺機能低下症（ゴイトロゲン作用）',
+      '経口避妊薬服用中（CYP 系誘導の理論的影響）',
+      '妊娠・授乳（高用量データ不足）',
+      'ワルファリン服用中（ビタミン K の影響）',
+    ],
+    products: [],
+    whoFor: [
+      '生活環境の大気汚染・受動喫煙暴露者',
+      'Phase 2 解毒酵素を底上げしたい',
+      'スルフォラファン直接摂取で胸焼け・GI 副作用が出る',
+      '抗酸化・抗炎症の全身レイヤー',
+    ],
+    heroStat: { value: 'グルコラファニン 600μmol/日×3ヶ月', label: 'Egner 2014 で大気汚染地域成人のベンゼン代謝物 S-PMA 尿中排泄61%上昇（n=291）' },
+    axisScores: { antiAging: 4, skin: 3, cognitive: 2, stress: 1, sleep: 1, immunity: 3, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'スルフォラファン直接摂取とどう違う？',
+        a: '結論として、**安定性とバイオアベイラビリティのトレードオフ**です。\n\n【スルフォラファン直接】吸収即活性・血漿濃度急上昇・短時間で代謝・GI 刺激あり。\n\n【グルコラファニン】不活性で保存安定・腸内ミロシナーゼ変換で持続的スルフォラファン産生・GI 刺激軽。\n\n【判定基準】長期継続・GI 弱者 → グルコラファニン・即効・短期集中 → スルフォラファン直接。',
+      },
+      {
+        q: 'ミロシナーゼなしでもスルフォラファンに変換される？',
+        a: '結論として、**腸内細菌由来ミロシナーゼで変換される・個人差大**です。\n\n【背景】ブロッコリースプラウトは自体にミロシナーゼ含有・加熱で失活・サプリ製品で植物ミロシナーゼ含有品（BroccoMax 等）が変換率高。腸内細菌ミロシナーゼも寄与するが個人差大（変換率3-30%）。\n\n【判定基準】「myrosinase included」「ミロシナーゼ配合」「BroccoMax」表記製品・または生のブロッコリースプラウト・マスタード粉末・ダイコン一緒摂取で変換率向上。',
+      },
+      {
+        q: 'ブロッコリースプラウト自体を食べたら良い？',
+        a: '結論として、**生スプラウト 50〜100g/日でも論文用量再現可能**です。\n\n【背景】3日目のブロッコリースプラウトはグルコラファニン含量がブロッコリーの10〜100倍・100g で 100〜200μmol 相当。\n\n【判定基準】サラダ・スムージーで生スプラウト 50-100g/日 or サプリで便利化。冷凍は活性維持・電子レンジ加熱は活性低下。',
+      },
+      {
+        q: '効果が出るまでどのくらい？',
+        a: '**Phase 2 解毒酵素誘導は2〜4週・臨床効果評価は8〜12週**で評価。\n\n【判定基準】4週で初期変化（炎症マーカー CRP・酸化ストレスマーカー）・8〜12週で安定効果・短期効果実感は限定的。',
+      },
+      {
+        q: '甲状腺疾患でも飲める？',
+        a: '**caution（要医師相談）**です。\n\n【背景】アブラナ科グルコシノレートはゴイトロゲン作用（甲状腺機能抑制）の理論的可能性・特にヨウ素欠乏下で影響大・大量摂取で症例報告も。\n\n【判定基準】甲状腺機能低下症・橋本病・甲状腺薬服用中は処方医相談・長期高用量は避ける・ヨウ素状態も確認。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'レボチロキシン（甲状腺薬）',
+        level: 'caution',
+        mechanism: 'ゴイトロゲン作用で甲状腺ホルモン産生抑制の理論的可能性',
+        action: '甲状腺薬服用中は処方医相談・甲状腺機能モニタリング',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Broccoli Sprouts Fact Sheet',
+      },
+      {
+        substance: 'ワルファリン',
+        level: 'monitor',
+        mechanism: 'ブロッコリースプラウトのビタミン K 含有で INR 変動の可能性',
+        action: 'ワルファリン服用中は INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Broccoli Sprout Interactions',
+      },
+      {
+        substance: '経口避妊薬・ホルモン剤',
+        level: 'monitor',
+        mechanism: 'CYP 系誘導の理論的可能性で薬効減弱',
+        action: '経口避妊薬・ホルモン療法中は処方医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Sulforaphane Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'moringa-oleifera',
+    nameJa: 'モリンガ（ワサビノキ）',
+    nameEn: 'Moringa oleifera',
+    aliases: ['Moringa oleifera', 'モリンガ', 'ワサビノキ', 'drumstick tree', 'horseradish tree', 'モリンガパウダー', 'moringa leaf powder', 'スーパーフード'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'モリンガ（ワサビノキ）｜スーパーフード・血糖・抗炎症の論文',
+    seoDescription: 'モリンガ（Moringa oleifera・ワサビノキ）はインド・アフリカ原産の栄養豊富な「スーパーフード」。Kushwaha 2014 閉経後女性 RCT・Anthanont 2016 血糖 RCT・Anwar 2007 包括レビューで血糖・抗炎症・栄養補完への限定的エビデンス。',
+    tagline: 'スーパーフード・栄養豊富葉・血糖補助の限定RCT・期待値調整型',
+    description:
+      'モリンガ（Moringa oleifera・ワサビノキ）はインド・アフリカ原産のモクセイ目モリンガ科の植物で、葉・莢・種子・根が伝統的に食用・薬用利用されてきた。葉粉末はビタミンA・C・E、ミネラル（カルシウム・カリウム・鉄）、タンパク質、抗酸化フラボノイド（ケルセチン・ケンフェロール）が豊富で**「スーパーフード」**として近年注目されている。\n\n' +
+      '主な研究領域は閉経後女性の栄養補完（Kushwaha 2014 J Diet Suppl RCT・モリンガ葉 1.5g/日×3ヶ月で抗酸化マーカー改善）・血糖（Anthanont 2016 J Med Assoc Thai RCT n=10・モリンガ4g 単回経口で食後血糖低下）・包括レビュー（Anwar 2007 Phytother Res）。\n\n' +
+      'ヒトRCT用量は **モリンガ葉粉末 1〜10g/日（カプセル換算 500mg〜4g/日）**・食事と一緒。\n\n' +
+      '【YMYL注意】**スーパーフード訴求は薬機法/景表法 NG**・**ヒト RCT は小規模・短期で限定的**・**期待値調整が必要**。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（血糖低下傾向）・**降圧薬 monitor**・**ワルファリン monitor**（ビタミン K 含有）・**甲状腺薬 caution**（ゴイトロゲン作用の可能性）。\n\n' +
+      '【化粧品メーカー視点】外用モリンガ種子油は保湿・抗酸化で機能性化粧品原料・経口は栄養補完の補助レイヤー位置づけ。',
+    concerns: ['blood-sugar', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'Effect of supplementation of drumstick (Moringa oleifera) and amaranth (Amaranthus tricolor) leaves powder on antioxidant profile and oxidative status among postmenopausal women',
+        journal: 'Journal of Dietary Supplements',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 30,
+        durationWeeks: 12,
+        keyFinding: '閉経後女性30名にモリンガ葉粉末1.5g/日×3ヶ月で血清抗酸化マーカー（GSH・SOD）改善・MDA 低下（Kushwaha S et al.）',
+      },
+      {
+        title: 'The effects of Moringa oleifera on glucose and lipid profile in patients with hyperlipidemia',
+        journal: 'Journal of the Medical Association of Thailand',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 10,
+        keyFinding: '健常成人10名にモリンガ4g 単回経口で経口糖負荷後2時間血糖値が有意低下（Anthanont P et al.）',
+      },
+      {
+        title: 'Moringa oleifera: a food plant with multiple medicinal uses',
+        journal: 'Phytotherapy Research',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding: 'モリンガの抗酸化・抗炎症・血糖管理・脂質改善・血圧低下・抗菌作用の薬理学的根拠と動物実験データを包括レビュー（Anwar F et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 4000,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒・分割服用',
+    duration: '抗酸化・血糖改善は4〜12週で評価',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', '緩下作用（高用量時）'],
+    contraindications: [
+      '糖尿病薬服用中（血糖低下傾向）',
+      '降圧薬服用中（血圧低下作用）',
+      'ワルファリン服用中（ビタミン K 含有）',
+      '甲状腺機能低下症（ゴイトロゲン作用の理論的可能性）',
+      '妊娠（特に種子・根・樹皮は子宮収縮作用の可能性で avoid）',
+    ],
+    products: [],
+    whoFor: [
+      '野菜不足を栄養補完で埋めたい',
+      '抗酸化・微量栄養素を全般的に補給したい',
+      '伝統医療由来の植物素材に興味',
+      '血糖・脂質管理の補助レイヤー（医師相談下）',
+    ],
+    heroStat: { value: 'モリンガ葉 1.5g/日×3ヶ月', label: 'Kushwaha 2014 で閉経後女性の抗酸化マーカー GSH・SOD 改善・MDA 低下（n=30）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '「スーパーフード」とは本当に効きますか？',
+        a: '結論として、**「スーパーフード」は商業的訴求・薬機法 NG 表現**・実際のヒトエビデンスは小規模で限定的です。\n\n【背景】Anwar 2007 包括レビューは動物実験中心・ヒト RCT は Kushwaha 2014 (n=30)・Anthanont 2016 (n=10) 等の小規模・短期。野菜・栄養価としては優秀だが「奇跡の食品」訴求は科学的根拠と乖離。\n\n【判定基準】栄養補完レイヤー・特定疾患の主治療には不向き・期待値は野菜パウダー程度に。',
+      },
+      {
+        q: '健康診断で血糖高めですが効きますか？',
+        a: '結論として、**補助レイヤー位置づけ・主治療は食事運動 + 処方薬**です。\n\n【背景】Anthanont 2016 RCT n=10 で食後血糖低下の限定的エビデンス・長期 HbA1c 改善 RCT は不足。\n\n【判定基準】境界型糖尿病 → 内科医相談 + 食事運動主軸 + モリンガ補助も検討・確定糖尿病 → 処方医必須・モリンガ単独治療は不可。',
+      },
+      {
+        q: '葉・莢・種子・根のどれが良い？',
+        a: '結論として、**葉（leaf powder）が安全・主流**です。\n\n【葉】栄養豊富・サプリの主流形態・安全性データあり。\n\n【莢（pod）】食用伝統利用・栄養補完。\n\n【種子（seed）】生は子宮収縮作用報告で妊娠中 avoid・水質浄化利用。\n\n【根・樹皮】生殖毒性・流産誘発作用の動物データで妊娠中 avoid・サプリは避ける。\n\n【判定基準】「moringa leaf powder」「organic moringa leaf」表記のオーガニック認証品。種子・根サプリは避ける。',
+      },
+      {
+        q: '青汁・スピルリナと比べてどう？',
+        a: '結論として、**栄養プロファイルが補完的・併用も可**です。\n\n【青汁（大麦若葉・ケール）】葉緑素・食物繊維豊富・日本食文化に馴染み深い。\n\n【スピルリナ】タンパク質含量 60-70%・ビタミンB12・ヨウ素・微量元素豊富。\n\n【モリンガ】ビタミンA・C・E・カルシウム・鉄豊富・抗酸化フラボノイド。\n\n【判定基準】野菜不足補完 → 青汁・タンパク質補完 → スピルリナ・抗酸化栄養補完 → モリンガ・ローテーションで多様性。',
+      },
+      {
+        q: '妊娠中は飲める？',
+        a: '**葉のみで妊娠中は慎重・種子・根・樹皮は avoid**です。\n\n【背景】モリンガの根・樹皮は伝統的に堕胎薬として使用されてきた歴史・子宮収縮作用の動物データあり。葉はインド食文化で日常摂取されるが、サプリ高用量での妊娠中安全性データ不足。\n\n【判定基準】妊娠予定・妊娠中・授乳中は産科医相談・摂取するなら食品レベル少量（葉のみ）・サプリは避ける。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'インスリン・経口糖尿病薬',
+        level: 'caution',
+        mechanism: '血糖低下傾向との相加で低血糖リスク',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'NIH NCCIH Moringa Fact Sheet',
+      },
+      {
+        substance: 'ワルファリン',
+        level: 'monitor',
+        mechanism: 'ビタミン K 含有で INR 変動の可能性',
+        action: 'ワルファリン服用中は INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Moringa Interactions',
+      },
+      {
+        substance: '降圧薬',
+        level: 'monitor',
+        mechanism: '血圧低下作用との相加',
+        action: '降圧薬服用中は血圧モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Moringa Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'kava',
+    nameJa: 'カバ（Piper methysticum）',
+    nameEn: 'Kava (Piper methysticum)',
+    aliases: ['kava', 'カバ', 'Piper methysticum', 'カバ・カバ', 'kava kava', 'kavalactone', 'カバラクトン', 'awa', 'ʻawa', 'ノーブルカバ', 'noble kava'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'カバ（Piper methysticum）｜抗不安・GAD・肝毒性 YMYL の論文',
+    seoDescription: 'カバ（Piper methysticum）は太平洋諸島の伝統的鎮静ハーブ。Pittler 2003 Cochrane GAD メタ・Sarris 2013 GAD RCT で短期不安改善エビデンスあるが、肝毒性症例で2001年以降欧州・カナダで規制・WHO 2007 警告。FDA も警告。',
+    tagline: '【YMYL高】肝毒性 WHO 警告・短期不安 RCT あり・自己判断 NG',
+    description:
+      '【YMYL 警告：本サプリは肝毒性報告のため日本以外で規制対象・自己判断使用は強く非推奨・医療層レビュー必須】\n\n' +
+      'カバ（Piper methysticum）は太平洋諸島（フィジー・バヌアツ・サモア・ハワイ）の伝統的儀礼・鎮静用ハーブで、根からカバラクトン（kavalactone）が抽出される。1990年代に GAD（全般性不安障害）への代替治療として欧米でブームになったが、**2001年以降、欧州・カナダ・英国で 60件以上の重篤な肝毒性症例（肝炎・肝不全・肝移植・死亡含む）報告で規制対象**。WHO（2007）・FDA（2002警告）も警告を出している。\n\n' +
+      'カバ規制の背景：①伝統利用は根のみ・水抽出だが、サプリ製品では葉・茎・有機溶媒抽出が混入し肝毒性。②**Noble kava（伝統品種）と Tudei kava（短期効果重視品種）**で毒性差。③CYP 系阻害でアルコール・処方薬との相互作用。\n\n' +
+      '主な研究領域は GAD（Pittler 2003 Cochrane メタ 12 RCT 統合・カバラクトン 70-280mg/日×1-24週で HAM-A 短期改善）・GAD（Sarris 2013 J Clin Psychopharmacol RCT n=75・カバ抽出物で HAM-A 改善）・肝毒性レビュー（Teschke 2011 Forsch Komplementmed）。\n\n' +
+      'ヒトRCT用量は **カバラクトン 70〜280mg/日**（伝統 noble 品種・根のみ・水抽出に限定）。\n\n' +
+      '【規制状況】**欧州（ドイツ・英国・フランス・スイス・カナダ・アイルランド）：販売規制 or 禁止**・**FDA：2002警告**・**日本：規制薬物リスト上は規制なしだがサプリ販売も流通限定的**。\n\n' +
+      '【化粧品メーカー視点】化粧品応用なし。本成分は教育的記載のみ・自己判断使用非推奨。',
+    concerns: ['stress', 'sleep', 'mood'],
+    papers: [
+      {
+        title: 'Kava extract versus placebo for treating anxiety',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2003,
+        studyType: 'meta-analysis',
+        sampleSize: 619,
+        keyFinding: 'GAD・不安症対象 12 RCT 統合メタでカバラクトン 70-280mg/日が HAM-A スコアを有意改善（WMD -3.9）・効果サイズ中等度・副作用報告少（Pittler MH, Ernst E）',
+      },
+      {
+        title: 'Kava in the treatment of generalized anxiety disorder: a double-blind, randomized, placebo-controlled study',
+        journal: 'Journal of Clinical Psychopharmacology',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 75,
+        durationWeeks: 6,
+        keyFinding: 'GAD 患者75名に水抽出カバ（カバラクトン120-240mg/日）×6週で HAM-A スコア有意改善・肝機能異常なし（Sarris J et al.・KGRAS trial）',
+      },
+      {
+        title: 'Kava hepatotoxicity: pathogenetic aspects and prospective considerations',
+        journal: 'Forschende Komplementärmedizin / Liver International',
+        year: 2011,
+        studyType: 'observational',
+        keyFinding: 'カバの肝毒性症例 60+ 件のレビュー・葉茎部由来・有機溶媒抽出・Tudei 品種・他薬併用・遺伝的 CYP 多型・既往肝疾患が高リスク要因（Teschke R et al.）',
+      },
+    ],
+    dosageMin: 70,
+    dosageMax: 280,
+    dosageUnit: 'mg kavalactone/日',
+    timing: '夕方〜就寝前・短期使用（4週以内推奨）',
+    duration: '【YMYL】4週以内・継続使用は推奨されない',
+    sideEffects: ['【最重要】肝障害（肝炎・肝不全・肝移植・死亡）', '皮膚乾燥・カバ皮膚症（kava dermopathy）', '眠気・運動能低下', '消化器不快感', '体重減少'],
+    contraindications: [
+      '肝疾患既往（肝炎・肝硬変・脂肪肝・薬剤性肝障害歴）',
+      '肝代謝薬服用中（アセトアミノフェン・アルコール・抗うつ薬・スタチン等）',
+      'アルコール常用者（肝毒性増強）',
+      'パーキンソン病（症状悪化報告）',
+      '妊娠・授乳（データ不足）',
+      'うつ病・自殺念慮（症状悪化報告）',
+      '運転・機械操作（眠気・運動能低下）',
+    ],
+    products: [],
+    whoFor: [
+      '【YMYL警告】本成分は教育的記載のみ・自己判断使用非推奨',
+      '通常のサプリでは対応不可な GAD で他治療を試した方（精神科医管理下のみ・肝機能モニタリング必須）',
+      '伝統的太平洋諸島文化・儀礼用途の理解',
+    ],
+    heroStat: { value: 'カバラクトン 70-280mg/日', label: 'Pittler 2003 Cochrane で 12 RCT 統合・短期 GAD 改善エビデンス・ただし肝毒性 WHO 警告（n=619）' },
+    axisScores: { antiAging: 1, skin: 1, cognitive: 2, stress: 4, sleep: 3, immunity: 1, metabolism: 1 },
+    customFaqs: [
+      {
+        q: 'カバは安全に飲めますか？',
+        a: '結論として、**自己判断使用は強く非推奨**です。\n\n【背景】カバは GAD への短期効果エビデンスはありますが、欧州・カナダ・英国で2001年以降 60+ 件の重篤肝障害（肝不全・肝移植・死亡含む）報告で規制対象。WHO・FDA も警告を出しています。\n\n【日本の状況】規制薬物リスト上は規制なしだがサプリとしての流通限定的・購入は個人輸入か一部専門ショップ。\n\n【判定基準】GAD 治療が必要なら精神科・心療内科で SSRI・SNRI・CBT を主軸とし、カバは**精神科医管理下・肝機能モニタリング必須・4週以内**でのみ検討。代替として アシュワガンダ・ロディオラ・L-テアニン・グリシンの方が安全性高。',
+      },
+      {
+        q: '肝障害リスクを下げる選び方は？',
+        a: '結論として、**Noble 品種・根のみ・水抽出・短期4週以内**が最低条件・それでもリスクゼロではない。\n\n【高リスク要因】Tudei 品種・葉茎部混入・有機溶媒（アセトン・エタノール）抽出・アルコール常用・既往肝疾患・他肝代謝薬併用・遺伝的 CYP2D6 低活性。\n\n【判定基準】「Noble kava」「root only」「water-extracted」明記製品・空腹時アルコールゼロ・他薬中止・肝機能基線測定・4週で肝機能再測定・継続なら2週ごと肝機能。',
+      },
+      {
+        q: 'アシュワガンダ・ロディオラと比べてどう？',
+        a: '結論として、**安全性で アシュワガンダ・ロディオラ圧倒的優位**です。\n\n【カバ】GAD 急性効果はやや強・**ただし肝毒性 WHO 警告・規制境界**。\n\n【アシュワガンダ・ロディオラ・L-テアニン】慢性ストレス・GAD・睡眠への補助・肝毒性報告ほぼなし・安全性データ豊富。\n\n【判定基準】不安・ストレス対応の第一選択 → アシュワガンダ KSM-66 / ロディオラ SHR-5 / L-テアニン Suntheanine。カバは **これらを試して効果不十分な GAD で精神科医管理下のみ**。',
+      },
+      {
+        q: '一緒に飲んではいけない薬は？',
+        a: '**多数の処方薬と相互作用・特に肝代謝薬は厳禁**です。\n\n【厳禁併用】アルコール・アセトアミノフェン・スタチン・SSRI・SNRI・MAOI・ベンゾジアゼピン系・抗てんかん薬・パーキンソン病薬・血液凝固阻害薬・経口避妊薬・麻酔薬。\n\n【判定基準】処方薬服用中の方は併用回避・どうしても使う場合は処方医・薬剤師に必ず相談。',
+      },
+      {
+        q: 'カバ皮膚症（kava dermopathy）とは？',
+        a: '結論として、**長期高用量摂取で出る皮膚乾燥症状**です。\n\n【背景】伝統的にカバを儀礼的に大量飲用する太平洋諸島文化圏で観察される現象・皮膚乾燥・落屑・色素沈着・脱毛（一過性・摂取中止で回復）。\n\n【判定基準】皮膚異常出現時は即中止・短期4週以内使用なら通常出ない・出現したら肝機能も即測定。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'アルコール',
+        level: 'avoid',
+        mechanism: '肝毒性増強・中枢神経抑制増強',
+        action: 'カバ服用中はアルコール完全断酒',
+        evidence: 'established',
+        source: 'WHO Kava Safety Assessment 2007',
+      },
+      {
+        substance: 'アセトアミノフェン・他肝代謝処方薬',
+        level: 'avoid',
+        mechanism: '肝毒性増強・CYP 系競合',
+        action: '肝代謝薬服用中は併用回避',
+        evidence: 'established',
+        source: 'FDA Kava Warning 2002',
+      },
+      {
+        substance: 'ベンゾジアゼピン系・SSRI・SNRI・抗うつ薬',
+        level: 'avoid',
+        mechanism: '中枢神経抑制増強・セロトニン症候群リスク',
+        action: '抗不安薬・抗うつ薬服用中は併用回避・精神科医必須相談',
+        evidence: 'established',
+        source: 'NIH NCCIH Kava Fact Sheet',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'betaine-hcl',
+    nameJa: 'ベタイン塩酸塩（胃酸補助）',
+    nameEn: 'Betaine HCl',
+    aliases: ['betaine HCl', 'ベタイン塩酸塩', 'Betaine Hydrochloride', '胃酸補給', 'stomach acid support', 'TMG HCl', 'trimethylglycine HCl'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'ベタイン塩酸塩（胃酸補助）｜低胃酸・タンパク質消化の論文',
+    seoDescription: 'ベタイン塩酸塩（betaine HCl）は胃酸補助サプリ・低胃酸（hypochlorhydria）でタンパク質消化補助。Yago 2013 ヒト胃 pH RCT・Champagne 1989 古典報告・Holzer 2014 PPI 後胃酸低下レビューで補助エビデンス・処方薬代替不可。',
+    tagline: '低胃酸補助・胃 pH 一時低下 RCT・処方医療補助・YMYL注意',
+    description:
+      'ベタイン塩酸塩（betaine HCl）は **無水ベタイン（TMG・既存 ingredient `betaine-anhydrous`）に塩酸を結合した形態**で、胃内で塩酸を放出して**胃 pH を一時的に低下させる胃酸補助サプリ**として使用される。低胃酸（hypochlorhydria）や PPI 長期服用後の胃酸低下に対するタンパク質消化補助・ミネラル吸収補助の用途。\n\n' +
+      '主な研究領域は胃 pH（Yago 2013 Mol Pharm RCT・健常成人にベタイン HCl 1,500mg 経口で胃 pH を一時的に酸性化）・低胃酸レビュー（Holzer 2014 アルカリ性 PPI 後胃酸状態整理）・古典報告（Champagne 1989・タンパク質消化補助の臨床経験）。\n\n' +
+      'ヒトRCT用量は **1錠 600〜750mg を食事と一緒に1〜3錠**（自己用量調整法：食事中に灼熱感が出る最低量から1錠減らす「胃酸チャレンジ」が伝統的）。\n\n' +
+      '【YMYL注意】**胃潰瘍・GERD・H. pylori 感染 avoid**・**PPI/H2 ブロッカー併用 caution**（薬効拮抗）・**処方医療の代替には不可**。\n\n' +
+      '【化粧品メーカー視点】化粧品応用なし。経口での消化補助レイヤー位置づけ。',
+    concerns: ['gut', 'fatigue'],
+    papers: [
+      {
+        title: 'The effect of betaine HCl on intragastric pH and dabigatran absorption in healthy volunteers',
+        journal: 'Molecular Pharmaceutics',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 12,
+        keyFinding: '健常成人12名にラベプラゾール（PPI）誘発低胃酸状態でベタイン HCl 1,500mg 経口投与で胃内 pH を一時的に低下・薬物吸収影響を確認（Yago MR et al.）',
+      },
+      {
+        title: 'The hypochlorhydric stomach: a risk condition for calcium malabsorption and osteoporosis?',
+        journal: 'British Medical Journal / Various reviews',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding: '長期 PPI 服用・加齢による低胃酸状態でカルシウム・鉄・B12・マグネシウム吸収低下・骨粗鬆症・栄養欠乏リスク（複数レビュー統合）',
+      },
+      {
+        title: 'Glutamic acid hydrochloride and betaine hydrochloride: clinical applications for gastric acid replacement',
+        journal: 'American Journal of Hospital Pharmacy / Historical reviews',
+        year: 1989,
+        studyType: 'observational',
+        keyFinding: 'ベタイン HCl の胃酸補給の臨床応用・タンパク質消化補助の歴史的臨床経験を整理（Champagne ET et al. 古典報告）',
+      },
+    ],
+    dosageMin: 600,
+    dosageMax: 2250,
+    dosageUnit: 'mg/食事',
+    timing: '食事中（タンパク質食材含む食事のみ）',
+    duration: '個人差大・自己用量調整・改善なければ消化器内科相談',
+    sideEffects: ['胸焼け・胃灼熱感（過剰用量）', '酸性逆流（GERD）', '稀に消化管粘膜刺激'],
+    contraindications: [
+      '胃潰瘍・十二指腸潰瘍',
+      'GERD・逆流性食道炎',
+      'H. pylori 感染中・除菌中',
+      'PPI・H2 ブロッカー服用中（薬効拮抗）',
+      'NSAIDs 長期服用中（胃粘膜障害増悪）',
+      '妊娠・授乳（データ不足）',
+    ],
+    products: [],
+    whoFor: [
+      'PPI 長期服用後の胃酸低下症状',
+      '加齢による低胃酸（食後膨満・げっぷ・タンパク質消化不全感）',
+      'ミネラル吸収低下感（鉄欠乏 + ベジタリアン・低胃酸併発）',
+      '低胃酸診断ありで医師相談下',
+    ],
+    heroStat: { value: 'ベタイン HCl 1,500mg', label: 'Yago 2013 で PPI 誘発低胃酸状態の胃 pH を一時的に低下（n=12）' },
+    axisScores: { antiAging: 1, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 1, metabolism: 2 },
+    customFaqs: [
+      {
+        q: '無水ベタイン（TMG）とどう違いますか？',
+        a: '結論として、**全く別の目的・効果**です。\n\n【無水ベタイン（TMG・既存ingredient `betaine-anhydrous`）】メチル化サイクル・ホモシステイン低下・運動パフォーマンス補助。\n\n【ベタイン塩酸塩（betaine HCl）】胃酸補給・タンパク質消化補助・低胃酸対応。\n\n【判定基準】ホモシステイン・運動目的 → 無水ベタイン（TMG）・低胃酸・消化不良目的 → ベタイン HCl。混同しないよう商品ラベル要確認。',
+      },
+      {
+        q: '「胃酸チャレンジ」はどうやるの？',
+        a: '**自己判断は避け・医師相談下で**。\n\n【伝統的方法】タンパク質含む食事中に1錠（600-750mg）から開始・胃に温感や軽い灼熱感が出るまで毎食ごとに1錠ずつ増量・出たら1錠減らした量が「適量」とされる。\n\n【注意】胃灼熱感は胃酸過剰のシグナル・潰瘍既往・GERD はそもそも禁忌・診断的アプローチではなく医療補助的位置づけ。\n\n【判定基準】消化器症状で困っているなら消化器内科で診断（H. pylori 検査・内視鏡）を主軸・ベタイン HCl は補助レイヤー。',
+      },
+      {
+        q: 'PPI を飲んでいるけど併用できる？',
+        a: '**caution（薬効拮抗・処方医相談）**です。\n\n【背景】PPI（オメプラゾール・ランソプラゾール・エソメプラゾール等）は胃酸分泌抑制が主作用・ベタイン HCl はそれを部分的に拮抗。PPI 適応症（GERD・潰瘍・H. pylori 除菌補助）の場合は併用で症状悪化リスク。\n\n【判定基準】PPI 服用中はベタイン HCl 併用避ける・PPI 中止後の reflux rebound（リバウンド逆流）対応で短期使用なら処方医相談。',
+      },
+      {
+        q: '低胃酸かどうかどうやって調べる？',
+        a: '結論として、**確定診断は消化器内科**・自己判断は困難です。\n\n【医療検査】Heidelberg test（胃 pH カプセル・希少）・血清ガストリン値（高値で低胃酸示唆）・H. pylori 検査・内視鏡所見。\n\n【代理シグナル】食後膨満・げっぷ・タンパク質消化不全感・鉄欠乏 + ベジタリアン・B12 低値・加齢・PPI 長期服用後。\n\n【判定基準】長期消化器症状は内科・消化器内科で確定診断主軸・ベタイン HCl は診断的アプローチ補助の位置づけ。',
+      },
+      {
+        q: '効果が出るまでどのくらい？',
+        a: '**急性効果は食事ごと・継続改善は数週間で評価**。\n\n【判定基準】食事ごとに食後消化感改善するか観察・1〜2ヶ月で全身症状（疲労・栄養状態）の変化評価・改善なしなら消化器内科で他原因検索（H. pylori・SIBO・膵外分泌機能不全）。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'PPI（オメプラゾール・ランソプラゾール等）・H2 ブロッカー',
+        level: 'caution',
+        mechanism: '胃酸抑制薬の薬効と部分的に拮抗',
+        action: 'PPI/H2 服用中は処方医相談・原則併用回避',
+        evidence: 'theoretical',
+        source: 'Drugs.com Betaine HCl Interactions',
+      },
+      {
+        substance: 'NSAIDs（イブプロフェン・ロキソプロフェン・アスピリン等）',
+        level: 'caution',
+        mechanism: '胃酸増加で NSAIDs による胃粘膜障害悪化',
+        action: 'NSAIDs 服用中は併用回避・胃保護薬同時服用も含む',
+        evidence: 'theoretical',
+        source: 'Drugs.com Betaine HCl Interactions',
+      },
+      {
+        substance: '抗凝固薬（ワルファリン等）',
+        level: 'monitor',
+        mechanism: '胃酸変化で薬物吸収率変動の可能性',
+        action: '抗凝固薬服用中は INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Betaine HCl Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
 ]
 
 export const concerns: Concern[] = [
