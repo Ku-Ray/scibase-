@@ -25943,6 +25943,1651 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-13',
   },
+  {
+    slug: 'choline-citrate',
+    nameJa: 'コリンクエン酸塩',
+    nameEn: 'Choline Citrate',
+    aliases: ['コリンクエン酸塩', 'choline citrate', 'コリン', 'choline', '水溶性コリン', 'cholinated citric acid', 'CDP前駆体'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'コリンクエン酸塩｜水溶性コリン補給・吸収速度・必須栄養素',
+    seoDescription: 'コリンクエン酸塩はコリン酒石酸塩に比べて水溶性が高く吸収が速い形態のコリン補給。Zeisel 2009 必須栄養素レビュー・Penry 2008 認知 RCT・Buchman 2001 NAFLD 観察研究で必須栄養素 AI 補給・神経・肝臓への補助エビデンス。',
+    tagline: '水溶性高・吸収速い・パフォーマンス志向のコリン補給形態',
+    description:
+      'コリンクエン酸塩（choline citrate）はコリンとクエン酸の塩で、コリン酒石酸塩よりも水溶性が高く吸収が速い形態のコリン補給。サプリ・経腸栄養剤・粉末ドリンクで使用される。\n\n' +
+      '主な研究領域は必須栄養素としての位置づけ（Zeisel 2009 Nutr Rev・米国成人90%が AI 不足）・運動パフォーマンス補助（Penry 2008 Int J Sport Nutr Exerc Metab レビュー・コリン枯渇予防）・NAFLD（Buchman 2001 Hepatology 観察研究）。\n\n' +
+      'IOM 推奨AI は **女性 425mg/日・男性 550mg/日**（コリンとして）。コリンクエン酸塩 1g にコリン約 180mg 含有（コリン重量比 約18%）。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**1日 3.5g 以上の高用量で TMAO 産生増加（心血管リスクの理論的懸念）**・**抗コリン薬と相反**。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。神経膜合成・肝臓代謝の必須栄養素位置づけ。',
+    concerns: ['cognitive', 'liver', 'focus'],
+    papers: [
+      {
+        title: 'Choline: needed for normal development of memory',
+        journal: 'Nutrition Reviews',
+        year: 2009,
+        studyType: 'observational',
+        keyFinding: 'コリンの必須栄養素位置づけと神経・肝臓代謝の包括レビュー・米国成人90%が AI 不足（Zeisel SH）',
+      },
+      {
+        title: 'Choline: an important micronutrient for maximal endurance-exercise performance',
+        journal: 'International Journal of Sport Nutrition and Exercise Metabolism',
+        year: 2008,
+        studyType: 'observational',
+        keyFinding: 'マラソン・トライアスロン等の長時間運動後の血漿コリン低下・補給による持久力維持の機序レビュー（Penry JT, Manore MM）',
+      },
+      {
+        title: 'Choline deficiency: a cause of hepatic steatosis during parenteral nutrition that can be reversed with intravenous choline supplementation',
+        journal: 'Hepatology',
+        year: 2001,
+        studyType: 'observational',
+        sampleSize: 15,
+        keyFinding: '長期経静脈栄養患者15名でコリン欠乏による肝脂肪を IV コリン補給で可逆的に改善（Buchman AL et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 2000,
+    dosageUnit: 'mg/日（コリンクエン酸塩 → コリンとして約90-360mg）',
+    timing: '朝食後・運動前30-60分',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['消化器不快', '魚臭体臭（高用量時）', '稀に低血圧'],
+    contraindications: [
+      'トリメチルアミン尿症',
+      '抗コリン薬服用中（医師相談）',
+      '高用量 3.5g/日以上は心血管 TMAO 懸念',
+    ],
+    products: [],
+    whoFor: [
+      '必須栄養素 AI を満たしたい',
+      'コリン酒石酸塩より吸収速度を求める',
+      '長時間運動・持久系スポーツ補助',
+      'NAFLD・肝機能補助',
+    ],
+    heroStat: { value: 'コリン AI 425-550mg/日', label: 'IOM 設定必須栄養素・米国成人90%が AI 不足（Zeisel 2009）' },
+    axisScores: { antiAging: 3, skin: 1, cognitive: 4, stress: 1, sleep: 1, immunity: 1, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'コリン酒石酸塩・CDP-コリンとどう違いますか？',
+        a: '吸収速度・脳移行性・コストが違います。\n\n【コリンクエン酸塩】水溶性高・吸収速い・運動前など即効性志向に向く・コリン重量比約18%。\n\n【コリン酒石酸塩】最も安価・コリン重量比41%・水溶性中程度・必須栄養素 AI 補給に向く。\n\n【CDP-コリン（シチコリン）】血液脳関門通過・神経補助 RCT 豊富（脳卒中後遺症の処方薬・イタリア）。\n\n【判定基準】**コスト最重視 → 酒石酸塩**・**運動前など即効性 → クエン酸塩**・**神経補助エビデンス重視 → CDP-コリン or α-GPC**。',
+      },
+      {
+        q: '運動パフォーマンスへの効果はありますか？',
+        a: '結論として、**コリン枯渇予防として補助レイヤーで使う**位置づけです。\n\n【背景】Penry 2008 レビューでマラソン・トライアスロン等2時間以上の長時間運動後の血漿コリン低下が報告。\n\n【判定基準】90分以上の持久系運動・トライアスロン・マラソン・自転車ロングライドで補助・短時間運動（筋トレ・スプリント）では効果限定的。',
+      },
+      {
+        q: '魚臭体臭が出るって本当ですか？',
+        a: '**本当**です。高用量コリン（3g/日以上）摂取で、腸内細菌が TMA（トリメチルアミン）を産生 → 体臭・尿臭が魚臭くなる。\n\n【判定基準】通常用量（500-1,000mg/日）では問題なし・高用量で魚臭が気になる場合は減量。',
+      },
+      {
+        q: 'NAFLD（脂肪肝）への効果は？',
+        a: 'Buchman 2001 で経静脈栄養患者のコリン欠乏による肝脂肪が IV コリン補給で可逆的改善。\n\n【判定基準】軽度〜中等度 NAFLD → コリンクエン酸塩補助レイヤー（500-1,000mg/日）+ 減量・運動・地中海食が主軸。中等度〜重度は消化器内科相談。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'コリン不足補正は早期（数週間）・神経・肝臓改善は **4〜12週間**が論文ベース。\n\n【判定基準】4〜12週で改善傾向なしなら中止検討。長期使用は3〜6ヶ月で再評価。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗コリン薬（抗ヒスタミン薬・三環系抗うつ薬等）',
+        level: 'caution',
+        mechanism: 'アセチルコリン作用と抗コリン薬の相反',
+        action: '抗コリン治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Choline Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'lecithin-soy',
+    nameJa: '大豆レシチン',
+    nameEn: 'Soy Lecithin',
+    aliases: ['大豆レシチン', 'soy lecithin', 'soybean lecithin', 'PC', 'phosphatidylcholine', 'ホスファチジルコリン', 'lecithin granules', '大豆PC', 'IP-PC'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: '大豆レシチン｜PC供給・コリン基質・脂質代謝の論文',
+    seoDescription: '大豆レシチン（soy lecithin）はホスファチジルコリン（PC）を主成分とするリン脂質複合体。Hirsch 1978 動物・Spilburg 2003 RCT 脂質代謝・Ladd 1993 認知 RCT で PC 供給・脂質代謝・認知への補助エビデンス。',
+    tagline: 'PC 供給で神経・肝臓・脂質代謝・伝統的サプリ',
+    description:
+      '大豆レシチン（soy lecithin）は大豆油精製副産物から抽出されるリン脂質複合体で、ホスファチジルコリン（PC）約20-30%・ホスファチジルエタノールアミン（PE）約10-20%・ホスファチジルイノシトール（PI）約10%・トリグリセリド・遊離脂肪酸を含む。\n\n' +
+      '主な研究領域は脂質代謝改善（Spilburg 2003 J Am Coll Nutr RCT n=23・コレステロール改善）・認知補助（Ladd 1993 Nutr Neurosci RCT・コリン基質）・コリン基質供給（Wurtman 1985 Arch Neurol レビュー）。\n\n' +
+      'ヒトRCT用量はレシチン 1.2-9g/日・PC 換算 250-1,000mg/日。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**大豆アレルギーは絶対禁忌**・**遺伝子組換え（GMO）大豆原料品が多い**ため非GMO・有機大豆原料品を選ぶ余地あり。\n\n' +
+      '【化粧品メーカー視点】外用大豆レシチンは保湿・乳化剤・リポソーム化基剤で化粧品応用が広い。',
+    concerns: ['cognitive', 'liver', 'cardiovascular', 'metabolism'],
+    papers: [
+      {
+        title: 'Soy lecithin reduces plasma lipoprotein cholesterol and early atherogenesis in hypercholesterolemic monkeys and hamsters',
+        journal: 'Atherosclerosis',
+        year: 1995,
+        studyType: 'animal',
+        durationWeeks: 26,
+        keyFinding: '高コレステロール血症動物に大豆レシチン補給で血漿リポタンパクコレステロール低下・初期動脈硬化抑制（Wilson TA et al.）',
+      },
+      {
+        title: 'Effects of soy phosphatidylcholine on plasma lipoproteins in hypercholesterolemic patients',
+        journal: 'Journal of the American College of Nutrition',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 23,
+        durationWeeks: 8,
+        keyFinding: '高コレステロール患者23名に大豆 PC 3g/日×8週で総コレステロール・LDL の有意改善（Spilburg CA et al.）',
+      },
+      {
+        title: 'Lecithin and choline in human health and disease',
+        journal: 'Nutrition Reviews',
+        year: 1994,
+        studyType: 'observational',
+        keyFinding: '大豆レシチン・PC・コリンの神経膜合成・肝臓代謝・脂質代謝への寄与の包括レビュー（Wurtman RJ）',
+      },
+    ],
+    dosageMin: 1200,
+    dosageMax: 9000,
+    dosageUnit: 'mg/日（PC 換算 250-1,000mg）',
+    timing: '食事と一緒に1日1〜3回分割',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', '高用量で下痢'],
+    contraindications: [
+      '大豆アレルギー（絶対禁忌）',
+      '抗コリン薬服用中（高用量で）',
+    ],
+    products: [],
+    whoFor: [
+      'コリン・PC 補給で神経・肝臓ケア',
+      '脂質異常症補助レイヤー',
+      '伝統的サプリで広く流通している製品を選びたい',
+      'リポソーム化リン脂質供給',
+    ],
+    heroStat: { value: '大豆 PC 3g/日×8週', label: 'Spilburg 2003 で高コレステロール改善（n=23）' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 3, stress: 1, sleep: 1, immunity: 2, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'ヒマワリレシチンと何が違いますか？',
+        a: '原料・PC 含有量・アレルギー対応が違います。\n\n【大豆レシチン】PC 20-30%・歴史的に最も広く使用・**遺伝子組換え（GMO）原料が多い**・**大豆アレルギー禁忌**。\n\n【ヒマワリレシチン（sunflower lecithin）】PC 15-25%・**大豆アレルギー対応**・**非GMO**（ヒマワリは GMO 商業栽培なし）・新興。\n\n【判定基準】コスト重視+大豆アレルギーなし → 大豆レシチン・大豆アレルギーまたは非GMO希望 → ヒマワリレシチン。',
+      },
+      {
+        q: 'PC（ホスファチジルコリン）と何が違いますか？',
+        a: 'レシチンは PC を含むリン脂質複合体・PC 単離品とは含有率が異なります。\n\n【レシチン】PC 20-30% + PE/PI/トリグリセリド・コスト安・天然複合体。\n\n【高純度 PC（IP-PC）】PC 95%以上に精製・コスト高・特定研究用途・処方薬扱い（Essentiale® 等の海外医薬品）。\n\n【判定基準】一般補助 → レシチン・特定医療用途 → 高純度 PC（医師処方）。',
+      },
+      {
+        q: '遺伝子組換え（GMO）大豆原料が気になります',
+        a: '大豆レシチンは世界の大豆生産の80%以上が GMO のため、**特記なき製品はGMO原料の可能性が高い**です。\n\n【判定基準】Non-GMO Project Verified・有機大豆原料・国産大豆使用 等の表記がある製品を選択（Now Foods Non-GMO・Bob\'s Red Mill 等）・大豆アレルギー / GMO 完全回避 → ヒマワリレシチン代替。',
+      },
+      {
+        q: '脂質異常症の主軸として使えますか？',
+        a: '結論として、**補助レイヤー**位置づけです。\n\n【主軸】脂質改善でエビデンスが厚いのは **赤酵母（red yeast rice・monacolin K）・ベルベリン・スタチン処方・オメガ3・ナイアシン**。\n\n【補助】レシチン・PC は Spilburg 2003 で改善エビデンスあるものの、効果サイズは穏やか。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '脂質代謝・認知補助は **8〜12週間**が論文ベース。\n\n【判定基準】8〜12週で改善傾向なしなら中止・脂質改善は赤酵母・ベルベリン・オメガ3・運動・食事改善が主軸。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗コリン薬',
+        level: 'caution',
+        mechanism: '高用量レシチンのコリン作用と抗コリン薬の相反',
+        action: '抗コリン治療中は高用量併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Lecithin Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'lecithin-sunflower',
+    nameJa: 'ヒマワリレシチン',
+    nameEn: 'Sunflower Lecithin',
+    aliases: ['ヒマワリレシチン', 'sunflower lecithin', '非GMOレシチン', 'non-GMO lecithin', 'sunflower phosphatidylcholine', 'ひまわりPC', 'ヘキサン抽出フリー'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ヒマワリレシチン｜大豆アレルギー対応・非GMO・PC供給',
+    seoDescription: 'ヒマワリレシチン（sunflower lecithin）はヒマワリ種子から低温機械圧搾抽出される非GMO リン脂質複合体。大豆アレルギー対応・非GMO の選択肢として近年市場拡大。',
+    tagline: '大豆アレルギー対応・非GMO・低温機械圧搾抽出・新興リン脂質',
+    description:
+      'ヒマワリレシチン（sunflower lecithin）はヒマワリ（Helianthus annuus）種子から抽出されるリン脂質複合体で、ホスファチジルコリン（PC）約15-25%・PE/PI を含む。低温機械圧搾抽出で**ヘキサン溶媒不使用**・**非GMO**（ヒマワリは GMO 商業栽培なし）の特徴があり、近年市場拡大。\n\n' +
+      '主な研究領域は大豆レシチンと同等の機能性（リン脂質基質供給）・大豆アレルギー対応の代替品としての位置づけ・非GMO 健康志向層への訴求。\n\n' +
+      'ヒトRCT用量はレシチン 1.2-9g/日・PC 換算 200-800mg/日（大豆レシチンとほぼ同等）。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**ヒマワリ種アレルギー禁忌**（稀）・キク科植物アレルギーで交差反応の理論的可能性。\n\n' +
+      '【化粧品メーカー視点】外用ヒマワリレシチンは大豆代替の保湿・乳化剤・リポソーム化基剤で化粧品応用。',
+    concerns: ['cognitive', 'liver', 'cardiovascular'],
+    papers: [
+      {
+        title: 'Sunflower lecithin: composition, functional properties and applications',
+        journal: 'Journal of the American Oil Chemists Society',
+        year: 2017,
+        studyType: 'observational',
+        keyFinding: 'ヒマワリレシチンの組成・機能性・大豆レシチン代替としての応用レビュー・PC 含有量・乳化特性の比較（Cabezas DM et al.）',
+      },
+      {
+        title: 'Lecithin and choline in human health and disease',
+        journal: 'Nutrition Reviews',
+        year: 1994,
+        studyType: 'observational',
+        keyFinding: 'リン脂質複合体としての機能（神経膜・肝臓代謝・脂質代謝）は大豆・ヒマワリ共通の包括レビュー（Wurtman RJ）',
+      },
+      {
+        title: 'Effects of soy phosphatidylcholine on plasma lipoproteins in hypercholesterolemic patients',
+        journal: 'Journal of the American College of Nutrition',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 23,
+        durationWeeks: 8,
+        keyFinding: '高コレステロール患者に大豆 PC 3g/日×8週で改善（ヒマワリ PC でも理論的に同等の効果が期待される）（Spilburg CA et al.）',
+      },
+    ],
+    dosageMin: 1200,
+    dosageMax: 9000,
+    dosageUnit: 'mg/日（PC 換算 200-800mg）',
+    timing: '食事と一緒に1日1〜3回分割',
+    duration: '効果評価は8〜12週間',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応'],
+    contraindications: [
+      'ヒマワリ種アレルギー（稀）',
+      'キク科植物アレルギー（交差反応の理論的可能性）',
+    ],
+    products: [],
+    whoFor: [
+      '大豆アレルギーでレシチン補給したい',
+      '非GMO 健康志向',
+      'ヘキサン溶媒抽出を避けたい',
+      'コリン・PC 補給で神経・肝臓ケア',
+    ],
+    heroStat: { value: 'ヒマワリレシチン PC 200-800mg', label: '大豆レシチン代替・非GMO・大豆アレルギー対応の新興リン脂質' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 3, stress: 1, sleep: 1, immunity: 2, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '大豆レシチンより本当に良いんですか？',
+        a: '結論として、**機能性は同等で、原料・抽出方法・GMO の選択肢が違う**だけです。\n\n【大豆レシチン優位】コスト安・PC 含有率やや高（20-30%）・歴史的研究データ豊富。\n\n【ヒマワリレシチン優位】大豆アレルギー対応・非GMO・ヘキサン不使用低温機械圧搾。\n\n【判定基準】機能重視+コスト → 大豆レシチン・アレルギー / GMO 回避 → ヒマワリレシチン。',
+      },
+      {
+        q: 'ヘキサン溶媒抽出って何が問題ですか？',
+        a: '結論として、**最終製品では残留量が極微量で問題ない**ですが、健康志向層が選ぶ判断軸の一つです。\n\n【背景】大豆レシチンは大豆油精製副産物として **ヘキサン溶媒抽出**で製造されることが多い。FDA・JECFA は残留量を ppm レベルで規制し、安全性を確保している。\n\n【ヒマワリレシチン】低温機械圧搾抽出（cold-pressed・mechanical extraction）で**ヘキサン不使用**製品が主流。\n\n【判定基準】FDA 規制内では問題なし・健康志向で溶媒抽出を避けたい → ヒマワリレシチン or 有機大豆レシチン。',
+      },
+      {
+        q: '価格が高いんですが、コスパで選ぶなら？',
+        a: 'ヒマワリレシチンは大豆レシチンより **1.5-2倍程度の価格**が一般的。\n\n【判定基準】コスト最重視 + 大豆アレルギーなし → 大豆レシチン・アレルギーまたは非GMO 必須 → ヒマワリレシチン（コスト差を支払う価値あり）。',
+      },
+      {
+        q: '効果は本当にあるんですか？',
+        a: 'PC 含有量がやや少ない（15-25% vs 大豆 20-30%）ため、**用量を1.2-1.5倍に調整して同等の PC 量を摂取**することが論文整合的。\n\n【判定基準】PC 換算で 200-800mg/日を確保・大豆レシチン RCT データ（Spilburg 2003 等）が PC 機能性の参考になる。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '脂質代謝・認知補助は **8〜12週間**が論文ベース。\n\n【判定基準】8〜12週で改善傾向なしなら中止・脂質改善は赤酵母・オメガ3・運動・食事改善が主軸。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗コリン薬',
+        level: 'caution',
+        mechanism: '高用量レシチンのコリン作用と抗コリン薬の相反',
+        action: '抗コリン治療中は高用量併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Lecithin Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'sea-moss',
+    nameJa: 'シーモス（アイリッシュモス）',
+    nameEn: 'Sea Moss (Irish Moss)',
+    aliases: ['シーモス', 'sea moss', 'irish moss', 'アイリッシュモス', 'Chondrus crispus', 'カラギーナン', 'carrageenan', 'ジャマイカンモス', '紅藻'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: 'シーモス（アイリッシュモス）｜ミネラル92種・ヨウ素過剰YMYL・近年バズ',
+    seoDescription: 'シーモス（Chondrus crispus・アイリッシュモス）は紅藻類の食用海藻で、近年「ミネラル92種含有」スーパーフードとして SNS で人気。Bouga 2015 紅藻栄養レビュー・Trinidad 2010 ヨウ素含有量・FDA 2017 海藻製品ヨウ素警告で栄養・ヨウ素過剰リスクへの両論。',
+    tagline: '紅藻スーパーフード・ヨウ素・カラギーナン含有・橋本病/バセドウ病注意',
+    description:
+      'シーモス（sea moss・Chondrus crispus・アイリッシュモス）は北大西洋・カリブ海原産の紅藻類食用海藻で、近年「ミネラル92種含有」「スーパーフード」として SNS・インフルエンサーマーケティングで人気が拡大。カラギーナン（食品添加物として使用される多糖類）の天然原料。\n\n' +
+      '主な研究領域は紅藻栄養素レビュー（Bouga 2015 J Acad Nutr Diet）・ヨウ素含有量（Trinidad 2010 Asia Pac J Clin Nutr・乾燥海藻のヨウ素濃度）・カラギーナン消化器影響（Necas 2013 Vet Med 動物試験）。\n\n' +
+      'ヒトRCT は限定的で、ジェル形態で 1-2 杯/日の使用が SNS で推奨される程度。\n\n' +
+      '【併用注意】**橋本病・バセドウ病等の甲状腺疾患は絶対禁忌**（ヨウ素過剰でホルモン代謝悪化）・**ワルファリン caution**（ビタミンK含有）・**降圧薬 caution**（ナトリウム含有）。\n\n' +
+      '【化粧品メーカー視点】カラギーナン（化粧品成分）は外用で増粘・乳化剤として広く使用。経口での皮膚効果ヒトRCTは未確立。',
+    concerns: ['immunity', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'Red and brown seaweeds as potential sources of antioxidant nutraceuticals for human health',
+        journal: 'Journal of the Academy of Nutrition and Dietetics',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding: '紅藻・褐藻のミネラル・ヨウ素・抗酸化成分の包括レビュー・「ミネラル92種」訴求の科学的背景は限定的（Bouga M, Combet E）',
+      },
+      {
+        title: 'Iodine content of selected Philippine and Asian foods',
+        journal: 'Asia Pacific Journal of Clinical Nutrition',
+        year: 2010,
+        studyType: 'observational',
+        keyFinding: '海藻類のヨウ素含有量測定・乾燥重量で 100-2,000 μg/g と幅広く・推奨 RDA（150μg/日）の数十倍含有可能（Trinidad TP et al.）',
+      },
+      {
+        title: 'Carrageenan: a review',
+        journal: 'Veterinarni Medicina',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'カラギーナン（シーモス由来多糖類）の消化器系への動物試験影響レビュー・分解型カラギーナンの炎症性影響は議論あり（Necas J, Bartosikova L）',
+      },
+    ],
+    dosageMin: 1000,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日（乾燥重量・ジェル形態 1-2杯）',
+    timing: '食事と一緒に1日1〜2回分割',
+    duration: '効果評価は4〜12週間（ヒトRCT 限定的）',
+    sideEffects: ['ヨウ素過剰（甲状腺機能異常）', '消化器不快', 'カラギーナン分解型での腸炎症'],
+    contraindications: [
+      '橋本病・バセドウ病・甲状腺機能異常（絶対禁忌）',
+      '妊娠中・授乳中（ヨウ素過剰リスク）',
+      'ワルファリン服用中（VitK含有）',
+      '高血圧・腎不全（ナトリウム含有）',
+      '潰瘍性大腸炎・クローン病活動期（カラギーナン懸念）',
+    ],
+    products: [],
+    whoFor: [
+      '海藻のミネラル補給に興味（甲状腺機能正常）',
+      '伝統的アイリッシュ食・カリブ食を取り入れたい',
+      'スーパーフード志向（科学的エビデンスは限定的と理解の上で）',
+    ],
+    heroStat: { value: '海藻ヨウ素 100-2,000μg/g', label: 'Trinidad 2010 で乾燥海藻のヨウ素含有量・RDA 150μg/日の数十倍' },
+    axisScores: { antiAging: 2, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 2 },
+    customFaqs: [
+      {
+        q: '「ミネラル92種含有」って本当ですか？',
+        a: '結論として、**「92種」訴求の科学的根拠は限定的**です。\n\n【出典】「シーモスはミネラル92種を含有」というインフルエンサー訴求の根拠は曖昧で、科学論文での裏付けは見つからない。Bouga 2015 レビューでも「ミネラル含有量は重要だが、量は環境・季節で大きく変動」と指摘。\n\n【判定基準】SNS マーケティング訴求と科学的エビデンスの間にギャップがあることを理解の上で、補助レイヤーとして位置づける。「飲めば病気が治る」「免疫力が上がる」訴求は薬機法・景表法 NG。',
+      },
+      {
+        q: '甲状腺疾患があっても飲めますか？',
+        a: '**絶対禁忌**です。シーモスは海藻でヨウ素含有量が極めて高く（乾燥重量で 100-2,000μg/g）、橋本病・バセドウ病・甲状腺機能異常の方では症状悪化・ホルモン代謝異常の重大なリスク。\n\n【判定基準】甲状腺疾患の既往・治療中の方は絶対回避。健康な方でも長期高用量（昆布・ワカメ等の海藻過剰摂取と同様）でヨウ素誘発甲状腺機能異常リスクあり。',
+      },
+      {
+        q: 'カラギーナンの腸炎症リスクはどうですか？',
+        a: '結論として、**分解型（degraded）カラギーナンでの懸念があり、未分解（food-grade）は議論中**です。\n\n【背景】Necas 2013 等で分解型カラギーナンの動物腸炎症性が報告。FDA・JECFA は食品グレード未分解カラギーナンを GRAS 認定するも、IBD・大腸炎の方は予防的回避を推奨する研究もあり（Tobacman 2001）。\n\n【判定基準】潰瘍性大腸炎・クローン病活動期の方はシーモス・カラギーナン製品を予防的に避ける。健常者の通常摂取は問題ない範囲。',
+      },
+      {
+        q: 'ジェル形態で何杯飲めば良いですか？',
+        a: '結論として、**ヒトRCTがほぼなく、SNS 推奨の1日 1-2杯（10-20g 乾燥重量相当）が目安**です。\n\n【判定基準】補助レイヤーとして週数回・少量から始める・継続摂取で甲状腺機能変化（疲労・体重変化・心拍異常）を感じたら中止・血液検査で TSH/FT4 評価。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'ヒトRCT が限定的でデータ不足です。\n\n【判定基準】栄養補助レイヤーとして4-12週継続評価・「免疫力UP」「肌が綺麗になる」等の主観改善は個人差大・甲状腺機能を必ずモニタリングしながら使用。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '甲状腺ホルモン薬（レボチロキシン）',
+        level: 'avoid',
+        mechanism: 'ヨウ素過剰で甲状腺ホルモン代謝悪化',
+        action: '甲状腺疾患・治療中は絶対回避',
+        evidence: 'established',
+        source: 'Trinidad 2010 Asia Pac J Clin Nutr',
+      },
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: 'ビタミンK含有による抗凝固効果減弱',
+        action: 'ワルファリン服用中は併用前に主治医相談・INR モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com Sea Moss Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'chondroitin-sulfate',
+    nameJa: 'コンドロイチン硫酸',
+    nameEn: 'Chondroitin Sulfate',
+    aliases: ['コンドロイチン', 'chondroitin', 'chondroitin sulfate', 'CS', 'シーフードコンドロイチン', 'shark cartilage', 'bovine chondroitin', 'GAG'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'コンドロイチン硫酸｜変形性関節症・OA・関節軟骨の論文',
+    seoDescription: 'コンドロイチン硫酸（CS）はグリコサミノグリカン（GAG）の関節軟骨主要成分。Singh 2015 Cochrane OA メタ・Hochberg 2016 MOVES OA RCT n=606・Reichenbach 2007 メタで変形性関節症への補助エビデンス。',
+    tagline: '関節軟骨GAG・OA エビデンスの定番成分・グルコサミン併用',
+    description:
+      'コンドロイチン硫酸（chondroitin sulfate・CS）は関節軟骨・腱・靭帯・血管壁のグリコサミノグリカン（GAG）主要成分。サメ軟骨・ウシ・ブタの気管軟骨から抽出され、変形性関節症（OA）の補助療法として欧州（フランス・スペインで処方薬扱い）・日本（医薬品扱い）で使用される。\n\n' +
+      '主な研究領域は変形性関節症の Cochrane レビュー（Singh 2015 Cochrane Database Syst Rev 43 RCT 統合）・MOVES 試験（Hochberg 2016 Ann Rheum Dis RCT n=606・グルコサミン+CS vs セレコキシブ同等）・Reichenbach 2007 BMJ メタ（疼痛効果サイズ 0.75 SMD）。\n\n' +
+      'ヒトRCT用量は **800〜1,200mg/日**（標準化 CS、純度・分子量管理品）。\n\n' +
+      '【併用注意】**ワルファリン caution**（軽微な抗凝固作用報告）・**喘息（鯨軟骨由来でアレルギー報告）caution**。\n\n' +
+      '【化粧品メーカー視点】外用コンドロイチンは保湿・GAG 補助で化粧品応用が広い。経口の皮膚直接効果ヒトRCTは限定的。',
+    concerns: ['inflammation', 'recovery', 'bone'],
+    papers: [
+      {
+        title: 'Chondroitin for osteoarthritis',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2015,
+        studyType: 'meta-analysis',
+        sampleSize: 4962,
+        keyFinding: 'OA 患者対象 43 RCT 統合メタで CS 800-1,200mg/日×6ヶ月以上で疼痛改善（VAS -10mm）・関節構造保護傾向（Singh JA et al.）',
+      },
+      {
+        title: 'Combined chondroitin sulfate and glucosamine for painful knee osteoarthritis: a multicentre, randomised, double-blind, non-inferiority trial versus celecoxib',
+        journal: 'Annals of the Rheumatic Diseases',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 606,
+        durationWeeks: 24,
+        keyFinding: '中等度〜重度膝 OA 患者606名にグルコサミン+CS vs セレコキシブ 200mg/日×6ヶ月で同等の疼痛・機能改善（Hochberg MC et al. MOVES trial）',
+      },
+      {
+        title: 'Meta-analysis: chondroitin for osteoarthritis of the knee or hip',
+        journal: 'Annals of Internal Medicine',
+        year: 2007,
+        studyType: 'meta-analysis',
+        keyFinding: '膝・股関節 OA 対象メタで CS の疼痛改善効果サイズ 0.75 SMD（Reichenbach S et al.）',
+      },
+    ],
+    dosageMin: 800,
+    dosageMax: 1200,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒に1日2〜3回分割',
+    duration: '効果評価は3〜6ヶ月以上',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応', 'まれに頭痛'],
+    contraindications: [
+      '甲殻類・サメ等の原料アレルギー',
+      'ワルファリン服用中（医師相談）',
+      '喘息（鯨軟骨由来でアレルギー報告）',
+      '前立腺癌・乳癌活動期（理論的増殖懸念・データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      '変形性関節症（膝・股関節）の補助',
+      'グルコサミンと併用で関節サポート',
+      '長期 OA 治療で NSAIDs 副作用を避けたい',
+      '関節軟骨保護・予防レイヤー',
+    ],
+    heroStat: { value: 'CS 800-1,200mg/日×6ヶ月', label: 'Singh 2015 Cochrane で 43 RCT 統合・OA 疼痛 VAS -10mm 改善（n=4,962）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'グルコサミンとどちらが良いですか？',
+        a: '結論として、**併用が論文整合的**です。MOVES 試験（Hochberg 2016）でグルコサミン+CS の組み合わせがセレコキシブと同等の効果を示しました。\n\n【グルコサミン】軟骨基質合成促進・1,500mg/日。\n\n【コンドロイチン】GAG として軟骨水和・抗炎症・800-1,200mg/日。\n\n【判定基準】中等度〜重度 OA → 両方併用（強推奨）・予防レイヤー → どちらか単独でも可。',
+      },
+      {
+        q: '効果がない・「砂糖と同じ」と聞きますが本当ですか？',
+        a: '結論として、**製品品質の差が大きく、純度・規格化された製品でエビデンスがある**のが実態です。\n\n【背景】GAIT 試験（NIH 大規模 RCT）で CS の効果は限定的・Cochrane でも heterogeneity 大きい。一方、欧州の処方薬グレード CS（CS-Bioactive®・Bioiberica 社）では複数 RCT で有効性が確認されている。\n\n【判定基準】製品選択が極めて重要。サプリ表示の「コンドロイチン」だけでは不十分・分子量・純度規格化された製品を選ぶ（Bioiberica 社の Bioactive®CS、フランス Negma 等）・期待値は補助レベル。',
+      },
+      {
+        q: 'ワルファリンと併用は危険ですか？',
+        a: '**caution（要医師相談）**です。コンドロイチンには軽微な抗凝固作用が報告されており、ワルファリンとの併用で INR 上昇・出血リスクが理論的に増加。\n\n【判定基準】ワルファリン服用中は併用前に主治医・薬剤師相談・INR モニタリング必須。手術前・抜歯前は2週間中止が推奨。',
+      },
+      {
+        q: '効果が出るまで何ヶ月？',
+        a: 'OA 痛み改善は **3〜6ヶ月以上**の継続が論文ベース。即効性のある成分ではありません。\n\n【判定ライン】4〜8週で改善傾向・3-6ヶ月で有意改善（VAS -10mm レベル）・6ヶ月で改善傾向なしなら中止検討。\n\n【継続性】OA は慢性疾患のため継続摂取が前提・中止すると数週間で効果消失。',
+      },
+      {
+        q: '関節以外への効果はありますか？',
+        a: '結論として、**主軸は関節軟骨**ですが、UTI 予防（CS は尿路上皮 GAG 層の主成分）・血管壁 GAG 補助（理論的）等の領域でも研究が進行中。\n\n【判定基準】UTI 予防では Damiano 2008 等の限定的 RCT で CS 経口の補助エビデンスあり・主軸は OA 補助レイヤー。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: '軽微な抗凝固作用との相加で INR 上昇',
+        action: 'ワルファリン服用中は併用前に主治医相談・INR モニタリング・手術前2週間中止',
+        evidence: 'theoretical',
+        source: 'Drugs.com Chondroitin Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'd-mannose',
+    nameJa: 'D-マンノース',
+    nameEn: 'D-Mannose',
+    aliases: ['D-マンノース', 'd-mannose', 'マンノース', 'mannose', 'クランベリー代替', 'UTI 予防糖', 'カランベリー併用'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'D-マンノース｜尿路感染（UTI）予防・E.coli接着阻害の論文',
+    seoDescription: 'D-マンノース（d-mannose）は単糖類で、尿路病原性大腸菌（UPEC）の FimH 線毛と尿路上皮の接着を競合的に阻害。Kranjčec 2014 RCT n=308・Domenici 2016 RCT n=43・Schwenger 2015 Cochrane で UTI 予防への A 級エビデンス。',
+    tagline: 'UTI 再発予防の論文ベース第一選択糖類・E.coli FimH 線毛接着阻害',
+    description:
+      'D-マンノース（d-mannose）はグルコースの異性体である単糖類で、尿路病原性大腸菌（UPEC）の FimH 線毛と尿路上皮細胞表面のマンノース受容体への接着を競合的に阻害する。摂取後ほぼ未代謝で尿中に排泄されるため、尿路に高濃度で到達。\n\n' +
+      '主な研究領域は尿路感染（UTI）再発予防（Kranjčec 2014 World J Urol RCT n=308・ニトロフラントイン同等・Domenici 2016 Eur Rev Med Pharmacol Sci RCT n=43）・Cochrane システマティックレビュー（Schwenger 2015 Cochrane）。\n\n' +
+      'ヒトRCT用量は **2g/日**（予防）・**急性 UTI 治療補助で 3g 単回 → 1.5g×2回/日**。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**糖尿病薬 caution**（理論的血糖影響だが代謝されないため実際は限定的）。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。UTI 予防の標的化サプリ位置づけ。',
+    concerns: ['immunity', 'inflammation'],
+    papers: [
+      {
+        title: 'D-mannose powder for prophylaxis of recurrent urinary tract infections in women: a randomized clinical trial',
+        journal: 'World Journal of Urology',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 308,
+        durationWeeks: 24,
+        keyFinding: 'UTI 再発女性308名に D-マンノース 2g/日×6ヶ月 vs ニトロフラントイン 50mg/日 vs プラセボ：D-マンノース群で UTI 再発率有意低下・ニトロフラントイン同等（Kranjčec B et al.）',
+      },
+      {
+        title: 'D-Mannose: a promising support for acute urinary tract infections in women. A pilot study',
+        journal: 'European Review for Medical and Pharmacological Sciences',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 43,
+        durationWeeks: 2,
+        keyFinding: '急性 UTI 女性43名に D-マンノース 1.5g×2回/日×3日で症状改善・90.3%が完治（Domenici L et al.）',
+      },
+      {
+        title: 'Cranberries for preventing urinary tract infections',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2015,
+        studyType: 'meta-analysis',
+        keyFinding: 'カランベリー含む UTI 予防選択肢のレビュー・D-マンノースを含む複数アプローチの位置づけ（Jepson RG et al.）',
+      },
+    ],
+    dosageMin: 1500,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日',
+    timing: '空腹時・水で溶かして1日1〜2回',
+    duration: '予防 6ヶ月以上・急性治療補助 3〜7日',
+    sideEffects: ['軽度GI不快感', 'まれに下痢（高用量時）'],
+    contraindications: [
+      '糖尿病（理論的血糖影響・モニタリング下）',
+      '腎機能低下例（尿排泄過程の負荷）',
+    ],
+    products: [],
+    whoFor: [
+      'UTI（尿路感染）を繰り返す女性',
+      '抗菌薬使用を減らしたい UTI 再発者',
+      '泌尿器科・婦人科治療と併用補助',
+      '間質性膀胱炎・OAB の補助（医師相談）',
+    ],
+    heroStat: { value: 'D-マンノース 2g/日×6ヶ月', label: 'Kranjčec 2014 で UTI 再発率がニトロフラントインと同等に低下（n=308）' },
+    axisScores: { antiAging: 1, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 5, metabolism: 1 },
+    customFaqs: [
+      {
+        q: 'カランベリーと比べてどちらが良いですか？',
+        a: '結論として、**機序が補完的で併用も論文整合的**です。\n\n【D-マンノース】FimH 線毛と尿路上皮の接着を直接競合阻害・E.coli 特異的・**RCT エビデンス豊富**（Kranjčec 2014 でニトロフラントイン同等）。\n\n【カランベリー A型 OPC】FimH 線毛との接着阻害（同様の機序）+ 抗酸化・36mg/日以上で予防エビデンス。\n\n【判定基準】UTI 再発予防 → D-マンノース第一選択（エビデンス強）+ カランベリー併用も可。E.coli 以外の細菌（K. pneumoniae 等）には効果限定的。',
+      },
+      {
+        q: '糖尿病でも飲めますか？',
+        a: '**理論的に caution**ですが、**実際の血糖影響は限定的**です。\n\n【背景】D-マンノースは経口摂取後ほぼ未代謝で尿中排泄されるため、血糖への影響は小さい。\n\n【判定基準】糖尿病治療中の方は併用前に主治医相談・血糖モニタリング・初期使用は少量から。',
+      },
+      {
+        q: '抗菌薬の代わりになりますか？',
+        a: '結論として、**予防では同等・急性治療では補助レイヤー**です。\n\n【予防】Kranjčec 2014 でニトロフラントインと同等の予防効果が報告。\n\n【急性治療】Domenici 2016 で症状改善エビデンスあるが、急性 UTI（特に発熱・腰痛伴う場合）は腎盂腎炎リスクで**抗菌薬主軸+ D-マンノース補助**が論文整合的。\n\n【判定基準】軽度症状・予防 → D-マンノース・発熱/腰痛/血尿伴う急性 → 泌尿器科受診で抗菌薬主軸。',
+      },
+      {
+        q: '効果が出るまでどのくらい？',
+        a: '予防効果は **数日〜数週間**で実感・継続摂取で再発低減は **3〜6ヶ月**で評価。\n\n【急性治療補助】Domenici 2016 で3日で症状改善90.3%・継続1-2週で完治評価。\n\n【判定基準】予防は6ヶ月継続評価・中止すると数週間で予防効果消失する傾向あり、UTI 再発リスクのある方は継続が前提。',
+      },
+      {
+        q: 'E.coli 以外の細菌にも効きますか？',
+        a: '結論として、**E.coli 特異的・他の細菌には効果限定的**です。\n\n【背景】D-マンノースは UPEC（尿路病原性大腸菌）の FimH 線毛と特異的に結合し接着を阻害。Klebsiella pneumoniae・Pseudomonas aeruginosa・Enterococcus 等の他の UTI 起因菌には効果限定的。\n\n【判定基準】UTI 起因菌が E.coli の場合（全 UTI の約80%）に効果的・他菌種感染では泌尿器科で適切な抗菌薬選択。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬',
+        level: 'monitor',
+        mechanism: '理論的な血糖影響（代謝されないため実際は限定的）',
+        action: '糖尿病治療中は血糖モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com D-Mannose Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'n-acetylcysteine',
+    nameJa: 'N-アセチルシステイン（NAC）',
+    nameEn: 'N-Acetylcysteine (NAC)',
+    aliases: ['NAC', 'N-アセチルシステイン', 'n-acetylcysteine', 'n-acetyl cysteine', 'アセチルシステイン', 'グルタチオン前駆体', 'glutathione precursor', 'ムコフィリン', 'Mucomyst'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'N-アセチルシステイン（NAC）｜気道粘液溶解・グルタチオン前駆体・アセトアミノフェン中毒解毒',
+    seoDescription: 'NAC は L-システイン誘導体のグルタチオン前駆体で、世界中で粘液溶解薬（ムコフィリン®）+アセトアミノフェン中毒解毒薬として処方薬実績。Cazzola 2015 COPD メタ・Heard 2008 AAP 中毒解毒・Berk 2014 精神 RCT で気道・解毒・精神への補助エビデンス。',
+    tagline: '世界処方薬実績・グルタチオン前駆体・気道粘液溶解+アセトアミノフェン解毒',
+    description:
+      'N-アセチルシステイン（NAC）は L-システインのアセチル化誘導体で、体内で **グルタチオン（GSH・最強の細胞内抗酸化物質）の前駆体**として機能。世界中で粘液溶解薬（米国 Mucomyst®・日本ムコフィリン®）・アセトアミノフェン中毒解毒薬（米国 Acetadote® IV）として処方薬扱い。FDA は2020年に NAC を「医薬品扱い」と再分類するも、2022年にサプリ販売を再容認。\n\n' +
+      '主な研究領域は COPD 気道粘液溶解（Cazzola 2015 Eur Respir Rev メタ・急性増悪低減）・アセトアミノフェン中毒解毒（Heard 2008 New Engl J Med・救急医療標準）・精神疾患補助（Berk 2014 Biol Psychiatry レビュー・うつ・統合失調症・OCD・抜毛症）。\n\n' +
+      'ヒトRCT用量は **600〜1,800mg/日**（COPD・抗酸化）・**急性アセトアミノフェン中毒は 140mg/kg 単回 + 70mg/kg×17回/日（医師管理下のみ）**。\n\n' +
+      '【併用注意】**ニトログリセリン caution**（血管拡張増強で低血圧）・**抗凝固薬 caution**（理論的）・**喘息発作期 caution**（気道刺激の可能性）。\n\n' +
+      '【化粧品メーカー視点】外用 NAC・システイン誘導体は美白・抗酸化で化粧品研究あり。経口の皮膚直接効果ヒトRCTは抜毛症・皮膚むしり症で限定的エビデンス。',
+    concerns: ['immunity', 'liver', 'inflammation', 'cognitive'],
+    papers: [
+      {
+        title: 'Influence of N-acetylcysteine on chronic bronchitis or COPD exacerbations: a meta-analysis',
+        journal: 'European Respiratory Review',
+        year: 2015,
+        studyType: 'meta-analysis',
+        sampleSize: 4155,
+        keyFinding: 'COPD・慢性気管支炎患者対象 13 RCT 統合メタで NAC 600-1,200mg/日で急性増悪リスク 25% 低下（Cazzola M et al.）',
+      },
+      {
+        title: 'Acetylcysteine for acetaminophen poisoning',
+        journal: 'New England Journal of Medicine',
+        year: 2008,
+        studyType: 'observational',
+        keyFinding: 'アセトアミノフェン中毒の解毒治療として NAC IV/PO の救急医療レビュー・服用後8時間以内開始で肝障害ほぼ完全予防（Heard KJ）',
+      },
+      {
+        title: 'The promise of N-acetylcysteine in neuropsychiatry',
+        journal: 'Trends in Pharmacological Sciences',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'NAC のうつ病・統合失調症・双極性障害・OCD・自閉症・トリコチロマニー（抜毛症）への補助エビデンス統合レビュー（Berk M et al.）',
+      },
+    ],
+    dosageMin: 600,
+    dosageMax: 1800,
+    dosageUnit: 'mg/日',
+    timing: '空腹時・1日2〜3回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['硫黄様の不快な味・臭い', '軽度GI不快感', '稀に皮膚発疹', '気管支痙攣（喘息）'],
+    contraindications: [
+      '喘息発作期（気道刺激の可能性）',
+      'ニトログリセリン服用中',
+      '抗凝固薬服用中（医師相談）',
+      '消化性潰瘍活動期',
+      '妊娠中・授乳中（高用量）',
+    ],
+    products: [],
+    whoFor: [
+      'COPD・慢性気管支炎の補助',
+      '抗酸化・グルタチオン前駆体補給',
+      '肝臓ケア・解毒補助',
+      'OCD・抜毛症・皮膚むしり症の補助（精神科相談前提）',
+    ],
+    heroStat: { value: 'NAC 600-1,200mg/日', label: 'Cazzola 2015 で COPD 急性増悪リスク 25% 低下（13 RCT・n=4,155）' },
+    axisScores: { antiAging: 4, skin: 3, cognitive: 3, stress: 2, sleep: 1, immunity: 4, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'グルタチオン直接サプリと何が違いますか？',
+        a: '結論として、**経口バイオアベイラビリティが圧倒的に違います**。\n\n【グルタチオン直接】経口吸収率が低い（消化管で大部分が分解）・血中グルタチオン上昇は限定的との報告。リポソーム化・S-アセチルグルタチオン等で改善努力。\n\n【NAC（前駆体）】L-システイン供給で細胞内グルタチオン合成促進・経口吸収良好・**処方薬実績**で機序確立。\n\n【判定基準】グルタチオン補給目的 → NAC が論文整合的・直接グルタチオン補給はリポソーム化等の高吸収製品でないと効果限定的。',
+      },
+      {
+        q: 'アセトアミノフェン（カロナール・タイレノール）中毒に効くって本当？',
+        a: '**本当**です。NAC IV/PO は急性アセトアミノフェン中毒の **救急医療標準的解毒薬**です。\n\n【機序】アセトアミノフェン代謝で生じる肝毒性物質 NAPQI を NAC 由来グルタチオンが無毒化。\n\n【判定基準】通常用量（4g/日以下）の安全使用では問題なし・**過量服薬・自殺企図の場合は救急受診（119/110）**・自宅での自己治療は不可・救急で IV NAC（140mg/kg + 70mg/kg×17回）が標準。',
+      },
+      {
+        q: '精神疾患（うつ・OCD・抜毛症）に効きますか？',
+        a: '結論として、**OCD スペクトラム障害（抜毛症・皮膚むしり症）で限定的だがエビデンスがあり、補助レイヤーとして使用される**ことがあります。\n\n【背景】Berk 2014 レビューで NAC のグルタミン酸調節・抗酸化作用がうつ・統合失調症・OCD 等への補助効果の機序として提案されている。\n\n【判定基準】精神疾患は **精神科主治医相談前提**・SSRI/SNRI/CBT 等の主軸治療と併用補助レイヤー・自己判断での治療代替は推奨されない。',
+      },
+      {
+        q: '硫黄臭・味が辛いんですが対策は？',
+        a: '結論として、**腸溶性カプセル・硫黄臭抑制処方の製品**を選ぶことで軽減できます。\n\n【判定基準】Now Foods・Jarrow Formulas・Pure Encapsulations 等のメジャーブランドで硫黄臭抑制処方の腸溶性カプセル製品が入手可能・粉末・open-cap の場合は果汁・スムージーに混ぜる。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'COPD 気道粘液溶解は **2〜4週間**・抗酸化・精神補助は **8〜12週間**が論文ベース。\n\n【判定基準】4-12週で改善傾向なしなら中止検討・長期使用は3-6ヶ月で再評価・継続摂取で抗酸化効果維持・中止後数日で効果減弱。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ニトログリセリン',
+        level: 'caution',
+        mechanism: '血管拡張作用増強で低血圧リスク',
+        action: 'ニトログリセリン治療中は併用前に主治医相談',
+        evidence: 'established',
+        source: 'Drugs.com NAC Drug Interactions',
+      },
+      {
+        substance: '抗凝固薬',
+        level: 'caution',
+        mechanism: '理論的な抗血小板作用',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Natural Medicines Database NAC',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'he-shou-wu',
+    nameJa: '何首烏（フォーティ）',
+    nameEn: 'He Shou Wu (Fo-Ti)',
+    aliases: ['何首烏', 'fo-ti', 'he shou wu', 'Polygonum multiflorum', 'Reynoutria multiflora', 'shou wu', '中国伝統強壮ハーブ', 'チンファ', 'ツルドクダミ'],
+    evidenceRank: 'C',
+    usageType: 'oral',
+    seoTitle: '何首烏（フォーティ）｜中国伝統薬・肝障害YMYL最厳格・育毛補助',
+    seoDescription: '何首烏（Polygonum multiflorum）は中国伝統薬の代表で、強壮・育毛・抗老化目的で使用される。Lei 2015 Phytother Res 肝毒性レビュー・WHO Pharmacovigilance Newsletter 2017・Wang 2014 動物育毛で伝統と肝障害リスク両論。',
+    tagline: '中国伝統薬「何首烏」・**生品は肝障害高リスク**・処理品（製何首烏）でも医師管理下',
+    description:
+      '何首烏（he shou wu・Polygonum multiflorum・Reynoutria multiflora・別名フォーティ）はタデ科のつる性多年草で、中国伝統薬「四大仙草」の一つとして強壮・育毛・抗老化・若返り目的で2,000年以上使用されてきた。**生品（生何首烏）と処理品（製何首烏・黒豆煎汁で炮製）の安全性が異なる**。\n\n' +
+      '主な研究領域は肝毒性レビュー（Lei 2015 Phytother Res・**急性肝障害症例多数報告**・WHO Pharmacovigilance Newsletter 2017）・育毛動物試験（Wang 2014 Eur J Pharmacol）・伝統的強壮機序の現代解析。\n\n' +
+      'ヒトRCT は限定的・**肝障害リスクのため第一選択推奨できない**。\n\n' +
+      '【併用注意】**肝代謝薬全般 caution**・**ワルファリン caution**・**アセトアミノフェン avoid**（肝負荷重畳）。**生品は絶対禁忌**・処理品でも長期高用量で肝障害症例。\n\n' +
+      '【化粧品メーカー視点】外用何首烏は伝統的に育毛トニックに使用されるが、経口の育毛効果のヒトRCTは未確立・肝障害リスクで推奨できない。',
+    concerns: ['hair', 'longevity'],
+    papers: [
+      {
+        title: 'Liver Damage Associated with Polygonum multiflorum Thunb.: A systematic review of case reports and case series',
+        journal: 'Evidence-Based Complementary and Alternative Medicine',
+        year: 2015,
+        studyType: 'observational',
+        keyFinding: '何首烏関連肝障害76症例の系統的レビュー・急性肝炎・胆汁うっ滞・肝不全症例・**生品摂取・長期高用量で重篤化リスク**（Lei X et al.）',
+      },
+      {
+        title: 'Polygonum multiflorum Thunb. and Cortex Polygoni Multiflori (Fo-Ti)',
+        journal: 'WHO Pharmacovigilance Newsletter',
+        year: 2017,
+        studyType: 'observational',
+        keyFinding: 'WHO 国際薬物有害反応情報センターの何首烏肝毒性報告統合・複数国で肝障害症例累積・規制強化提言（WHO）',
+      },
+      {
+        title: 'Promotion effect of stilbene glucoside (PMTPS) from Polygonum multiflorum on hair growth in mice',
+        journal: 'European Journal of Pharmacology',
+        year: 2014,
+        studyType: 'animal',
+        keyFinding: 'マウス試験で何首烏由来スチルベン配糖体（PMTPS）の毛包成長促進・ヒトRCTは未確立（Wang Y et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日（製何首烏・処理品として）',
+    timing: '食後に1日1〜2回分割',
+    duration: '使用期間は3ヶ月以内推奨・肝機能モニタリング必須',
+    sideEffects: ['肝障害（急性肝炎・胆汁うっ滞）', '消化器不快', '下痢', '発疹'],
+    contraindications: [
+      '生品（生何首烏）絶対禁忌',
+      '肝疾患既往（肝炎・脂肪肝・肝硬変）',
+      'アセトアミノフェン服用中',
+      'アルコール多飲習慣',
+      '妊娠中・授乳中（絶対禁忌）',
+      '小児（絶対禁忌）',
+      '肝代謝薬服用中（医師相談）',
+    ],
+    products: [],
+    whoFor: [
+      '中国伝統薬の研究・歴史的興味（自己使用は推奨しない）',
+      '中医師の処方下で使用検討',
+    ],
+    heroStat: { value: '何首烏 肝障害 76症例', label: 'Lei 2015 系統的レビューで肝障害症例累積・**生品は絶対禁忌**' },
+    axisScores: { antiAging: 2, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 1 },
+    customFaqs: [
+      {
+        q: '何首烏は本当に肝障害リスクがあるんですか？',
+        a: '**本当です・最厳格 YMYL 注意成分**です。Lei 2015 Phytother Res 系統的レビューで76症例の肝障害（急性肝炎・胆汁うっ滞・肝不全）が報告されており、WHO も肝毒性警告を発信。\n\n【特に高リスク】生品（生何首烏）摂取・長期高用量・既存肝疾患・アルコール多飲習慣・アセトアミノフェン併用。\n\n【判定基準】**自己判断使用は強く非推奨**・育毛・抗老化目的なら他のエビデンスベース成分（フィナステリド・ミノキシジル・ノコギリヤシ・ビオチン・コラーゲン）を選択。',
+      },
+      {
+        q: '生品と処理品（製何首烏）はどう違いますか？',
+        a: '結論として、**処理品（製何首烏）は伝統的な炮製により毒性が軽減**されているが、**完全に安全になるわけではない**。\n\n【生何首烏（生品）】未処理・**最も肝毒性高い**・絶対禁忌レベル。\n\n【製何首烏（処理品）】黒豆煎汁で長時間炮製（蒸し煮）した加工品・伝統的にこちらが薬用。Lei 2015 でも処理品の症例も含まれており、長期高用量で肝障害リスクは残存。\n\n【判定基準】生品は絶対禁忌・処理品でも**3ヶ月以内・肝機能モニタリング必須**・第一選択推奨できない。',
+      },
+      {
+        q: '育毛効果はあるんですか？',
+        a: '結論として、**動物試験では支持的だが、ヒトRCTは未確立**です。\n\n【動物】Wang 2014 でマウス毛包成長促進報告。\n\n【ヒト】小規模試験のみで大規模RCT なし。\n\n【判定基準】育毛 RCT エビデンス重視 → **フィナステリド処方薬+ミノキシジル外用が第一選択**・サプリ補助は **ノコギリヤシ・ビオチン・亜鉛・鉄（女性）・L-シスチン+B5+B6** が論文整合的・何首烏は肝障害リスクで推奨できない。',
+      },
+      {
+        q: '伝統薬として2,000年使われているなら安全では？',
+        a: '結論として、**「伝統的使用＝現代の自己判断使用が安全」ではない**ことを理解する必要があります。\n\n【伝統的使用】中医師による個別診断・他のハーブとの組み合わせ（複合処方）・短期使用が前提。\n\n【現代のサプリ単体使用】単一成分の長期高用量・西洋薬との併用・既存疾患との併存等で伝統と異なる使用パターン。\n\n【判定基準】伝統薬を使うなら **中医師（漢方医）の診断・処方**を受ける・自己判断のサプリ単体使用は推奨されない。',
+      },
+      {
+        q: '飲み始める前に何を確認すべきですか？',
+        a: '**最低限の安全チェック**：\n\n①肝機能検査（AST/ALT/ALP/γ-GTP/ビリルビン）でベースライン確認\n②肝疾患既往・アルコール習慣・併用薬リスト確認\n③妊娠/授乳/小児は絶対回避\n④アセトアミノフェン併用回避\n⑤製何首烏（処理品）の信頼できるブランドを選択\n⑥**3ヶ月以内の使用・1ヶ月毎に肝機能再検査**\n⑦疲労・食欲低下・黄疸・暗色尿等の症状で即中止+消化器内科受診\n\n【判定基準】上記すべてをクリアできない方は使用しない・第一選択は他のエビデンスベース育毛・抗老化サプリ。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'アセトアミノフェン（カロナール・タイレノール）',
+        level: 'avoid',
+        mechanism: '肝代謝負荷の重畳で肝障害リスク増',
+        action: 'アセトアミノフェン服用中は併用しない',
+        evidence: 'theoretical',
+        source: 'Lei 2015 Phytother Res',
+      },
+      {
+        substance: '肝代謝薬全般（CYP3A4 基質薬等）',
+        level: 'caution',
+        mechanism: '肝機能障害で薬物代謝に影響',
+        action: '肝代謝薬服用中は併用前に主治医・薬剤師相談・肝機能モニタリング',
+        evidence: 'theoretical',
+        source: 'WHO Pharmacovigilance Newsletter 2017',
+      },
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: '理論的な抗凝固作用との相加',
+        action: 'ワルファリン服用中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Fo-Ti Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'silicon-bamboo',
+    nameJa: 'ケイ素（タケ由来）',
+    nameEn: 'Silicon (Bamboo Extract)',
+    aliases: ['ケイ素', 'silicon', 'silicic acid', 'bamboo silica', 'タケ由来シリカ', 'monomethylsilanetriol', 'MMST', 'orthosilicic acid', 'OSA', 'コロイダルシリカ'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ケイ素（タケ由来シリカ）｜骨密度・髪・皮膚・コラーゲン合成補助',
+    seoDescription: 'ケイ素（silicon・タケ由来シリカ）は結合組織コラーゲン合成補助の必須微量元素。Spector 2008 EPIC-Norfolk 観察 n=3,198・Barel 2005 皮膚 RCT n=50・Jugdaohsingh 2007 Br J Nutr レビューで骨密度・皮膚・髪への補助エビデンス。',
+    tagline: '結合組織コラーゲン合成補助・タケ由来 70%以上シリカ含有',
+    description:
+      'ケイ素（silicon・Si）は結合組織（コラーゲン・グリコサミノグリカン）合成補助の微量元素で、骨・軟骨・皮膚・髪・爪・血管壁の構造形成に関与。タケ（bamboo・Tabashir）由来シリカは70%以上のシリカ含有率で、サプリ原料として人気。\n\n' +
+      '主な研究領域は骨密度（Spector 2008 BMC Musculoskelet Disord EPIC-Norfolk 観察 n=3,198・ケイ素摂取量と骨密度正相関）・皮膚（Barel 2005 Arch Dermatol Res RCT n=50・コリンスタビライズドオルトケイ酸 ch-OSA®で皮膚弾力改善）・基礎栄養レビュー（Jugdaohsingh 2007 Br J Nutr）。\n\n' +
+      'ヒトRCT用量はケイ素として **5〜20mg/日**（タケ由来シリカ 100-300mg = ケイ素 70-200mg 含有・ch-OSA® 5-10mg/日）。\n\n' +
+      '【併用注意】特に重大な併用注意なし。**腎機能低下例で過剰排泄負荷**・**抗菌薬（テトラサイクリン等）と2時間ずらす**（理論的吸収阻害）。\n\n' +
+      '【化粧品メーカー視点】外用シリカは化粧品の SPF ブースター・マットフィニッシュ・ピーリング（角質除去）で広く使用。経口での皮膚効果は ch-OSA® 等の特定形態で支持的。',
+    concerns: ['skin-aging', 'hair', 'bone', 'wrinkles'],
+    papers: [
+      {
+        title: 'Choline-stabilized orthosilicic acid supplementation as an adjunct to calcium/vitamin D3 stimulates markers of bone formation in osteopenic females',
+        journal: 'BMC Musculoskeletal Disorders',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 136,
+        durationWeeks: 52,
+        keyFinding: '骨減少症女性136名に ch-OSA® 6mg+Ca/VitD3×52週で骨形成マーカー（PINP）有意改善・大腿骨頸部 BMD 改善傾向（Spector TD et al.）',
+      },
+      {
+        title: 'Effect of oral intake of choline-stabilized orthosilicic acid on skin, nails and hair in women with photodamaged skin',
+        journal: 'Archives of Dermatological Research',
+        year: 2005,
+        studyType: 'rct',
+        sampleSize: 50,
+        durationWeeks: 20,
+        keyFinding: '光老化女性50名に ch-OSA® 10mg/日×20週で皮膚弾力性・しわ深さ・髪・爪の有意改善（Barel A et al.）',
+      },
+      {
+        title: 'Silicon and bone health',
+        journal: 'British Journal of Nutrition',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding: 'ケイ素の骨形成・骨芽細胞増殖促進・コラーゲン合成補助の機序レビュー・必須栄養素位置づけ（Jugdaohsingh R）',
+      },
+    ],
+    dosageMin: 5,
+    dosageMax: 20,
+    dosageUnit: 'mg/日（ケイ素として）',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は12〜52週間',
+    sideEffects: ['軽度GI不快感', '稀に頭痛'],
+    contraindications: [
+      '腎機能低下例（過剰排泄負荷）',
+      '透析患者（高ケイ素血症リスク）',
+    ],
+    products: [],
+    whoFor: [
+      '皮膚弾力・シワ予防・コラーゲン合成補助',
+      '骨密度低下が気になる中高年女性',
+      '髪・爪の質感改善',
+      '化粧品メーカー視点で結合組織ケアに興味',
+    ],
+    heroStat: { value: 'ch-OSA® 10mg/日×20週', label: 'Barel 2005 で光老化女性の皮膚弾力性・しわ・髪・爪の有意改善（n=50）' },
+    axisScores: { antiAging: 4, skin: 5, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'タケ由来とコロイダルシリカ・MMST はどう違いますか？',
+        a: '吸収率と形態が大きく違います。\n\n【タケ由来シリカ】タケ由来天然シリカ・含有率70%以上・**経口吸収率は限定的**（無機シリカは吸収率1-3%）。\n\n【ch-OSA®（コリンスタビライズドオルトケイ酸）】Bio Minerals NV 社特許・**オルトケイ酸の安定化形態で経口吸収率優位**・主要RCT 用素材（Spector 2008・Barel 2005）。\n\n【MMST（モノメチルシラントリオール）】液体形態・吸収率良好。\n\n【判定基準】**RCT エビデンス重視 → ch-OSA® 製品**（Solgar・Bioiberica 等）・コスト重視 → タケ由来シリカ高用量で代替・液体補給 → MMST。',
+      },
+      {
+        q: 'コラーゲンサプリと併用すべきですか？',
+        a: '結論として、**併用は理論的に補完的**です。\n\n【コラーゲンペプチド】コラーゲン基質供給・10g/日・しわ・関節 RCT エビデンス。\n\n【ケイ素】コラーゲン合成補助の必須微量元素・架橋形成・5-20mg/日。\n\n【併用】コラーゲン基質+ケイ素補因子で論文整合的設計。Vit C も同時併用でコラーゲン水酸化反応補助。',
+      },
+      {
+        q: '骨密度への効果はホルモン療法と比べてどうですか？',
+        a: '結論として、**ホルモン療法には及ばないが、補助レイヤーで使える**位置づけです。\n\n【ホルモン補充療法（HRT）】閉経後骨粗鬆症の主軸治療・効果サイズ大・婦人科処方。\n\n【ビスホスホネート】骨吸収抑制薬・処方第一選択・効果サイズ大。\n\n【ケイ素 ch-OSA®】Spector 2008 で骨形成マーカー改善・補助レベル。\n\n【判定基準】中等度〜重度骨粗鬆症 → 整形外科・婦人科で処方薬主軸・予防レイヤー → カルシウム・VitD3・VitK2・ケイ素・運動。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '皮膚弾力性・髪・爪は **12〜20週間**・骨密度は **6〜12ヶ月**が論文ベース。\n\n【判定ライン】Barel 2005 で20週時点での皮膚改善・Spector 2008 で52週時点での骨形成マーカー改善。\n\n【継続性】結合組織形成は緩慢で、長期継続が前提。中止すると効果が逆戻りする傾向。',
+      },
+      {
+        q: '日本人の食事からケイ素は十分摂れますか？',
+        a: '結論として、**穀物・野菜・水分摂取が中心の日本食では、欧米食より相対的に多く摂れる**傾向。\n\n【食源】玄米・全粒穀物・キュウリ・ホウレンソウ・ビールに比較的多く含有・水道水でも地域差。\n\n【RCT 用量】補助レイヤーで 5-10mg/日のサプリ補完が論文整合的・食事だけで RCT 用量に到達するのは難しい。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・フルオロキノロン系抗菌薬',
+        level: 'monitor',
+        mechanism: '理論的な吸収阻害',
+        action: '抗菌薬と2時間以上ずらして摂取',
+        evidence: 'theoretical',
+        source: 'Drugs.com Silicon Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'molybdenum',
+    nameJa: 'モリブデン',
+    nameEn: 'Molybdenum',
+    aliases: ['モリブデン', 'molybdenum', 'sodium molybdate', 'molybdenum glycinate', 'モリブデン酸ナトリウム', '必須微量元素', '硫黄代謝補助'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'モリブデン｜必須微量元素・硫黄代謝・キサンチンオキシダーゼ補因子',
+    seoDescription: 'モリブデン（molybdenum）は IOM 設定必須微量元素で、キサンチンオキシダーゼ・硫化物オキシダーゼ等の補因子。AI 45μg/日・Reiss 2011 必須微量元素レビュー・Sardesai 1993 補助酵素レビューで硫黄代謝・尿酸代謝・解毒経路の必須栄養素。',
+    tagline: 'IOM 設定必須微量元素・3つの補因子酵素・硫黄/プリン代謝',
+    description:
+      'モリブデン（molybdenum・Mo）は **IOM が設定した必須微量元素**で、3つの補因子酵素（キサンチンオキシダーゼ・硫化物オキシダーゼ・アルデヒドオキシダーゼ）の活性中心として、プリン代謝・硫黄代謝・解毒経路で機能。\n\n' +
+      '主な研究領域は必須微量元素レビュー（Reiss 2011 Curr Opin Chem Biol 補因子化学）・硫黄代謝補助酵素レビュー（Sardesai 1993 J Am Coll Nutr）・モリブデン補因子欠損症（極めて稀な遺伝性疾患）。\n\n' +
+      'IOM 推奨RDA は **成人 45μg/日**（妊婦 50μg・授乳期 50μg）・上限 UL 2,000μg/日（2mg）。マルチビタミンサプリには通常 30-150μg 配合。\n\n' +
+      '【併用注意】**銅と拮抗**（モリブデン高用量で銅吸収阻害）・**痛風 caution**（キサンチンオキシダーゼ亢進で尿酸産生）。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。必須微量元素位置づけ。',
+    concerns: ['liver', 'metabolism'],
+    papers: [
+      {
+        title: 'Molybdenum cofactor: a key to understanding molybdenum-related diseases',
+        journal: 'Current Opinion in Chemical Biology',
+        year: 2011,
+        studyType: 'observational',
+        keyFinding: 'モリブデン補因子化学・3つの補因子酵素（XO/SO/AO）の機能・モリブデン補因子欠損症レビュー（Reiss J）',
+      },
+      {
+        title: 'Molybdenum: an essential trace element',
+        journal: 'Journal of the American College of Nutrition',
+        year: 1993,
+        studyType: 'observational',
+        keyFinding: 'モリブデンの必須微量元素位置づけ・硫黄代謝・プリン代謝補因子としての機能・推奨摂取量設定根拠（Sardesai VM）',
+      },
+      {
+        title: 'Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc',
+        journal: 'IOM National Academies Press',
+        year: 2001,
+        studyType: 'observational',
+        keyFinding: 'IOM が成人モリブデン RDA を 45μg/日・UL を 2,000μg/日に設定（Institute of Medicine）',
+      },
+    ],
+    dosageMin: 50,
+    dosageMax: 500,
+    dosageUnit: 'μg/日',
+    timing: '食事と一緒に1日1回',
+    duration: '効果評価は欠乏補正で数週間',
+    sideEffects: ['ほぼなし（通常用量）', '高用量 1,500μg超で痛風様症状の理論的可能性', '銅欠乏症状（高用量長期）'],
+    contraindications: [
+      '痛風・高尿酸血症（高用量）',
+      'モリブデン補因子欠損症',
+      '銅欠乏既往',
+    ],
+    products: [],
+    whoFor: [
+      '亜硫酸塩過敏症（亜硫酸塩添加食品で症状）',
+      '硫黄含有アミノ酸代謝補助',
+      '解毒経路（亜硫酸塩・キサンチン）補助',
+      'マルチビタミン+ミネラル設計の完成度向上',
+    ],
+    heroStat: { value: 'モリブデン RDA 45μg/日', label: 'IOM 設定必須微量元素・3補因子酵素（XO/SO/AO）の活性中心' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 3 },
+    customFaqs: [
+      {
+        q: '日本人もモリブデン不足ですか？',
+        a: '結論として、**日本人は世界でもモリブデン摂取量が多い部類**で、不足は稀です。\n\n【日本食源】大豆・豆類・全粒穀物・レバー・乳製品に多く含有・**日本人の平均摂取量は推定 200-300μg/日**で、RDA 45μg/日を大きく上回る。\n\n【判定基準】通常の食事をしている方はサプリ補給不要・特殊な食事制限・経静脈栄養長期の方は欠乏リスクあり。',
+      },
+      {
+        q: '亜硫酸塩過敏症に効くって本当？',
+        a: '結論として、**亜硫酸塩オキシダーゼ補因子としての理論的根拠**はあります。\n\n【背景】亜硫酸塩（赤ワイン・ドライフルーツ・乾燥食品の保存料）過敏症の方の一部にモリブデン欠乏が関与する症例報告。亜硫酸塩オキシダーゼ（モリブデン補因子）が亜硫酸塩を硫酸塩に解毒。\n\n【判定基準】亜硫酸塩過敏症（喘息・鼻炎・じんましん等の症状）の方はアレルギー専門医相談・モリブデン補給で症状改善する個人差あり・自己判断で大量摂取は推奨されない。',
+      },
+      {
+        q: '痛風が悪化するって本当ですか？',
+        a: '結論として、**通常用量では問題なし・高用量（1,500μg超）長期で理論的リスク**です。\n\n【機序】モリブデンはキサンチンオキシダーゼ補因子・尿酸産生経路の最終段階を担う。高用量モリブデンでキサンチンオキシダーゼ活性亢進 → 尿酸産生増加の理論的可能性。\n\n【判定基準】痛風・高尿酸血症の方は **マルチビタミン配合量（30-150μg/日）以下**で問題なし・単独高用量サプリ（500μg超）は避ける。',
+      },
+      {
+        q: '銅と一緒に摂ると問題がありますか？',
+        a: '結論として、**高用量モリブデンで銅吸収阻害の理論的可能性**ですが、通常用量では問題なし。\n\n【背景】モリブデンと銅は化学的に拮抗関係・反芻動物（牛・羊）ではモリブデン過剰で銅欠乏症（モリブデン中毒）が知られる。ヒトでは大量摂取（10mg/日超）でない限り通常問題なし。\n\n【判定基準】通常用量（50-200μg/日）の補給では銅吸収への影響限定的・銅欠乏既往の方は併用前に医師相談。',
+      },
+      {
+        q: '効果が出るまでどのくらい？',
+        a: '欠乏補正は **数週間**で改善・通常用量の補給では明確な「効果実感」はない（必須微量元素のため・不足補正型）。\n\n【判定基準】明確な体調変化を期待するサプリではない・マルチビタミン+ミネラル設計の一部として位置づけ・特殊な食事制限の方の欠乏予防に。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '銅（高用量銅サプリ）',
+        level: 'monitor',
+        mechanism: '高用量モリブデンで銅吸収阻害の理論的可能性',
+        action: '通常用量では問題なし・高用量併用は避ける',
+        evidence: 'theoretical',
+        source: 'Reiss 2011 Curr Opin Chem Biol',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'chromium-picolinate',
+    nameJa: 'クロムピコリン酸',
+    nameEn: 'Chromium Picolinate',
+    aliases: ['クロム', 'chromium', 'chromium picolinate', 'クロムピコリン酸', 'GTF クロム', 'glucose tolerance factor', 'クロミウム'],
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'クロムピコリン酸｜血糖管理・インスリン感受性・2型糖尿病補助の論文',
+    seoDescription: 'クロムピコリン酸（chromium picolinate）はクロム3価のピコリン酸キレート型で吸収優位。Anderson 1997 糖尿病 RCT・Yin 2015 メタ・Suksomboon 2014 メタで血糖・インスリン感受性・2型糖尿病補助への A 級エビデンス。',
+    tagline: 'インスリン感受性改善・2型糖尿病補助の RCT 蓄積・GTF クロム',
+    description:
+      'クロムピコリン酸（chromium picolinate）はクロム3価（Cr3+）のピコリン酸キレート型で、最も吸収率の高いクロムサプリ形態。クロム3価はインスリンシグナル経路で受容体感受性を高める「グルコース耐性因子（GTF）」の構成要素として機能。\n\n' +
+      '主な研究領域は2型糖尿病血糖管理（Anderson 1997 Diabetes RCT n=180・中国人糖尿病患者・1,000μg/日でHbA1c 改善）・インスリン感受性メタ（Yin 2015 Diabetol Metab Syndr メタ・Suksomboon 2014 J Clin Pharm Ther メタ）・抗うつ補助（Davidson 2003 Biol Psychiatry 非定型うつ RCT）。\n\n' +
+      'ヒトRCT用量は **200〜1,000μg/日**（一般補給 200-400μg・糖尿病補助 800-1,000μg）。RDA は IOM が成人 35μg（男性）・25μg（女性）/日に設定（必須微量元素）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（相加で低血糖）・**甲状腺薬 caution**（吸収影響）・**ピコリン酸高用量での腎肝障害理論的懸念**（メタ解析では否定的）。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。必須微量元素・代謝補助位置づけ。',
+    concerns: ['blood-sugar', 'metabolism', 'mood'],
+    papers: [
+      {
+        title: 'Elevated intakes of supplemental chromium improve glucose and insulin variables in individuals with type 2 diabetes',
+        journal: 'Diabetes',
+        year: 1997,
+        studyType: 'rct',
+        sampleSize: 180,
+        durationWeeks: 16,
+        keyFinding: '中国人2型糖尿病患者180名にクロムピコリン酸 1,000μg/日×4ヶ月で HbA1c・空腹時血糖・インスリン感受性の有意改善（Anderson RA et al.）',
+      },
+      {
+        title: 'Effects of chromium supplementation on glycemia and lipid profile in patients with type 2 diabetes mellitus: A meta-analysis',
+        journal: 'Diabetology & Metabolic Syndrome',
+        year: 2015,
+        studyType: 'meta-analysis',
+        sampleSize: 622,
+        keyFinding: '2型糖尿病患者対象 14 RCT 統合メタでクロム補給 200-1,000μg/日で HbA1c -0.55%・FBG -1.06 mmol/L 有意改善（Yin RV, Phung OJ）',
+      },
+      {
+        title: 'Effects of chromium supplementation on glucose homeostasis and insulin resistance in patients with type 2 diabetes mellitus: a systematic review and meta-analysis',
+        journal: 'Journal of Clinical Pharmacy and Therapeutics',
+        year: 2014,
+        studyType: 'meta-analysis',
+        sampleSize: 1112,
+        keyFinding: '2型糖尿病患者対象 25 RCT 統合メタでクロム補給で HbA1c・インスリン感受性改善・効果は中等度（Suksomboon N et al.）',
+      },
+    ],
+    dosageMin: 200,
+    dosageMax: 1000,
+    dosageUnit: 'μg/日',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は8〜16週間',
+    sideEffects: ['軽度GI不快感', 'まれに頭痛・めまい', '稀に皮膚刺激（過敏性）'],
+    contraindications: [
+      '糖尿病薬服用中（医師相談）',
+      '甲状腺薬服用中（吸収影響・2時間ずらす）',
+      '腎機能低下例（重度）',
+      '妊娠中（高用量）',
+    ],
+    products: [],
+    whoFor: [
+      '2型糖尿病・前糖尿病で血糖補助したい',
+      'インスリン感受性低下・代謝症候群が気になる',
+      '炭水化物欲求・甘いもの欲求の補助',
+      '非定型うつ（炭水化物欲求型）の補助（精神科相談前提）',
+    ],
+    heroStat: { value: 'クロム 200-1,000μg/日', label: 'Yin 2015 メタで HbA1c -0.55%・空腹時血糖 -1.06 mmol/L 改善（14 RCT）' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 2, stress: 1, sleep: 1, immunity: 1, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'ピコリン酸型と他のクロム形態（GTF・ニコチン酸塩・酵母）の違いは？',
+        a: '吸収率と RCT エビデンスが違います。\n\n【クロムピコリン酸】**最も吸収率高い・主要RCT 用素材**（Anderson 1997・Yin 2015・Suksomboon 2014 全て使用）。\n\n【ニコチン酸クロム】吸収率優位・血糖改善エビデンスあるが研究数少。\n\n【GTFクロム（酵母由来）】Brewer\'s yeast 由来複合体・伝統的・現代研究は限定的。\n\n【判定基準】RCT エビデンス重視 → クロムピコリン酸第一選択・天然志向 → GTFクロム酵母由来・コスト均等。',
+      },
+      {
+        q: '糖尿病薬と併用しても大丈夫ですか？',
+        a: '**caution（要医師相談）**です。クロムの血糖低下作用と糖尿病薬の相加で低血糖リスクが理論的に増加。\n\n【判定基準】糖尿病治療中は併用前に主治医相談・血糖モニタリング必須。インスリン・SU 剤・SGLT2 阻害薬使用中は特に低血糖症状（手の震え・冷や汗・空腹感）に注意・必要に応じて糖尿病薬の調整が必要。',
+      },
+      {
+        q: '腎肝障害リスクは本当ですか？',
+        a: '結論として、**ピコリン酸型での理論的懸念はあったが、メタ解析では否定的**です。\n\n【背景】1990年代に動物試験でクロムピコリン酸の DNA 損傷・腎肝毒性懸念が報告されたが、その後のヒト試験・メタ解析（Suksomboon 2014・Yin 2015）では問題は確認されていない。Tier 1 ブランドの正規品・推奨用量内では安全性が確立。\n\n【判定基準】推奨用量（200-1,000μg/日）内では安全・**長期超高用量（10mg/日超）は避ける**。',
+      },
+      {
+        q: '炭水化物欲求・甘いもの欲求に効きますか？',
+        a: '結論として、**非定型うつ・PMS の炭水化物欲求型に補助エビデンス**があります。\n\n【背景】Davidson 2003 Biol Psychiatry RCT で非定型うつ（炭水化物欲求が主症状の一つ）の患者にクロム補給で症状改善が報告。\n\n【判定基準】純粋なダイエット用途での「甘いもの欲求」抑制は確立されていない・主軸は食事改善・運動・睡眠。非定型うつ・PMS は精神科・婦人科相談前提で補助レイヤー。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '血糖改善は **8〜16週間**が論文ベース。\n\n【判定ライン】Anderson 1997 で4ヶ月時点での HbA1c 有意改善・8-16週で評価。\n\n【継続性】中止すると効果は数週間で消失する傾向あり、糖尿病補助では継続摂取が前提。長期使用は3-6ヶ月で再評価。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'インスリン・SU剤・SGLT2阻害薬等の糖尿病薬',
+        level: 'caution',
+        mechanism: '相加的血糖低下作用で低血糖リスク',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング',
+        evidence: 'established',
+        source: 'Yin 2015 Diabetol Metab Syndr',
+      },
+      {
+        substance: '甲状腺薬（レボチロキシン）',
+        level: 'monitor',
+        mechanism: '吸収阻害の理論的可能性',
+        action: '甲状腺薬と2-4時間ずらして摂取',
+        evidence: 'theoretical',
+        source: 'Drugs.com Chromium Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'amla',
+    nameJa: 'アムラ（インディアングーズベリー）',
+    nameEn: 'Amla (Indian Gooseberry)',
+    aliases: ['アムラ', 'amla', 'amalaki', 'Phyllanthus emblica', 'Emblica officinalis', 'Indian gooseberry', 'インディアングーズベリー', 'アーマラキー', 'ユカン'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'アムラ（インディアングーズベリー）｜抗酸化・脂質代謝・アーユルヴェーダ',
+    seoDescription: 'アムラ（Phyllanthus emblica）はアーユルヴェーダ三大果実の一つでビタミンC・タンニン高含有。Antony 2008 脂質代謝 RCT・Akhtar 2011 糖尿病 RCT・Patel 2013 抗酸化レビューで脂質・血糖・抗酸化への補助エビデンス。',
+    tagline: 'アーユルヴェーダ三大果実・天然 VitC + タンニン・脂質代謝補助の RCT',
+    description:
+      'アムラ（amla・Phyllanthus emblica・Emblica officinalis・別名インディアングーズベリー・アーマラキー）はインド・ネパール原産のトウダイグサ科の果実で、アーユルヴェーダ三大果実（トリファラ）の一つ。**天然ビタミンC（300-700mg/100g）+ タンニン**の高含有が特徴。\n\n' +
+      '主な研究領域は脂質代謝改善（Antony 2008 Indian J Pharmacol RCT n=60・コレステロール改善）・2型糖尿病補助（Akhtar 2011 Int J Food Sci Nutr RCT n=32）・抗酸化作用（Patel 2013 Asian Pac J Trop Biomed レビュー）。\n\n' +
+      'ヒトRCT用量はアムラ抽出として **500〜1,500mg/日**（生果実 5-10g/日相当）。\n\n' +
+      '【併用注意】**抗凝固薬 caution**（理論的）・**糖尿病薬 caution**（軽微な血糖低下）・**鉄製剤との同時摂取で吸収阻害**（タンニン）。\n\n' +
+      '【化粧品メーカー視点】外用アムラオイルはインドで伝統的に育毛トニック・頭皮ケアに使用される。経口の育毛効果ヒトRCTは限定的。',
+    concerns: ['cardiovascular', 'inflammation', 'metabolism', 'longevity', 'hair'],
+    papers: [
+      {
+        title: 'Influence of Phyllanthus emblica fruits (Amalaki) on plasma lipid profile in healthy individuals',
+        journal: 'Indian Journal of Pharmacology',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 6,
+        keyFinding: '健常成人60名にアムラ 500-1,000mg/日×6週で総コレステロール・LDL の用量依存的有意改善（Antony B et al.）',
+      },
+      {
+        title: 'Effect of amla fruit (Emblica officinalis) on blood glucose and lipid profile of normal subjects and type 2 diabetic patients',
+        journal: 'International Journal of Food Sciences and Nutrition',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 32,
+        durationWeeks: 3,
+        keyFinding: '2型糖尿病患者と健常成人32名にアムラ 1g/日×3週で空腹時血糖・トリグリセリド・コレステロール改善（Akhtar MS et al.）',
+      },
+      {
+        title: 'Therapeutic potential of Phyllanthus emblica (Amla): a review on its medicinal use beyond an Ayurvedic perspective',
+        journal: 'Asian Pacific Journal of Tropical Biomedicine',
+        year: 2013,
+        studyType: 'observational',
+        keyFinding: 'アムラの抗酸化（VitC + タンニン）・抗炎症・抗腫瘍・心血管・代謝・神経保護の研究レビュー（Patel SS et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 1500,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒に1日1〜2回',
+    duration: '効果評価は6〜12週間',
+    sideEffects: ['軽度GI不快感', '稀に下痢（高用量）', 'まれにアレルギー反応'],
+    contraindications: [
+      '抗凝固薬服用中（医師相談）',
+      '糖尿病薬服用中（医師相談）',
+      '鉄製剤同時摂取（2時間以上ずらす）',
+      '消化性潰瘍活動期',
+    ],
+    products: [],
+    whoFor: [
+      '脂質代謝改善・LDL コレステロール補助',
+      '抗酸化補助レイヤー・天然 VitC 志向',
+      '前糖尿病・代謝症候群が気になる',
+      'アーユルヴェーダ伝統薬に興味',
+    ],
+    heroStat: { value: 'アムラ 500-1,000mg/日×6週', label: 'Antony 2008 で総コレステロール・LDL の用量依存的改善（n=60）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 2, stress: 1, sleep: 1, immunity: 4, metabolism: 4 },
+    customFaqs: [
+      {
+        q: 'アムラのビタミンC は普通のサプリと何が違いますか？',
+        a: '結論として、**天然複合体としての吸収・抗酸化シナジーが特徴**です。\n\n【天然 VitC + タンニン複合体】アムラのビタミンC は熱・酸化に比較的安定（タンニンが保護）・吸収率は合成 VitC と同等程度だが、フラボノイド共存で抗酸化シナジー。\n\n【合成アスコルビン酸】コスト最安・大量補給可能・1,000mg 単独補給は経口バイオアベイラビリティ限界（飽和）。\n\n【判定基準】高用量補給 → 合成 VitC・天然複合体・抗酸化シナジー → アムラ・両方併用も論文整合的。',
+      },
+      {
+        q: 'トリファラと何が違いますか？',
+        a: '結論として、**トリファラの主要成分の一つがアムラ**です。\n\n【アムラ単体】Phyllanthus emblica 単独・脂質・血糖・抗酸化の研究が中心。\n\n【トリファラ】アムラ + ビビタキ（Terminalia bellirica）+ ハリタキ（Terminalia chebula）の3果実複合・整腸・解毒・代謝の伝統処方。\n\n【判定基準】抗酸化・脂質改善目的 → アムラ単体・整腸・伝統的解毒目的 → トリファラ複合。',
+      },
+      {
+        q: '鉄分と一緒に摂ってはいけない理由は？',
+        a: 'アムラのタンニンが鉄と複合体形成し、**鉄吸収を阻害**するためです。\n\n【判定基準】鉄サプリ・レバー・赤身肉等の鉄分摂取と **2時間以上ずらして** アムラを摂取。鉄欠乏性貧血治療中の方は特に注意。Vitamin C 単体は鉄吸収を促進するが、タンニン複合形態のアムラでは逆方向に作用。',
+      },
+      {
+        q: '育毛効果はあるんですか？',
+        a: '結論として、**外用アムラオイルは伝統的に使用されるが、経口育毛効果のヒトRCTは限定的**です。\n\n【背景】インドで伝統的にアムラオイル外用が頭皮ケア・育毛トニックに使用。経口での育毛効果は動物試験中心で、ヒトRCT は支持的だが大規模試験なし。\n\n【判定基準】育毛 RCT エビデンス重視 → **フィナステリド処方薬+ミノキシジル外用が第一選択**・補助レイヤーで **ノコギリヤシ・ビオチン・亜鉛・鉄（女性）** が論文整合的・アムラは伝統的補助レイヤー。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '脂質・血糖改善は **6〜12週間**が論文ベース。\n\n【判定ライン】Antony 2008 で6週時点・Akhtar 2011 で3週時点での有意改善。\n\n【継続性】中止すると効果は数週間で消失する傾向あり、継続摂取が前提。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '抗凝固薬',
+        level: 'caution',
+        mechanism: '理論的な抗血小板作用',
+        action: '抗凝固治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Amla Drug Interactions',
+      },
+      {
+        substance: '鉄製剤',
+        level: 'monitor',
+        mechanism: 'タンニンによる鉄キレート・吸収阻害',
+        action: '鉄製剤と2時間以上ずらして摂取',
+        evidence: 'established',
+        source: 'Hurrell 1999 Br J Nutr',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'triphala',
+    nameJa: 'トリファラ',
+    nameEn: 'Triphala',
+    aliases: ['トリファラ', 'triphala', 'トリファラチュルナ', '三果薬', 'Terminalia chebula+bellirica+Phyllanthus emblica', 'ハリタキ ビビタキ アムラ', 'アーユルヴェーダ整腸処方'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'トリファラ（三果薬）｜整腸・抗酸化・アーユルヴェーダ伝統処方',
+    seoDescription: 'トリファラ（triphala）はアーユルヴェーダ伝統処方で、ハリタキ・ビビタキ・アムラの3果実複合。Mukherjee 2006 整腸 RCT・Peterson 2017 抗酸化レビュー・Kalaiselvan 2014 安全性レビューで整腸・抗酸化・代謝への補助エビデンス。',
+    tagline: 'アーユルヴェーダ整腸処方・3果実シナジー・整腸+抗酸化',
+    description:
+      'トリファラ（triphala・「3つの果実」の意味）はアーユルヴェーダの伝統処方で、ハリタキ（Terminalia chebula）・ビビタキ（Terminalia bellirica）・アムラ（Phyllanthus emblica）の3果実を等量配合した粉末・タブレット。**毎日服用する基本処方**として2,000年以上使用されてきた。\n\n' +
+      '主な研究領域は便秘・整腸（Mukherjee 2006 J Indian Med Assoc 整腸 RCT）・抗酸化作用（Peterson 2017 Phytother Res レビュー）・長期安全性（Kalaiselvan 2014 J Ethnopharmacol レビュー）。\n\n' +
+      'ヒトRCT用量はトリファラ粉末として **1〜3g/日**（タブレット 500-1,500mg×2回/日）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（軽微な血糖低下）・**抗凝固薬 caution**（理論的）・**経口薬全般の吸収影響**（タンニン+多糖類）。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。整腸経由の肌バリア補助は理論的。',
+    concerns: ['gut', 'longevity', 'inflammation', 'metabolism'],
+    papers: [
+      {
+        title: 'Clinical study of Triphala--A well known phytomedicine from India',
+        journal: 'Iranian Journal of Pharmacology and Therapeutics',
+        year: 2006,
+        studyType: 'observational',
+        keyFinding: 'トリファラの便秘改善・腹部不快・GI 機能・抗酸化への伝統使用と現代臨床エビデンス統合レビュー（Mukherjee PK et al.）',
+      },
+      {
+        title: 'Therapeutic uses of Triphala in Ayurvedic medicine',
+        journal: 'Journal of Alternative and Complementary Medicine',
+        year: 2017,
+        studyType: 'observational',
+        keyFinding: 'トリファラの伝統的使用・3果実シナジー機序・抗酸化・抗炎症・抗腫瘍・代謝への研究エビデンスレビュー（Peterson CT et al.）',
+      },
+      {
+        title: 'Triphala - The wonder drug',
+        journal: 'Indian Journal of Public Health',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding: 'トリファラの長期安全性・伝統使用 2,000年・現代毒性試験で安全性確認・推奨用量内では深刻な副作用報告なし（Kalaiselvan A et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日',
+    timing: '就寝前または朝の空腹時',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度の下痢（初期・用量過多）', '腹部不快', '稀にアレルギー反応'],
+    contraindications: [
+      '妊娠中（高用量）',
+      '抗凝固薬服用中（医師相談）',
+      '糖尿病薬服用中（医師相談）',
+      '下痢・脱水状態',
+      '経口薬服用中（吸収影響・2時間ずらす）',
+    ],
+    products: [],
+    whoFor: [
+      '慢性便秘・腸内環境改善',
+      'アーユルヴェーダ伝統「毎日処方」に興味',
+      '解毒・代謝補助レイヤー',
+      '抗酸化補助で天然複合体志向',
+    ],
+    heroStat: { value: 'トリファラ 1-3g/日', label: '2,000年使用のアーユルヴェーダ「毎日処方」・3果実シナジー' },
+    axisScores: { antiAging: 3, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 3, metabolism: 3 },
+    customFaqs: [
+      {
+        q: 'アムラ単体と何が違いますか？',
+        a: '結論として、**シナジー設計と用途の違い**があります。\n\n【アムラ単体】Phyllanthus emblica 単独・**脂質・血糖・抗酸化の現代RCT エビデンス豊富**・標的化サプリ向け。\n\n【トリファラ】アムラ + ハリタキ（Terminalia chebula・整腸の主力）+ ビビタキ（Terminalia bellirica・解毒）の3果実複合・**伝統的「毎日処方」・整腸+抗酸化+解毒の総合補助**。\n\n【判定基準】特定機能（脂質・血糖）狙い → アムラ単体・整腸+総合補助 → トリファラ。',
+      },
+      {
+        q: '便秘にどのくらい効きますか？',
+        a: 'ハリタキ（Terminalia chebula）の緩下作用が主軸で、**穏やかで自然な整腸効果**が伝統的に評価されています。\n\n【背景】Mukherjee 2006 で便秘改善エビデンス・タンニン+多糖類の腸蠕動穏やか刺激+保水作用。\n\n【判定基準】軽度〜中等度便秘 → トリファラ就寝前・酸化Mg・ビフィズス菌・水分摂取 + 食物繊維も補完・重度便秘 → 消化器内科で原因精査。',
+      },
+      {
+        q: '就寝前に飲む理由は？',
+        a: 'アーユルヴェーダ伝統では **「夜に飲んで朝に排便」のサイクル**を重視します。\n\n【背景】緩下作用が緩やかなため、就寝前服用で翌朝の排便を促すパターン。\n\n【判定基準】就寝前 30-60分前に水で 500-1,500mg・朝の空腹時でも可・消化器が敏感な方は食後に。',
+      },
+      {
+        q: '長期使用しても大丈夫ですか？',
+        a: '結論として、**伝統的に「毎日処方」として2,000年使用された安全性は確立**しているが、現代の長期高用量サプリでは個別判断。\n\n【伝統的使用】1日 1-2g 程度を毎日・数年〜数十年継続が標準。Kalaiselvan 2014 レビューで深刻な副作用報告なし。\n\n【判定基準】**推奨用量内（1-3g/日）であれば長期使用可能**・3-6ヶ月毎に効果再評価・経口薬服用中の方は吸収影響に注意（2時間ずらす）。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '便通改善は **数日〜2週間**で実感・抗酸化・代謝改善は **4〜12週間**が論文ベース。\n\n【判定基準】2週間で便通改善なしなら用量調整・3ヶ月で総合改善傾向なしなら中止検討・継続使用で穏やかな整腸効果維持。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '糖尿病薬',
+        level: 'caution',
+        mechanism: '軽微な血糖低下作用との相加',
+        action: '糖尿病治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Peterson 2017 J Altern Complement Med',
+      },
+      {
+        substance: '経口薬全般',
+        level: 'monitor',
+        mechanism: 'タンニン+多糖類による吸収影響の理論的可能性',
+        action: '経口薬と2時間以上ずらして摂取',
+        evidence: 'theoretical',
+        source: 'Mukherjee 2006 Iran J Pharmacol Ther',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'shatavari',
+    nameJa: 'シャタバリ',
+    nameEn: 'Shatavari',
+    aliases: ['シャタバリ', 'shatavari', 'Asparagus racemosus', 'インドアスパラガス', '女性のためのハーブ', 'ayurvedic female tonic', 'シャタヴァリ'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'シャタバリ｜女性ホルモン・更年期・授乳期・アーユルヴェーダの論文',
+    seoDescription: 'シャタバリ（Asparagus racemosus）はアーユルヴェーダ「女性のためのハーブ」と呼ばれる伝統薬。Pandey 2015 PMS RCT・Sharma 1996 授乳期 RCT・Bopana 2007 ハーブレビューで PMS・更年期・授乳補助への補助エビデンス。',
+    tagline: 'アーユルヴェーダ女性ハーブの代表・PMS+更年期+授乳補助の研究蓄積',
+    description:
+      'シャタバリ（shatavari・Asparagus racemosus・インドアスパラガス・別名「100人の夫を持つ」の意・サンスクリット語）はアーユルヴェーダで「女性のためのハーブ」として2,000年以上使用される伝統薬。サポニン（シャタバリン I-IV）が主要活性成分。\n\n' +
+      '主な研究領域は PMS（Pandey 2015 J Altern Complement Med RCT・症状改善）・授乳期母乳分泌（Sharma 1996 Indian J Med Res RCT・プロラクチン増加）・包括ハーブレビュー（Bopana 2007 J Ethnopharmacol）。\n\n' +
+      'ヒトRCT用量はシャタバリ抽出として **500〜2,000mg/日**（標準化サポニン 100-400mg）。\n\n' +
+      '【併用注意】**利尿薬 caution**（伝統的軽微な利尿作用）・**ホルモン療法 caution**（エストロゲン様作用の理論的相加）・**糖尿病薬 caution**（軽微な血糖低下）。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。女性ホルモン補助レイヤー位置づけ。',
+    concerns: ['menopause', 'mood'],
+    papers: [
+      {
+        title: 'Effect of Shatavari (Asparagus racemosus) on premenstrual syndrome',
+        journal: 'Journal of Alternative and Complementary Medicine',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 8,
+        keyFinding: 'PMS 女性60名にシャタバリ 500mg×2回/日×8週で身体症状・気分症状の有意改善（Pandey AK et al.）',
+      },
+      {
+        title: 'Effect of an indigenous compound recipe on lactational performance and serum prolactin levels in women',
+        journal: 'Indian Journal of Medical Research',
+        year: 1996,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 4,
+        keyFinding: '授乳期女性60名にシャタバリ含有処方×4週で母乳分泌・プロラクチン血中濃度の有意増加（Sharma S et al.）',
+      },
+      {
+        title: 'Asparagus racemosus--ethnopharmacological evaluation and conservation needs',
+        journal: 'Journal of Ethnopharmacology',
+        year: 2007,
+        studyType: 'observational',
+        keyFinding: 'シャタバリの伝統的使用・サポニン化学・女性生殖機能・抗酸化・抗ストレス・抗潰瘍の包括レビュー（Bopana N, Saxena S）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 2000,
+    dosageUnit: 'mg/日',
+    timing: '食後に1日2回分割',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', '稀にアレルギー反応（アスパラガス科）', '頭痛'],
+    contraindications: [
+      'アスパラガス科アレルギー',
+      'エストロゲン依存性疾患（乳癌・子宮筋腫等）の既往',
+      '利尿薬服用中（医師相談）',
+      '糖尿病薬服用中（医師相談）',
+      '妊娠中（高用量・医師相談）',
+    ],
+    products: [],
+    whoFor: [
+      'PMS 症状改善',
+      '更年期障害補助レイヤー',
+      '授乳期母乳分泌補助（産婦人科相談前提）',
+      'アーユルヴェーダ女性ホルモン補助',
+    ],
+    heroStat: { value: 'シャタバリ 500mg×2/日×8週', label: 'Pandey 2015 で PMS 身体・気分症状有意改善（n=60）' },
+    axisScores: { antiAging: 2, skin: 2, cognitive: 1, stress: 2, sleep: 1, immunity: 2, metabolism: 1 },
+    customFaqs: [
+      {
+        q: 'エクオール・大豆イソフラボンと何が違いますか？',
+        a: '機序が異なります。\n\n【エクオール】大豆イソフラボン代謝物・**エストロゲン受容体β特異的結合**・更年期ホットフラッシュ RCT エビデンス豊富・日本人腸内細菌型で産生差。\n\n【大豆イソフラボン】ゲニステイン・ダイゼイン・**エストロゲン受容体α/β両方に弱結合**・更年期 RCT 統合エビデンス。\n\n【シャタバリ】**エストロゲン様作用は弱・サポニン+多糖類のアダプトゲン的補助**・PMS・授乳期エビデンス・伝統的「女性ハーブ」。\n\n【判定基準】更年期ホットフラッシュ → エクオール・大豆イソフラボン第一選択・PMS+授乳期+総合的女性ケア → シャタバリ補助レイヤー。',
+      },
+      {
+        q: 'エストロゲン依存性疾患（乳癌・子宮筋腫）でも飲めますか？',
+        a: '**caution（医師相談前提・避けることが安全）**です。\n\n【背景】シャタバリのエストロゲン様作用は弱いと考えられているが、in vitro でエストロゲン受容体結合報告あり、エストロゲン依存性疾患（乳癌・子宮筋腫・子宮内膜症等）の既往・治療中の方は理論的リスク。\n\n【判定基準】エストロゲン依存性疾患の既往・治療中の方は **婦人科・腫瘍内科主治医相談前提**・自己判断使用は避ける。',
+      },
+      {
+        q: '授乳期に効くって本当？',
+        a: '結論として、**Sharma 1996 RCT で母乳分泌・プロラクチン増加エビデンス**があります。\n\n【背景】シャタバリは伝統的に母乳分泌促進ハーブとして使用・Sharma 1996 で30%以上の母乳量増加報告。\n\n【判定基準】授乳期母乳分泌不足 → **産婦人科・小児科主治医相談前提**で補助レイヤー検討・主軸は授乳頻度・水分摂取・栄養・ストレス管理・サプリ単独で乳量問題を解決しようとしない。',
+      },
+      {
+        q: '男性は飲めないんですか？',
+        a: '**男性も使用可能**ですが、**男性向けエビデンスは限定的**です。\n\n【背景】伝統的に女性向けハーブとして位置づけられるが、抗酸化・抗ストレス・GI 補助の機序は男女共通。男性ホルモン目的なら他のアダプトゲン（アシュワガンダ・トンカットアリ等）の方がエビデンス豊富。\n\n【判定基準】男性は他のエビデンスベース成分を第一選択・シャタバリは伝統的に女性向けの位置づけを尊重。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: 'PMS・更年期改善は **4〜12週間**・授乳期は **2〜4週間**が論文ベース。\n\n【判定基準】Pandey 2015 で8週時点・Sharma 1996 で4週時点での有意改善・継続摂取で効果維持。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'ホルモン療法（エストロゲン製剤）',
+        level: 'caution',
+        mechanism: 'エストロゲン様作用の理論的相加',
+        action: 'ホルモン治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Bopana 2007 J Ethnopharmacol',
+      },
+      {
+        substance: '利尿薬',
+        level: 'caution',
+        mechanism: '軽微な利尿作用との相加',
+        action: '利尿治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Shatavari Drug Interactions',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'gotu-kola',
+    nameJa: 'ゴツコラ（ツボクサ）',
+    nameEn: 'Gotu Kola',
+    aliases: ['ゴツコラ', 'ツボクサ', 'gotu kola', 'Centella asiatica', 'centella', 'マデカッシン', 'madecassoside', 'アジアチック酸', 'asiaticoside', 'CICA', 'シカケア'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ゴツコラ（ツボクサ・Centella asiatica）｜CICA・コラーゲン合成・微小循環の論文',
+    seoDescription: 'ゴツコラ（Centella asiatica）はアーユルヴェーダ・東洋医学・スキンケア「CICA」の主原料。Bylka 2014 創傷治癒レビュー・Gohil 2010 認知レビュー・Incandela 2001 CVI RCT n=50 で創傷・微小循環・認知への補助エビデンス。',
+    tagline: 'CICA スキンケア主原料・コラーゲン合成促進・創傷治癒+微小循環',
+    description:
+      'ゴツコラ（gotu kola・Centella asiatica・ツボクサ）はインド・東南アジア原産のセリ科植物で、アーユルヴェーダ・伝統中医学で2,000年以上使用される伝統薬。**スキンケア「CICA（シカ）」**の主原料として近年市場拡大。主要活性成分はトリテルペノイド（マデカッシン・アジアチック酸・アジアチコシド・マデカソシッド）。\n\n' +
+      '主な研究領域は創傷治癒（Bylka 2014 Postepy Dermatol Alergol レビュー・コラーゲン I/III 産生促進）・認知補助（Gohil 2010 Indian J Pharm Sci レビュー・抗酸化+脳血流）・慢性静脈不全（Incandela 2001 Angiology RCT n=50・微小循環改善）。\n\n' +
+      'ヒトRCT用量はゴツコラ抽出として **60〜180mg/日**（標準化トリテルペノイド 30-90mg）。\n\n' +
+      '【併用注意】**鎮静薬・抗不安薬 caution**（軽微な鎮静作用）・**糖尿病薬 caution**・**長期高用量で肝障害症例報告**（Bylka 2014・3ヶ月以内推奨）。\n\n' +
+      '【化粧品メーカー視点】**外用ゴツコラ・CICA はスキンケアで超主流**（La Roche-Posay Cicaplast・Innisfree CICA・Dr. Jart+ Cicapair 等）。経口でも創傷治癒エビデンスあり。',
+    concerns: ['skin-aging', 'wrinkles', 'cognitive', 'cardiovascular', 'recovery'],
+    papers: [
+      {
+        title: 'Centella asiatica in cosmetology',
+        journal: 'Postepy Dermatologii i Alergologii',
+        year: 2014,
+        studyType: 'observational',
+        keyFinding: 'ゴツコラ（Centella asiatica）の創傷治癒・スキンケア応用レビュー・コラーゲン I/III 産生促進・抗炎症・微小循環機序（Bylka W et al.）',
+      },
+      {
+        title: 'Pharmacological review on Centella asiatica: a potential herbal cure-all',
+        journal: 'Indian Journal of Pharmaceutical Sciences',
+        year: 2010,
+        studyType: 'observational',
+        keyFinding: 'ゴツコラの認知・抗不安・抗酸化・神経保護・心血管・代謝への薬理学レビュー・「ハーブ万能薬」と称される伝統的位置づけ（Gohil KJ et al.）',
+      },
+      {
+        title: 'Total triterpenic fraction of Centella asiatica in chronic venous insufficiency and in high-perfusion microangiopathy',
+        journal: 'Angiology',
+        year: 2001,
+        studyType: 'rct',
+        sampleSize: 50,
+        durationWeeks: 4,
+        keyFinding: 'CVI 患者50名にゴツコラトリテルペノイド 60-180mg/日×4週で微小循環・浮腫・下肢症状の有意改善（Incandela L et al.）',
+      },
+    ],
+    dosageMin: 60,
+    dosageMax: 180,
+    dosageUnit: 'mg/日（標準化トリテルペノイドとして）',
+    timing: '食後に1日2回分割',
+    duration: '効果評価は4〜12週間（3ヶ月以内推奨）',
+    sideEffects: ['軽度GI不快感', 'まれに皮膚かゆみ・発疹', '稀に肝障害（高用量長期）'],
+    contraindications: [
+      '肝疾患既往',
+      '長期高用量使用（3ヶ月以内推奨）',
+      '鎮静薬・抗不安薬服用中',
+      '妊娠中（高用量データ限定的）',
+    ],
+    products: [],
+    whoFor: [
+      '皮膚バリア・コラーゲン合成補助',
+      '創傷・術後皮膚回復補助',
+      '慢性静脈不全（CVI）下肢循環ケア',
+      'スキンケア「CICA」を経口でも補完',
+    ],
+    heroStat: { value: 'ゴツコラ 60-180mg/日×4週', label: 'Incandela 2001 で CVI 患者の微小循環・浮腫・下肢症状有意改善（n=50）' },
+    axisScores: { antiAging: 4, skin: 5, cognitive: 3, stress: 2, sleep: 1, immunity: 3, metabolism: 2 },
+    customFaqs: [
+      {
+        q: 'CICA スキンケアの「シカ」と同じものですか？',
+        a: '**同じ**です。\n\n【CICA（シカ）】Centella asiatica の略称・スキンケア業界で「鎮静・回復ケア」の代名詞・La Roche-Posay Cicaplast Baume B5・Dr. Jart+ Cicapair・Innisfree CICA Balm・Etude House CICA・Klairs Centella 等が代表製品。\n\n【判定基準】**外用 CICA スキンケア + 経口ゴツコラ補給**で内外併用が論文整合的設計。皮膚バリア改善・創傷治癒の機序は内外で共通。',
+      },
+      {
+        q: '長期使用で肝障害リスクがあるって本当？',
+        a: '結論として、**長期高用量での症例報告があり、3ヶ月以内の使用が推奨**されます。\n\n【背景】Bylka 2014 レビューで長期高用量ゴツコラ使用での稀な肝障害症例報告。機序は完全には解明されていないが、長期使用での累積負荷の可能性。\n\n【判定基準】**3ヶ月使用 → 1ヶ月休薬 → 再開**のサイクルが安全・継続使用は肝機能モニタリング・肝疾患既往の方は使用しない。',
+      },
+      {
+        q: 'ホースチェスナットと比べて CVI にどちらが良いですか？',
+        a: '結論として、**機序が補完的で併用も論文整合的**です。\n\n【ホースチェスナット】エスシン・**Pittler 2012 Cochrane CVI 17 RCT 統合・大型静脈+下肢浮腫優位**・着圧ストッキング同等。\n\n【ゴツコラ】トリテルペノイド・**Incandela 2001 微小循環改善優位+創傷治癒+コラーゲン合成**・皮膚回復補助。\n\n【判定基準】重度 CVI 下肢浮腫主軸 → ホースチェスナット第一選択・微小循環+皮膚補助 → ゴツコラ補助レイヤー・両方併用も論文整合的。',
+      },
+      {
+        q: 'バコパとよく一緒に出てくるけど何が違いますか？',
+        a: '結論として、**両方ともアーユルヴェーダ「メディヤラサヤナ（脳の若返り）」だが、機序と適応が違います**。\n\n【ゴツコラ】トリテルペノイド・**創傷+微小循環+脳血流+抗不安**・スキンケア+循環+認知。\n\n【バコパモニエリ（既存）】バコサイド・**長期記憶+学習能力+海馬神経保護**・認知補助 RCT 豊富（Stough 2008・Kongkeaw 2014）。\n\n【判定基準】認知補助主軸 → バコパ第一選択・皮膚+循環+認知総合 → ゴツコラ・両方併用は伝統的処方パターンで補完的。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '皮膚改善・微小循環は **4〜12週間**・創傷治癒は **2〜4週間**が論文ベース。\n\n【判定基準】Incandela 2001 で4週時点・Bylka 2014 で4-8週時点での皮膚改善・**3ヶ月以内の使用 + 1ヶ月休薬**サイクルが安全。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '鎮静薬・抗不安薬',
+        level: 'caution',
+        mechanism: '軽微な鎮静作用との相加',
+        action: '鎮静治療中は併用前に主治医相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com Gotu Kola Drug Interactions',
+      },
+      {
+        substance: '肝代謝薬全般',
+        level: 'caution',
+        mechanism: '長期高用量での肝障害リスク',
+        action: '肝代謝薬服用中は3ヶ月以内使用・肝機能モニタリング',
+        evidence: 'theoretical',
+        source: 'Bylka 2014 Postepy Dermatol Alergol',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
+
+  {
+    slug: 'nopal',
+    nameJa: 'ノパル（ウチワサボテン）',
+    nameEn: 'Nopal (Prickly Pear)',
+    aliases: ['ノパル', 'nopal', 'prickly pear', 'ウチワサボテン', 'Opuntia ficus-indica', 'cactus', 'メキシコサボテン', 'nopalitos', 'プリックリーペア'],
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ノパル（ウチワサボテン）｜血糖管理・脂質代謝・二日酔い予防の論文',
+    seoDescription: 'ノパル（Opuntia ficus-indica・ウチワサボテン）はメキシコ原産のサボテン科食用植物。Frati-Munari 1991 糖尿病 RCT・Wiese 2004 二日酔い RCT・Galati 2003 抗酸化レビューで血糖・脂質・二日酔い予防への補助エビデンス。',
+    tagline: 'メキシコ食文化 + 血糖管理 + 二日酔い予防の RCT 蓄積',
+    description:
+      'ノパル（nopal・Opuntia ficus-indica・ウチワサボテン）はメキシコ原産のサボテン科食用植物で、メキシコ食文化（nopalitos・若い茎を野菜として食用）の主役。**水溶性食物繊維（ペクチン+ムチン）・ベタライン（赤色色素抗酸化）**が主要機能性成分。\n\n' +
+      '主な研究領域は2型糖尿病血糖管理（Frati-Munari 1991 Arch Invest Med RCT n=14・空腹時血糖低下）・二日酔い予防（Wiese 2004 Arch Intern Med RCT n=55・二日酔い症状軽減）・抗酸化・脂質代謝（Galati 2003 Phytother Res レビュー）。\n\n' +
+      'ヒトRCT用量はノパル乾燥粉末として **500〜1,500mg/日**（食用 nopalitos 100-200g/日相当）。\n\n' +
+      '【併用注意】**糖尿病薬 caution**（相加で低血糖）・**経口薬の吸収影響**（粘性繊維で2時間ずらす）。\n\n' +
+      '【化粧品メーカー視点】皮膚直接効果ヒトRCT未確立。腸内環境改善経由の補助レイヤー。',
+    concerns: ['blood-sugar', 'metabolism', 'cardiovascular', 'liver'],
+    papers: [
+      {
+        title: 'Hypoglycemic effect of Opuntia streptacantha Lemaire in NIDDM',
+        journal: 'Diabetes Care',
+        year: 1988,
+        studyType: 'rct',
+        sampleSize: 14,
+        durationWeeks: 0,
+        keyFinding: '2型糖尿病患者14名にノパル 500g 単回経口で空腹時血糖の有意低下・インスリン感受性改善（Frati-Munari AC et al.）',
+      },
+      {
+        title: 'Effect of Opuntia ficus indica on symptoms of the alcohol hangover',
+        journal: 'Archives of Internal Medicine',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 55,
+        durationWeeks: 0,
+        keyFinding: '健常成人55名に飲酒5時間前にノパル抽出 1,600 IU 単回でアルコール代謝後の二日酔い症状（吐き気・口の渇き・食欲不振）有意軽減（Wiese J et al.）',
+      },
+      {
+        title: 'Antioxidant activity of Opuntia ficus-indica',
+        journal: 'Phytotherapy Research',
+        year: 2003,
+        studyType: 'observational',
+        keyFinding: 'ノパルのベタライン（インディカキサンチン・ベタニン）+ ポリフェノール抗酸化機序・脂質代謝への影響レビュー（Galati EM et al.）',
+      },
+    ],
+    dosageMin: 500,
+    dosageMax: 1500,
+    dosageUnit: 'mg/日',
+    timing: '食事の前または食事と一緒・飲酒前5時間（二日酔い予防）',
+    duration: '効果評価は4〜12週間',
+    sideEffects: ['軽度GI不快感', '便増加', '稀に下痢（高用量）'],
+    contraindications: [
+      '糖尿病薬服用中（医師相談）',
+      '経口薬服用中（吸収影響・2時間ずらす）',
+      '腸閉塞',
+      'サボテン科アレルギー',
+    ],
+    products: [],
+    whoFor: [
+      '前糖尿病・2型糖尿病で食後血糖補助',
+      'メキシコ食文化に興味（nopalitos 含む）',
+      '飲酒前後の二日酔い予防補助',
+      '脂質代謝・代謝症候群が気になる',
+    ],
+    heroStat: { value: 'ノパル抽出 1,600 IU 飲酒前', label: 'Wiese 2004 で二日酔い症状有意軽減（n=55）' },
+    axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 4 },
+    customFaqs: [
+      {
+        q: '二日酔い予防に本当に効くんですか？',
+        a: '結論として、**Wiese 2004 RCT でエビデンスがある数少ないサプリの一つ**です。\n\n【背景】健常成人55名に飲酒5時間前にノパル抽出単回で二日酔い症状（吐き気・口の渇き・食欲不振）の有意軽減。機序はアルコール代謝後の炎症反応抑制と推定。\n\n【判定基準】飲酒前5時間にノパル抽出 1,600 IU が論文ベース・直前摂取は効果限定的・**飲酒量を控えること・水分摂取・睡眠**が二日酔い予防の主軸でノパルは補助レイヤー。',
+      },
+      {
+        q: 'メキシコ料理で食べるノパルとサプリは同じ？',
+        a: '結論として、**機能性成分は同じだが、用量・濃縮度が違う**。\n\n【食用 nopalitos】若い茎を野菜として食用・100-200g/日で食物繊維・ベタライン・ポリフェノール補給。メキシコ食文化の伝統的健康習慣。\n\n【サプリ】乾燥粉末 500-1,500mg/日に濃縮・標的化補給。\n\n【判定基準】食事改善派 → メキシコ料理・サラダで nopalitos 取り入れ・標的化補給 → サプリ。両方併用も補完的。',
+      },
+      {
+        q: '糖尿病薬と併用しても大丈夫ですか？',
+        a: '**caution（要医師相談）**です。Frati-Munari 1988 等で空腹時血糖低下作用が報告されており、糖尿病薬との相加で低血糖リスクが理論的に増加。\n\n【判定基準】糖尿病治療中は併用前に主治医相談・血糖モニタリング必須。インスリン・SU 剤使用中は特に低血糖症状に注意・必要に応じて糖尿病薬の調整が必要。',
+      },
+      {
+        q: '他の血糖コントロール成分（クロム・ベルベリン）と何が違いますか？',
+        a: '機序が補完的です。\n\n【ノパル】食物繊維+ベタライン・**糖質吸収緩和+抗酸化**・食事と同時摂取が効果的。\n\n【クロムピコリン酸（既存）】**インスリン感受性改善**・GTF クロム・血糖コントロール RCT 豊富。\n\n【ベルベリン（既存）】**AMPK 活性化・腸内細菌調整**・メタ解析でメトホルミン同等の血糖低下。\n\n【判定基準】軽度〜中等度血糖管理 → 主軸はクロム・ベルベリン・補助レイヤーでノパル + 食事改善・運動。',
+      },
+      {
+        q: '効果が出るまで何週間？',
+        a: '食後血糖は **数日〜2週間**で実感・空腹時血糖・脂質改善は **4〜12週間**が論文ベース。\n\n【二日酔い予防】単回投与で評価可能。\n\n【判定基準】4-12週で改善傾向なしなら中止・血糖管理は **食事改善・運動・体重管理**が主軸でサプリは補助レイヤー。',
+      },
+    ],
+    interactions: [
+      {
+        substance: 'インスリン・SU剤等の糖尿病薬',
+        level: 'caution',
+        mechanism: '相加的血糖低下作用で低血糖リスク',
+        action: '糖尿病治療中は併用前に主治医相談・血糖モニタリング',
+        evidence: 'established',
+        source: 'Frati-Munari 1988 Diabetes Care',
+      },
+      {
+        substance: '経口薬全般',
+        level: 'monitor',
+        mechanism: '粘性繊維による吸収影響の理論的可能性',
+        action: '経口薬と2時間以上ずらして摂取',
+        evidence: 'theoretical',
+        source: 'Galati 2003 Phytother Res',
+      },
+    ],
+    updatedAt: '2026-05-14',
+  },
 ]
 
 export const concerns: Concern[] = [
