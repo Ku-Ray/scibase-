@@ -514,17 +514,129 @@ export default async function IngredientPage({ params }: Props) {
         <div className="flex-1 min-w-0">
 
         {/* PR表記 */}
-        <p className="text-[12px] text-muted-foreground bg-secondary rounded-lg px-3 py-2 mb-10">
+        <p className="text-[12px] text-muted-foreground bg-secondary rounded-lg px-3 py-2 mb-6">
           本ページにはアフィリエイトリンクが含まれます。
           掲載内容は論文エビデンスに基づき独立して評価しています。
         </p>
 
-        {/* Description（改善D：tagline 平易要約を先頭に・専門解説は副次） */}
+        {/* ── Phase 5-B：クイック判断カード v2（uiux/be/product/legal 4部門議論反映） ──
+            ・「結論」→「ポイント」（legal: 断定感緩和）
+            ・whoFor 1行追加（product: 自分ごと化）
+            ・「効果実感まで」→「使用期間」（legal: 効果語の薬機法緩和）
+            ・数値ファクト4列に拡張・論文本数追加（be: 社会的証明）
+            ・ASP直リンクなし・ジャンプアンカーのみ（誠実ポジション維持） */}
+        <section className="mb-10 bg-card border border-border rounded-2xl overflow-hidden">
+          <div className="px-5 py-4 border-b border-border bg-secondary/30">
+            <p className="text-[11px] font-semibold tracking-wider text-muted-foreground">
+              ポイント
+            </p>
+          </div>
+          <div className="px-5 py-5 space-y-4">
+            {/* 1行サマリー：tagline */}
+            <div>
+              <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1.5">
+                ひとことで
+              </p>
+              <p className="text-[15px] font-semibold text-foreground leading-relaxed">
+                {ing.tagline}
+              </p>
+            </div>
+
+            {/* 自分ごと化フック：whoFor 1行（条件付き） */}
+            {ing.whoFor && ing.whoFor.length > 0 && (
+              <div className="pt-3 border-t border-border">
+                <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1.5">
+                  こんな人に
+                </p>
+                <p className="text-[13px] text-foreground leading-snug">
+                  {ing.whoFor.slice(0, 2).join(' / ')}
+                </p>
+              </div>
+            )}
+
+            {/* 数値ファクト：4列グリッド（用量・期間・月コスト・論文本数） */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-border">
+              {ing.dosageMin && (
+                <div>
+                  <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1">
+                    {ing.dosageUnit.includes('濃度') ? '推奨濃度' : '推奨用量'}
+                  </p>
+                  <p className={`text-[18px] font-bold tabular-nums ${heroText[ing.evidenceRank]} leading-tight`}>
+                    {ing.dosageMin}
+                    {ing.dosageMax && ing.dosageMax !== ing.dosageMin ? `–${ing.dosageMax}` : ''}
+                    <span className="text-[12px] font-medium text-muted-foreground ml-1">
+                      {ing.dosageUnit.includes('濃度') ? '%' : ing.dosageUnit}
+                    </span>
+                  </p>
+                </div>
+              )}
+              {ing.duration && (
+                <div>
+                  <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1">
+                    使用期間
+                  </p>
+                  <p className="text-[13px] text-foreground leading-snug">
+                    {ing.duration.split('。')[0]}
+                  </p>
+                </div>
+              )}
+              {heroProduct?.monthlyCostJpy != null && (
+                <div>
+                  <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1">
+                    月コスト目安
+                  </p>
+                  <p className={`text-[18px] font-bold tabular-nums ${heroText[ing.evidenceRank]} leading-tight`}>
+                    ¥{heroProduct.monthlyCostJpy.toLocaleString()}
+                    <span className="text-[12px] font-medium text-muted-foreground ml-1">
+                      / 月
+                    </span>
+                  </p>
+                </div>
+              )}
+              {ing.papers.length > 0 && (
+                <div>
+                  <p className="text-[10px] font-semibold tracking-wider text-muted-foreground mb-1">
+                    参照論文
+                  </p>
+                  <p className={`text-[18px] font-bold tabular-nums ${heroText[ing.evidenceRank]} leading-tight`}>
+                    {ing.papers.length}
+                    <span className="text-[12px] font-medium text-muted-foreground ml-1">
+                      本
+                    </span>
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* ジャンプアンカー：商品比較 / 論文（grid-cols-2 で等分配・横並び） */}
+            <div className="grid grid-cols-2 gap-2 pt-3 border-t border-border">
+              {ing.products.length > 0 ? (
+                <a
+                  href="#products"
+                  className="inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold
+                    bg-foreground text-background rounded-full px-3 py-2.5 min-h-[44px]
+                    hover:opacity-90 transition-opacity"
+                >
+                  商品を比較する
+                  <span aria-hidden>↓</span>
+                </a>
+              ) : <span />}
+              <a
+                href="#papers"
+                className="inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold
+                  border border-border text-foreground rounded-full px-3 py-2.5 min-h-[44px]
+                  hover:border-accent hover:text-accent transition-colors"
+              >
+                論文を読む
+                <span aria-hidden>↓</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Description（Phase 5-B: tagline はクイック判断カードで既出のため重複削除） */}
         <section id="description" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">この成分について</h2>
-          <p className="text-[16px] sm:text-[17px] font-semibold text-foreground leading-relaxed mb-3">
-            {ing.tagline}
-          </p>
           <div className="text-[14px] text-muted-foreground leading-[1.85] space-y-3">
             {ing.description.split(/\n{2,}/).map((para, i) => (
               <p key={i}>{para.trim()}</p>
