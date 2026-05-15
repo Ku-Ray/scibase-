@@ -54,6 +54,39 @@ const rankColor: Record<EvidenceRank, string> = {
   C: 'text-stone-600 bg-stone-50 border-stone-200',
 }
 
+/* YMYL pair（処方薬境界・薬機法上「どっちが効く？」表現が不適切なペア）
+   Critical-1 の H1 SEO最適化で別パターン適用 */
+const YMYL_PAIRS = new Set<string>([
+  'tranexamic-acid-vs-vitamin-c-topical',  // 美白YMYL
+  'curcumin-vs-boswellia',                  // 関節リウマチYMYL
+  'ramelteon-vs-melatonin',                 // 不眠処方薬境界
+  'saw-palmetto-vs-biotin',                 // AGA薄毛境界
+  'tranexamic-acid-vs-arbutin',             // 美白YMYL
+  'tranexamic-acid-vs-niacinamide',         // 美白YMYL
+])
+
+/** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
+function getH1Title(pair: string, nameJaA: string, nameJaB: string): string {
+  if (YMYL_PAIRS.has(pair)) {
+    return `${nameJaA} vs ${nameJaB}｜論文で比較・選び方を解説`
+  }
+  return `${nameJaA} vs ${nameJaB}｜論文で比較・どっちが効く？併用OK？`
+}
+
+/** StudyType を統一表示用に整形（Critical-4） */
+function formatStudyType(t: string | undefined): string | null {
+  if (!t) return null
+  const k = t.toLowerCase().replace(/[\s_-]/g, '')
+  if (k.includes('meta') || k.includes('systematicreview') || k === 'sr') return 'メタ解析'
+  if (k === 'rct') return 'RCT'
+  if (k.includes('cohort')) return 'コホート'
+  if (k.includes('observation') || k.includes('crosssect')) return '観察'
+  if (k.includes('animal') || k.includes('mouse') || k.includes('rat')) return '動物'
+  if (k.includes('invitro') || k.includes('cell')) return 'in vitro'
+  if (k.includes('case')) return '症例'
+  return t.toUpperCase()
+}
+
 /* 7軸の定義 */
 const AXES: { key: AnalysisAxis; label: string; emoji: string }[] = [
   { key: 'antiAging',  label: '抗老化',          emoji: '🔬' },
@@ -137,18 +170,33 @@ export default async function ComparePage({ params }: Props) {
   /* 禁忌・刺激性差・用途分担が明確なペアでは「迷ったらこれ」CTAを抑制 */
   const showQuickCTA = !DISABLE_QUICK_CTA_PAIRS.has(pair)
 
-  /* 関連する比較ペア（同じカテゴリ or どちらかの成分が含まれる） */
+  /* 関連する比較ペア 6件（Critical-3）
+     上位3件：同成分（slugA/slugB）を含む pair を優先
+     下位3件：同カテゴリ pair で補完
+     既存挙動の互換も保つため、不足時はカテゴリのみマッチも採用 */
   const currentCategory = PAIR_CATEGORIES[pair]
-  const relatedPairs = POPULAR_PAIRS
+  const allCandidates = POPULAR_PAIRS
     .map(([a, b]) => ({ a, b, key: `${a}-vs-${b}` }))
-    .filter(p =>
-      p.key !== pair && (
-        p.a === slugA || p.b === slugA ||
-        p.a === slugB || p.b === slugB ||
-        PAIR_CATEGORIES[p.key] === currentCategory
-      )
-    )
-    .slice(0, 3)
+    .filter(p => p.key !== pair)
+  const sameIngredientPairs = allCandidates.filter(
+    p => p.a === slugA || p.b === slugA || p.a === slugB || p.b === slugB
+  )
+  const sameCategoryPairs = allCandidates.filter(
+    p => PAIR_CATEGORIES[p.key] === currentCategory &&
+         !sameIngredientPairs.some(s => s.key === p.key)
+  )
+  const seen = new Set<string>()
+  const merged = [...sameIngredientPairs.slice(0, 3), ...sameCategoryPairs.slice(0, 3)]
+    .filter(p => { if (seen.has(p.key)) return false; seen.add(p.key); return true })
+  // 6件に満たない場合は残りカテゴリ外でも同成分マッチで補完
+  if (merged.length < 6) {
+    for (const p of sameIngredientPairs.slice(3)) {
+      if (merged.length >= 6) break
+      if (!seen.has(p.key)) { merged.push(p); seen.add(p.key) }
+    }
+  }
+  const relatedPairs = merged
+    .slice(0, 6)
     .map(({ a, b, key }) => ({ key, ingA: getIngredient(a), ingB: getIngredient(b) }))
     .filter(p => p.ingA && p.ingB)
 
@@ -242,11 +290,18 @@ export default async function ComparePage({ params }: Props) {
             text-muted-foreground mb-3">論文エビデンス比較</p>
           <h1 className="text-[28px] sm:text-[36px] font-semibold text-foreground
             tracking-tight leading-[1.2] mb-4">
-            {ingA.nameJa} vs {ingB.nameJa}
+            {getH1Title(pair, ingA.nameJa, ingB.nameJa)}
           </h1>
-          <p className="text-[14px] text-muted-foreground leading-relaxed">
+          <p className="text-[14px] text-muted-foreground leading-relaxed mb-3">
             「どっちがいいか」は口コミではなく、査読済み論文で判断する。
             間違った成分を選び続けることのコストは、製品代だけではありません。
+          </p>
+          {/* アフィリエイトリンク明示（Critical-6）— 景表法/ステマ規制対応 */}
+          <p className="text-[10px] text-muted-foreground">
+            本ページはアフィリエイトリンクを含みます（一部商品の購入で当サイトに収益が発生します）。
+            <Link href="/about" className="underline hover:text-accent ml-1">
+              詳しくはこちら
+            </Link>
           </p>
         </div>
 
@@ -379,8 +434,27 @@ export default async function ComparePage({ params }: Props) {
           </div>
         )}
 
+        {/* 目次（TOC）— Featured Snippet 候補・jump anchor で離脱率改善（Critical-2） */}
+        <nav aria-label="目次" className="mb-8 bg-secondary/40 rounded-2xl p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+            このページの内容
+          </p>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-2 text-[13px]">
+            <li><a href="#verdict"  className="hover:text-accent transition-colors">論文評決</a></li>
+            <li><a href="#basics"   className="hover:text-accent transition-colors">成分の基本</a></li>
+            <li><a href="#axes"     className="hover:text-accent transition-colors">7軸スコア</a></li>
+            <li><a href="#concerns" className="hover:text-accent transition-colors">悩み別カバー</a></li>
+            {(ingA.dosageMin || ingB.dosageMin || costA || costB) && (
+              <li><a href="#dosage" className="hover:text-accent transition-colors">用量・コスト</a></li>
+            )}
+            <li><a href="#combine"  className="hover:text-accent transition-colors">併用OK？</a></li>
+            <li><a href="#faq"      className="hover:text-accent transition-colors">よくある質問</a></li>
+            <li><a href="#related"  className="hover:text-accent transition-colors">関連比較</a></li>
+          </ol>
+        </nav>
+
         {/* クイック評決（アンカリング） */}
-        <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
+        <div id="verdict" className="bg-secondary border border-border rounded-2xl p-5 mb-8 scroll-mt-4">
           <p className="text-[11px] font-semibold uppercase tracking-wider
             text-muted-foreground mb-4">論文エビデンスによる評決</p>
           <div className="grid grid-cols-2 gap-4 mb-4">
@@ -411,7 +485,7 @@ export default async function ComparePage({ params }: Props) {
         </div>
 
         {/* 成分カード比較（社会的証明） */}
-        <section className="mb-10">
+        <section id="basics" className="mb-10 scroll-mt-4">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">成分の基本情報</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[ingA, ingB].map(ing => (
@@ -428,12 +502,59 @@ export default async function ComparePage({ params }: Props) {
                 <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
                   {ing.tagline}
                 </p>
-                {ing.papers[0] && (
-                  <div className="bg-secondary rounded-lg px-3 py-2 text-[11px]
-                    text-muted-foreground leading-relaxed">
-                    <span className="font-semibold text-foreground">代表的な研究：</span>
-                    {ing.papers[0].keyFinding}
-                    {ing.papers[0].sampleSize ? `（${ing.papers[0].sampleSize.toLocaleString()}人対象）` : ''}
+                {/* 代表研究 1→3件表示（Critical-4）— 社会的証明強化・E-E-A-T シグナル */}
+                {ing.papers.length > 0 && (
+                  <div className="mb-4">
+                    <p className="text-[11px] font-semibold text-foreground mb-2">代表的な研究</p>
+                    {ing.papers.slice(0, 3).map((paper, i) => {
+                      const studyTypeLabel = formatStudyType(paper.studyType)
+                      return (
+                        <div key={i} className="bg-secondary rounded-lg px-3 py-2 text-[11px] mb-2 last:mb-0">
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            <span className="font-semibold text-foreground">{paper.journal}</span>
+                            <span className="text-muted-foreground tabular-nums">{paper.year}</span>
+                            {paper.sampleSize && (
+                              <span className="text-muted-foreground tabular-nums">n={paper.sampleSize.toLocaleString()}</span>
+                            )}
+                            {studyTypeLabel && (
+                              <span className="text-[10px] bg-foreground/10 rounded px-1.5 py-0.5">
+                                {studyTypeLabel}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed">{paper.keyFinding}</p>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+                {/* 商品リンク products[0..1]（Critical-5）— CV機会2-3倍化・PR表記標準化（Critical-6） */}
+                {ing.products.length > 0 && (
+                  <div className="mb-4 flex flex-col gap-2">
+                    {ing.products.slice(0, 2).map((product, i) => (
+                      <OutboundProductLink
+                        key={i}
+                        href={product.url}
+                        platform={product.platform}
+                        ingredientSlug={ing.slug}
+                        productRank={product.rank}
+                        aspProgram={product.aspProgram}
+                        aspId={product.aspId}
+                        commissionRateBand={product.commissionRateBand}
+                        className="inline-flex items-center gap-1.5 text-[11px]
+                          border border-border rounded-lg px-2.5 py-1.5 min-h-[36px]
+                          hover:border-accent/50 hover:bg-secondary/50 transition-colors"
+                      >
+                        <span className="text-[9px] font-semibold border border-amber-400 text-amber-700 rounded px-1 py-0.5">PR</span>
+                        <span className="font-medium text-foreground">{platformLabel[product.platform]}</span>
+                        {(product.monthlyCostJpy || product.priceJpy) && (
+                          <span className="text-muted-foreground tabular-nums ml-auto">
+                            ¥{(product.monthlyCostJpy ?? product.priceJpy)!.toLocaleString()}
+                          </span>
+                        )}
+                        <ExternalLink className="w-3 h-3 text-muted-foreground flex-shrink-0" />
+                      </OutboundProductLink>
+                    ))}
                   </div>
                 )}
                 <div className="mt-4 flex items-center gap-2">
@@ -452,7 +573,7 @@ export default async function ComparePage({ params }: Props) {
         </section>
 
         {/* 7軸スコア比較（視覚的アンカリング） */}
-        <section className="mb-10">
+        <section id="axes" className="mb-10 scroll-mt-4">
           <h2 className="font-semibold text-[18px] text-foreground mb-1">7軸スコア比較</h2>
           <p className="text-[12px] text-muted-foreground mb-4">
             太い数字の軸がその成分の強み。自分が重視する軸で選ぶ。
@@ -527,7 +648,7 @@ export default async function ComparePage({ params }: Props) {
         </section>
 
         {/* 悩みカバー比較（パーソナライゼーション） */}
-        <section className="mb-10">
+        <section id="concerns" className="mb-10 scroll-mt-4">
           <h2 className="font-semibold text-[18px] text-foreground mb-2">
             あなたの悩みにはどちらが向いているか
           </h2>
@@ -597,7 +718,7 @@ export default async function ComparePage({ params }: Props) {
 
         {/* 有効量・コスト比較（コミットメント誘導） */}
         {(ingA.dosageMin || ingB.dosageMin || costA || costB) && (
-          <section className="mb-10">
+          <section id="dosage" className="mb-10 scroll-mt-4">
             <h2 className="font-semibold text-[18px] text-foreground mb-4">有効量・コスト比較</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[{ ing: ingA, cost: costA }, { ing: ingB, cost: costB }].map(({ ing, cost }) => (
@@ -640,7 +761,7 @@ export default async function ComparePage({ params }: Props) {
         )}
 
         {/* 一緒に使える？（デコイ効果） */}
-        <section className="mb-10 bg-accent/5 border border-accent/20 rounded-2xl p-5">
+        <section id="combine" className="mb-10 bg-accent/5 border border-accent/20 rounded-2xl p-5 scroll-mt-4">
           <h2 className="font-semibold text-[15px] text-foreground mb-2">
             {ingA.nameJa}と{ingB.nameJa}は一緒に使える？
           </h2>
@@ -687,7 +808,7 @@ export default async function ComparePage({ params }: Props) {
         </section>
 
         {/* FAQ（AI Overview対策 + 行動経済学5問） */}
-        <section className="mb-10">
+        <section id="faq" className="mb-10 scroll-mt-4">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">よくある質問</h2>
           <div className="border border-border rounded-2xl overflow-hidden divide-y divide-border">
             {faqItems.map(({ q, a }, i) => (
@@ -708,7 +829,7 @@ export default async function ComparePage({ params }: Props) {
 
         {/* 関連する比較（離脱防止 + 内部リンク強化） */}
         {relatedPairs.length > 0 && (
-          <section className="mb-10">
+          <section id="related" className="mb-10 scroll-mt-4">
             <h2 className="font-semibold text-[15px] text-foreground mb-3">
               関連する比較
             </h2>
