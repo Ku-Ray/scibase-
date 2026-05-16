@@ -50,6 +50,15 @@ export const ingredients: Ingredient[] = [
           'Shoden標準化エキス240mg/日でコルチゾール値が有意に低下し、DHEA-S・テストステロンの上昇傾向が示された（男性参加者）',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'nccih',
+        fullName: 'NIH NCCIH (National Center for Complementary and Integrative Health)',
+        url: 'https://www.nccih.nih.gov/health/ashwagandha',
+        accessedAt: '2026-05-16',
+        note: 'アシュワガンダ。NCCIH。不眠・ストレス短期使用・甲状腺/抗糖尿病/降圧薬相互作用・妊娠中NG',
+      },
+    ],
     dosageMin: 300,
     dosageMax: 600,
     dosageUnit: 'mg/日',
@@ -3764,6 +3773,15 @@ export const ingredients: Ingredient[] = [
           '記憶・処理速度への改善効果が確認。特に高齢者・睡眠不足状態での認知への効果が顕著（p<0.05）',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'nih-ods',
+        fullName: 'NIH ODS (Office of Dietary Supplements) Fact Sheet',
+        url: 'https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/',
+        accessedAt: '2026-05-16',
+        note: 'クレアチン。NIH ODS 運動・競技パフォーマンス Fact Sheet 内・筋力/瞬発力エビデンス',
+      },
+    ],
     dosageMin: 3000,
     dosageMax: 5000,
     dosageUnit: 'mg/日',
@@ -3938,6 +3956,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 4,
         keyFinding:
           '入眠潜時を平均7.06分短縮（p<0.001）。睡眠効率・総睡眠時間も有意に改善',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'nccih',
+        fullName: 'NIH NCCIH (National Center for Complementary and Integrative Health)',
+        url: 'https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know',
+        accessedAt: '2026-05-16',
+        note: 'メラトニン。NCCIH。時差ぼけ・睡眠相後退・小児ER受診事例・短期使用比較的安全',
       },
     ],
     dosageMin: 0.5,
@@ -5447,6 +5474,15 @@ export const ingredients: Ingredient[] = [
           '空腹時血糖・HbA1c・トリグリセリドがプラセボ比で有意に低下。メトホルミンとほぼ同等の血糖降下効果',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'nccih',
+        fullName: 'NIH NCCIH (National Center for Complementary and Integrative Health)',
+        url: 'https://www.nccih.nih.gov/health/berberine-and-weight-loss-what-you-need-to-know',
+        accessedAt: '2026-05-16',
+        note: 'ベルベリン。NCCIH。体重減・血糖低下効果・新生児ビリルビン蓄積・妊娠中NG',
+      },
+    ],
     dosageMin: 900,
     dosageMax: 1500,
     dosageUnit: 'mg/日（分割摂取）',
@@ -6549,6 +6585,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 104,
         keyFinding:
           'MK-7型K2の継続摂取で骨密度が有意に維持・改善。椎体・大腿骨頸部での骨折リスク低下も示唆',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'nih-ods',
+        fullName: 'NIH ODS (Office of Dietary Supplements) Fact Sheet',
+        url: 'https://ods.od.nih.gov/factsheets/VitaminK-Consumer/',
+        accessedAt: '2026-05-16',
+        note: 'ビタミンK2。NIH ODS Fact Sheet。MK-4/MK-7・骨密度・ワルファリン禁忌',
       },
     ],
     dosageMin: 90,
@@ -10693,6 +10738,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 48,
         keyFinding:
           'ルテイン＋ゼアキサンチン補給により黄斑色素光学密度（MPOD）が有意に増加し、コントラスト感度・視力が改善',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'nih-ods',
+        fullName: 'NIH ODS (Office of Dietary Supplements) Fact Sheet',
+        url: 'https://ods.od.nih.gov/factsheets/VitaminA-Consumer/',
+        accessedAt: '2026-05-16',
+        note: 'ゼアキサンチン。NIH ODS ビタミンA・カロテノイド Fact Sheet 内・AREDS2 黄斑変性予防',
       },
     ],
     dosageMin: 2,
