@@ -25,6 +25,28 @@ export async function generateStaticParams() {
   return POPULAR_PAIRS.map(([a, b]) => ({ pair: `${a}-vs-${b}` }))
 }
 
+/** メタディスクリプションをGoogleスニペット長 (約160-170字) に切り詰める。
+ *  改行・段落マーカーを除去し、句点で切ることで自然な末尾にする（Critical-SEO改善）。
+ *  検索結果スニペットでの末尾切り捨て防止。ページ本文の長文 description はそのまま維持。
+ */
+function trimMetaDescription(text: string, maxLen = 160): string {
+  // 改行を句点+空白に変換、複数の連続空白を1つに圧縮
+  const cleaned = text.replace(/\\n\\n/g, ' ').replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim()
+  if (cleaned.length <= maxLen) return cleaned
+  // 句点で切れる最大位置を探す（maxLen 以内・「。」の直後）
+  const sliced = cleaned.slice(0, maxLen + 30)
+  const lastPeriod = sliced.lastIndexOf('。')
+  if (lastPeriod >= maxLen * 0.7) {
+    return sliced.slice(0, lastPeriod + 1)
+  }
+  // 句点見つからない場合は読点で切る
+  const lastComma = sliced.lastIndexOf('、')
+  if (lastComma >= maxLen * 0.7) {
+    return sliced.slice(0, lastComma) + '。'
+  }
+  return sliced.slice(0, maxLen) + '…'
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { pair } = await params
   const idx = pair.indexOf('-vs-')
@@ -35,9 +57,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ingB = getIngredient(slugB)
   if (!ingA || !ingB) return {}
   const pairSeo = PAIR_SEO[pair]
+  const rawDesc = pairSeo?.description ?? `${ingA.nameJa}（エビデンス${ingA.evidenceRank}）と${ingB.nameJa}（エビデンス${ingB.evidenceRank}）を論文根拠・有効量・向いている人で徹底比較。口コミでも広告でもなく、査読済み論文で判断する。`
   return {
     title: pairSeo?.title ?? `${ingA.nameJa} vs ${ingB.nameJa}【論文エビデンス比較】どっちが効く？`,
-    description: pairSeo?.description ?? `${ingA.nameJa}（エビデンス${ingA.evidenceRank}）と${ingB.nameJa}（エビデンス${ingB.evidenceRank}）を論文根拠・有効量・向いている人で徹底比較。口コミでも広告でもなく、査読済み論文で判断する。`,
+    description: trimMetaDescription(rawDesc),
     alternates: { canonical: `${BASE_URL}/compare/${pair}` },
   }
 }
@@ -303,7 +326,7 @@ export default async function ComparePage({ params }: Props) {
           </h1>
           <p className="text-[14px] text-muted-foreground leading-relaxed mb-3">
             「どっちがいいか」は口コミではなく、査読済み論文で判断する。
-            間違った成分を選び続けることのコストは、製品代だけではありません。
+            月¥2,000-15,000のサプリ代より、間違った成分を3-6ヶ月続ける時間損失のほうが取り返しにくい。
           </p>
           {/* アフィリエイトリンク明示（Critical-6）— 景表法/ステマ規制対応 */}
           <p className="text-[10px] text-muted-foreground">
@@ -414,29 +437,35 @@ export default async function ComparePage({ params }: Props) {
           // デュアル送客カード：両成分のエビデンス詳細ページへの中立送客（押し付けず・両者均等に）
           <div className="bg-secondary border border-border rounded-2xl p-5 mb-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1">
-              目的別に詳細を確認する
+              あなたの目的で選ぶ
             </p>
             <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed">
               {overall.reason === '目的・悩みに応じて選択'
-                ? '両成分とも論文エビデンスがあり、目的・悩みに応じて使い分ける成分です。それぞれの詳細を確認してください。'
-                : '両成分のエビデンス詳細を確認し、目的に合うほうを選んでください。'}
+                ? '両成分とも論文の裏付けがあり、悩み・体質・予算で使い分けます。下のカードであなたに近いほうをタップしてください。'
+                : '両成分のエビデンスを確認し、悩みに合うほうを選んでください。'}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[ingA, ingB].map(ing => (
                 <Link key={ing.slug} href={`/ingredients/${ing.slug}`}
-                  className="flex items-center justify-between gap-2
+                  className="flex flex-col gap-1.5
                     bg-card border border-border rounded-xl px-4 py-3 min-h-[60px]
                     hover:border-accent hover:bg-accent/5 transition-colors group">
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-1.5 mb-0.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1.5 min-w-0">
                       <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
                       <p className="text-[13px] font-semibold text-foreground truncate">{ing.nameJa}</p>
                     </div>
-                    <p className="text-[11px] text-muted-foreground">
-                      論文 {ing.papers.length}件・エビデンス{rankLabel[ing.evidenceRank]}
-                    </p>
+                    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0" />
                   </div>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0" />
+                  {/* 「こんな人向き」を具体表示（ユーザーの自己判断を支援） */}
+                  {ing.whoFor?.[0] && (
+                    <p className="text-[11px] text-muted-foreground line-clamp-2 leading-snug">
+                      {ing.whoFor[0]}
+                    </p>
+                  )}
+                  <p className="text-[10px] text-muted-foreground/70">
+                    論文 {ing.papers.length}件・エビデンス{rankLabel[ing.evidenceRank]}
+                  </p>
                 </Link>
               ))}
             </div>
