@@ -389,6 +389,7 @@ export default async function IngredientPage({ params }: Props) {
     { id: 'description', label: 'この成分について' },
     ...(ing.whoFor?.length ? [{ id: 'who-for', label: 'こんな人に' }] : []),
     { id: 'papers', label: '主要研究' },
+    ...(ing.publicDbReferences?.length ? [{ id: 'public-db-references', label: '公的DB参照' }] : []),
     { id: 'evidence', label: 'エビデンスの読み方' },
     ...((ing.dosageMin || ing.timing || ing.duration) ? [{ id: 'dosage', label: '摂取・使用ガイド' }] : []),
     ...(ing.dosageLevels?.length ? [{ id: 'dosage-levels', label: '用量別の効果' }] : []),
@@ -750,6 +751,62 @@ export default async function IngredientPage({ params }: Props) {
             })}
           </div>
         </section>
+
+        {/* Public DB References (hfnet etc) */}
+        {ing.publicDbReferences && ing.publicDbReferences.length > 0 && (
+          <section id="public-db-references" className="mb-10 scroll-mt-20">
+            <h2 className="font-semibold text-[18px] text-foreground mb-2">
+              公的データベース参照
+            </h2>
+            <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed">
+              個別論文に加えて、国立研究開発法人など公的機関が複数の論文を横断してまとめた
+              安全性・有効性・相互作用情報も参照できる。
+            </p>
+            <div className="space-y-3">
+              {ing.publicDbReferences.map((ref, i) => {
+                const sourceLabel = ref.source === 'hfnet' ? 'hfnet'
+                  : ref.source === 'cinii' ? 'CiNii'
+                  : ref.source === 'jstage' ? 'J-STAGE'
+                  : ref.source === 'mhlw' ? '厚生労働省'
+                  : ref.source === 'caa' ? '消費者庁'
+                  : ref.source
+                return (
+                  <a
+                    key={i}
+                    href={ref.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow external"
+                    aria-label={`${ref.fullName} を新しいタブで開く（外部サイト）`}
+                    className="block bg-card border border-border rounded-2xl p-5
+                      hover:border-accent/40 transition-colors group"
+                  >
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="text-[11px] font-medium bg-secondary text-muted-foreground
+                        border border-border rounded-md px-2 py-0.5">
+                        公的DB
+                      </span>
+                      <span className="text-[11px] font-medium text-accent">{sourceLabel}</span>
+                      <span className="text-[11px] text-muted-foreground">
+                        参照: {ref.accessedAt}
+                      </span>
+                    </div>
+                    <p className="text-[14px] text-foreground font-medium leading-relaxed mb-1">
+                      {ref.fullName}
+                    </p>
+                    <p className="text-[13px] text-muted-foreground leading-relaxed mb-3">
+                      {ref.note}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-[12px] font-medium
+                      text-accent group-hover:underline">
+                      公的DBで確認
+                      <ExternalLink className="w-3 h-3" />
+                    </span>
+                  </a>
+                )
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Evidence rank detail */}
         <section id="evidence" className="mb-10 scroll-mt-20">

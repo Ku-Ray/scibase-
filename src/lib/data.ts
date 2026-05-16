@@ -303,6 +303,15 @@ export const ingredients: Ingredient[] = [
           '5% ナイアシンアミドクリームがシミ・肌の黄ばみ・細かいシワの軽減に有意な効果を示した',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail181/',
+        accessedAt: '2026-05-16',
+        note: 'ナイアシン総称ページ。ニコチンアミド・ナイアシンアミドを含む。安全性・上限量情報あり',
+      },
+    ],
     dosageMin: 2,
     dosageMax: 10,
     dosageUnit: '%（外用濃度）',
@@ -551,6 +560,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 1800,
         durationWeeks: 12,
         keyFinding: '欠乏状態の人への補給でインスリン抵抗性・血圧・CRP（炎症指標）の改善が確認された',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/mineral/detail656/',
+        accessedAt: '2026-05-16',
+        note: 'マグネシウム。素材情報DB マグネシウム（mineral）。安全性・耐容上限・腎機能注意',
       },
     ],
     dosageMin: 200,
@@ -818,6 +836,15 @@ export const ingredients: Ingredient[] = [
           '骨折リスク・転倒リスクの低減について、血中25(OH)D濃度が50nmol/L未満の人で効果が顕著',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail221/',
+        accessedAt: '2026-05-16',
+        note: 'ビタミンD。素材情報DB ビタミンD（vitamin）。安全性・上限量・相互作用情報あり',
+      },
+    ],
     dosageMin: 1000,
     dosageMax: 4000,
     dosageUnit: 'IU/日',
@@ -1069,6 +1096,15 @@ export const ingredients: Ingredient[] = [
           '心血管死亡・心筋梗塞リスクへの有意な低下効果はなかったが、特定集団（魚をほぼ食べない層）では効果が示唆された',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E9%AD%9A%E6%B2%B9/',
+        accessedAt: '2026-05-16',
+        note: 'オメガ3。魚油として素材情報DB material-data 形式に掲載。EPA・DHA・抗凝固薬相互作用',
+      },
+    ],
     dosageMin: 1000,
     dosageMax: 3000,
     dosageUnit: 'mg/日（EPA＋DHA合計）',
@@ -1281,6 +1317,15 @@ export const ingredients: Ingredient[] = [
         keyFinding: '継続的な摂取で皮膚水分量・コラーゲン密度の有意な改善が確認された',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/column/detail2204/',
+        accessedAt: '2026-05-16',
+        note: 'コラーゲン。column 詳細ページ。経口アミノ酸分解・アレルギー注意',
+      },
+    ],
     dosageMin: 2500,
     dosageMax: 10000,
     dosageUnit: 'mg/日',
@@ -1412,6 +1457,15 @@ export const ingredients: Ingredient[] = [
         keyFinding: '運動後の酸化ストレスマーカー（MDA）が補給群で有意に低下',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/column/detail677/',
+        accessedAt: '2026-05-16',
+        note: 'コエンザイムQ10。column 詳細ページ。血圧降下薬・ワルファリン相互作用',
+      },
+    ],
     dosageMin: 100,
     dosageMax: 300,
     dosageUnit: 'mg/日',
@@ -1521,6 +1575,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 12,
         keyFinding:
           '血中NAD+は有意に上昇するが、血糖・脂質・その他代謝指標ではほぼ有意差なし。「NAD+は上がる。体は変わらない」が現時点の結論',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%8B%E3%82%B3%E3%83%81%E3%83%B3%E3%82%A2%E3%83%9F%E3%83%89%E3%83%A2%E3%83%8E%E3%83%8C%E3%82%AF%E3%83%AC%E3%82%AA%E3%83%81%E3%83%89%EF%BC%88NMN%EF%BC%89/',
+        accessedAt: '2026-05-16',
+        note: 'NMN。素材情報DB material-data。安全性データ限定・長期影響未確認',
       },
     ],
     dosageMin: 250,
@@ -1870,6 +1933,15 @@ export const ingredients: Ingredient[] = [
         studyType: 'observational',
         keyFinding:
           '動物実験での長寿効果・サーチュイン活性化は確認されているが、ヒトRCTでの有意な抗老化効果は現時点で確認されていない',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%AC%E3%82%B9%E3%83%99%E3%83%A9%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB/',
+        accessedAt: '2026-05-16',
+        note: 'レスベラトロール。素材情報DB material-data。抗凝固薬・薬物代謝酵素影響',
       },
     ],
     dosageMin: 150,
@@ -2848,6 +2920,15 @@ export const ingredients: Ingredient[] = [
           '1g/日以上の継続摂取で風邪の罹患期間を約8%短縮（成人）〜14%短縮（小児）。予防効果は一般集団では限定的だが高強度運動実施者では有意',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail179/',
+        accessedAt: '2026-05-16',
+        note: 'ビタミンC。素材情報DB ビタミンC（vitamin）。安全性・耐容上限・相互作用情報あり',
+      },
+    ],
     dosageMin: 500,
     dosageMax: 1000,
     dosageUnit: 'mg/日',
@@ -3039,6 +3120,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 3000,
         keyFinding:
           '亜鉛欠乏でT細胞機能・自然免疫が低下することが確認。補充で免疫機能が回復',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/mineral/detail672/',
+        accessedAt: '2026-05-16',
+        note: '亜鉛。素材情報DB 亜鉛（mineral）。安全性・上限量・銅吸収阻害情報あり',
       },
     ],
     dosageMin: 25,
@@ -3265,6 +3355,15 @@ export const ingredients: Ingredient[] = [
           '急性ストレス負荷時の心拍変動・唾液コルチゾールをL-テアニン摂取群でプラセボ比で有意に抑制',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%86%E3%82%A2%E3%83%8B%E3%83%B3%E3%80%81%E3%82%B0%E3%83%AB%E3%82%BF%E3%83%9F%E3%83%B3%E9%85%B8%E3%82%A8%E3%83%81%E3%83%AB%E3%82%A2%E3%83%9F%E3%83%89/',
+        accessedAt: '2026-05-16',
+        note: 'L-テアニン。素材情報DB material-data。睡眠・ストレス・安全性情報あり',
+      },
+    ],
     dosageMin: 100,
     dosageMax: 400,
     dosageUnit: 'mg/日',
@@ -3411,6 +3510,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 4,
         keyFinding:
           'グリシン3g/日の継続摂取で睡眠効率・深睡眠比率が有意に改善。深部体温の低下との相関が確認',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%B0%E3%83%AA%E3%82%B7%E3%83%B3%E3%80%81%E3%82%B0%E3%83%AA%E3%82%B3%E3%82%B3%E3%83%AB%E3%80%81%E3%82%A2%E3%83%9F%E3%83%8E%E9%85%A2%E9%85%B8/',
+        accessedAt: '2026-05-16',
+        note: 'グリシン。素材情報DB material-data。睡眠・体温調節・安全性情報あり',
       },
     ],
     dosageMin: 3000,
@@ -4897,6 +5005,15 @@ export const ingredients: Ingredient[] = [
           'UV誘発の酸化ストレスマーカーが有意に低下。外用との併用で皮膚保護効果が増強された',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%A2%E3%82%B9%E3%82%BF%E3%82%AD%E3%82%B5%E3%83%B3%E3%83%81%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'アスタキサンチン。素材情報DB material-data。抗酸化・眼精疲労情報あり',
+      },
+    ],
     dosageMin: 4,
     dosageMax: 12,
     dosageUnit: 'mg/日',
@@ -4984,6 +5101,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 12,
         keyFinding:
           'CRP・IL-6・TNF-αなど主要炎症マーカーがプラセボ比で有意に低下（p<0.001）。吸収強化製剤で効果が大きい',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%9F%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'クルクミン。素材情報DB material-data。肝障害事例・抗凝固薬相互作用',
       },
     ],
     dosageMin: 500,
@@ -5336,6 +5462,15 @@ export const ingredients: Ingredient[] = [
           '緑茶カテキンが安静時・運動時の脂肪酸化を有意に増加させた。体脂肪・BMIの軽度低下も確認',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%AB%E3%83%86%E3%82%AD%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'EGCG。緑茶カテキンとして material-data 掲載。肝障害事例・カフェイン併用注意',
+      },
+    ],
     dosageMin: 400,
     dosageMax: 800,
     dosageUnit: 'mg/日（EGCG換算）',
@@ -5567,6 +5702,15 @@ export const ingredients: Ingredient[] = [
           '記憶・学習・集中力が複数のRCTでプラセボ比有意改善。高齢者・軽度認知障害で効果が顕著',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%9B%E3%82%B9%E3%83%95%E3%82%A1%E3%83%81%E3%82%B8%E3%83%AB%E3%82%BB%E3%83%AA%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'ホスファチジルセリン。素材情報DB material-data。認知機能・大豆由来安全性情報',
+      },
+    ],
     dosageMin: 100,
     dosageMax: 300,
     dosageUnit: 'mg/日',
@@ -5665,6 +5809,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 22,
         keyFinding:
           'EGb761 240mg/日で認知機能スコア・日常生活機能が有意に改善（p<0.001）。軽度〜中等度の認知症で効果が顕著',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%A4%E3%83%81%E3%83%A7%E3%82%A6%E8%91%89%E3%82%A8%E3%82%AD%E3%82%B9/',
+        accessedAt: '2026-05-16',
+        note: 'イチョウ葉エキス。素材情報DB material-data。抗凝固薬相互作用・SSRI併用注意',
       },
     ],
     dosageMin: 120,
@@ -6328,6 +6481,15 @@ export const ingredients: Ingredient[] = [
           '高用量（>400IU）では心血管リスクへの好影響は限定的。200IU以下の生理的用量では酸化ストレスマーカーの有意な低下が確認',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail176/',
+        accessedAt: '2026-05-16',
+        note: 'ビタミンE。素材情報DB ビタミンE（vitamin）。耐容上限・抗凝固薬相互作用',
+      },
+    ],
     dosageMin: 100,
     dosageMax: 400,
     dosageUnit: 'IU/日（経口）',
@@ -6425,6 +6587,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 12,
         keyFinding:
           '非貧血の鉄欠乏女性に80mg/日の補充で疲労スコアが有意に改善（p<0.001）。QOLスコアも向上',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/mineral/detail675/',
+        accessedAt: '2026-05-16',
+        note: '鉄。素材情報DB 鉄（mineral）。安全性・上限量・相互作用情報あり',
       },
     ],
     dosageMin: 18,
@@ -6650,6 +6821,15 @@ export const ingredients: Ingredient[] = [
           '200μg/日のセレン補充で橋本病（抗TPO抗体）が有意に低下。甲状腺エコーの改善も確認',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/mineral/detail682/',
+        accessedAt: '2026-05-16',
+        note: 'セレン。素材情報DB セレン（mineral）。安全性・上限量・耐容上限情報あり',
+      },
+    ],
     dosageMin: 55,
     dosageMax: 200,
     dosageUnit: 'μg/日',
@@ -6758,6 +6938,15 @@ export const ingredients: Ingredient[] = [
           'ルテイン10mg＋ゼアキサンチン2mgで加齢黄斑変性の進行リスクが有意に低下（p<0.05）。β-カロテンより安全性が高い',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'ルテイン。素材情報DB material-data。眼精疲労・AMD予防情報あり',
+      },
+    ],
     dosageMin: 10,
     dosageMax: 20,
     dosageUnit: 'mg/日',
@@ -6858,6 +7047,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 2398,
         durationWeeks: 24,
         keyFinding: '葉酸補充により認知機能スコアとホモシステイン値が有意に改善（p<0.05）。特に高齢者で効果が顕著',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail652/',
+        accessedAt: '2026-05-16',
+        note: '葉酸。素材情報DB 葉酸（vitamin）。妊娠期推奨・耐容上限・B12欠乏マスキング注意',
       },
     ],
     dosageMin: 400,
@@ -7085,6 +7283,15 @@ export const ingredients: Ingredient[] = [
         keyFinding: 'カルシウム1000mg＋ビタミンD400IUの補充で股関節骨密度が有意に維持（p=0.003）',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/mineral/detail660/',
+        accessedAt: '2026-05-16',
+        note: 'カルシウム。素材情報DB カルシウム（mineral）。安全性・上限量・尿路結石注意',
+      },
+    ],
     dosageMin: 500,
     dosageMax: 1000,
     dosageUnit: 'mg/日',
@@ -7179,6 +7386,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 1500,
         durationWeeks: 24,
         keyFinding: 'B12欠乏のある高齢者への補充で認知機能スコアが有意に改善。ホモシステイン値も低下',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail177/',
+        accessedAt: '2026-05-16',
+        note: 'ビタミンB12。素材情報DB ビタミンB12（vitamin）。安全性・上限量情報あり',
       },
     ],
     dosageMin: 500,
@@ -7364,6 +7580,15 @@ export const ingredients: Ingredient[] = [
         keyFinding: 'ビタミンB6（50mg/日）でPMSスコアが有意に改善（OR 2.32, 95% CI 1.95-2.69）',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/vitamin/detail149/',
+        accessedAt: '2026-05-16',
+        note: 'ビタミンB6。素材情報DB ビタミンB6（vitamin）。安全性・上限量・末梢神経障害注意',
+      },
+    ],
     dosageMin: 10,
     dosageMax: 50,
     dosageUnit: 'mg/日',
@@ -7519,6 +7744,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 41,
         durationWeeks: 2,
         keyFinding: 'シトルリンマレート8gで筋肉痛が40%以上軽減。ベンチプレス反復回数が有意に増加',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%B7%E3%83%88%E3%83%AB%E3%83%AA%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'L-シトルリン。素材情報DB material-data。血流・運動・安全性情報あり',
       },
     ],
     dosageMin: 3000,
@@ -7718,6 +7952,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 1583,
         durationWeeks: 24,
         keyFinding: '重度の膝痛サブグループでグルコサミン＋コンドロイチン併用が疼痛スコアを有意に改善（p=0.002）',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%B0%E3%83%AB%E3%82%B3%E3%82%B5%E3%83%9F%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'グルコサミン。素材情報DB material-data。血糖・抗凝固薬・甲殻類アレルギー注意',
       },
     ],
     dosageMin: 1500,
@@ -7992,6 +8235,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 2100,
         durationWeeks: 8,
         keyFinding: 'イヌリン摂取でビフィズス菌が有意に増加（p<0.001）。腸内環境の多様性改善と短鎖脂肪酸産生増加を確認',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%A4%E3%83%8C%E3%83%AA%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'イヌリン。素材情報DB material-data。腸内環境・血糖・FODMAP注意',
       },
     ],
     dosageMin: 5,
@@ -8390,6 +8642,15 @@ export const ingredients: Ingredient[] = [
         keyFinding: '記憶回想速度・視覚情報処理が有意に改善（p<0.05）。不安・うつ傾向も低下。効果は12週以上で顕著',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%90%E3%82%B3%E3%83%91%E3%83%A2%E3%83%8B%E3%82%A8%E3%83%A9%E3%80%81%E3%83%90%E3%82%B3%E3%83%91/',
+        accessedAt: '2026-05-16',
+        note: 'バコパ。素材情報DB material-data。認知機能・甲状腺薬相互作用',
+      },
+    ],
     dosageMin: 300,
     dosageMax: 450,
     dosageUnit: 'mg/日',
@@ -8525,6 +8786,15 @@ export const ingredients: Ingredient[] = [
         sampleSize: 878,
         durationWeeks: 12,
         keyFinding: '高麗人参摂取群で精神的疲労スコアと認知機能テストスコアが有意に改善（p<0.05）',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%82%AA%E3%82%BF%E3%83%8D%E3%83%8B%E3%83%B3%E3%82%B8%E3%83%B3/',
+        accessedAt: '2026-05-16',
+        note: 'オタネニンジン。素材情報DB material-data（朝鮮人参・高麗人参）。抗凝固薬・血糖薬相互作用',
       },
     ],
     dosageMin: 200,
@@ -18917,6 +19187,15 @@ export const ingredients: Ingredient[] = [
         keyFinding: '健常・前糖尿病・2型糖尿病395名を含む35本のRCTメタ解析で、サイリウム 10g/日 が空腹時血糖 −37.0mg/dL・HbA1c −0.97%（糖尿病群でより大きな改善・Gibb RD et al.）',
       },
     ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%96%E3%83%AD%E3%83%B3%E3%83%89%E3%82%B5%E3%82%A4%E3%83%AA%E3%82%A6%E3%83%A0/',
+        accessedAt: '2026-05-16',
+        note: 'サイリウム。素材情報DB ブロンドサイリウム（material-data）。便秘・コレステロール',
+      },
+    ],
     dosageMin: 5000,
     dosageMax: 15000,
     dosageUnit: 'mg/日（多量の水と一緒に摂取）',
@@ -21906,6 +22185,15 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 12,
         keyFinding:
           'ビルベリー由来を含むアントシアニン製剤（80〜320mg/日）が総コレ・LDL・血糖・収縮期血圧を有意改善することをn=1,492の32 RCT統合メタ解析で確認',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'hfnet',
+        fullName: '国立健康・栄養研究所「健康食品」の安全性・有効性情報',
+        url: 'https://hfnet.nibn.go.jp/material-infodb/material-data/%E3%83%93%E3%83%AB%E3%83%99%E3%83%AA%E3%83%BC/',
+        accessedAt: '2026-05-16',
+        note: 'ビルベリー。素材情報DB material-data。眼精疲労・抗凝固薬相互作用注意',
       },
     ],
     dosageMin: 80,

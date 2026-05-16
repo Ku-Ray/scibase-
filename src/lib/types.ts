@@ -16,6 +16,24 @@ export interface Paper {
   url?: string
 }
 
+/**
+ * 公的データベース・権威機関の参照リンク。
+ * E-E-A-T 信頼性スコア・AI Overviews 引用ソース対策。
+ * hfnet（国立健康・栄養研究所）を主軸に、CiNii・J-STAGE 等は次フェーズで拡張。
+ */
+export interface PublicDbReference {
+  /** データソース識別子 */
+  source: 'hfnet' | 'cinii' | 'jstage' | 'mhlw' | 'caa'
+  /** 表示用フルネーム（例: "国立健康・栄養研究所「健康食品」の安全性・有効性情報"） */
+  fullName: string
+  /** 外部URL（リンクは rel="noopener noreferrer nofollow external" 必須） */
+  url: string
+  /** 最終アクセス日（YYYY-MM-DD） */
+  accessedAt: string
+  /** 短い参照タイトル（20-50字）。例: "安全性・耐容上限・相互作用情報あり" */
+  note: string
+}
+
 export interface Product {
   name: string
   brand: string
@@ -143,6 +161,12 @@ export interface Ingredient {
   description: string
   concerns: string[]   // concern slugs
   papers: Paper[]
+  /**
+   * 公的DB・権威機関の参照リンク（hfnet 等）。
+   * YMYL厳格KW（[成分] 副作用 / 安全性 / 相互作用）対策・E-E-A-T差別化。
+   * 未設定時はUI非表示。掲載なし成分は省略可。
+   */
+  publicDbReferences?: PublicDbReference[]
   dosageMin?: number
   dosageMax?: number
   dosageUnit: string
