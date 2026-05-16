@@ -183,7 +183,7 @@ export interface ConcernGuide {
 const concernGuides: ConcernGuide[] = [
   {
     concernSlug: 'spots',
-    title: '論文で効果確認｜シミに効く成分7種の選び方',
+    title: '経口Cでシミは消えない｜論文で見る3タイプの真実',
     summary: '化粧品メーカー現役が研究データから解説。シミ3タイプ別の成分選びと失敗パターン',
     publishedAt: '2026-04-29',
     updatedAt: '2026-05-16',
@@ -414,7 +414,7 @@ const concernGuides: ConcernGuide[] = [
       'niacinamide-vs-peptide-guide',
     ],
 
-    seoTitle: 'シミに効く成分の選び方｜3タイプ別BEST PICKを論文で解説【化粧品メーカー現役】',
+    seoTitle: 'シミに効く成分の選び方｜論文で見るトラネキサム酸・α-アルブチン・アゼライン酸｜SciBase',
     metaDescription:
       'シミは肝斑・紫外線シミ・炎症後色素沈着の3タイプで効く成分が違う。研究で支持があるBEST PICKと典型的な失敗パターンを化粧品メーカー現役が解説。8週で評価する選び方。',
     priceAnchor:
@@ -1467,7 +1467,7 @@ const concernGuides: ConcernGuide[] = [
   },
   {
     concernSlug: 'menopause',
-    title: '更年期サプリの選び方｜3タイプ別BEST PICKを論文で解説【化粧品メーカー現役】',
+    title: '日本人の半数はエクオール非産生｜更年期サプリ3経路',
     summary: '更年期の症状を3タイプに分けて、化粧品メーカー現役が成分の選び方と婦人科HRTの境界線を整理',
     publishedAt: '2026-05-02',
     updatedAt: '2026-05-16',
@@ -1736,7 +1736,7 @@ const concernGuides: ConcernGuide[] = [
       'stress-cortisol-aging',
     ],
 
-    seoTitle: '更年期サプリの選び方｜3タイプ別BEST PICKを論文で解説【化粧品メーカー現役】',
+    seoTitle: '更年期サプリの選び方｜日本人の半数はエクオール非産生・論文で見る3経路｜SciBase',
     metaDescription:
       '更年期症状を3タイプ（エストロゲン低下／自律神経／アンドロゲン）に分けて、効く成分を化粧品メーカー現役が整理。エクオール・大豆イソフラボン・アシュワガンダの研究と、婦人科HRT・心療内科オンラインの境界線を解説。',
     priceAnchor:
