@@ -850,10 +850,10 @@ export default async function IngredientPage({ params }: Props) {
                     ▾
                   </span>
                 </summary>
-                <div className="px-5 pb-5 pt-1">
-                  <p className="text-[13px] text-muted-foreground leading-[1.85]">
-                    {a}
-                  </p>
+                <div className="px-5 pb-5 pt-1 text-[13px] text-muted-foreground leading-[1.85] space-y-3">
+                  {a.split(/\n{2,}/).map((para, j) => (
+                    <p key={j}>{para.trim()}</p>
+                  ))}
                 </div>
               </details>
             ))}
