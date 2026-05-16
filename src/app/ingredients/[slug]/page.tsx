@@ -765,6 +765,9 @@ export default async function IngredientPage({ params }: Props) {
             <div className="space-y-3">
               {ing.publicDbReferences.map((ref, i) => {
                 const sourceLabel = ref.source === 'hfnet' ? 'hfnet'
+                  : ref.source === 'ejim' ? '厚労省 eJIM'
+                  : ref.source === 'nih-ods' ? 'NIH ODS'
+                  : ref.source === 'nccih' ? 'NIH NCCIH'
                   : ref.source === 'cinii' ? 'CiNii'
                   : ref.source === 'jstage' ? 'J-STAGE'
                   : ref.source === 'mhlw' ? '厚生労働省'

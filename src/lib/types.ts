@@ -19,11 +19,12 @@ export interface Paper {
 /**
  * 公的データベース・権威機関の参照リンク。
  * E-E-A-T 信頼性スコア・AI Overviews 引用ソース対策。
- * hfnet（国立健康・栄養研究所）を主軸に、CiNii・J-STAGE 等は次フェーズで拡張。
+ * hfnet（国立健康・栄養研究所）/ ejim（厚労省 統合医療情報）を主軸に、
+ * NIH ODS / NCCIH 英語原典も併記。CiNii・J-STAGE 等は次フェーズで拡張。
  */
 export interface PublicDbReference {
   /** データソース識別子 */
-  source: 'hfnet' | 'cinii' | 'jstage' | 'mhlw' | 'caa'
+  source: 'hfnet' | 'ejim' | 'nih-ods' | 'nccih' | 'cinii' | 'jstage' | 'mhlw' | 'caa'
   /** 表示用フルネーム（例: "国立健康・栄養研究所「健康食品」の安全性・有効性情報"） */
   fullName: string
   /** 外部URL（リンクは rel="noopener noreferrer nofollow external" 必須） */
