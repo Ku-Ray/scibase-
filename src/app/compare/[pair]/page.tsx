@@ -222,7 +222,16 @@ export default async function ComparePage({ params }: Props) {
     },
     {
       q: `${ingA.nameJa}と${ingB.nameJa}の違いは何ですか？`,
-      a: `主な違いは①カバーする悩みカテゴリ（${ingA.nameJa}：${onlyA.slice(0,2).map(c=>c.nameJa).join('・') || ingA.concerns.slice(0,2).join('・')}、${ingB.nameJa}：${onlyB.slice(0,2).map(c=>c.nameJa).join('・') || ingB.concerns.slice(0,2).join('・')}）、②エビデンスの種類（${ingA.nameJa}：${rankLabel[ingA.evidenceRank]}、${ingB.nameJa}：${rankLabel[ingB.evidenceRank]}）の2点です。`,
+      a: (() => {
+        const labelOf = (ing: typeof ingA, only: typeof onlyA) => {
+          // 固有 concern があればそれを表示、なければ全 concern から日本語名で2つ表示
+          const list = only.length > 0
+            ? only.slice(0, 2)
+            : allConcerns.filter(c => ing.concerns.includes(c.slug)).slice(0, 2)
+          return list.map(c => c.nameJa).join('・') || '同一カテゴリ'
+        }
+        return `主な違いは①カバーする悩みカテゴリ（${ingA.nameJa}：${labelOf(ingA, onlyA)}、${ingB.nameJa}：${labelOf(ingB, onlyB)}）、②エビデンスの種類（${ingA.nameJa}：${rankLabel[ingA.evidenceRank]}、${ingB.nameJa}：${rankLabel[ingB.evidenceRank]}）の2点です。`
+      })(),
     },
     {
       q: `${ingA.nameJa}と${ingB.nameJa}は一緒に飲んでも大丈夫ですか？`,
