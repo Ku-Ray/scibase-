@@ -44,14 +44,7 @@ const personJsonLd = {
   ],
 }
 
-const orgJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'SciBase',
-  url: BASE_URL,
-  description: '論文エビデンスに基づくスキンケア・サプリメント成分データベース',
-  foundingDate: '2026',
-}
+/* Organization Schema は layout.tsx でグローバルに出力済（@id `/#organization`）→ ここでは重複出力しない */
 
 const SCORE_AXES = [
   {
@@ -117,7 +110,6 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
 
       <div className="max-w-2xl mx-auto px-5 py-12">
 

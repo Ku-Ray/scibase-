@@ -213,6 +213,14 @@ export default async function IngredientPage({ params }: Props) {
         ].filter(Boolean) as { platform: 'iherb' | 'amazon' | 'cosme'; searchUrl: string; label?: string }[])
       : undefined
 
+  /* 主要論文を citation として最大8件流し込み（メタ解析→RCT→コホート→観察→動物の優先順） */
+  const studyPriorityMap: Record<string, number> = {
+    'meta-analysis': 0, rct: 1, cohort: 2, observational: 3, animal: 4,
+  }
+  const citationPapers = [...ing.papers]
+    .sort((a, b) => (studyPriorityMap[a.studyType] ?? 9) - (studyPriorityMap[b.studyType] ?? 9))
+    .slice(0, 8)
+
   const articleJsonLd = {
     '@context':        'https://schema.org',
     '@type':           'Article',
@@ -224,18 +232,28 @@ export default async function IngredientPage({ params }: Props) {
     dateModified:      ing.updatedAt,
     author: {
       '@type': 'Person',
+      '@id': `${BASE_URL}/about#author`,
       name: 'SciBase 編集者',
-      url: `${BASE_URL}/about`,
-      jobTitle: '化粧品メーカー研究職',
+      url: `${BASE_URL}/about#author`,
+      jobTitle: '化粧品メーカー現役研究者',
       sameAs: ['https://x.com/r_evidence_'],
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
       name: 'SciBase',
       url: BASE_URL,
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo/symbol-dark-512.png` },
     },
     mainEntityOfPage:  { '@type': 'WebPage', '@id': `${BASE_URL}/ingredients/${slug}` },
+    ...(citationPapers.length > 0 && {
+      citation: citationPapers.map((p) => ({
+        '@type': 'ScholarlyArticle',
+        name: p.title,
+        datePublished: String(p.year),
+        isPartOf: { '@type': 'Periodical', name: p.journal },
+      })),
+    }),
   }
 
   const breadcrumbJsonLd = {
@@ -327,6 +345,7 @@ export default async function IngredientPage({ params }: Props) {
     '@type':    'ItemList',
     name:       `${ing.nameJa}のおすすめ商品（論文エビデンス基準）`,
     description: `論文で有効とされた用量・濃度を含む${ing.nameJa}商品を独立した立場で評価・選定。`,
+    numberOfItems: rankedProducts.length,
     itemListElement: rankedProducts.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -356,6 +375,7 @@ export default async function IngredientPage({ params }: Props) {
     '@type':    'HowTo',
     name:       `${ing.nameJa}の始め方`,
     description: `${ing.nameJa}を論文で示された用量・タイミング・期間で使い始める3ステップ。`,
+    totalTime:  'P1D',
     step: [
       {
         '@type': 'HowToStep',

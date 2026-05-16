@@ -139,6 +139,7 @@ export default async function ArticlePage({ params }: Props) {
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
       name: 'SciBase',
       url: BASE_URL,
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo/symbol-dark-512.png` },
@@ -184,6 +185,7 @@ export default async function ArticlePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: article.itemList.name,
+    numberOfItems: article.itemList.items.length,
     itemListElement: article.itemList.items
       .map((it) => {
         const ing = getIngredient(it.ingredientSlug)
@@ -220,6 +222,7 @@ export default async function ArticlePage({ params }: Props) {
     '@type':    'HowTo',
     name:       article.title,
     description: article.description,
+    totalTime:  `PT${article.readingMinutes}M`,
     step: article.ingredients.map((c, idx) => {
       const ing = getIngredient(c.slug)
       return {

@@ -82,6 +82,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: `${concern.nameJa}のタイプ別BEST PICK成分`,
+    description: `${concern.nameJa}のタイプ別に、論文エビデンスをもとに選定した推奨成分。`,
     numberOfItems: guide.solutionByType.length,
     itemListElement: guide.solutionByType
       .map((s, i) => {
@@ -107,11 +108,44 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
     })),
   }
 
+  /* HowTo JSON-LD — タイプ別 BEST PICK 成分を HowToStep として出力（AI Overview 対応） */
+  const howToJsonLd = guide.solutionByType.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type':    'HowTo',
+    name:       `${concern.nameJa}の選び方（タイプ別）`,
+    description: guide.summary,
+    step: guide.solutionByType
+      .map((s, idx) => {
+        const ing = getIngredient(s.bestPickSlug)
+        if (!ing) return null
+        return {
+          '@type': 'HowToStep',
+          position: idx + 1,
+          name:    `${s.typeName}には${ing.nameJa}`,
+          text:    s.body.replace(/\s+/g, ' ').slice(0, 250),
+          url:     `${BASE_URL}/ingredients/${ing.slug}`,
+        }
+      })
+      .filter(Boolean),
+  } : null
+
+  /* 主要論文 citation（タイプ別 mechanismByType.paperRefs を統合） */
+  const citationFromGuide = (() => {
+    const refs = (guide.mechanismByType ?? [])
+      .flatMap((m) => m.paperRefs ?? [])
+    const unique = Array.from(
+      new Map(refs.map((p) => [p.title, p] as const)).values()
+    ).slice(0, 8)
+    return unique
+  })()
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: guide.title,
     description: guide.summary,
+    image:    `${BASE_URL}/articles/${concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}/opengraph-image`,
+    url:      articleUrl,
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
     author: {
@@ -124,11 +158,20 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
       name: 'SciBase',
       url: BASE_URL,
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo/symbol-dark-512.png` },
     },
-    mainEntityOfPage: articleUrl,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+    ...(citationFromGuide.length > 0 && {
+      citation: citationFromGuide.map((p) => ({
+        '@type': 'ScholarlyArticle',
+        name: p.title,
+        datePublished: String(p.year),
+        isPartOf: { '@type': 'Periodical', name: p.journal },
+      })),
+    }),
   }
 
   return (
@@ -141,6 +184,9 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      {howToJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      )}
 
       {/* ── [1] Hero ───────────────────────────── */}
       <div className={`${hero.bg} border-t-4 ${hero.border}`}>

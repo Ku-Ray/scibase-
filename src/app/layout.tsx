@@ -80,9 +80,10 @@ const organizationJsonLd = {
   sameAs: ['https://x.com/r_evidence_'],
   founder: {
     '@type':   'Person',
+    '@id':     `${BASE_URL}/about#author`,
     name:      'SciBase 編集者',
-    url:       `${BASE_URL}/about`,
-    jobTitle:  '化粧品メーカー研究職',
+    url:       `${BASE_URL}/about#author`,
+    jobTitle:  '化粧品メーカー現役研究者',
     sameAs:    ['https://x.com/r_evidence_'],
   },
 }
