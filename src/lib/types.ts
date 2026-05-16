@@ -24,7 +24,7 @@ export interface Paper {
  */
 export interface PublicDbReference {
   /** データソース識別子 */
-  source: 'hfnet' | 'ejim' | 'nih-ods' | 'nccih' | 'cinii' | 'jstage' | 'mhlw' | 'caa'
+  source: 'hfnet' | 'ejim' | 'nih-ods' | 'nccih' | 'pubmed' | 'cinii' | 'jstage' | 'mhlw' | 'caa'
   /** 表示用フルネーム（例: "国立健康・栄養研究所「健康食品」の安全性・有効性情報"） */
   fullName: string
   /** 外部URL（リンクは rel="noopener noreferrer nofollow external" 必須） */
