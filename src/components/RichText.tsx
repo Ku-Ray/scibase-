@@ -209,6 +209,46 @@ export function RichParagraphs({
             </aside>
           )
         }
+        // Markdown 見出し（## H2 / ### H3 / #### H4）対応
+        const trimmedPara = para.trimStart()
+        const h2Match = trimmedPara.match(/^##\s+(.+)$/m)
+        const h3Match = trimmedPara.match(/^###\s+(.+)$/m)
+        const h4Match = trimmedPara.match(/^####\s+(.+)$/m)
+        // 段落全体が見出しのみ（1行）の場合のみ昇格
+        const isSingleLine = !trimmedPara.includes('\n')
+        if (isSingleLine && h4Match) {
+          return (
+            <h4
+              key={i}
+              className="text-[16px] sm:text-[17px] font-semibold text-foreground
+                mt-7 mb-3 first:mt-0 leading-snug"
+            >
+              {tokenize(h4Match[1]).map(renderToken)}
+            </h4>
+          )
+        }
+        if (isSingleLine && h3Match) {
+          return (
+            <h3
+              key={i}
+              className="text-[17px] sm:text-[18px] font-semibold text-foreground
+                mt-8 mb-4 first:mt-0 leading-snug"
+            >
+              {tokenize(h3Match[1]).map(renderToken)}
+            </h3>
+          )
+        }
+        if (isSingleLine && h2Match) {
+          return (
+            <h2
+              key={i}
+              className="text-[19px] sm:text-[21px] font-semibold text-foreground
+                mt-10 mb-5 first:mt-0 leading-snug"
+            >
+              {tokenize(h2Match[1]).map(renderToken)}
+            </h2>
+          )
+        }
         const boldText = isBoldOnlyParagraph(para)
         if (boldText) {
           return (
