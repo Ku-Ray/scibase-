@@ -768,7 +768,6 @@ export default async function IngredientPage({ params }: Props) {
                   : ref.source === 'ejim' ? '厚労省 eJIM'
                   : ref.source === 'nih-ods' ? 'NIH ODS'
                   : ref.source === 'nccih' ? 'NIH NCCIH'
-                  : ref.source === 'pubmed' ? 'PubMed'
                   : ref.source === 'cinii' ? 'CiNii'
                   : ref.source === 'jstage' ? 'J-STAGE'
                   : ref.source === 'mhlw' ? '厚生労働省'
