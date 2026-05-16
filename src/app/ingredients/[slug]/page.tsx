@@ -130,19 +130,49 @@ export default async function IngredientPage({ params }: Props) {
     ).values()
   ].slice(0, 6)
 
+  /* ── Phase 5-B: 同一商品 iHerb/Amazon 集約 ──────────────────
+     name 末尾の「（Amazon版）」「（iHerb版）」「（楽天版）」を削除して正規化し、
+     同じ brand + 正規化 name の商品を1グループに集約する。
+     主オファー = iHerb 優先 > Amazon > その他、同 platform なら rank ASC。
+     副オファーは ProductOfferCard.secondaryOffers として併記され、カード内に
+     「Amazonで詳細を見る ¥xxx」型の具体ASPボタンとして描画される。
+     これで重複カード（Beauty of Joseon × iHerb版・Amazon版が別カードになる問題）を解消。 */
+  const normalizeProductName = (name: string): string =>
+    name.replace(/\s*[（(](Amazon|iHerb|楽天|Rakuten|amazon|iherb|rakuten)版?[）)]\s*$/i, '').toLowerCase().trim()
+  const PLATFORM_PRIORITY: Record<string, number> = { iherb: 0, amazon: 1, rakuten: 2, cosme: 3 }
+  const productGroupMap = new Map<string, typeof ing.products>()
+  for (const p of ing.products) {
+    const key = `${p.brand}::${normalizeProductName(p.name)}`
+    if (!productGroupMap.has(key)) productGroupMap.set(key, [])
+    productGroupMap.get(key)!.push(p)
+  }
+  const aggregatedGroups = Array.from(productGroupMap.values()).map(group => {
+    const sorted = [...group].sort((a, b) => {
+      const pa = PLATFORM_PRIORITY[a.platform] ?? 99
+      const pb = PLATFORM_PRIORITY[b.platform] ?? 99
+      if (pa !== pb) return pa - pb
+      return (a.rank ?? 99) - (b.rank ?? 99)
+    })
+    return { primary: sorted[0], secondaries: sorted.slice(1) }
+  })
+
   /* Products: SciBase 推奨度 DESC で並べ替え（同点は手動 rank ASC で決定）。
-     これで「1位の商品 = 最も推奨度が高い商品」が常に成立し ★ 表示と矛盾しない。 */
-  const sortedProducts = [...ing.products]
-    .map(p => ({ p, s: scoreProduct(p, ing) }))
+     これで「1位の商品 = 最も推奨度が高い商品」が常に成立し ★ 表示と矛盾しない。
+     集約後の主オファーで並べ替える。 */
+  const sortedGroups = aggregatedGroups
+    .map(g => ({ ...g, s: scoreProduct(g.primary, ing) }))
     .sort((a, b) => {
       const diff = b.s.recommendationScore - a.s.recommendationScore
       if (Math.abs(diff) > 0.001) return diff
-      return (a.p.rank ?? 99) - (b.p.rank ?? 99)
+      return (a.primary.rank ?? 99) - (b.primary.rank ?? 99)
     })
-    .map(x => x.p)
-  const heroProduct = sortedProducts.find(p => p.platform !== 'cosme') ?? null
-  const secondaryProducts = sortedProducts.filter(p => p !== heroProduct && p.platform !== 'cosme')
-  const cosmeProduct = sortedProducts.find(p => p.platform === 'cosme') ?? null
+  const sortedProducts = sortedGroups.map(g => g.primary)
+  const heroGroup = sortedGroups.find(g => g.primary.platform !== 'cosme') ?? null
+  const secondaryGroups = sortedGroups.filter(g => g !== heroGroup && g.primary.platform !== 'cosme')
+  const cosmeGroup = sortedGroups.find(g => g.primary.platform === 'cosme') ?? null
+  const heroProduct = heroGroup?.primary ?? null
+  const heroSecondaries = heroGroup?.secondaries ?? []
+  const cosmeProduct = cosmeGroup?.primary ?? null
   const heroScore = heroProduct ? scoreProduct(heroProduct, ing) : null
   /** 軸別1位（multi-context 勝者バッジ用） */
   const axisLeaders = computeAxisLeaders(ing)
@@ -1089,7 +1119,7 @@ export default async function IngredientPage({ params }: Props) {
               <IngredientTestKitCTACard cta={ing.testKitCTA} ingredientSlug={ing.slug} />
             )}
 
-            {/* ヒーロー：BEST PICK 縦長 v4 */}
+            {/* ヒーロー：BEST PICK 縦長 v4・同一商品の Amazon 等は secondaryOffers でカード内併記 */}
             {heroProduct && (
               <div className="mb-5">
                 <ProductOfferCard
@@ -1100,21 +1130,24 @@ export default async function IngredientPage({ params }: Props) {
                   showOverallRank
                   subPlatformLinks={heroSubLinks}
                   bestPickReason={bestPickReasonAuto || undefined}
+                  secondaryOffers={heroSecondaries}
                 />
               </div>
             )}
 
-            {/* セカンダリ商品：rank=1 と同じ縦長 hero レイアウト・1位バッジは非表示 */}
-            {secondaryProducts.length > 0 && (
+            {/* セカンダリ商品：別商品（grouped primary）のみ。同一商品の別プラットフォーム版は
+                各カード内の secondaryOffers で併記される */}
+            {secondaryGroups.length > 0 && (
               <div className="flex flex-col gap-5 mb-5">
-                {secondaryProducts.map((p, i) => (
+                {secondaryGroups.map((g, i) => (
                   <ProductOfferCard
-                    key={`${p.platform}-${i}`}
-                    product={p}
+                    key={`${g.primary.platform}-${i}`}
+                    product={g.primary}
                     ingredient={ing}
                     variant="hero"
                     axisLeaders={axisLeaders}
                     showOverallRank={false}
+                    secondaryOffers={g.secondaries}
                   />
                 ))}
               </div>

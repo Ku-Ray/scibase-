@@ -54,6 +54,12 @@ interface Props {
   showOverallRank?: boolean
   subPlatformLinks?: SubPlatformLink[]
   bestPickReason?: string
+  /**
+   * 同一商品の別プラットフォーム版（iHerb vs Amazon 等）。
+   * page.tsx で name 正規化グルーピングして渡す。CtaStack 内で
+   * 主CTAの直下に「Amazonで詳細を見る ¥xxxx」型の具体ASPボタンとして描画する。
+   */
+  secondaryOffers?: Product[]
 }
 
 function formatYen(n: number | undefined | null): string {
@@ -80,6 +86,7 @@ export function ProductOfferCard({
   showOverallRank,
   subPlatformLinks,
   bestPickReason,
+  secondaryOffers,
 }: Props) {
   const score = scoreProduct(product, ingredient)
   const cost1d = dailyCost(product.monthlyCostJpy)
@@ -194,6 +201,7 @@ export function ProductOfferCard({
           subPlatformLinks={subPlatformLinks}
           bestPickReason={bestPickReason}
           cardId={cardId}
+          secondaryOffers={secondaryOffers}
         />
       </CardViewTracker>
     )
@@ -322,6 +330,7 @@ interface HeroMybestProps {
   subPlatformLinks: SubPlatformLink[] | undefined
   bestPickReason: string | undefined
   cardId: string
+  secondaryOffers?: Product[]
 }
 
 function axisDisplayValue(axis: ScoreAxis, score: ProductScore): { value: number | null } {
@@ -368,11 +377,13 @@ function CtaStack({
   ingredient,
   subPlatformLinks,
   cardId,
+  secondaryOffers,
 }: {
   product: Product
   ingredient: Ingredient
   subPlatformLinks: SubPlatformLink[] | undefined
   cardId: string
+  secondaryOffers?: Product[]
 }) {
   return (
     <div className="flex flex-col gap-2">
@@ -409,6 +420,38 @@ function CtaStack({
           {PLATFORM_TRUST_NOTE[product.platform]}
         </p>
       </div>
+      {/* 同一商品の別プラットフォーム版（具体ASPリンク・価格付き）
+          page.tsx でグループ化した secondaryOffers を SECONDARY_CTA で描画 */}
+      {secondaryOffers?.map(sec => (
+        <div key={'sec-' + sec.platform + sec.url}>
+          <OutboundProductLink
+            href={sec.url}
+            platform={sec.platform}
+            ingredientSlug={ingredient.slug}
+            productRank={sec.rank}
+            aspProgram={sec.aspProgram}
+            aspId={sec.aspId}
+            commissionRateBand={sec.commissionRateBand}
+            productOfferCardId={cardId}
+            productName={sec.name}
+            priceJpy={sec.priceJpy}
+            className={`flex items-center justify-center gap-2 text-[13px] font-semibold rounded-lg px-3 h-12 transition-colors w-full ${SECONDARY_CTA}`}
+          >
+            <span className="flex flex-col items-center leading-tight">
+              <span>{platformLabel[sec.platform]}で詳細を見る</span>
+              {sec.monthlyCostJpy != null ? (
+                <span className="text-[11px] font-semibold opacity-90 tabular-nums">{formatYen(sec.monthlyCostJpy)}</span>
+              ) : sec.priceJpy != null ? (
+                <span className="text-[11px] font-semibold opacity-90 tabular-nums">{formatYen(sec.priceJpy)}〜</span>
+              ) : null}
+            </span>
+            <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
+          </OutboundProductLink>
+          <p className="text-[10px] text-muted-foreground/90 leading-snug mt-1.5 text-center">
+            {PLATFORM_TRUST_NOTE[sec.platform]}
+          </p>
+        </div>
+      ))}
       {subPlatformLinks?.map(sub => (
         <div key={sub.platform + sub.searchUrl}>
           <OutboundProductLink
@@ -442,6 +485,7 @@ function HeroMybestCard({
   subPlatformLinks,
   bestPickReason,
   cardId,
+  secondaryOffers,
 }: HeroMybestProps) {
   return (
     <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -580,7 +624,7 @@ function HeroMybestCard({
 
             {/* CTA 縦並び（mybest 形式・モール名 + 価格） */}
             <div className="pt-1">
-              <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} cardId={cardId} />
+              <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} cardId={cardId} secondaryOffers={secondaryOffers} />
             </div>
           </div>
         </div>
@@ -672,7 +716,7 @@ function HeroMybestCard({
           <p className="text-[11px] text-muted-foreground text-center mb-3">
             ここまで読んだ方へ・購入はこちら
           </p>
-          <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} cardId={cardId} />
+          <CtaStack product={product} ingredient={ingredient} subPlatformLinks={subPlatformLinks} cardId={cardId} secondaryOffers={secondaryOffers} />
         </div>
 
         {bestPickReason && (
