@@ -111,7 +111,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '仕事・育児などで慢性的なストレスを感じている',
+      '仕事・育児で慢性的にコルチゾール高めの30-40代・就寝前に頭が冴える',
       '夜なかなか寝付けない・眠りが浅い',
       '疲れているのに休んでも回復しない',
     ],
@@ -394,7 +394,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'シミ・くすみ・色むらが気になる',
+      'シミ・くすみ・毛穴・小じわが同時に気になる30-50代女性（妊娠中OK）',
       '皮脂・テカリ・毛穴の開きが気になる',
       'レチノールは刺激が強くてマイルドな成分を探している',
       '小じわや肌のごわつき・乾燥バリアの低下が気になる',
@@ -627,7 +627,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '寝付きが悪い・夜中に目が覚める',
+      '夜中の足のつり・寝つきの悪さ・ストレスでの食いしばりがある30-50代',
       'こむら返り・筋肉のけいれん・肩こりがある',
       'イライラしやすい・神経が高ぶりやすい',
       '加工食品や外食が多い（マグネシウムが不足しやすい食生活）',
@@ -892,7 +892,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '室内勤務が多く日光にほぼ当たらない',
+      '室内勤務中心・日光曝露が少ない・冬季の風邪頻発が気になる30-50代',
       '日焼け止めを日常的に使っている',
       '魚（特に脂の多い青魚）をほとんど食べない',
     ],
@@ -1129,7 +1129,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '青魚（サバ・イワシ・サーモン）をほとんど食べない',
+      '青魚を週2回以上食べない・中性脂肪高め・心血管リスクが気になる40代以上',
       '関節の痛みや慢性的な炎症が気になる',
       '認知機能の維持・脳の健康に関心がある',
     ],
@@ -1323,7 +1323,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '肌のハリ・弾力が落ちてきたと感じる30代以上',
+      '30-50代女性で肌のハリ低下・小じわ・ほうれい線が気になり始めた',
       '内側から肌の老化ケアをしたい',
       'ビタミンCと組み合わせて効果を高めたい',
     ],
@@ -1454,7 +1454,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '40代以上で疲れやすくなったと感じる',
+      'スタチン服用中の筋痛・40-60代で疲労感が続き心臓ケアも気にしている',
       'スタチン系薬を服用している（CoQ10が低下しやすい）',
       'ミトコンドリア機能の維持に関心がある',
     ],
@@ -1798,7 +1798,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '抗生物質を使った後に腸内環境が乱れた',
+      '抗生剤投与後・旅行者下痢・慢性的な便通不調を抱える20-50代',
       '腸の調子が不安定で下痢・便秘を繰り返す',
       '免疫機能を腸から整えたい',
     ],
@@ -1900,7 +1900,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'ポリフェノール・サーチュイン研究に興味がある',
+      'SIRT1経路の抗老化アプローチに関心がある研究志向の30代以上',
       '赤ワインが好きで根拠を知りたい',
       'ただし現時点でのヒトエビデンスはCランク（動物実験が中心）',
     ],
@@ -2034,7 +2034,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'シワ・たるみが気になる30代以上',
+      '30-50代で深いしわ・光老化・色素沈着を本格対策したい（妊娠中NG）',
       '光老化（紫外線ダメージ）のケアをしたい',
       '皮膚科でも推奨される最もエビデンスのある外用成分を使いたい',
     ],
@@ -2149,7 +2149,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'レチノールを使っていて物足りなくなった',
+      'レチノール0.5%以上を使い慣れて物足りなくなった中上級スキンケア層',
       '刺激が強すぎるレチノイン酸の代替を探している',
       'より速く効果を出したい・レチノールの上位互換を試したい',
     ],
@@ -2289,7 +2289,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'シミ・くすみを朝のスキンケアで改善したい',
+      '紫外線対策と同時に色素沈着・くすみを朝のスキンケアで攻めたい30代以上',
       'コラーゲン合成を皮膚の外側からサポートしたい',
       'UV後の酸化ダメージを日焼け止めに加えてケアしたい',
     ],
@@ -2401,7 +2401,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '乾燥肌・アトピー傾向があり肌のバリアが弱い',
+      '冬季悪化型の乾燥肌・アトピー素因があり保湿だけでは改善しない30代以上',
       '肌荒れが繰り返す・刺激に弱い肌',
       'スキンケアの土台（保湿・バリア）から整えたい',
     ],
@@ -2476,7 +2476,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '妊娠中・妊娠希望でレチノールが使えない',
+      '妊娠中・授乳中でレチノールが使えないが、しわ予防は続けたい20-40代女性',
       'レチノールで赤みや皮むけが出た',
       '刺激の少ないレチノール代替を朝晩使いたい',
     ],
@@ -2555,7 +2555,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '角質肥厚・毛穴詰まりが気になる',
+      '角質肥厚・くすみ・毛穴詰まりが気になる脂性肌・混合肌の20-30代',
       '肌のトーンが均一でなくくすみが気になる',
       'ターンオーバーを促進して透明感を出したい',
     ],
@@ -2637,7 +2637,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'ニキビ・毛穴の黒ずみが繰り返す',
+      '皮脂分泌過剰・毛穴詰まり・繰り返すニキビに悩む脂性肌の10-30代',
       '皮脂分泌が多いオイリー肌',
       '炎症性の赤ニキビにも対応したい',
     ],
@@ -2721,7 +2721,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'シミとニキビを同時にケアしたい',
+      '炎症性ニキビと炎症後色素沈着（PIH）が併発する20-40代・酒さ素因あり',
       '酒さ（ロザシア）の赤みが気になる',
       'ハイドロキノンは刺激が強すぎた・処方箋なしで使える美白成分を探している',
     ],
@@ -2793,7 +2793,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '乾燥による小じわ・突っ張り感が気になる',
+      '冬季の乾燥小じわ・突っ張り感・更年期前後の肌のしぼみ感',
       'スキンケアのベース保湿が不十分だと感じる',
       'レチノールなど他の成分の刺激を和らげたい',
     ],
@@ -2881,7 +2881,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '免疫機能をサポートしたい',
+      '紫外線曝露が多い・喫煙・ストレスで抗酸化基盤を底上げしたい',
       '野菜・果物の摂取が少なくビタミンCが不足しがち',
       'コラーゲン合成を内側からサポートしたい',
     ],
@@ -3104,7 +3104,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'ニキビが繰り返しできる',
+      '炎症性ニキビ・創傷治癒遅延・男性ホルモン代謝サポートを狙う20-40代',
       '傷の治りが遅いと感じる',
       '免疫機能の底上げとスキンケアを同時にしたい',
     ],
@@ -3230,7 +3230,7 @@ export const ingredients: Ingredient[] = [
       '副作用報告はほぼなく安全性は高いが、降圧薬併用で血圧低下を強める可能性があり、妊娠中・授乳中は医師相談が前提。',
     concerns: ['stress', 'sleep', 'cognitive'],
     whoFor: [
-      'ストレスや緊張で集中力が落ちる方',
+      '会議前の緊張・午後の集中力低下を感じる30-50代ビジネスパーソン',
       '寝つきは悪くないが眠りが浅い方',
       'カフェインで動悸が出やすく緩和したい方',
       '緑茶の落ち着き感を成分単独で取りたい方',
@@ -3374,7 +3374,7 @@ export const ingredients: Ingredient[] = [
       'グリシンは最小のアミノ酸で、コラーゲン（全アミノ酸の約1/3をグリシンが占める）や抑制性神経伝達物質として機能する。就寝前の摂取で深部体温の低下を促し、深睡眠（徐波睡眠）の増加と翌朝の疲労感軽減がRCTで確認されている。サプリメントとして最もエビデンスの高い睡眠改善成分の一つ。',
     concerns: ['sleep', 'fatigue', 'skin-aging'],
     whoFor: [
-      '寝つきは良いが深睡眠が浅く翌朝のだるさが残る方',
+      '入眠は良いが深睡眠が浅く朝の倦怠感が残る30-50代',
       '就寝前の深部体温が下がりにくい方',
       'メラトニン以外で睡眠を整えたい方',
       '加齢で深睡眠が短くなった40代以上',
@@ -3500,7 +3500,7 @@ export const ingredients: Ingredient[] = [
       '初期に1〜2kgの体重増が起きることがあるが筋肉内の水分貯留が中心で副作用ではない。腎機能低下のある方は医師相談が前提。',
     concerns: ['fatigue', 'cognitive', 'muscle'],
     whoFor: [
-      '筋力トレーニングのパフォーマンスを上げたい方',
+      '筋トレ・パワー競技で記録向上を狙う成人男性、または40代以降の筋量維持',
       '加齢で筋肉量・筋力低下が気になる40代以上の方（特に女性）',
       '睡眠不足で日中の認知機能低下を感じる方',
       '菜食主義で肉・魚からの摂取が少ない方',
@@ -3745,7 +3745,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '寝付きが悪い・入眠に時間がかかる',
+      '時差ぼけ・交代勤務・概日リズム障害がある成人（日本では個人輸入注意）',
       '海外渡航・シフト勤務で時差ぼけ・概日リズムが乱れがち',
       '高齢でメラトニン分泌量が減ってきたと感じる',
     ],
@@ -3910,7 +3910,7 @@ export const ingredients: Ingredient[] = [
       'GABAは中枢神経系の主要な抑制性神経伝達物質。経口摂取したGABAが血液脳関門を通過するかは議論が続いているが、腸管でのGABA受容体への作用・迷走神経を介した間接経路が示唆されており、複数のRCTでストレス軽減・睡眠改善の効果が確認されている。エビデンスは「効果はある、機序は不明」の状態。',
     concerns: ['stress', 'sleep'],
     whoFor: [
-      'ストレスや緊張で眠りが浅い方',
+      '寝つきの悪さ・夜の交感神経過剰で布団に入っても頭が冴える30-50代',
       'プレゼン前・試験前の急な不安を落ち着けたい方',
       '血圧が高めで生活改善と並行したい方',
       '即効性のあるリラックス感を求める方',
@@ -4020,7 +4020,7 @@ export const ingredients: Ingredient[] = [
       '日焼け止め（SPF50+/PA++++）との併用が前提で、欠くとメラニン抑制と紫外線刺激が拮抗してしまう。経口アルブチンのヒト試験エビデンスは限定的。',
     concerns: ['spots', 'skin-aging', 'uv-damage'],
     whoFor: [
-      'シミ・色素沈着が気になる方',
+      '紫外線・摩擦由来の色素沈着・頬の薄シミが気になり始めた30代以上',
       '肝斑でハイドロキノンの刺激が強かった方',
       '美白成分の中で安全性プロファイルを重視する方',
       '韓国コスメの定番成分を取り入れたい方',
@@ -4438,7 +4438,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'シミ・肝斑が長年気になっている',
+      '紫外線・摩擦・経口避妊薬・HRTで誘発された肝斑・PIHが長年気になる女性',
       'ハイドロキノンが刺激で使えない',
       '炎症後の色素沈着を早く薄くしたい',
     ],
@@ -4538,7 +4538,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '肌荒れ・赤みが続いている',
+      'レチノール・AHA刺激後の赤み・敏感肌・酒さ素因がある20-40代',
       '外用レチノールやAHAで刺激を感じる敏感肌',
       'バリア機能を回復させたい',
     ],
@@ -4696,7 +4696,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'グリコール酸が刺激で使えない',
+      'グリコール酸では刺激が強い敏感肌・酒さ素因のある20-40代女性',
       'ピーリングしながら保湿も同時にしたい',
       '肌のくすみ・ザラつきが気になる',
     ],
@@ -4897,7 +4897,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '皮膚の老化を内側からケアしたい',
+      '紫外線曝露が多く肌の老化を内側からケアしたい30代以上の屋外活動者',
       '日焼けの酸化ダメージを軽減したい',
       '抗酸化成分をまとめて取りたい',
     ],
@@ -5020,7 +5020,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '慢性的な体の炎症・疲れやすさが気になる',
+      '関節リウマチ・慢性炎症マーカー高値で抗炎症介入したい40代以上',
       '食事だけではウコンを十分取れない',
       '老化を炎症の観点からアプローチしたい',
     ],
@@ -5104,7 +5104,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '加齢とともに疲れやすくなった',
+      '40-60代で血圧高め・運動後の疲労回復が遅くなったと感じる',
       '2023年のタウリン長寿研究が気になっている',
       '認知・運動機能を維持したい30代以上',
     ],
@@ -5199,7 +5199,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '食後の血糖スパイクが気になる',
+      '食後の血糖スパイク・夕方の眠気がある40代以上の境界域血糖（医師相談下）',
       '糖化（AGEs）から老化を予防したい',
       'メトホルミンに興味があるが処方が難しい方',
     ],
@@ -5349,7 +5349,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '緑茶を毎日飲んでいるが有効量には届いていない',
+      '緑茶を1日3-5杯飲めない多忙な30-50代で抗酸化・代謝サポートを狙う',
       '認知機能を維持・向上させたい',
       '抗酸化・脂肪代謝を同時にサポートしたい',
     ],
@@ -5456,7 +5456,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '加齢による物忘れ・集中力低下が気になる',
+      '40代以降の物忘れ・名前が出てこない・気分の落ち込みが続く健常加齢層',
       '脳の老化予防を神経保護の観点からアプローチしたい',
       '認知機能をサポートするサプリを探している',
     ],
@@ -5568,7 +5568,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '40代以降の記憶・集中力の低下が気になる',
+      '40-60代で記憶・集中力低下を感じ、運動後コルチゾール対策も狙う',
       'ストレスで頭が重い、物事が整理しにくい',
       '脳の老化を細胞膜レベルからケアしたい',
     ],
@@ -5680,7 +5680,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '40代以降の記憶・集中力の低下を感じる',
+      '40代以降で名前が出てこない・脳血流低下のMCI予防を狙う健常加齢層',
       '脳の血流・神経を長期的に維持したい',
       '認知症リスクを早めに対処したい',
     ],
@@ -5776,7 +5776,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '老化細胞（ゾンビ細胞）の蓄積を気にしている',
+      'senolyticsアプローチ・花粉症・抗ヒスタミン補助を狙う30-50代',
       '慢性炎症・アレルギーをまとめてアプローチしたい',
       'フィセチンと組み合わせてSenolyticプロトコルを試したい',
     ],
@@ -5859,7 +5859,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'オートファジー（細胞浄化）を食事以外で促したい',
+      'オートファジー誘導・抗老化を食事+サプリで強化したい40代以上',
       '断食の効果を補完したい',
       '長寿研究の最前線成分を取り入れたい',
     ],
@@ -5967,7 +5967,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'NMNよりヒト臨床データが多い選択肢を求めている',
+      'NMNより蓄積RCTが厚い選択肢を求める抗老化セルフケア40代以上',
       'NAD+を上げてミトコンドリア機能を改善したい',
       '40代以降のエネルギー・疲労感を改善したい',
     ],
@@ -6247,7 +6247,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'ビタミンDを摂っているがK2と一緒に摂っていない',
+      'ビタミンD3を高用量摂取中で動脈石灰化リスクが気になる40代以上',
       '骨密度の維持・骨粗鬆症予防を考えている',
       '動脈硬化リスクを食事・サプリで対策したい',
     ],
@@ -6340,7 +6340,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '抗酸化の基本を押さえたい',
+      '紫外線曝露多・抗酸化シールドの基本を押さえたい屋外活動者',
       '日焼けによる肌の酸化ダメージが気になる',
       '食事で十分なビタミンEが摂れていない方',
     ],
@@ -6431,7 +6431,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '疲れやすい・朝起きられない女性',
+      '月経過多・出産後・献血頻回・疲れやすさが続く20-40代女性',
       '抜け毛が増えた・爪が割れやすい',
       '血液検査でフェリチンが低いと言われた方',
     ],
@@ -6664,7 +6664,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '甲状腺機能が低下気味・橋本病の方',
+      '橋本病・甲状腺機能低下症で抗体高値の30-50代女性（内分泌内科併走）',
       '免疫を食事以外でもサポートしたい',
       '抗酸化酵素のベースを底上げしたい',
     ],
@@ -6760,7 +6760,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'スマホ・PCを長時間使用している',
+      '1日6時間以上スマホ/PC作業で眼精疲労・黄斑色素低下が気になる30代以上',
       '加齢黄斑変性の家族歴がある',
       '眼の老化を早めに予防したい30代以上',
     ],
@@ -6893,7 +6893,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '妊活中・妊娠初期（神経管閉鎖障害予防）',
+      '妊活中・妊娠初期（受精前1ヶ月-妊娠12週）の女性・MTHFR多型検査陽性者',
       '認知機能の低下が気になる40代以上',
       'ホモシステイン値が高いと言われた・心血管リスクが気になる',
       '葉物野菜が少ない食生活・MTHFR遺伝子多型がある',
@@ -7085,7 +7085,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['乳製品をほとんど食べない', '骨密度が低いと指摘された', '閉経後の女性'],
+    whoFor: ['乳製品アレルギー・乳糖不耐症で食事カルシウムが不足している40代以上', '骨密度が低いと指摘された', '閉経後の女性'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 2, stress: 2, sleep: 3, immunity: 2, metabolism: 4 },
     interactions: [
       {
@@ -7207,7 +7207,7 @@ export const ingredients: Ingredient[] = [
         qualityNote: 'Solgarは米国老舗のサプリブランド。メチルコバラミン1000μgはB12補充の標準有効量',
       },
     ],
-    whoFor: ['ベジタリアン・ヴィーガン', '50代以上（胃酸低下による吸収低下）', '慢性的な疲れがある'],
+    whoFor: ['ベジタリアン/ヴィーガン・胃切除既往・メトホルミン長期服用の40代以上', '50代以上（胃酸低下による吸収低下）', '慢性的な疲れがある'],
     heroStat: { value: '欠乏率26%', label: '日本の高齢者の潜在的B12不足率（推計）' },
     axisScores: { antiAging: 4, skin: 1, cognitive: 7, stress: 3, sleep: 2, immunity: 4, metabolism: 6 },
     interactions: [
@@ -7390,7 +7390,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['血流・冷え性が気になる', '運動パフォーマンスを高めたい', '免疫力が低下している'],
+    whoFor: ['40-60代男性で勃起機能・末梢血流低下を感じる', '運動パフォーマンスを高めたい', '免疫力が低下している'],
     axisScores: { antiAging: 4, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 5, metabolism: 5 },
     interactions: [
       {
@@ -7491,7 +7491,7 @@ export const ingredients: Ingredient[] = [
         cons: ['iHerb海外発送で到着7-14日', '180粒版より単位コスト高', '1日4粒の継続が必要'],
       },
     ],
-    whoFor: ['疲れやすい・疲労回復を早めたい', '運動パフォーマンスを高めたい', '冷え・血流が気になる'],
+    whoFor: ['パワー競技・持久系運動の疲労回復を早めたい競技アスリート', '運動パフォーマンスを高めたい', '冷え・血流が気になる'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 1, stress: 2, sleep: 1, immunity: 3, metabolism: 6 },
     interactions: [
       {
@@ -7598,7 +7598,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['脳の疲れ・集中力低下を感じる', 'エネルギー代謝を上げたい', '認知機能の老化が気になる40代以上'],
+    whoFor: ['40代以降で午後の集中力が落ち、脳の切れと身体の疲れを同時に感じる', 'エネルギー代謝を上げたい', '認知機能の老化が気になる40代以上'],
     emerging: true,
     axisScores: { antiAging: 6, skin: 1, cognitive: 7, stress: 3, sleep: 1, immunity: 2, metabolism: 6 },
     interactions: [
@@ -7667,7 +7667,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['膝・関節の違和感がある', '40代以上で関節の老化が気になる', '運動強度が高い'],
+    whoFor: ['50代以上で階段昇降時の膝の違和感・変形性関節症初期症状', '40代以上で関節の老化が気になる', '運動強度が高い'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 0, stress: 0, sleep: 1, immunity: 3, metabolism: 2 },
     interactions: [
       {
@@ -7734,7 +7734,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP'],
       },
     ],
-    whoFor: ['関節・膝の不調が気になる', '40〜50代以上で関節の老化ケアをしたい'],
+    whoFor: ['変形性膝関節症初期・階段で違和感を感じ始めた50代以上', '40〜50代以上で関節の老化ケアをしたい'],
     axisScores: { antiAging: 3, skin: 1, cognitive: 0, stress: 0, sleep: 1, immunity: 2, metabolism: 2 },
     interactions: [
       {
@@ -7950,7 +7950,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['腸内環境を改善したい', 'プロバイオティクスと組み合わせて効果を高めたい', '食物繊維が不足している'],
+    whoFor: ['便秘・腸内環境改善・食物繊維不足の30-50代（IBS-D既往なし）', 'プロバイオティクスと組み合わせて効果を高めたい', '食物繊維が不足している'],
     axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 1, sleep: 1, immunity: 6, metabolism: 6 },
     interactions: [],
     updatedAt: '2026-04-21',
@@ -8012,7 +8012,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['腸の炎症・過敏性腸症候群が気になる', '腸活を本格的にしたい', '食物繊維の摂取が少ない'],
+    whoFor: ['潰瘍性大腸炎・IBSの寛解維持を狙う消化器内科併走中の患者', '腸活を本格的にしたい', '食物繊維の摂取が少ない'],
     emerging: true,
     axisScores: { antiAging: 5, skin: 2, cognitive: 4, stress: 2, sleep: 1, immunity: 7, metabolism: 4 },
     interactions: [
@@ -8094,7 +8094,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['ビタミンCセラムの効果を高めたい', 'UV・光老化対策をしたい', '色素沈着・シミが気になる'],
+    whoFor: ['VCセラム使用中でその効果を最大化したい紫外線対策重視の30代以上', 'UV・光老化対策をしたい', '色素沈着・シミが気になる'],
     axisScores: { antiAging: 5, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
     interactions: [],
     updatedAt: '2026-04-21',
@@ -8232,7 +8232,7 @@ export const ingredients: Ingredient[] = [
         qualityNote: 'La Roche-Posay（ロレアル傘下）はフランスのダーマコスメブランド。皮膚科医監修処方・アレルギーテスト済み・ノンコメドジェニック',
       },
     ],
-    whoFor: ['乾燥・バリア機能が低下している', '敏感肌・刺激に弱い', 'ニキビ後の肌修復をしたい'],
+    whoFor: ['レチノール・AHA使用後の乾燥・バリア機能低下を感じる20-40代', '敏感肌・刺激に弱い', 'ニキビ後の肌修復をしたい'],
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
     interactions: [],
     updatedAt: '2026-04-21',
@@ -8361,7 +8361,7 @@ export const ingredients: Ingredient[] = [
         cons: ['iHerb海外発送で到着7-14日', '空腹時摂取で消化器症状の可能性', '効果実感まで8-12週の継続が必要'],
       },
     ],
-    whoFor: ['記憶力・集中力の低下が気になる', '試験・仕事のパフォーマンスを高めたい', 'ストレスや不安が多い'],
+    whoFor: ['40代以降で名前が出てこない・読書の集中が続かない記憶力低下の自覚', '試験・仕事のパフォーマンスを高めたい', 'ストレスや不安が多い'],
     axisScores: { antiAging: 4, skin: 0, cognitive: 8, stress: 6, sleep: 3, immunity: 2, metabolism: 2 },
     interactions: [
       {
@@ -8487,7 +8487,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['慢性的な疲労がある', 'ストレス耐性を高めたい', '免疫力を強化したい40代以上'],
+    whoFor: ['長時間労働で慢性的に疲労感が抜けない30-50代ビジネスパーソン', 'ストレス耐性を高めたい', '免疫力を強化したい40代以上'],
     heroStat: { value: '5,000年', label: '使用の歴史を持つ薬用植物（RCTでも効果確認済み）' },
     axisScores: { antiAging: 5, skin: 2, cognitive: 6, stress: 7, sleep: 2, immunity: 7, metabolism: 5 },
     interactions: [
@@ -8571,7 +8571,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['脳の切れ・集中力を上げたい', '認知機能の老化を早めに予防したい', 'コリンが不足しがちな食生活'],
+    whoFor: ['会議・プレゼン前の集中力アップを求める30-50代ビジネスパーソン', '認知機能の老化を早めに予防したい', 'コリンが不足しがちな食生活'],
     emerging: true,
     axisScores: { antiAging: 4, skin: 0, cognitive: 8, stress: 2, sleep: 1, immunity: 1, metabolism: 2 },
     interactions: [
@@ -8655,7 +8655,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['気分が落ちやすい・軽い抑うつ傾向', '寝つきが悪い', '食欲コントロールをしたい'],
+    whoFor: ['気分の波が大きく、朝の起きづらさや夕方の落ち込みが続く30-40代', '寝つきが悪い', '食欲コントロールをしたい'],
     axisScores: { antiAging: 2, skin: 0, cognitive: 3, stress: 6, sleep: 7, immunity: 1, metabolism: 2 },
     interactions: [
       {
@@ -8786,7 +8786,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['ミトコンドリア機能・細胞エネルギーを高めたい', '筋肉の老化を遅らせたい', '最先端のアンチエイジングに興味がある'],
+    whoFor: ['40代以降の筋機能低下・ミトファジー（マイトファジー）を狙う層', '筋肉の老化を遅らせたい', '最先端のアンチエイジングに興味がある'],
     emerging: true,
     axisScores: { antiAging: 8, skin: 1, cognitive: 3, stress: 1, sleep: 1, immunity: 4, metabolism: 7 },
     interactions: [],
@@ -8872,7 +8872,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['脳の疲れ・集中力低下', 'エネルギーが出にくい', 'CoQ10と組み合わせてミトコンドリアを強化したい'],
+    whoFor: ['40代以降の慢性疲労感・ミトコンドリア機能低下が気になる層', 'エネルギーが出にくい', 'CoQ10と組み合わせてミトコンドリアを強化したい'],
     emerging: true,
     axisScores: { antiAging: 7, skin: 1, cognitive: 7, stress: 3, sleep: 3, immunity: 3, metabolism: 7 },
     interactions: [],
@@ -8925,7 +8925,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['ホモシステイン値が高い', '葉酸・B12と一緒に使ってメチル化サポートをしたい', 'エピジェネティクス・長寿に関心がある'],
+    whoFor: ['ホモシステイン値高値・MTHFR多型陽性・メチル化サイクル最適化を狙う層', '葉酸・B12と一緒に使ってメチル化サポートをしたい', 'エピジェネティクス・長寿に関心がある'],
     emerging: true,
     axisScores: { antiAging: 6, skin: 1, cognitive: 3, stress: 1, sleep: 1, immunity: 2, metabolism: 7 },
     interactions: [],
@@ -9331,7 +9331,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['腸の調子が悪い・下痢・ガスが気になる', '風邪を引きやすい・免疫が弱い気がする', '激しい運動後の回復を早めたい'],
+    whoFor: ['IBS・術後・激しい運動後の腸粘膜トラブルがある30-50代', '風邪を引きやすい・免疫が弱い気がする', '激しい運動後の回復を早めたい'],
     heroStat: { value: '腸管透過性', label: '8週間RCTで有意改善（Gut 2019）' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 3, sleep: 1, immunity: 8, metabolism: 5 },
     interactions: [
@@ -9420,7 +9420,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['慢性的な炎症・疲れやすさが気になる', '肝機能（ALT・γGTP）が高めと言われた', '老化対策の土台として「体の解毒力」を高めたい'],
+    whoFor: ['抗酸化・解毒・慢性炎症マーカー高値が気になる30-50代', '肝機能（ALT・γGTP）が高めと言われた', '老化対策の土台として「体の解毒力」を高めたい'],
     heroStat: { value: 'Nrf2活性化', label: '200以上の研究が示す抗炎症経路（レビュー 2019）' },
     axisScores: { antiAging: 7, skin: 5, cognitive: 4, stress: 2, sleep: 1, immunity: 7, metabolism: 6 },
     interactions: [
@@ -9522,7 +9522,7 @@ export const ingredients: Ingredient[] = [
         qualityNote: 'NOW FoodsはGMP認証工場・第三者検査済み。グリシン酸マグネシウムキレートは硫酸Mgやクエン酸Mg比で消化器症状が少ない',
       },
     ],
-    whoFor: ['ストレスで眠れない・夜中に目が覚める', '足・ふくらはぎがよくつる', '酸化マグネシウムでお腹が緩くなった'],
+    whoFor: ['慢性ストレスでコルチゾール高め・夜中に目覚める30-50代', '足・ふくらはぎがよくつる', '酸化マグネシウムでお腹が緩くなった'],
     heroStat: { value: '睡眠効率・入眠時間', label: '8週間RCTで有意改善（JRMS 2012）' },
     axisScores: { antiAging: 3, skin: 2, cognitive: 4, stress: 8, sleep: 9, immunity: 4, metabolism: 5 },
     interactions: [
@@ -9765,7 +9765,7 @@ export const ingredients: Ingredient[] = [
         cons: ['iHerb海外発送で到着7-14日', '60粒で約20日分・大容量希望には不足', '腎疾患の方は注意'],
       },
     ],
-    whoFor: ['40歳以上で筋肉が落ちやすくなった気がする', '運動後の回復が遅い・筋肉痛が長引く', 'サルコペニア（加齢性筋肉減少）を予防したい'],
+    whoFor: ['サルコペニア予防を始めたい筋量減少自覚のある60代以上', '運動後の回復が遅い・筋肉痛が長引く', 'サルコペニア（加齢性筋肉減少）を予防したい'],
     heroStat: { value: '筋肉量・筋力', label: 'メタ解析で高齢者の有意維持を確認（JCSM 2019）' },
     axisScores: { antiAging: 5, skin: 1, cognitive: 2, stress: 2, sleep: 2, immunity: 3, metabolism: 8 },
     interactions: [],
@@ -9829,7 +9829,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['40代以降で血管の健康に気を遣いたい', '血圧が高め・血液の流れが気になる', '心血管リスクを日常的にケアしたい'],
+    whoFor: ['40-60代で血圧高め・血栓予防を狙う層（抗凝固薬使用中は医師相談下）', '血圧が高め・血液の流れが気になる', '心血管リスクを日常的にケアしたい'],
     heroStat: { value: '収縮期血圧−5.5mmHg', label: '8週間RCTで有意低下（Hypertension Research 2008）' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 5, metabolism: 5 },
     interactions: [
@@ -9924,7 +9924,7 @@ export const ingredients: Ingredient[] = [
         cons: ['iHerb海外発送で到着7-14日', '粉末版より単位コスト高', '1日3粒の継続が必要'],
       },
     ],
-    whoFor: ['ホルモン性ニキビ・肌荒れに悩んでいる', '生理不順・PCOSと診断されたことがある', 'インスリン抵抗性・代謝を改善したい'],
+    whoFor: ['PCOS・月経不順・ホルモン性ニキビが繰り返す20-40代女性', '生理不順・PCOSと診断されたことがある', 'インスリン抵抗性・代謝を改善したい'],
     heroStat: { value: '排卵率・インスリン感受性', label: 'メタ解析640名で有意改善（Int J Endocrinol 2016）' },
     axisScores: { antiAging: 4, skin: 5, cognitive: 3, stress: 6, sleep: 4, immunity: 4, metabolism: 8 },
     interactions: [
@@ -10008,7 +10008,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP'],
       },
     ],
-    whoFor: ['腸内環境と代謝を同時に整えたい', '最新の腸内細菌研究を取り入れたい', '一般的なプロバイオティクスで物足りなさを感じている'],
+    whoFor: ['40代以降で食事量を抑えても体重が落ちず、腸内環境と代謝を同時に整えたい', '最新の腸内細菌研究を取り入れたい', '一般的なプロバイオティクスで物足りなさを感じている'],
     heroStat: { value: 'インスリン感受性・腸管透過性', label: 'Nature Medicine 2019 ヒトRCTで有意改善' },
     axisScores: { antiAging: 6, skin: 3, cognitive: 2, stress: 3, sleep: 2, immunity: 6, metabolism: 9 },
     interactions: [
@@ -10111,7 +10111,7 @@ export const ingredients: Ingredient[] = [
         cons: ['iHerb海外発送で到着7-14日', '基本版より¥1,300高い', '60粒で約2ヶ月分'],
       },
     ],
-    whoFor: ['スマートフォン・PCを1日長時間使用する', '40代以降で視力低下・かすみ目が気になる', '加齢黄斑変性の家族歴がある'],
+    whoFor: ['1日6時間以上のスマホ・PC作業で眼精疲労・コントラスト感度低下が気になる', '40代以降で視力低下・かすみ目が気になる', '加齢黄斑変性の家族歴がある'],
     heroStat: { value: 'AMD進行リスク−26%', label: 'AREDS2試験 4,203名RCTで確認（JAMA Ophth. 2014）' },
     axisScores: { antiAging: 5, skin: 2, cognitive: 3, stress: 1, sleep: 1, immunity: 4, metabolism: 2 },
     interactions: [],
@@ -10199,7 +10199,7 @@ export const ingredients: Ingredient[] = [
         cons: ['iHerb海外発送で到着7-14日', '1日3粒の継続が必要', '自己免疫疾患・免疫抑制剤服用中は禁忌'],
       },
     ],
-    whoFor: ['風邪を引きやすい・感染症に弱い気がする', '免疫力を日常的にサポートしたい', '腸活と免疫ケアを同時に行いたい'],
+    whoFor: ['冬季の風邪頻発・育児や教職で感染症リスクが高い20-50代', '免疫力を日常的にサポートしたい', '腸活と免疫ケアを同時に行いたい'],
     heroStat: { value: '上気道感染リスク低下', label: 'メタ解析16件RCT統合で有意確認（EJCN 2021）' },
     axisScores: { antiAging: 4, skin: 2, cognitive: 2, stress: 2, sleep: 2, immunity: 9, metabolism: 5 },
     interactions: [
@@ -10291,7 +10291,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['くすみ・肌の透明感が気になる', '酸化ストレス・疲労の蓄積が気になる40代以上', '肝臓の解毒機能をサポートしたい'],
+    whoFor: ['40代以降の肌のくすみ・透明感低下・解毒経路サポートを狙う層', '酸化ストレス・疲労の蓄積が気になる40代以上', '肝臓の解毒機能をサポートしたい'],
     heroStat: { value: '皮膚明度 有意改善', label: '経口500mg/12週間RCT（JCD 2017, n=60）' },
     axisScores: { antiAging: 6, skin: 7, cognitive: 2, stress: 3, sleep: 1, immunity: 6, metabolism: 4 },
     interactions: [
@@ -10376,7 +10376,7 @@ export const ingredients: Ingredient[] = [
         ],
       },
     ],
-    whoFor: ['注射治療に近い効果を外用で試したい', 'コラーゲン産生を刺激する成分を探している', '韓国スキンケアのエビデンスを知りたい'],
+    whoFor: ['美容皮膚科で受けるサーモンDNA注射の自宅外用版を試したい30-50代女性', 'コラーゲン産生を刺激する成分を探している', '韓国スキンケアのエビデンスを知りたい'],
     heroStat: { value: 'コラーゲン産生促進', label: '外用RCTでシワスコア有意改善（JCD 2021, n=40）' },
     axisScores: { antiAging: 5, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 2, metabolism: 0 },
     interactions: [],
@@ -10439,7 +10439,7 @@ export const ingredients: Ingredient[] = [
         certifications: ['GMP', 'NonGMO'],
       },
     ],
-    whoFor: ['糖化（AGEs）対策を成分ベースで取り組みたい', '甘いもの・糖質が多い食生活が気になる', 'テロメア・細胞老化の根本対策に興味がある'],
+    whoFor: ['糖質過剰・血糖スパイクの自覚があり、糖化（AGEs）対策を始めたい30-50代', '甘いもの・糖質が多い食生活が気になる', 'テロメア・細胞老化の根本対策に興味がある'],
     heroStat: { value: 'AGEs・血糖・炎症を同時抑制', label: '2g/日×12週間RCT（Nutrition Research 2015, n=30）' },
     axisScores: { antiAging: 7, skin: 5, cognitive: 4, stress: 2, sleep: 1, immunity: 3, metabolism: 6 },
     interactions: [],
@@ -10522,7 +10522,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '慢性的な疲労感・倦怠感が続いている',
+      '慢性気管支炎・喫煙歴あり・解毒経路サポートを狙う40代以上',
       '飲酒・喫煙・大気汚染への暴露が多い環境にいる',
       '肝機能サポートを成分ベースで取り組みたい',
       'グルタチオン点滴の代替として食品成分で底上げしたい',
@@ -10621,7 +10621,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '眠れない・寝付きが悪い（入眠障害タイプ）',
+      '入眠困難・寝つきの悪さが続く30-50代（SSRI併用禁忌・歴史的経緯注意）',
       'メラトニンを試したが効果を感じにくかった',
       '慢性ストレスで気分の波が大きい',
       'NAD+経路も含めた包括的な老化対策に関心がある',
@@ -10834,7 +10834,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'レスベラトロールを試したが効果が感じにくかった',
+      'レスベラトロールを試したが効果実感が弱かった抗老化セルフケア層',
       '血糖・脂質管理を成分ベースで取り組みたい',
       'SIRT1経路を活性化する老化対策スタックを組みたい',
     ],
@@ -10952,7 +10952,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '飲酒頻度が高く肝臓ケアを考えている',
+      '飲酒頻度週3回以上・肝機能数値（AST/ALT/γ-GTP）が気になる40-60代',
       '長期的な薬物・サプリ服用で肝臓への負荷が気になる',
       'NACとセットで解毒・抗酸化のサポートを強化したい',
       'グルタチオン産生を肝臓レベルから底上げしたい',
@@ -11073,7 +11073,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '男性型脱毛（AGA）が気になり始めた男性',
+      '前頭部・頭頂部の薄毛が気になり始めた20-50代男性（AGA初期）',
       'フィナステリドの性機能副作用が心配で植物由来を試したい',
       '前立腺肥大に伴う排尿症状（頻尿・残尿感）が気になる',
     ],
@@ -11506,7 +11506,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '関節の痛み・こわばりが気になる（40代以上）',
+      '変形性膝関節症（OA）の初期症状・朝のこわばりがある40代以上',
       'イブプロフェン等NSAIDsを長期使用したくない',
       'curcumin（クルクミン）と組み合わせて抗炎症を強化したい',
     ],
@@ -11785,7 +11785,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '食後の眠気・だるさ（血糖スパイク）が気になる',
+      '甘いもの欲求が強く・食後の眠気が強い境界域血糖の30-50代',
       '甘いものへの渇望が強い',
       'ベルベリンと組み合わせて血糖管理を強化したい',
     ],
@@ -11985,7 +11985,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '体脂肪を減らしつつ筋肉を維持したい（体組成改善）',
+      '有酸素運動中心で体脂肪を減らしつつ筋量も維持したい30-50代',
       '運動後の回復が遅い・疲労感が抜けにくい',
       '男性で生殖機能のサポートを自然由来成分で考えている',
       'CoQ10・クレアチンとセットでエネルギー代謝を最大化したい',
@@ -12350,7 +12350,7 @@ export const ingredients: Ingredient[] = [
     sideEffects: ['一般的に安全。長期高用量データは限定的'],
     contraindications: ['抗凝固薬との相互作用の可能性'],
     whoFor: [
-      'セノリティクスアプローチで老化細胞を除去したい',
+      'senolyticsアプローチに関心がある抗老化セルフケア実践者（40代以降）',
       '長寿・アンチエイジング成分を積極的に試したい',
       'ケルセチンの代替として探している',
     ],
@@ -12446,7 +12446,7 @@ export const ingredients: Ingredient[] = [
     sideEffects: ['空腹時の血糖低下に注意。高用量でビオチン欠乏のリスク（ビオチン補充を推奨）'],
     contraindications: ['糖尿病薬との相互作用あり。医師に相談'],
     whoFor: [
-      '血糖コントロールが気になる',
+      '境界域・2型糖尿病で食後血糖が気になる40代以上（医師相談下）',
       'ミトコンドリア機能の維持・疲労対策に関心がある',
       '複数の抗酸化サプリを統合したい',
     ],
@@ -12573,7 +12573,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '乾燥肌・敏感肌でバリア機能が弱い',
+      '外用セラミドでは追いつかない全身性乾燥・更年期前後の50代女性',
       '外用保湿では追いつかない',
       'サプリで肌のベースから変えたい',
     ],
@@ -12911,7 +12911,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '更年期症状（ほてり・気分変動）をサポートしたい',
+      '更年期前後のほてり・気分変動・性機能低下が気になる40-60代',
       '精力・エネルギー・スタミナの維持に関心がある',
       '天然由来のアダプトゲンを探している',
     ],
@@ -13118,7 +13118,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      'ニキビ・肌荒れを内側からサポートしたい',
+      '炎症性ニキビ・脂性肌で繰り返すフェイスライン吹き出物に悩む20-30代',
       'ストレス期の副腎サポートに関心がある',
       'エネルギー代謝・疲労対策として基本ビタミンを揃えたい',
     ],
@@ -13300,7 +13300,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: [
-      '精神的疲労・バーンアウト・燃え尽きが気になる',
+      'バーンアウト・燃え尽き・午後の精神疲労が深い30-50代ビジネスパーソン',
       'ストレス対策でアシュワガンダとの組み合わせを検討している',
       '認知機能のパフォーマンス維持・仕事の集中力向上に関心がある',
     ],
@@ -13633,7 +13633,7 @@ export const ingredients: Ingredient[] = [
     contraindications: ['腎機能低下のある方（一般的なMgと同様）'],
     products: [],
     whoFor: [
-      '加齢で集中力・記憶力の低下を感じる',
+      '加齢で集中力・記憶力が落ち、認知機能サポートをミネラルから狙う40代以上',
       '睡眠の質を高めたいがグリシン酸型では効果が物足りない',
       'ブレインフォグ・思考のキレに悩んでいる',
       '価格より脳への作用を優先したい',
@@ -13752,7 +13752,7 @@ export const ingredients: Ingredient[] = [
     contraindications: ['橋本病（自己免疫性甲状腺炎）の方', 'バセドウ病・甲状腺機能亢進症', '甲状腺がん治療中（ヨード制限食指示時）'],
     products: [],
     whoFor: [
-      '海藻をほぼ食べない（ヴィーガン・嫌い）',
+      '海藻・魚をほぼ食べないヴィーガン/嫌い・甲状腺機能低下リスク層',
       '海外在住で日本食から離れている',
       '妊娠中・授乳中で必要量が増えている',
       '食卓塩がヨウ素添加塩でない',
@@ -14240,7 +14240,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '慢性的な疲労感・倦怠感が続いている',
+      '線維筋痛症・慢性疲労症候群で全身倦怠感が続く30-50代',
       '酸化Mgで下痢になり継続できなかった',
       '線維筋痛・繊維筋痛様の圧痛点症状がある',
       'グリシン酸Mgは飲んでいるが日中の活力をもう一段上げたい',
@@ -14990,7 +14990,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '中高年男性で活力・筋力低下を感じる',
+      '60代以降の男性で骨密度低下・関節の違和感・テストステロン低下を感じる',
       '閉経後で骨密度が気になる',
       '変形性関節症・関節痛が気になる',
       'D-アスパラギン酸・トンカットアリ等の男性ホルモン系サプリの基盤を整えたい',
@@ -16384,7 +16384,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '抗生剤の処方を受けた・受ける予定がある',
+      '抗生剤投与中・直後の腸内環境保護・小児の急性下痢補助',
       '小児の感染性下痢・呼吸器感染症を予防的にケアしたい',
       '海外旅行で旅行者下痢のリスクが高い地域に行く',
       'プロバイオティクスを「株単位」で研究ベースに選びたい',
@@ -18858,7 +18858,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '慢性便秘・IBS・腸内環境改善を狙う第一選択肢',
+      '慢性便秘・IBS・LDLコレステロール高めの30-60代',
       'LDLコレステロール軽度高値で食事補助を検討している',
       '2型糖尿病・前糖尿病で食後血糖管理を補助したい',
       '満腹感サポートで体重管理に取り入れたい',
@@ -18994,7 +18994,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '集中力・注意・処理速度を研究の観点で底上げしたい',
+      '脳梗塞・脳出血既往のリハビリ補助・認知機能低下の自覚がある50代以上',
       '軽度認知低下・記憶ぼけの高齢期サポート',
       'α-GPCより副作用プロファイルが穏やかなコリン源を探している',
     ],
@@ -23391,7 +23391,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '2型糖尿病・境界域血糖の補助',
+      '境界域血糖・男性更年期で気力低下を感じる40-60代男性（医師相談下）',
       '男性の性機能・テストステロン低下傾向',
       '授乳量を増やしたい（産科指導下）',
       'PMS の身体症状軽減',
@@ -24674,7 +24674,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '腸内環境を整えたい・便通改善',
+      '腸内環境改善・食後血糖の緩徐化を狙う30-50代',
       '食後血糖値が気になる・インスリン感受性改善',
       'ダイエット中で満腹感を持続させたい',
       '酪酸産生で大腸ケアしたい',
@@ -25173,7 +25173,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      'パーキンソン病処方治療の補助（神経内科相談前提）',
+      'パーキンソン病の処方治療補助（神経内科専門医の指導下のみ使用）',
       '男性ホルモン低下・男性不妊で補助検討',
       '気分・モチベーション低下が気になる成人',
     ],
@@ -25391,7 +25391,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '末梢冷え性・手足の冷えが気になる女性',
+      '冷え性・低血圧・末梢循環低下を感じる30-50代女性',
       '血管機能改善・微小循環ケア',
       '更年期症状（ほてり・血管症状）が気になる',
       'メタボ・血管炎症が気になる',
@@ -30258,7 +30258,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '医療下での神経ステロイド補助検討',
+      '医療下での神経ステロイド補助・自己判断使用は推奨されない領域',
       '閉経・更年期で医師の指導の下ホルモン補助検討',
       '気分・認知補助で医師の指導の下使用希望',
       '（自己判断単独使用は推奨されない）',
@@ -30826,7 +30826,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '軽度〜中等度の気分の落ち込み補助',
+      '更年期前後の軽度〜中等度の気分の落ち込み・PMSが重い30-50代女性',
       '睡眠の質改善補助',
       'PMS 気分症状補助',
       '抗うつ薬の副作用が懸念で代替模索（処方医の指導の下）',
@@ -31278,7 +31278,7 @@ export const ingredients: Ingredient[] = [
     ],
     products: [],
     whoFor: [
-      '閉経後女性で婦人科相談の上',
+      '副腎不全・更年期障害で内分泌内科と相談しながら使う50-70代（医療下のみ）',
       '加齢男性低 T で泌尿器科・内分泌科の指導の下',
       'アジソン病・副腎機能低下症で処方医療下',
       'DHEA-S 値 20代 SD-2 以下で内分泌科の指導の下',
@@ -34127,7 +34127,7 @@ export const ingredients: Ingredient[] = [
     products: [],
     axisScores: { antiAging: 1, skin: 1, cognitive: 1, stress: 2, sleep: 4, immunity: 1, metabolism: 1 },
     whoFor: [
-      '入眠困難の慢性不眠症',
+      '入眠困難型の慢性不眠症（睡眠科専門医の処方下・依存性低い選択肢）',
       '睡眠外来・心療内科・精神科処方下',
     ],
     heroStat: { value: 'ラメルテオン 8mg 5週', label: 'Zammit 2007 RCT n=405 で入眠潜時短縮・依存性形成所見なし・処方薬として確立' },
