@@ -712,8 +712,7 @@ export default async function ArticlePage({ params }: Props) {
                           const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
                           if (overrideMatch) bestProduct = overrideMatch
                         }
-                        if (!bestProduct) return null
-                        const axisLeaders = computeAxisLeaders(ingData)
+                        const axisLeaders = bestProduct ? computeAxisLeaders(ingData) : null
                         return (
                           <>
                             {ing.urgencyNote && (
@@ -723,13 +722,29 @@ export default async function ArticlePage({ params }: Props) {
                                 </p>
                               </div>
                             )}
-                            <ProductOfferCard
-                              product={bestProduct}
-                              ingredient={ingData}
-                              variant="article-compact"
-                              axisLeaders={axisLeaders}
-                              bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
-                            />
+                            {bestProduct && axisLeaders ? (
+                              <ProductOfferCard
+                                product={bestProduct}
+                                ingredient={ingData}
+                                variant="article-compact"
+                                axisLeaders={axisLeaders}
+                                bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
+                              />
+                            ) : (
+                              <div className="border-t border-border bg-muted/30 px-5 py-4">
+                                <p className="text-[12px] text-muted-foreground leading-relaxed">
+                                  本サイトの商品DBに{ingData.nameJa}の取り扱い登録なし。
+                                  論文用量再現の選び方は
+                                  <Link
+                                    href={`/ingredients/${ing.slug}`}
+                                    className="text-accent hover:underline mx-0.5"
+                                  >
+                                    {ingData.nameJa}のエビデンスページ
+                                  </Link>
+                                  で株指定・用量・副作用を確認できる。
+                                </p>
+                              </div>
+                            )}
                           </>
                         )
                       })()}
