@@ -180,7 +180,7 @@ export function ProductOfferCard({
         {bestPickReason && (
           <RichParagraphs
             body={bestPickReason}
-            className="mt-2 text-[11px] text-muted-foreground leading-relaxed mb-2 last:mb-0"
+            className="mt-3 text-[14px] text-foreground/90 leading-[1.8] mb-3 last:mb-0"
           />
         )}
       </div>
@@ -723,7 +723,7 @@ function HeroMybestCard({
         {bestPickReason && (
           <RichParagraphs
             body={bestPickReason}
-            className="text-[11px] text-muted-foreground text-center leading-relaxed mb-2 last:mb-0"
+            className="text-[14px] text-foreground/90 text-center leading-[1.8] mb-3 last:mb-0"
           />
         )}
       </div>

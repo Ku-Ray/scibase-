@@ -504,7 +504,7 @@ export default async function ArticlePage({ params }: Props) {
                   <div key={idx} className="my-6 border border-border rounded-2xl overflow-hidden bg-card">
                     {ing.urgencyNote && (
                       <div className="bg-secondary px-5 pt-4 pb-2">
-                        <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
+                        <p className="text-[14px] text-foreground/90 leading-[1.8] border-l-2 border-accent/40 pl-3">
                           <RichInline text={ing.urgencyNote} />
                         </p>
                       </div>
@@ -684,7 +684,7 @@ export default async function ArticlePage({ params }: Props) {
                           </div>
                           <RichParagraphs
                             body={ing.reason}
-                            className="text-[13px] text-muted-foreground leading-relaxed mb-3 last:mb-0"
+                            className="text-[15px] text-foreground/90 leading-[1.8] mb-4 last:mb-0"
                           />
 
                         </div>
@@ -719,7 +719,7 @@ export default async function ArticlePage({ params }: Props) {
                           <>
                             {ing.urgencyNote && (
                               <div className="border-t border-border bg-secondary px-5 pt-4 pb-2">
-                                <p className="text-[12px] text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-3">
+                                <p className="text-[14px] text-foreground/90 leading-[1.8] border-l-2 border-accent/40 pl-3">
                                   <RichInline text={ing.urgencyNote} />
                                 </p>
                               </div>
