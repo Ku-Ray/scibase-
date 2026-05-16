@@ -339,7 +339,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             タイプ別・論文で効果が確認された成分
           </h2>
           <p className="text-[14px] text-foreground/70 leading-[1.85] mb-8">
-            タイプを見極めたら、それぞれの機序に合った成分を選ぶ。論文ベースで効果が確認された組み合わせを順番に解説する。
+            タイプを見極めたら、それぞれの機序に合った成分を選ぶ。研究で効果が確認された組み合わせを順番に解説する。
           </p>
 
           <div className="space-y-12">
@@ -609,7 +609,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
                   </div>
                   <div className="pl-10">
                     <p className="text-[12px] text-muted-foreground mb-2">
-                      → これは「<span className="text-foreground font-semibold">{q.typeAnswer}</span>」タイプ。論文ベースのBEST PICKは：
+                      → これは「<span className="text-foreground font-semibold">{q.typeAnswer}</span>」タイプ。研究で支持があるBEST PICKは：
                     </p>
                     <div className="flex flex-wrap items-center gap-2">
                       {q.recommendIngredientSlugs.map((s, idx) => {
