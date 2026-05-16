@@ -633,7 +633,7 @@ export default async function ArticlePage({ params }: Props) {
                 <h2 className="text-[19px] sm:text-[21px] font-semibold text-foreground mb-4 leading-snug">
                   {article.solutionHeading}
                 </h2>
-                <RichParagraphs body={article.solutionBody} />
+                {renderAppendixBody(article.solutionBody)}
               </section>
 
               {/* ── Appendix Sections（after-solution・solution直後・B路線意思決定誘導） ── */}
@@ -682,9 +682,11 @@ export default async function ArticlePage({ params }: Props) {
                               {ing.nameJa}
                             </h3>
                           </div>
-                          <p className="text-[13px] text-muted-foreground leading-relaxed">
-                            {ing.reason}
-                          </p>
+                          <RichParagraphs
+                            body={ing.reason}
+                            className="text-[13px] text-muted-foreground leading-relaxed mb-3 last:mb-0"
+                          />
+
                         </div>
                       </div>
 

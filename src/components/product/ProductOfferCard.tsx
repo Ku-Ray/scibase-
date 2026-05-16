@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react'
 import type { Ingredient, Product } from '@/lib/types'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
-import { RichInline } from '@/components/RichText'
+import { RichInline, RichParagraphs } from '@/components/RichText'
 import { scoreProduct, AXIS_LABEL, axisDisplayOrder, type AxisLeader, type ProductScore, type ScoreAxis } from '@/lib/productScore'
 import type { ProductOfferCardPosition } from '@/lib/analytics'
 import { ScoreBar } from './ScoreBar'
@@ -178,9 +178,10 @@ export function ProductOfferCard({
           </OutboundProductLink>
         </div>
         {bestPickReason && (
-          <p className="mt-2 text-[11px] text-muted-foreground leading-relaxed">
-            <RichInline text={bestPickReason} />
-          </p>
+          <RichParagraphs
+            body={bestPickReason}
+            className="mt-2 text-[11px] text-muted-foreground leading-relaxed mb-2 last:mb-0"
+          />
         )}
       </div>
       </CardViewTracker>
@@ -720,9 +721,10 @@ function HeroMybestCard({
         </div>
 
         {bestPickReason && (
-          <p className="text-[11px] text-muted-foreground text-center leading-relaxed">
-            <RichInline text={bestPickReason} />
-          </p>
+          <RichParagraphs
+            body={bestPickReason}
+            className="text-[11px] text-muted-foreground text-center leading-relaxed mb-2 last:mb-0"
+          />
         )}
       </div>
     </div>
