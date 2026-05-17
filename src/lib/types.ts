@@ -321,6 +321,10 @@ export interface Article {
   heroStat: { value: string; label: string }
   /** 損失回避フック（冒頭1文） */
   lossAversionHook: string
+  /** 「この記事の結論」ボックス。冒頭描画。「。」区切りで箇条書き化（4-5項目・1項目20-50字目安）。省略時はボックス非表示 */
+  keyConclusions?: string
+  /** 「価格の目安」ボックス。「・／。」区切りで箇条書き化（4-5項目目安）。省略時はボックス非表示 */
+  priceGuide?: string
   problemHeading: string
   problemBody: string
   scienceHeading: string

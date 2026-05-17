@@ -19,6 +19,7 @@ import { AppendixSectionTracker } from '@/components/AppendixSectionTracker'
 import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
 import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
+import { ArticleConclusionBoxes } from '@/components/ArticleConclusionBoxes'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -392,6 +393,14 @@ export default async function ArticlePage({ params }: Props) {
             </p>
           </div>
         </div>
+
+        {/* ── この記事の結論＋価格の目安（任意） ── */}
+        {article.keyConclusions && (
+          <ArticleConclusionBoxes
+            keyConclusions={article.keyConclusions}
+            priceGuide={article.priceGuide}
+          />
+        )}
 
         {/* ── 目次（TOC・Pillar記事用） ── */}
         {showToc && (
