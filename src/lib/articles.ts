@@ -7213,7 +7213,7 @@ K2併用と血液検査は ==4000IU以上の長期使用・骨密度や心血管
     category: 'supplement',
     categoryLabel: 'サプリ選び方',
     publishedAt: '2026-05-10',
-    updatedAt: '2026-05-17',
+    updatedAt: '2026-05-18',
     readingMinutes: 12,
     heroStat: {
       value: '400-800μg/日',
@@ -7221,6 +7221,10 @@ K2併用と血液検査は ==4000IU以上の長期使用・骨密度や心血管
     },
     lossAversionHook:
       '葉酸サプリを「妊婦が400μg」だけで済ませると、3つの分岐を逃す。妊活開始の世界標準は妊娠前1ヶ月から400μg/日で、神経管は受精後21〜28日に閉鎖する。本人が妊娠に気付くより前に重要期が完了する代表成分だ。',
+    keyConclusions:
+      '「妊婦が400μg」では足りず葉酸の適応は妊活/40代認知/MTHFR遺伝子多型の3分岐に分かれる。形態は通常葉酸 vs 5-MTHF活性型で日本人約10〜15%のMTHFR C677T多型保有者は活性型が安定吸収だ。用量は妊活400μg・40代認知400〜800μg・1mg/日超は長期でB12欠乏マスキングの境界。迷ったら活性型400μgを妊娠前1ヶ月から3ヶ月継続、MRC Vitamin Study 1991 n=1,817で神経管閉鎖障害リスク72%減。1mg超の長期はB12欠乏隠蔽・抗てんかん薬とMTX併用は禁忌で医師相談が前提。',
+    priceGuide:
+      "5-MTHF活性型 Doctor's Best Fully Active Folate 400μg 月¥500・Ferrochel 鉄36mg 月¥500・メチルコバラミンB12 Jarrow Formulas 1000μg 月¥500・MTHFR遺伝子検査（自費）¥10,000〜25,000で C677T 多型保有を確認・葉酸単独¥500で3ヶ月から、妊活妊娠期 葉酸+鉄+B12 フル¥1,500/月",
 
     problemHeading: '葉酸は「妊婦が400μg」で済ませて良い成分か',
     problemBody: `[葉酸](/ingredients/folic-acid)サプリ売場には ==400μg== / ==800μg== / ==1000μg==、通常葉酸（プテロイルモノグルタミン酸）と==5-MTHF活性型==、単独と鉄/B12複合まで選択肢が散らばっている。「結局どれを買えばいいのか」で止まる人が多いのは当然だ。
@@ -7470,13 +7474,7 @@ WHO・厚労省・日本産科婦人科学会の妊活推奨用量400μgを1日1
 
 - 30代の総合抗老化：[30代から始める論文で選ぶ抗老化サプリ完全ガイド](/articles/anti-aging-supplement-guide-30s)
 - サプリ副作用の全体像：[サプリ副作用完全ガイド](/articles/supplement-side-effects-guide)
-- 薬との相互作用：[サプリの飲み合わせ完全ガイド](/articles/supplement-drug-interaction-guide)
-
-:::summary
-3適応共通の最短解は5-MTHF活性型 400μg/日（1日1粒・月¥500前後）。
-妊活開始時から妊娠初期3ヶ月までは継続、1mg超は医師相談が前提。
-抗てんかん薬・メトトレキサート併用は事前相談、妊娠関連はYMYL最厳格で個別状況は産婦人科医に。
-:::`,
+- 薬との相互作用：[サプリの飲み合わせ完全ガイド](/articles/supplement-drug-interaction-guide)`,
 
     ingredients: [
       {
@@ -7562,7 +7560,7 @@ WHO・厚労省・日本産科婦人科学会の妊活推奨用量400μgを1日1
     ],
     concerns: ['cognitive', 'cardiovascular', 'fatigue', 'immunity'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
-    dateModified: '2026-05-17',
+    dateModified: '2026-05-18',
   },
 
   // ── M3: オメガ3選び方ガイド（Hub-Spoke / EPA vs DHA・IFOS認証・酸化対策） ───────────────
