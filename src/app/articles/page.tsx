@@ -62,19 +62,21 @@ export default async function ArticlesPage({ searchParams }: Props) {
   const activeCat: 'all' | ListingCategory =
     categoryFilters.find(f => f.key === cat)?.key ?? 'all'
 
-  /* articles → ListingCard */
-  const articleCards: ListingCard[] = articles.map((a) => ({
-    slug: a.slug,
-    href: `/articles/${a.slug}`,
-    category: a.category,
-    categoryLabel: a.categoryLabel,
-    title: a.title,
-    description: a.lossAversionHook,
-    publishedAt: a.publishedAt,
-    sortDate: a.updatedAt ?? a.publishedAt,
-    readingMinutes: a.readingMinutes,
-    heroStat: a.heroStat,
-  }))
+  /* articles → ListingCard（hideFromList: true の DEPRECATED スタブは除外） */
+  const articleCards: ListingCard[] = articles
+    .filter((a) => !a.hideFromList)
+    .map((a) => ({
+      slug: a.slug,
+      href: `/articles/${a.slug}`,
+      category: a.category,
+      categoryLabel: a.categoryLabel,
+      title: a.title,
+      description: a.lossAversionHook,
+      publishedAt: a.publishedAt,
+      sortDate: a.updatedAt ?? a.publishedAt,
+      readingMinutes: a.readingMinutes,
+      heroStat: a.heroStat,
+    }))
 
   /* concernGuides → ListingCard（articles 配下のURLに統合） */
   const guideCards: ListingCard[] = concernGuides.map((g) => {

@@ -352,4 +352,6 @@ export interface Article {
   }
   /** Article JSON-LD dateModified。省略時は updatedAt → publishedAt の順でフォールバック */
   dateModified?: string
+  /** true の場合、コラム一覧（/articles）に表示しない。supplement-guide 系で concern-guide-data.ts に正本がある DEPRECATED スタブ用 */
+  hideFromList?: boolean
 }
