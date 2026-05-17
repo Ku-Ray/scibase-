@@ -12056,12 +12056,12 @@ export const ingredients: Ingredient[] = [
     contraindications: ['アスピリンとの相互作用の可能性', 'SSRIとの同時使用は医師への相談を推奨', '喘息既往者は呼吸器症状に注意'],
     products: [
       {
-        name: 'NAC N-Acetyl Cysteine 600mg 250 veg caps',
+        name: 'NAC 600 mg 250 Capsules',
         brand: 'NOW Foods',
         platform: 'iherb',
-        url: 'https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-250-veg-capsules/780',
+        url: 'https://jp.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now03363/l/39.jpg',
+        imageUrl: '',
         priceJpy: 3500,
         dosageMg: 600,
         rank: 1,
