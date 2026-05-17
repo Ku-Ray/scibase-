@@ -12061,7 +12061,7 @@ export const ingredients: Ingredient[] = [
         platform: 'iherb',
         url: 'https://jp.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694',
 
-        imageUrl: '',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00086/l/68.jpg',
         priceJpy: 3500,
         dosageMg: 600,
         rank: 1,
