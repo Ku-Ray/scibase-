@@ -9020,7 +9020,7 @@ Journal of Research in Medical Sciences 2012のRCTで使われた500mg/日は欠
   // ── クレアチン選び方ガイド（Phase 2D Session ζ v6 / 逆張り事実型タイトル + YMYL腎機能誤解の科学的反論軸） ───────
   {
     slug: 'creatine-choice-guide',
-    title: '新形態の優位差は論文ゼロ｜モノハイドレート3-5gが正解',
+    title: 'クレアチン｜新形態の優位差は論文ゼロ・3-5gが正解',
     seoTitle: 'クレアチン選び｜新形態の論文差ゼロ・3-5g・腎機能誤解｜SciBase',
     description:
       'クレアチンは「モノハイドレートか新形態か・3g vs 5g・ローディング要否・腎機能は大丈夫か・体重増の正体」で迷う。100以上のRCT・n=22,000のメタ解析でモノハイドレート優位は確定、新形態（HCl/エチルエステル/KreAlkalyn）の優位差はRCTでゼロ、血清クレアチニン10-30%上昇は腎機能悪化ではない。化粧品メーカー現役が判断軸を整理する。',
@@ -9032,8 +9032,8 @@ Journal of Research in Medical Sciences 2012のRCTで使われた500mg/日は欠
     updatedAt: '2026-05-11',
     readingMinutes: 12,
     heroStat: {
-      value: '100以上のRCT・n=22,000',
-      label: 'モノハイドレートの筋力・除脂肪体重効果が確定的に示されている（J Strength Cond Res 2020）。HCl・エチルエステル・KreAlkalynの優位差はRCTで再現されていない',
+      value: 'n=22,000',
+      label: 'モノハイドレートの筋力・除脂肪体重効果が確定（J Strength Cond Res 2020 メタ解析・100以上のRCT統合）。新形態の優位差はRCTでゼロ',
     },
     lossAversionHook:
       '「クレアチンは若い男性の筋トレサプリ」「新形態の方が効く」「腎機能に悪い」──この3つの市販イメージは論文の蓄積で全て更新が必要だ。n=22,000のメタ解析で確定したのはモノハイドレート3-5g/日。HCl・エチルエステルの優位差はRCTでゼロ、血清クレアチニン10-30%上昇も腎機能悪化を意味しない。',
