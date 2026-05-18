@@ -9137,8 +9137,8 @@ Journal of Research in Medical Sciences 2012のRCTで使われた500mg/日は欠
   // ── クレアチン選び方ガイド（Phase 2D Session ζ v6 / 逆張り事実型タイトル + YMYL腎機能誤解の科学的反論軸） ───────
   {
     slug: 'creatine-choice-guide',
-    title: 'クレアチン｜新形態の優位差は論文ゼロ・3-5gが正解',
-    seoTitle: 'クレアチン選び｜新形態の論文差ゼロ・3-5g・腎機能誤解｜SciBase',
+    title: 'クレアチン｜論文100超の答えはモノハイドレート3-5g',
+    seoTitle: 'クレアチン選び｜論文100超でモノハイドレート3-5g・腎機能誤解｜SciBase',
     description:
       'クレアチンは「モノハイドレートか新形態か・3g vs 5g・ローディング要否・腎機能は大丈夫か・体重増の正体」で迷う。100以上のRCT・n=22,000のメタ解析でモノハイドレート優位は確定、新形態（HCl/エチルエステル/KreAlkalyn）の優位差はRCTでゼロ、血清クレアチニン10-30%上昇は腎機能悪化ではない。化粧品メーカー現役が判断軸を整理する。',
     seoDescription:
