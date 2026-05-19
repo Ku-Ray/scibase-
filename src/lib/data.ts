@@ -10092,9 +10092,9 @@ export const ingredients: Ingredient[] = [
         name: '5-HTP 100mg（グリフォニアシード由来）',
         brand: 'NOW Foods',
         platform: 'iherb',
-        url: 'https://www.iherb.com/pr/now-foods-5-htp-100-mg-120-veg-capsules/748',
+        url: 'https://www.iherb.com/pr/now-foods-5-htp-100-mg-120-veg-capsules/306',
 
-        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now04910/l/33.jpg',
+        imageUrl: 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:good/images/now/now00104/l/33.jpg',
         priceJpy: 2200,
         rank: 1,
         reasonJa: 'グリフォニア種子由来の天然5-HTP。低用量50mgからスタートし様子を見ながら増量推奨',
