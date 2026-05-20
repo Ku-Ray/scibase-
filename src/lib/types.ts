@@ -149,6 +149,55 @@ export interface IngredientTestKitCTA {
   medicalDisclaimer?: string
 }
 
+/**
+ * SciBase 独自エビデンススコア v2.2 の構成要素。
+ * 4 軸（論文数 / RCT・メタ解析比率 / 最新性 / ヒト試験比率）の内訳。
+ */
+export interface EvidenceScoreBreakdown {
+  /** 論文数スコア（0-3.0）。`min(3.0, log10(n + 1) * 1.5)` */
+  paperCount: number
+  /** RCT/メタ解析比率スコア（0-3.0）。confidence factor 乗算後 */
+  rctMeta: number
+  /** 最新性スコア（0-2.0）。直近 15 年論文比率に confidence factor 乗算後 */
+  recency: number
+  /** ヒト試験比率スコア（0-2.0）。confidence factor 乗算後 */
+  humanTrial: number
+}
+
+/**
+ * studyType 別の本数集計（透明性のため公開）。
+ * `recent15y` は 2026-05-20 の部門合議で 10 年 → 15 年へカットオフ拡張（古典 seminal paper の不当減点回避）。
+ */
+export interface EvidenceScorePaperStats {
+  total: number
+  rct: number
+  metaAnalysis: number
+  cohort: number
+  observational: number
+  animal: number
+  /** 直近 15 年（year >= currentYear - 15）の論文本数 */
+  recent15y: number
+}
+
+/**
+ * SciBase 独自エビデンススコア（v2.2）。
+ * 計算は `scripts/calc_evidence_score.py` のビルド前処理で生成され data.ts に静的書き込み。
+ * 詳細：`/Users/raykudo/secretary_bot/knowledge/scibase_roadmap/next_week_20260515/n3_evidence_score_v2_design.md`
+ * バッジ UI / about page は EV-β / EV-γ セッションで実装。
+ */
+export interface EvidenceScore {
+  /** 総合スコア（0-10・小数点 1 位）。`paperCount + rctMeta + recency + humanTrial` */
+  overall: number
+  breakdown: EvidenceScoreBreakdown
+  /** 信頼度ファクタ（0-1）。`min(1.0, n / 3.0)`・n<3 はスコアを按分減衰 */
+  confidence: number
+  paperStats: EvidenceScorePaperStats
+  /** 計算実行日（ISO 8601） */
+  lastCalculatedAt: string
+  /** 計算式バージョン。改訂時は別バージョン文字列を採番 */
+  formula: 'v2.2'
+}
+
 export interface Ingredient {
   slug: string
   nameJa: string
@@ -162,6 +211,12 @@ export interface Ingredient {
   description: string
   concerns: string[]   // concern slugs
   papers: Paper[]
+  /**
+   * SciBase 独自エビデンススコア（v2.2）。
+   * `scripts/calc_evidence_score.py` で papers[] から算出して書き戻し。
+   * papers[] が空の成分は undefined。バッジ非表示。
+   */
+  evidenceScore?: EvidenceScore
   /**
    * 公的DB・権威機関の参照リンク（hfnet 等）。
    * YMYL厳格KW（[成分] 副作用 / 安全性 / 相互作用）対策・E-E-A-T差別化。
