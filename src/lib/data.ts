@@ -39600,7 +39600,7 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '不安・睡眠補助で観察研究・小規模RCTが複数あり、評価は2〜4週で行う。FDA承認のEpidiolex®はてんかん処方薬で別カテゴリ。迷ったら就寝前25mg/日から始め、舌下投与で生体利用率を高める。' +
       '\n\n' +
-      'CYP3A4阻害でワルファリン・抗てんかん薬・SSRI併用は処方医相談。THC含有品は大麻取締法違反のため、COA（第三者検査）でTHC不検出を確認できない品は避ける。妊娠・授乳・18歳未満も避ける。',
+      'CYP3A4阻害で抗てんかん薬・SSRI併用は処方医相談。COAでTHC不検出を確認できない品は大麻取締法違反のため避ける。妊娠・授乳・18歳未満も避ける。',
     concerns: ['mood-anxiety', 'sleep'],
     papers: [
       {
@@ -40287,7 +40287,7 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '低用量（0.5-4mg/kg経口）の抗老化・認知補助使用はバイオハック層で新興だがFDA承認外のオフラベル。ATP産生支援とMAO阻害が機序として整理されるが、ヒト大規模長期RCTは未確立。' +
       '\n\n' +
-      'SSRI/SNRI/MAOI併用は絶対回避（FDA 2011セロトニン症候群警告）。G6PD欠損症は溶血性貧血リスクで避け、用量間違い（1mg vs 10mg/kg）で致死リスク。妊娠・授乳も避ける。',
+      'SSRI/SNRI/MAOI併用は絶対回避（FDA 2011セロトニン症候群警告）。G6PD欠損症は避け、用量間違い（1mg vs 10mg/kg）で致死リスクあり。',
     concerns: ['cognitive', 'fatigue'],
     papers: [
       {
