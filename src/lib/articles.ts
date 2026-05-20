@@ -19144,7 +19144,7 @@ DHA優位（EPA:DHA=1:2等）製品で250〜900mg/日（食後）が論文用量
     category: 'anti-aging',
     categoryLabel: '抗老化サプリ',
     publishedAt: '2026-05-13',
-    updatedAt: '2026-05-17',
+    updatedAt: '2026-05-20',
     readingMinutes: 12,
     heroStat: {
       value: 'n=25,871',
@@ -19155,7 +19155,7 @@ DHA優位（EPA:DHA=1:2等）製品で250〜900mg/日（食後）が論文用量
     keyConclusions:
       'NMN やレスベラトロールの研究注目度と、オメガ3・コラーゲン・CoQ10 の確立度は別軸だ。López-Otín 2023 が定義した老化の 12 経路のうち、サプリ 1 種で届くのは多くて 1〜2 経路だ。確立度はオメガ3 が S、コラーゲンと CoQ10 が A、NMN とレスベラトロールが B の順だ。慢性炎症型はオメガ3、皮膚老化型はコラーゲン、ミトコンドリア型は CoQ10 が主役だ。ヒトで寿命延長を確認した経口サプリは現時点でゼロで、化学療法中・がん既往は NMN 不可だ。',
     priceGuide:
-      'オメガ3：月¥1,700・コラーゲンペプチド：月¥4,390・CoQ10 ユビキノール：月¥3,200・NMN（NR）：月¥5,330・基本 3 成分（オメガ3 ＋ コラーゲン ＋ CoQ10）なら月¥9,290 で 12-24 週試せる',
+      'オメガ3：月¥1,700・コラーゲンペプチド：月¥4,390・CoQ10 ユビキノール：月¥3,200・NMN（NR）：月¥5,330・レスベラトロール：月¥1,600・基本 2 成分（オメガ3 ＋ コラーゲン）月¥6,090 で 8-12 週・基本 3 成分（＋ CoQ10）月¥9,290 で 12-24 週・5 成分フル月¥16,220 はタイプ全網羅で余力ある場合・タイプ別ガイダンスは A 型 NMN＋CoQ10 月¥8,530、B 型 オメガ3 月¥1,700、C 型 コラーゲン 月¥4,390、D 型 レスベラトロール 月¥1,600（B 型 = コスパ最良）',
 
     problemHeading: '老化の 12 経路のうち、サプリで届くのは1〜2経路だけだ',
     problemBody: `老化サプリの市販選択肢は多い。[NMN](/ingredients/nmn)・NR・[レスベラトロール](/ingredients/resveratrol)・[コラーゲンペプチド](/ingredients/collagen-peptide)・[CoQ10ユビキノール](/ingredients/coq10)・[オメガ3](/ingredients/omega3)・スペルミジン・フィセチン・ウロリチン A・PQQ・MitoQ・グルタチオン――。「結局どれで老化が止まるのか」で止まるのが普通だ。
@@ -19812,7 +19812,7 @@ D 型（エピジェネティック変化・SIRT1 経路）の研究領域成分
     ],
     concerns: ['skin-aging'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
-    dateModified: '2026-05-17',
+    dateModified: '2026-05-20',
   },
   {
     slug: 'constipation-supplement-guide',
