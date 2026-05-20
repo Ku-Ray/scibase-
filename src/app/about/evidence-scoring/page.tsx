@@ -81,7 +81,7 @@ const TOP10_INGREDIENTS = [
     slug: 'omega3',
     name: 'オメガ 3',
     rank: 'S',
-    score: 5.7,
+    score: 6.4,
     n: 2,
     note: '心血管・抗炎症で複数の大規模 RCT。研究の総量は十分だが用量設計が論点。',
   },
@@ -89,25 +89,25 @@ const TOP10_INGREDIENTS = [
     slug: 'magnesium',
     name: 'マグネシウム',
     rank: 'S',
-    score: 5.2,
+    score: 5.9,
     n: 2,
     note: '睡眠・血圧領域でメタ解析あり。日本人の摂取不足が指摘される基礎ミネラル。',
-  },
-  {
-    slug: 'coq10',
-    name: 'コエンザイム Q10',
-    rank: 'A',
-    score: 4.1,
-    n: 2,
-    note: '心不全・スタチン併用での研究蓄積。掲載論文の総量はまだ伸びしろ。',
   },
   {
     slug: 'collagen-peptide',
     name: 'コラーゲンペプチド',
     rank: 'A',
-    score: 4.1,
+    score: 5.4,
     n: 2,
     note: '皮膚弾力・関節領域で RCT 複数。長期エビデンスは引き続き追跡中。',
+  },
+  {
+    slug: 'coq10',
+    name: 'コエンザイム Q10',
+    rank: 'A',
+    score: 4.7,
+    n: 2,
+    note: '心不全・スタチン併用での研究蓄積。掲載論文の総量はまだ伸びしろ。',
   },
   {
     slug: 'nmn',
@@ -129,9 +129,9 @@ const TOP10_INGREDIENTS = [
     slug: 'iron',
     name: '鉄',
     rank: 'S',
-    score: 2.1,
+    score: 2.8,
     n: 1,
-    note: 'ランクは S だが論文蓄積スコアは低い。鉄欠乏の補正という臨床判断が先行している領域。',
+    note: 'ランクは S だが論文蓄積スコアは相対的に低い。鉄欠乏の補正という臨床判断が先行している領域。',
   },
   {
     slug: 'resveratrol',
@@ -454,7 +454,8 @@ export default function EvidenceScoringPage() {
             </p>
             <p className="text-[12px]">
               <span className="font-semibold text-foreground">※ 表記注意：</span>
-              下表の論文蓄積スコアは v2.2 計算式での試算値です。実装後の確定値は各成分ページに反映されます。
+              下表の論文蓄積スコアは v2.2 計算式（最新性カットオフ 15 年）での確定値です。
+              各成分ページの論文蓄積スコアバッジと数値が一致します。
             </p>
           </div>
 
