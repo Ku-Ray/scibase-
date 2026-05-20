@@ -92,6 +92,17 @@ const rankDesc: Record<EvidenceRank, string> = {
   C: 'ヒトデータ不十分',
 }
 
+/* SciBase 論文蓄積スコア（v2.2）の色分け（EV-β：rank との役割分担を物理的に表現）
+   7.0+ green / 5.0-6.9 blue / 3.0-4.9 gray / 0.0-2.9 muted gray */
+function paperEvidenceColor(overall: number): {
+  bg: string; border: string; text: string; bar: string;
+} {
+  if (overall >= 7.0) return { bg: 'bg-green-50',  border: 'border-green-300',  text: 'text-green-800',  bar: 'bg-green-500'  }
+  if (overall >= 5.0) return { bg: 'bg-blue-50',   border: 'border-blue-300',   text: 'text-blue-800',   bar: 'bg-blue-500'   }
+  if (overall >= 3.0) return { bg: 'bg-stone-100', border: 'border-stone-300',  text: 'text-stone-700',  bar: 'bg-stone-500'  }
+  return                     { bg: 'bg-stone-50',  border: 'border-stone-200',  text: 'text-stone-500',  bar: 'bg-stone-400'  }
+}
+
 const BASE_URL = 'https://scibase.app'
 
 /* Pillar #1（30代抗老化サプリ完全ガイド）で言及される主要成分。
@@ -447,13 +458,34 @@ export default async function IngredientPage({ params }: Props) {
             <span className="text-foreground">{ing.nameJa}</span>
           </nav>
 
-          {/* Rank badge + usage + concerns */}
+          {/* Rank badge + usage + concerns + 論文蓄積スコアバッジ（Compact） */}
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className={`inline-flex items-center gap-1.5 ${heroText[ing.evidenceRank]}
               bg-white/70 border border-current/20 rounded-lg px-3 py-1.5 text-[13px] font-semibold`}>
               <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
               {rankDesc[ing.evidenceRank]}
             </span>
+            {ing.evidenceScore && (() => {
+              const c = paperEvidenceColor(ing.evidenceScore.overall)
+              return (
+                <Link
+                  href="/about/evidence-scoring"
+                  aria-label={`論文蓄積スコア ${ing.evidenceScore.overall.toFixed(1)} / 10（評価ランクとは別軸）`}
+                  className={`paper-evidence-badge inline-flex items-center gap-1
+                    ${c.bg} ${c.border} ${c.text} border rounded-lg
+                    px-2.5 py-1 text-[11px] font-medium hover:opacity-80 transition-opacity`}
+                >
+                  <span className="opacity-70">論文蓄積</span>
+                  <span className="tabular-nums font-semibold">
+                    {ing.evidenceScore.overall.toFixed(1)}
+                  </span>
+                  <span className="opacity-60">/10</span>
+                  {ing.evidenceScore.confidence < 0.5 && (
+                    <sup className="text-[9px] opacity-70 ml-0.5">※暫定</sup>
+                  )}
+                </Link>
+              )
+            })()}
             {ing.usageType && (
               <span className="bg-white/60 border border-border rounded-full
                 px-3 py-1 text-[12px] font-medium text-muted-foreground">
@@ -557,6 +589,81 @@ export default async function IngredientPage({ params }: Props) {
             ${{ S: 'w-full', A: 'w-3/4', B: 'w-1/2', C: 'w-1/4' }[ing.evidenceRank]}`} />
         </div>
       </div>
+
+      {/* ── SciBase 論文蓄積スコア（v2.2）Full カード — hero 下・rank と別軸 ───── */}
+      {ing.evidenceScore && (() => {
+        const es = ing.evidenceScore
+        const c = paperEvidenceColor(es.overall)
+        const bars: { label: string; value: number; max: number }[] = [
+          { label: '論文数',     value: es.breakdown.paperCount, max: 3.0 },
+          { label: 'RCT/メタ解析', value: es.breakdown.rctMeta,    max: 3.0 },
+          { label: '最新性',     value: es.breakdown.recency,    max: 2.0 },
+          { label: 'ヒト試験',   value: es.breakdown.humanTrial, max: 2.0 },
+        ]
+        return (
+          <div className="bg-secondary/20 border-b border-border">
+            <div className="max-w-2xl mx-auto px-5 py-6">
+              <div className={`bg-card ${c.border} border-2 rounded-2xl overflow-hidden`}>
+                <div className="px-5 py-3 border-b border-border bg-secondary/30 flex items-baseline justify-between gap-3">
+                  <p className="text-[12px] font-semibold tracking-wide text-foreground">
+                    SciBase 論文蓄積スコア（v2.2）
+                  </p>
+                  <p className="text-[11px] text-muted-foreground tabular-nums">
+                    信頼度 {Math.round(es.confidence * 100)}%
+                  </p>
+                </div>
+                <div className="px-5 py-5 space-y-4">
+
+                  <div className="flex items-baseline gap-2">
+                    <span className={`text-[40px] font-bold tabular-nums leading-none ${c.text}`}>
+                      {es.overall.toFixed(1)}
+                    </span>
+                    <span className="text-[14px] font-medium text-muted-foreground">／ 10</span>
+                    {es.confidence < 0.5 && (
+                      <span className="text-[11px] text-muted-foreground ml-1">※論文 1 本のみで暫定値</span>
+                    )}
+                  </div>
+
+                  <div className="space-y-2.5">
+                    {bars.map(b => (
+                      <div key={b.label}>
+                        <div className="flex items-baseline justify-between text-[11px] text-muted-foreground mb-1">
+                          <span>{b.label}</span>
+                          <span className="tabular-nums">
+                            {b.value.toFixed(1)} <span className="opacity-60">/ {b.max.toFixed(1)}</span>
+                          </span>
+                        </div>
+                        <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
+                          <div
+                            className={`h-full ${c.bar} rounded-full`}
+                            style={{ width: `${Math.min(100, (b.value / b.max) * 100)}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-[12px] text-muted-foreground leading-snug pt-1">
+                    論文 {es.paperStats.total} 本（RCT {es.paperStats.rct} ／ メタ解析 {es.paperStats.metaAnalysis} ／ 直近 15 年 {es.paperStats.recent15y}）
+                  </p>
+
+                  <p className="text-[12px] text-foreground leading-relaxed pt-3 border-t border-border">
+                    <span className="font-semibold">評価 {ing.evidenceRank} は実用判断、論文蓄積スコアは論文の量と質の客観指標。</span>
+                    <span className="text-muted-foreground">両者は別軸として読みます。</span>
+                  </p>
+
+                  <Link
+                    href="/about/evidence-scoring"
+                    className="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline"
+                  >
+                    → 論文蓄積スコアの計算方法を見る
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
 
       {/* ── Body ──────────────────────────────────────── */}
       <div className="max-w-4xl mx-auto px-5 py-10">
