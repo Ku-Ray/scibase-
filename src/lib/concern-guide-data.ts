@@ -183,7 +183,7 @@ export interface ConcernGuide {
 const concernGuides: ConcernGuide[] = [
   {
     concernSlug: 'spots',
-    title: '経口Cでシミは消えない｜論文で見る3タイプの真実',
+    title: '経口ビタミンCでシミは消えない｜論文で見る3タイプの真実',
     summary: '化粧品メーカー現役が研究データから解説。シミ3タイプ別の成分選びと失敗パターン',
     publishedAt: '2026-04-29',
     updatedAt: '2026-05-16',
