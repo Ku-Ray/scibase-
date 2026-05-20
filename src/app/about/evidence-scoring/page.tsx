@@ -16,9 +16,9 @@ const BASE_URL = 'https://scibase.app'
 const PAGE_URL = `${BASE_URL}/about/evidence-scoring`
 
 export const metadata: Metadata = {
-  title: 'SciBase 論文蓄積スコアとは｜論文ベースの独自指標 v2.2｜SciBase',
+  title: 'SciBase 論文エビデンス指数（PEI）とは｜論文ベースの独自指標 v2.2｜SciBase',
   description:
-    '成分の論文の量と質を 10 点満点で評価する SciBase 独自の論文蓄積スコア。計算式を完全開示し、主要 10 成分の論文蓄積スコアと既存 S / A / B ランクとの役割分担を提示します。',
+    '成分の論文の量と質を 10 点満点で評価する SciBase 独自の論文エビデンス指数（Paper Evidence Index・PEI）。計算式を完全開示し、主要 10 成分の PEI と既存 S / A / B ランクとの役割分担を提示します。',
   alternates: { canonical: PAGE_URL },
 }
 
@@ -53,7 +53,7 @@ const ROLE_DIVISION = [
     accent: 'text-blue-700',
   },
   {
-    label: '論文蓄積スコア（0〜10）',
+    label: '論文エビデンス指数 PEI（0〜10）',
     desc: '論文の量と質の客観指標。何本の論文があり、その何割が RCT・メタ解析で、どれだけ直近の研究で、どれだけヒトを対象としているか。実用判断は含めず、純粋に研究蓄積の状況だけを表します。',
     color: 'bg-emerald-50 border-emerald-200',
     accent: 'text-emerald-700',
@@ -131,7 +131,7 @@ const TOP10_INGREDIENTS = [
     rank: 'S',
     score: 2.8,
     n: 1,
-    note: 'ランクは S だが論文蓄積スコアは相対的に低い。鉄欠乏の補正という臨床判断が先行している領域。',
+    note: 'ランクは S だが PEI は相対的に低い。鉄欠乏の補正という臨床判断が先行している領域。',
   },
   {
     slug: 'resveratrol',
@@ -144,37 +144,37 @@ const TOP10_INGREDIENTS = [
 ]
 
 const LIMITATIONS = [
-  '論文蓄積スコアは「論文がどれだけ揃っているか」を測る指標で、その成分を飲むべきかどうかの判断ではありません。',
-  '論文蓄積スコアが高い成分でも、持病・服用薬・年齢・体質によっては推奨されない場合があります。医師・薬剤師への相談が前提です。',
-  '論文蓄積スコアが低い成分でも、鉄のように臨床的に補正が必要なケースで実用上は重要というケースがあります。論文蓄積スコアだけで除外する読み方は適切ではありません。',
-  '論文蓄積スコアは SciBase の papers[] に登録された論文を母集団とする相対指標です。世界中の全論文を網羅した上での評価ではありません。',
-  '動物試験のみで構成された成分は、ヒト試験比率の軸で 0 点になり論文蓄積スコアが低く出ます。これは「研究がない」ではなく「ヒトでの検証段階に至っていない」を意味します。',
+  'PEI は「論文がどれだけ揃っているか」を測る指標で、その成分を飲むべきかどうかの判断ではありません。',
+  'PEI が高い成分でも、持病・服用薬・年齢・体質によっては推奨されない場合があります。医師・薬剤師への相談が前提です。',
+  'PEI が低い成分でも、鉄のように臨床的に補正が必要なケースで実用上は重要というケースがあります。PEI だけで除外する読み方は適切ではありません。',
+  'PEI は SciBase の papers[] に登録された論文を母集団とする相対指標です。世界中の全論文を網羅した上での評価ではありません。',
+  '動物試験のみで構成された成分は、ヒト試験比率の軸で 0 点になりPEI が低く出ます。これは「研究がない」ではなく「ヒトでの検証段階に至っていない」を意味します。',
 ]
 
 const FAQ_ITEMS = [
   {
     q: 'なぜ 100 点満点ではなく 10 点満点なのですか？',
-    a: '読者が直感的に把握できる桁数を優先しました。10 点満点は学校教育の評価尺度に近く、7.9 と 4.1 のような差が「これは結構違う」と直感で理解できます。100 点満点だと 79 点と 41 点でも同じ差なのに、過剰な精度を装ってしまい誤解を招きます。論文蓄積スコアは小数点 1 位までで丸め、精度を装わない設計にしています。',
+    a: '読者が直感的に把握できる桁数を優先しました。10 点満点は学校教育の評価尺度に近く、7.9 と 4.1 のような差が「これは結構違う」と直感で理解できます。100 点満点だと 79 点と 41 点でも同じ差なのに、過剰な精度を装ってしまい誤解を招きます。PEI は小数点 1 位までで丸め、精度を装わない設計にしています。',
   },
   {
     q: '動物試験はなぜ除外されているのですか？',
-    a: '動物試験はヒトへの外挿が必ずしも成立しないためです。マウスで効果が確認された成分のうち、ヒト試験まで進んだのは一部にすぎないという研究もあります。論文蓄積スコアはヒト試験比率の軸を 2.0 点満点で設けており、動物試験のみの成分はこの軸で 0 点になります。動物試験のデータ自体は成分ページに掲載しますが、論文蓄積スコアの計算からは除外する設計です。',
+    a: '動物試験はヒトへの外挿が必ずしも成立しないためです。マウスで効果が確認された成分のうち、ヒト試験まで進んだのは一部にすぎないという研究もあります。PEI はヒト試験比率の軸を 2.0 点満点で設けており、動物試験のみの成分はこの軸で 0 点になります。動物試験のデータ自体は成分ページに掲載しますが、PEI の計算からは除外する設計です。',
   },
   {
-    q: '古い論文を引用したら論文蓄積スコアは下がるのですか？',
+    q: '古い論文を引用したらPEI は下がるのですか？',
     a: '最新性の軸では「直近 15 年以内」の論文を対象としています。栄養学・古典的 RCT のように 1990 年代〜 2000 年代に決定打となる研究が出ている成分が不当に減点されないよう、カットオフは 15 年に広げています。それ以前の論文は最新性の軸では加点されませんが、論文数の軸では引き続きカウントされます。',
   },
   {
-    q: '既存のランク S / A / B / C と論文蓄積スコアはどちらを信じればよいですか？',
-    a: 'どちらか一方を信じるという読み方はおすすめしません。ランクは実用判断（推奨度・安全性・SciBase 編集判断）、論文蓄積スコアは研究蓄積の客観指標で、役割が違うためです。両方が高ければ研究も実用も整っている領域、ランクが高く論文蓄積スコアが低ければ実用性は確立だが論文蓄積は薄い領域、ランクが低く論文蓄積スコアが高ければ研究は熱いが実用化判断は慎重な領域、と読み分けます。',
+    q: '既存のランク S / A / B / C とPEI はどちらを信じればよいですか？',
+    a: 'どちらか一方を信じるという読み方はおすすめしません。ランクは実用判断（推奨度・安全性・SciBase 編集判断）、PEI は研究蓄積の客観指標で、役割が違うためです。両方が高ければ研究も実用も整っている領域、ランクが高く PEI が低ければ実用性は確立だが論文蓄積は薄い領域、ランクが低くPEI が高ければ研究は熱いが実用化判断は慎重な領域、と読み分けます。',
   },
   {
     q: '他社サイトの評価点と比較できますか？',
-    a: '直接の比較は推奨しません。他社サイト（CosDNA・SkinCharisma 等）の評価点は計算式が公開されていない場合が多く、何を測っているか不明なまま数値だけ並べても誤解を招きます。SciBase の論文蓄積スコアは計算式 v2.2 を本ページで完全開示しており、何を測っているかが明確です。あくまで SciBase 内の成分間の相対比較として使ってください。',
+    a: '直接の比較は推奨しません。他社サイト（CosDNA・SkinCharisma 等）の評価点は計算式が公開されていない場合が多く、何を測っているか不明なまま数値だけ並べても誤解を招きます。SciBase のPEI は計算式 v2.2 を本ページで完全開示しており、何を測っているかが明確です。あくまで SciBase 内の成分間の相対比較として使ってください。',
   },
   {
-    q: '論文蓄積スコアが高い成分を選べばよいのですか？',
-    a: 'いいえ、論文蓄積スコアは「飲むべき指標」ではありません。研究が多い領域でも、あなたの体質・持病・服用薬と合うとは限りません。論文蓄積スコアはあくまで「どれだけ研究が積まれているか」の客観指標であり、購入や摂取の判断はランク・成分の安全性情報・医師の助言と組み合わせて行ってください。',
+    q: 'PEI が高い成分を選べばよいのですか？',
+    a: 'いいえ、PEI は「飲むべき指標」ではありません。研究が多い領域でも、あなたの体質・持病・服用薬と合うとは限りません。PEI はあくまで「どれだけ研究が積まれているか」の客観指標であり、購入や摂取の判断はランク・成分の安全性情報・医師の助言と組み合わせて行ってください。',
   },
 ]
 
@@ -197,7 +197,7 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE_URL },
     { '@type': 'ListItem', position: 2, name: 'SciBase について', item: `${BASE_URL}/about` },
-    { '@type': 'ListItem', position: 3, name: '論文蓄積スコアとは', item: PAGE_URL },
+    { '@type': 'ListItem', position: 3, name: '論文エビデンス指数（PEI）とは', item: PAGE_URL },
   ],
 }
 
@@ -229,21 +229,23 @@ export default function EvidenceScoringPage() {
           <ChevronRight className="w-3 h-3" />
           <Link href="/about" className="hover:underline">SciBase について</Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-foreground">論文蓄積スコアとは</span>
+          <span className="text-foreground">論文エビデンス指数（PEI）とは</span>
         </nav>
 
         {/* Hero */}
         <div className="mb-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
-            Paper Evidence Score (v2.2)
+            Paper Evidence Index (PEI) v2.2
           </p>
           <h1 className="text-[30px] sm:text-[38px] font-semibold text-foreground
             tracking-tight leading-[1.2] mb-5">
-            SciBase 論文蓄積スコアとは
+            SciBase 論文エビデンス指数 <span className="tracking-wider">PEI</span> とは
           </h1>
           <p className="text-[15px] text-muted-foreground leading-[1.9]">
             成分ごとに、掲載論文の<span className="font-semibold text-foreground">量と質</span>を
-            10 点満点で表す SciBase 独自の客観指標です。計算式を本ページで完全に開示しています。
+            10 点満点で表す SciBase 独自の客観指標。略称は
+            <span className="font-semibold text-foreground"> PEI（Paper Evidence Index）</span>。
+            計算式を本ページで完全に開示しています。
           </p>
         </div>
 
@@ -257,7 +259,7 @@ export default function EvidenceScoringPage() {
                 論文の量と質を測る独立した指標です。
               </p>
               <p className="text-[13px] text-muted-foreground leading-[1.8]">
-                論文蓄積スコアが高い成分が「飲むべき成分」という意味ではありません。
+                PEI が高い成分が「飲むべき成分」という意味ではありません。
                 飲むべきかどうかの判断は、既存の評価ランク（S / A / B / C）・成分の安全性情報・
                 医師・薬剤師への相談を前提に行ってください。
               </p>
@@ -265,12 +267,12 @@ export default function EvidenceScoringPage() {
           </div>
         </div>
 
-        {/* H2: なぜ独自の論文蓄積スコアを作ったのか */}
+        {/* H2: なぜ独自の PEI を作ったのか */}
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
             <BookOpen className="w-5 h-5 text-accent" />
             <h2 className="text-[20px] font-semibold text-foreground">
-              なぜ独自の論文蓄積スコアを作ったのか
+              なぜ独自の PEI を作ったのか
             </h2>
           </div>
           <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9]">
@@ -280,12 +282,12 @@ export default function EvidenceScoringPage() {
               何を測っているかが読者に伝わりません。
             </p>
             <p>
-              SciBase の論文蓄積スコアは、計算式を本ページで完全に開示しています。
+              SciBase のPEI は、計算式を本ページで完全に開示しています。
               論文何本のうち何本が RCT で、何本が直近 15 年で、何本がヒトを対象としているか。
               この 4 軸を計算式に通すと、何点になるかが読者の手元で再現できる設計です。
             </p>
             <p>
-              数値が独り歩きしないよう、論文蓄積スコアは
+              数値が独り歩きしないよう、PEI は
               <span className="font-semibold text-foreground">既存の評価ランク（S / A / B / C）と並列</span>で表示します。
               役割が違う 2 つの指標を並べることで、「研究蓄積」と「実用判断」を読者が分けて読めるようにしています。
             </p>
@@ -303,8 +305,8 @@ export default function EvidenceScoringPage() {
 
           <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9] mb-6">
             <p>
-              論文蓄積スコアは、以下の 4 軸の合計で 0〜10 点を算出します。
-              各軸には上限があり、1 軸だけで論文蓄積スコアを稼げない設計です。
+              PEI は、以下の 4 軸の合計で 0〜10 点を算出します。
+              各軸には上限があり、1 軸だけでPEI を稼げない設計です。
             </p>
           </div>
 
@@ -372,7 +374,7 @@ export default function EvidenceScoringPage() {
             <p className="text-[13px] text-muted-foreground leading-[1.9]">
               栄養学・古典的 RCT の領域では、1990 年代後半〜 2000 年代前半に決定打となる研究が
               出ている成分があります（例: 葉酸の神経管閉鎖障害予防、メラトニンの基礎用量研究 等）。
-              これらを「古い」として減点すると、実態と乖離した低い論文蓄積スコアになってしまいます。
+              これらを「古い」として減点すると、実態と乖離した低い PEI になってしまいます。
               直近 15 年カットオフは、こうした古典的 seminal な研究を不当に減点しない設計です。
             </p>
           </div>
@@ -389,7 +391,7 @@ export default function EvidenceScoringPage() {
 
           <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9] mb-6">
             <p>
-              SciBase では成分ごとに、既存の評価ランクと論文蓄積スコアの
+              SciBase では成分ごとに、既存の評価ランクと PEI の
               <span className="font-semibold text-foreground">2 つを並列で表示</span>します。
               どちらか一方が「正解」というわけではなく、役割が違うためです。
             </p>
@@ -414,21 +416,21 @@ export default function EvidenceScoringPage() {
             </div>
             <div className="divide-y divide-border text-[13px] text-muted-foreground">
               <div className="px-5 py-4">
-                <p className="font-semibold text-foreground mb-1">ランク S × 論文蓄積スコア低（例: 鉄）</p>
+                <p className="font-semibold text-foreground mb-1">ランク S × PEI 低（例: 鉄）</p>
                 <p className="leading-[1.8]">
                   実用性は確立しているものの、掲載論文の蓄積はまだ薄い領域。
                   日本人女性の鉄欠乏率の高さなど、臨床判断が先行しているケースです。
                 </p>
               </div>
               <div className="px-5 py-4">
-                <p className="font-semibold text-foreground mb-1">ランク C × 論文蓄積スコア高（例: NAD 直接補給）</p>
+                <p className="font-semibold text-foreground mb-1">ランク C × PEI 高（例: NAD 直接補給）</p>
                 <p className="leading-[1.8]">
                   研究は活発で論文蓄積が進んでいるものの、長期安全性や実用化判断はまだ早い領域。
                   「研究の熱さ」と「実用判断の慎重さ」が両立しているケースです。
                 </p>
               </div>
               <div className="px-5 py-4">
-                <p className="font-semibold text-foreground mb-1">ランク S × 論文蓄積スコア高（例: アシュワガンダ）</p>
+                <p className="font-semibold text-foreground mb-1">ランク S × PEI 高（例: アシュワガンダ）</p>
                 <p className="leading-[1.8]">
                   研究も実用判断もそろっている領域。読者にとって判断材料が最も多い成分です。
                 </p>
@@ -437,25 +439,25 @@ export default function EvidenceScoringPage() {
           </div>
         </section>
 
-        {/* H2: 主要 10 成分の論文蓄積スコア比較表 */}
+        {/* H2: 主要 10 成分の PEI 比較表 */}
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
             <BarChart3 className="w-5 h-5 text-accent" />
             <h2 className="text-[20px] font-semibold text-foreground">
-              主要 10 成分の論文蓄積スコア
+              主要 10 成分の PEI
             </h2>
           </div>
 
           <div className="space-y-3 text-[14px] text-muted-foreground leading-[1.9] mb-6">
             <p>
-              SciBase が掲載する成分の中から、主要 10 成分の現時点での論文蓄積スコアを並べます。
-              <span className="font-semibold text-foreground">ランクと論文蓄積スコアが一致しない成分</span>に注目すると、
+              SciBase が掲載する成分の中から、主要 10 成分の現時点での PEI を並べます。
+              <span className="font-semibold text-foreground">ランクと PEI が一致しない成分</span>に注目すると、
               研究蓄積と実用判断の違いが直感的に理解できます。
             </p>
             <p className="text-[12px]">
               <span className="font-semibold text-foreground">※ 表記注意：</span>
-              下表の論文蓄積スコアは v2.2 計算式（最新性カットオフ 15 年）での確定値です。
-              各成分ページの論文蓄積スコアバッジと数値が一致します。
+              下表の PEI は v2.2 計算式（最新性カットオフ 15 年）での確定値です。
+              各成分ページの PEI バッジと数値が一致します。
             </p>
           </div>
 
@@ -464,7 +466,7 @@ export default function EvidenceScoringPage() {
             <div className="bg-secondary px-4 py-3 border-b border-border grid grid-cols-[1.4fr_0.6fr_0.8fr_0.5fr] gap-2 text-[11px] font-semibold text-foreground">
               <span>成分</span>
               <span className="text-center">ランク</span>
-              <span className="text-center">論文蓄積スコア</span>
+              <span className="text-center">PEI</span>
               <span className="text-center">論文 n</span>
             </div>
             <div className="divide-y divide-border">
@@ -506,21 +508,21 @@ export default function EvidenceScoringPage() {
           </div>
         </section>
 
-        {/* H2: 論文蓄積スコアの限界・読み方 */}
+        {/* H2: PEI の限界・読み方 */}
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
             <AlertCircle className="w-5 h-5 text-accent" />
             <h2 className="text-[20px] font-semibold text-foreground">
-              論文蓄積スコアの限界と読み方
+              PEI の限界と読み方
             </h2>
           </div>
 
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6">
             <p className="text-[14px] font-semibold text-foreground mb-2 leading-[1.6]">
-              「論文蓄積スコアが高い = 飲むべき」ではありません。
+              「PEI が高い = 飲むべき」ではありません。
             </p>
             <p className="text-[13px] text-muted-foreground leading-[1.8]">
-              論文蓄積スコアはあくまで研究蓄積の客観指標です。摂取判断は既存ランク・安全性情報・
+              PEI はあくまで研究蓄積の客観指標です。摂取判断は既存ランク・安全性情報・
               医師の助言と組み合わせて行ってください。
             </p>
           </div>
@@ -543,7 +545,7 @@ export default function EvidenceScoringPage() {
           </div>
           <div className="space-y-4 text-[14px] text-muted-foreground leading-[1.9]">
             <p>
-              論文蓄積スコアは、以下のタイミングで再計算します。
+              PEI は、以下のタイミングで再計算します。
               再計算は SciBase 側で自動的に実施し、読者が手動で更新する必要はありません。
             </p>
             <ul className="space-y-2.5 pl-1">
@@ -559,8 +561,8 @@ export default function EvidenceScoringPage() {
               ))}
             </ul>
             <p>
-              各成分ページの論文蓄積スコアバッジには、最終計算日（lastCalculatedAt）と計算式バージョン（formula: v2.2）が
-              データとして保持されています。読者にとって「いつの時点の論文蓄積スコアか」が明確になる設計です。
+              各成分ページの PEI バッジには、最終計算日（lastCalculatedAt）と計算式バージョン（formula: v2.2）が
+              データとして保持されています。読者にとって「いつの時点の PEI か」が明確になる設計です。
             </p>
           </div>
         </section>

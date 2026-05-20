@@ -92,7 +92,7 @@ const rankDesc: Record<EvidenceRank, string> = {
   C: 'ヒトデータ不十分',
 }
 
-/* SciBase 論文蓄積スコア（v2.2）の色分け（EV-β：rank との役割分担を物理的に表現）
+/* SciBase 論文エビデンス指数 PEI（v2.2）の色分け（EV-β：rank との役割分担を物理的に表現）
    7.0+ green / 5.0-6.9 blue / 3.0-4.9 gray / 0.0-2.9 muted gray */
 function paperEvidenceColor(overall: number): {
   bg: string; border: string; text: string; bar: string;
@@ -458,7 +458,7 @@ export default async function IngredientPage({ params }: Props) {
             <span className="text-foreground">{ing.nameJa}</span>
           </nav>
 
-          {/* Rank badge + usage + concerns + 論文蓄積スコアバッジ（Compact） */}
+          {/* Rank badge + usage + concerns + PEI（論文エビデンス指数）バッジ（Compact） */}
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className={`inline-flex items-center gap-1.5 ${heroText[ing.evidenceRank]}
               bg-white/70 border border-current/20 rounded-lg px-3 py-1.5 text-[13px] font-semibold`}>
@@ -470,12 +470,12 @@ export default async function IngredientPage({ params }: Props) {
               return (
                 <Link
                   href="/about/evidence-scoring"
-                  aria-label={`論文蓄積スコア ${ing.evidenceScore.overall.toFixed(1)} / 10（評価ランクとは別軸）`}
+                  aria-label={`PEI（論文エビデンス指数）${ing.evidenceScore.overall.toFixed(1)} / 10（評価ランクとは別軸）`}
                   className={`paper-evidence-badge inline-flex items-center gap-1
                     ${c.bg} ${c.border} ${c.text} border rounded-lg
                     px-2.5 py-1 text-[11px] font-medium hover:opacity-80 transition-opacity`}
                 >
-                  <span className="opacity-70">論文蓄積</span>
+                  <span className="font-bold tracking-wider">PEI</span>
                   <span className="tabular-nums font-semibold">
                     {ing.evidenceScore.overall.toFixed(1)}
                   </span>
@@ -590,7 +590,7 @@ export default async function IngredientPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── SciBase 論文蓄積スコア（v2.2）Full カード — hero 下・rank と別軸 ───── */}
+      {/* ── SciBase 論文エビデンス指数 PEI（v2.2）Full カード — hero 下・rank と別軸 ───── */}
       {ing.evidenceScore && (() => {
         const es = ing.evidenceScore
         const c = paperEvidenceColor(es.overall)
@@ -606,7 +606,7 @@ export default async function IngredientPage({ params }: Props) {
               <div className={`bg-card ${c.border} border-2 rounded-2xl overflow-hidden`}>
                 <div className="px-5 py-3 border-b border-border bg-secondary/30 flex items-baseline justify-between gap-3">
                   <p className="text-[12px] font-semibold tracking-wide text-foreground">
-                    SciBase 論文蓄積スコア（v2.2）
+                    SciBase 論文エビデンス指数 <span className="font-bold tracking-wider">PEI</span>（v2.2）
                   </p>
                   <p className="text-[11px] text-muted-foreground tabular-nums">
                     信頼度 {Math.round(es.confidence * 100)}%
@@ -648,7 +648,7 @@ export default async function IngredientPage({ params }: Props) {
                   </p>
 
                   <p className="text-[12px] text-foreground leading-relaxed pt-3 border-t border-border">
-                    <span className="font-semibold">評価 {ing.evidenceRank} は実用判断、論文蓄積スコアは論文の量と質の客観指標。</span>
+                    <span className="font-semibold">評価 {ing.evidenceRank} は実用判断、PEI は論文の量と質の客観指標。</span>
                     <span className="text-muted-foreground">両者は別軸として読みます。</span>
                   </p>
 
@@ -656,7 +656,7 @@ export default async function IngredientPage({ params }: Props) {
                     href="/about/evidence-scoring"
                     className="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline"
                   >
-                    → 論文蓄積スコアの計算方法を見る
+                    → PEI（論文エビデンス指数）の計算方法を見る
                   </Link>
                 </div>
               </div>
