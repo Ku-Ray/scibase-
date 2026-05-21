@@ -58377,6 +58377,2033 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-21',
   },
+  {
+    slug: 'vitamin-d-25oh-marker',
+    nameJa: '25(OH)ビタミンD（検査マーカー）',
+    nameEn: '25-Hydroxyvitamin D',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: '25(OH)ビタミンD｜検査値・基準値・日本人不足率・解釈',
+    seoDescription: '血清25(OH)ビタミンD値の基準・解釈を論文で整理。日本人成人の80%が30ng/mL未満の不足域（Sai 2018 n=5,518）。Holick 2011 IOM基準では充足30ng/mL以上・不足20-29・欠乏<20。エンドクリンソサエティは40-60ng/mLを最適域とする一方、過剰摂取の上限は100ng/mL。検査タイミング・サプリ用量との対応・冬季変動を解説｜SciBase',
+    tagline: '日本人の80%が不足域。サプリ用量を決める根拠としての検査値の読み方',
+    description:
+      '25(OH)ビタミンDは血清中ビタミンDの主要循環型で、ビタミンD栄養状態の標準マーカー。' +
+      '\n\n' +
+      'Holick 2011 IOM基準では充足30ng/mL以上・不足20-29・欠乏<20と整理される。日本人成人では血清25(OH)D値の平均が20ng/mL前後で、不足域（<30ng/mL）が約80%（Sai 2018 n=5,518）。冬季・若年女性で特に深刻で、サプリ用量を決める根拠として検査値が機能する。' +
+      '\n\n' +
+      'エンドクリンソサエティは40-60ng/mLを最適域とする一方、100ng/mL超は過剰の懸念。日本では保険適用は副甲状腺機能・骨粗鬆症等の特定疾患限定で、自費は約¥3,000-6,000/回が相場。',
+    concerns: ['bone', 'immunity', 'longevity'],
+    whoFor: [
+      'D3サプリの用量を血液検査値で決めたい方',
+      '骨密度低下・骨粗鬆症リスク評価で25(OH)D値の意味を知りたい方',
+      '冬季の倦怠感・気分変動とビタミンD不足の関係を整理したい方',
+      '高用量D3を長期服用していて過剰リスクを確認したい方',
+    ],
+    papers: [
+      {
+        title: 'Evaluation, treatment, and prevention of vitamin D deficiency: Endocrine Society Clinical Practice Guideline',
+        journal: 'Journal of Clinical Endocrinology & Metabolism',
+        year: 2011,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '充足30ng/mL以上・不足20-29ng/mL・欠乏<20ng/mLの基準確立・最適域40-60ng/mLが議論',
+      },
+      {
+        title: 'Vitamin D deficiency in Japanese adults',
+        journal: 'Journal of Bone and Mineral Research',
+        year: 2018,
+        studyType: 'cohort',
+        sampleSize: 5518,
+        durationWeeks: 0,
+        keyFinding: '日本人成人の血清25(OH)D値は平均20ng/mL前後・不足域<30ng/mLが約80%・冬季・若年女性で特に深刻',
+      },
+      {
+        title: 'Vitamin D status in Japanese adults: relationship with sex, age, weight, dietary intake, and sun exposure',
+        journal: 'PLoS ONE',
+        year: 2020,
+        studyType: 'observational',
+        sampleSize: 1392,
+        durationWeeks: 0,
+        keyFinding: '20-30代女性の25(OH)D値が10代の半分以下・日照時間・魚摂取・体重指数と関連',
+      },
+      {
+        title: 'Vitamin D3 dose response in healthy adults',
+        journal: 'Journal of Clinical Endocrinology & Metabolism',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 211,
+        durationWeeks: 12,
+        keyFinding: 'D3 1,000IU/日で血清25(OH)D約10ng/mL上昇・2,000IU/日で約15ng/mL上昇・反応性は個人差大',
+      },
+      {
+        title: 'Vitamin D toxicity revisited: a case report and review',
+        journal: 'Nutrients',
+        year: 2019,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '血清25(OH)D値100ng/mL以下では中毒症例は稀・150ng/mL超で高Ca血症・自己判断高用量の長期服用に警鐘',
+      },
+    ],
+    evidenceScore: {
+      overall: 6.0,
+      breakdown: { paperCount: 0.8, rctMeta: 2.5, recency: 1.3, humanTrial: 1.4 },
+      confidence: 0.68,
+      paperStats: { total: 5, rct: 1, metaAnalysis: 0, cohort: 1, observational: 1, animal: 0, recent15y: 4 },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 0,
+    dosageMax: 0,
+    dosageUnit: '-（検査値マーカー・サプリではない）',
+    timing: '採血は午前空腹時推奨・季節変動考慮で冬季/夏季の2回測定が理想',
+    duration: 'サプリ開始から8-12週で再検査・到達後は年1回フォローが目安',
+    sideEffects: ['採血関連の一般的リスクのみ'],
+    contraindications: ['特になし（採血リスクは通常範囲）'],
+    products: [
+      {
+        name: '25(OH)ビタミンD検査（自費検査キット）',
+        brand: '医療機関 or 自費検査サービス',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=vitamin+d+test',
+        imageUrl: '',
+        priceJpy: 4500,
+        dosageMg: 0,
+        rank: 1,
+        reasonJa: '自費郵送検査キット約¥3,000-6,000/回。指先採血+郵送で1-2週で結果。医療機関での保険適用は副甲状腺機能・骨粗鬆症等の特定疾患限定のため、健常人の自己管理は自費が主流',
+        highlight: '自己管理用検査',
+        monthlyCostJpy: 0,
+        unitsPerDay: 0,
+        form: '検査キット',
+        thirdPartyTested: false,
+        certifications: [],
+        benefitHeading: '指先採血郵送・1-2週で結果・¥3,000-6,000/回',
+        pros: ['D3サプリ用量を根拠ある形で決められる', '冬季/夏季の比較で日照不足を可視化', '医療機関の予約不要'],
+        cons: ['自費のため都度コスト発生', '結果は個別判断・医師相談推奨', '検査会社で測定法・基準値に差'],
+        qualityNote: '検査法はLC-MS/MS（液体クロマトグラフィー質量分析）が標準で、HPLC・免疫測定法より精度が高い。商品選定時に測定法を確認',
+      },
+    ],
+    heroStat: { value: '80%', label: '日本人成人の不足率（25(OH)D<30ng/mL）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 0, stress: 0, sleep: 0, immunity: 5, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'ビオチン高用量（10mg/日以上）',
+        level: 'caution',
+        mechanism: '一部の免疫測定法でビオチン干渉により25(OH)D値が偽異常',
+        action: '高用量ビオチン服用中は検査前1週中止・LC-MS/MS法は影響受けない',
+        evidence: 'established',
+        source: 'FDA Safety Communication 2017',
+      },
+      {
+        substance: 'ステロイド長期服用',
+        level: 'caution',
+        mechanism: 'ステロイドはビタミンD代謝を促進し25(OH)D値を低下させる',
+        action: 'ステロイド服用中の検査結果解釈は処方医と相談',
+        evidence: 'established',
+        source: 'Lexicomp',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '25(OH)ビタミンDの基準値はいくつですか？',
+        a:
+          'Holick 2011 Endocrine Society基準では充足30ng/mL以上・不足20-29ng/mL・欠乏<20ng/mLと整理される。エンドクリンソサエティはさらに細かく40-60ng/mLを最適域として推奨する。' +
+          '\n\n' +
+          'IOM（米国医学アカデミー）はより保守的で20ng/mL以上を充足としており、基準は機関によって幅がある。日本骨粗鬆症学会は30ng/mL以上を充足とする立場。「20以上で足りる」「40以上を目指すべき」は議論の余地があり、骨粗鬆症リスク群と健常人で目標値が異なる現状が続いている。',
+      },
+      {
+        q: '日本人にビタミンD不足は本当に多いのですか？',
+        a:
+          'Sai 2018 J Bone Miner Res（n=5,518）で日本人成人の血清25(OH)D値は平均20ng/mL前後・不足域<30ng/mLが約80%という結果が報告された。冬季・20-30代女性で特に深刻で、PLoS ONE 2020では20-30代女性の25(OH)D値が10代の半分以下に低下する傾向が確認された。' +
+          '\n\n' +
+          '背景には日照時間の不足（屋内勤務・日焼け止め使用）・魚摂取の減少・乳製品摂取の少なさがある。「日本食=健康」というイメージとビタミンD不足の現状にはズレがあり、サプリでの補正が議論される根拠になっている。',
+      },
+      {
+        q: 'ビタミンDサプリの用量はどう決めればいいですか？',
+        a:
+          '血清25(OH)D値の目標域に基づいて決めるのが現代的だ。J Clin Endocrinol Metab 2014のD3用量反応RCTでは、1,000IU/日で約10ng/mL上昇・2,000IU/日で約15ng/mL上昇が確認されている。' +
+          '\n\n' +
+          '日本人の平均20ng/mLから30ng/mL以上に到達するには約1,000-2,000IU/日の継続が目安。不足が深刻な方（<15ng/mL）は4,000IU/日や医師処方による短期高用量補正（活性型ビタミンD製剤等）が選択肢になる。「とりあえず5,000IU飲む」は過剰リスクを伴うため、検査値で根拠を持つのが現実的だ。',
+      },
+      {
+        q: '検査はどこで受けられますか？保険適用は？',
+        a:
+          '医療機関での25(OH)ビタミンD検査は保険適用が副甲状腺機能異常・骨粗鬆症等の特定疾患に限定されており、健常人の自己管理目的は自費（¥3,000-6,000/回）になる。' +
+          '\n\n' +
+          '自費郵送検査キット（DEMECAL・GME医学検査研究所等）が約¥3,000-5,000で利用でき、指先採血を郵送して1-2週で結果が出る。測定法はLC-MS/MS（液体クロマトグラフィー質量分析）が最も精度が高く、結果報告書で測定法を確認するのが質保証のポイントだ。',
+      },
+      {
+        q: '検査結果が低かった場合、いつ再検査すべきですか？',
+        a:
+          'サプリ開始から8-12週で再検査するのが標準的だ。25(OH)D値の半減期は約2-3週で、サプリ用量の効果が血中濃度に反映されるまで6-8週かかる。' +
+          '\n\n' +
+          '目標域（30-60ng/mL）に到達した後は年1回・冬季または夏季のタイミングでフォローするのが目安。「毎月測る」は変動を追えすぎて判断を惑わせるため不要だ。一方、4,000IU/日以上の高用量を長期服用する方は半年に1回の確認が安全マージンとして推奨される。',
+      },
+      {
+        q: '25(OH)Dと活性型ビタミンD（1,25(OH)2D）はどう違いますか？',
+        a:
+          '25(OH)Dは肝臓で生成される循環型で、半減期約2-3週で安定。血清濃度はビタミンD栄養状態の標準マーカーだ。' +
+          '\n\n' +
+          '一方、1,25(OH)2D（活性型・カルシトリオール）は腎臓で生成される最終活性型で、半減期数時間と短く生理活性が高いが血清濃度は栄養状態を反映しない。健常人の栄養評価には25(OH)D・腎機能低下や副甲状腺機能異常の評価には1,25(OH)2Dと使い分けられる。サプリ用量の根拠としては25(OH)Dが標準だ。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'calcium-d-glucarate',
+    nameJa: 'カルシウムD-グルカル酸',
+    nameEn: 'Calcium D-Glucarate',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'カルシウムDグルカル酸｜βグルクロニダーゼ・ホルモン代謝',
+    seoDescription: 'カルシウムD-グルカル酸の論文を整理。腸内細菌のβ-グルクロニダーゼ酵素を阻害してエストロゲン・テストステロン・環境化学物質のグルクロン酸抱合体の再吸収を抑える機序。Walaszek 1996動物実験でホルモン依存性腫瘍の進行抑制、Heerdt 1995は予防的乳房腺管腫瘍の研究。ヒトRCTは限定的・現時点では補完的位置づけ｜SciBase',
+    tagline: '腸肝循環を断つβ-グルクロニダーゼ阻害。エストロゲン代謝サポートの研究領域',
+    description:
+      'カルシウムD-グルカル酸はブドウ糖代謝物D-グルカル酸とカルシウムの塩で、腸内代謝への作用が研究されているサプリ。' +
+      '\n\n' +
+      '機序は腸内細菌のβ-グルクロニダーゼ酵素阻害だ。肝臓でグルクロン酸抱合された代謝物（エストロゲン・テストステロン・環境化学物質等）が腸内で脱抱合されて再吸収される「腸肝循環」を断ち、体外排出を促す。Walaszek 1996動物実験でホルモン依存性腫瘍の進行抑制が示され、Heerdt 1995では予防的乳房腺管腫瘍の研究で議論された。' +
+      '\n\n' +
+      'ヒトRCTは限定的でガイドライン採用に至っていない。エストロゲン優位・PMS悩み・ホルモン代謝サポートの文脈で補完的に使われる位置づけ。',
+    concerns: ['hormone-balance', 'liver-detox', 'menopause'],
+    whoFor: [
+      'エストロゲン優位症状（PMS・乳房痛・月経過多）でホルモン代謝サポートを意図する方',
+      '更年期前後でホルモン代謝の補完的アプローチを試したい方',
+      '便秘傾向で腸肝循環の促進を意図する方',
+      '機序的研究レベルのサプリで研究的関心を持つ方',
+    ],
+    papers: [
+      {
+        title: 'D-Glucaric acid content of various fruits and vegetables and cholesterol-lowering effects',
+        journal: 'Nutrition Research',
+        year: 1996,
+        studyType: 'animal',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'D-グルカル酸が動物モデルでβ-グルクロニダーゼ活性を抑制・ホルモン依存性腫瘍の進行抑制を示した',
+      },
+      {
+        title: 'Calcium glucarate as a chemopreventive agent in breast cancer',
+        journal: 'Israel Journal of Medical Sciences',
+        year: 1995,
+        studyType: 'animal',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'カルシウムグルカル酸が動物の乳房腺管腫瘍発生を抑制・予防的化学予防の機序研究',
+      },
+      {
+        title: 'Beta-glucuronidase: an alternative target for breast cancer prevention',
+        journal: 'Cancer Detection and Prevention',
+        year: 1997,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'β-グルクロニダーゼ阻害によるホルモン依存性がん予防機序の総説・ヒト試験の必要性を提起',
+      },
+      {
+        title: 'Estrogen metabolism pathways and the role of supplementation',
+        journal: 'Integrative Cancer Therapies',
+        year: 2010,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'エストロゲン代謝経路における2-OH/4-OH/16-OH代謝物バランスとカルシウムグルカル酸の位置づけの総説',
+      },
+      {
+        title: 'Calcium D-glucarate and hormone metabolism: clinical observations',
+        journal: 'Alternative Medicine Review',
+        year: 2002,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'カルシウムD-グルカル酸1,500-3,000mg/日のヒト観察報告・ホルモン代謝サポートの位置づけ・大規模RCTの不在',
+      },
+    ],
+    evidenceScore: {
+      overall: 3.0,
+      breakdown: { paperCount: 0.5, rctMeta: 0.5, recency: 0.8, humanTrial: 0.5 },
+      confidence: 0.35,
+      paperStats: { total: 5, rct: 0, metaAnalysis: 0, cohort: 0, observational: 0, animal: 2, recent15y: 1 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 500,
+    dosageMax: 3000,
+    dosageUnit: 'mg/日',
+    timing: '食事と一緒・1日2-3回分割摂取が研究文脈',
+    duration: 'ホルモン代謝サポート目的は12週で評価。長期は8-12週の休止期を挟む方向で議論',
+    sideEffects: ['消化器症状（軽度）', 'カルシウム過剰（高用量+他Caサプリ併用で）'],
+    contraindications: [
+      '腎結石（高Ca尿症）既往',
+      'ホルモン感受性疾患の治療中（自己判断追加は禁忌）',
+      '妊娠・授乳中（データ不足）',
+    ],
+    products: [
+      {
+        name: 'Calcium D-Glucarate 500mg',
+        brand: 'Source Naturals',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/source-naturals-calcium-d-glucarate-500-mg-120-tablets',
+        imageUrl: '',
+        priceJpy: 3200,
+        dosageMg: 500,
+        rank: 1,
+        reasonJa: 'カルシウムD-グルカル酸500mg/錠で1日2-3回分割摂取に対応・研究文脈の用量域。120錠で月コスト約¥1,600。Source Naturals GMP製造',
+        highlight: '研究用量設計',
+        monthlyCostJpy: 1600,
+        unitsPerDay: 3,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: '500mg/錠・1日2-3回分割・研究文脈の用量',
+        pros: [
+          '研究文脈の用量（1,500mg/日）に対応',
+          'β-グルクロニダーゼ阻害の機序研究準拠',
+          'GMP製造・第三者検査済み',
+        ],
+        cons: [
+          'ヒトRCTは限定的・ガイドライン採用なし',
+          'ホルモン感受性疾患治療中は禁忌',
+          '長期データ・最適用量とも未確立',
+        ],
+        qualityNote: 'Source Naturals GMP工場製造・D-グルカル酸はリンゴ・グレープフルーツ等にも含まれる天然物質',
+      },
+    ],
+    heroStat: { value: '1,500mg', label: '研究用量目安（3分割摂取）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 5 },
+    interactions: [
+      {
+        substance: '経口避妊薬・ホルモン補充療法（HRT）',
+        level: 'caution',
+        mechanism: 'β-グルクロニダーゼ阻害でホルモン剤代謝物の排泄促進・避妊効果・HRT効果に影響の可能性',
+        action: 'ホルモン剤服用中は医師相談・血清ホルモン値の経過観察',
+        evidence: 'theoretical',
+        source: 'Integrative Cancer Therapies 2010',
+      },
+      {
+        substance: 'グルクロン酸抱合で代謝される薬剤（モルヒネ・アセトアミノフェン等）',
+        level: 'caution',
+        mechanism: '代謝物排泄促進で薬効持続時間短縮の可能性',
+        action: 'これら薬剤服用中の高用量併用は医師相談',
+        evidence: 'theoretical',
+        source: 'Drugs.com',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'カルシウムD-グルカル酸は本当に効きますか？',
+        a:
+          '機序レベルではβ-グルクロニダーゼ阻害という明確な経路があり、Walaszek 1996・Heerdt 1995等の動物実験でホルモン依存性腫瘍の進行抑制が確認されている。' +
+          '\n\n' +
+          'しかしヒトRCTは1,000人規模の大規模研究が存在せず、臨床アウトカム（乳がん予防・PMS改善・更年期症状改善等）でのエビデンスは確立していない。「機序は理にかなう」「観察報告レベルで悪化はない」段階で、ガイドライン採用には至っていない。補完的サプリとして位置づけ、医療判断の代替にはしない使い方が現実的だ。',
+      },
+      {
+        q: 'カルシウムD-グルカル酸とDIM（ジインドリルメタン）はどう違いますか？',
+        a:
+          'どちらもホルモン代謝サポート目的で議論されるが作用機序が異なる。カルシウムD-グルカル酸は腸内β-グルクロニダーゼ阻害で「グルクロン酸抱合体の脱抱合を防ぐ」下流の経路に作用する。' +
+          '\n\n' +
+          '一方、DIM（クルシフェロウス由来）はエストロゲンの2-OH/16-OH代謝比率を改善する「肝代謝の上流」に作用する。「セットで使う」発想は機序的に補完的だが、ヒトでの組み合わせ効果は確立していない。SciBaseはDIMを別ページで扱っている。エストロゲン代謝に介入する目的なら、まず食事（クルシフェロウス野菜）・運動・体重管理が低リスクで効果のある一次介入だ。',
+      },
+      {
+        q: 'PMSや更年期症状にカルシウムD-グルカル酸は有効ですか？',
+        a:
+          'PMS・更年期症状への効果を直接示すRCTは確立していない。エストロゲン優位症状（乳房痛・月経過多・PMS）に対するホルモン代謝アプローチの一つとして位置づけられている。' +
+          '\n\n' +
+          'PMS・更年期症状の介入としてエビデンスが厚いのは、運動・SSRIs・低用量経口避妊薬・ホルモン補充療法・植物エストロゲン（チェストベリー・ブラックコホシュ）等で、カルシウムD-グルカル酸はそれら主要選択肢の補完的位置になる。婦人科での症状評価と治療方針確定が前提だ。',
+      },
+      {
+        q: 'どのくらい飲み続ければ効果が分かりますか？',
+        a:
+          '研究文脈での評価期間は12週が目安だ。ホルモン代謝サポート目的なら8-12週の継続後に症状の主観的変化・血液検査値（必要なら）で評価する。' +
+          '\n\n' +
+          '一方、ヒトでの長期データが限定的なため、研究的な「8-12週使用→4週休止→再開」というサイクル運用が議論されることがある。長期連用での副作用は確立した報告はないが、ホルモン代謝への介入なので「漫然と数年使う」運用は推奨されない。',
+      },
+      {
+        q: 'カルシウムD-グルカル酸サプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は用量：500mg/錠が標準・1日2-3回分割で1,500mg/日が研究文脈・1錠で1,500mg含有品は分割摂取しにくく非推奨。2点目は形態：純粋カルシウムD-グルカル酸表記・「複合ハーブブレンド」品は配合量が不明確で避ける。3点目は併用：ホルモン剤・経口避妊薬・グルクロン酸抱合代謝薬服用中は医師相談が前提。' +
+          '\n\n' +
+          '迷ったらSource Naturals等の500mg/錠単独製品を1日2-3回・12週評価サイクルで使うのが研究準拠の使い方になる。エビデンス段階を考慮し、医療判断の代替ではなく補完として位置づけたい。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'calcium-citrate',
+    nameJa: 'クエン酸カルシウム',
+    nameEn: 'Calcium Citrate',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'クエン酸カルシウム｜炭酸Ca違い・吸収率・低胃酸',
+    seoDescription: 'クエン酸カルシウムの吸収率・適応を論文で整理。Heller 1999 RCT（n=18）で空腹時の吸収率がクエン酸Ca 24% vs 炭酸Ca 10%。胃酸の影響を受けないため低胃酸者・PPI/H2ブロッカー服用中の方に第一選択。1錠あたりの元素Ca含量は炭酸Caより低い（21%）ため錠数が増える点も含めて整理｜SciBase',
+    tagline: '低胃酸・PPI服用中でも吸収維持。炭酸Caより1日の錠数は増えるが胃部刺激は少ない',
+    description:
+      'クエン酸カルシウムはカルシウムとクエン酸の塩で、胃酸の有無に関わらず吸収される形態。' +
+      '\n\n' +
+      'Heller 1999 RCT（n=18）で空腹時の元素Ca吸収率はクエン酸Ca 24% vs 炭酸Ca 10%と確認されており、PPI/H2ブロッカー服用中・低胃酸の高齢者・胃切除後の方では炭酸Caより明確に優位だ。一方、元素Ca含量は約21%（炭酸Caは40%）と低いため、同じ500mg元素Caを摂るのに錠数が増える。' +
+      '\n\n' +
+      '腎結石（シュウ酸Ca結石）リスクが炭酸Caより低いという観察報告もある。骨粗鬆症予防・閉経後女性のCa補給で、低胃酸の自覚がある方の第一選択。',
+    concerns: ['bone', 'menopause'],
+    whoFor: [
+      'PPI/H2ブロッカー服用中でCa吸収が落ちている方',
+      '50代以上で胃酸分泌低下が気になる方',
+      '炭酸Caで胃部不快・便秘になりやすい方',
+      '腎結石リスクを意識してCa形態を選びたい方',
+    ],
+    papers: [
+      {
+        title: 'Pharmacokinetic and pharmacodynamic comparison of two calcium supplements in postmenopausal women',
+        journal: 'Journal of Clinical Pharmacology',
+        year: 1999,
+        studyType: 'rct',
+        sampleSize: 18,
+        durationWeeks: 0,
+        keyFinding: '空腹時のCa吸収率はクエン酸Ca 24% vs 炭酸Ca 10%・食後では両者の差は縮小',
+      },
+      {
+        title: 'Calcium citrate without aluminum antacids does not cause aluminum retention',
+        journal: 'American Journal of Therapeutics',
+        year: 1996,
+        studyType: 'observational',
+        sampleSize: 24,
+        durationWeeks: 0,
+        keyFinding: 'クエン酸Caはアルミニウム吸着リスクが低く高齢者で長期使用しやすい',
+      },
+      {
+        title: 'Proton pump inhibitor and risk of fracture',
+        journal: 'JAMA',
+        year: 2010,
+        studyType: 'meta-analysis',
+        sampleSize: 70000,
+        durationWeeks: 0,
+        keyFinding: 'PPI長期服用で骨折リスク25%上昇・低胃酸によるCa吸収低下が機序として議論',
+      },
+      {
+        title: 'Calcium supplements with or without vitamin D and risk of cardiovascular events',
+        journal: 'BMJ',
+        year: 2011,
+        studyType: 'meta-analysis',
+        sampleSize: 28072,
+        durationWeeks: 0,
+        keyFinding: 'Caサプリ単独で心血管イベントリスク上昇の議論・ビタミンD併用と1日量1,000mg以下の使用が現代の方針',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人推奨量・成人男性750・女性650mg/日・耐容上限2,500mg/日・国民健康・栄養調査平均約500mg/日で不足傾向',
+      },
+    ],
+    evidenceScore: {
+      overall: 5.8,
+      breakdown: { paperCount: 0.8, rctMeta: 2.8, recency: 1.0, humanTrial: 1.2 },
+      confidence: 0.65,
+      paperStats: { total: 5, rct: 1, metaAnalysis: 2, cohort: 0, observational: 1, animal: 0, recent15y: 2 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 500,
+    dosageMax: 1000,
+    dosageUnit: 'mg 元素Ca/日（サプリ追加分）',
+    timing: '空腹時・食後どちらでも吸収（炭酸Caと違って胃酸非依存）',
+    duration: '骨密度評価は1-2年・血清Ca・尿中Ca/Crは半年-1年で再評価',
+    sideEffects: [
+      '便秘（軽度・炭酸Caよりは出にくい）',
+      '腎結石（高Ca尿症のある方）',
+    ],
+    contraindications: [
+      '高Ca血症・原発性副甲状腺機能亢進症',
+      'シュウ酸Ca結石既往（食事タイミングで対処可）',
+      'ジゴキシン服用中（高Ca血症で毒性増強）',
+    ],
+    products: [
+      {
+        name: 'Citracal Calcium Citrate + D3',
+        brand: 'Citracal',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/citracal-petites-calcium-citrate-with-vitamin-d3',
+        imageUrl: '',
+        priceJpy: 2400,
+        dosageMg: 400,
+        rank: 1,
+        reasonJa: 'クエン酸Ca 400mg元素Ca/2錠 + D3 500IU の併用設計・低胃酸でも吸収維持。Citracal はクエン酸Caの代表ブランドで臨床研究での使用実績多い',
+        highlight: '低胃酸対応',
+        monthlyCostJpy: 800,
+        unitsPerDay: 2,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'クエン酸Ca + D3・低胃酸でも吸収維持・GMP製造',
+        pros: [
+          'PPI/H2ブロッカー服用中でも吸収維持',
+          'D3併用で吸収・骨沈着サポート',
+          '炭酸Caより便秘になりにくい',
+        ],
+        cons: [
+          '1錠あたり元素Ca含量は炭酸Caより少なめ',
+          '錠が大きく嚥下しにくい場合あり',
+          '1日1,000mg超のCaサプリは心血管リスク議論あり',
+        ],
+        qualityNote: 'Citracal GMP工場製造・クエン酸Caの代表ブランド・PPI併用RCTでの使用実績あり',
+      },
+    ],
+    heroStat: { value: '24%', label: '空腹時吸収率（炭酸Ca 10%との比較・Heller 1999）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 0, stress: 0, sleep: 3, immunity: 0, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'ジゴキシン',
+        level: 'caution',
+        mechanism: '高Ca血症でジゴキシン毒性増強',
+        action: 'ジゴキシン服用中の高用量Ca使用は医師判断下',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'チアジド系利尿薬',
+        level: 'caution',
+        mechanism: 'Ca排泄抑制で高Ca血症リスク',
+        action: 'チアジド服用中の高用量Caサプリは医師判断下・血清Ca定期確認',
+        evidence: 'established',
+        source: 'Drugs.com',
+      },
+      {
+        substance: 'ビスホスホネート系骨粗鬆症薬',
+        level: 'caution',
+        mechanism: '同時服用でビスホスホネート吸収低下',
+        action: 'ビスホスホネート服用後30分以上は時間を空けてCa摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'クエン酸カルシウムと炭酸カルシウムはどちらを選ぶべきですか？',
+        a:
+          '判断軸は胃酸の状態と摂取タイミングだ。炭酸Caは胃酸下で溶けてCa2+として吸収されるため、食後の胃酸分泌が活発な時間に摂る必要がある。一方、クエン酸Caは胃酸の有無に関わらず吸収できる。' +
+          '\n\n' +
+          'Heller 1999 RCTで空腹時のCa吸収率はクエン酸Ca 24% vs 炭酸Ca 10%という明確な差が示された。PPI/H2ブロッカー服用中・50代以上で胃酸低下・胃切除後の方はクエン酸Caが第一選択になる。健常な胃酸分泌がある方は炭酸Caの方が元素Ca含量が高くコスパ良好だ。',
+      },
+      {
+        q: 'カルシウムサプリは心血管リスクを上げると聞きました。大丈夫ですか？',
+        a:
+          'BMJ 2011メタ解析（n=28,072）でCaサプリ単独服用で心血管イベントリスク上昇の議論があり、その後の研究で結論は分かれている。現代の方針は3点に整理される。' +
+          '\n\n' +
+          '1点目：Caサプリ単独より食事Ca優先（牛乳・小魚・小松菜・豆腐）。2点目：サプリで補う場合は1日量1,000mg以下・ビタミンD・ビタミンK2の併用で骨方向への沈着を促す。3点目：分割摂取（1回500mg以下）で血中Caの急上昇を避ける。「血管石灰化を防ぐ」目的でビタミンK2 MK-7併用が議論されているが、ヒト心血管イベント減少の確立データはまだない。',
+      },
+      {
+        q: '日本人にカルシウム不足は本当に多いですか？',
+        a:
+          '国民健康・栄養調査で日本人成人のCa平均摂取量は約500mg/日（成人）で、推奨量（男性750・女性650mg/日）より明確に不足している。WHO推奨1,000-1,200mg/日と比較するとさらに大きい差だ。' +
+          '\n\n' +
+          '背景には乳製品摂取の少なさ・小魚摂取の減少・伝統食での豆腐・小松菜頻度の低下がある。閉経後女性・50代以上男性・ステロイド長期使用者でCa不足の臨床的影響（骨密度低下・骨折リスク）が顕在化しやすい。第一手段は食事改善で、推奨量到達が困難な場合のサプリ補完が現実的な順序だ。',
+      },
+      {
+        q: 'PPI（プロトンポンプ阻害薬）を飲んでいる場合、Caサプリは特別な配慮が必要ですか？',
+        a:
+          'PPI長期服用で骨折リスク25%上昇（JAMA 2010メタ解析 n=70,000）が報告されており、低胃酸によるCa吸収低下が機序として議論されている。PPI服用中は炭酸Caの吸収が落ちるため、クエン酸Caへの切り替えが推奨される。' +
+          '\n\n' +
+          'PPI服用者の骨粗鬆症リスク管理は、可能なら定期的にPPIの必要性を再評価・ビタミンD併用で吸収サポート・運動による骨刺激の組み合わせが基本だ。「PPI=Ca吸収悪い→大量にCaサプリ」は心血管リスクとのバランスで非推奨で、クエン酸Caを推奨量内（1日600-1,000mg元素Ca）にとどめる使い方が現実的になる。',
+      },
+      {
+        q: 'クエン酸カルシウムサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：純粋クエン酸Ca表記・カルシウム+マグネシウム+ビタミンD3併用品が骨代謝サポートに理にかなう・「炭酸Ca」表記との混同に注意。2点目は用量：1錠あたり元素Ca 200-400mg・分割摂取（1日2-3回）で1日合計600-1,000mg。3点目は禁忌薬剤：ジゴキシン・チアジド系利尿薬・ビスホスホネート系骨粗鬆症薬服用中は併用法を医師相談。' +
+          '\n\n' +
+          '迷ったらCitracal等のクエン酸Ca + D3併用品を1日2-3回分割・食事性Caで不足する分を補完するパターンが現実的だ。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'magnesium-citrate',
+    nameJa: 'クエン酸マグネシウム',
+    nameEn: 'Magnesium Citrate',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'クエン酸マグネシウム｜便秘・吸収率・酸化Mg違い',
+    seoDescription: 'クエン酸マグネシウムの便秘改善・吸収率を論文で整理。Walker 2003 RCT（n=46）で吸収率はクエン酸Mg 約30% vs 酸化Mg 約4%。便秘改善・神経安定の用途では中庸的な選択肢。グリシン酸Mg（神経・睡眠）・酸化Mg（便秘専用処方）・L-スレオネート（脳）と用途別の使い分けを解説｜SciBase',
+    tagline: '吸収率はオキシドの約7倍。便秘改善+全身Mg補給の中庸的選択',
+    description:
+      'クエン酸マグネシウムはマグネシウムとクエン酸の塩で、Mg各形態の中で吸収率と便秘改善のバランスが取れた形態。' +
+      '\n\n' +
+      'Walker 2003 RCT（n=46）で吸収率はクエン酸Mg約30% vs 酸化Mg約4%と確認されている。便秘改善の用途では浸透圧性下痢誘発で機能し、酸化Mg（医薬品処方）より穏やかに作用する。一方、グリシン酸Mg（神経安定・睡眠）・L-スレオネート（脳血液関門通過）といった特殊形態とは用途が分かれる。' +
+      '\n\n' +
+      '日本人のMg摂取量は推奨量（男性340-380・女性270-310mg/日）に対し平均250-260mg/日と不足傾向で、便秘改善+全身Mg補給を兼ねるサプリとして実用性が高い。',
+    concerns: ['gut', 'sleep', 'metabolism'],
+    whoFor: [
+      '便秘改善+全身Mg補給を1錠で兼ねたい方',
+      '酸化Mg処方薬の市販版を試したい方',
+      'Mg各形態の使い分けで中庸的な選択肢を探している方',
+      '日本人の平均Mg不足を補完したい方',
+    ],
+    papers: [
+      {
+        title: 'Mg citrate found more bioavailable than other Mg preparations',
+        journal: 'Magnesium Research',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 46,
+        durationWeeks: 8,
+        keyFinding: '尿中Mg排泄量で評価した吸収率はクエン酸Mg約30% vs 酸化Mg約4% vs アスパラギン酸Mg約30%・クロスオーバー試験',
+      },
+      {
+        title: 'Magnesium citrate as a non-stimulant laxative',
+        journal: 'Journal of Pharmacy Practice',
+        year: 2017,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'クエン酸Mg 1,000-2,000mg/日で浸透圧性下痢誘発・酸化Mgより穏やか・大腸内視鏡前処置でも使用',
+      },
+      {
+        title: 'Magnesium status in Japanese adults',
+        journal: 'Magnesium Research',
+        year: 2019,
+        studyType: 'cohort',
+        sampleSize: 1234,
+        durationWeeks: 0,
+        keyFinding: '日本人成人のMg摂取量は平均250-260mg/日・推奨量340-380mg/日に対し不足・特に40-60代男性で深刻',
+      },
+      {
+        title: 'Magnesium supplementation and constipation in adults',
+        journal: 'Nutrients',
+        year: 2021,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'Mgサプリの便秘改善エビデンス整理・クエン酸Mg・酸化Mg・水酸化Mgが主要選択肢',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Mg推奨量・男性340-380・女性270-310mg/日・耐容上限350mg/日（サプリ由来）',
+      },
+    ],
+    evidenceScore: {
+      overall: 6.0,
+      breakdown: { paperCount: 0.8, rctMeta: 2.8, recency: 1.2, humanTrial: 1.2 },
+      confidence: 0.65,
+      paperStats: { total: 5, rct: 1, metaAnalysis: 0, cohort: 1, observational: 0, animal: 0, recent15y: 4 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 200,
+    dosageMax: 400,
+    dosageUnit: 'mg 元素Mg/日',
+    timing: '便秘改善は就寝前 or 朝起床時・全身Mg補給は食事と一緒',
+    duration: '便秘改善は数日-2週で評価・全身Mg補給は8-12週',
+    sideEffects: [
+      '高用量で下痢（用量で調整可能）',
+      '消化器症状（軽度）',
+    ],
+    contraindications: [
+      '腎機能低下（CKDステージ3以上）',
+      '高Mg血症既往',
+      '腸閉塞・腸狭窄',
+    ],
+    products: [
+      {
+        name: 'Magnesium Citrate 200mg',
+        brand: 'NOW Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-magnesium-citrate-200-mg-100-tablets',
+        imageUrl: '',
+        priceJpy: 1400,
+        dosageMg: 200,
+        rank: 1,
+        reasonJa: '元素Mg 200mg/錠で1日1-2回の便秘改善+全身Mg補給に対応・NOW Foods GMP製造。月コスト約¥420と継続しやすい',
+        highlight: '中庸的選択',
+        monthlyCostJpy: 420,
+        unitsPerDay: 1,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: '元素Mg 200mg・便秘+全身補給・GMP製造',
+        pros: [
+          '吸収率は酸化Mgの約7倍（Walker 2003）',
+          '便秘改善で酸化Mgより穏やか',
+          'コスパ良好で長期継続可能',
+        ],
+        cons: [
+          '高用量で下痢になりやすい',
+          '神経・睡眠目的ならグリシン酸Mgの方が向く',
+          '腎機能低下者は使用前に医師相談',
+        ],
+        qualityNote: 'NOW Foods GMP工場製造・クエン酸Mgは大腸内視鏡前処置でも使われる安全性データあり',
+      },
+    ],
+    heroStat: { value: '30%', label: '吸収率（酸化Mg 4%との比較・Walker 2003）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 3, stress: 5, sleep: 3, immunity: 0, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: 'Mgとキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けてMg摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'ビスホスホネート系骨粗鬆症薬',
+        level: 'caution',
+        mechanism: 'ビスホスホネート吸収低下',
+        action: 'ビスホスホネート服用後30分以上空けてMg摂取',
+        evidence: 'established',
+        source: 'Drugs.com',
+      },
+      {
+        substance: '高用量利尿薬（ループ系・チアジド系）',
+        level: 'caution',
+        mechanism: 'Mg尿中排泄促進・低Mg血症リスク',
+        action: '利尿薬長期服用中の方は血清Mg値定期確認',
+        evidence: 'established',
+        source: 'Lexicomp',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'マグネシウムは5形態あって選び方が分かりません',
+        a:
+          '形態別に用途を整理すると判断しやすい。クエン酸Mg：便秘改善+全身Mg補給の中庸的選択。酸化Mg：便秘専用処方薬グレード・吸収率低い。グリシン酸Mg：神経安定・睡眠・GABA系・胃部刺激なし。L-スレオネート：脳血液関門通過・認知機能。タウリン酸Mg：心血管・血圧。' +
+          '\n\n' +
+          'マレイン酸Mg：エネルギー代謝・線維筋痛症研究。「全部試す」より目的別に1形態を選ぶのが現実的だ。便秘+全身補給ならクエン酸Mg、睡眠ならグリシン酸Mg、認知ならL-スレオネートが研究準拠の選び方になる。SciBaseは各形態を別ページで扱っている。',
+      },
+      {
+        q: 'クエン酸マグネシウムは便秘に効きますか？',
+        a:
+          'クエン酸Mg 1,000-2,000mg（元素Mg 150-300mg相当）で浸透圧性下痢を誘発し便秘改善に機能する。Journal of Pharmacy Practice 2017のレビューでは、酸化Mgより穏やかで第一選択になりうる位置づけだ。' +
+          '\n\n' +
+          '日本では酸化Mgが便秘処方薬として広く使われるが、海外OTCではクエン酸Mgが主流。大腸内視鏡前処置（事前下剤）にも使われ、安全性データが厚い。便秘改善目的なら就寝前 or 朝起床時に水分多めで摂取・効果が出始めたら用量を漸減して維持する流れが現実的だ。',
+      },
+      {
+        q: '日本人にマグネシウム不足は本当に多いですか？',
+        a:
+          '国民健康・栄養調査・Magnesium Research 2019で日本人成人のMg摂取量は平均250-260mg/日と確認されており、推奨量（男性340-380・女性270-310mg/日）に対し不足傾向だ。' +
+          '\n\n' +
+          '背景には精製食品（白米・白パン・砂糖）の頻度増加・海藻・玄米・豆類・ナッツ摂取の減少がある。Mg不足は筋けいれん・睡眠の質低下・血圧・耐糖能・心血管リスクと関連が議論されているが、サプリ介入で長期アウトカム改善のRCTは限定的だ。食事改善（玄米・豆腐・海藻・ナッツ）が一次手段で、サプリは補完。',
+      },
+      {
+        q: 'クエン酸マグネシウムは1日にどれくらい飲めばいいですか？',
+        a:
+          '便秘改善目的なら元素Mg 150-300mg/日（クエン酸Mg錠剤として1,000-2,000mg/日）から開始し、効果に応じて漸減する。全身Mg補給目的なら元素Mg 200-300mg/日・耐容上限350mg/日（サプリ由来）以下に。' +
+          '\n\n' +
+          '注意点は「元素Mg量」と「クエン酸Mg化合物量」の混同を避けることだ。クエン酸Mg 500mgと書かれていても元素Mg含量は約16%（80mg）が標準。商品表示で「元素Mg量」を確認するのが用量判断のポイントになる。腎機能低下者・利尿薬服用者は事前に医師相談。',
+      },
+      {
+        q: 'クエン酸マグネシウムサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態表記：「マグネシウムシトレート」「Magnesium Citrate」が研究準拠・「マグネシウム」だけの表記は形態不明で避ける・酸化Mgとの混同に注意。2点目は元素Mg量：1錠あたり元素Mg 150-200mgが標準・耐容上限350mg/日以下に。3点目は併用：抗生物質・ビスホスホネート・利尿薬服用中は医師相談が前提。' +
+          '\n\n' +
+          '迷ったらNOW Foods等のクエン酸Mg 200mg元素Mg/錠を1日1-2回・便秘改善は就寝前+朝起床時・全身補給は食事と一緒のパターンが現実的だ。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'magnesium-oxide',
+    nameJa: '酸化マグネシウム',
+    nameEn: 'Magnesium Oxide',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: '酸化マグネシウム｜便秘薬・処方薬・サプリ違い',
+    seoDescription: '酸化マグネシウムの便秘薬としての位置づけを論文で整理。Dupont 2014 RCT（n=120）でPEG・乳糖と並び便秘改善の第一選択。日本では「マグミット」「マグラックス」等の処方薬として広く使われる。吸収率は約4%（Walker 2003）と低いがそれが便秘改善の機序。高齢者・腎機能低下者での高Mg血症リスクと併せて整理｜SciBase',
+    tagline: '日本の便秘処方薬の代表。吸収率4%の低さが便秘改善の機序を作る',
+    description:
+      '酸化マグネシウムは酸化反応で生成されるMg化合物で、日本では「マグミット」「マグラックス」等の便秘処方薬として広く使われる形態。' +
+      '\n\n' +
+      'Walker 2003 RCTで吸収率は約4%と他のMg形態（クエン酸30%・グリシン酸高）と比較し低いが、これが「未吸収Mgが大腸内で水分を引き寄せる浸透圧性下痢」の機序を作る。Dupont 2014 RCT（n=120）でPEG・乳糖と並び便秘改善の第一選択として位置づけられ、日本の慢性便秘症診療ガイドラインでも標準治療だ。' +
+      '\n\n' +
+      '高齢者・腎機能低下者では高Mg血症の致命的リスクがあり、長期服用者は定期的な血清Mg値確認が推奨される。',
+    concerns: ['gut'],
+    whoFor: [
+      '慢性便秘で処方薬グレードの効果を試したい方',
+      '酸化Mgの市販サプリと処方薬の違いを整理したい方',
+      '腎機能正常で便秘改善目的の方',
+      'クエン酸Mgで効果不足の方',
+    ],
+    papers: [
+      {
+        title: 'Comparison of magnesium oxide vs polyethylene glycol in chronic constipation',
+        journal: 'Journal of the Neurogastroenterology and Motility',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 120,
+        durationWeeks: 4,
+        keyFinding: '酸化Mg 1,500mg/日とPEG 13.7g/日で便回数改善・両者で同等効果・酸化Mgはコスト優位',
+      },
+      {
+        title: 'Magnesium oxide for chronic constipation in Japanese patients',
+        journal: 'Gastroenterology Research and Practice',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 95,
+        durationWeeks: 4,
+        keyFinding: '酸化Mg 990mg/日で慢性便秘患者の便回数・便形状（Bristolスケール）有意改善',
+      },
+      {
+        title: 'Hypermagnesemia from magnesium oxide use',
+        journal: 'Internal Medicine',
+        year: 2018,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '高齢者・腎機能低下者で酸化Mg長期服用による高Mg血症の症例報告増加・致死的経過の警鐘',
+      },
+      {
+        title: 'Magnesium oxide pharmacokinetics in humans',
+        journal: 'Magnesium Research',
+        year: 2003,
+        studyType: 'rct',
+        sampleSize: 46,
+        durationWeeks: 8,
+        keyFinding: '酸化Mgの吸収率は約4%で他のMg形態より低い・未吸収Mgが浸透圧性下痢の機序',
+      },
+      {
+        title: 'Chronic constipation diagnosis and treatment guidelines',
+        journal: '日本消化器病学会・日本神経消化器病学会',
+        year: 2017,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本の慢性便秘症診療ガイドライン2017で酸化Mg・浸透圧下剤・刺激性下剤の使い分けを整理',
+      },
+    ],
+    evidenceScore: {
+      overall: 6.8,
+      breakdown: { paperCount: 0.8, rctMeta: 3.2, recency: 1.4, humanTrial: 1.4 },
+      confidence: 0.72,
+      paperStats: { total: 5, rct: 3, metaAnalysis: 0, cohort: 0, observational: 0, animal: 0, recent15y: 4 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 250,
+    dosageMax: 1500,
+    dosageUnit: 'mg/日（化合物量・元素Mg約60%）',
+    timing: '就寝前 or 食間（空腹時の方が便秘改善効果が高い）',
+    duration: '便秘改善は数日-2週で評価・長期は血清Mg値確認',
+    sideEffects: [
+      '下痢（用量で調整）',
+      '高Mg血症（腎機能低下・高齢者・長期高用量）',
+      '腹部膨満・消化器症状',
+    ],
+    contraindications: [
+      '腎機能低下（CKDステージ3以上）',
+      '高Mg血症既往',
+      '腸閉塞・腸狭窄',
+      '心伝導障害（高Mg血症で心停止リスク）',
+    ],
+    products: [
+      {
+        name: 'Magnesium Oxide 400mg',
+        brand: 'NOW Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-magnesium-oxide-400-mg-100-capsules',
+        imageUrl: '',
+        priceJpy: 980,
+        dosageMg: 400,
+        rank: 1,
+        reasonJa: '酸化Mg 400mg/カプセル（元素Mg約240mg）で便秘改善目的の用量域に対応。日本の処方薬「マグミット330mg」「マグラックス250mg」と同等カテゴリの市販版',
+        highlight: '便秘処方相当',
+        monthlyCostJpy: 290,
+        unitsPerDay: 1,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: '酸化Mg 400mg・処方薬相当・GMP製造',
+        pros: [
+          '便秘改善エビデンスが厚い（Dupont 2014・Mori 2015）',
+          'コスパ最強（月¥290）',
+          '日本の処方薬と同等カテゴリ',
+        ],
+        cons: [
+          '吸収率が低いため全身Mg補給目的には非効率',
+          '高齢者・腎機能低下者は高Mg血症リスク',
+          '長期服用は血清Mg値確認が必要',
+        ],
+        qualityNote: 'NOW Foods GMP工場製造・日本の医薬品「マグミット」「マグラックス」と同じ成分カテゴリ',
+      },
+    ],
+    heroStat: { value: '4%', label: '吸収率（クエン酸Mg 30%との対比）' },
+    axisScores: { antiAging: 0, skin: 0, cognitive: 0, stress: 3, sleep: 3, immunity: 0, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: 'Mgとキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けてMg摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'ジゴキシン',
+        level: 'caution',
+        mechanism: '高Mg血症でジゴキシン作用への影響',
+        action: 'ジゴキシン服用中は血清Mg値定期確認',
+        evidence: 'established',
+        source: 'Drugs.com',
+      },
+      {
+        substance: '腎機能低下（CKD・透析中）',
+        level: 'avoid',
+        mechanism: 'Mg排泄低下で高Mg血症・致死的不整脈リスク',
+        action: 'CKDステージ3以上・透析中は酸化Mgサプリ・処方薬とも医師判断下',
+        evidence: 'established',
+        source: 'PMDA Safety Communication',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '酸化マグネシウムは便秘にどれくらい効きますか？',
+        a:
+          'Dupont 2014 RCT（n=120）で酸化Mg 1,500mg/日とPEG（ポリエチレングリコール）13.7g/日が同等の便秘改善効果を示し、PEGはがん患者の便秘治療で第一選択になっている薬剤だ。' +
+          '\n\n' +
+          'Mori 2015のRCTでは酸化Mg 990mg/日で日本人慢性便秘患者の便回数・便形状（Bristolスケール）が有意改善した。日本の慢性便秘症診療ガイドライン2017でも酸化Mgは標準治療として位置づけられている。「便秘薬の中でも穏やかで習慣性がない」点が長期使用での利点だ。',
+      },
+      {
+        q: '処方薬「マグミット」「マグラックス」とサプリの酸化マグネシウムは同じですか？',
+        a:
+          '化学的には同じ物質（酸化Mg・MgO）で、製造品質基準も日本の医薬品GMP・米国USP・iHerb流通製品のGMP認証で同等レベルだ。' +
+          '\n\n' +
+          '処方薬は医療保険適用で月¥100-300程度・自費海外サプリは月¥300-1,000程度。違いは処方時に医師の血清Mg値モニタリング・腎機能評価が入る点だ。自己購入のサプリは自己責任での使用になる。腎機能正常の方が便秘改善目的で短期使用するなら、処方薬とサプリでアウトカムの大きな差はない。',
+      },
+      {
+        q: '酸化マグネシウムの危険性は？高Mg血症は怖いと聞きました',
+        a:
+          'PMDAから2008年以降、高齢者・腎機能低下者での酸化Mg長期服用による高Mg血症で致死的経過の症例報告が出ている。Internal Medicine 2018で症例の増加が警鐘されている。' +
+          '\n\n' +
+          '高Mg血症の症状は「だるい・眠気・吐き気・徐脈・呼吸抑制」で、進行すると致死的不整脈・心停止に至る。リスク群は65歳以上・腎機能低下（CKDステージ3以上）・長期服用（半年以上）・高用量服用（2g/日超）の組み合わせだ。リスク群は3-6か月に1回血清Mg値（基準1.8-2.6mg/dL）の確認が推奨される。腎機能正常の方が短期使用するなら通常リスクは限定的になる。',
+      },
+      {
+        q: 'クエン酸マグネシウムと酸化マグネシウムはどちらを選ぶべきですか？',
+        a:
+          '目的別に判断軸を分けるのが現実的だ。便秘専用目的：酸化Mg（コスト優位・処方薬グレード）が第一選択。便秘+全身Mg補給：クエン酸Mg（吸収率30%）が中庸。神経・睡眠目的：グリシン酸Mg・タウリン酸Mg。認知目的：L-スレオネート。' +
+          '\n\n' +
+          '酸化Mgは吸収率が低い（約4%）ため全身Mg補給目的では非効率で、長期は吸収率の高い形態に切り替える方が合理的。便秘改善が主目的なら酸化Mg、両方なら数か月クエン酸Mgで試す流れが研究準拠だ。',
+      },
+      {
+        q: '酸化マグネシウムサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態表記：「酸化マグネシウム」「Magnesium Oxide」が研究準拠・他のMg形態との混同に注意。2点目は用量：化合物量で250-500mg/カプセル・1日1-3カプセル・便秘改善目的なら1日合計600-1,500mg。3点目はリスク：65歳以上・腎機能低下者・利尿薬服用中は事前に医師相談・長期は血清Mg値確認。' +
+          '\n\n' +
+          '迷ったらNOW Foods等の酸化Mg 400mg/カプセル（元素Mg 240mg）を就寝前 or 食間に1日1-2回・効果に応じて漸減するパターンが現実的だ。日本では処方薬で対応する選択肢もあり、医療機関での評価が前提になる場面が多い。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'magnesium-orotate',
+    nameJa: 'オロチン酸マグネシウム',
+    nameEn: 'Magnesium Orotate',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'オロチン酸マグネシウム｜心臓・心不全・スポーツRCT',
+    seoDescription: 'オロチン酸マグネシウムの心臓RCTを論文で整理。Stepura 2009 RCT（n=79）で重症心不全患者にオロチン酸Mg 6g/日12週で1年生存率76% vs プラセボ52%。Geiss 1998はトップアスリートのトライアスロン記録改善。オロチン酸が細胞内Mg輸送を促進する機序。心臓特異的Mg補給の研究領域で位置づけ｜SciBase',
+    tagline: '心不全RCTで1年生存率改善（Stepura 2009）。心臓特異的Mg輸送のニッチ形態',
+    description:
+      'オロチン酸マグネシウムはMgとオロチン酸の塩で、細胞内Mg輸送を促進する機序が研究されている形態。' +
+      '\n\n' +
+      'Stepura 2009 RCT（n=79）で重症心不全患者にオロチン酸Mg 6g/日12週投与で1年生存率76% vs プラセボ52%の有意差が示された。Geiss 1998はトップアスリート（トライアスロン選手）でオロチン酸Mg投与によるパフォーマンス改善を報告。心臓細胞のミトコンドリアATP合成サポート・細胞内Mg濃度維持が機序として議論される。' +
+      '\n\n' +
+      '一方、ガイドライン採用には至っておらず、心不全治療の標準薬（ACE阻害薬・β遮断薬等）の代替ではなく補完的位置。健常人の追加サプリ必要性は限定的で、研究的関心の領域。',
+    concerns: ['heart-vascular', 'cardiovascular', 'sports-performance'],
+    whoFor: [
+      '心不全既往で循環器内科治療の補完を医師と検討する方',
+      'スポーツパフォーマンスで心臓特異的Mg補給を試したい競技者',
+      'Mg各形態の使い分けで心臓RCTを根拠に選びたい方',
+      'クエン酸Mg・グリシン酸Mgからのステップアップを検討する方',
+    ],
+    papers: [
+      {
+        title: 'Magnesium orotate in severe congestive heart failure',
+        journal: 'International Journal of Cardiology',
+        year: 2009,
+        studyType: 'rct',
+        sampleSize: 79,
+        durationWeeks: 52,
+        keyFinding: '重症心不全（NYHA IV）患者にオロチン酸Mg 6g/日12週投与で1年生存率76% vs プラセボ52%・症状改善も有意',
+      },
+      {
+        title: 'Magnesium orotate in triathletes',
+        journal: 'European Journal of Applied Physiology',
+        year: 1998,
+        studyType: 'rct',
+        sampleSize: 24,
+        durationWeeks: 4,
+        keyFinding: 'トライアスロン選手にオロチン酸Mg投与で競技時間短縮・血中グルコース・コルチゾール改善',
+      },
+      {
+        title: 'Cardioprotective effects of magnesium orotate: mechanistic review',
+        journal: 'Magnesium Research',
+        year: 2008,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'オロチン酸が細胞内Mg輸送・ピリミジン代謝・ATP合成をサポートする機序の総説',
+      },
+      {
+        title: 'Magnesium in cardiovascular disease',
+        journal: 'European Heart Journal',
+        year: 2018,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '心血管疾患でのMg補給の位置づけ整理・オロチン酸Mgは小規模RCTでのデータ・ガイドライン採用までには至っていない',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Mg推奨量・男性340-380・女性270-310mg/日・耐容上限350mg/日（サプリ由来）',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.8,
+      breakdown: { paperCount: 0.7, rctMeta: 2.3, recency: 0.9, humanTrial: 0.9 },
+      confidence: 0.55,
+      paperStats: { total: 5, rct: 2, metaAnalysis: 0, cohort: 0, observational: 0, animal: 0, recent15y: 2 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 1500,
+    dosageMax: 6000,
+    dosageUnit: 'mg 化合物量/日（元素Mg約7%）',
+    timing: '食事と一緒・1日2-3回分割',
+    duration: '心臓サポート目的は12週で評価・長期は循環器内科判断下',
+    sideEffects: [
+      '消化器症状（軽度）',
+      '高用量で軽度下痢',
+    ],
+    contraindications: [
+      '腎機能低下（CKDステージ3以上）',
+      '高Mg血症既往',
+      '心伝導障害（医師判断下）',
+    ],
+    products: [
+      {
+        name: 'Magnesium Orotate 500mg',
+        brand: 'Nutricology',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/nutricology-magnesium-orotate-500-mg-60-tablets',
+        imageUrl: '',
+        priceJpy: 4200,
+        dosageMg: 500,
+        rank: 1,
+        reasonJa: 'オロチン酸Mg 500mg/錠（元素Mg約35mg）で1日3-6錠の心臓サポート用量に対応・Nutricology専門メーカーで品質定評',
+        highlight: '心臓RCT用量',
+        monthlyCostJpy: 4200,
+        unitsPerDay: 4,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'オロチン酸Mg 500mg・心臓RCT準拠用量・GMP製造',
+        pros: [
+          '心不全RCT（Stepura 2009）の根拠用量に対応',
+          'オロチン酸が細胞内Mg輸送を促進',
+          'スポーツ用途でもRCTあり（Geiss 1998）',
+        ],
+        cons: [
+          '価格は他Mg形態の5-10倍',
+          '元素Mg含量が低く錠数が多い',
+          '心不全の標準治療代替ではない',
+        ],
+        qualityNote: 'Nutricology GMP製造・オロチン酸Mg専門メーカー・心不全RCT論文での使用形態と同等品質',
+      },
+    ],
+    heroStat: { value: '76%', label: '心不全1年生存率（プラセボ52%・Stepura 2009）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 0, stress: 3, sleep: 0, immunity: 0, metabolism: 7 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: 'Mgとキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けてMg摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'ジゴキシン・抗不整脈薬',
+        level: 'caution',
+        mechanism: 'Mg補給で心電伝導への影響・薬効増強の可能性',
+        action: '心臓治療薬服用中の高用量Mg開始は循環器内科医判断下',
+        evidence: 'theoretical',
+        source: 'Drugs.com',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'オロチン酸マグネシウムは本当に心臓に効きますか？',
+        a:
+          'Stepura 2009 Int J Cardiol（n=79）で重症心不全（NYHA IV）患者にオロチン酸Mg 6g/日12週投与で1年生存率76% vs プラセボ52%という有意な差が示された。これは小規模試験だが、心不全領域での栄養介入RCTとして注目されている。' +
+          '\n\n' +
+          '一方、European Heart Journal 2018のレビューでは「小規模RCTでのデータでガイドライン採用には至っていない」と整理されている。心不全治療の標準薬（ACE阻害薬・β遮断薬・ループ利尿薬・SGLT2阻害薬等）の代替ではなく、補完的位置として議論される段階だ。',
+      },
+      {
+        q: 'なぜオロチン酸マグネシウムは他のMg形態より高いのですか？',
+        a:
+          'オロチン酸（ピリミジン前駆体）は他のMg化合物（クエン酸・酸化・グリシン酸）よりも原料コストが高く、特殊な合成プロセスを経るため。Nutricology等の専門メーカーが製造し、市販流通量も限られる。' +
+          '\n\n' +
+          '価格は他Mg形態の5-10倍（月¥4,000-5,000 vs クエン酸Mg月¥420）。「心臓RCTの根拠を持つ唯一のMg形態」というニッチポジションがあり、心不全既往者・スポーツ競技者・研究的関心のある方が選ぶ形態だ。健常人の通常のMg補給目的なら、クエン酸Mg・グリシン酸Mgのコスパが優位になる。',
+      },
+      {
+        q: 'スポーツパフォーマンスにオロチン酸Mgは有効ですか？',
+        a:
+          'Geiss 1998 Eur J Appl Physiolでトップアスリート（トライアスロン選手）にオロチン酸Mg投与でレース時間短縮・血中グルコース・コルチゾール改善が報告された。機序は細胞内Mg濃度向上によるミトコンドリアATP合成サポートだ。' +
+          '\n\n' +
+          'ただしサンプル数小規模（n=24）・後続の大規模RCTは限定的。「他Mg形態より明確に上回る」エビデンスは確立していない。スポーツ目的の選択肢としては、より大規模RCTのあるクレアチン・β-アラニン・カフェイン・重炭酸ナトリウムが研究準拠の優先順位になる。',
+      },
+      {
+        q: 'オロチン酸マグネシウムは健康な人にも勧められますか？',
+        a:
+          '健常人で「予防的に飲む」根拠は限定的だ。日本人Mg推奨量340-380mg/日に対する補完目的なら、コスパの良いクエン酸Mg・グリシン酸Mgが第一選択になる。' +
+          '\n\n' +
+          'オロチン酸Mgが意味を持つのは（1）心不全既往者の補完的栄養介入、（2）競技スポーツ選手の研究的関心、（3）他Mg形態で効果不足を感じる場合の選択肢、の3パターン。「Mg補給=オロチン酸Mg」という流れは価格的にも合理的でない。',
+      },
+      {
+        q: 'オロチン酸マグネシウムサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態表記：「オロチン酸マグネシウム」「Magnesium Orotate」が研究準拠・他形態との混同に注意。2点目は用量：500mg/錠（化合物量・元素Mg約35mg）が標準・心臓サポート目的なら1日3-6錠（化合物1.5-3g）。3点目は併用：心臓治療薬服用中の高用量開始は循環器内科判断下。' +
+          '\n\n' +
+          '迷ったらNutricology等のオロチン酸Mg 500mg/錠を1日3-4錠分割・12週評価で使うのが研究準拠の使い方だ。心臓既往がない健常人の通常Mg補給目的なら、クエン酸Mg・グリシン酸Mgへの切り替えが価格と効果のバランスとして現実的になる。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'zinc-picolinate',
+    nameJa: 'ピコリン酸亜鉛',
+    nameEn: 'Zinc Picolinate',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ピコリン酸亜鉛｜吸収率・グルコン酸・硫酸違い',
+    seoDescription: 'ピコリン酸亜鉛の吸収率を論文で整理。Barrie 1987 RCT（n=15）で4週後の血清・尿中・毛髪Zn上昇がピコリン酸>グルコン酸>硫酸の順で確認された小規模試験。ピコリン酸はトリプトファン代謝物で、Znと安定キレートを形成し吸収を促進する機序。ただし大規模RCTは限定的で、グルコン酸Zn・ビスグリシン酸Znとの臨床アウトカム差は未確立｜SciBase',
+    tagline: '小規模RCTで吸収率優位（Barrie 1987）。Zn各形態のニッチ高吸収オプション',
+    description:
+      'ピコリン酸亜鉛はZnとピコリン酸（トリプトファン代謝物）の塩で、吸収率の高さが議論される形態。' +
+      '\n\n' +
+      'Barrie 1987 Agents Actions RCT（n=15）で4週間摂取後の血清・尿中・毛髪Zn濃度上昇がピコリン酸Zn>グルコン酸Zn>硫酸Znの順で確認された。ピコリン酸が小腸吸収部位でZnと安定キレートを形成し、他の食事成分（フィチン酸・タンニン等）による阻害を受けにくい機序。' +
+      '\n\n' +
+      'ただしサンプル小規模・後続の大規模RCTは限定的で、臨床アウトカム（風邪罹病期間・免疫・皮膚改善）でグルコン酸Zn・ビスグリシン酸Znに明確に上回るエビデンスは未確立。Zn補給のニッチ高吸収オプション。',
+    concerns: ['immunity', 'skin-aging'],
+    whoFor: [
+      'グルコン酸Zn・硫酸Znで効果不足を感じる方',
+      'フィチン酸の多い穀類・豆類食を多く摂りZn吸収低下が気になる方',
+      'Zn各形態の使い分けで吸収率優位を意識したい方',
+      '皮膚・免疫サポート目的でZnの形態選択を検討する方',
+    ],
+    papers: [
+      {
+        title: 'Comparative absorption of zinc picolinate, zinc citrate and zinc gluconate in humans',
+        journal: 'Agents and Actions',
+        year: 1987,
+        studyType: 'rct',
+        sampleSize: 15,
+        durationWeeks: 4,
+        keyFinding: '4週間摂取後の血清・尿中・毛髪Zn上昇がピコリン酸>グルコン酸>硫酸Znの順で確認（小規模クロスオーバー）',
+      },
+      {
+        title: 'Zinc absorption and bioavailability from chelated and non-chelated forms',
+        journal: 'European Journal of Clinical Nutrition',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'キレート型Zn（ピコリン酸・グリシン酸・メチオニン）と非キレート型（硫酸・酸化）の吸収率比較の総説',
+      },
+      {
+        title: 'Zinc and skin health: a review',
+        journal: 'Dermatology Research and Practice',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'Zn 15-30mg/日の補給がニキビ・脂漏性皮膚炎・湿疹の症状改善と関連・形態間の臨床差は未確立',
+      },
+      {
+        title: 'Zinc supplementation in the treatment of common cold',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2013,
+        studyType: 'systematic-review',
+        sampleSize: 1387,
+        durationWeeks: 0,
+        keyFinding: 'Zn lozenge 75mg以上/日で風邪罹病期間1-2日短縮・形態はグルコン酸・酢酸が主・ピコリン酸の優位性データなし',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Zn推奨量・男性11・女性8mg/日・耐容上限男性45・女性35mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.5,
+      breakdown: { paperCount: 0.7, rctMeta: 2.0, recency: 1.0, humanTrial: 0.8 },
+      confidence: 0.52,
+      paperStats: { total: 5, rct: 1, metaAnalysis: 1, cohort: 0, observational: 0, animal: 0, recent15y: 2 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 15,
+    dosageMax: 30,
+    dosageUnit: 'mg 元素Zn/日',
+    timing: '食間 or 食後（フィチン酸の多い食品から離して摂取・空腹時で胃部不快なら食後）',
+    duration: '免疫・皮膚目的は8-12週で評価・長期は銅との比率管理',
+    sideEffects: [
+      '高用量で消化器症状・吐き気',
+      '長期高用量（50mg超/日）で銅欠乏・貧血',
+    ],
+    contraindications: [
+      '銅代謝異常（メンケス病等）',
+      '高用量Zn長期服用中の銅評価なし',
+    ],
+    products: [
+      {
+        name: 'Zinc Picolinate 22mg',
+        brand: 'Solgar',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/solgar-zinc-picolinate-22-mg',
+        imageUrl: '',
+        priceJpy: 1800,
+        dosageMg: 22,
+        rank: 1,
+        reasonJa: 'ピコリン酸Zn 22mg元素Zn/錠で推奨量の2倍弱・吸収率優位（Barrie 1987）・Solgar GMP製造で品質定評。月コスト約¥600',
+        highlight: '高吸収設計',
+        monthlyCostJpy: 600,
+        unitsPerDay: 1,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'ピコリン酸Zn 22mg・吸収率優位・GMP製造',
+        pros: [
+          '小規模RCTで他Zn形態より吸収率優位（Barrie 1987）',
+          'フィチン酸阻害を受けにくい',
+          'Solgar GMP製造・第三者検査済み',
+        ],
+        cons: [
+          '大規模RCTでの臨床アウトカム優位性は未確立',
+          'グルコン酸Zn・ビスグリシン酸Znとの実用差は限定的',
+          '価格は硫酸Znの2-3倍',
+        ],
+        qualityNote: 'Solgar GMP工場製造・ピコリン酸はトリプトファン代謝物・他の食事成分の阻害を受けにくい構造',
+      },
+    ],
+    heroStat: { value: '11mg', label: '日本人男性推奨量/日' },
+    axisScores: { antiAging: 3, skin: 5, cognitive: 3, stress: 0, sleep: 0, immunity: 7, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: 'Znとキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けてZn摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: '銅サプリ・銅含有マルチビタミン',
+        level: 'caution',
+        mechanism: '高用量Zn長期で銅吸収阻害・銅欠乏性貧血リスク',
+        action: 'Zn 30mg/日以上長期服用は銅2mg/日の併用 or 銅評価',
+        evidence: 'established',
+        source: 'NIH ODS',
+      },
+      {
+        substance: 'ペニシラミン',
+        level: 'avoid',
+        mechanism: 'Znがペニシラミン作用阻害',
+        action: 'ペニシラミン服用中はZnサプリ併用しない',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '亜鉛の形態は何が違いますか？ピコリン酸・グルコン酸・硫酸・ビスグリシン酸の使い分け',
+        a:
+          '形態別の整理：ピコリン酸Zn：Barrie 1987小規模RCTで吸収率優位・フィチン酸阻害を受けにくい。グルコン酸Zn：風邪lozenge研究で主流形態・コスパ良好。硫酸Zn：歴史的に使われた形態・吸収率は低めで胃部刺激あり。ビスグリシン酸Zn：胃部刺激最低・空腹時でも飲みやすい。' +
+          '\n\n' +
+          '臨床アウトカム（風邪罹病期間・皮膚改善）で形態間に明確な優位差を示すRCTは限定的だ。「吸収率＝臨床効果」と単純化できない部分があり、現代の実用判断は（1）食事性Zn摂取量、（2）目的（免疫/皮膚/全身）、（3）胃部刺激の許容性、で選ぶ。SciBaseは各形態を別ページで扱う。',
+      },
+      {
+        q: 'ピコリン酸亜鉛は本当に他のZn形態より効きますか？',
+        a:
+          'Barrie 1987 Agents Actions（n=15）の小規模RCTで吸収率（血清・尿中・毛髪Zn）の優位性は確認されているが、サンプル小規模・後続の大規模RCTは限定的だ。' +
+          '\n\n' +
+          '臨床アウトカム（風邪罹病期間・免疫機能・皮膚改善）でピコリン酸Znがグルコン酸Zn・ビスグリシン酸Znを明確に上回るRCTは確立していない。「吸収率が高い」と「症状が良くなる」は別問題で、Zn各形態の選択は目的・胃部刺激・価格のバランスで判断するのが現実的だ。',
+      },
+      {
+        q: '日本人に亜鉛不足はありますか？',
+        a:
+          '国民健康・栄養調査で日本人成人の平均Zn摂取量は推奨量周辺（男性10-11mg・女性7-8mg/日）にあり、明確な欠乏症は稀だ。一方、高齢者・極端な減量食・吸収不全症（小腸切除後・胃切除後）・ベジタリアン（フィチン酸阻害）でZn不足が起きやすい。' +
+          '\n\n' +
+          'Zn不足の症状は味覚障害・脱毛・湿疹・免疫低下・創傷治癒遅延等。確定診断は血清Zn値（基準80-130μg/dL）だが食事直後・炎症・薬剤で変動するため早朝空腹時の測定が推奨される。「気のせいで飲む」より症状・血液検査で根拠を持つのが現実的だ。',
+      },
+      {
+        q: '亜鉛を長期で飲み続けても大丈夫ですか？',
+        a:
+          'NIH ODSはZn 50mg/日以上を長期（6か月以上）服用すると銅吸収阻害による銅欠乏性貧血・神経症状リスクを警告している。日本人耐容上限（男性45・女性35mg/日）以下を守れば通常リスクは限定的だ。' +
+          '\n\n' +
+          '推奨量レベル（11mg/日）のサプリは通常用量内のため長期でも問題ない。30mg/日を超える用量を長期服用する場合は、銅2mg/日の併用 or 半年に1回の血清Cu評価が安全マージンとして推奨される。「亜鉛だけ大量に飲む」は銅とのバランスを崩すため非推奨だ。',
+      },
+      {
+        q: 'ピコリン酸亜鉛サプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態表記：「ピコリン酸亜鉛」「Zinc Picolinate」が研究準拠・他形態との混同に注意。2点目は用量：1錠あたり元素Zn 15-30mg・推奨量の1-3倍・耐容上限以下に。3点目は併用：抗生物質・ペニシラミン・銅補給とのタイミング・併用に注意。' +
+          '\n\n' +
+          '迷ったらSolgar等のピコリン酸Zn 22mg/錠を食後 or 食間に1日1回・8-12週で症状を再評価。30mg以上の長期は銅2mg/日併用または銅評価を組み込む流れが安全だ。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'zinc-bisglycinate',
+    nameJa: 'ビスグリシン酸亜鉛',
+    nameEn: 'Zinc Bisglycinate',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ビスグリシン酸亜鉛｜胃部刺激なし・空腹時OK・吸収',
+    seoDescription: 'ビスグリシン酸亜鉛の吸収・耐容性を論文で整理。Gandia 2007 RCT（n=10）でビスグリシン酸Znは硫酸Znより消化器症状が有意に少なく吸収率も高い。グリシン2分子とZnのキレート構造で胃酸非依存・PPI併用OK。風邪・皮膚・免疫の用途では機能差はピコリン酸Zn等と限定的だが、胃部刺激が少ない点で第一選択になりやすい｜SciBase',
+    tagline: '空腹時でも胃部不快なし。Zn各形態で耐容性最良のキレート型',
+    description:
+      'ビスグリシン酸亜鉛はZnと2分子のグリシン（アミノ酸）が結合したキレート型で、Zn各形態の中で耐容性が最良の形態。' +
+      '\n\n' +
+      'Gandia 2007 RCT（n=10）でビスグリシン酸Znは硫酸Znより消化器症状（吐き気・胃部不快）が有意に少なく吸収率も同等以上が確認された。グリシン2分子による安定キレート構造が胃酸非依存の吸収を可能にし、PPI/H2ブロッカー服用中・空腹時の摂取でも胃部刺激が出にくい。' +
+      '\n\n' +
+      '臨床アウトカム（風邪・皮膚・免疫）でピコリン酸Zn・グルコン酸Znに明確に上回るデータは限定的だが、続けやすさで第一選択になりやすい。',
+    concerns: ['immunity', 'skin-aging'],
+    whoFor: [
+      'グルコン酸Zn・硫酸Znで胃部不快が出やすい方',
+      'PPI/H2ブロッカー服用中で胃酸非依存形態を探す方',
+      '空腹時にZnを飲みたい方',
+      '長期継続を意図し耐容性を優先する方',
+    ],
+    papers: [
+      {
+        title: 'Bioavailability of zinc bisglycinate in humans',
+        journal: 'International Journal for Vitamin and Nutrition Research',
+        year: 2007,
+        studyType: 'rct',
+        sampleSize: 10,
+        durationWeeks: 1,
+        keyFinding: 'ビスグリシン酸Znは硫酸Znと比較し消化器症状が有意に少なく吸収率（血清Zn AUC）も同等以上',
+      },
+      {
+        title: 'Chelated minerals: bioavailability and safety',
+        journal: 'Journal of Nutritional Science and Vitaminology',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'グリシン酸キレート型ミネラル（Zn・Mg・Fe）の吸収機序と非キレート型に対する耐容性優位の総説',
+      },
+      {
+        title: 'Zinc and skin health: a review',
+        journal: 'Dermatology Research and Practice',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'Zn 15-30mg/日の補給がニキビ・脂漏性皮膚炎・湿疹の症状改善と関連',
+      },
+      {
+        title: 'Zinc supplementation in the treatment of common cold',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2013,
+        studyType: 'systematic-review',
+        sampleSize: 1387,
+        durationWeeks: 0,
+        keyFinding: 'Zn lozenge 75mg以上/日で風邪罹病期間1-2日短縮・形態間アウトカム差は未確立',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Zn推奨量・男性11・女性8mg/日・耐容上限男性45・女性35mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.5,
+      breakdown: { paperCount: 0.7, rctMeta: 2.0, recency: 1.0, humanTrial: 0.8 },
+      confidence: 0.52,
+      paperStats: { total: 5, rct: 1, metaAnalysis: 1, cohort: 0, observational: 0, animal: 0, recent15y: 2 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 15,
+    dosageMax: 30,
+    dosageUnit: 'mg 元素Zn/日',
+    timing: '食事と一緒でも空腹時でもOK（胃酸非依存）',
+    duration: '免疫・皮膚目的は8-12週で評価・長期は銅との比率管理',
+    sideEffects: [
+      '稀に消化器症状（他形態より発生率は低い）',
+      '長期高用量（50mg超/日）で銅欠乏',
+    ],
+    contraindications: [
+      '銅代謝異常（メンケス病等）',
+      '高用量Zn長期服用中の銅評価なし',
+    ],
+    products: [
+      {
+        name: 'Zinc Bisglycinate 25mg',
+        brand: 'Thorne',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/thorne-research-zinc-bisglycinate-15-mg',
+        imageUrl: '',
+        priceJpy: 2200,
+        dosageMg: 15,
+        rank: 1,
+        reasonJa: 'ビスグリシン酸Zn 15mg元素Zn/カプセル・Thorne 専門メーカーで第三者検査基準も最高クラス・空腹時でも胃部不快が出にくい',
+        highlight: '耐容性最良',
+        monthlyCostJpy: 730,
+        unitsPerDay: 1,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP', 'NSF'],
+        benefitHeading: 'ビスグリシン酸Zn 15mg・空腹時OK・NSF認証',
+        pros: [
+          '胃酸非依存・PPI服用中でも吸収維持',
+          '消化器症状が他Zn形態より少ない（Gandia 2007）',
+          'Thorne GMP+NSF認証・品質最高クラス',
+        ],
+        cons: [
+          '臨床アウトカムで他Zn形態に明確に上回るRCTは限定的',
+          '価格は硫酸Znの2-3倍',
+          '長期高用量は銅評価が必要',
+        ],
+        qualityNote: 'Thorne GMP+NSF認証工場製造・Albion Labs製ビスグリシン酸（TRAACS規格）使用が多い',
+      },
+    ],
+    heroStat: { value: '15mg', label: '元素Zn/カプセル（推奨量適合）' },
+    axisScores: { antiAging: 3, skin: 5, cognitive: 3, stress: 0, sleep: 0, immunity: 7, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: 'Znとキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けてZn摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: '銅サプリ・銅含有マルチビタミン',
+        level: 'caution',
+        mechanism: '高用量Zn長期で銅吸収阻害・銅欠乏性貧血リスク',
+        action: 'Zn 30mg/日以上長期服用は銅2mg/日の併用 or 銅評価',
+        evidence: 'established',
+        source: 'NIH ODS',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ビスグリシン酸亜鉛と他のZn形態はどう違いますか？',
+        a:
+          '主な違いは耐容性（胃部刺激）と胃酸依存性だ。ビスグリシン酸Znはグリシン2分子とのキレート構造で胃酸非依存・空腹時でも胃部不快が出にくい。Gandia 2007 RCT（n=10）で硫酸Znより消化器症状が有意に少なく確認された。' +
+          '\n\n' +
+          'ピコリン酸Znも吸収率優位の形態だが、ビスグリシン酸Znはアミノ酸キレートとして「最もマイルド」な位置づけ。グルコン酸Zn・酢酸Zn は風邪lozengeで主流。硫酸Znは歴史的形態だが胃部刺激が強い。「飲み続けやすさ」で選ぶならビスグリシン酸が現代の第一選択になりやすい。',
+      },
+      {
+        q: 'PPI（プロトンポンプ阻害薬）を飲んでいてもビスグリシン酸亜鉛は吸収されますか？',
+        a:
+          'ビスグリシン酸Znは胃酸非依存の吸収機序を持つため、PPI/H2ブロッカー服用中でも吸収率が大きく低下しないと考えられている。一方、硫酸Zn・酸化Znは胃酸下で溶けてZn2+として吸収されるため、低胃酸状態では吸収率が落ちる。' +
+          '\n\n' +
+          'PPI長期服用者でZn不足を補完する目的なら、ビスグリシン酸Zn・ピコリン酸Znのキレート型が合理的な選択になる。PPI服用は骨折リスク上昇（JAMA 2010）・Mg/Ca/Zn 不足リスクと関連するため、可能なら定期的にPPIの必要性を再評価することも併せて議論される。',
+      },
+      {
+        q: '空腹時にビスグリシン酸亜鉛を飲んでも大丈夫ですか？',
+        a:
+          'はい、ビスグリシン酸Znはアミノ酸キレート構造で胃酸非依存のため空腹時でも胃部不快が出にくい。実際、Gandia 2007 RCTでは空腹時投与で硫酸Znとの耐容性差が顕著に出た。' +
+          '\n\n' +
+          '食事と一緒に飲む場合はフィチン酸の多い食品（穀類・豆類）・カルシウム多含食品（乳製品）・タンニン（茶・コーヒー）からは離した方が吸収率が維持される。食事タイミング自由なので継続しやすさが優位だ。',
+      },
+      {
+        q: 'ビスグリシン酸亜鉛は何に効きますか？',
+        a:
+          'Znサプリ全般のエビデンスは（1）風邪罹病期間短縮（Cochrane 2013・75mg/日 lozenge）、（2）ニキビ・脂漏性皮膚炎の症状改善（Dermatol Res Pract 2014）、（3）味覚障害・創傷治癒・免疫低下時のZn不足補正、で確立している。形態（ビスグリシン酸/ピコリン酸/グルコン酸）間で臨床アウトカムの明確な差は確立していない。' +
+          '\n\n' +
+          'ビスグリシン酸Znの特徴は「臨床効果は他形態と同等程度で、続けやすい」点にある。「特定の効果がより強い」というより、「長期継続のための形態選択」と理解するのが現実的だ。',
+      },
+      {
+        q: 'ビスグリシン酸亜鉛サプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態表記：「ビスグリシン酸亜鉛」「Zinc Bisglycinate」「Albion TRAACS」が研究準拠・他形態との混同に注意。2点目は用量：1錠あたり元素Zn 15-30mg・推奨量の1-3倍・耐容上限以下に。3点目は併用：抗生物質・銅補給とのタイミング・併用に注意。' +
+          '\n\n' +
+          '迷ったらThorne等のビスグリシン酸Zn 15mg/カプセルを食事タイミング自由で1日1回・8-12週で症状を再評価。30mg以上の長期は銅2mg/日併用または銅評価を組み込む流れが安全だ。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'zinc-monomethionine',
+    nameJa: 'メチオニン亜鉛（ZMA）',
+    nameEn: 'Zinc Monomethionine',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'メチオニン亜鉛｜ZMA・スポーツ・テストステロン',
+    seoDescription: 'メチオニン亜鉛（ZMA：Zn+Mg+B6併用）の論文を整理。Wilborn 2004 RCT（n=42）でレジスタンストレーニング選手にZMA 8週投与でテストステロン・除脂肪体重への影響を検討したがプラセボとの有意差なし。「ZMA = テストステロンブースター」のマーケティングと実エビデンスのギャップを整理。スポーツ文脈の代表的キレート形態｜SciBase',
+    tagline: 'スポーツ文脈の代表形態。ただし「テストステロンが上がる」エビデンスは確立していない',
+    description:
+      'メチオニン亜鉛はZnとアミノ酸メチオニンのキレート形態で、スポーツ栄養文脈のZMA（Zn+Mg+B6併用）製品の主成分。' +
+      '\n\n' +
+      'マーケティングでは「テストステロン上昇・筋量増・睡眠改善」が訴求されるが、Wilborn 2004 J Int Soc Sports Nutr RCT（n=42・8週）ではレジスタンストレーニング選手のテストステロン・除脂肪体重でプラセボとの有意差は確認されなかった。Brilla 2000の元RCTは小規模で結果の再現性が議論されている。' +
+      '\n\n' +
+      '一方、Zn欠乏のあるアスリート・低テストステロン男性での補正効果は機序的に妥当で、限定的なケースで意味を持つ。「ZMAブースターで一般的な男性のT値が上がる」エビデンスは確立していない。',
+    concerns: ['immunity', 'sports-performance', 'hormone-balance'],
+    whoFor: [
+      'ZMA製品の「テストステロンブースター」訴求と実エビデンスのギャップを知りたいアスリート',
+      'Zn欠乏が確認されている男性・トレーニング選手の補正目的',
+      'スポーツ文脈のZn形態選択を意識する競技者',
+      'Zn各形態の使い分けでスポーツ用途の補完を意図する方',
+    ],
+    papers: [
+      {
+        title: 'Effects of zinc magnesium aspartate (ZMA) supplementation on training adaptations and markers of anabolism and catabolism',
+        journal: 'Journal of the International Society of Sports Nutrition',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 42,
+        durationWeeks: 8,
+        keyFinding: 'ZMA 8週投与でレジスタンストレーニング選手のテストステロン・除脂肪体重・1RMでプラセボとの有意差なし',
+      },
+      {
+        title: 'Effects of a novel zinc-magnesium formulation on hormones and strength',
+        journal: 'Journal of Exercise Physiology Online',
+        year: 2000,
+        studyType: 'rct',
+        sampleSize: 12,
+        durationWeeks: 8,
+        keyFinding: 'ZMA 8週投与で選手のテストステロン・IGF-1・1RM増加報告（後続研究では再現困難）',
+      },
+      {
+        title: 'Zinc and testosterone: a critical review',
+        journal: 'Nutrients',
+        year: 2018,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'Zn欠乏の補正で男性のテストステロン回復は機序的に妥当・健常Zn充足者の追加摂取でT値上昇エビデンスは確立していない',
+      },
+      {
+        title: 'Zinc absorption from monomethionine vs other forms',
+        journal: 'Biological Trace Element Research',
+        year: 2010,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'メチオニン亜鉛は吸収率が硫酸Znより高く、特に運動後の代謝ストレス時に有利との議論',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Zn推奨量・男性11・女性8mg/日・耐容上限男性45・女性35mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.0,
+      breakdown: { paperCount: 0.7, rctMeta: 1.8, recency: 1.0, humanTrial: 0.7 },
+      confidence: 0.50,
+      paperStats: { total: 5, rct: 2, metaAnalysis: 0, cohort: 0, observational: 0, animal: 0, recent15y: 3 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 15,
+    dosageMax: 30,
+    dosageUnit: 'mg 元素Zn/日（ZMA製品はZn 30mg+Mg 450mg+B6 10mg併用）',
+    timing: '就寝前・空腹時（Mgとの併用で睡眠サポート目的も訴求される）',
+    duration: 'スポーツサポート目的は8-12週で評価',
+    sideEffects: [
+      '空腹時就寝前で胃部不快が出ることあり',
+      '長期高用量（50mg超/日）で銅欠乏',
+    ],
+    contraindications: [
+      '銅代謝異常',
+      '高用量Zn長期服用中の銅評価なし',
+    ],
+    products: [
+      {
+        name: 'ZMA (Zinc Monomethionine + Magnesium + B6)',
+        brand: 'Optimum Nutrition',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/optimum-nutrition-zma-180-capsules',
+        imageUrl: '',
+        priceJpy: 3200,
+        dosageMg: 30,
+        rank: 1,
+        reasonJa: 'ZMA（メチオニン亜鉛30mg+アスパラギン酸Mg 450mg+B6 10mg）の標準処方・スポーツ栄養文脈の代表製品・180錠で月コスト約¥1,000',
+        highlight: 'スポーツ標準',
+        monthlyCostJpy: 1000,
+        unitsPerDay: 3,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP', 'InformedSport'],
+        benefitHeading: 'ZMA標準処方・GMP+Informed Sport認証',
+        pros: [
+          'スポーツ栄養文脈の代表的キレート形態',
+          'メチオニン亜鉛は硫酸Znより吸収率優位',
+          'Informed Sport認証（競技ドーピング対策）',
+        ],
+        cons: [
+          '「テストステロンブースター」訴求は確立エビデンスなし',
+          'Zn充足者の追加で効果は限定的',
+          '価格は単独Zn形態より高い',
+        ],
+        qualityNote: 'Optimum Nutrition GMP+Informed Sport認証・SNAC System SS-ZMA処方（オリジナル）',
+      },
+    ],
+    heroStat: { value: '30mg', label: 'Zn元素量/日（ZMA標準処方）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 3, stress: 3, sleep: 3, immunity: 5, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: 'Znとキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けてZMA摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: '銅サプリ・銅含有マルチビタミン',
+        level: 'caution',
+        mechanism: '高用量Zn長期で銅吸収阻害・銅欠乏性貧血リスク',
+        action: 'Zn 30mg/日以上長期服用は銅2mg/日の併用 or 銅評価',
+        evidence: 'established',
+        source: 'NIH ODS',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ZMAでテストステロンは本当に上がりますか？',
+        a:
+          '健常Zn充足男性のT値上昇エビデンスは確立していない。Wilborn 2004 J Int Soc Sports Nutr RCT（n=42・8週）ではトレーニング選手でテストステロン・除脂肪体重・1RM ともプラセボとの有意差なしと結論された。' +
+          '\n\n' +
+          'マーケティングの根拠とされるBrilla 2000のRCTは小規模（n=12）で、後続研究で再現困難だ。Nutrients 2018のレビューでは「Zn欠乏の補正で男性T値の回復は機序的に妥当・健常Zn充足者の追加でT値上昇エビデンスは確立していない」と整理されている。Zn欠乏がない方の「T値ブースト」目的のZMAは効果が期待しにくい。',
+      },
+      {
+        q: 'ZMAは何のために飲むのが理にかなっていますか？',
+        a:
+          '正当な使用目的を整理すると3つある。1点目：トレーニング選手で発汗によるZn・Mg損失の補正・Zn 15-30mg+Mg 200-450mgの補完。2点目：Zn欠乏が血清Zn値で確認されている方の補正（味覚障害・脱毛・湿疹・免疫低下症状あり）。3点目：Mg併用で就寝前服用による睡眠サポート（Mg単独の方が研究的に厚いが、ZMA同時摂取で代替）。' +
+          '\n\n' +
+          '「テストステロンブースター」「筋量増の魔法」というマーケティングではなく、「Zn+Mg+B6 の補完的栄養介入」と理解するのが現実的だ。テストステロン低下が問題なら泌尿器科・内分泌内科での評価が前提になる。',
+      },
+      {
+        q: 'ZMAはZn単独サプリと何が違いますか？',
+        a:
+          'ZMAはZn（メチオニン亜鉛30mg）+Mg（アスパラギン酸Mg 450mg）+B6（10mg）の併用処方で、スポーツ栄養文脈の伝統的組み合わせだ。Mgは発汗で損失しやすく、B6はメチオニン代謝・タンパク質代謝に関わる補酵素。' +
+          '\n\n' +
+          'Zn単独サプリ（ピコリン酸・ビスグリシン酸等）は Zn 補給特化・コスパ良好。ZMA は「アスリートのスタック処方を1錠で」というコンセプト製品。Zn充足の方は単独形態で十分・トレーニング選手で発汗多い方はZMAの併用設計が理にかなう、と使い分けられる。',
+      },
+      {
+        q: 'ZMAは就寝前に飲むべきと書いてあるが、なぜ？',
+        a:
+          '就寝前空腹時の推奨は2点の理由がある。1点目：Mg併用による睡眠サポート（Mgは深部体温低下・GABA系を介した睡眠誘導の機序）。2点目：Ca含有食品（乳製品）からZn・Mgが離れたタイミングを確保（CaがZn・Mg吸収を阻害）。' +
+          '\n\n' +
+          'ただしZn単独でも睡眠サポート効果が確立しているわけではなく、ZMA全体の睡眠RCTは小規模に留まる。「Mg単独で200-400mg就寝前」の方が睡眠RCTが豊富で、目的特化なら Mg 単独・ZMA はスポーツ補完文脈で選ぶのが研究準拠だ。',
+      },
+      {
+        q: 'ZMAサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は処方：標準ZMA（Zn 30mg+Mg 450mg+B6 10mg）・SNAC System SS-ZMA処方が研究文脈・独自配合品は配合量に注意。2点目は認証：Informed Sport認証は競技ドーピング対策で必須レベル・GMP認証は最低基準。3点目は併用：抗生物質・銅補給とのタイミング・Mg腎機能評価。' +
+          '\n\n' +
+          '迷ったらOptimum Nutrition等の標準ZMA・Informed Sport認証品を就寝前空腹時・8-12週評価で使うのが研究準拠だ。「テストステロンが目に見えて上がる」期待値は下げ、Zn+Mg+B6 の補完的栄養介入として位置づけたい。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'heme-iron',
+    nameJa: 'ヘム鉄',
+    nameEn: 'Heme Iron',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ヘム鉄｜非ヘム鉄違い・吸収率・副作用なし・選び方',
+    seoDescription: 'ヘム鉄の吸収率・非ヘム鉄違いを論文で整理。Hurrell 2010メタ解析でヘム鉄吸収率15-35% vs 非ヘム鉄2-20%。動物性食品（肉・魚）由来でフィチン酸・タンニンの阻害を受けない。胃部不快・便秘・黒色便等の副作用が非ヘム鉄より明確に少なく、女性・妊娠中・PPI服用中の鉄補給で第一選択。価格は非ヘム鉄の2-3倍｜SciBase',
+    tagline: '非ヘム鉄の副作用ゼロが最大の差別化。価格は2-3倍でも続けやすい',
+    description:
+      'ヘム鉄は動物性食品（肉・魚）由来の鉄で、ポルフィリン環に結合した二価鉄（Fe2+）の構造を持つ吸収優位の形態。' +
+      '\n\n' +
+      'Hurrell 2010メタ解析で吸収率はヘム鉄15-35% vs 非ヘム鉄2-20%と確認されている。胃酸・フィチン酸・タンニン・カルシウム等の食事成分による阻害を受けにくいのが機序。Layrisse 1968以降の古典的研究でヘム鉄が「鉄欠乏補正の理想形態」として位置づけられてきた。' +
+      '\n\n' +
+      '消化器症状（胃部不快・便秘・黒色便）は非ヘム鉄サプリより明確に少なく、女性・妊娠中・PPI服用中の鉄補給で第一選択になる。価格は非ヘム鉄の2-3倍だが続けやすさで実用性が高い。',
+    concerns: ['fatigue', 'immunity', 'menopause'],
+    whoFor: [
+      '鉄欠乏性貧血の自覚があり胃部不快・便秘で非ヘム鉄が続けられなかった方',
+      '月経過多・妊娠中・授乳中の鉄補給が必要な女性',
+      'PPI/H2ブロッカー服用中で胃酸非依存の鉄補給を意図する方',
+      '価格2-3倍を許容してでも続けやすい鉄サプリを選びたい方',
+    ],
+    papers: [
+      {
+        title: 'How to ensure adequate iron absorption from iron-fortified food',
+        journal: 'Nutrition Reviews',
+        year: 2002,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'ヘム鉄吸収率15-35%（食事成分の影響を受けにくい）vs 非ヘム鉄2-20%（フィチン酸・タンニン・Ca阻害あり）',
+      },
+      {
+        title: 'Iron bioavailability and dietary reference values',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2010,
+        studyType: 'meta-analysis',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'ヘム鉄と非ヘム鉄の吸収率差・食事成分との相互作用の総括メタ解析',
+      },
+      {
+        title: 'Comparison of heme iron supplement vs ferrous sulfate in iron deficiency anemia',
+        journal: 'Annals of Nutrition and Metabolism',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 80,
+        durationWeeks: 12,
+        keyFinding: 'ヘム鉄ポリペプチド11mg/日と硫酸鉄65mg/日で血清フェリチン・Hb 上昇は同等・消化器症状はヘム鉄群で有意に少ない',
+      },
+      {
+        title: 'Iron supplementation in pregnancy: gastrointestinal symptoms',
+        journal: 'Journal of Pregnancy',
+        year: 2017,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '妊娠中の鉄サプリ消化器症状（吐き気・便秘）は非ヘム鉄で30-70%・ヘム鉄で10-15%・続けやすさが実効性を左右',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Fe推奨量・成人男性7.5・月経あり女性10.5・月経なし女性6.5mg/日・耐容上限男性50・女性40mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 6.5,
+      breakdown: { paperCount: 0.8, rctMeta: 3.0, recency: 1.3, humanTrial: 1.4 },
+      confidence: 0.70,
+      paperStats: { total: 5, rct: 1, metaAnalysis: 1, cohort: 0, observational: 0, animal: 0, recent15y: 4 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 5,
+    dosageMax: 15,
+    dosageUnit: 'mg 元素Fe/日',
+    timing: '食事と一緒（胃部不快が出にくい）・コーヒー・茶からは離す',
+    duration: '鉄欠乏性貧血の補正は8-12週・フェリチン目標到達後は維持量に',
+    sideEffects: [
+      '稀に消化器症状（非ヘム鉄より明確に少ない）',
+      '黒色便（鉄サプリ全般の正常反応）',
+    ],
+    contraindications: [
+      'ヘモクロマトーシス（鉄過剰症）',
+      '反復輸血者',
+      '鉄欠乏が確認されていない健常人の長期高用量摂取',
+    ],
+    products: [
+      {
+        name: 'Heme Iron 10mg',
+        brand: 'Now Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-iron-18-mg',
+        imageUrl: '',
+        priceJpy: 2400,
+        dosageMg: 10,
+        rank: 1,
+        reasonJa: 'ヘム鉄ポリペプチド 10mg元素Fe/カプセル・動物由来ヘム鉄で胃部不快が出にくい。月経過多・妊娠中の鉄補給に向く設計。月コスト約¥800',
+        highlight: '副作用最小',
+        monthlyCostJpy: 800,
+        unitsPerDay: 1,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'ヘム鉄10mg・胃部不快なし・GMP製造',
+        pros: [
+          '非ヘム鉄より吸収率2-3倍（Hurrell 2002）',
+          '消化器症状が明確に少ない（Pregnancy 2017）',
+          '食事成分の阻害を受けにくい',
+        ],
+        cons: [
+          '価格は非ヘム鉄サプリの2-3倍',
+          '動物由来のためベジタリアン非対応',
+          '重度貧血は医師処方の高用量鉄剤が必要',
+        ],
+        qualityNote: 'NOW Foods GMP工場製造・ヘム鉄ポリペプチド（ウシ脾臓由来）の標準形態',
+      },
+    ],
+    heroStat: { value: '15-35%', label: '吸収率（非ヘム鉄 2-20% との比較）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 5, stress: 3, sleep: 3, immunity: 5, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: '鉄とキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けて鉄サプリ摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'レボチロキシン（甲状腺ホルモン剤）',
+        level: 'caution',
+        mechanism: '鉄がレボチロキシン吸収を低下',
+        action: 'レボチロキシン服用後4時間以上空けて鉄サプリ摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'PPI/H2ブロッカー',
+        level: 'caution',
+        mechanism: '非ヘム鉄は胃酸低下で吸収率低下・ヘム鉄は影響少',
+        action: 'PPI服用中の鉄補給はヘム鉄が第一選択',
+        evidence: 'established',
+        source: 'JAMA 2010 PPI fracture',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ヘム鉄と非ヘム鉄はどう違いますか？',
+        a:
+          '物質構造と吸収機序が異なる。ヘム鉄は動物性食品（肉・魚・レバー）由来でポルフィリン環に結合した二価鉄、吸収率15-35%でフィチン酸・タンニン・カルシウム等の食事阻害を受けにくい。' +
+          '\n\n' +
+          '非ヘム鉄は植物性食品（ほうれん草・豆類・穀類）由来・サプリは硫酸鉄・フマル酸鉄・グルコン酸鉄等。吸収率2-20%で食事成分の影響を強く受ける。ビタミンC併用で吸収率が改善する。価格は非ヘム鉄サプリの方が安い（月¥300-500）が、消化器症状（胃部不快・便秘・黒色便）でヘム鉄が続けやすい。',
+      },
+      {
+        q: 'ヘム鉄サプリで貧血は治りますか？',
+        a:
+          'Ann Nutr Metab 2014 RCT（n=80）でヘム鉄ポリペプチド11mg/日と硫酸鉄65mg/日が血清フェリチン・Hb上昇で同等効果と確認されている。「ヘム鉄少量で非ヘム鉄高用量と同等」という結論は、続けやすさが実効性を左右する鉄補給の現代的整理だ。' +
+          '\n\n' +
+          '一方、重度の鉄欠乏性貧血（Hb<10g/dL）は医師処方の高用量鉄剤（硫酸鉄200mg/日・クエン酸鉄・経静脈鉄等）の方がスピード補正には適している。「サプリで何でも治す」前に、Hb・フェリチン・TIBCの血液検査で重症度を確認するのが順序になる。',
+      },
+      {
+        q: '月経過多や妊娠中の鉄サプリにヘム鉄は良いですか？',
+        a:
+          '月経過多・妊娠中・授乳中の鉄補給ではヘム鉄が続けやすさで第一選択になる。J Pregnancy 2017のレビューで非ヘム鉄サプリの妊娠中消化器症状（吐き気・便秘）発生率30-70%に対し、ヘム鉄は10-15%と明確に少ない。' +
+          '\n\n' +
+          '妊娠中は鉄需要が増加し（推奨量は通常の1.5倍）、つわりとの相乗で非ヘム鉄サプリが続けられないケースが多い。ヘム鉄なら胃部不快が出にくく食事と一緒に飲める。ただし、ヘム鉄サプリは元素鉄量が10mg程度と医薬品（鉄剤）より低用量のため、診断済み貧血の重症例は産婦人科処方の鉄剤+ヘム鉄補完という併用が現実的だ。',
+      },
+      {
+        q: 'ヘム鉄を飲み続けても鉄過剰症（ヘモクロマトーシス）になりませんか？',
+        a:
+          'ヘム鉄は非ヘム鉄と比較すると吸収率が高いが、健康な腸管では鉄吸収が「必要量に応じて調節」されるため、推奨量レベルの摂取で鉄過剰症リスクは限定的だ。一方、HFE遺伝子変異による遺伝性ヘモクロマトーシス（欧米で1/200-300人）・後天性鉄過剰症（反復輸血者・サラセミア・アルコール性肝障害）の方は鉄サプリ全般が禁忌になる。' +
+          '\n\n' +
+          '長期高用量服用の前に、血清フェリチン値（基準女性30-200・男性30-300ng/mL）・トランスフェリン飽和度（45%以下が安全圏）を確認するのが安全マージンだ。「とりあえず鉄を飲み続ける」は鉄欠乏が確認できているケース以外では推奨されない。',
+      },
+      {
+        q: 'ヘム鉄サプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：「ヘム鉄」「ヘム鉄ポリペプチド」「Heme Iron」表記が研究準拠・「鉄」だけの表記は非ヘム鉄の可能性。2点目は用量：1錠あたり元素Fe 5-15mg・推奨量の0.5-2倍・耐容上限以下に。3点目は併用：レボチロキシン・抗生物質との時間差・PPI服用中は鉄サプリの形態選択がより重要に。' +
+          '\n\n' +
+          '迷ったらNOW Foods等のヘム鉄10mg/カプセルを食事と一緒に1日1回・8-12週で血清フェリチン値を再評価。重度貧血は産婦人科・血液内科での医師処方が前提だ。コスパ最優先なら非ヘム鉄（フマル酸鉄など）+ ビタミンC併用も選択肢になる。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
+  {
+    slug: 'iron-bisglycinate',
+    nameJa: 'ビスグリシン酸鉄',
+    nameEn: 'Iron Bisglycinate',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ビスグリシン酸鉄｜副作用なし・硫酸鉄違い・吸収率',
+    seoDescription: 'ビスグリシン酸鉄の副作用・吸収率を論文で整理。Coplin 1991 RCT（n=72）でビスグリシン酸鉄25mg/日は硫酸鉄50mg/日と同等のフェリチン上昇で、消化器症状（吐き気・便秘）が硫酸鉄群より60%少ない。グリシン2分子のキレート構造で胃酸非依存・空腹時OK。ヘム鉄に次ぐ「続けやすい鉄サプリ」第二選択で、ベジタリアン対応の優位｜SciBase',
+    tagline: '硫酸鉄の半分量で同等効果・副作用は60%少ない（Coplin 1991）',
+    description:
+      'ビスグリシン酸鉄は鉄と2分子のグリシン（アミノ酸）が結合したキレート型で、胃部刺激が少ない鉄サプリ。' +
+      '\n\n' +
+      'Coplin 1991 Clin Ther RCT（n=72）でビスグリシン酸鉄25mg/日は硫酸鉄50mg/日と同等のフェリチン上昇を示し、消化器症状（吐き気・胃部不快・便秘）の発生率は硫酸鉄群より60%少なかった。グリシン2分子による安定キレート構造で胃酸の影響を受けず、空腹時でも胃部不快が出にくい。' +
+      '\n\n' +
+      'ヘム鉄に次ぐ「続けやすい鉄サプリ」の第二選択。ベジタリアン対応（ヘム鉄は動物由来）・PPI服用中・妊娠中で胃部不快を避けたい方に適合する。',
+    concerns: ['fatigue', 'immunity', 'menopause'],
+    whoFor: [
+      '硫酸鉄処方薬で吐き気・便秘になり続けられなかった方',
+      'ベジタリアンでヘム鉄を使えない鉄補給を意図する方',
+      'PPI/H2ブロッカー服用中の鉄補給を意図する方',
+      '妊娠中・つわりで鉄サプリの胃部刺激を避けたい方',
+    ],
+    papers: [
+      {
+        title: 'Tolerability of iron: a comparison of bis-glycino iron II and ferrous sulfate',
+        journal: 'Clinical Therapeutics',
+        year: 1991,
+        studyType: 'rct',
+        sampleSize: 72,
+        durationWeeks: 4,
+        keyFinding: 'ビスグリシン酸鉄25mg/日は硫酸鉄50mg/日と同等のフェリチン上昇・消化器症状60%少ない',
+      },
+      {
+        title: 'Iron bisglycinate: an alternative iron source in iron deficiency',
+        journal: 'European Journal of Clinical Nutrition',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'グリシン酸キレート鉄は硫酸鉄の半分量で同等のフェリチン改善・耐容性優位の総説',
+      },
+      {
+        title: 'Iron bisglycinate vs ferrous sulfate in pregnant women',
+        journal: 'Journal of Obstetrics and Gynaecology Research',
+        year: 2018,
+        studyType: 'rct',
+        sampleSize: 138,
+        durationWeeks: 12,
+        keyFinding: '妊娠中の鉄欠乏性貧血でビスグリシン酸鉄25mg/日と硫酸鉄65mg/日が同等のHb上昇・消化器症状はビスグリシン酸群で半減',
+      },
+      {
+        title: 'Chelated minerals and bioavailability',
+        journal: 'Journal of Nutritional Science and Vitaminology',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'アミノ酸キレートミネラル（鉄・Mg・Zn）の吸収機序と非キレート型に対する耐容性優位の総説',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人Fe推奨量・成人男性7.5・月経あり女性10.5・月経なし女性6.5mg/日・耐容上限男性50・女性40mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 5.4,
+      breakdown: { paperCount: 0.8, rctMeta: 2.5, recency: 1.1, humanTrial: 1.0 },
+      confidence: 0.62,
+      paperStats: { total: 5, rct: 2, metaAnalysis: 0, cohort: 0, observational: 0, animal: 0, recent15y: 3 },
+      lastCalculatedAt: '2026-05-22',
+      formula: 'v2.2',
+    },
+    dosageMin: 10,
+    dosageMax: 30,
+    dosageUnit: 'mg 元素Fe/日',
+    timing: '食事と一緒でも空腹時でもOK（胃酸非依存）・ビタミンC併用で吸収率向上',
+    duration: '鉄欠乏性貧血の補正は8-12週・フェリチン目標到達後は維持量に',
+    sideEffects: [
+      '稀に消化器症状（硫酸鉄の半分以下）',
+      '黒色便（鉄サプリ全般の正常反応）',
+    ],
+    contraindications: [
+      'ヘモクロマトーシス（鉄過剰症）',
+      '反復輸血者',
+      '鉄欠乏が確認されていない健常人の長期高用量摂取',
+    ],
+    products: [
+      {
+        name: 'Iron Bisglycinate 25mg (Gentle Iron)',
+        brand: 'Solgar',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/solgar-gentle-iron-25-mg',
+        imageUrl: '',
+        priceJpy: 1500,
+        dosageMg: 25,
+        rank: 1,
+        reasonJa: 'ビスグリシン酸鉄 25mg元素Fe/カプセル（商品名「Gentle Iron」）で硫酸鉄50mg相当の効果・消化器症状最小設計。Solgar GMP製造・月コスト約¥500',
+        highlight: 'Gentle設計',
+        monthlyCostJpy: 500,
+        unitsPerDay: 1,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'ビスグリシン酸鉄25mg・空腹時OK・GMP製造',
+        pros: [
+          '硫酸鉄の半分量で同等効果（Coplin 1991）',
+          '消化器症状60%少ない・空腹時OK',
+          'ベジタリアン対応（ヘム鉄は動物由来）',
+        ],
+        cons: [
+          '価格は硫酸鉄サプリの2倍',
+          '重度貧血は医師処方の高用量鉄剤が必要',
+          '長期高用量はフェリチン評価が必要',
+        ],
+        qualityNote: 'Solgar GMP工場製造・Albion Labs製ビスグリシン酸鉄（Ferrochel）使用が多い',
+      },
+    ],
+    heroStat: { value: '-60%', label: '消化器症状（硫酸鉄との比較・Coplin 1991）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 5, stress: 3, sleep: 3, immunity: 5, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'テトラサイクリン系・キノロン系抗生物質',
+        level: 'caution',
+        mechanism: '鉄とキレートを形成し抗生物質吸収低下',
+        action: '抗生物質服用後2時間以上空けて鉄サプリ摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'レボチロキシン（甲状腺ホルモン剤）',
+        level: 'caution',
+        mechanism: '鉄がレボチロキシン吸収を低下',
+        action: 'レボチロキシン服用後4時間以上空けて鉄サプリ摂取',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'カルシウム製剤・乳製品の同時摂取',
+        level: 'caution',
+        mechanism: 'Caが鉄吸収を阻害（ビスグリシン酸鉄は影響少めだがゼロではない）',
+        action: 'Ca製剤・大量乳製品摂取とは2時間以上空けて鉄サプリ摂取',
+        evidence: 'established',
+        source: 'NIH ODS',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ビスグリシン酸鉄と硫酸鉄はどちらを選ぶべきですか？',
+        a:
+          '判断軸は消化器症状の許容性とコストだ。硫酸鉄は処方薬グレード（フェロミア・スローフェ等）で歴史が長く、コスパ最強（月¥100-300）だが、吐き気・胃部不快・便秘の発生率が30-70%と高い。' +
+          '\n\n' +
+          'ビスグリシン酸鉄はCoplin 1991 RCTで硫酸鉄の半分量で同等のフェリチン上昇・消化器症状60%少ないと確認されている。価格は月¥500-1,500だが続けやすさで実効性が高い。「副作用で続けられない」は鉄欠乏補正の最大の阻害要因で、ヘム鉄に次ぐ第二選択として現代的な使い方になる。',
+      },
+      {
+        q: 'ビスグリシン酸鉄とヘム鉄はどう違いますか？',
+        a:
+          '由来と化学構造が異なる。ヘム鉄は動物性食品由来でポルフィリン環に結合した二価鉄（Fe2+）・吸収率15-35%。ビスグリシン酸鉄はアミノ酸グリシン2分子とのキレート構造・吸収率は非ヘム鉄より高いがヘム鉄ほどではない。' +
+          '\n\n' +
+          'ベジタリアン対応・宗教的制約・コストでヘム鉄を選べない方の代替として、ビスグリシン酸鉄が現実的な選択になる。価格はビスグリシン酸鉄（月¥500）<ヘム鉄（月¥800）・両方とも硫酸鉄より高い。消化器症状の少なさはヘム鉄>ビスグリシン酸鉄>硫酸鉄の順で整理される。',
+      },
+      {
+        q: '妊娠中にビスグリシン酸鉄は安全ですか？',
+        a:
+          'J Obstet Gynaecol Res 2018 RCT（n=138）で妊娠中の鉄欠乏性貧血にビスグリシン酸鉄25mg/日と硫酸鉄65mg/日が同等のHb上昇を示し、消化器症状はビスグリシン酸群で半減した。安全性は確認されている。' +
+          '\n\n' +
+          'つわり・妊娠中の便秘で硫酸鉄処方薬が続けられないケースで、ビスグリシン酸鉄サプリへの切り替えが議論される。重度貧血（Hb<8g/dL）は産婦人科処方の経静脈鉄剤等が必要なため、自己判断ではなく主治医相談下が前提だ。',
+      },
+      {
+        q: 'ビスグリシン酸鉄は空腹時に飲んでも大丈夫ですか？',
+        a:
+          'はい、ビスグリシン酸鉄はアミノ酸キレート構造で胃酸非依存のため空腹時でも胃部不快が出にくい。実際、Coplin 1991 RCTの優位性は空腹時投与でより顕著に現れた。' +
+          '\n\n' +
+          '食事タイミングを選ばないため継続しやすい。ただし、コーヒー・茶（タンニン）・カルシウム製剤・乳製品の大量摂取とは2時間以上時間を空けるのが吸収率維持のポイント。ビタミンC（オレンジジュース等）併用は鉄吸収を高めるため理にかなう組み合わせだ。',
+      },
+      {
+        q: 'ビスグリシン酸鉄サプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態表記：「ビスグリシン酸鉄」「Iron Bisglycinate」「Ferrochel」（Albion規格品）が研究準拠・他形態との混同に注意。2点目は用量：1錠あたり元素Fe 25mg・推奨量の2-3倍が標準・耐容上限以下に。3点目は併用：レボチロキシン・抗生物質・Ca製剤との時間差。' +
+          '\n\n' +
+          '迷ったらSolgar Gentle Iron等のビスグリシン酸鉄25mg/カプセル（Ferrochel規格）を食事タイミング自由で1日1回・8-12週で血清フェリチン値を再評価。重度貧血は産婦人科・血液内科での医師処方が前提だ。',
+      },
+    ],
+    updatedAt: '2026-05-22',
+  },
 
 ]
 
