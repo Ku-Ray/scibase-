@@ -4,7 +4,15 @@ export interface Paper {
   title: string
   journal: string
   year: number
-  studyType: 'meta-analysis' | 'rct' | 'cohort' | 'observational' | 'animal'
+  studyType:
+    | 'meta-analysis'
+    | 'systematic-review'
+    | 'rct'
+    | 'cohort'
+    | 'observational'
+    | 'review'
+    | 'guideline'
+    | 'animal'
   sampleSize?: number
   durationWeeks?: number
   keyFinding: string

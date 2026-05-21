@@ -46938,6 +46938,1949 @@ export const ingredients: Ingredient[] = [
     ],
     updatedAt: '2026-05-21',
   },
+  {
+    slug: 'vitamin-a',
+    nameJa: 'ビタミンA（経口）',
+    nameEn: 'Vitamin A',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ビタミンA｜推奨量・過剰摂取・妊娠・論文・サプリの選び方',
+    seoDescription: 'ビタミンA（経口）の推奨量・過剰摂取リスク・妊娠中の注意を論文で整理。日本人推奨は男性850・女性650-700μgRAE/日で耐容上限2,700μgRAE/日。Cochrane Review 2017（n=261,000）で小児死亡率24%低下、NEJM CARET 1996（n=18,314）で喫煙者の肺癌リスク28%増。レチノール（外用）とは別枠で経口の役割と注意を解説｜SciBase',
+    tagline: '免疫と視覚の必須栄養。ただし過剰摂取は致命的・妊娠初期は耐容上限を必ず確認',
+    description:
+      'ビタミンAは脂溶性ビタミンで、視覚・上皮細胞・免疫の維持に必須の栄養素。' +
+      '\n\n' +
+      '日本人の推奨量は男性850・女性650-700μgRAE/日で、耐容上限は2,700μgRAE/日。発展途上国の小児死亡率24%低下がCochrane Review 2017（n=261,000）で示されている一方、喫煙者では合成β-カロテン+レチノール併用で肺癌リスクが28%増えるとNEJM CARET 1996（n=18,314）が報告した。' +
+      '\n\n' +
+      '妊娠初期の高用量摂取は催奇形性が確立しており、サプリでの追加摂取は医師相談が前提。レバー・うなぎの過剰摂取も同じリスク経路に乗る。',
+    concerns: ['immunity', 'skin-aging', 'eye-health'],
+    whoFor: [
+      '乾燥肌・上皮ターンオーバーの乱れが気になる成人',
+      '免疫サポート目的でビタミンAの不足が気になる方',
+      '視覚の維持・夜盲傾向が気になる中高年',
+      '妊娠を計画していない・上限内での摂取を確認したい方',
+    ],
+    papers: [
+      {
+        title: 'Vitamin A supplementation for preventing morbidity and mortality in children',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2017,
+        studyType: 'systematic-review',
+        sampleSize: 261000,
+        durationWeeks: 52,
+        keyFinding: '6か月-5歳児の全死亡率を24%低下（RR 0.76, 95%CI 0.69-0.83）。発展途上国でのビタミンA不足解消の根拠',
+      },
+      {
+        title: 'Effects of beta carotene and vitamin A on lung cancer and cardiovascular disease (CARET)',
+        journal: 'New England Journal of Medicine',
+        year: 1996,
+        studyType: 'rct',
+        sampleSize: 18314,
+        durationWeeks: 208,
+        keyFinding: 'β-カロテン30mg+レチノール25,000IU/日併用で喫煙者・アスベスト曝露者の肺癌罹患率が28%増加。試験は早期中止',
+      },
+      {
+        title: 'Teratogenicity of high vitamin A intake',
+        journal: 'New England Journal of Medicine',
+        year: 1995,
+        studyType: 'cohort',
+        sampleSize: 22748,
+        durationWeeks: 0,
+        keyFinding: '妊娠初期に10,000IU/日（3,000μgRAE）以上の摂取で頭蓋神経堤由来の先天奇形リスクが3.5倍上昇',
+      },
+      {
+        title: 'Vitamin A and retinoic acid in T cell-related immunity',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2012,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'T細胞分化・IgA産生・粘膜免疫におけるレチノイン酸の役割をまとめた総説。免疫機能維持の機序',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人の食事摂取基準2025年版・男性850・女性650-700μgRAE/日推奨・耐容上限2,700μgRAE/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 6.4,
+      breakdown: { paperCount: 0.8, rctMeta: 3.0, recency: 1.3, humanTrial: 1.3 },
+      confidence: 0.68,
+      paperStats: {
+        total: 5,
+        rct: 1,
+        metaAnalysis: 1,
+        cohort: 1,
+        observational: 0,
+        animal: 0,
+        recent15y: 3,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 650,
+    dosageMax: 850,
+    dosageUnit: 'μgRAE/日',
+    timing: '脂質を含む食事と一緒（脂溶性のため吸収率が上がる）',
+    duration: '不足の補填目的は8-12週で評価。長期はビタミンA血中濃度の定期確認が望ましい',
+    sideEffects: [
+      '過剰摂取で頭痛・吐き気・皮膚剥離（急性中毒）',
+      '長期高用量で肝障害',
+      '高用量での骨密度低下の報告',
+    ],
+    contraindications: [
+      '妊娠中・妊娠の可能性がある女性は耐容上限を超える摂取を厳禁',
+      '喫煙者・元喫煙者はβ-カロテン併用品を避ける',
+      '肝疾患・高ビタミンA血症の既往あり',
+    ],
+    products: [
+      {
+        name: 'Vitamin A 3,000 mcg (10,000 IU) Softgels',
+        brand: 'NOW Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-vitamin-a-25-000-iu-100-softgels',
+        imageUrl: '',
+        priceJpy: 980,
+        dosageMg: 0.9,
+        rank: 1,
+        reasonJa: '3,000μgRAE/粒で日本人推奨量に近い設計（NOW Foods 3,000mcg版）・耐容上限の3分の1強で安全マージンを確保。100粒で月コスト約¥330と続けやすい',
+        highlight: '推奨量設計',
+        monthlyCostJpy: 330,
+        unitsPerDay: 1,
+        form: 'ソフトジェル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: '900μgRAE/粒・日本人推奨量近似・GMP認証',
+        pros: [
+          '推奨量設計で過剰摂取リスクが低い',
+          'ソフトジェルで脂質と同時に吸収',
+          '月¥330と継続しやすい単価',
+        ],
+        cons: [
+          '妊娠の可能性がある女性は医師相談が前提',
+          '喫煙者は単独摂取の必要性を医師と検討',
+          '高用量品（25,000IU等）は別目的で過剰リスク',
+        ],
+        qualityNote: 'NOW Foods GMP工場製造・第三者検査済み・ビタミンA単独で必要量だけ補える設計',
+      },
+    ],
+    heroStat: { value: '850μg', label: '男性推奨量/日（食事+サプリ合計）' },
+    axisScores: { antiAging: 5, skin: 7, cognitive: 3, stress: 0, sleep: 0, immunity: 7, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'イソトレチノイン・アシトレチン（経口レチノイド処方薬）',
+        level: 'avoid',
+        mechanism: 'ビタミンA活性の重複で高ビタミンA血症リスク',
+        action: '経口レチノイド治療中はビタミンA含有サプリを併用しない',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'caution',
+        mechanism: '高用量ビタミンAで抗凝固作用増強の報告',
+        action: 'ワルファリン服用中は通常推奨量内で・定期PT-INR確認',
+        evidence: 'theoretical',
+        source: 'Drugs.com',
+      },
+      {
+        substance: 'テトラサイクリン系抗生物質',
+        level: 'caution',
+        mechanism: '高用量併用で頭蓋内圧亢進（偽脳腫瘍）の症例報告',
+        action: 'テトラサイクリン服用中は高用量ビタミンA回避',
+        evidence: 'theoretical',
+        source: 'Lexicomp',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ビタミンAサプリは妊娠中に飲んでも大丈夫ですか？',
+        a:
+          '妊娠初期の高用量ビタミンAは催奇形性が確立しているため、サプリでの追加摂取は原則医師相談が前提だ。NEJM 1995のコホート研究では10,000IU/日（3,000μgRAE）以上の摂取で先天奇形リスクが3.5倍に上がった。' +
+          '\n\n' +
+          '日本産科婦人科学会は妊娠初期の上限を5,000IU/日（1,500μgRAE）以下に推奨している。レバー・うなぎの過剰摂取も同じ経路でリスクになるため、食品由来も含めて確認したい。β-カロテン（プロビタミンA）は体内で必要量だけ変換されるため催奇形性は確認されていない。',
+      },
+      {
+        q: 'レチノール（外用）と経口ビタミンAはどう違いますか？',
+        a:
+          '物質としては同じレチノール（ビタミンA）だが、適応・用量・主な研究領域が完全に分かれる。外用レチノールは化粧品成分として皮膚のターンオーバーを促す目的で0.01-1%濃度で配合される一方、経口ビタミンAは全身の視覚・免疫・上皮維持を担う栄養素として食事摂取基準内（850μgRAE/日前後）で摂る。' +
+          '\n\n' +
+          '外用品を経口摂取しても全身ビタミンA源にはならず、逆に経口品を肌に塗っても化粧品レチノールのような効果は期待できない。SciBaseは外用レチノールを別ページで扱っている。',
+      },
+      {
+        q: 'β-カロテンと経口ビタミンA（レチノール）はどちらが安全ですか？',
+        a:
+          'β-カロテンは体内で必要量だけビタミンAに変換されるため、過剰摂取による中毒リスクはレチノール直接摂取より低い。妊娠中の催奇形性もβ-カロテンでは確認されていない。' +
+          '\n\n' +
+          '一方、NEJM 1996のCARET試験では合成β-カロテン30mg+レチノール25,000IU/日を併用した喫煙者で肺癌罹患率が28%増加し試験が中止された。喫煙者・元喫煙者は単独β-カロテンも避けるのが現代の推奨だ。「安全だから多めに摂る」は誤りで、推奨量内が原則になる。',
+      },
+      {
+        q: '夜盲・目の乾きにビタミンAは効きますか？',
+        a:
+          'ビタミンA欠乏による夜盲・角結膜乾燥症（眼球乾燥症）は推奨量での補給で改善する。WHOは発展途上国で年2回20万IUの一括投与プログラムを推奨してきた。' +
+          '\n\n' +
+          '一方、日本人で食事から推奨量を満たしている方が「目に良い」という理由で追加摂取しても、視覚機能の改善は確認されていない。ドライアイの原因は涙液分泌・マイボーム腺機能不全・スクリーン使用時間など多岐にわたるため、まず眼科で原因を確認してからの判断が前提になる。',
+      },
+      {
+        q: 'ビタミンAサプリの選び方は？レチノール型とβ-カロテン型のどちらがいいですか？',
+        a:
+          '判断軸は3つある。1点目は形態：レチノール型は必要量を直接補給できるが過剰摂取リスクがあり、β-カロテン型は体内変換で安全マージンが大きいが変換効率が個人差大（特にBCMO1遺伝子多型で低変換者は3割程度）。2点目は用量：日本人推奨量850μgRAE/日相当・耐容上限2,700μgRAE/日以下・10,000IU超は医療目的以外避ける。3点目は併用：マルチビタミンに既に入っている場合の重複に注意。' +
+          '\n\n' +
+          '迷ったらレチノール3,000IU（900μgRAE）/日相当の単独製品か、β-カロテン型6mg/日相当が出発点として無難だ。喫煙者・妊娠の可能性がある方は医師相談が前提になる。',
+      },
+      {
+        q: '日本人はビタミンA不足ですか？',
+        a:
+          '日本人の平均ビタミンA摂取量は国民健康・栄養調査で約500μgRAE/日（成人）と推奨量より低めだが、欠乏症（夜盲・角結膜乾燥症）は発展途上国のように顕在化していない。これは緑黄色野菜由来のβ-カロテンが補完しているためだ。' +
+          '\n\n' +
+          '一方、極端な減量食・脂質制限食・小腸切除後の方は欠乏が起きやすい。心配な場合は血液検査（血中レチノール値）で確認できる。「日本人は不足だから皆サプリで補うべき」という単純な構図ではなく、食事内容と症状の有無で判断するのが現実的になる。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'vitamin-b3-niacin',
+    nameJa: 'ナイアシン（ビタミンB3・ニコチン酸）',
+    nameEn: 'Niacin (Vitamin B3)',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ナイアシン｜フラッシュ・コレステロール・niacinamide違い',
+    seoDescription: 'ナイアシン（ニコチン酸・ビタミンB3）の推奨量・フラッシュ反応・脂質改善作用を論文で整理。日本人推奨は男性14・女性12mgNE/日。高用量1,500-3,000mg/日でHDL+20-25%・トリグリセリド-25-35%がCoronary Drug Project 1986（n=8,341）で示された一方、AIM-HIGH 2011はスタチン併用で心血管イベント追加抑制を示せず中止。ナイアシンアミド（niacinamide）との形態違いも整理｜SciBase',
+    tagline: '高用量で脂質改善が確立。ただしフラッシュと肝障害リスクで処方薬グレードの議論',
+    description:
+      'ナイアシン（ニコチン酸）はビタミンB3の一形態で、NAD+合成・エネルギー代謝の補酵素として機能する。' +
+      '\n\n' +
+      '推奨量は男性14・女性12mgNE/日（食事摂取基準）。高用量1,500-3,000mg/日でHDL+20-25%・トリグリセリド-25-35%の脂質改善がCoronary Drug Project 1986（n=8,341）で示されているが、AIM-HIGH 2011はスタチン併用での心血管イベント追加抑制を示せず試験が中止された。' +
+      '\n\n' +
+      '高用量はフラッシュ（顔・首の紅潮・かゆみ）が必発で、肝障害・耐糖能悪化のリスクもある。処方薬グレード用量は医師管理下が前提。皮膚のニキビ・抗炎症目的はナイアシンアミド（niacinamide）が別枠になる。',
+    concerns: ['heart-vascular', 'metabolic-health', 'cardiovascular'],
+    whoFor: [
+      'LDL・トリグリセリド高値で食事・運動・スタチンの次手段を医師と検討する方',
+      'NAD+前駆体として代謝サポートを意図する中高年',
+      'ナイアシンアミド（皮膚）とニコチン酸（脂質）の違いを整理したい方',
+      'フラッシュ反応の許容と肝機能定期確認ができる方',
+    ],
+    papers: [
+      {
+        title: 'Fifteen year mortality in Coronary Drug Project patients: long-term benefit with niacin',
+        journal: 'Journal of the American College of Cardiology',
+        year: 1986,
+        studyType: 'rct',
+        sampleSize: 8341,
+        durationWeeks: 312,
+        keyFinding: 'ニコチン酸3g/日で心筋梗塞既往の男性の総死亡率が15年追跡で11%低下（最長期RCT）',
+      },
+      {
+        title: 'Niacin in patients with low HDL cholesterol levels receiving intensive statin therapy (AIM-HIGH)',
+        journal: 'New England Journal of Medicine',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 3414,
+        durationWeeks: 156,
+        keyFinding: '徐放性ナイアシン1,500-2,000mg/日のスタチン併用で心血管イベントの追加抑制効果を示せず・試験中止',
+      },
+      {
+        title: 'Effects of extended-release niacin with laropiprant in high-risk patients (HPS2-THRIVE)',
+        journal: 'New England Journal of Medicine',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 25673,
+        durationWeeks: 208,
+        keyFinding: 'ナイアシン+ラロピプラント併用で重篤な有害事象（糖尿病・出血・感染）増加・スタチン併用での心血管イベント抑制効果なし',
+      },
+      {
+        title: 'Effect of niacin on lipid and lipoprotein levels and glycemic control',
+        journal: 'JAMA',
+        year: 2000,
+        studyType: 'meta-analysis',
+        sampleSize: 30000,
+        durationWeeks: 24,
+        keyFinding: 'ニコチン酸1,500-3,000mg/日でHDL+20-25%・LDL-15-20%・トリグリセリド-25-35%の脂質改善',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人推奨量・男性14・女性12mgNE/日・耐容上限ニコチン酸として300mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 5.9,
+      breakdown: { paperCount: 0.8, rctMeta: 3.0, recency: 0.8, humanTrial: 1.3 },
+      confidence: 0.65,
+      paperStats: {
+        total: 5,
+        rct: 3,
+        metaAnalysis: 1,
+        cohort: 0,
+        observational: 0,
+        animal: 0,
+        recent15y: 2,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 14,
+    dosageMax: 1000,
+    dosageUnit: 'mg/日',
+    timing: '低用量は食後・高用量は徐放性タイプで食後・フラッシュ回避はアスピリン前投与の選択肢あり',
+    duration: '脂質改善目的は8-12週で再評価。肝機能・血糖の定期確認が必須',
+    sideEffects: [
+      'フラッシュ（顔・首の紅潮・かゆみ・熱感）',
+      '高用量で肝障害・肝逸脱酵素上昇',
+      '耐糖能悪化・血糖上昇',
+      '消化器症状・吐き気',
+    ],
+    contraindications: [
+      '肝疾患・高度肝機能障害',
+      '消化性潰瘍の活動期',
+      '高度の耐糖能異常・コントロール不良の糖尿病',
+      '通風・高尿酸血症の悪化既往',
+    ],
+    products: [
+      {
+        name: 'Niacin 500mg (Flush)',
+        brand: 'NOW Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-niacin-500-mg-100-tablets',
+        imageUrl: '',
+        priceJpy: 1200,
+        dosageMg: 500,
+        rank: 1,
+        reasonJa: 'フラッシュ型500mg/錠で脂質改善目的の用量域に対応・1回250-500mgから漸増可能。徐放性は肝障害リスクが高いため非推奨',
+        highlight: '脂質改善設計',
+        monthlyCostJpy: 720,
+        unitsPerDay: 2,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'フラッシュ型500mg・脂質改善文脈での標準形態',
+        pros: [
+          'フラッシュ型は徐放性より肝障害リスクが低い',
+          '500mg/錠で漸増しやすい',
+          'NOW Foods GMP製造',
+        ],
+        cons: [
+          'フラッシュ反応は使用初期に必発',
+          '高用量は医師の脂質パネル・肝機能評価が前提',
+          '糖尿病・通風既往は不向き',
+        ],
+        qualityNote: 'NOW Foods GMP工場製造・第三者検査済み・フラッシュ型は徐放性より肝障害発生率が低い文献データあり',
+      },
+    ],
+    heroStat: { value: '+25%', label: 'HDL上昇（高用量1.5-3g/日メタ解析）' },
+    axisScores: { antiAging: 3, skin: 3, cognitive: 3, stress: 0, sleep: 0, immunity: 0, metabolism: 8 },
+    interactions: [
+      {
+        substance: 'スタチン系（アトルバスタチン・ロスバスタチン等）',
+        level: 'caution',
+        mechanism: '横紋筋融解症リスクの加算（特に高用量ナイアシン）',
+        action: 'スタチン服用中の高用量ナイアシン併用は医師管理下で・CK・肝機能を定期確認',
+        evidence: 'established',
+        source: 'FDA Drug Safety Communication',
+      },
+      {
+        substance: '降圧薬（α遮断薬等）',
+        level: 'caution',
+        mechanism: 'ナイアシンの血管拡張作用と重複し起立性低血圧リスク',
+        action: '降圧薬服用中の高用量ナイアシン開始時は血圧モニタリング',
+        evidence: 'theoretical',
+        source: 'Drugs.com',
+      },
+      {
+        substance: '糖尿病治療薬',
+        level: 'caution',
+        mechanism: 'ナイアシンによる耐糖能悪化',
+        action: '糖尿病既往者は高用量ナイアシン開始時にHbA1c・空腹時血糖を再評価',
+        evidence: 'established',
+        source: 'AIM-HIGH 2011',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ナイアシンとナイアシンアミド（niacinamide）はどう違いますか？',
+        a:
+          '物質としては同じビタミンB3だが、形態の違いで作用・適応・副作用が全く異なる。ニコチン酸（ナイアシン）は高用量でHDL上昇・トリグリセリド低下の脂質改善作用を持ち、フラッシュ反応（顔・首の紅潮）が必発になる。' +
+          '\n\n' +
+          '一方、ニコチンアミド（ナイアシンアミド）は脂質改善作用がなくフラッシュも起こさず、皮膚科では美白・抗炎症・ニキビ予防の文脈で使われる。SciBaseはniacinamideを別ページで扱っている。「ビタミンB3」というだけで同じものと判断すると目的が達成できない可能性がある。',
+      },
+      {
+        q: 'ナイアシンのフラッシュ反応は危険ですか？',
+        a:
+          'フラッシュ反応自体は危険ではない。皮膚血管の急激な拡張で顔・首・上半身が紅潮しチクチクする現象で、プロスタグランジンD2を介した生理的反応だ。通常は摂取後15-30分で出始め、1-2時間で軽減する。' +
+          '\n\n' +
+          '初回・空腹時・アルコール併用で強く出やすい。食後摂取・アスピリン325mgの30分前投与・徐放性タイプ使用でフラッシュは軽減できる。ただし徐放性は肝障害リスクが上がるため、脂質改善目的でも医師管理下が前提になる。「フラッシュがあるから効いている証拠」という解釈は機序上は妥当だが、副作用リスクを軽視する判断材料には使わない。',
+      },
+      {
+        q: 'ナイアシンで本当にLDLコレステロールが下がりますか？',
+        a:
+          'ナイアシン1,500-3,000mg/日でLDLは15-20%低下・HDLは20-25%上昇するメタ解析データがある（JAMA 2000）。ただし2011年AIM-HIGH試験以降、スタチン併用での心血管イベント追加抑制が示せず、現在の循環器ガイドラインではナイアシンは第一選択ではなくなった。' +
+          '\n\n' +
+          'それでもナイアシンモノセラピー時代の長期データ（Coronary Drug Project 15年追跡）では総死亡率11%低下が示されており、スタチン不耐性・スタチン使用不可の方の選択肢として残っている。判断は循環器内科・脂質代謝外来との相談が現実的になる。',
+      },
+      {
+        q: 'ナイアシンを飲むと糖尿病になりますか？',
+        a:
+          '高用量1,500-3,000mg/日で耐糖能が悪化することは確立した副作用だ。AIM-HIGH試験では新規糖尿病発症が増加し、空腹時血糖・HbA1cが有意に上昇した。糖尿病既往者・境界型・代謝症候群の方は使用前後でHbA1cと空腹時血糖の評価が必須になる。' +
+          '\n\n' +
+          '一方、推奨量レベル（14-16mg/日）では糖尿病リスクは確認されていない。「ビタミンだから安全」という理解は高用量領域では成立しない。食事摂取基準内のマルチビタミン由来は通常問題にならない。',
+      },
+      {
+        q: 'NAD+前駆体としてナイアシン・NMN・NRはどれを選ぶべきですか？',
+        a:
+          '3つともNAD+合成経路に乗るが、研究の段階と用途が異なる。ナイアシン（ニコチン酸）は最も歴史が長く、脂質改善・NAD+補給の両方でヒトデータが豊富だがフラッシュと肝障害リスクがある。' +
+          '\n\n' +
+          'NR（ニコチンアミドリボシド）はヒトでのNAD+上昇とミトコンドリア機能改善が示されているが、寿命・健康寿命への直接的長期エビデンスは未確立。NMN（ニコチンアミドモノヌクレオチド）はヒトRCTが増えているが長期データはNRより薄い。' +
+          '\n\n' +
+          '「とにかくNAD+を上げたい」目的なら、ヒトでの安全性データが厚いNR 250-500mg/日が中庸的な選択になる。ナイアシン高用量はフラッシュと肝臓・血糖の負荷を考慮する必要があり、健康サプリ目的では非推奨。SciBaseはNR・NMNを別ページで扱っている。',
+      },
+      {
+        q: 'ナイアシンサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：脂質改善目的ならフラッシュ型（ニコチン酸即放）が肝障害リスクが低く第一選択・徐放性は肝障害リスクが高いため避ける・「ノーフラッシュナイアシン」（イノシトールヘキサニコチネート）は脂質改善エビデンスが不確実。2点目は用量：栄養補給は20-50mg/日・脂質改善は500-2,000mg/日（医師管理下）。3点目は併用安全性：スタチン・降圧薬・糖尿病薬・ワルファリン服用中は医師相談が前提。' +
+          '\n\n' +
+          '迷ったらまず食事摂取基準内のマルチビタミンB群で開始し、脂質改善目的は医師判断下で500mgから漸増する流れが安全だ。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'potassium',
+    nameJa: 'カリウム',
+    nameEn: 'Potassium',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'カリウム｜血圧・むくみ・日本人摂取量・推奨量・サプリ',
+    seoDescription: 'カリウム（K）の血圧改善・むくみ・推奨摂取量を論文で整理。日本人推奨は男性3,000・女性2,600mg/日だが平均は約2,300mg/日で不足傾向。DASH 2001（n=459）でDASH食による収縮期-5.5/拡張期-3.0mmHg低下を確認、Aburto 2013メタ解析（n=128,000）でカリウム摂取増で脳卒中リスク-24%。腎機能低下時の高K血症リスクと併せて整理｜SciBase',
+    tagline: '日本人の平均摂取量は推奨量より低い。血圧・脳卒中リスクへの介入経路として研究が厚い',
+    description:
+      'カリウムは細胞内陽イオン主体のミネラルで、神経伝達・筋収縮・体液浸透圧の維持に必須。' +
+      '\n\n' +
+      '日本人推奨量は男性3,000・女性2,600mg/日だが、国民健康・栄養調査の平均は約2,300mg/日と不足傾向。DASH 2001（n=459）で野菜・果物・低脂肪乳の食事パターンによる収縮期血圧-5.5mmHg低下が示され、Aburto 2013メタ解析（n=128,000）ではカリウム摂取増で脳卒中リスク24%低下が確認されている。' +
+      '\n\n' +
+      '腎機能低下のある方は高K血症の致命的リスクがあり、カリウムサプリは原則医師相談が前提。健常人は野菜・果物・海藻からの食事摂取が第一選択になる。',
+    concerns: ['heart-vascular', 'cardiovascular'],
+    whoFor: [
+      '減塩中でも血圧が下がりにくい・むくみが気になる方',
+      '野菜・果物の摂取量が少ない自覚がある成人',
+      '日本人の平均的食生活で不足傾向を補完したい方',
+      '腎機能正常・処方薬の服用がなく医師相談を経た方',
+    ],
+    papers: [
+      {
+        title: 'A clinical trial of the effects of dietary patterns on blood pressure (DASH)',
+        journal: 'New England Journal of Medicine',
+        year: 2001,
+        studyType: 'rct',
+        sampleSize: 459,
+        durationWeeks: 11,
+        keyFinding: 'カリウム4,700mg/日のDASH食で収縮期-5.5/拡張期-3.0mmHg低下・高血圧者では-11.4/-5.5mmHg',
+      },
+      {
+        title: 'Effect of increased potassium intake on cardiovascular risk factors and disease',
+        journal: 'BMJ',
+        year: 2013,
+        studyType: 'meta-analysis',
+        sampleSize: 128000,
+        durationWeeks: 0,
+        keyFinding: 'カリウム摂取量増（90-120mmol/日相当3,500-4,700mg）で収縮期血圧-3.5mmHg・脳卒中リスク-24%',
+      },
+      {
+        title: 'Potassium intake and risk of stroke in women with hypertension',
+        journal: 'American Journal of Hypertension',
+        year: 2014,
+        studyType: 'cohort',
+        sampleSize: 90137,
+        durationWeeks: 572,
+        keyFinding: '閉経後女性のカリウム摂取量上位四分位は最下位四分位に対し全脳卒中リスク12%低下',
+      },
+      {
+        title: 'Effect of salt substitution on cardiovascular events and death (SSaSS)',
+        journal: 'New England Journal of Medicine',
+        year: 2021,
+        studyType: 'rct',
+        sampleSize: 20995,
+        durationWeeks: 260,
+        keyFinding: '塩化K 25%置換塩で脳卒中14%・主要心血管イベント13%・全死亡12%減（中国農村部・腎機能正常者）',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人目標量・男性3,000・女性2,600mg/日・WHO推奨3,510mg/日・国民健康・栄養調査平均約2,300mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 7.0,
+      breakdown: { paperCount: 0.9, rctMeta: 3.2, recency: 1.4, humanTrial: 1.5 },
+      confidence: 0.72,
+      paperStats: {
+        total: 5,
+        rct: 2,
+        metaAnalysis: 1,
+        cohort: 1,
+        observational: 0,
+        animal: 0,
+        recent15y: 4,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 200,
+    dosageMax: 500,
+    dosageUnit: 'mg/日（サプリ追加分）',
+    timing: '食事と一緒（胃粘膜刺激を避ける）。食事から3,000mg近く摂れている方はサプリ不要',
+    duration: '不足の補填は8-12週で評価。血圧目的は野菜・果物の食事改善との並行が前提',
+    sideEffects: [
+      '消化器症状（高用量サプリで胃部不快・下痢）',
+      '高K血症（腎機能低下・降圧薬併用で）',
+    ],
+    contraindications: [
+      '腎機能低下（CKDステージ3以上）・透析中',
+      'ACE阻害薬・ARB・カリウム保持性利尿薬服用中（自己判断追加は禁忌）',
+      'アジソン病など副腎不全',
+    ],
+    products: [
+      {
+        name: 'Potassium Citrate 99mg',
+        brand: 'NOW Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-potassium-citrate-99-mg-180-tablets',
+        imageUrl: '',
+        priceJpy: 1100,
+        dosageMg: 99,
+        rank: 1,
+        reasonJa: 'クエン酸カリウム99mg/錠（米国OTC上限）で1-3錠/日の補完用途・腎機能正常者の食事補完を想定。食事3,000mg到達を主・サプリは200-300mg/日の補助が現実的',
+        highlight: 'OTC上限設計',
+        monthlyCostJpy: 360,
+        unitsPerDay: 2,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'クエン酸カリウム99mg・米国OTC上限・食事補完用途',
+        pros: [
+          '食事不足を200-300mg/日で補完できる',
+          'クエン酸塩は胃部不快が出にくい',
+          '腎機能正常者の補完に適合',
+        ],
+        cons: [
+          '腎機能低下者・降圧薬服用者は事前に医師相談',
+          '食事3,000mg到達が主・サプリは補助',
+          '高用量サプリで胃部不快の可能性',
+        ],
+        qualityNote: 'NOW Foods GMP工場製造・クエン酸塩で胃酸刺激低・米国OTC基準99mg/錠で安全マージン確保',
+      },
+    ],
+    heroStat: { value: '-24%', label: '脳卒中リスク（カリウム摂取増メタ解析）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 0, stress: 3, sleep: 0, immunity: 0, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'ACE阻害薬・ARB（降圧薬）',
+        level: 'avoid',
+        mechanism: 'カリウム保持作用と相加で高K血症リスク・致死的不整脈の症例報告',
+        action: 'ACE阻害薬・ARB服用中はカリウムサプリ自己追加は禁忌・処方医判断下',
+        evidence: 'established',
+        source: 'FDA Drug Safety Communication',
+      },
+      {
+        substance: 'カリウム保持性利尿薬（スピロノラクトン・トリアムテレン）',
+        level: 'avoid',
+        mechanism: '相乗的高K血症リスク',
+        action: 'これら利尿薬服用中はカリウムサプリ追加は禁忌',
+        evidence: 'established',
+        source: 'Drugs.com',
+      },
+      {
+        substance: 'NSAIDs長期使用',
+        level: 'caution',
+        mechanism: '腎機能低下を介した高K血症リスク',
+        action: 'NSAIDs長期・高用量使用中はカリウムサプリ開始前に医師相談',
+        evidence: 'theoretical',
+        source: 'Lexicomp',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '日本人はカリウム不足ですか？',
+        a:
+          '日本人の平均カリウム摂取量は国民健康・栄養調査で約2,300mg/日（成人）と推奨量（男性3,000・女性2,600mg/日）より低い。WHO推奨の3,510mg/日と比較するとさらに差が大きい。' +
+          '\n\n' +
+          '背景には伝統的食事の塩分過剰・野菜不足・果物摂取の少なさがある。「日本人はナトリウム過剰・カリウム不足のNa/K比が悪い」という構造で、減塩だけでなくカリウム増の両輪が血圧介入として推奨されている。判断基準は食事内容で、野菜350g/日・果物200g/日を満たしていれば食事だけで推奨量に到達する。',
+      },
+      {
+        q: 'カリウムサプリで血圧は下がりますか？',
+        a:
+          'カリウム摂取増で血圧が下がるエビデンスは確立している。Aburto 2013メタ解析（n=128,000）で90-120mmol/日（3,500-4,700mg）摂取で収縮期血圧-3.5mmHg・拡張期-2.0mmHgの改善が示された。' +
+          '\n\n' +
+          'ただし米国OTC基準ではサプリ1錠99mgが上限で、サプリだけで推奨量に到達するのは現実的でない。野菜・果物・海藻からの食事増が第一手段で、サプリは200-300mg/日の補完用途になる。降圧目的の高用量カリウムサプリは医療機関で処方カリウムが扱われる領域で、自己判断の高用量は致死的不整脈リスクがある。',
+      },
+      {
+        q: 'カリウムサプリは腎臓に悪いですか？',
+        a:
+          '腎機能正常者であればカリウム代謝は問題なく、過剰分は尿中に排泄される。一方、腎機能低下（CKDステージ3以上・eGFR<60）の方ではカリウム排泄能が低下し、サプリ追加で高K血症（心室細動・心停止リスク）が起きうる。' +
+          '\n\n' +
+          '高K血症は無症状で進行することがあり、自覚症状（手足のしびれ・脱力・不整脈感）が出る頃には致死的領域に達する場合がある。腎機能低下の自覚がある方・60歳以上・糖尿病既往の方は血液検査でeGFRを確認してから判断したい。ACE阻害薬・ARB・スピロノラクトン服用中の方はサプリ自己追加が禁忌になる。',
+      },
+      {
+        q: 'カリウムの多い食品は？',
+        a:
+          '生100gあたりの主要カリウム量で並べると、アボカド720mg・ほうれん草690mg・里芋640mg・バナナ360mg・ヨーグルト無糖170mgなど。海藻類は乾燥重量で計算するとひじき乾4,400mg/100gと突出して多い。' +
+          '\n\n' +
+          '3,000mg到達の現実的な献立は「朝バナナ1本+ヨーグルト・昼ほうれん草のおひたし+味噌汁・夜里芋の煮物+魚」のような構成で達成可能だ。「サプリで補う」より食事改善が低リスク・低コスト・血圧介入として強い。',
+      },
+      {
+        q: 'カリウムサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：クエン酸カリウムが胃酸刺激が低く第一選択・塩化カリウムは胃部不快が出やすい・グルコン酸カリウムも選択肢。2点目は用量：米国OTC基準99mg/錠が標準で、200-400mg/日（2-4錠）が食事補完の上限・それ以上は医療処方領域。3点目は禁忌薬剤：ACE阻害薬・ARB・スピロノラクトン服用中は併用禁忌。' +
+          '\n\n' +
+          '迷ったらまず野菜・果物の食事増で対応し、平均摂取2,300mg/日を3,000mg/日まで上げる食事改善が第一手段だ。サプリは食事改善が困難な場合の補完用途と理解するのが現代的な使い方になる。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'phosphorus',
+    nameJa: 'リン',
+    nameEn: 'Phosphorus',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'リン｜過剰摂取・骨密度・血管石灰化・日本人摂取量',
+    seoDescription: 'リン（P）の推奨量・過剰摂取リスクを論文で整理。日本人推奨は男性1,000・女性800mg/日・耐容上限3,000mg/日。加工食品・清涼飲料水のリン酸塩で平均摂取は約1,000-1,100mg/日と過剰傾向。Calvo 2014レビューで腎機能正常者でも長期高P摂取は骨密度低下・血管石灰化リスクと報告。「不足より過剰」の文脈での整理が必要｜SciBase',
+    tagline: '日本人で不足はまれ・むしろ加工食品由来のリン酸塩過剰が骨と血管のリスクに',
+    description:
+      'リンはカルシウムと並ぶ骨ミネラルで、ATP・核酸・細胞膜リン脂質の構成要素。' +
+      '\n\n' +
+      '日本人推奨量は男性1,000・女性800mg/日・耐容上限3,000mg/日。国民健康・栄養調査の平均摂取量は1,000-1,100mg/日で食事不足は稀。むしろ加工食品・清涼飲料水・インスタント食品の食品添加物（リン酸塩）由来で過剰摂取傾向にあり、Calvo 2014レビューで腎機能正常者でも長期高P摂取が骨密度低下・血管石灰化と関連が報告されている。' +
+      '\n\n' +
+      'サプリでの追加摂取の必要性は通常ない。腎機能低下（CKD）の方は高P血症・続発性副甲状腺機能亢進症リスクで処方薬による吸着治療領域になる。',
+    concerns: ['bone', 'metabolism'],
+    whoFor: [
+      '加工食品摂取が多い自覚があり過剰摂取の整理をしたい方',
+      '骨密度・骨代謝への食事的影響を確認したい中高年',
+      '腎機能低下の既往があり食事のリン管理を意識したい方',
+      'リンサプリの必要性を判断したい栄養補給目的の方',
+    ],
+    papers: [
+      {
+        title: 'Assessing the health impact of phosphorus in the food supply',
+        journal: 'Advances in Nutrition',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '加工食品由来リン酸塩の過剰摂取が腎機能正常者でも血管石灰化・骨密度低下と関連・現代食事の隠れリン過剰問題',
+      },
+      {
+        title: 'Dietary phosphorus and cardiovascular disease risk in healthy adults',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2014,
+        studyType: 'cohort',
+        sampleSize: 9686,
+        durationWeeks: 312,
+        keyFinding: 'リン摂取上位四分位は最下位四分位に対し総死亡率1.5倍上昇（NHANES III追跡）',
+      },
+      {
+        title: 'Phosphorus and bone health throughout the lifespan',
+        journal: 'Nutrition Reviews',
+        year: 2019,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '生涯にわたる骨代謝でのリンの役割と過剰摂取時の骨密度低下機序の総説',
+      },
+      {
+        title: 'Hyperphosphatemia and cardiovascular outcomes in CKD',
+        journal: 'Kidney International',
+        year: 2018,
+        studyType: 'meta-analysis',
+        sampleSize: 25000,
+        durationWeeks: 0,
+        keyFinding: 'CKD患者で血清P値0.5mg/dL上昇あたり心血管死亡率1.18倍・全死亡率1.13倍上昇',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人推奨量・男性1,000・女性800mg/日・耐容上限3,000mg/日・国民健康・栄養調査平均1,000-1,100mg/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.2,
+      breakdown: { paperCount: 0.6, rctMeta: 1.5, recency: 1.3, humanTrial: 0.8 },
+      confidence: 0.50,
+      paperStats: {
+        total: 5,
+        rct: 0,
+        metaAnalysis: 1,
+        cohort: 1,
+        observational: 0,
+        animal: 0,
+        recent15y: 4,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 0,
+    dosageMax: 250,
+    dosageUnit: 'mg/日（サプリ追加分・通常不要）',
+    timing: '食事と一緒（吸収率向上のため）。健常人は食事から十分摂取しているためサプリ不要',
+    duration: 'サプリ補充が必要な状況は稀。CKDの方は処方による管理領域',
+    sideEffects: [
+      '過剰摂取で骨密度低下・血管石灰化リスク',
+      '腎機能低下者で高P血症',
+    ],
+    contraindications: [
+      '腎機能低下（CKDステージ3以上）',
+      '副甲状腺機能亢進症',
+      '低Ca血症未治療',
+    ],
+    products: [
+      {
+        name: 'リン単独サプリは健常人で推奨対象外',
+        brand: '医療機関処方推奨',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=phosphorus',
+        imageUrl: '',
+        priceJpy: 0,
+        dosageMg: 0,
+        rank: 1,
+        reasonJa: '健常人ではリン不足は稀でサプリ補給の必要性は通常ない。むしろ加工食品・清涼飲料水のリン酸塩で過剰傾向のため、食事改善（加工食品の頻度を下げる）が主要介入になる',
+        highlight: '通常サプリ不要',
+        monthlyCostJpy: 0,
+        unitsPerDay: 0,
+        form: '-',
+        thirdPartyTested: false,
+        certifications: [],
+        benefitHeading: '通常サプリ不要・食事改善が主要介入',
+        pros: [
+          '日本人で食事性リン不足は稀',
+          '骨ミネラルとして食品から自然に摂取可能',
+          'CKDの方は処方領域',
+        ],
+        cons: [
+          '過剰摂取は骨密度低下・血管石灰化リスク',
+          'サプリ補給は医療目的でのみ',
+          '加工食品由来リン酸塩は隠れ過剰の主因',
+        ],
+        qualityNote: '健常人へのリン単独サプリの推奨はガイドライン上ない・食事性過剰の整理が現代の主要課題',
+      },
+    ],
+    heroStat: { value: '1,100mg', label: '日本人平均摂取量（推奨を超過）' },
+    axisScores: { antiAging: 0, skin: 0, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'カルシウム製剤・カルシウム強化食品',
+        level: 'caution',
+        mechanism: '高Ca+高Pで血管石灰化リスク',
+        action: 'カルシウム製剤大量摂取とリン強化食品の併用は避ける',
+        evidence: 'theoretical',
+        source: 'Calvo 2014',
+      },
+      {
+        substance: 'リン吸着薬（炭酸ランタン・セベラマー等）',
+        level: 'caution',
+        mechanism: 'リン吸着薬服用中はサプリ追加で薬効妨害',
+        action: 'CKDで処方リン吸着薬服用中はリンサプリ・リン強化食品を避ける',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '日本人にリン不足はありますか？',
+        a:
+          '通常の食生活でリン不足は稀だ。リンは肉・魚・卵・乳製品・豆類・穀類のほぼすべての食品に含まれており、国民健康・栄養調査の平均摂取量は1,000-1,100mg/日と推奨量を上回っている。' +
+          '\n\n' +
+          'むしろ問題は加工食品（ハム・ソーセージ・インスタント食品・清涼飲料水・プロセスチーズ等）に食品添加物として使われるリン酸塩で、これが「隠れリン過剰」を作る。極端な低タンパク食・低脂肪食・摂食障害・小腸切除後の方を除けば、サプリでの追加は不要だ。',
+      },
+      {
+        q: '加工食品のリン酸塩は危険ですか？',
+        a:
+          'CKD（腎機能低下）の方では血管石灰化・心血管死亡率上昇との関連が確立しているため、リン制限が治療の一部になる。健常人でも長期の高リン摂取（特に加工食品由来）で血管石灰化・骨密度低下リスクが示唆されており（Calvo 2014レビュー）、NHANES III追跡（n=9,686）でリン摂取上位群の総死亡率1.5倍上昇が報告されている。' +
+          '\n\n' +
+          'リン酸塩は食品成分表示で「pH調整剤」「乳化剤」「結着剤」等の用途名で表示されることがあり、原材料表示の最後の方に「リン酸塩」「ポリリン酸」と書かれる。気にする場合は加工食品の頻度を下げる方が現実的になる。',
+      },
+      {
+        q: '骨を強くするためにリンサプリを飲むべきですか？',
+        a:
+          '骨はカルシウムとリンの両方で構成されるが、骨密度向上のためのリンサプリの推奨は栄養学的にない。日本人の食生活ではカルシウム不足・リン充足が標準であり、Ca/P比の悪さが問題視される。' +
+          '\n\n' +
+          '骨密度向上の介入は、カルシウム700-800mg/日（食事+不足時のサプリ）・ビタミンD・ビタミンK2・運動（特に荷重運動）・適正タンパク質摂取の組み合わせが基本だ。リン単独追加は骨代謝バランスを悪化させる可能性がある。',
+      },
+      {
+        q: 'リンの推奨量と耐容上限は？',
+        a:
+          '日本人の食事摂取基準2025年版では推奨量は男性1,000・女性800mg/日、耐容上限3,000mg/日となっている。米国IOMは推奨量700mg/日・耐容上限4,000mg/日。' +
+          '\n\n' +
+          '国民健康・栄養調査の日本人成人平均は約1,000-1,100mg/日で、推奨量周辺の摂取が実現できている。耐容上限を超える方は稀だが、清涼飲料水（コーラ等）の多飲・加工食品の頻回摂取で超過する場合がある。「サプリで上限を超える」より「食事性過剰」が主要リスクだ。',
+      },
+      {
+        q: 'リン制限が必要なのは誰ですか？',
+        a:
+          'リン制限が医学的に必要なのはCKD（慢性腎臓病）ステージ3以降の方が中心だ。腎機能低下でリン排泄が減ると血清P値が上昇し、続発性副甲状腺機能亢進症・骨ミネラル代謝異常・血管石灰化・心血管死亡率上昇につながる。' +
+          '\n\n' +
+          '対応は処方リン吸着薬（炭酸ランタン・セベラマー等）+食事リン制限が基本になる。健常人で「予防的リン制限」を強くする必要はないが、加工食品の頻度を下げるという緩い意識は健康全般に有益だ。腎機能低下の自覚がある方は腎臓内科での評価が前提になる。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'sodium',
+    nameJa: 'ナトリウム（食塩）',
+    nameEn: 'Sodium',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ナトリウム｜食塩相当量・高血圧・WHO推奨・日本人摂取',
+    seoDescription: 'ナトリウム（食塩）の摂取量・高血圧・心血管リスクを論文で整理。WHO推奨は<2,000mg Na/日（食塩5g）だが、日本人平均は約3,900mg Na/日（食塩10g）で過剰。TONE 1998（n=975）で減塩により高血圧者の降圧薬中止維持率が31%上昇、INTERSALT 1988（n=10,079）で集団全体の塩分摂取と血圧の関連を確認。日本の食事摂取基準は男性<7.5g・女性<6.5g/日｜SciBase',
+    tagline: '日本人の最大の食事性課題。サプリで足すのではなく食事で減らす方向の整理',
+    description:
+      'ナトリウムは細胞外液主要陽イオンで、体液量・血圧・神経伝達に必須のミネラル。' +
+      '\n\n' +
+      '日本人の食事摂取基準目標量は男性<7.5g・女性<6.5g食塩/日だが、国民健康・栄養調査の平均は約10g/日と過剰。WHO推奨の<5g/日と比較すると倍量に近い。TONE 1998（n=975）で減塩により高血圧者の降圧薬中止維持率31%上昇が示され、INTERSALT 1988（n=10,079）で集団全体の塩分摂取と血圧の関連が確立した。' +
+      '\n\n' +
+      'サプリでの追加摂取の必要性は健常人ではない。激しい運動・大量発汗・熱中症対策の経口補水液は別文脈になる。減塩は降圧・心血管リスク低下の根拠が最も厚い食事介入の一つ。',
+    concerns: ['heart-vascular', 'cardiovascular'],
+    whoFor: [
+      '高血圧の家族歴・自身の血圧が高めの成人',
+      '味噌汁・漬物・麺類のスープを毎日摂る食生活の方',
+      '加工食品・外食の頻度が高く塩分管理を意識したい方',
+      '激しい運動・大量発汗時の電解質補給を意識したい方',
+    ],
+    papers: [
+      {
+        title: 'Sodium reduction and weight loss in the treatment of hypertension in older persons (TONE)',
+        journal: 'JAMA',
+        year: 1998,
+        studyType: 'rct',
+        sampleSize: 975,
+        durationWeeks: 130,
+        keyFinding: 'ナトリウム摂取-40mmol/日（食塩2.3g減）で高血圧高齢者の降圧薬中止維持率が31%上昇',
+      },
+      {
+        title: 'Effect of longer-term modest salt reduction on blood pressure',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2013,
+        studyType: 'systematic-review',
+        sampleSize: 3230,
+        durationWeeks: 52,
+        keyFinding: '食塩4-5g/日減で高血圧者の収縮期-4.0/拡張期-2.0mmHg・正常血圧者-1.4/-0.4mmHg低下',
+      },
+      {
+        title: 'Global sodium consumption and death from cardiovascular causes',
+        journal: 'New England Journal of Medicine',
+        year: 2014,
+        studyType: 'observational',
+        sampleSize: 1300000,
+        durationWeeks: 0,
+        keyFinding: 'ナトリウム摂取4g/日超で心血管死亡率上昇・世界161カ国推定で年165万人の心血管死がナトリウム過剰関連',
+      },
+      {
+        title: 'Intersalt: an international study of electrolyte excretion and blood pressure',
+        journal: 'BMJ',
+        year: 1988,
+        studyType: 'observational',
+        sampleSize: 10079,
+        durationWeeks: 0,
+        keyFinding: '32カ国52集団でナトリウム尿中排泄と血圧の正相関を確認・集団レベルの塩分-血圧関係を確立',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人目標量・男性<7.5g・女性<6.5g食塩/日・国民健康・栄養調査平均10.1g/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 7.1,
+      breakdown: { paperCount: 0.9, rctMeta: 3.3, recency: 1.4, humanTrial: 1.5 },
+      confidence: 0.75,
+      paperStats: {
+        total: 5,
+        rct: 1,
+        metaAnalysis: 1,
+        cohort: 0,
+        observational: 2,
+        animal: 0,
+        recent15y: 4,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 0,
+    dosageMax: 0,
+    dosageUnit: 'mg/日（サプリ不要・食事で減らす方向）',
+    timing: '食事から摂取（サプリ補給は健常人で不要）',
+    duration: '減塩は8-12週で血圧変化を評価。生涯継続が前提',
+    sideEffects: [
+      '過剰摂取で高血圧・心血管リスク上昇',
+      '減塩が極端な場合の低Na血症（稀）',
+    ],
+    contraindications: [
+      '低Na血症・SIADH既往',
+      'アジソン病など電解質バランス管理が必要な状況',
+    ],
+    products: [
+      {
+        name: '減塩実践のための食品選び（サプリではなく食事介入）',
+        brand: '-',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=electrolyte',
+        imageUrl: '',
+        priceJpy: 0,
+        dosageMg: 0,
+        rank: 1,
+        reasonJa: 'ナトリウムは日本人で過剰摂取が課題のため、サプリ補給ではなく食事減塩が主要介入。減塩しょうゆ・減塩味噌・カリウム強化塩・出汁活用などの食品選びが現実的',
+        highlight: 'サプリ不要・食事介入',
+        monthlyCostJpy: 0,
+        unitsPerDay: 0,
+        form: '-',
+        thirdPartyTested: false,
+        certifications: [],
+        benefitHeading: '日本人は過剰摂取・サプリではなく減塩食品で対応',
+        pros: [
+          '減塩で高血圧者の降圧薬中止維持率31%上昇（TONE 1998）',
+          '食事介入は副作用が出にくい',
+          '生涯にわたる介入として低コスト',
+        ],
+        cons: [
+          '激しい運動・大量発汗時は経口補水液で補給が必要',
+          '極端な減塩は低Na血症リスク（稀）',
+          '味覚への適応に2-4週かかる',
+        ],
+        qualityNote: '食塩相当量は商品表示で確認可能・「食塩相当量1g以下/100g」が低塩・「2.5g以下/100g」が中塩の目安',
+      },
+    ],
+    heroStat: { value: '10g', label: '日本人平均食塩摂取量（WHO推奨の2倍）' },
+    axisScores: { antiAging: 3, skin: 0, cognitive: 0, stress: 3, sleep: 0, immunity: 0, metabolism: 5 },
+    interactions: [
+      {
+        substance: '降圧薬（ACE阻害薬・ARB・利尿薬等）',
+        level: 'caution',
+        mechanism: '高塩分食で降圧薬の効果減弱',
+        action: '降圧薬服用中は食事減塩が薬効維持のために重要',
+        evidence: 'established',
+        source: 'JNC 8 Hypertension Guidelines',
+      },
+      {
+        substance: 'リチウム製剤（双極性障害治療薬）',
+        level: 'caution',
+        mechanism: '食塩摂取の急激な変化でリチウム血中濃度変動・中毒リスク',
+        action: 'リチウム服用中は食塩摂取量を一定に保つ',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '日本人はなぜ塩分摂取が多いのですか？',
+        a:
+          '伝統的食事の構成が背景にある。味噌汁・醤油ベースの調味・漬物・梅干し・干物・佃煮など、保存性を高める塩使用が文化として定着し、現代でも麺類のスープ・加工食品の塩分が積み上がる。国民健康・栄養調査の平均は10.1g/日でWHO推奨5g/日の倍量だ。' +
+          '\n\n' +
+          '減塩のポイントは「目立つ塩」（食卓塩・醤油・味噌）より「隠れ塩」（パン・麺類・加工食品・外食）の方が摂取量寄与が大きいこと。食品成分表示の食塩相当量を見て、1食2g以下・1日6g以下を目安にすると現実的に推奨量に近づく。',
+      },
+      {
+        q: '減塩したら本当に血圧は下がりますか？',
+        a:
+          '減塩で血圧が下がるエビデンスは栄養介入の中で最も厚い。Cochrane 2013系統的レビューでは食塩4-5g/日減で高血圧者の収縮期-4.0/拡張期-2.0mmHg低下が示された。TONE 1998では高齢高血圧者で食塩2.3g減により降圧薬中止維持率31%上昇が確認されている。' +
+          '\n\n' +
+          '効果サイズは個人差があり、食塩感受性高血圧（黒人・高齢者・肥満・糖尿病既往で多い）では特に効果が大きい。一方、食塩感受性が低い方では効果が限定的なこともある。それでも集団レベルでは確実な介入で、WHO・世界の循環器学会が一致して推奨している。',
+      },
+      {
+        q: '減塩はどう始めるのが現実的ですか？',
+        a:
+          '段階的な減塩が定着しやすい。第一週は「目立つ塩」を減らす（味噌汁を1日1杯に・漬物を週2回に・醤油を控えめに）。第二週は「隠れ塩」（パン・ハム・インスタント食品）を減らす。第三-四週で味覚が薄味に適応し、初期に物足りなかった料理も自然に感じるようになる。' +
+          '\n\n' +
+          '味の補完手段として、出汁の旨味・酸味（酢・レモン）・香辛料（七味・こしょう・カレー粉）・香味野菜（生姜・にんにく・大葉）を活用すると食事の満足度を維持できる。減塩しょうゆ・減塩味噌（食塩相当量50%カット製品）の活用も選択肢になる。',
+      },
+      {
+        q: '運動時・夏場の塩分補給は必要ですか？',
+        a:
+          '激しい運動（1時間以上・大量発汗）や酷暑下労働では電解質喪失が大きく、ナトリウム補給が必要だ。経口補水液（OS-1・アクアソリタ等）はナトリウム約50mEq/L程度（食塩相当0.3g/100mL）で、医療用途の電解質補充に使われる。' +
+          '\n\n' +
+          '一方、日常生活レベルの運動・通勤・短時間の屋外作業では、減塩食を維持していてもナトリウム不足はまず起きない。「夏は塩分多めに」という古い指導は健常人の通常生活には適用されず、むしろ食事性過剰の解消が優先になる。心配な場合は運動強度・発汗量・尿の色（濃黄色なら脱水）を目安に判断したい。',
+      },
+      {
+        q: 'カリウム強化塩は減塩に有効ですか？',
+        a:
+          '塩化ナトリウムの一部を塩化カリウムに置き換えた「カリウム強化塩」は減塩効果が確認されている。SSaSS試験 2021（NEJM）n=20,995で、塩化カリウム25%置換塩で脳卒中・主要心血管イベント・全死亡が有意に減少した（中国農村部の対象集団）。' +
+          '\n\n' +
+          '日本でも減塩しょうゆ・減塩塩としてカリウム置換型が市販されている。注意点は腎機能低下者・カリウム保持性降圧薬服用中の方は高K血症リスクがあるため使用前に医師相談が必要なこと。健常人では減塩+カリウム増の二重介入で血圧改善が期待できる。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'vitamin-b7-biotin-high',
+    nameJa: '高用量ビオチン',
+    nameEn: 'High-Dose Biotin (Vitamin B7)',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: '高用量ビオチン｜MS進行抑制・5mg・通常ビオチン違い',
+    seoDescription: '高用量ビオチン（5-300mg/日）の研究を論文で整理。多発性硬化症（MS）研究のMD1003は300mg/日でTourbah 2016（n=154）でEDSS安定化が一部示されたが、SPI2試験 2021（n=642）ではEDSS改善効果を確認できず。健常人の毛髪・爪目的の高用量に確立したエビデンスはなく、甲状腺機能検査値の偽異常リスクと併せて整理。通常ビオチン30-300μg/日とは別文脈｜SciBase',
+    tagline: 'MS進行抑制研究で議論される300mg/日。健常人の毛髪目的での高用量は別問題',
+    description:
+      'ビオチン（ビタミンB7）は水溶性ビタミンで、糖・脂質・アミノ酸代謝の補酵素。' +
+      '\n\n' +
+      '健常人の推奨量は男女50μg/日と微量で食事から十分摂れる。一方、高用量領域（5-300mg/日）は多発性硬化症（MS）研究のMD1003として注目され、Tourbah 2016 RCT（n=154）で進行型MSのEDSS安定化が一部示された。しかし大規模SPI2試験2021（n=642）ではEDSS改善効果が確認できず、ガイドライン採用には至っていない。' +
+      '\n\n' +
+      '健常人の毛髪・爪目的での高用量ビオチンに確立したエビデンスはない。甲状腺機能検査（TSH/FT4）の偽異常を起こすため、検査前1週は中止が必要。',
+    concerns: ['hair', 'cognitive'],
+    whoFor: [
+      'MS（多発性硬化症）治療の補助として神経内科で議論された経験がある方',
+      '通常ビオチン（30-300μg/日）と高用量ビオチン（mg単位）の違いを整理したい方',
+      '毛髪・爪の悩みでビオチン高用量の必要性を判断したい方',
+      '甲状腺機能検査前にビオチンの中止が必要か確認したい方',
+    ],
+    papers: [
+      {
+        title: 'MD1003 (high-dose biotin) for the treatment of progressive multiple sclerosis',
+        journal: 'Multiple Sclerosis Journal',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 154,
+        durationWeeks: 48,
+        keyFinding: '進行型MSに対しビオチン300mg/日でEDSS or T25-FW改善達成率が12.6%（プラセボ0%）・小規模RCTで初期の希望を示した',
+      },
+      {
+        title: 'Efficacy and safety of MD1003 in progressive multiple sclerosis (SPI2)',
+        journal: 'Multiple Sclerosis Journal',
+        year: 2021,
+        studyType: 'rct',
+        sampleSize: 642,
+        durationWeeks: 60,
+        keyFinding: 'MD1003 100mg×3回/日（300mg/日）はEDSS改善達成率でプラセボと有意差なし・MS治療薬としての推奨は否定的',
+      },
+      {
+        title: 'Biotin interference in clinical immunoassays',
+        journal: 'The Journal of Applied Laboratory Medicine',
+        year: 2018,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '高用量ビオチン（10mg/日以上）はストレプトアビジン-ビオチン式の免疫測定法に干渉し、TSH偽低値・FT4偽高値・トロポニン偽低値の臨床的偽異常を引き起こす',
+      },
+      {
+        title: 'Effects of biotin supplementation on hair and nail growth',
+        journal: 'Skin Appendage Disorders',
+        year: 2017,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '健常人の毛髪・爪へのビオチンサプリの有効性を支持するエビデンスは不足・既存ビオチン欠乏症例での改善報告がほとんど',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人ビオチン目安量・男女50μg/日・欠乏症は稀・食事性過剰のリスクなし',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.2,
+      breakdown: { paperCount: 0.7, rctMeta: 1.8, recency: 1.3, humanTrial: 0.9 },
+      confidence: 0.55,
+      paperStats: {
+        total: 5,
+        rct: 2,
+        metaAnalysis: 0,
+        cohort: 0,
+        observational: 0,
+        animal: 0,
+        recent15y: 4,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 5,
+    dosageMax: 300,
+    dosageUnit: 'mg/日（高用量領域・通常50μg/日とは別文脈）',
+    timing: 'MS研究文脈は3回分割（朝・昼・夜各100mg）・通常用量は食事と一緒',
+    duration: 'MS研究の評価期間は48-60週・甲状腺検査前1週は中止',
+    sideEffects: [
+      '甲状腺機能検査・心筋トロポニン検査の偽異常',
+      '消化器症状（高用量で稀）',
+      '皮膚反応（極めて稀）',
+    ],
+    contraindications: [
+      '免疫測定法による検査直前（1週以内）の使用',
+      '心筋梗塞疑い・甲状腺機能評価が必要な臨床状況',
+      '妊娠・授乳中のmg単位ビオチン（データ不足）',
+    ],
+    products: [
+      {
+        name: 'Biotin 10,000 mcg',
+        brand: 'Natrol',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/natrol-biotin-10-000-mcg-100-tablets',
+        imageUrl: '',
+        priceJpy: 1400,
+        dosageMg: 10,
+        rank: 1,
+        reasonJa: '10,000μg（10mg）/錠で「高用量領域」のエントリーレベル・MS研究の300mgよりは大幅に低いが、通常ビオチンの200倍。毛髪・爪目的でmg単位を試す場合の標準量。MS文脈は神経内科処方の領域',
+        highlight: '高用量エントリー',
+        monthlyCostJpy: 420,
+        unitsPerDay: 1,
+        form: 'タブレット',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: '10mg/錠・mg単位ビオチン入門・GMP製造',
+        pros: [
+          'mg単位の高用量ビオチンを試したい場合の標準量',
+          'コスパ良好で長期継続可能',
+          'Natrol GMP製造・第三者検査済み',
+        ],
+        cons: [
+          '健常人の毛髪・爪への有効性エビデンスは確立していない',
+          '甲状腺・心筋検査前1週は中止が必要',
+          'MS治療目的は神経内科処方が前提・自己判断は推奨されない',
+        ],
+        qualityNote: 'Natrol GMP工場製造・10,000μg/錠は米国OTC流通の標準・甲状腺検査干渉に注意',
+      },
+    ],
+    heroStat: { value: '300mg', label: 'MS研究MD1003用量（健常人推奨ではない）' },
+    axisScores: { antiAging: 3, skin: 5, cognitive: 5, stress: 0, sleep: 0, immunity: 3, metabolism: 3 },
+    interactions: [
+      {
+        substance: '免疫測定法による検査（TSH・FT4・トロポニン・hCG等）',
+        level: 'avoid',
+        mechanism: 'ストレプトアビジン-ビオチン結合に干渉し検査値の偽異常',
+        action: '甲状腺・心筋・妊娠検査前1週は高用量ビオチンを中止',
+        evidence: 'established',
+        source: 'FDA Safety Communication 2017',
+      },
+      {
+        substance: '抗てんかん薬（フェニトイン・カルバマゼピン等）',
+        level: 'caution',
+        mechanism: '長期使用でビオチン代謝亢進・低ビオチン血症の報告',
+        action: '抗てんかん薬服用中のビオチン補給は神経内科判断下で',
+        evidence: 'theoretical',
+        source: 'Lexicomp',
+      },
+    ],
+    customFaqs: [
+      {
+        q: '通常ビオチンと高用量ビオチンはどう違いますか？',
+        a:
+          '物質は同じビオチンだが用量域・適応・研究対象がほぼ別物として扱われる。通常ビオチンは推奨量50μg/日前後で、欠乏症（皮膚炎・脱毛・神経症状）の補正やマルチビタミン構成栄養素として使われる。' +
+          '\n\n' +
+          '一方、高用量ビオチン（5-300mg/日）は通常推奨量の100-6,000倍で、進行型多発性硬化症（MS）治療研究のMD1003として開発された専用領域だ。健常人の毛髪・爪・代謝目的での高用量摂取に確立したエビデンスはなく、用量だけ大きく真似ても効果は別問題になる。SciBaseは通常ビオチンを別ページで扱っている。',
+      },
+      {
+        q: 'ビオチンで毛髪・爪は改善しますか？',
+        a:
+          'ビオチン欠乏症が確認されている方では補給で毛髪・爪症状が改善する。しかし健常人で毛髪・爪目的に高用量を摂る根拠は限定的だ。2017年Skin Appendage Disordersのレビューでは、健常人へのビオチンサプリ有効性を支持するエビデンスは不足と結論されている。' +
+          '\n\n' +
+          '毛髪・爪悩みの背景には鉄欠乏・甲状腺機能異常・タンパク質不足・ホルモン要因・ストレス・遺伝性脱毛など複数の経路があり、ビオチン単独に介入しても効果が限定的なケースが多い。皮膚科・内科での原因評価が前提になる。',
+      },
+      {
+        q: 'ビオチンを飲んだまま血液検査を受けるとどうなりますか？',
+        a:
+          '高用量ビオチン（10mg/日以上）服用中の検査では深刻な偽異常が起きる。ストレプトアビジン-ビオチン結合を利用した免疫測定法（多くの臨床検査で標準）で測定値が干渉される。' +
+          '\n\n' +
+          '具体的にはTSH偽低値（バセドウ病に見える）・FT4偽高値・トロポニン偽低値（心筋梗塞を見逃す）・hCG偽異常などが報告されている。心筋トロポニン偽低値は致死的判断ミスを招きうる。FDAは2017-2019年に複数の安全性通知を出した。検査予定がある場合は高用量ビオチンを1週以上前に中止し、検査時に必ず服用情報を伝える必要がある。',
+      },
+      {
+        q: 'MS（多発性硬化症）治療にビオチンは有効ですか？',
+        a:
+          '高用量ビオチン（MD1003 300mg/日）はMS研究で議論されてきた。2016年Tourbah RCT（n=154）で進行型MSのEDSS安定化が一部示され注目を集めた。しかし2021年SPI2試験（n=642）でEDSS改善効果が確認できず、現在のMSガイドラインで第一選択にはなっていない。' +
+          '\n\n' +
+          'MS治療は神経内科の領域で、疾患修飾薬・対症療法・リハビリの組み合わせが標準だ。サプリレベルの自己判断は推奨されず、必ず神経内科主治医との相談が前提になる。SciBaseは医療判断の代替ではなく、患者教育・整理目的の情報源として高用量ビオチンの位置づけを記載している。',
+      },
+      {
+        q: '高用量ビオチンサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は用量領域：5,000μg（5mg）・10,000μg（10mg）が「高用量入門」・100-300mgはMS研究領域で日常サプリには不向き。2点目は検査干渉：使用中は甲状腺・心筋・妊娠検査前1週の中止が必須・主治医・薬剤師へ服用申告。3点目は目的：MS文脈は神経内科処方が前提、毛髪・爪は皮膚科で他要因（鉄・甲状腺・ホルモン）を先に確認するのが現実的。' +
+          '\n\n' +
+          '迷ったら通常推奨量50μg/日のマルチビタミン由来から始め、特定の医療目的なら専門医相談が出発点になる。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'vitamin-c-liposomal',
+    nameJa: 'リポソーム型ビタミンC',
+    nameEn: 'Liposomal Vitamin C',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'リポソームビタミンC｜吸収率・通常型違い・効果・選び方',
+    seoDescription: 'リポソーム型ビタミンCの吸収率・通常型との違いを論文で整理。Davis 2016 RCT（n=11）でリポソーム1,000mgが通常アスコルビン酸1,000mgより血中濃度AUC約2倍・最大濃度1.8倍。リン脂質二重膜で小腸吸収率を高める形態で、高用量摂取時の下痢リスクも軽減傾向。価格は通常型の5-10倍・コスパとの選択｜SciBase',
+    tagline: 'リン脂質二重膜で吸収率約2倍。通常型1,000mg超で下痢になりやすい方の選択肢',
+    description:
+      'リポソーム型ビタミンCはアスコルビン酸をリン脂質二重膜で包んだ経口形態。' +
+      '\n\n' +
+      '通常型ビタミンCは1,000mg以上で吸収率が低下し下痢・浸透圧性腹部症状が出やすい。リポソーム型はDavis 2016 RCT（n=11）で1,000mg投与時の血中濃度AUC約2倍・最大濃度1.8倍を確認しており、Lykkesfeldt 2014レビューでも高用量領域での吸収優位性が示唆されている。' +
+      '\n\n' +
+      '臨床アウトカム（風邪・がん補助療法等）でリポソーム型の優位性は確立していない。価格は通常型の5-10倍で、高用量摂取が必要な方・通常型で消化器症状が出る方の選択肢になる。',
+    concerns: ['immunity', 'skin-aging', 'antioxidant'],
+    whoFor: [
+      '通常型ビタミンC高用量（1g以上）で下痢になりやすい方',
+      'IV（点滴）ビタミンC治療の経口代替を医師と検討したい方',
+      '酸味・胃部不快が苦手で通常型を続けにくい方',
+      '価格5-10倍を許容してでも血中濃度を効率的に上げたい方',
+    ],
+    papers: [
+      {
+        title: 'Liposomal vitamin C 1g supplementation pharmacokinetics in humans',
+        journal: 'Nutrition and Metabolic Insights',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 11,
+        durationWeeks: 1,
+        keyFinding: 'リポソーム型ビタミンC 1g単回投与で血中濃度AUC約2倍・最大濃度1.8倍を通常型に対し確認（クロスオーバー試験）',
+      },
+      {
+        title: 'Vitamin C pharmacokinetics: implications for oral and intravenous use',
+        journal: 'Annals of Internal Medicine',
+        year: 2004,
+        studyType: 'observational',
+        sampleSize: 17,
+        durationWeeks: 8,
+        keyFinding: '経口ビタミンCは200mg超で吸収率低下・1.25g単回で血漿濃度約220μM上限・経口高用量は吸収律速がある',
+      },
+      {
+        title: 'Vitamin C in health and disease: a review',
+        journal: 'Nutrients',
+        year: 2017,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'リポソーム型は経口でも血漿濃度上昇に優位だが、臨床アウトカム（風邪罹病期間・心血管予防等）で通常型に対する優位性は限定的',
+      },
+      {
+        title: 'Intravenous and oral vitamin C in clinical practice',
+        journal: 'Antioxidants',
+        year: 2018,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'リポソーム経口投与は静注ビタミンCの一部代替として研究されており、特に補完代替医療文脈で議論',
+      },
+      {
+        title: 'Vitamin C for preventing and treating the common cold (Cochrane Review)',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2013,
+        studyType: 'systematic-review',
+        sampleSize: 11306,
+        durationWeeks: 0,
+        keyFinding: '200mg/日以上のビタミンC定期摂取で風邪罹病期間が成人8%・小児14%短縮・予防効果は限定的（形態は通常型）',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.7,
+      breakdown: { paperCount: 0.7, rctMeta: 2.3, recency: 1.0, humanTrial: 0.7 },
+      confidence: 0.55,
+      paperStats: {
+        total: 5,
+        rct: 1,
+        metaAnalysis: 1,
+        cohort: 0,
+        observational: 1,
+        animal: 0,
+        recent15y: 4,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 500,
+    dosageMax: 2000,
+    dosageUnit: 'mg/日',
+    timing: '空腹時または食間（消化器症状が出る方は食事と一緒）。分割摂取で血中濃度を持続',
+    duration: '免疫サポート目的は2-4週で評価。慢性的サポートは継続',
+    sideEffects: [
+      '消化器症状（通常型より軽減傾向だが高用量で発生）',
+      'リポソーム製造由来の脂質・乳化剤への過敏（極めて稀）',
+    ],
+    contraindications: [
+      '腎結石（シュウ酸結石）既往者は高用量回避',
+      'ヘモクロマトーシス（鉄過剰症）の方は高用量で鉄吸収増のリスク',
+      'G6PD欠損症（極めて高用量で溶血リスク）',
+    ],
+    products: [
+      {
+        name: 'Liposomal Vitamin C 1,000mg',
+        brand: 'Quicksilver Scientific',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/quicksilver-scientific-liposomal-vitamin-c-1-000-mg',
+        imageUrl: '',
+        priceJpy: 6800,
+        dosageMg: 1000,
+        rank: 1,
+        reasonJa: 'リポソーム型1,000mg/回の液体製剤・通常型1g相当を血中AUCで2倍に高める形態。月コスト約¥4,800と通常型の5-10倍だが、IV代替・通常型下痢回避の選択肢',
+        highlight: '吸収率2倍設計',
+        monthlyCostJpy: 4800,
+        unitsPerDay: 1,
+        form: '液体',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: '液体リポソーム1,000mg・吸収率2倍・GMP製造',
+        pros: [
+          '通常型1g より血中AUC約2倍（Davis 2016）',
+          '通常型で下痢になりやすい方の選択肢',
+          'IV ビタミンC代替の経口形態として研究',
+        ],
+        cons: [
+          '価格は通常型の5-10倍（月¥4,800 vs 通常型¥500）',
+          '臨床アウトカム優位性は確立していない',
+          '液体製剤は携帯性が低い・冷蔵保存推奨',
+        ],
+        qualityNote: 'Quicksilver Scientific GMP製造・小粒径リポソーム（ナノリポソーム）構造で吸収率向上',
+      },
+    ],
+    heroStat: { value: '2倍', label: '血中AUC（リポソーム vs 通常型 1g・Davis 2016）' },
+    axisScores: { antiAging: 5, skin: 6, cognitive: 3, stress: 3, sleep: 0, immunity: 7, metabolism: 3 },
+    interactions: [
+      {
+        substance: '化学療法薬（一部）',
+        level: 'caution',
+        mechanism: '高用量ビタミンCが一部抗がん剤の作用に影響との報告（議論あり）',
+        action: 'がん治療中の高用量ビタミンC使用は腫瘍内科医との相談が前提',
+        evidence: 'theoretical',
+        source: 'NCCN Guidelines',
+      },
+      {
+        substance: 'ワルファリン',
+        level: 'caution',
+        mechanism: '高用量で抗凝固作用に影響の報告（症例レベル）',
+        action: 'ワルファリン服用中は通常用量内・PT-INR定期確認',
+        evidence: 'theoretical',
+        source: 'Drugs.com',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'リポソーム型ビタミンCと通常型は何が違いますか？',
+        a:
+          '物質はどちらもアスコルビン酸だが、経口吸収の効率が異なる。通常型は小腸のSVCT1トランスポーター依存で200mg超から吸収率が低下し、1,000mg投与時の血漿AUC上昇は限定的だ。' +
+          '\n\n' +
+          'リポソーム型はリン脂質二重膜にビタミンCを包み、小腸吸収率を高めるDavis 2016 RCT（n=11）で1,000mg投与時の血中濃度AUC約2倍を確認した。ただし価格は通常型の5-10倍・臨床アウトカム（風邪・がん補助療法等）での優位性は確立していない。「血中に多く入る」と「症状が良くなる」は別問題だ。SciBaseは通常型ビタミンCを別ページで扱っている。',
+      },
+      {
+        q: 'リポソーム型ビタミンCは本当に2倍効きますか？',
+        a:
+          '「2倍」は血中濃度の話で、臨床効果が2倍になる根拠ではない。Davis 2016 RCT（n=11）でリポソーム1g投与時の血漿AUCが通常型の約2倍と確認されたが、これは薬物動態的優位性だ。' +
+          '\n\n' +
+          '臨床アウトカム（風邪罹病期間・心血管予防・がん補助等）でリポソーム型が通常型を上回るRCTは確立していない。「血中に多く入る」と「症状が改善する」は別の研究領域で、通常型ビタミンC自体の風邪予防効果も限定的（Cochrane 2013）であることを併せて理解する必要がある。',
+      },
+      {
+        q: 'IVビタミンC治療の代わりに飲めばいいですか？',
+        a:
+          'IV（点滴）ビタミンC治療はがん補完代替医療や慢性疲労等で議論される領域で、医療機関でのみ実施される。リポソーム経口型はIVと完全に同等ではないが、経口高用量の血中濃度限界（経口1g単回で約220μM上限）を超える可能性がある形態として研究されている。' +
+          '\n\n' +
+          'ただし「IVの代替」と断言できるエビデンスはなく、補完医療文脈での議論にとどまる。IV ビタミンC治療を検討する場合は、まず統合医療外来・補完医療を扱う医療機関での評価が前提になる。SciBaseは医療判断の代替情報源ではない。',
+      },
+      {
+        q: '通常型ビタミンCで下痢になります。リポソーム型なら大丈夫？',
+        a:
+          '通常型ビタミンC高用量（1g以上）で下痢になるのは、未吸収分が大腸で浸透圧性下痢を起こすため。リポソーム型は小腸吸収率が高いため、同用量での下痢発生率は理論的に低い。' +
+          '\n\n' +
+          'ただし個人差が大きく、リポソーム型でも極度高用量（3-5g以上）では消化器症状が出ることがある。下痢になる用量を見つけたら、その8割程度を「bowel tolerance」として継続するのが補完医療文脈での実用ルールだ。価格を考えると、通常型を500mg×2-3回/日に分割する方が経済的で吸収律速もクリアできる場合がある。',
+      },
+      {
+        q: 'リポソーム型ビタミンCの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：液体（リキッド）型がリポソーム構造を保ちやすく、カプセル型はリポソーム破壊の懸念がある製品もある・小粒径ナノリポソーム表記の製品は吸収優位性データあり。2点目は用量：1,000mg/回が標準・分割摂取で持続血中濃度。3点目はコスパ vs 目的：免疫サポート程度なら通常型500mg×2回が経済的・IV代替や下痢回避目的ならリポソーム型が選択肢。' +
+          '\n\n' +
+          '迷ったら通常型ビタミンC 500mg×2回/日（月¥300-500）から始め、消化器症状や血中濃度の必要性が明確になった時点でリポソーム型（月¥4,000-6,000）へ移行する流れが現実的だ。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'vitamin-d3-k2-combo',
+    nameJa: 'ビタミンD3+K2併用',
+    nameEn: 'Vitamin D3 + K2',
+    evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ビタミンD3+K2｜カルシウム動態・血管石灰化・骨密度',
+    seoDescription: 'ビタミンD3+K2併用の論文を整理。D3はCa吸収を増やし、K2（特にMK-7）はCaを骨に沈着+血管石灰化防止に働く。Knapen 2013 RCT（n=244）でMK-7 180μg/日3年間で椎体骨密度・骨強度の有意改善。VITAL-K研究 2020もK2併用群の骨密度優位を確認。日本人のD不足とK2不足の二重補正という設計の根拠を解説｜SciBase',
+    tagline: 'D3はCaを腸から血へ・K2はCaを血から骨へ。Ca動態の上流下流を一緒に整える設計',
+    description:
+      'ビタミンD3+K2併用はカルシウム代謝の上流（吸収）と下流（沈着方向）を同時に整える設計のサプリ。' +
+      '\n\n' +
+      'D3はCa吸収と血中Ca維持を担う一方、K2（特にMK-7型）は骨基質タンパク質オステオカルシンとMatrix Gla Protein（MGP）のγ-カルボキシル化を介してCaを骨に沈着させ血管石灰化を防ぐ。Knapen 2013 RCT（n=244・閉経後女性）はMK-7 180μg/日3年で椎体骨密度・骨強度の有意改善を示し、VITAL-K研究 2020もK2併用群の骨密度優位を確認した。' +
+      '\n\n' +
+      '日本人はD不足（80%が25(OH)D<30ng/mL）かつ納豆非摂取者でK2不足が重なるため、二重補正という設計の根拠がある。D3単独より製品数は少なめ。',
+    concerns: ['bone', 'heart-vascular', 'cardiovascular'],
+    whoFor: [
+      '骨密度低下が気になる閉経後女性・50代以上の男性',
+      'D3単独服用中で血管石灰化・心血管リスクへの不安がある方',
+      '納豆を週1回未満しか食べない（K2食事不足の自覚）方',
+      'カルシウムサプリ服用中で血管石灰化のリスク管理を意識したい方',
+    ],
+    papers: [
+      {
+        title: 'Three-year low-dose menaquinone-7 supplementation helps decrease bone loss in postmenopausal women',
+        journal: 'Osteoporosis International',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 244,
+        durationWeeks: 156,
+        keyFinding: 'MK-7 180μg/日3年間で椎体骨密度（L1-L4）・大腿骨頸部骨密度・骨強度（FE Analysis）の有意改善・閉経後女性',
+      },
+      {
+        title: 'Combined vitamin D3 and K2 supplementation in osteoporosis (VITAL-K)',
+        journal: 'Journal of Bone and Mineral Research',
+        year: 2020,
+        studyType: 'rct',
+        sampleSize: 220,
+        durationWeeks: 104,
+        keyFinding: 'D3 2,000IU+MK-7 180μg/日でD3単独群に対し腰椎・大腿骨頸部骨密度の上昇が有意・血清不活性オステオカルシン（ucOC）低下',
+      },
+      {
+        title: 'Vitamin K2 (menaquinone-7) supplementation and vascular stiffness',
+        journal: 'Thrombosis and Haemostasis',
+        year: 2015,
+        studyType: 'rct',
+        sampleSize: 244,
+        durationWeeks: 156,
+        keyFinding: 'MK-7 180μg/日3年で頸動脈硬化指標（Stiffness Index）の進行抑制・閉経後女性',
+      },
+      {
+        title: 'Menaquinone-4 (MK-4) and bone metabolism: a Japanese perspective',
+        journal: 'Journal of Bone and Mineral Metabolism',
+        year: 2010,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本では納豆由来MK-7と医薬品グレードMK-4（メナテトレノン45mg/日）の両方が骨粗鬆症治療で使われる',
+      },
+      {
+        title: 'Vitamin D deficiency in Japanese adults',
+        journal: 'Journal of Bone and Mineral Research',
+        year: 2018,
+        studyType: 'cohort',
+        sampleSize: 5518,
+        durationWeeks: 0,
+        keyFinding: '日本人成人の血清25(OH)D値は平均20ng/mL前後で、不足域（<30ng/mL）が約80%・特に冬季・若年女性で深刻',
+      },
+    ],
+    evidenceScore: {
+      overall: 6.7,
+      breakdown: { paperCount: 0.9, rctMeta: 3.0, recency: 1.3, humanTrial: 1.5 },
+      confidence: 0.70,
+      paperStats: {
+        total: 5,
+        rct: 3,
+        metaAnalysis: 0,
+        cohort: 1,
+        observational: 0,
+        animal: 0,
+        recent15y: 5,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 2000,
+    dosageMax: 5000,
+    dosageUnit: 'IU D3/日（K2 MK-7 100-200μg併用）',
+    timing: '脂質を含む食事と一緒（脂溶性のため吸収率向上）',
+    duration: '骨密度評価は1-2年スパン・25(OH)D値は8-12週で再評価',
+    sideEffects: [
+      '稀に消化器症状',
+      '高用量D3で高Ca血症（10,000IU/日超で長期）',
+    ],
+    contraindications: [
+      'ワルファリン服用中（K2が抗凝固作用に干渉）',
+      '高Ca血症・原発性副甲状腺機能亢進症',
+      'サルコイドーシス・肉芽腫性疾患（活性型ビタミンD合成亢進）',
+    ],
+    products: [
+      {
+        name: 'Vitamin D3 + K2 (2,000 IU + 100 mcg MK-7)',
+        brand: 'Sports Research',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/sports-research-vitamin-d3-k2-no-soy',
+        imageUrl: '',
+        priceJpy: 2400,
+        dosageMg: 2.0,
+        rank: 1,
+        reasonJa: 'D3 2,000IU + K2 MK-7 100μg/粒の標準的併用設計・1日1粒で日本人推奨量+K2不足補完。MK-7型は半減期72時間で1日1回が現実的・MK-4型（医薬品グレード）とは異なる文脈',
+        highlight: '標準併用設計',
+        monthlyCostJpy: 800,
+        unitsPerDay: 1,
+        form: 'ソフトジェル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'D3 2,000IU + MK-7 100μg・1日1粒・GMP製造',
+        pros: [
+          'D不足とK2不足の二重補正を1錠で',
+          'ソフトジェルで脂質と同時吸収',
+          'Sports Research GMP製造・第三者検査済み',
+        ],
+        cons: [
+          'ワルファリン服用中は禁忌',
+          'D3単独より価格は2倍程度',
+          'MK-4型（医薬品グレード）とは別文脈',
+        ],
+        qualityNote: 'Sports Research GMP製造・MK-7は天然納豆菌由来発酵・トランス型MK-7（生理活性が高い）',
+      },
+    ],
+    heroStat: { value: '180μg', label: 'MK-7用量・3年RCTで骨密度改善（Knapen 2013）' },
+    axisScores: { antiAging: 5, skin: 0, cognitive: 3, stress: 0, sleep: 3, immunity: 5, metabolism: 5 },
+    interactions: [
+      {
+        substance: 'ワルファリン（抗凝固薬）',
+        level: 'avoid',
+        mechanism: 'K2がワルファリンの抗ビタミンK作用と直接対立・抗凝固作用減弱',
+        action: 'ワルファリン服用中はK2含有製品を併用しない・処方医判断下',
+        evidence: 'established',
+        source: 'FDA Drug Label',
+      },
+      {
+        substance: 'チアジド系利尿薬',
+        level: 'caution',
+        mechanism: 'D3との併用で高Ca血症リスク上昇',
+        action: 'チアジド服用中の高用量D3使用は医師判断下・血清Ca定期確認',
+        evidence: 'established',
+        source: 'Drugs.com',
+      },
+      {
+        substance: 'ジゴキシン',
+        level: 'caution',
+        mechanism: 'D3で高Ca血症となるとジゴキシン毒性が増強',
+        action: 'ジゴキシン服用中は高用量D3を医師判断下・血清Ca・ジゴキシン濃度確認',
+        evidence: 'established',
+        source: 'Lexicomp',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ビタミンD3+K2の併用は本当に必要ですか？単独ではダメですか？',
+        a:
+          'D3単独でも血清25(OH)Dは上がり、Ca吸収・骨密度・免疫サポートのエビデンスは確立している。一方、K2を併用する根拠はカルシウム動態の「下流方向」を整えることだ。' +
+          '\n\n' +
+          'D3でCa吸収が増えても、K2不足ではCaが骨ではなく血管壁・腎・軟部組織に沈着しやすいという機序が議論されている。Knapen 2013 RCT・Thrombosis Haemostasis 2015でMK-7 180μg/日3年が骨密度向上+頸動脈硬化指標改善を同時に示し、二重補正の根拠を作った。「D単独より明確に上回る」エビデンスは中程度だが、ワルファリン非服用者でCa動態の上流下流を整える設計として理にかなう。',
+      },
+      {
+        q: 'ビタミンK2のMK-7とMK-4はどう違いますか？',
+        a:
+          'どちらもメナキノン（ビタミンK2）だが半減期と用量が大きく異なる。MK-7は納豆由来・半減期約72時間・サプリ用量100-200μg/日・1日1回でOK。MK-4は医薬品グレード・半減期短く（数時間）骨粗鬆症治療薬「グラケーカプセル」では45mg/日（45,000μg）を3回分割という別格の用量で処方される。' +
+          '\n\n' +
+          'サプリ研究（Knapen 2013等）の主役はMK-7 180μg/日で、海外の市販品はほぼMK-7型だ。MK-4は日本の医療領域で処方される。サプリで「K2 MK-7」と書かれていれば研究と同じ形態と理解できる。MK-4の超高用量は処方領域で、サプリでは扱われない。',
+      },
+      {
+        q: 'D3+K2併用で血管石灰化は本当に防げますか？',
+        a:
+          '機序レベルではK2（特にMK-7）がMatrix Gla Protein（MGP）のγ-カルボキシル化を介して血管壁Caの異所性沈着を抑える根拠がある。Thrombosis Haemostasis 2015の閉経後女性RCT（n=244・MK-7 180μg/日3年）で頸動脈硬化指標（Stiffness Index）の進行抑制が確認された。' +
+          '\n\n' +
+          'ただし「すでに進行した動脈硬化を治す」エビデンスではなく、「悪化を遅らせる方向」の研究だ。臨床的心血管イベント（心筋梗塞・脳卒中）の減少エビデンスは現時点で限定的で、ガイドライン採用には至っていない。動脈硬化が既に進行している方は循環器内科での評価と治療が前提になる。',
+      },
+      {
+        q: 'D3+K2は誰が飲むべきですか？',
+        a:
+          '骨密度低下リスク群（閉経後女性・50代以上の男性・ステロイド長期使用者）と、納豆を週1回未満しか食べない（K2食事不足の自覚）方が中心ターゲットだ。納豆1パック（40-50g）にMK-7 200-300μgが含まれており、日常摂取者は食事だけでK2推奨量に到達する。' +
+          '\n\n' +
+          '一方、Caサプリを併用していて血管石灰化が気になる方、D3単独服用中の方も追加でK2を加えるという選択肢がある。ワルファリン服用中の方は禁忌・血液凝固検査を受ける方は主治医に必ず申告する。',
+      },
+      {
+        q: 'D3+K2サプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目はK2形態：MK-7型（納豆菌由来発酵）が半減期長く1日1回でOK・トランス型MK-7記載があれば生理活性が高い・MK-4型（高用量）は医薬品文脈で日常サプリと別物。2点目はD3用量：1,000-5,000IU/日が標準・日本人の不足80%補正には2,000-4,000IU/日が現実的。3点目はK2用量：MK-7 90-180μg/日が研究準拠・Knapen 2013で180μg/日が骨密度改善の根拠用量。' +
+          '\n\n' +
+          '迷ったらD3 2,000IU + MK-7 100μg/粒の組み合わせを1日1粒、脂質を含む食事と一緒に・8-12週で25(OH)D値を再確認するのが標準ルートになる。ワルファリン服用中は使用しない。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'vitamin-e-tocopherol-mixed',
+    nameJa: 'ミックストコフェロール（ビタミンE）',
+    nameEn: 'Mixed Tocopherols',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'ミックストコフェロール｜α単独違い・γ・選び方',
+    seoDescription: 'ミックストコフェロール（α/β/γ/δ）の論文を整理。SELECT試験 2011（n=35,533）でα-トコフェロール400IU/日が前立腺がんリスクを17%上昇させた一方、γ-トコフェロールはα単独で抑制される。Devaraj 2008 RCT（n=80）でミックス型が炎症マーカー（CRP・TNF-α）抑制を示した。食事性ビタミンEのα:γ比1:4を反映した形態と単独α型との違いを整理｜SciBase',
+    tagline: 'α単独はSELECT試験で前立腺がんリスク増。食事と同じα:γ比を再現するミックス型の意義',
+    description:
+      'ミックストコフェロールは天然食事性ビタミンEのα/β/γ/δ 4種トコフェロールを含む形態。' +
+      '\n\n' +
+      '食事性ビタミンE摂取はα:γ比約1:4で、γ-トコフェロールが量的に主役。SELECT試験 2011（n=35,533）でα-単独400IU/日が前立腺がんリスクを17%上昇させ、α単独高用量摂取の安全性が再評価された。Devaraj 2008 RCT（n=80）はミックス型800mg/日でCRP・TNF-α抑制を示し、γ-トコフェロール特有の窒素ラジカル捕捉作用が機序として注目される。' +
+      '\n\n' +
+      '日本人の食事性ビタミンE摂取は推奨量（男性7.0・女性6.5mg α-TE/日）を満たしている方が多く、健常人の追加サプリの必要性は限定的。',
+    concerns: ['antioxidant', 'inflammation', 'cardiovascular'],
+    whoFor: [
+      'α単独ビタミンE（dl-α-トコフェロール酢酸エステル等）から切り替えを検討する方',
+      '食事性ビタミンE摂取と近い形態を選びたい方',
+      '炎症マーカー（CRP・TNF-α）への栄養介入を意図する成人',
+      'γ-トコフェロール特有の抗酸化に研究的関心がある方',
+    ],
+    papers: [
+      {
+        title: 'Vitamin E and the risk of prostate cancer (SELECT)',
+        journal: 'JAMA',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 35533,
+        durationWeeks: 364,
+        keyFinding: 'α-トコフェロール400IU/日単独で前立腺がんリスク17%上昇・α単独高用量の長期安全性に警鐘',
+      },
+      {
+        title: 'Gamma-tocopherol, the major form of vitamin E in the US diet, deserves more attention',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2001,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '食事性ビタミンEはγ-トコフェロールが主役・α:γ比約1:4・α単独サプリで血漿γ濃度が低下する現象',
+      },
+      {
+        title: 'Mixed tocopherols inhibit platelet aggregation and reduce inflammation',
+        journal: 'Journal of Nutrition',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 80,
+        durationWeeks: 6,
+        keyFinding: 'ミックストコフェロール800mg/日で血漿CRP・TNF-α有意低下・血小板凝集抑制も確認',
+      },
+      {
+        title: 'Vitamin E supplementation for prevention of mortality and cardiovascular disease',
+        journal: 'Cochrane Database of Systematic Reviews',
+        year: 2013,
+        studyType: 'systematic-review',
+        sampleSize: 96762,
+        durationWeeks: 0,
+        keyFinding: 'ビタミンEサプリ（主にα単独）の心血管イベント・がん・全死亡率への有意な予防効果は確認されず',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '日本人ビタミンE目安量・男性7.0・女性6.5mg α-TE/日・耐容上限男性850・女性650mg α-TE/日',
+      },
+    ],
+    evidenceScore: {
+      overall: 5.0,
+      breakdown: { paperCount: 0.8, rctMeta: 2.5, recency: 0.9, humanTrial: 0.8 },
+      confidence: 0.58,
+      paperStats: {
+        total: 5,
+        rct: 2,
+        metaAnalysis: 1,
+        cohort: 0,
+        observational: 0,
+        animal: 0,
+        recent15y: 3,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 100,
+    dosageMax: 400,
+    dosageUnit: 'mg α-TE/日（ミックス含量で）',
+    timing: '脂質を含む食事と一緒（脂溶性のため吸収率向上）',
+    duration: '抗酸化サポートは8-12週で評価。長期は耐容上限内で',
+    sideEffects: [
+      '高用量で出血傾向（血小板凝集抑制作用）',
+      '稀に消化器症状',
+    ],
+    contraindications: [
+      'ワルファリン・抗血小板薬服用中の高用量摂取',
+      '手術予定の1-2週前は高用量回避',
+      'ビタミンK欠乏症既往',
+    ],
+    products: [
+      {
+        name: 'Natural E-1000 with Mixed Tocopherols',
+        brand: 'Now Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-natural-e-1000-with-mixed-tocopherols',
+        imageUrl: '',
+        priceJpy: 2200,
+        dosageMg: 200,
+        rank: 1,
+        reasonJa: 'ミックストコフェロール（α/β/γ/δ全種）含有・食事性ビタミンEのバランスに近い形態。α単独製品ではなくγ-トコフェロール含有が選定基準・月コスト約¥700',
+        highlight: 'γ含有ミックス',
+        monthlyCostJpy: 700,
+        unitsPerDay: 1,
+        form: 'ソフトジェル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'α/β/γ/δ全種・食事性ビタミンEのバランス再現・GMP製造',
+        pros: [
+          'α単独より食事性ビタミンEに近い形態',
+          'γ-トコフェロール含有で抗炎症研究準拠',
+          '価格・容量バランスが現実的',
+        ],
+        cons: [
+          'α単独製品より価格は1.5-2倍',
+          '健常人の追加サプリ必要性は限定的',
+          'ワルファリン・抗血小板薬服用中は高用量回避',
+        ],
+        qualityNote: 'Now Foods GMP工場製造・天然由来d-α/β/γ/δ-トコフェロール混合（dl-合成型ではない）',
+      },
+    ],
+    heroStat: { value: '1:4', label: '食事性ビタミンEのα:γ比（食事再現）' },
+    axisScores: { antiAging: 5, skin: 5, cognitive: 3, stress: 0, sleep: 0, immunity: 3, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'ワルファリン・抗血小板薬（アスピリン・クロピドグレル等）',
+        level: 'caution',
+        mechanism: '高用量で出血リスク加算（血小板凝集抑制作用）',
+        action: '抗凝固・抗血小板薬服用中の高用量ビタミンE併用は医師判断下・PT-INR定期確認',
+        evidence: 'established',
+        source: 'FDA Drug Safety',
+      },
+      {
+        substance: '化学療法薬・放射線療法',
+        level: 'caution',
+        mechanism: '高用量抗酸化サプリで治療効果への影響の議論',
+        action: 'がん治療中の高用量ビタミンE使用は腫瘍内科医との相談が前提',
+        evidence: 'theoretical',
+        source: 'NCCN Guidelines',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'ミックストコフェロールとα単独ビタミンEはどう違いますか？',
+        a:
+          '物質はどちらもビタミンEだが、含まれる種類と機序が異なる。α単独製品はdl-α-トコフェロール酢酸エステル等の合成型・天然d-α-トコフェロール単独が中心で、抗酸化作用の主要研究対象になってきた。' +
+          '\n\n' +
+          '一方、ミックス型はα/β/γ/δ全種を含み食事性ビタミンEに近い構成だ。AJCN 2001のレビューでは食事性ビタミンEはγ-トコフェロールが量的主役（α:γ比約1:4）と指摘され、α単独サプリで血漿γ濃度が低下する現象も観察されている。SELECT試験 2011でα単独高用量が前立腺がんリスク17%上昇を示し、ミックス型への関心が高まった。',
+      },
+      {
+        q: 'γ-トコフェロール特有の効果は何ですか？',
+        a:
+          'γ-トコフェロールはα-トコフェロールにはない窒素ラジカル（NO2・ONOO-）捕捉作用を持ち、炎症性窒素種への抗酸化が特徴だ。α-トコフェロールは過酸化脂質ラジカルへの抗酸化が主軸で、ラジカル種への特異性が分かれる。' +
+          '\n\n' +
+          'Devaraj 2008 RCT（n=80）はミックス型800mg/日でCRP・TNF-α抑制を示し、γ-トコフェロールがNF-κB経路を介した炎症抑制に寄与する機序が議論されている。ただしヒト臨床アウトカム（心血管・がん・神経変性予防）でγ単独・ミックス型がα単独を明確に上回るエビデンスはまだ確立していない。研究中の領域だ。',
+      },
+      {
+        q: 'SELECT試験でビタミンEは危険と聞きました。サプリは飲まない方がいいですか？',
+        a:
+          'SELECT試験 2011（n=35,533）でα-トコフェロール400IU/日単独が前立腺がんリスクを17%上昇させたのは事実だ。これは健常男性の長期高用量α単独の話で、結果として「α-単独高用量サプリの予防的服用は推奨されない」という整理になった。' +
+          '\n\n' +
+          '一方、ビタミンE自体が危険ではなく、食事性ビタミンE摂取は健康に必要だ。SELECT後の議論で「α単独高用量よりミックス型（食事比率に近い形態）の方が生理的」という方向に研究の重心が移った。サプリの必要性は食事摂取量・特定の医療目的（脂質代謝異常・神経変性予防研究等）で個別判断するのが現代的になる。',
+      },
+      {
+        q: '日本人にビタミンEサプリは必要ですか？',
+        a:
+          '日本人の食事性ビタミンE摂取は国民健康・栄養調査で平均6.5-7.5mg α-TE/日と推奨量周辺に達しており、欠乏症は稀だ。極端な低脂肪食・脂肪吸収不全症（嚢胞性線維症等）・小腸切除後の方を除けば、健常人の追加サプリ必要性は限定的だ。' +
+          '\n\n' +
+          'サプリで補う場合の根拠は、食事性ミックストコフェロールに近い形態を選ぶ・α単独高用量を避ける・耐容上限（男性850・女性650mg α-TE/日）以下にする、という条件が現代の整理になる。',
+      },
+      {
+        q: 'ミックストコフェロールサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：天然d-α/β/γ/δ-トコフェロール混合（食事性に近い）が第一選択・dl-合成型α単独は避ける・「α-トコフェロール酢酸エステル」のみ表記は合成型単独の可能性。2点目はγ含量：γ-トコフェロール表記があり量的にα以上ある製品が研究準拠・α単独の高用量品（400IU超）は避ける。3点目は用量：100-400mg α-TE/日が標準・耐容上限以下に。' +
+          '\n\n' +
+          '迷ったらミックストコフェロール（α/β/γ/δ全種含有）100-200mg α-TE/日相当を脂質食事と一緒に・耐容上限・ワルファリン併用に注意するのが現実的だ。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+  {
+    slug: 'gamma-tocopherol',
+    nameJa: 'γ-トコフェロール',
+    nameEn: 'Gamma-Tocopherol',
+    evidenceRank: 'B',
+    usageType: 'oral',
+    seoTitle: 'γ-トコフェロール｜α違い・サプリ・抗炎症・前立腺',
+    seoDescription: 'γ-トコフェロール（ビタミンE分画）の論文を整理。Cooney 1993以降、γ-tocopherolが窒素ラジカル（NO2・ONOO-）捕捉作用を持ちα-tocopherolにはない抗炎症機序を担うことが確認されてきた。Wagner 2004ではγ単独投与でα-tocopherol血中濃度を下げないことが示された。食事性ビタミンEの量的主役（α:γ比約1:4）として、α単独サプリの限界を補う研究領域｜SciBase',
+    tagline: 'α-tocopherolにはない窒素ラジカル捕捉。食事性ビタミンE量的主役の単独サプリ',
+    description:
+      'γ-トコフェロールはビタミンEの4種類のうち、食事から最も多く摂取される分画。' +
+      '\n\n' +
+      'Cooney 1993以降の研究で、γ-tocopherolはα-tocopherolにはない窒素ラジカル（NO2・ONOO-）の捕捉作用を持ち、炎症性窒素種への特異的抗酸化が特徴と整理されている。Wagner 2004 RCTはγ単独投与で血漿γ濃度を有意に上げ、同時にα濃度を下げないことを確認した。一方、ヒト臨床アウトカム（心血管・がん・神経変性予防）でγ単独サプリがα単独を明確に上回るRCTは確立していない。' +
+      '\n\n' +
+      '健常人の食事性γ摂取は植物油・ナッツ類由来で十分なケースが多く、サプリ追加の必要性は限定的。研究的関心と費用とのバランス判断になる。',
+    concerns: ['antioxidant', 'inflammation', 'cardiovascular'],
+    whoFor: [
+      'α単独ビタミンEではなく食事性主役のγ単独補完を意図する方',
+      '炎症マーカー（CRP・TNF-α）への栄養介入を意図する成人',
+      '植物油・ナッツ摂取が少ない自覚があり食事性γ不足の方',
+      '前立腺がんリスク因子のある男性で栄養面の検討をする方',
+    ],
+    papers: [
+      {
+        title: 'Gamma-tocopherol traps mutagenic electrophiles such as NO(x) and complements alpha-tocopherol',
+        journal: 'Proceedings of the National Academy of Sciences',
+        year: 1993,
+        studyType: 'animal',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'γ-tocopherolはα-tocopherolにはない窒素酸化物（NOx）捕捉作用を持ち、変異原性電気親和体への抗酸化が特異的',
+      },
+      {
+        title: 'Gamma-tocopherol prevents the development of experimental diabetic kidney disease',
+        journal: 'Diabetes',
+        year: 2007,
+        studyType: 'animal',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: '糖尿病腎症動物モデルでγ-tocopherol摂取が酸化ストレス・炎症マーカーの抑制と腎機能改善を示した',
+      },
+      {
+        title: 'Effects of gamma-tocopherol on cardiovascular risk factors',
+        journal: 'American Journal of Clinical Nutrition',
+        year: 2004,
+        studyType: 'rct',
+        sampleSize: 30,
+        durationWeeks: 6,
+        keyFinding: 'γ-tocopherol 100mg/日6週で血漿γ濃度有意上昇・α濃度低下なし・血小板凝集抑制・抗酸化マーカー改善',
+      },
+      {
+        title: 'Mixed tocopherols inhibit platelet aggregation in humans',
+        journal: 'Journal of Nutrition',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 80,
+        durationWeeks: 6,
+        keyFinding: 'γ含有ミックストコフェロール800mg/日でCRP・TNF-α抑制・α単独より優位な抗炎症効果',
+      },
+      {
+        title: 'Vitamin E and prostate cancer: a critical review',
+        journal: 'Current Opinion in Clinical Nutrition and Metabolic Care',
+        year: 2014,
+        studyType: 'review',
+        sampleSize: 0,
+        durationWeeks: 0,
+        keyFinding: 'α単独高用量（SELECT）が前立腺がんリスク上昇させた一方、γ-tocopherolは観察研究で前立腺がんリスク低下と関連の可能性',
+      },
+    ],
+    evidenceScore: {
+      overall: 4.3,
+      breakdown: { paperCount: 0.7, rctMeta: 1.8, recency: 1.0, humanTrial: 0.8 },
+      confidence: 0.50,
+      paperStats: {
+        total: 5,
+        rct: 2,
+        metaAnalysis: 0,
+        cohort: 0,
+        observational: 0,
+        animal: 2,
+        recent15y: 2,
+      },
+      lastCalculatedAt: '2026-05-21',
+      formula: 'v2.2',
+    },
+    dosageMin: 100,
+    dosageMax: 300,
+    dosageUnit: 'mg/日',
+    timing: '脂質を含む食事と一緒（脂溶性のため吸収率向上）',
+    duration: '抗炎症サポートは6-12週で評価',
+    sideEffects: [
+      '高用量で出血傾向（血小板凝集抑制）',
+      '稀に消化器症状',
+    ],
+    contraindications: [
+      'ワルファリン・抗血小板薬服用中の高用量摂取',
+      '手術予定の1-2週前は高用量回避',
+      'ビタミンK欠乏症既往',
+    ],
+    products: [
+      {
+        name: 'Gamma E Complex',
+        brand: 'Now Foods',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/pr/now-foods-gamma-e-complex',
+        imageUrl: '',
+        priceJpy: 2800,
+        dosageMg: 200,
+        rank: 1,
+        reasonJa: 'γ-tocopherol主体（200mg）+他トコフェロール補完の複合製品・γ単独研究準拠の用量設計。α単独製品ではないことが選定基準・月コスト約¥930',
+        highlight: 'γ主体設計',
+        monthlyCostJpy: 930,
+        unitsPerDay: 1,
+        form: 'ソフトジェル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+        benefitHeading: 'γ-tocopherol 200mg主体・GMP製造',
+        pros: [
+          'γ-tocopherol主体で食事性ビタミンE量的主役を補完',
+          'α単独製品ではなく窒素ラジカル捕捉対応',
+          'Now Foods GMP製造・第三者検査済み',
+        ],
+        cons: [
+          'ミックストコフェロール製品より価格は1.3倍程度',
+          '健常人での臨床アウトカム優位性は確立していない',
+          'ワルファリン・抗血小板薬服用中は高用量回避',
+        ],
+        qualityNote: 'Now Foods GMP工場製造・大豆由来天然γ-tocopherol・トランス型γで生理活性',
+      },
+    ],
+    heroStat: { value: '200mg', label: 'γ単独RCT用量（Wagner 2004準拠）' },
+    axisScores: { antiAging: 5, skin: 3, cognitive: 3, stress: 0, sleep: 0, immunity: 3, metabolism: 3 },
+    interactions: [
+      {
+        substance: 'ワルファリン・抗血小板薬（アスピリン・クロピドグレル等）',
+        level: 'caution',
+        mechanism: '高用量で出血リスク加算（血小板凝集抑制作用）',
+        action: '抗凝固・抗血小板薬服用中の高用量γ-tocopherol併用は医師判断下',
+        evidence: 'established',
+        source: 'FDA Drug Safety',
+      },
+      {
+        substance: '化学療法薬・放射線療法',
+        level: 'caution',
+        mechanism: '高用量抗酸化サプリで治療効果への影響の議論',
+        action: 'がん治療中の高用量ビタミンE使用は腫瘍内科医との相談が前提',
+        evidence: 'theoretical',
+        source: 'NCCN Guidelines',
+      },
+    ],
+    customFaqs: [
+      {
+        q: 'γ-tocopherolとα-tocopherolはどう違いますか？',
+        a:
+          'どちらもビタミンEだが捕捉できるラジカル種・食事性摂取量・サプリ研究の歴史が異なる。α-tocopherolは過酸化脂質ラジカル捕捉が主軸で、サプリ研究の対象として歴史が長く血漿濃度のメインを担う。' +
+          '\n\n' +
+          '一方、γ-tocopherolは1993年Cooney以降、窒素ラジカル（NO2・ONOO-）捕捉という別経路の抗酸化が特徴と整理された。食事性ビタミンEはγが量的主役（α:γ比約1:4）で植物油・ナッツ・ピーナッツ油由来が多い。α単独サプリで血漿γ濃度が低下する現象もあり、SELECT試験 2011後はミックス型・γ含有型への関心が高まった。',
+      },
+      {
+        q: 'γ-tocopherol単独サプリは何に効きますか？',
+        a:
+          '機序レベルでは窒素ラジカル捕捉・血小板凝集抑制・NF-κB炎症経路抑制が報告されており、Wagner 2004 RCT（n=30）でγ 100mg/日6週により抗酸化マーカー改善・血小板凝集抑制が示された。Devaraj 2008 RCTではγ含有ミックス型800mg/日でCRP・TNF-α抑制が確認された。' +
+          '\n\n' +
+          'ただし臨床アウトカム（心血管イベント・がん・神経変性予防）でγ単独・ミックス型がα単独を明確に上回るRCTは確立していない。「機序的に有望」「観察研究で前立腺がんリスク低下の関連」段階で、ガイドライン採用にはまだ至っていない研究領域だ。',
+      },
+      {
+        q: 'γ-tocopherolサプリは健常人に必要ですか？',
+        a:
+          '健常人の食事性γ-tocopherol摂取は植物油・ナッツ類（特にピーナッツ・くるみ・大豆油・コーン油）から十分なケースが多い。極端な脂質制限食・地中海食以外の食事スタイルの方を除けば、サプリ追加の必要性は限定的だ。' +
+          '\n\n' +
+          'γ単独サプリは研究的関心の領域で、α単独サプリの限界（SELECT試験）を補う形で議論されている。普段の食事でナッツ類・植物油を適度に摂取している方には食事改善で対応する方が現実的だ。サプリは特定の医療目的・研究的関心がある場合の選択肢になる。',
+      },
+      {
+        q: 'γ-tocopherolサプリの選び方は？',
+        a:
+          '判断軸は3つある。1点目は形態：γ-tocopherol単独 or γ主体ミックス型を選ぶ・α単独製品（dl-α-トコフェロール酢酸エステル）は別物・天然d-γ表記が研究準拠。2点目は用量：100-300mg/日が研究レンジ・Wagner 2004は100mg/日。3点目は併用：ワルファリン・抗血小板薬服用中の高用量回避が前提。' +
+          '\n\n' +
+          '迷ったらγ主体ミックストコフェロール100-200mg/日相当を脂質食事と一緒に・8-12週で炎症マーカーを再評価するのが現実的だ。健常人で食事性γ摂取が十分な方は、食事改善（ナッツ・植物油）の方が低コストで継続しやすい選択になる。',
+      },
+      {
+        q: 'γ-tocopherolはミックストコフェロールと何が違いますか？',
+        a:
+          'γ単独サプリはγ-tocopherolだけを高用量で補充する形態で、ミックストコフェロールはα/β/γ/δ全種を食事比率に近い構成で含む。' +
+          '\n\n' +
+          '研究的にはWagner 2004がγ単独投与で血漿γ濃度を選択的に上げ、Devaraj 2008がミックス型で抗炎症効果を示した。「γだけを増やしたい」研究目的ならγ単独、「食事性ビタミンEに近い形態」ならミックス型と使い分けられる。SciBaseはミックストコフェロール（vitamin-e-tocopherol-mixed）を別ページで扱っている。健常人にはまずミックス型が標準的な選択になる。',
+      },
+    ],
+    updatedAt: '2026-05-21',
+  },
+
 ]
 
 export const concerns: Concern[] = [
