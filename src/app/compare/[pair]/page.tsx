@@ -86,6 +86,15 @@ const YMYL_PAIRS = new Set<string>([
   'saw-palmetto-vs-biotin',                 // AGA薄毛境界
   'tranexamic-acid-vs-arbutin',             // 美白YMYL
   'tranexamic-acid-vs-niacinamide',         // 美白YMYL
+  // C2-γ scaffold-pair 補完 22 件のうち YMYL 重
+  'nettle-root-extract-vs-saw-palmetto',    // BPH 泌尿器科境界
+  'beta-sitosterol-vs-saw-palmetto',        // BPH 泌尿器科境界
+  'phyllanthus-niruri-vs-milk-thistle',     // 慢性肝炎・肝サポート YMYL
+  'artichoke-cynarin-vs-milk-thistle',      // 肝疾患・胆石症 YMYL
+  'methyl-folate-vs-sam-e',                 // うつ病補助療法 精神科境界
+  'mucuna-pruriens-vs-maca-black-red-yellow', // パーキンソン病薬・MAOI 相互作用
+  'lactoferrin-vs-iron',                    // 貧血治療 内科境界
+  'omega3-vs-coq10-ubiquinol-200mg',        // 心血管予防 YMYL
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
