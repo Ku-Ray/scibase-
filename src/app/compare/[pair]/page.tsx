@@ -117,6 +117,11 @@ const YMYL_PAIRS = new Set<string>([
   'vinpocetine-vs-ginkgo-biloba',           // 処方薬境界・FDA 妊娠中警告・出血リスク重複
   // C2-α-B 残 8 件のうち YMYL 重 1 件（2026-05-23）
   'glucomannan-vs-psyllium',                // 便秘薬・血糖補助・食道閉塞リスク・薬剤吸収阻害
+  // C2-α-R Batch 1: 糖尿系 YMYL 4 件（2026-05-23）
+  'gymnema-vs-berberine',                       // 糖尿病薬境界・血糖補助
+  'salacia-reticulata-vs-gymnema',              // 糖尿病薬境界・血糖補助
+  'mulberry-leaf-dnj-vs-banaba',                // 糖尿病薬境界・血糖補助
+  'fenugreek-vs-maca-black-red-yellow',         // 男性ホルモン・前立腺・甲状腺境界
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
