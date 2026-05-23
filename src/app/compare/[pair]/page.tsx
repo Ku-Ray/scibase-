@@ -95,6 +95,24 @@ const YMYL_PAIRS = new Set<string>([
   'mucuna-pruriens-vs-maca-black-red-yellow', // パーキンソン病薬・MAOI 相互作用
   'lactoferrin-vs-iron',                    // 貧血治療 内科境界
   'omega3-vs-coq10-ubiquinol-200mg',        // 心血管予防 YMYL
+  // C2-β 2026-05-23: 13 YMYL重 + 9 関連（c2-γ既登録 5 件除く 17 件）
+  'nattokinase-vs-red-yeast-rice-low-dose',
+  'policosanol-sugarcane-vs-red-yeast-rice-low-dose',
+  'bergamot-bpf-1000mg-vs-red-yeast-rice-low-dose',
+  'bergamot-bpf-1000mg-vs-policosanol-sugarcane',
+  'arjuna-bark-vs-hawthorn-extract',
+  'sam-e-vs-saffron',
+  'sam-e-vs-5-htp',
+  'benfotiamine-vs-alpha-lipoic-acid',
+  'benfotiamine-vs-r-alpha-lipoic-acid',
+  'saw-palmetto-permixon-vs-finasteride-oral',
+  'black-cohosh-vs-red-clover-isoflavones',
+  'black-cohosh-vs-equol',
+  'red-clover-isoflavones-vs-soy-isoflavones',
+  'maca-black-red-yellow-vs-red-clover-isoflavones',
+  'kava-vs-l-theanine',
+  'turkey-tail-vs-reishi',
+  'reishi-vs-chaga',
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
