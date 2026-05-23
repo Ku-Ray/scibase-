@@ -122,6 +122,10 @@ const YMYL_PAIRS = new Set<string>([
   'salacia-reticulata-vs-gymnema',              // 糖尿病薬境界・血糖補助
   'mulberry-leaf-dnj-vs-banaba',                // 糖尿病薬境界・血糖補助
   'fenugreek-vs-maca-black-red-yellow',         // 男性ホルモン・前立腺・甲状腺境界
+  // C2-α-R Batch 3: AGA/婦人科/男性ホルモン 3 件（2026-05-23）
+  'pygeum-africanum-vs-saw-palmetto',           // BPH 泌尿器科境界・PSA 検査影響
+  'chasteberry-vitex-vs-evening-primrose-oil',  // 婦人科・PMS・ホルモン経路
+  'dhea-vs-tribulus-terrestris',                // 男性ホルモン・処方薬境界・DHEA 医薬品扱い
   // C2-ζ beauty-female YMYL 重 1 件（2026-05-23）
   'placenta-vs-collagen-peptide',           // 妊娠中・授乳中・乳がん既往等ホルモン依存性疾患の禁忌差
 ])
