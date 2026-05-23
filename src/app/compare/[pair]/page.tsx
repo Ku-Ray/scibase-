@@ -122,6 +122,8 @@ const YMYL_PAIRS = new Set<string>([
   'salacia-reticulata-vs-gymnema',              // 糖尿病薬境界・血糖補助
   'mulberry-leaf-dnj-vs-banaba',                // 糖尿病薬境界・血糖補助
   'fenugreek-vs-maca-black-red-yellow',         // 男性ホルモン・前立腺・甲状腺境界
+  // C2-ζ beauty-female YMYL 重 1 件（2026-05-23）
+  'placenta-vs-collagen-peptide',           // 妊娠中・授乳中・乳がん既往等ホルモン依存性疾患の禁忌差
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
