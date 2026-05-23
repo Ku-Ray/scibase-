@@ -115,6 +115,8 @@ const YMYL_PAIRS = new Set<string>([
   'reishi-vs-chaga',
   // C2-α パイロット 2 件（2026-05-23）
   'vinpocetine-vs-ginkgo-biloba',           // 処方薬境界・FDA 妊娠中警告・出血リスク重複
+  // C2-α-B 残 8 件のうち YMYL 重 1 件（2026-05-23）
+  'glucomannan-vs-psyllium',                // 便秘薬・血糖補助・食道閉塞リスク・薬剤吸収阻害
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
