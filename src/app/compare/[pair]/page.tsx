@@ -113,6 +113,8 @@ const YMYL_PAIRS = new Set<string>([
   'kava-vs-l-theanine',
   'turkey-tail-vs-reishi',
   'reishi-vs-chaga',
+  // C2-α パイロット 2 件（2026-05-23）
+  'vinpocetine-vs-ginkgo-biloba',           // 処方薬境界・FDA 妊娠中警告・出血リスク重複
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
