@@ -138,6 +138,8 @@ const YMYL_PAIRS = new Set<string>([
   'schisandra-vs-milk-thistle',
   // C2-η Batch 1 パイロット YMYL 中 1 件（2026-05-24）
   'algal-oil-vs-omega3',                       // 妊娠中授乳中 DHA 推奨・抗凝固薬併用注意・ヴィーガン代替判断
+  // C2-η Batch 2 YMYL 1 件（2026-05-24・スタチン同等薬理）
+  'vitamin-b3-niacin-vs-red-yeast-rice',       // 横紋筋融解・肝障害・スタチン併用絶対禁忌・EU 2022規制・小林製薬事案
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
