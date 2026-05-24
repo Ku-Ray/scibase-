@@ -130,6 +130,12 @@ const YMYL_PAIRS = new Set<string>([
   'placenta-vs-collagen-peptide',           // 妊娠中・授乳中・乳がん既往等ホルモン依存性疾患の禁忌差
   // C2-Disc-α YMYL 中 1 件（2026-05-24）
   'alpha-lipoic-acid-vs-r-alpha-lipoic-acid',  // 糖尿病薬・甲状腺薬境界・低血糖相加リスク
+  // C2-ε 最終 wave: YMYL 重 5 件（2026-05-24）
+  'adapalene-01pct-topical-vs-tretinoin-topical',
+  'benzoyl-peroxide-25pct-vs-salicylic-acid',
+  'benzoyl-peroxide-25pct-vs-adapalene-01pct-topical',
+  'dasatinib-senolytic-vs-fisetin',
+  'schisandra-vs-milk-thistle',
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
