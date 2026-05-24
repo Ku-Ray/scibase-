@@ -136,6 +136,8 @@ const YMYL_PAIRS = new Set<string>([
   'benzoyl-peroxide-25pct-vs-adapalene-01pct-topical',
   'dasatinib-senolytic-vs-fisetin',
   'schisandra-vs-milk-thistle',
+  // C2-η Batch 1 パイロット YMYL 中 1 件（2026-05-24）
+  'algal-oil-vs-omega3',                       // 妊娠中授乳中 DHA 推奨・抗凝固薬併用注意・ヴィーガン代替判断
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
