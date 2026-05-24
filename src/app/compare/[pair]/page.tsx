@@ -128,6 +128,8 @@ const YMYL_PAIRS = new Set<string>([
   'dhea-vs-tribulus-terrestris',                // 男性ホルモン・処方薬境界・DHEA 医薬品扱い
   // C2-ζ beauty-female YMYL 重 1 件（2026-05-23）
   'placenta-vs-collagen-peptide',           // 妊娠中・授乳中・乳がん既往等ホルモン依存性疾患の禁忌差
+  // C2-Disc-α YMYL 中 1 件（2026-05-24）
+  'alpha-lipoic-acid-vs-r-alpha-lipoic-acid',  // 糖尿病薬・甲状腺薬境界・低血糖相加リスク
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
