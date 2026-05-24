@@ -351,17 +351,12 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['benfotiamine', 'r-alpha-lipoic-acid'],
   ['turkey-tail', 'reishi'],
   ['sam-e', '5-htp'],
-  ['methyl-folate', 'sam-e'],
 
   // C2-beta menopause+prostate+liver related batch4
   ['red-clover-isoflavones', 'soy-isoflavones'],
   ['maca-black-red-yellow', 'red-clover-isoflavones'],
-  ['nettle-root-extract', 'saw-palmetto'],
-  ['beta-sitosterol', 'saw-palmetto'],
-  ['phyllanthus-niruri', 'milk-thistle'],
 
   // C2-beta cardio+immune related batch5
-  ['omega3', 'coq10-ubiquinol-200mg'],
   ['reishi', 'chaga'],
 
   // ── C2-δ Batch 1: same-category 上位互換型 2 件（2026-05-23） ────────────
