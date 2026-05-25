@@ -475,6 +475,32 @@ export const TOP3_PAIR_KEYS = [
   'creatine-vs-hmb',
 ]
 
+/**
+ * TOP10 ハイライト枠拡張候補（PEI v2.2 evidenceScore 合計 + カテゴリ分散 + 検索意図広範性で選定）。
+ * 既存 TOP3 を含む 9 件・カテゴリ別バランス：
+ * - skin: retinol-vs-bakuchiol (既存)
+ * - antiaging: nmn-vs-nicotinamide-riboside (既存) / collagen-peptide-vs-vitamin-c-oral (PEI 11.8)
+ * - muscle: creatine-vs-hmb (既存) / whey-protein-isolate-vs-casein-protein (PEI 13.6)
+ * - cardiovascular: omega3-vs-coq10-ubiquinol-200mg (PEI 13.6)
+ * - stress: ashwagandha-vs-rhodiola (PEI 12.6) / glycine-vs-l-theanine (PEI 9.9)
+ * - supplement: vitamin-d-vs-vitamin-k2 (PEI 9.0)
+ *
+ * 注意：GSC 実検索データなしの推定リスト。実 UI ハイライト件数を 3→10 に拡張する場合は
+ * src/app/compare/page.tsx の isTop3 ロジックを TOP10_PAIR_KEYS に切り替えるか
+ * isTop10 別フィールド追加で対応。本リスト追加は破壊的変更なし（export のみ）。
+ */
+export const TOP10_PAIR_KEYS = [
+  'retinol-vs-bakuchiol',                       // skin・既存 TOP3・妊娠中代替
+  'nmn-vs-nicotinamide-riboside',               // antiaging・既存 TOP3・NAD 前駆体最新
+  'creatine-vs-hmb',                            // muscle・既存 TOP3・運動代表
+  'omega3-vs-coq10-ubiquinol-200mg',            // cardiovascular・PEI 13.6・心血管スタック
+  'whey-protein-isolate-vs-casein-protein',     // muscle・PEI 13.6・プロテイン 2 大
+  'ashwagandha-vs-rhodiola',                    // stress・PEI 12.6・アダプトゲン 2 大
+  'collagen-peptide-vs-vitamin-c-oral',         // antiaging・PEI 11.8・美容人気
+  'glycine-vs-l-theanine',                      // stress・PEI 9.9・睡眠アミノ酸
+  'vitamin-d-vs-vitamin-k2',                    // supplement・PEI 9.0・骨健康
+]
+
 /** 禁忌・刺激性差・用途分担が明確で「迷ったらこれ」一択推奨が消費者利益と乖離する比較ペア。
  *  これらでは TL;DR 後の即購入CTAブロックを抑制し、目的別の判断を促す。
  *  - 妊娠中NG/OKが分かれるペア（retinol系）
