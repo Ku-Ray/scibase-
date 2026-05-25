@@ -144,6 +144,41 @@ const YMYL_PAIRS = new Set<string>([
   'potassium-vs-magnesium',                    // 慢性腎臓病・ARB/ACE 阻害薬・K 保持性利尿薬で高 K 血症リスク
   // C2-η Batch 2 YMYL 中 1 件（2026-05-24・胆道閉塞・処方薬境界）
   'tudca-vs-milk-thistle',                     // 胆道閉塞絶対禁忌・処方薬UDCA重複・PBC/PSC自己判断不可
+
+  // ── C2-Audit-YMYL 第 1 弾 漏れ監査 25 件追加（2026-05-25・厳密判定）────────────
+  // retinol 系 妊娠中催奇形性 6 件
+  'retinol-vs-vitamin-e',                      // 妊娠中禁忌・retinol A 過剰催奇形性
+  'retinol-vs-ferulic-acid',                   // 妊娠中禁忌・retinol A 過剰催奇形性
+  'retinol-vs-hyaluronic-acid',                // 妊娠中禁忌・retinol A 過剰催奇形性
+  'retinol-vs-tranexamic-acid',                // 妊娠中禁忌・retinol A 過剰催奇形性
+  'palmitoyl-tripeptide-vs-retinol',           // 妊娠中禁忌・retinol A 過剰催奇形性
+  'pdrn-vs-retinol',                           // 妊娠中禁忌・retinol A 過剰催奇形性
+  // melatonin 系 日本医薬品扱い・小児長期影響 6 件
+  'melatonin-vs-glycine',                      // 医薬品扱い・小児長期影響データ限定
+  'melatonin-vs-l-theanine',                   // 医薬品扱い・小児長期影響データ限定
+  'melatonin-vs-l-tryptophan',                 // 医薬品扱い・SSRI セロトニン症候群リスク
+  'melatonin-vs-magnesium-glycinate',          // 医薬品扱い・小児長期影響データ限定
+  'melatonin-vs-magnesium-l-threonate',        // 医薬品扱い・小児長期影響データ限定
+  'tart-cherry-vs-melatonin',                  // 医薬品扱い・小児長期影響データ限定
+  // nattokinase 系 抗凝固薬出血リスク 4 件
+  'nattokinase-vs-omega3',                     // 抗凝固薬出血リスク両方+心血管 YMYL
+  'nattokinase-vs-vitamin-e',                  // 抗凝固薬出血リスク両方+ビタミン E 高用量
+  'nattokinase-vs-vitamin-k2',                 // 抗凝固薬・ワルファリン管理者の用量計算複雑
+  'nattokinase-vs-nattokinase-jnka-grade',     // 抗凝固薬出血リスク重複・規格選定
+  // azelaic-acid 処方薬扱い 3 件
+  'niacinamide-vs-azelaic-acid',               // 処方薬扱い（医療用 20%）・妊娠中要相談
+  'azelaic-acid-vs-vitamin-c-topical',         // 処方薬扱い（医療用 20%）・妊娠中要相談
+  'zinc-vs-azelaic-acid',                      // 処方薬扱い（医療用 20%）・妊娠中要相談
+  // 化学療法干渉 2 件
+  'glutathione-liposomal-vs-nac',              // 化学療法中の抗酸化干渉・がん補助療法 YMYL
+  'glutathione-vs-nac',                        // 化学療法中の抗酸化干渉・がん補助療法 YMYL
+  // DHEA・処方薬境界 1 件
+  'dhea-vs-pregnenolone',                      // DHEA 処方薬境界・ホルモン感受性疾患
+  // tribulus 妊娠中子宮収縮 2 件
+  'fenugreek-vs-tribulus-terrestris',          // 妊娠中子宮収縮+男性ホルモン処方薬境界
+  'tribulus-terrestris-vs-tongkat-ali',        // 妊娠中子宮収縮+男性ホルモン処方薬境界
+  // vinpocetine FDA 警告 1 件
+  'vinpocetine-vs-citicoline',                 // 処方薬境界・FDA 妊娠中警告
 ])
 
 /** H1 SEO最適化（Critical-1）。YMYL pair は薬機法配慮の別パターン */
