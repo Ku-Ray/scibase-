@@ -4,7 +4,7 @@ import { getIngredient, ingredients } from '@/lib/data'
 import { CompareGrid } from '@/components/CompareGrid'
 import {
   POPULAR_PAIRS,
-  TOP3_PAIR_KEYS,
+  TOP10_PAIR_KEYS,
   PAIR_CATEGORIES,
 } from '@/lib/compare-data'
 import type { Metadata } from 'next'
@@ -29,7 +29,7 @@ type PairEntry = {
   rankA:   EvidenceRank
   rankB:   EvidenceRank
   category: string
-  isTop3:  boolean
+  isTop10: boolean
 }
 
 export default function ComparePage() {
@@ -46,7 +46,7 @@ export default function ComparePage() {
         rankA:   ingA.evidenceRank as EvidenceRank,
         rankB:   ingB.evidenceRank as EvidenceRank,
         category: PAIR_CATEGORIES[pairKey] ?? 'supplement',
-        isTop3:  TOP3_PAIR_KEYS.includes(pairKey),
+        isTop10: TOP10_PAIR_KEYS.includes(pairKey),
       }
     })
     .filter((p): p is PairEntry => p !== null)

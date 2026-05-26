@@ -14,7 +14,7 @@ interface PairEntry {
   rankA: EvidenceRank
   rankB: EvidenceRank
   category: string
-  isTop3: boolean
+  isTop10: boolean
 }
 
 const rankScore: Record<EvidenceRank, number> = { S: 4, A: 3, B: 2, C: 1 }
@@ -76,15 +76,15 @@ export function CompareGrid({ pairs }: { pairs: PairEntry[] }) {
 
   const usedCategories = ['all', ...Array.from(new Set(pairs.map(p => p.category)))]
 
-  const top3 = pairs.filter(p => p.isTop3)
-  const rest  = pairs.filter(p => !p.isTop3)
+  const top10 = pairs.filter(p => p.isTop10)
+  const rest  = pairs.filter(p => !p.isTop10)
   const filtered = activeFilter === 'all'
     ? rest
     : pairs.filter(p => p.category === activeFilter)
 
   return (
     <>
-      {/* TOP3ハイライト — 社会的証明 + アンカリング */}
+      {/* TOP10ハイライト — 社会的証明 + アンカリング（PEI v2.2 + カテゴリ分散で選定） */}
       {activeFilter === 'all' && (
         <section className="mb-8">
           <div className="flex items-center gap-2 mb-3">
@@ -94,7 +94,7 @@ export function CompareGrid({ pairs }: { pairs: PairEntry[] }) {
             </span>
           </div>
           <div className="space-y-2">
-            {top3.map(p => <PairRow key={p.pairKey} {...p} highlighted />)}
+            {top10.map(p => <PairRow key={p.pairKey} {...p} highlighted />)}
           </div>
         </section>
       )}
