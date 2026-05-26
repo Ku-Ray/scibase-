@@ -617,7 +617,7 @@ export default async function ComparePage({ params }: Props) {
 
         {/* 成分カード比較（社会的証明） */}
         <section id="basics" className="mb-10 scroll-mt-4">
-          <h2 className="font-semibold text-[18px] text-foreground mb-4">成分の基本情報</h2>
+          <h2 className="font-semibold text-[18px] text-foreground mb-4">{ingA.nameJa}と{ingB.nameJa}の基本情報</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[ingA, ingB].map(ing => (
               <div key={ing.slug}
@@ -705,7 +705,7 @@ export default async function ComparePage({ params }: Props) {
 
         {/* 7軸スコア比較（視覚的アンカリング） */}
         <section id="axes" className="mb-10 scroll-mt-4">
-          <h2 className="font-semibold text-[18px] text-foreground mb-1">7軸スコア比較</h2>
+          <h2 className="font-semibold text-[18px] text-foreground mb-1">{ingA.nameJa}と{ingB.nameJa}の7軸スコア比較</h2>
           <p className="text-[12px] text-muted-foreground mb-4">
             太い数字の軸がその成分の強み。自分が重視する軸で選ぶ。
           </p>
@@ -850,7 +850,7 @@ export default async function ComparePage({ params }: Props) {
         {/* 有効量・コスト比較（コミットメント誘導） */}
         {(ingA.dosageMin || ingB.dosageMin || costA || costB) && (
           <section id="dosage" className="mb-10 scroll-mt-4">
-            <h2 className="font-semibold text-[18px] text-foreground mb-4">有効量・コスト比較</h2>
+            <h2 className="font-semibold text-[18px] text-foreground mb-4">{ingA.nameJa}と{ingB.nameJa}の有効量・コスト比較</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[{ ing: ingA, cost: costA }, { ing: ingB, cost: costB }].map(({ ing, cost }) => (
                 <div key={ing.slug} className="bg-card border border-border rounded-2xl p-4">
@@ -940,7 +940,7 @@ export default async function ComparePage({ params }: Props) {
 
         {/* FAQ（AI Overview対策 + 行動経済学5問） */}
         <section id="faq" className="mb-10 scroll-mt-4">
-          <h2 className="font-semibold text-[18px] text-foreground mb-4">よくある質問</h2>
+          <h2 className="font-semibold text-[18px] text-foreground mb-4">{ingA.nameJa}と{ingB.nameJa}のよくある質問</h2>
           <div className="border border-border rounded-2xl overflow-hidden divide-y divide-border">
             {faqItems.map(({ q, a }, i) => (
               <details key={i} {...(i === 0 ? { open: true } : {})} className="group bg-card">
