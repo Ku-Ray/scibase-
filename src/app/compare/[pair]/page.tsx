@@ -7,6 +7,8 @@ import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, PAIR_CUSTOM_FAQS, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
+import { NextReadCTA } from '@/components/NextReadCTA'
+import { buildCompareNextRead } from '@/lib/recommendation'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
 
@@ -994,6 +996,13 @@ export default async function ComparePage({ params }: Props) {
             </Link>
           </section>
         )}
+
+        {/* ── Cross-type 次に読む（悩みハブ + コラム + 各成分詳細）── */}
+        <NextReadCTA
+          items={buildCompareNextRead(ingA, ingB)}
+          title="次に読む"
+          hint="悩みハブ・関連コラム・各成分の詳細ページへ横断。"
+        />
 
         {/* 個別ページへのリンク */}
         <div className="flex flex-col sm:flex-row gap-3 mb-8">

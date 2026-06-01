@@ -4,6 +4,8 @@ import { ChevronRight, ExternalLink, ArrowLeft, ArrowRight, Trophy, BarChart2, G
 import { getIngredient, getIngredientsByConcern, ingredients, concerns } from '@/lib/data'
 import { getArticlesByIngredient } from '@/lib/articles'
 import { getAlternatives } from '@/lib/utils'
+import { buildIngredientNextRead } from '@/lib/recommendation'
+import { NextReadCTA } from '@/components/NextReadCTA'
 import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
@@ -1567,6 +1569,13 @@ export default async function IngredientPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* ── Cross-type 次に読む（コラム + 比較 + 悩みハブ）── */}
+        <NextReadCTA
+          items={buildIngredientNextRead(ing)}
+          title={`${ing.nameJa}の次に読む`}
+          hint="コラム・比較ペア・悩みハブを横断して、判断に必要な情報を 1 クリックで。"
+        />
 
         {/* ── 次のアクション CTA ── */}
         <div className="border-t border-border pt-10 mt-4 mb-4">

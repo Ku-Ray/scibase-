@@ -20,6 +20,8 @@ import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
 import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
 import { ArticleConclusionBoxes } from '@/components/ArticleConclusionBoxes'
+import { NextReadCTA } from '@/components/NextReadCTA'
+import { buildArticleNextRead } from '@/lib/recommendation'
 import type { Metadata } from 'next'
 
 interface Props { params: Promise<{ slug: string }> }
@@ -825,6 +827,13 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* ── Cross-type 次に読む（比較ペア + 悩みハブ + 別カテゴリコラム）── */}
+        <NextReadCTA
+          items={buildArticleNextRead(article)}
+          title="次に読む"
+          hint="この記事で出てきた成分の「比較」「悩みハブ」「別角度のコラム」を横断。"
+        />
 
         {/* ── Related Articles ── */}
         {relatedArticles.length > 0 && (

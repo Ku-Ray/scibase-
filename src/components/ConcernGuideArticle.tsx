@@ -11,6 +11,8 @@ import { RichParagraphs } from '@/components/RichText'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { ConcernGuideTestKitCTACard } from '@/components/ConcernGuideTestKitCTACard'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
+import { NextReadCTA } from '@/components/NextReadCTA'
+import { buildConcernGuideNextRead } from '@/lib/recommendation'
 
 const BASE_URL = 'https://scibase.app'
 
@@ -687,6 +689,13 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             className="text-[14px] sm:text-[15px] text-foreground/85 leading-[1.95] mb-4 last:mb-0"
           />
         </section>
+
+        {/* ── Cross-type 次に読む（比較 + ランキング + 関連悩み）── */}
+        <NextReadCTA
+          items={buildConcernGuideNextRead(concernSlug)}
+          title={`${concern.nameJa}の次に読む`}
+          hint="比較ペア・成分ランキング・関連カテゴリを横断。"
+        />
 
         {/* ── [10] 関連リンク ── */}
         <section className="mt-14 pt-10 border-t border-border">
