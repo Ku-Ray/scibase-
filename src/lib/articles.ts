@@ -29639,7 +29639,7 @@ DOAC（新規経口抗凝固薬）との比較：
     readingMinutes: 12,
     heroStat: {
       value: 'コルチゾール−27.9%',
-      label: 'KSM-66 600mg/日 × 8週 RCT（Chandrasekhar 2012 Indian J Psychol Med・n=64）',
+      label: '朝起きるのが楽になる・夜中の覚醒が減る体感の科学的裏付け（KSM-66 600mg/日 × 8週 RCT・Chandrasekhar 2012 IJPM n=64）',
     },
     lossAversionHook: `アシュワガンダは「コルチゾール−27.9%」の数字だけで広がった成分だ。
 ただし KSM-66 600mg/日で効くのは慢性ストレス状態の対象者で、誰でも効く成分ではない。
