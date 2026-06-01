@@ -1,13 +1,18 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, Trophy, BookOpen } from 'lucide-react'
+import { ChevronRight, Trophy, BookOpen, GitCompare, Compass, Target } from 'lucide-react'
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
 import { getArticlesByConcern } from '@/lib/articles'
+import { getComparesByConcern, getRelatedConcerns } from '@/lib/recommendation'
+import { concernGuides } from '@/lib/concern-guide-data'
+import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
+
+const CONCERN_GUIDE_SLUGS = new Set(concernGuides.map((g) => g.concernSlug))
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -98,6 +103,11 @@ export default async function ConcernPage({ params }: Props) {
   const top3 = all.slice(0, 3)
   const top3Slugs = new Set(top3.map((i) => i.slug))
   const rest = all.filter((i) => !top3Slugs.has(i.slug))
+
+  /* Hub spokes：比較ペア / 関連悩み / ConcernGuide 記事 */
+  const relatedCompares = getComparesByConcern(slug, 6)
+  const relatedConcernsList = getRelatedConcerns(slug, 4)
+  const hasConcernGuide = CONCERN_GUIDE_SLUGS.has(slug)
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -254,6 +264,32 @@ export default async function ConcernPage({ params }: Props) {
       </div>
 
     <div className="max-w-4xl mx-auto px-5 py-10">
+
+      {/* ── ConcernGuide 記事への hub link（pillar 強化）── */}
+      {hasConcernGuide && (
+        <Link
+          href={`/articles/${slug}${SUPPLEMENT_GUIDE_SUFFIX}`}
+          className="group flex items-start gap-4 bg-accent/[0.06] border-2 border-accent/30
+            rounded-2xl px-5 py-4 mb-10 hover:bg-accent/[0.12] hover:border-accent/50
+            transition-colors"
+        >
+          <Compass className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] font-semibold tracking-[0.1em] text-accent mb-1 uppercase">
+              総合サプリガイドを読む
+            </p>
+            <h2 className="font-semibold text-[15px] sm:text-[16px] text-foreground
+              group-hover:text-accent transition-colors leading-snug">
+              {concern.nameJa}の総合サプリガイド｜原因・成分・選び方・FAQ
+            </h2>
+            <p className="text-[12px] text-muted-foreground mt-1 leading-relaxed line-clamp-2">
+              論文ベースで原因・推奨成分・選び方・失敗パターン・自己診断まで網羅した完全ガイド記事。
+            </p>
+          </div>
+          <ChevronRight className="w-4 h-4 text-accent flex-shrink-0 mt-1
+            group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      )}
 
       {/* ── 特に注意が必要な人（riskProfile） ── */}
       {concern.riskProfile && concern.riskProfile.length > 0 && (
@@ -528,6 +564,50 @@ export default async function ConcernPage({ params }: Props) {
         )
       })()}
 
+      {/* ── 関連する比較ペア（pillar の spoke：どっちを選ぶ？比較）── */}
+      {relatedCompares.length > 0 && (
+        <section className="mb-10">
+          <div className="mb-4">
+            <p className="text-[12px] font-semibold tracking-[0.05em]
+              text-muted-foreground mb-1">
+              どっちを選ぶ？
+            </p>
+            <h2 className="text-[18px] font-semibold text-foreground leading-snug flex items-center gap-2">
+              <GitCompare className="w-4 h-4 text-accent" />
+              {concern.nameJa}関連の比較ペア
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {relatedCompares.map(({ a, b, key }) => (
+              <Link
+                key={key}
+                href={`/compare/${key}`}
+                className="group flex items-center justify-between gap-3 bg-card border border-border
+                  rounded-xl px-4 py-3 hover:border-accent/40 hover:bg-secondary/40 transition-colors"
+              >
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-[13px] text-foreground group-hover:text-accent
+                    transition-colors leading-snug">
+                    {a.nameJa} vs {b.nameJa}
+                  </p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <EvidenceBadge rank={a.evidenceRank} variant="dot" />
+                    <span className="text-[10px] text-muted-foreground/60">vs</span>
+                    <EvidenceBadge rank={b.evidenceRank} variant="dot" />
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0
+                  group-hover:text-accent transition-colors" />
+              </Link>
+            ))}
+          </div>
+          <Link href="/compare"
+            className="inline-block mt-3 text-[12px] text-accent hover:underline">
+            比較一覧をすべて見る →
+          </Link>
+        </section>
+      )}
+
       {/* Disclaimer */}
       <p className="text-[13px] text-muted-foreground bg-secondary rounded-xl p-4 mb-10">
         エビデンスランクは研究の種類と質を示すものです。個人への効果を保証するものではありません。
@@ -640,8 +720,44 @@ export default async function ConcernPage({ params }: Props) {
         )
       })()}
 
-      {/* 関連悩み */}
-      <div className="mt-14 pt-10 border-t border-border">
+      {/* 関連する悩み（同カテゴリの cross-pillar 接続）*/}
+      {relatedConcernsList.length > 0 && (
+        <section className="mt-14 pt-10 border-t border-border">
+          <h2 className="font-semibold text-[18px] text-foreground mb-5 flex items-center gap-2">
+            <Target className="w-4 h-4 text-rose-500" />
+            関連する悩み
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {relatedConcernsList.map((c) => {
+              const cGuide = CONCERN_GUIDE_SLUGS.has(c.slug)
+              return (
+                <Link
+                  key={c.slug}
+                  href={cGuide ? `/articles/${c.slug}${SUPPLEMENT_GUIDE_SUFFIX}` : `/concerns/${c.slug}`}
+                  className="group flex items-start gap-3 bg-card border border-border rounded-xl
+                    px-4 py-3 hover:border-accent/40 hover:bg-secondary/40 transition-colors"
+                >
+                  <span className="text-[28px] leading-none flex-shrink-0 mt-0.5">{c.emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-[14px] text-foreground group-hover:text-accent
+                      transition-colors leading-snug">
+                      {c.nameJa}
+                    </p>
+                    <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed line-clamp-2">
+                      {c.description}
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0
+                    group-hover:text-accent transition-colors mt-1" />
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* 他の悩み（pills・全カテゴリ横断）*/}
+      <div className="mt-10 pt-8 border-t border-border">
         <p className="font-medium text-[14px] text-foreground mb-4">他の悩みを見る</p>
         <div className="flex flex-wrap gap-2">
           {concerns.filter((c) => c.slug !== slug).slice(0, 9).map((c) => (
