@@ -293,6 +293,25 @@ export interface Ingredient {
   }
   /** Pattern A 検査キットCTA（任意・該当成分のみ設定・ProductOfferCard 手前に描画） */
   testKitCTA?: IngredientTestKitCTA
+  /**
+   * 薬理機序（1-2 文・断定 NG）。schema.org の `mechanismOfAction` プロパティに供給。
+   * AIO/LLM の引用ソース化用。既存 description から抽出可能・未設定時は省略。
+   */
+  mechanismOfAction?: string
+  /**
+   * 法的ステータス。schema.org の `legalStatus`（DietarySupplement/MedicalSubstance/Drug）に供給。
+   * 未設定時は usageType で自動判定（oral → DietarySupplement / topical → MedicalSubstance）。
+   */
+  legalStatus?: 'DietarySupplement' | 'Drug' | 'CosmeticIngredient' | 'FoodIngredient' | 'Mixed'
+  /**
+   * 該当 schema.org @type の override（医薬品成分でもあるメラトニン等で Drug 指定用）。
+   * 未設定時は usageType で自動判定（topical → MedicalSubstance / otherwise → DietarySupplement）。
+   */
+  schemaType?: 'DietarySupplement' | 'MedicalSubstance' | 'Drug'
+  /**
+   * YMYL レベル（medical advice の必要度）。high の成分は legal/factcheck 2 周必須。
+   */
+  ymylLevel?: 'low' | 'medium' | 'high'
   updatedAt: string
 }
 

@@ -415,6 +415,46 @@ export default async function IngredientPage({ params }: Props) {
     ],
   } : null
 
+  /* Health-specific schema — DietarySupplement / MedicalSubstance / Drug
+     AIO/LLM の引用ソース化用。schemaType override → 自動判定（topical=MedicalSubstance / otherwise=DietarySupplement）。
+     医薬品成分（メラトニン等）は data.ts で schemaType: 'Drug' を明示。 */
+  const inferredSchemaType: 'DietarySupplement' | 'MedicalSubstance' | 'Drug' =
+    ing.schemaType ?? (ing.usageType === 'topical' ? 'MedicalSubstance' : 'DietarySupplement')
+  const warningParts = [...(ing.sideEffects ?? []), ...(ing.contraindications ?? [])]
+  const heroBrand = ing.products[0]?.brand
+  const supplementSchema = {
+    '@context': 'https://schema.org',
+    '@type': inferredSchemaType,
+    name: ing.nameJa,
+    alternateName: [ing.nameEn, ...(ing.aliases ?? [])].filter(Boolean),
+    description: ing.tagline,
+    url: `${BASE_URL}/ingredients/${slug}`,
+    activeIngredient: ing.nameJa,
+    nonProprietaryName: ing.nameEn,
+    legalStatus: ing.legalStatus ?? (inferredSchemaType === 'Drug' ? 'Drug' : 'DietarySupplement'),
+    ...(ing.mechanismOfAction && { mechanismOfAction: ing.mechanismOfAction }),
+    ...(ing.tagline && { indication: ing.tagline }),
+    ...(warningParts.length > 0 && { warning: warningParts.join('; ') }),
+    ...(ing.dosageMin && {
+      recommendedIntake: {
+        '@type': 'RecommendedDoseSchedule',
+        doseValue: ing.dosageMin,
+        doseUnit: ing.dosageUnit,
+        ...(ing.timing && { frequency: ing.timing }),
+      },
+    }),
+    ...(ing.dosageMax && {
+      maximumIntake: {
+        '@type': 'MaximumDoseSchedule',
+        doseValue: ing.dosageMax,
+        doseUnit: ing.dosageUnit,
+      },
+    }),
+    ...(heroBrand && {
+      manufacturer: { '@type': 'Organization', name: heroBrand },
+    }),
+  }
+
   /* Build ToC sections */
   const tocSections: TocSection[] = [
     { id: 'description', label: 'この成分について' },
@@ -434,6 +474,7 @@ export default async function IngredientPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(supplementSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {faqJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
