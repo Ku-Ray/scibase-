@@ -718,6 +718,9 @@ export default async function IngredientPage({ params }: Props) {
           掲載内容は論文エビデンスに基づき独立して評価しています。
         </p>
 
+        {/* Mobile inline TOC（desktop は右サイドバー sticky）*/}
+        <TableOfContents sections={tocSections} variant="mobile" />
+
         {/* ── Phase 5-B：クイック判断カード v2（uiux/be/product/legal 4部門議論反映） ──
             ・「結論」→「ポイント」（legal: 断定感緩和）
             ・whoFor 1行追加（product: 自分ごと化）
