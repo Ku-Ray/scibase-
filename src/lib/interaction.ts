@@ -9,7 +9,8 @@
  */
 
 import { ingredients, getIngredient } from './data'
-import { matchesCanonicalKey } from './interaction-canonical'
+import { CANONICAL_INTERACTIONS, matchesCanonicalKey, type CanonicalEntry } from './interaction-canonical'
+import { POPULAR_INGREDIENT_SLUGS, POPULAR_MEDICATION_KEYS } from './interaction-popular'
 
 export type InteractionLevel = 'avoid' | 'caution' | 'monitor'
 export type InteractionEvidence = 'established' | 'theoretical' | 'case-report'
@@ -92,11 +93,67 @@ export function checkInteractions(
   })
 }
 
-/** 検索 UI の dropdown 用：data.ts 全成分の slug + 日本語名 */
-export function getIngredientOptions(): Array<{ slug: string; nameJa: string }> {
+export interface IngredientOption {
+  slug: string
+  nameJa: string
+  /** 人気順 rank。0=top・undefined=非 popular */
+  popularRank?: number
+}
+
+/**
+ * 検索 UI の dropdown 用：data.ts 全成分の slug + 日本語名。
+ *
+ * 並び順：popular ranking 上位 → 50音順。フィルタ後もこの並び順が維持される。
+ */
+export function getIngredientOptions(): IngredientOption[] {
+  const rankMap = new Map<string, number>()
+  POPULAR_INGREDIENT_SLUGS.forEach((slug, i) => rankMap.set(slug, i))
+
   return ingredients
-    .map((i) => ({ slug: i.slug, nameJa: i.nameJa }))
-    .sort((a, b) => a.nameJa.localeCompare(b.nameJa, 'ja'))
+    .map((i) => ({
+      slug: i.slug,
+      nameJa: i.nameJa,
+      popularRank: rankMap.get(i.slug),
+    }))
+    .sort((a, b) => {
+      const ar = a.popularRank ?? Infinity
+      const br = b.popularRank ?? Infinity
+      if (ar !== br) return ar - br
+      return a.nameJa.localeCompare(b.nameJa, 'ja')
+    })
+}
+
+/** Popular で hit する成分のみ返す（picker default 表示用） */
+export function getPopularIngredientOptions(): IngredientOption[] {
+  return getIngredientOptions().filter((o) => o.popularRank !== undefined)
+}
+
+export interface MedicationOption {
+  entry: CanonicalEntry
+  /** 主要医薬品 rank。undefined=その他 */
+  pinnedRank?: number
+}
+
+/**
+ * 医薬品 picker 用：canonical 一覧。
+ *
+ * 並び順：pinned 上位（主要 25 件）→ カテゴリ別グループ → 宣言順
+ */
+export function getMedicationOptions(): MedicationOption[] {
+  const rankMap = new Map<string, number>()
+  POPULAR_MEDICATION_KEYS.forEach((k, i) => rankMap.set(k, i))
+
+  return CANONICAL_INTERACTIONS.map((entry) => ({
+    entry,
+    pinnedRank: rankMap.get(entry.key),
+  }))
+}
+
+/** 主要医薬品のみ返す */
+export function getPopularMedicationOptions(): MedicationOption[] {
+  return getMedicationOptions()
+    .filter((m) => m.pinnedRank !== undefined)
+    .sort((a, b) => (a.pinnedRank ?? 0) - (b.pinnedRank ?? 0))
 }
 
 /** Level → 表示用ラベル */
