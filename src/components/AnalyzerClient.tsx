@@ -7,11 +7,12 @@ import { ingredients, concerns, getIngredient } from '@/lib/data'
 import { RadarChart } from './RadarChart'
 import { EvidenceBadge } from './EvidenceBadge'
 import { OutboundProductLink } from './OutboundProductLink'
+import { AnalyzerDeepMode } from './AnalyzerDeepMode'
 import { trackEvent } from '@/lib/analytics'
 import type { Ingredient, Concern, AnalysisAxis } from '@/lib/types'
 import type { RadarData } from './RadarChart'
 
-type Mode = 'ingredient' | 'concern'
+type Mode = 'ingredient' | 'concern' | 'deep'
 
 /* ── 7軸の定義 ── */
 const AXES: { key: AnalysisAxis; label: string; emoji: string; desc: string }[] = [
@@ -153,7 +154,7 @@ export function AnalyzerClient() {
   useEffect(() => {
     try {
       const m = localStorage.getItem(STORAGE_MODE)
-      if (m === 'ingredient' || m === 'concern') setMode(m)
+      if (m === 'ingredient' || m === 'concern' || m === 'deep') setMode(m)
       const s = localStorage.getItem(STORAGE_SLUGS)
       if (s) setSelectedSlugs(JSON.parse(s))
       const c = localStorage.getItem(STORAGE_CONCERNS)
@@ -172,38 +173,44 @@ export function AnalyzerClient() {
     try { localStorage.setItem(STORAGE_CONCERNS, JSON.stringify(selectedConcernSlugs)) } catch {}
   }, [selectedConcernSlugs])
 
+  const modeDescription: Record<Mode, string> = {
+    ingredient: '今飲んでいるサプリメント・スキンケア成分を選ぶと、7軸でカバー状況を可視化し、不足している成分をレコメンドします。',
+    concern: '悩みを1〜3個選ぶと、論文エビデンスが一致する3成分を組み立てます。複数選ぶほど、横断的に効く成分が優先されます。',
+    deep: '基本情報・悩み・生活習慣・服用中の医薬品をまとめて入れると、論文エビデンス × 相互作用チェックを組み合わせた個別最適な推奨3〜5件を返します。',
+  }
+  const modeLabel: Record<Mode, string> = {
+    ingredient: '成分から',
+    concern: '悩みから',
+    deep: '深掘り診断',
+  }
+
   return (
     <div className="max-w-2xl mx-auto px-5 pb-10 pt-2">
       {/* ── モードタブ ── */}
       <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
-        {mode === 'ingredient'
-          ? '今飲んでいるサプリメント・スキンケア成分を選ぶと、7軸でカバー状況を可視化し、不足している成分をレコメンドします。'
-          : '悩みを1〜3個選ぶと、論文エビデンスが一致する3成分を組み立てます。複数選ぶほど、横断的に効く成分が優先されます。'}
+        {modeDescription[mode]}
       </p>
-      <div className="mb-10 inline-flex gap-1 p-1 bg-secondary rounded-xl">
-        <button
-          onClick={() => setMode('ingredient')}
-          className={`inline-flex items-center justify-center text-[13px] font-semibold
-            px-4 py-2 min-h-[40px] rounded-lg transition-all
-            ${mode === 'ingredient'
-              ? 'bg-card text-foreground shadow-sm'
-              : 'text-muted-foreground hover:text-foreground'}`}
-        >
-          成分から
-        </button>
-        <button
-          onClick={() => setMode('concern')}
-          className={`inline-flex items-center justify-center text-[13px] font-semibold
-            px-4 py-2 min-h-[40px] rounded-lg transition-all
-            ${mode === 'concern'
-              ? 'bg-card text-foreground shadow-sm'
-              : 'text-muted-foreground hover:text-foreground'}`}
-        >
-          悩みから
-        </button>
+      <div className="mb-10 inline-flex flex-wrap gap-1 p-1 bg-secondary rounded-xl">
+        {(['ingredient', 'concern', 'deep'] as Mode[]).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMode(m)}
+            className={`inline-flex items-center justify-center text-[13px] font-semibold
+              px-4 py-2 min-h-[40px] rounded-lg transition-all
+              ${mode === m
+                ? 'bg-card text-foreground shadow-sm'
+                : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            {modeLabel[m]}
+            {m === 'deep' && (
+              <span className="ml-1.5 text-[9px] font-semibold bg-accent text-primary-foreground
+                rounded px-1 py-0.5 tracking-wider">NEW</span>
+            )}
+          </button>
+        ))}
       </div>
 
-      {mode === 'ingredient' ? (
+      {mode === 'ingredient' && (
         <IngredientMode
           selectedSlugs={selectedSlugs}
           setSelectedSlugs={setSelectedSlugs}
@@ -211,13 +218,15 @@ export function AnalyzerClient() {
           open={open} setOpen={setOpen}
           resultsRef={resultsRef}
         />
-      ) : (
+      )}
+      {mode === 'concern' && (
         <ConcernMode
           selectedConcernSlugs={selectedConcernSlugs}
           setSelectedConcernSlugs={setSelectedConcernSlugs}
           resultsRef={resultsRef}
         />
       )}
+      {mode === 'deep' && <AnalyzerDeepMode />}
 
       {/* 注意書き */}
       <p className="text-[12px] text-muted-foreground leading-relaxed border-t border-border pt-6 mt-10">
