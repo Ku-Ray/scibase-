@@ -11,6 +11,8 @@
 import { ingredients, getIngredient } from './data'
 import { CANONICAL_INTERACTIONS, matchesCanonicalKey, type CanonicalEntry } from './interaction-canonical'
 import { POPULAR_INGREDIENT_SLUGS, POPULAR_MEDICATION_KEYS } from './interaction-popular'
+import { getAlternatives } from './utils'
+import type { EvidenceRank } from './types'
 
 export type InteractionLevel = 'avoid' | 'caution' | 'monitor'
 export type InteractionEvidence = 'established' | 'theoretical' | 'case-report'
@@ -191,6 +193,36 @@ export function getPopularMedicationOptions(): MedicationOption[] {
   return getMedicationOptions()
     .filter((m) => m.pinnedRank !== undefined)
     .sort((a, b) => (a.pinnedRank ?? 0) - (b.pinnedRank ?? 0))
+}
+
+export interface AlternativeOption {
+  slug: string
+  nameJa: string
+  evidenceRank: EvidenceRank
+  /** 短い切り口（推奨理由・1行）。getAlternatives は理由を返さないため tagline 系から構成 */
+  tagline?: string
+}
+
+/**
+ * 飲み合わせ問題が出た成分の代替候補を返す（最大 3 件）。
+ *
+ * 仕様：同じ悩みをカバーし、かつ同じ干渉カテゴリを持たない成分。
+ * 既存の getAlternatives（src/lib/utils.ts）ロジックを内部で利用。
+ *
+ * @param ingredientSlug - 問題が出た成分 slug
+ * @returns 代替候補（evidenceRank + 安全性スコア順）
+ */
+export function findAlternativesForIngredient(
+  ingredientSlug: string,
+): AlternativeOption[] {
+  const ing = getIngredient(ingredientSlug)
+  if (!ing) return []
+  return getAlternatives(ing, ingredients).map((alt) => ({
+    slug: alt.slug,
+    nameJa: alt.nameJa,
+    evidenceRank: alt.evidenceRank,
+    tagline: alt.tagline,
+  }))
 }
 
 /** Level → 表示用ラベル */

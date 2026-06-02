@@ -5,6 +5,7 @@ import Link from 'next/link'
 import {
   AlertCircle,
   AlertTriangle,
+  ArrowLeftRight,
   Check,
   ChevronDown,
   ChevronUp,
@@ -12,6 +13,7 @@ import {
   Eye,
   FileText,
   Info,
+  Lightbulb,
   Microscope,
   Pill,
   Plus,
@@ -31,10 +33,12 @@ import {
 import {
   checkInteractions,
   EVIDENCE_LABEL,
+  findAlternativesForIngredient,
   findInteractionsByMedicationKey,
   getIngredientOptions,
   getPopularMedicationOptions,
   LEVEL_LABEL,
+  type AlternativeOption,
   type IngredientOption,
   type InteractionLevel,
   type InteractionResult,
@@ -587,6 +591,21 @@ export function InteractionCheckerClient() {
                         <ChevronDown className="size-3 -rotate-90" />
                       </Link>
                     </div>
+
+                    {/* 代替候補（avoid / caution のみ・1 件以上ある場合） */}
+                    {(r.level === 'avoid' || r.level === 'caution') && (
+                      <AlternativeCandidates
+                        ingredientSlug={r.ingredientSlug}
+                        ingredientNameJa={r.ingredientNameJa}
+                        canSwap={mode === 'check' && selectedSlugs.includes(r.ingredientSlug)}
+                        onSwap={(altSlug) => {
+                          setSelectedSlugs((arr) => {
+                            const without = arr.filter((s) => s !== r.ingredientSlug)
+                            return without.includes(altSlug) ? without : [...without, altSlug]
+                          })
+                        }}
+                      />
+                    )}
                   </li>
                 ))}
               </ul>
@@ -670,6 +689,86 @@ export function InteractionCheckerClient() {
           onClose={() => setActivePicker(null)}
         />
       )}
+    </div>
+  )
+}
+
+// ============================================================================
+// AlternativeCandidates：同悩みカバー × 干渉なしの代替提示
+// ============================================================================
+
+interface AlternativeCandidatesProps {
+  ingredientSlug: string
+  ingredientNameJa: string
+  /** 結果カードの該当成分が selectedSlugs に含まれていれば「切替」ボタンを出す */
+  canSwap: boolean
+  onSwap: (altSlug: string) => void
+}
+
+const RANK_BADGE: Record<string, string> = {
+  S: 'bg-amber-100 text-amber-800',
+  A: 'bg-emerald-100 text-emerald-800',
+  B: 'bg-sky-100 text-sky-800',
+  C: 'bg-slate-100 text-slate-700',
+}
+
+function AlternativeCandidates({
+  ingredientSlug,
+  ingredientNameJa,
+  canSwap,
+  onSwap,
+}: AlternativeCandidatesProps) {
+  const alts = useMemo<AlternativeOption[]>(
+    () => findAlternativesForIngredient(ingredientSlug),
+    [ingredientSlug],
+  )
+  if (alts.length === 0) return null
+
+  return (
+    <div className="mt-3 rounded-lg border border-blue-200 bg-blue-50/50 p-3 sm:p-3.5">
+      <div className="mb-2 flex items-center gap-1.5 text-[12px] font-semibold text-blue-900">
+        <Lightbulb className="size-3.5" />
+        干渉のない代替候補
+        <span className="text-[11px] font-normal text-blue-900/70">
+          ・{ingredientNameJa} と同じ悩み軸をカバー
+        </span>
+      </div>
+      <ul className="space-y-1.5">
+        {alts.map((alt) => (
+          <li
+            key={alt.slug}
+            className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md bg-white/80 px-2.5 py-2 text-xs"
+          >
+            <span
+              className={`inline-flex size-5 items-center justify-center rounded-full text-[10px] font-semibold ${
+                RANK_BADGE[alt.evidenceRank] ?? RANK_BADGE.C
+              }`}
+              aria-label={`エビデンスランク ${alt.evidenceRank}`}
+            >
+              {alt.evidenceRank}
+            </span>
+            <Link
+              href={`/ingredients/${alt.slug}`}
+              className="font-medium underline-offset-2 hover:underline"
+            >
+              {alt.nameJa}
+            </Link>
+            {alt.tagline && (
+              <span className="hidden text-muted-foreground sm:inline">— {alt.tagline}</span>
+            )}
+            {canSwap && (
+              <button
+                type="button"
+                onClick={() => onSwap(alt.slug)}
+                className="ml-auto inline-flex items-center gap-1 rounded-md border border-blue-300 bg-white px-2 py-1 text-[11px] font-medium text-blue-800 hover:bg-blue-100"
+              >
+                <ArrowLeftRight className="size-3" />
+                これに切替
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
