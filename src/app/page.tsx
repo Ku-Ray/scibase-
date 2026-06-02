@@ -5,6 +5,7 @@ import { articles } from '@/lib/articles'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { HeroSearch } from '@/components/HeroSearch'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import type { Metadata } from 'next'
 
 const totalPapers = ingredients.reduce((acc, i) => acc + i.papers.length, 0)
@@ -198,9 +199,14 @@ export default function Home() {
               🔬 今のサプリを診断する
             </Link>
           </div>
-          <p className="text-[12px] text-muted-foreground mb-7">
+          <p className="text-[12px] text-muted-foreground mb-3">
             初めての方は <span className="font-medium text-foreground">「悩みから探す」</span> から
           </p>
+
+          {/* Interaction Checker への導線（flagship 機能） */}
+          <div className="mb-7 flex justify-center">
+            <InteractionCheckerCta variant="compact" />
+          </div>
 
           {/* 統計（中央 inline） */}
           <div className="flex items-center justify-center gap-6

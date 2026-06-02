@@ -11,6 +11,7 @@ import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { FavoriteButton } from '@/components/FavoriteButton'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { IngredientTestKitCTACard } from '@/components/product/IngredientTestKitCTACard'
@@ -1153,6 +1154,9 @@ export default async function IngredientPage({ params }: Props) {
             <p className="text-[13px] text-muted-foreground mb-4">
               添付文書・FDA警告・査読論文をもとに、併用に注意が必要な医薬品をまとめています。
             </p>
+
+            {/* Interaction Checker への deep link CTA */}
+            <InteractionCheckerCta variant="banner" ingredientSlug={ing.slug} className="mb-5" />
             <div className="space-y-3">
               {ing.interactions.map((x, i) => {
                 const levelStyle = {

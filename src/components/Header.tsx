@@ -73,6 +73,7 @@ export function Header() {
               { href: '/articles',    label: 'コラム'       },
               { href: '/compare',     label: '比較'         },
               { href: '/analyzer',    label: '🔬 診断'      },
+              { href: '/tools/interaction-checker', label: '💊 飲み合わせ' },
             ].map(({ href, label }) => (
               <Link
                 key={href}

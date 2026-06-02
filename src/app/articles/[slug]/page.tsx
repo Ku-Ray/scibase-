@@ -15,6 +15,7 @@ import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
 import { FavoriteButton } from '@/components/FavoriteButton'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { AppendixSectionTracker } from '@/components/AppendixSectionTracker'
 import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
@@ -875,6 +876,11 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* Interaction Checker CTA（読了直後の高関心ポイント） */}
+        <section className="mt-12">
+          <InteractionCheckerCta variant="banner" />
+        </section>
 
         {/* ── Author Box（E-E-A-T author signature） ── */}
         <section className="mt-12 pt-8 border-t border-border">
