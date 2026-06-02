@@ -53,6 +53,8 @@ export function Footer() {
             <Link href="/compare"     className="hover:text-foreground transition-colors">成分比較</Link>
             <Link href="/articles"    className="hover:text-foreground transition-colors">コラム</Link>
             <Link href="/analyzer"    className="hover:text-foreground transition-colors">サプリ診断</Link>
+            <Link href="/tools/interaction-checker" className="hover:text-foreground transition-colors">飲み合わせチェッカー</Link>
+            <Link href="/my/favorites" className="hover:text-foreground transition-colors">お気に入り</Link>
             <Link href="/about"       className="hover:text-foreground transition-colors">サイトについて</Link>
             <Link href="/privacy"     className="hover:text-foreground transition-colors">プライバシーポリシー</Link>
             <a

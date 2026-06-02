@@ -457,6 +457,7 @@ export function AnalyzerDeepMode() {
             interactionResults={interactionResults}
             excludedByPregnancy={recommendResult.excludedByPregnancy}
             excludedByInteraction={recommendResult.excludedByInteraction}
+            currentSlugCount={currentSlugs.length}
           />
         ) : (
           <EmptyState
@@ -801,14 +802,17 @@ function EmptyState({ hasAnyInput, pregnancyActive, excludedByPregnancyCount, ex
 
 /* ───────────────────────── 結果セクション ───────────────────────── */
 
-function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction }: {
+function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugCount }: {
   recommendations: Recommendation[]
   interactionResults: InteractionResult[]
   excludedByPregnancy: RecommendResult['excludedByPregnancy']
   excludedByInteraction: RecommendResult['excludedByInteraction']
+  currentSlugCount: number
 }) {
   const platformLabel: Record<string, string> = { iherb: 'iHerb', amazon: 'Amazon', cosme: '@cosme' }
   const totalExcluded = excludedByPregnancy.length + excludedByInteraction.length
+  // polypharmacy nudge: 既に 4 件以上飲んでいる場合は段階導入を促す
+  const showPolypharmacyNudge = currentSlugCount >= 4 && recommendations.length > 1
 
   // 推奨成分に関連する interaction のみ抽出（既存サプリ由来は別表示）
   const recSlugSet = new Set(recommendations.map((r) => r.ing.slug))
@@ -825,6 +829,18 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
             あなたへの推奨 {recommendations.length} 選
           </h2>
         </div>
+
+        {showPolypharmacyNudge && (
+          <div className="bg-blue-50 border border-blue-200 rounded-2xl px-5 py-4 mb-4">
+            <p className="text-[13px] font-semibold text-blue-900 mb-1">
+              既に {currentSlugCount} 件のサプリを摂取中
+            </p>
+            <p className="text-[12px] text-blue-800 leading-relaxed">
+              一度に多くを追加するより、まず<strong>#1 だけを 4〜8 週試して効果を確認</strong>し、
+              そこから段階的に増やすほうが「何が効いたか」を切り分けやすく、相互作用リスクも下げられます。
+            </p>
+          </div>
+        )}
 
         {recInteractions.length > 0 && (
           <InteractionAlert

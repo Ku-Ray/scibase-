@@ -355,19 +355,21 @@ export default async function ArticlePage({ params }: Props) {
         </nav>
 
         {/* Category + Meta */}
-        <div className="flex items-center gap-2.5 mb-4">
-          <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-md border
-            ${categoryColor[article.category] ?? 'bg-secondary text-muted-foreground border-border'}`}>
-            {article.categoryLabel}
-          </span>
-          <span className="flex items-center gap-1 text-[12px] text-muted-foreground">
-            <Clock className="w-3 h-3" />
-            {article.readingMinutes}分
-          </span>
-          <time dateTime={article.publishedAt} className="text-[12px] text-muted-foreground">
-            {article.publishedAt}
-          </time>
-          <FavoriteButton type="article" slug={article.slug} variant="compact" className="ml-auto" />
+        <div className="flex items-start justify-between gap-2 mb-4">
+          <div className="flex flex-wrap items-center gap-2.5 min-w-0">
+            <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-md border
+              ${categoryColor[article.category] ?? 'bg-secondary text-muted-foreground border-border'}`}>
+              {article.categoryLabel}
+            </span>
+            <span className="flex items-center gap-1 text-[12px] text-muted-foreground">
+              <Clock className="w-3 h-3" />
+              {article.readingMinutes}分
+            </span>
+            <time dateTime={article.publishedAt} className="text-[12px] text-muted-foreground">
+              {article.publishedAt}
+            </time>
+          </div>
+          <FavoriteButton type="article" slug={article.slug} variant="compact" />
         </div>
 
         {/* Title */}

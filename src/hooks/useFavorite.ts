@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { trackEvent } from '@/lib/analytics'
+import { showToast } from '@/components/Toaster'
 
 export type FavoriteType = 'ingredient' | 'article' | 'compare'
 
@@ -9,6 +10,12 @@ const STORAGE_KEYS: Record<FavoriteType, string> = {
   ingredient: 'scibase_favorites_ingredients',
   article: 'scibase_favorites_articles',
   compare: 'scibase_favorites_compares',
+}
+
+const TYPE_LABEL: Record<FavoriteType, string> = {
+  ingredient: '成分',
+  article: 'コラム',
+  compare: '比較',
 }
 
 const FAVORITES_UPDATED_EVENT = 'scibase:favorites-updated'
@@ -63,6 +70,7 @@ export function useFavorite(type: FavoriteType, slug: string): {
     writeList(type, [...list, slug])
     setIsFavorite(true)
     trackEvent('favorite_added', { type, slug })
+    showToast(`${TYPE_LABEL[type]}をお気に入りに追加しました`, 'success')
   }, [type, slug])
 
   const remove = useCallback(() => {
@@ -71,6 +79,7 @@ export function useFavorite(type: FavoriteType, slug: string): {
     writeList(type, list.filter((s) => s !== slug))
     setIsFavorite(false)
     trackEvent('favorite_removed', { type, slug })
+    showToast(`${TYPE_LABEL[type]}をお気に入りから外しました`, 'info')
   }, [type, slug])
 
   const toggle = useCallback(() => {
@@ -79,10 +88,12 @@ export function useFavorite(type: FavoriteType, slug: string): {
       writeList(type, list.filter((s) => s !== slug))
       setIsFavorite(false)
       trackEvent('favorite_removed', { type, slug })
+      showToast(`${TYPE_LABEL[type]}をお気に入りから外しました`, 'info')
     } else {
       writeList(type, [...list, slug])
       setIsFavorite(true)
       trackEvent('favorite_added', { type, slug })
+      showToast(`${TYPE_LABEL[type]}をお気に入りに追加しました`, 'success')
     }
   }, [type, slug])
 
@@ -120,12 +131,8 @@ export function useFavoritesList(type: FavoriteType): {
   const clear = useCallback(() => {
     writeList(type, [])
     trackEvent('favorite_cleared', { type })
+    showToast(`${TYPE_LABEL[type]}のお気に入りをすべて外しました`, 'info')
   }, [type])
 
   return { list, remove, clear }
-}
-
-/** compare pair slug を正規化（順序問わず一意化） */
-export function comparePairKey(slugA: string, slugB: string): string {
-  return [slugA, slugB].sort().join('__')
 }

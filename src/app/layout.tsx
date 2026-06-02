@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { BottomNav } from '@/components/BottomNav'
+import { Toaster } from '@/components/Toaster'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -122,6 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1 pb-16 sm:pb-0">{children}</main>
         <Footer />
         <BottomNav />
+        <Toaster />
       </body>
     </html>
   )
