@@ -43,6 +43,26 @@ import { MEDICATION_EXAMPLES, QUICK_START_SAMPLES } from '@/lib/interaction-popu
 
 const ANALYZER_STORAGE_KEY = 'scibase_analyzer_slugs'
 
+/**
+ * 検索クエリ・対象文字列の正規化：
+ * - ひらがな → カタカナ（"あれぐら" → "アレグラ"）
+ * - 全角英数 → 半角（"ＰＰＩ" → "ppi"）
+ * - 全角スペース → 半角
+ * - 大文字 → 小文字
+ *
+ * これにより「あれぐら」「ロキソニン」「ｐｐｉ」のいずれでも一致する。
+ */
+function normalizeForSearch(s: string): string {
+  return s
+    .replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60))
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (c) =>
+      String.fromCharCode(c.charCodeAt(0) - 0xfee0),
+    )
+    .replace(/　/g, ' ')
+    .toLowerCase()
+    .trim()
+}
+
 const LEVEL_STYLE: Record<
   InteractionLevel,
   { bg: string; border: string; text: string; icon: typeof AlertCircle }
@@ -532,14 +552,18 @@ function SupplementPicker({ allOptions, selectedSlugs, onSelect, onClose }: Supp
   }, [])
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
+    const q = normalizeForSearch(query)
     const candidates = allOptions.filter((o) => !selectedSlugs.includes(o.slug))
     if (!q) {
       // default: popular のみ
       return candidates.filter((o) => o.popularRank !== undefined).slice(0, 40)
     }
     return candidates
-      .filter((o) => o.nameJa.toLowerCase().includes(q) || o.slug.includes(q))
+      .filter((o) => {
+        const name = normalizeForSearch(o.nameJa)
+        const slug = normalizeForSearch(o.slug)
+        return name.includes(q) || slug.includes(q)
+      })
       .slice(0, 60)
   }, [allOptions, selectedSlugs, query])
 
@@ -636,15 +660,15 @@ function MedicationPicker({
   }, [])
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
+    const q = normalizeForSearch(query)
     if (!q) return null
     return allOptions
       .filter((o) => !selectedKeys.includes(o.entry.key))
-      .filter(
-        (o) =>
-          o.entry.key.toLowerCase().includes(q) ||
-          (MEDICATION_EXAMPLES[o.entry.key] ?? '').toLowerCase().includes(q),
-      )
+      .filter((o) => {
+        const key = normalizeForSearch(o.entry.key)
+        const example = normalizeForSearch(MEDICATION_EXAMPLES[o.entry.key] ?? '')
+        return key.includes(q) || example.includes(q)
+      })
       .slice(0, 60)
   }, [allOptions, selectedKeys, query])
 
