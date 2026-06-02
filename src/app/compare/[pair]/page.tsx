@@ -4,6 +4,7 @@ import { ChevronRight, ArrowRight, CheckCircle2, ExternalLink } from 'lucide-rea
 import { getIngredient, concerns as allConcerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
+import { FavoriteButton } from '@/components/FavoriteButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, PAIR_CUSTOM_FAQS, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
@@ -413,8 +414,11 @@ export default async function ComparePage({ params }: Props) {
 
         {/* Hero — 損失回避フレーミング */}
         <div className="mb-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
-            text-muted-foreground mb-3">論文エビデンス比較</p>
+          <div className="flex items-start justify-between gap-3 mb-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.15em]
+              text-muted-foreground">論文エビデンス比較</p>
+            <FavoriteButton type="compare" slug={pair} variant="compact" />
+          </div>
           <h1 className="text-[28px] sm:text-[36px] font-semibold text-foreground
             tracking-tight leading-[1.2] mb-4">
             {getH1Title(pair, ingA.nameJa, ingB.nameJa)}

@@ -14,6 +14,7 @@ import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
 import { AddArticleToAnalyzerButton } from '@/components/AddArticleToAnalyzerButton'
+import { FavoriteButton } from '@/components/FavoriteButton'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { AppendixSectionTracker } from '@/components/AppendixSectionTracker'
 import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
@@ -365,6 +366,7 @@ export default async function ArticlePage({ params }: Props) {
           <time dateTime={article.publishedAt} className="text-[12px] text-muted-foreground">
             {article.publishedAt}
           </time>
+          <FavoriteButton type="article" slug={article.slug} variant="compact" className="ml-auto" />
         </div>
 
         {/* Title */}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Search } from 'lucide-react'
+import { Search, Star } from 'lucide-react'
 import { SearchModal } from './SearchModal'
 
 export function Header() {
@@ -83,16 +83,34 @@ export function Header() {
                 {label}
               </Link>
             ))}
+            <Link
+              href="/my/favorites"
+              aria-label="お気に入り"
+              title="お気に入り"
+              className="text-muted-foreground p-1.5 rounded-md
+                hover:bg-secondary hover:text-foreground transition-colors ml-0.5"
+            >
+              <Star className="w-4 h-4" />
+            </Link>
           </nav>
 
-          {/* Search icon (mobile) */}
-          <button
-            onClick={() => setSearchOpen(true)}
-            aria-label="成分・悩みを検索"
-            className="sm:hidden ml-auto p-2 rounded-md hover:bg-secondary transition-colors"
-          >
-            <Search className="w-4.5 h-4.5 text-muted-foreground" />
-          </button>
+          {/* Right-aligned icons (mobile) */}
+          <div className="sm:hidden ml-auto flex items-center gap-0.5">
+            <Link
+              href="/my/favorites"
+              aria-label="お気に入り"
+              className="p-2 rounded-md hover:bg-secondary transition-colors"
+            >
+              <Star className="w-4.5 h-4.5 text-muted-foreground" />
+            </Link>
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="成分・悩みを検索"
+              className="p-2 rounded-md hover:bg-secondary transition-colors"
+            >
+              <Search className="w-4.5 h-4.5 text-muted-foreground" />
+            </button>
+          </div>
         </div>
       </header>
 

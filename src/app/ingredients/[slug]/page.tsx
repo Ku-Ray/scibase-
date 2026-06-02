@@ -10,6 +10,7 @@ import { EvidenceBadge, EvidenceBar } from '@/components/EvidenceBadge'
 import { IngredientCard } from '@/components/IngredientCard'
 import { TableOfContents } from '@/components/TableOfContents'
 import { AddToAnalyzerButton } from '@/components/AddToAnalyzerButton'
+import { FavoriteButton } from '@/components/FavoriteButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { IngredientTestKitCTACard } from '@/components/product/IngredientTestKitCTACard'
@@ -614,9 +615,10 @@ export default async function IngredientPage({ params }: Props) {
             )
           })()}
 
-          {/* Quick CTA — 診断に追加 */}
+          {/* Quick CTA — 診断に追加 / お気に入り */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <AddToAnalyzerButton slug={ing.slug} />
+            <FavoriteButton type="ingredient" slug={ing.slug} variant="pill" />
             <Link
               href="/analyzer"
               className="text-[12px] text-muted-foreground hover:text-foreground transition-colors"

@@ -10,6 +10,7 @@ import { ClinicCTALink } from '@/components/ClinicCTALink'
 import { RichParagraphs } from '@/components/RichText'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { ConcernGuideTestKitCTACard } from '@/components/ConcernGuideTestKitCTACard'
+import { FavoriteButton } from '@/components/FavoriteButton'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { NextReadCTA } from '@/components/NextReadCTA'
 import { buildConcernGuideNextRead } from '@/lib/recommendation'
@@ -218,6 +219,7 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             <span>公開：<time dateTime={guide.publishedAt}>{guide.publishedAt}</time></span>
             <span className="w-px h-3 bg-border" />
             <span>更新：<time dateTime={guide.updatedAt}>{guide.updatedAt}</time></span>
+            <FavoriteButton type="article" slug={`${concernSlug}${SUPPLEMENT_GUIDE_SUFFIX}`} variant="compact" className="ml-auto" />
           </div>
         </div>
       </div>
