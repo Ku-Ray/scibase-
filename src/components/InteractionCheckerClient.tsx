@@ -5,7 +5,6 @@ import Link from 'next/link'
 import {
   AlertCircle,
   AlertTriangle,
-  ArrowLeftRight,
   Check,
   ChevronDown,
   ChevronUp,
@@ -597,13 +596,6 @@ export function InteractionCheckerClient() {
                       <AlternativeCandidates
                         ingredientSlug={r.ingredientSlug}
                         ingredientNameJa={r.ingredientNameJa}
-                        canSwap={mode === 'check' && selectedSlugs.includes(r.ingredientSlug)}
-                        onSwap={(altSlug) => {
-                          setSelectedSlugs((arr) => {
-                            const without = arr.filter((s) => s !== r.ingredientSlug)
-                            return without.includes(altSlug) ? without : [...without, altSlug]
-                          })
-                        }}
                       />
                     )}
                   </li>
@@ -700,9 +692,6 @@ export function InteractionCheckerClient() {
 interface AlternativeCandidatesProps {
   ingredientSlug: string
   ingredientNameJa: string
-  /** 結果カードの該当成分が selectedSlugs に含まれていれば「切替」ボタンを出す */
-  canSwap: boolean
-  onSwap: (altSlug: string) => void
 }
 
 const RANK_BADGE: Record<string, string> = {
@@ -715,8 +704,6 @@ const RANK_BADGE: Record<string, string> = {
 function AlternativeCandidates({
   ingredientSlug,
   ingredientNameJa,
-  canSwap,
-  onSwap,
 }: AlternativeCandidatesProps) {
   const alts = useMemo<AlternativeOption[]>(
     () => findAlternativesForIngredient(ingredientSlug),
@@ -735,37 +722,28 @@ function AlternativeCandidates({
       </div>
       <ul className="space-y-1.5">
         {alts.map((alt) => (
-          <li
-            key={alt.slug}
-            className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md bg-white/80 px-2.5 py-2 text-xs"
-          >
-            <span
-              className={`inline-flex size-5 items-center justify-center rounded-full text-[10px] font-semibold ${
-                RANK_BADGE[alt.evidenceRank] ?? RANK_BADGE.C
-              }`}
-              aria-label={`エビデンスランク ${alt.evidenceRank}`}
-            >
-              {alt.evidenceRank}
-            </span>
+          <li key={alt.slug}>
             <Link
               href={`/ingredients/${alt.slug}`}
-              className="font-medium underline-offset-2 hover:underline"
+              className="group flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md bg-white/80 px-2.5 py-2 text-xs hover:bg-white"
             >
-              {alt.nameJa}
-            </Link>
-            {alt.tagline && (
-              <span className="hidden text-muted-foreground sm:inline">— {alt.tagline}</span>
-            )}
-            {canSwap && (
-              <button
-                type="button"
-                onClick={() => onSwap(alt.slug)}
-                className="ml-auto inline-flex items-center gap-1 rounded-md border border-blue-300 bg-white px-2 py-1 text-[11px] font-medium text-blue-800 hover:bg-blue-100"
+              <span
+                className={`inline-flex size-5 items-center justify-center rounded-full text-[10px] font-semibold ${
+                  RANK_BADGE[alt.evidenceRank] ?? RANK_BADGE.C
+                }`}
+                aria-label={`エビデンスランク ${alt.evidenceRank}`}
               >
-                <ArrowLeftRight className="size-3" />
-                これに切替
-              </button>
-            )}
+                {alt.evidenceRank}
+              </span>
+              <span className="font-medium text-foreground">{alt.nameJa}</span>
+              {alt.tagline && (
+                <span className="hidden text-muted-foreground sm:inline">— {alt.tagline}</span>
+              )}
+              <span className="ml-auto inline-flex items-center gap-0.5 text-[11px] font-medium text-blue-700 group-hover:underline">
+                エビデンスを見る
+                <ChevronDown className="size-3 -rotate-90" />
+              </span>
+            </Link>
           </li>
         ))}
       </ul>
