@@ -29,6 +29,120 @@ const AXES: { key: AnalysisAxis; label: string; emoji: string }[] = [
   { key: 'metabolism', label: '代謝・エネルギー', emoji: '⚡' },
 ]
 
+/* ── Personality Type 算出 ── */
+interface PersonalityType {
+  name: string          // 例: 「美白×抗老化 集中型」
+  modifier: string      // 例: 「30代女性・睡眠改善必要」
+  emoji: string         // 主軸 emoji
+  topAxisLabel: string
+  topScore: number
+  considerationsCount: number  // 入力 N 件の表現
+}
+
+function getPersonalityType(
+  axisScores: Record<AnalysisAxis, number>,
+  basicInfo: BasicInfo,
+  lifestyle: Lifestyle,
+  concernCount: number,
+  medCount: number,
+  currentCount: number,
+): PersonalityType {
+  const ranked = AXES.map((a) => ({ ...a, score: axisScores[a.key] }))
+    .sort((a, b) => b.score - a.score)
+  const top = ranked[0]
+  const second = ranked[1]
+
+  let name: string
+  if (top.score < 1) {
+    name = '探索中'
+  } else if (second.score < 1 || top.score / Math.max(second.score, 0.1) > 1.8) {
+    name = `${top.label}特化型`
+  } else if (top.score >= 5 && second.score >= 4) {
+    name = `${top.label}×${second.label}型`
+  } else {
+    name = `${top.label}改善型`
+  }
+
+  const modifierParts: string[] = []
+  if (basicInfo.age) {
+    const ageLabel: Record<AgeBand, string> = {
+      '20-29': '20代', '30-39': '30代', '40-49': '40代',
+      '50-59': '50代', '60+': '60代以上', '': '',
+    }
+    if (ageLabel[basicInfo.age]) modifierParts.push(ageLabel[basicInfo.age])
+  }
+  if (basicInfo.gender === 'female') modifierParts.push('女性')
+  else if (basicInfo.gender === 'male') modifierParts.push('男性')
+
+  if (basicInfo.pregnancy === 'pregnant') modifierParts.push('妊娠中')
+  else if (basicInfo.pregnancy === 'nursing') modifierParts.push('授乳中')
+  else if (basicInfo.pregnancy === 'trying') modifierParts.push('妊活中')
+
+  if (lifestyle.exercise === 'heavy') modifierParts.push('運動習慣あり')
+  if (lifestyle.alcohol === 'heavy') modifierParts.push('飲酒多め')
+  if (lifestyle.sleep === 'short') modifierParts.push('睡眠改善必要')
+  if (lifestyle.smoking === 'daily') modifierParts.push('喫煙習慣')
+  if (lifestyle.diet === 'vegetarian') modifierParts.push('菜食')
+
+  // considerations
+  const considerationsCount =
+    concernCount +
+    (basicInfo.age ? 1 : 0) +
+    (basicInfo.gender ? 1 : 0) +
+    (basicInfo.pregnancy && basicInfo.pregnancy !== 'none' ? 1 : 0) +
+    Object.values(lifestyle).filter(Boolean).length +
+    medCount +
+    currentCount
+
+  return {
+    name,
+    modifier: modifierParts.join('・'),
+    emoji: top.emoji,
+    topAxisLabel: top.label,
+    topScore: top.score,
+    considerationsCount,
+  }
+}
+
+/* ── Bonus Insight（軸別の意外な事実） ── */
+const BONUS_INSIGHTS: Record<AnalysisAxis, { title: string; body: string }> = {
+  skin: {
+    title: '美白系で見落とされがちな組み合わせ',
+    body: 'ナイアシンアミド 5% × トラネキサム酸 3% の組み合わせは、単独使用より色素沈着改善で優位だった RCT が報告されている。「強い1本」より「相補的な2本」が論文支持。',
+  },
+  antiAging: {
+    title: '抗老化で「効果実感が早い」順',
+    body: 'NMN/NR は数週間で疲労感の変化を報告する研究が多い一方、肌の見た目変化は 3-6 ヶ月かかる。「ヒト介入研究で実感までの期間」を踏まえて段階導入を組むと挫折しにくい。',
+  },
+  cognitive: {
+    title: '脳機能で意外にエビデンスがあるもの',
+    body: 'クレアチンは「筋肉サプリ」のイメージが強いが、認知機能向上で RCT エビデンスがある（特に睡眠不足時の作業記憶）。コーヒー+L-テアニンよりコスパ良いケースも。',
+  },
+  stress: {
+    title: 'ストレス対策の二段階介入',
+    body: '「アシュワガンダ（HPA軸・コルチゾール）」+「マグネシウム（GABA系・即効）」の組合せが、両系統に同時介入する形で複数 RCT で支持されている。単剤より相乗が出やすい。',
+  },
+  sleep: {
+    title: '睡眠改善でメラトニンより先に試すもの',
+    body: 'メラトニンは入眠潜時短縮で有名だが、副作用（朝のだるさ）報告も多い。マグネシウムグリシン酸 + L-テアニンの組合せは副作用なく睡眠の質を改善する RCT があり、初手として安全。',
+  },
+  immunity: {
+    title: '免疫対策で最強コンビ',
+    body: '「ビタミンD（25-OH 30-40 ng/mL）+ 亜鉛（15-25mg/日）」は風邪の罹患率を約半減させる Meta解析がある。冬季や換期に試す価値あり。',
+  },
+  metabolism: {
+    title: '代謝改善で「血糖管理」最強コンビ',
+    body: 'ベルベリン（メトホルミン類似機序）+ α-リポ酸（インスリン感受性）の組合せが、HbA1c や空腹時血糖で複数 RCT で支持されている。食事改善と並行するのが定石。',
+  },
+}
+
+function getBonusInsight(axisScores: Record<AnalysisAxis, number>): { title: string; body: string } | null {
+  const ranked = AXES.map((a) => ({ key: a.key, score: axisScores[a.key] }))
+    .sort((a, b) => b.score - a.score)
+  if (ranked[0].score < 1) return null
+  return BONUS_INSIGHTS[ranked[0].key]
+}
+
 /* 推奨成分から 7 軸スコア（0-10）を算出 — AnalyzerClient の calcScores と同等ロジック */
 function calcAxisScores(selected: Ingredient[]): Record<AnalysisAxis, number> {
   const raw = {} as Record<AnalysisAxis, number>
@@ -499,6 +613,9 @@ export function AnalyzerDeepMode() {
             excludedByInteraction={recommendResult.excludedByInteraction}
             currentSlugCount={currentSlugs.length}
             concernSlugCount={concernSlugs.length}
+            basicInfo={basic}
+            lifestyle={lifestyle}
+            medKeysCount={medKeys.length}
           />
         ) : (
           <EmptyState
@@ -928,13 +1045,16 @@ function EmptyState({ hasAnyInput, pregnancyActive, excludedByPregnancyCount, ex
 
 /* ───────────────────────── 結果セクション ───────────────────────── */
 
-function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugCount, concernSlugCount }: {
+function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugCount, concernSlugCount, basicInfo, lifestyle, medKeysCount }: {
   recommendations: Recommendation[]
   interactionResults: InteractionResult[]
   excludedByPregnancy: RecommendResult['excludedByPregnancy']
   excludedByInteraction: RecommendResult['excludedByInteraction']
   currentSlugCount: number
   concernSlugCount: number
+  basicInfo: BasicInfo
+  lifestyle: Lifestyle
+  medKeysCount: number
 }) {
   const platformLabel: Record<string, string> = { iherb: 'iHerb', amazon: 'Amazon', cosme: '@cosme' }
   const totalExcluded = excludedByPregnancy.length + excludedByInteraction.length
@@ -942,6 +1062,14 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
   const showPolypharmacyNudge = currentSlugCount >= 4 && recommendations.length > 1
   // 7軸 radar
   const axisScores = useMemo(() => calcAxisScores(recommendations.map((r) => r.ing)), [recommendations])
+  // Personality Type
+  const personalityType = useMemo(
+    () => getPersonalityType(axisScores, basicInfo, lifestyle, concernSlugCount, medKeysCount, currentSlugCount),
+    [axisScores, basicInfo, lifestyle, concernSlugCount, medKeysCount, currentSlugCount],
+  )
+  const bonusInsight = useMemo(() => getBonusInsight(axisScores), [axisScores])
+  // Top score for match % computation
+  const topScore = recommendations[0]?.score ?? 1
 
   // 推奨成分に関連する interaction のみ抽出（既存サプリ由来は別表示）
   const recSlugSet = new Set(recommendations.map((r) => r.ing.slug))
@@ -950,6 +1078,33 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
 
   return (
     <>
+      {/* ── Personality Type Card（最上段で「自分のために」を演出）── */}
+      <PersonalityTypeCard
+        type={personalityType}
+        recommendationCount={recommendations.length}
+        excludedCount={totalExcluded}
+        currentSlugCount={currentSlugCount}
+      />
+
+      {recInteractions.length > 0 && (
+        <InteractionAlert
+          title="推奨成分と医薬品の相互作用"
+          results={recInteractions}
+        />
+      )}
+
+      {showPolypharmacyNudge && (
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl px-5 py-4 mb-4">
+          <p className="text-[13px] font-semibold text-blue-900 mb-1">
+            既に {currentSlugCount} 件のサプリを摂取中
+          </p>
+          <p className="text-[12px] text-blue-800 leading-relaxed">
+            一度に多くを追加するより、まず<strong>#1 だけを 4〜8 週試して効果を確認</strong>し、
+            そこから段階的に増やすほうが「何が効いたか」を切り分けやすく、相互作用リスクも下げられます。
+          </p>
+        </div>
+      )}
+
       <section className="mb-8">
         <div className="flex items-baseline gap-2 mb-4">
           <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
@@ -959,25 +1114,6 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
           </h2>
         </div>
 
-        {showPolypharmacyNudge && (
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl px-5 py-4 mb-4">
-            <p className="text-[13px] font-semibold text-blue-900 mb-1">
-              既に {currentSlugCount} 件のサプリを摂取中
-            </p>
-            <p className="text-[12px] text-blue-800 leading-relaxed">
-              一度に多くを追加するより、まず<strong>#1 だけを 4〜8 週試して効果を確認</strong>し、
-              そこから段階的に増やすほうが「何が効いたか」を切り分けやすく、相互作用リスクも下げられます。
-            </p>
-          </div>
-        )}
-
-        {recInteractions.length > 0 && (
-          <InteractionAlert
-            title="推奨成分と医薬品の相互作用"
-            results={recInteractions}
-          />
-        )}
-
         <div className="space-y-3">
           {recommendations.map((r, idx) => (
             <RecommendationCard
@@ -986,10 +1122,16 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
               rank={idx + 1}
               platformLabel={platformLabel}
               interactions={interactionResults.filter((i) => i.ingredientSlug === r.ing.slug)}
+              matchPercent={Math.round((r.score / topScore) * 100)}
             />
           ))}
         </div>
       </section>
+
+      {/* ── Action Plan：段階導入の concrete steps ── */}
+      {recommendations.length >= 2 && (
+        <ActionPlanSection recommendations={recommendations} />
+      )}
 
       {currentInteractions.length > 0 && (
         <section className="mb-8">
@@ -1022,6 +1164,9 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
           />
         </section>
       )}
+
+      {/* ── Bonus Insight ── */}
+      {bonusInsight && <BonusInsightCard insight={bonusInsight} />}
 
       {totalExcluded > 0 && (
         <ExcludedSection
@@ -1059,11 +1204,12 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
   )
 }
 
-function RecommendationCard({ rec, rank, platformLabel, interactions }: {
+function RecommendationCard({ rec, rank, platformLabel, interactions, matchPercent }: {
   rec: Recommendation
   rank: number
   platformLabel: Record<string, string>
   interactions: InteractionResult[]
+  matchPercent: number
 }) {
   const { ing } = rec
   const topProduct = ing.products.find((p) => p.rank === 1) ?? ing.products[0]
@@ -1071,6 +1217,13 @@ function RecommendationCard({ rec, rank, platformLabel, interactions }: {
 
   const hasAvoid = interactions.some((i) => i.level === 'avoid')
   const hasCaution = interactions.some((i) => i.level === 'caution')
+
+  // 用量表示
+  const dosageStr = ing.dosageMin && ing.dosageMax
+    ? `${ing.dosageMin}〜${ing.dosageMax} ${ing.dosageUnit}`
+    : ing.dosageMin
+      ? `${ing.dosageMin} ${ing.dosageUnit}`
+      : null
 
   return (
     <div className={`bg-card border rounded-2xl p-4
@@ -1087,7 +1240,7 @@ function RecommendationCard({ rec, rank, platformLabel, interactions }: {
         {rec.hits > 1 && (
           <span className="text-[10px] bg-emerald-50 border border-emerald-200
             rounded px-1.5 py-0.5 text-emerald-700">
-            {rec.hits}悩みに対応
+            {rec.hits}悩み横断
           </span>
         )}
         {hasAvoid && (
@@ -1108,25 +1261,72 @@ function RecommendationCard({ rec, rank, platformLabel, interactions }: {
           <Star className={`w-4 h-4 ${isFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />
         </button>
       </div>
-      <p className={`font-semibold text-foreground mb-1 ${rank === 1 ? 'text-[17px]' : 'text-[15px]'}`}>
-        {ing.nameJa}
-      </p>
+
+      <div className="flex items-baseline gap-2 mb-1">
+        <p className={`font-semibold text-foreground ${rank === 1 ? 'text-[18px]' : 'text-[15px]'}`}>
+          {ing.nameJa}
+        </p>
+        <span className="text-[11px] font-medium text-accent tabular-nums ml-auto flex-shrink-0">
+          マッチ度 {Math.min(100, Math.max(0, matchPercent))}%
+        </span>
+      </div>
+
+      {/* マッチ度 bar */}
+      <div className="h-1 bg-secondary rounded-full overflow-hidden mb-3">
+        <div className="h-full bg-accent rounded-full transition-all duration-500"
+          style={{ width: `${Math.min(100, Math.max(0, matchPercent))}%` }} />
+      </div>
+
       <p className="text-[12.5px] text-muted-foreground leading-relaxed line-clamp-2 mb-3">
         {ing.tagline}
       </p>
 
+      {/* WHY this for you — 大きく見せる */}
       {(rec.matchedConcerns.length > 0 || rec.lifestyleBoost.length > 0) && (
-        <div className="flex flex-wrap gap-1.5 mb-3">
-          {rec.matchedConcerns.slice(0, 3).map((c, i) => (
-            <span key={i} className="text-[10.5px] bg-secondary text-muted-foreground rounded px-1.5 py-0.5">
-              {c}
-            </span>
-          ))}
-          {rec.lifestyleBoost.length > 0 && Array.from(new Set(rec.lifestyleBoost)).map((b, i) => (
-            <span key={`lb-${i}`} className="text-[10.5px] bg-amber-50 border border-amber-100 text-amber-700 rounded px-1.5 py-0.5">
-              {b}
-            </span>
-          ))}
+        <div className="bg-secondary/50 rounded-lg px-3 py-2.5 mb-3">
+          <p className="text-[10.5px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">
+            あなたに合う理由
+          </p>
+          <div className="space-y-1">
+            {rec.matchedConcerns.length > 0 && (
+              <p className="text-[12px] text-foreground leading-relaxed">
+                🎯 <strong className="font-semibold">悩み</strong>:&nbsp;
+                {rec.matchedConcerns.slice(0, 3).join('・')}
+                {rec.matchedConcerns.length > 3 && ` ほか${rec.matchedConcerns.length - 3}件`}
+                {rec.hits > 1 && ` の${rec.hits}つに該当`}
+              </p>
+            )}
+            {rec.lifestyleBoost.length > 0 && (
+              <p className="text-[12px] text-foreground leading-relaxed">
+                ⚡ <strong className="font-semibold">ライフスタイル</strong>:&nbsp;
+                {Array.from(new Set(rec.lifestyleBoost)).join('・')} と相性 ◎
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 実用情報 — 用量・効果実感・タイミング */}
+      {(dosageStr || ing.duration || ing.timing) && (
+        <div className="grid grid-cols-3 gap-2 mb-3 text-center">
+          {dosageStr && (
+            <div className="bg-secondary/30 rounded-lg px-2 py-2">
+              <p className="text-[9.5px] uppercase tracking-wider text-muted-foreground mb-0.5">用量</p>
+              <p className="text-[11px] font-semibold text-foreground leading-tight">{dosageStr}</p>
+            </div>
+          )}
+          {ing.duration && (
+            <div className="bg-secondary/30 rounded-lg px-2 py-2">
+              <p className="text-[9.5px] uppercase tracking-wider text-muted-foreground mb-0.5">効果実感</p>
+              <p className="text-[11px] font-semibold text-foreground leading-tight line-clamp-2">{ing.duration.replace(/^[^0-9０-９]*/, '').slice(0, 20)}</p>
+            </div>
+          )}
+          {ing.timing && (
+            <div className="bg-secondary/30 rounded-lg px-2 py-2">
+              <p className="text-[9.5px] uppercase tracking-wider text-muted-foreground mb-0.5">タイミング</p>
+              <p className="text-[11px] font-semibold text-foreground leading-tight line-clamp-2">{ing.timing.slice(0, 18)}</p>
+            </div>
+          )}
         </div>
       )}
 
@@ -1155,6 +1355,145 @@ function RecommendationCard({ rec, rank, platformLabel, interactions }: {
         )}
       </div>
     </div>
+  )
+}
+
+/* ── Personality Type Card（結果トップで「自分のために設計された」を演出）── */
+function PersonalityTypeCard({ type, recommendationCount, excludedCount, currentSlugCount }: {
+  type: PersonalityType
+  recommendationCount: number
+  excludedCount: number
+  currentSlugCount: number
+}) {
+  return (
+    <section className="mb-6">
+      <div className="bg-gradient-to-br from-accent/8 via-card to-card border-2 border-accent/30 rounded-2xl p-5 shadow-sm">
+        <div className="flex items-baseline gap-2 mb-3">
+          <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
+            px-2 py-0.5 rounded-md">YOUR TYPE</span>
+        </div>
+
+        <div className="flex items-start gap-3 mb-4">
+          <span className="text-[40px] leading-none flex-shrink-0">{type.emoji}</span>
+          <div className="flex-1 min-w-0">
+            <p className="text-[20px] sm:text-[22px] font-bold text-foreground leading-tight mb-1">
+              {type.name}
+            </p>
+            {type.modifier && (
+              <p className="text-[13px] text-muted-foreground leading-snug">
+                {type.modifier}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* 入力データの可視化（このタイプ判定に使った材料） */}
+        <div className="bg-card/60 rounded-xl px-4 py-3 mb-3">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+            あなたの入力から
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1.5 text-[12px]">
+            <div>
+              <span className="text-muted-foreground">考慮要素</span>
+              <span className="ml-2 font-bold text-foreground tabular-nums">{type.considerationsCount}</span>
+            </div>
+            <div>
+              <span className="text-muted-foreground">推奨</span>
+              <span className="ml-2 font-bold text-foreground tabular-nums">{recommendationCount}件</span>
+            </div>
+            {currentSlugCount > 0 && (
+              <div>
+                <span className="text-muted-foreground">既存サプリ</span>
+                <span className="ml-2 font-bold text-foreground tabular-nums">{currentSlugCount}件</span>
+              </div>
+            )}
+            {excludedCount > 0 && (
+              <div>
+                <span className="text-muted-foreground">安全除外</span>
+                <span className="ml-2 font-bold text-amber-700 tabular-nums">{excludedCount}件</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <p className="text-[12px] text-muted-foreground leading-relaxed">
+          以下の {recommendationCount} 選は <strong className="font-semibold text-foreground">{type.topAxisLabel}</strong> を主軸に、
+          あなたの入力すべてに最適化された結果です。
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/* ── Action Plan：段階導入の週次計画 ── */
+function ActionPlanSection({ recommendations }: { recommendations: Recommendation[] }) {
+  if (recommendations.length === 0) return null
+  const steps = [
+    {
+      label: 'Week 1-4',
+      items: recommendations.slice(0, 1),
+      hint: 'まずこれだけを単独で 4 週間。効果体感の有無を確認',
+    },
+    {
+      label: 'Week 5-8',
+      items: recommendations.slice(0, 2),
+      hint: '#1 の手応えを見て、合っていれば #2 を追加',
+    },
+    {
+      label: 'Week 9+',
+      items: recommendations.slice(0, Math.min(5, recommendations.length)),
+      hint: '#1+#2 で土台が安定したら #3-5 を順次追加',
+    },
+  ].filter((s) => s.items.length > 0)
+
+  return (
+    <section className="mb-8">
+      <div className="flex items-baseline gap-2 mb-2">
+        <span className="text-[10px] font-semibold tracking-wider bg-emerald-600 text-white px-2 py-0.5 rounded-md">
+          PLAN
+        </span>
+        <h2 className="font-semibold text-[15px] text-foreground">段階的に始める導入計画</h2>
+      </div>
+      <p className="text-[12px] text-muted-foreground mb-4 leading-relaxed">
+        「何が効いたか」を切り分けやすく、合わない成分の特定も簡単になる順番で組んでいます。
+      </p>
+      <div className="space-y-2">
+        {steps.map((s, i) => (
+          <div key={i} className="bg-card border border-border rounded-xl px-4 py-3">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider
+                bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded">
+                {s.label}
+              </span>
+              <span className="text-[12px] text-foreground font-medium truncate">
+                {s.items.map((r, idx) => `#${idx + 1} ${r.ing.nameJa}`).join(' + ')}
+              </span>
+            </div>
+            <p className="text-[11.5px] text-muted-foreground leading-relaxed pl-1">
+              {s.hint}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ── Bonus Insight：意外な発見・教育的価値 ── */
+function BonusInsightCard({ insight }: { insight: { title: string; body: string } }) {
+  return (
+    <section className="mb-8">
+      <div className="bg-gradient-to-br from-amber-50 to-card border border-amber-200 rounded-2xl p-5">
+        <div className="flex items-baseline gap-2 mb-2">
+          <span className="text-[10px] font-semibold tracking-wider bg-amber-500 text-white
+            px-2 py-0.5 rounded-md">INSIGHT</span>
+          <h2 className="font-semibold text-[14px] text-amber-900">{insight.title}</h2>
+        </div>
+        <p className="text-[12.5px] text-amber-900/85 leading-relaxed">
+          {insight.body}
+        </p>
+      </div>
+    </section>
   )
 }
 
