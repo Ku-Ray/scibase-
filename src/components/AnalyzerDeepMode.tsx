@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { AlertTriangle, ChevronRight, RotateCcw, Star } from 'lucide-react'
+import { AlertTriangle, ChevronRight, RotateCcw, Search, Star } from 'lucide-react'
 import { ingredients, concerns, getIngredient, getConcern } from '@/lib/data'
 import { EvidenceBadge } from './EvidenceBadge'
 import { OutboundProductLink } from './OutboundProductLink'
@@ -15,7 +15,7 @@ import {
 } from '@/lib/interaction-canonical'
 import { checkInteractions, LEVEL_LABEL, type InteractionResult } from '@/lib/interaction'
 import { useFavorite } from '@/hooks/useFavorite'
-import type { Concern, Ingredient } from '@/lib/types'
+import type { Ingredient } from '@/lib/types'
 
 /* ── 型定義 ── */
 type AgeBand = '20-29' | '30-39' | '40-49' | '50-59' | '60+' | ''
@@ -59,13 +59,63 @@ interface Recommendation {
   lifestyleBoost: string[]  // ライフスタイル由来の理由
 }
 
+interface RecommendResult {
+  recommendations: Recommendation[]
+  /** 妊娠/授乳/妊活中で contraindication により除外された成分（score top 8 まで・透明性のため表示） */
+  excludedByPregnancy: Array<{ ing: Ingredient; score: number; reason: string }>
+  /** 服用医薬品との avoid 級相互作用で除外された成分 */
+  excludedByInteraction: Array<{ ing: Ingredient; score: number; matchedKeys: string[]; mechanism: string }>
+}
+
+/**
+ * data.ts の contraindications フィールドに「妊娠」が記載されていないが、
+ * 主要な伝統医学ガイドライン（NIH ODS / 各国 herbal monograph）で
+ * 妊娠中の安全データ不足が示唆される実在 slug の fallback list。
+ * data.ts contraindications が網羅完成したら削除可能。
+ */
+const PREGNANCY_HERB_FALLBACK = new Set<string>([
+  'ginkgo-biloba',
+  'ginkgo-biloba-extract-high',
+  'evening-primrose-oil',
+  'maca',
+  'panax-ginseng',
+  'rhodiola',
+])
+
+/**
+ * 妊娠中・授乳中・妊活中の場合に成分の contraindications フィールドを参照して除外判定。
+ * data.ts 各成分の `contraindications: string[]` を programmatic にチェック（slug 名ハードコードを廃止）。
+ * data.ts が網羅していないハーブは PREGNANCY_HERB_FALLBACK で補完。
+ */
+function shouldExcludeForPregnancy(ing: Ingredient, mode: Pregnancy): { excluded: boolean; reason: string } {
+  if (mode === '' || mode === 'none') return { excluded: false, reason: '' }
+  const text = (ing.contraindications ?? []).join('｜')
+  if (mode === 'nursing') {
+    if (text.includes('授乳')) return { excluded: true, reason: '授乳中は安全データ不足' }
+    if (PREGNANCY_HERB_FALLBACK.has(ing.slug)) return { excluded: true, reason: '授乳中の安全データ不足（ハーブ系）' }
+  }
+  // pregnant / trying は妊娠記載で除外（妊活中も妊娠予定なので保守側に倒す）
+  if (mode === 'pregnant' || mode === 'trying') {
+    if (text.includes('妊娠') || text.includes('妊婦')) {
+      return { excluded: true, reason: mode === 'pregnant' ? '妊娠中は安全データ不足' : '妊活中は妊娠を想定して除外' }
+    }
+    if (PREGNANCY_HERB_FALLBACK.has(ing.slug)) {
+      return { excluded: true, reason: mode === 'pregnant' ? '妊娠中の安全データ不足（ハーブ系）' : '妊活中は妊娠を想定して除外（ハーブ系）' }
+    }
+  }
+  return { excluded: false, reason: '' }
+}
+
 function recommend(
   concernSlugs: string[],
   lifestyle: Lifestyle,
   currentSlugs: string[],
   basicInfo: BasicInfo,
-): Recommendation[] {
-  if (concernSlugs.length === 0 && noLifestyleBoost(lifestyle)) return []
+  medKeys: string[],
+): RecommendResult {
+  if (concernSlugs.length === 0 && noLifestyleBoost(lifestyle)) {
+    return { recommendations: [], excludedByPregnancy: [], excludedByInteraction: [] }
+  }
 
   const scoreMap = new Map<string, number>()
   const hitMap = new Map<string, number>()
@@ -90,19 +140,20 @@ function recommend(
   }
 
   // 2. ライフスタイル由来のブースト（特定成分のスコア + 0.4）
+  //    slug 名は data.ts の実在 slug に揃える（vitamin-c-oral / whey-protein-isolate 等）
   const lifestyleBoosts: Array<{ slug: string; reason: string; condition: boolean }> = [
-    { slug: 'milk-thistle',  reason: 'アルコール多飲', condition: lifestyle.alcohol === 'heavy' },
-    { slug: 'nac',           reason: 'アルコール多飲', condition: lifestyle.alcohol === 'heavy' },
-    { slug: 'vitamin-b12',   reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
-    { slug: 'iron',          reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
-    { slug: 'omega3',        reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
-    { slug: 'vitamin-d',     reason: '外食多め',       condition: lifestyle.diet === 'eat-out' },
-    { slug: 'magnesium',     reason: '睡眠時間短い',   condition: lifestyle.sleep === 'short' },
-    { slug: 'glycine',       reason: '睡眠時間短い',   condition: lifestyle.sleep === 'short' },
-    { slug: 'vitamin-c',     reason: '喫煙習慣',       condition: lifestyle.smoking === 'daily' },
-    { slug: 'glutathione',   reason: '喫煙習慣',       condition: lifestyle.smoking === 'daily' },
-    { slug: 'creatine',      reason: '運動習慣あり',   condition: lifestyle.exercise === 'heavy' },
-    { slug: 'whey-protein',  reason: '運動習慣あり',   condition: lifestyle.exercise === 'heavy' },
+    { slug: 'milk-thistle',           reason: 'アルコール多飲', condition: lifestyle.alcohol === 'heavy' },
+    { slug: 'nac',                    reason: 'アルコール多飲', condition: lifestyle.alcohol === 'heavy' },
+    { slug: 'vitamin-b12',            reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
+    { slug: 'iron',                   reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
+    { slug: 'omega3',                 reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
+    { slug: 'vitamin-d',              reason: '外食多め',       condition: lifestyle.diet === 'eat-out' },
+    { slug: 'magnesium',              reason: '睡眠時間短い',   condition: lifestyle.sleep === 'short' },
+    { slug: 'glycine',                reason: '睡眠時間短い',   condition: lifestyle.sleep === 'short' },
+    { slug: 'vitamin-c-oral',         reason: '喫煙習慣',       condition: lifestyle.smoking === 'daily' },
+    { slug: 'glutathione',            reason: '喫煙習慣',       condition: lifestyle.smoking === 'daily' },
+    { slug: 'creatine',               reason: '運動習慣あり',   condition: lifestyle.exercise === 'heavy' },
+    { slug: 'whey-protein-isolate',   reason: '運動習慣あり',   condition: lifestyle.exercise === 'heavy' },
   ]
   for (const b of lifestyleBoosts) {
     if (!b.condition) continue
@@ -116,24 +167,12 @@ function recommend(
   // 3. 既に飲んでいるサプリを除外（重複推奨を避ける）
   const currentSet = new Set(currentSlugs)
 
-  // 4. 妊娠中・授乳中・妊活中は注意成分を除外（保守側に倒す）
-  const pregnancyExclude = new Set<string>()
-  if (basicInfo.pregnancy === 'pregnant' || basicInfo.pregnancy === 'nursing' || basicInfo.pregnancy === 'trying') {
-    // ハーブ系（妊娠中の安全データ不足）
-    ;['ashwagandha', 'rhodiola', 'st-johns-wort', 'ginkgo', 'panax-ginseng',
-      'tongkat-ali', 'maca', 'kava', 'valerian', 'tribulus', 'fenugreek',
-      'red-clover', 'black-cohosh', 'evening-primrose', 'dong-quai',
-      'saw-palmetto', 'dhea', 'pregnenolone', 'melatonin', 'berberine',
-      'high-dose-vitamin-a',
-    ].forEach((s) => pregnancyExclude.add(s))
-  }
-
-  // 5. ranking
-  return Array.from(scoreMap.entries())
-    .filter(([slug]) => !currentSet.has(slug) && !pregnancyExclude.has(slug))
-    .filter(([slug]) => !!getIngredient(slug))
+  // 4. 全候補を score 降順で並べる（slice はまだしない）
+  const allCandidates = Array.from(scoreMap.entries())
+    .filter(([slug]) => !currentSet.has(slug))
     .map(([slug, score]) => {
-      const ing = getIngredient(slug)!
+      const ing = getIngredient(slug)
+      if (!ing) return null
       return {
         ing,
         score,
@@ -142,8 +181,46 @@ function recommend(
         lifestyleBoost: lifestyleBoostMap.get(slug) ?? [],
       }
     })
+    .filter((c): c is Recommendation => c !== null)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 5)
+
+  // 5. 妊娠/授乳/妊活除外（contraindications 参照）
+  const excludedByPregnancy: RecommendResult['excludedByPregnancy'] = []
+  const afterPregnancy = allCandidates.filter((c) => {
+    const check = shouldExcludeForPregnancy(c.ing, basicInfo.pregnancy)
+    if (check.excluded) {
+      if (excludedByPregnancy.length < 8) {
+        excludedByPregnancy.push({ ing: c.ing, score: c.score, reason: check.reason })
+      }
+      return false
+    }
+    return true
+  })
+
+  // 6. 服用医薬品との avoid 級相互作用で除外
+  //    各候補について checkInteractions([slug], medKeys) を呼んで avoid を検出。
+  const excludedByInteraction: RecommendResult['excludedByInteraction'] = []
+  const afterInteraction = medKeys.length === 0 ? afterPregnancy : afterPregnancy.filter((c) => {
+    const results = checkInteractions([c.ing.slug], medKeys)
+    const avoid = results.find((r) => r.level === 'avoid')
+    if (avoid) {
+      excludedByInteraction.push({
+        ing: c.ing,
+        score: c.score,
+        matchedKeys: avoid.matchedKeys,
+        mechanism: avoid.mechanism,
+      })
+      return false
+    }
+    return true
+  })
+
+  // 7. top 5 で返す
+  return {
+    recommendations: afterInteraction.slice(0, 5),
+    excludedByPregnancy,
+    excludedByInteraction,
+  }
 }
 
 function noLifestyleBoost(l: Lifestyle): boolean {
@@ -198,12 +275,13 @@ export function AnalyzerDeepMode() {
   useEffect(() => { if (hasMounted) try { localStorage.setItem(STORAGE_MEDS, JSON.stringify(medKeys)) } catch {} }, [medKeys, hasMounted])
   useEffect(() => { if (hasMounted) try { localStorage.setItem(STORAGE_CURRENT, JSON.stringify(currentSlugs)) } catch {} }, [currentSlugs, hasMounted])
 
-  const recommendations = useMemo(
-    () => recommend(concernSlugs, lifestyle, currentSlugs, basic),
-    [concernSlugs, lifestyle, currentSlugs, basic],
+  const recommendResult = useMemo(
+    () => recommend(concernSlugs, lifestyle, currentSlugs, basic, medKeys),
+    [concernSlugs, lifestyle, currentSlugs, basic, medKeys],
   )
+  const recommendations = recommendResult.recommendations
 
-  /* 推奨成分 + 既存サプリと医薬品の interaction check */
+  /* 推奨成分 + 既存サプリと医薬品の interaction check（caution/monitor 級を結果セクションで表示） */
   const allCheckSlugs = useMemo(
     () => Array.from(new Set([...recommendations.map((r) => r.ing.slug), ...currentSlugs])),
     [recommendations, currentSlugs],
@@ -214,6 +292,7 @@ export function AnalyzerDeepMode() {
   )
 
   const hasResults = recommendations.length > 0
+  const hasAnyInput = concernSlugs.length > 0 || !noLifestyleBoost(lifestyle) || medKeys.length > 0
 
   /* GA4: complete_deep_analyzer */
   useEffect(() => {
@@ -225,8 +304,10 @@ export function AnalyzerDeepMode() {
       medication_count: medKeys.length,
       recommendation_count: recommendations.length,
       interaction_count: interactionResults.length,
+      excluded_pregnancy: recommendResult.excludedByPregnancy.length,
+      excluded_interaction: recommendResult.excludedByInteraction.length,
     })
-  }, [hasResults, concernSlugs.length, medKeys.length, recommendations.length, interactionResults.length])
+  }, [hasResults, concernSlugs.length, medKeys.length, recommendations.length, interactionResults.length, recommendResult.excludedByPregnancy.length, recommendResult.excludedByInteraction.length])
 
   const resetAll = () => {
     setBasic({ age: '', gender: '', pregnancy: '' })
@@ -371,16 +452,19 @@ export function AnalyzerDeepMode() {
       {/* ── 結果 ── */}
       <div ref={resultsRef} className="scroll-mt-6">
         {hasResults ? (
-          <>
-            <ResultsSection
-              recommendations={recommendations}
-              interactionResults={interactionResults}
-              medKeys={medKeys}
-              currentSlugs={currentSlugs}
-            />
-          </>
+          <ResultsSection
+            recommendations={recommendations}
+            interactionResults={interactionResults}
+            excludedByPregnancy={recommendResult.excludedByPregnancy}
+            excludedByInteraction={recommendResult.excludedByInteraction}
+          />
         ) : (
-          <EmptyState />
+          <EmptyState
+            hasAnyInput={hasAnyInput}
+            pregnancyActive={pregnancyWarning}
+            excludedByPregnancyCount={recommendResult.excludedByPregnancy.length}
+            excludedByInteractionCount={recommendResult.excludedByInteraction.length}
+          />
         )}
       </div>
 
@@ -482,6 +566,7 @@ function MedicationPicker({ selected, onToggle }: {
   selected: string[]; onToggle: (key: string) => void
 }) {
   const [open, setOpen] = useState<CanonicalCategory | null>(null)
+  const [query, setQuery] = useState('')
   const grouped = useMemo(() => groupCanonicalByCategory(), [])
 
   // 表示順：よく使われそうな category を上に
@@ -495,6 +580,15 @@ function MedicationPicker({ selected, onToggle }: {
     'condition', 'lifestyle', 'topical', 'vaccine', 'lab_test',
     'mineral_supp', 'supplement_other',
   ]
+
+  // 検索結果 (空文字なら null)
+  const q = query.trim().toLowerCase()
+  const searchResults = useMemo(() => {
+    if (!q) return null
+    return CANONICAL_INTERACTIONS.filter((e) =>
+      e.key.toLowerCase().includes(q) || CATEGORY_LABEL[e.category].includes(q),
+    ).slice(0, 30)
+  }, [q])
 
   return (
     <div>
@@ -518,51 +612,100 @@ function MedicationPicker({ selected, onToggle }: {
         </div>
       )}
 
-      <div className="space-y-2">
-        {orderedCats.map((cat) => {
-          const items = grouped[cat]
-          if (!items || items.length === 0) return null
-          const isOpen = open === cat
-          const selectedCount = items.filter((e) => selected.includes(e.key)).length
-          return (
-            <div key={cat} className="border border-border rounded-xl overflow-hidden">
-              <button onClick={() => setOpen(isOpen ? null : cat)}
-                className="w-full flex items-center justify-between px-4 py-2.5
-                  hover:bg-secondary/40 transition-colors text-left">
-                <span className="text-[13px] font-medium text-foreground">
-                  {CATEGORY_LABEL[cat]}
-                  <span className="text-[11px] text-muted-foreground/80 ml-2">{items.length}件</span>
-                </span>
-                <div className="flex items-center gap-2">
-                  {selectedCount > 0 && (
-                    <span className="text-[11px] font-semibold bg-accent/10 text-accent rounded-full px-2 py-0.5">
-                      {selectedCount}
-                    </span>
-                  )}
-                  <ChevronRight className={`w-4 h-4 text-muted-foreground transition-transform ${isOpen ? 'rotate-90' : ''}`} />
-                </div>
-              </button>
-              {isOpen && (
-                <div className="px-4 pb-3 pt-1 flex flex-wrap gap-1.5 border-t border-border bg-secondary/20">
-                  {items.map((e) => {
-                    const active = selected.includes(e.key)
-                    return (
-                      <button key={e.key} onClick={() => onToggle(e.key)}
-                        className={`inline-flex items-center text-[12px] font-medium px-3 py-1.5
-                          min-h-[36px] rounded-full border transition-all
-                          ${active
-                            ? 'bg-foreground text-background border-foreground'
-                            : 'bg-card text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground'}`}>
-                        {e.key}
-                      </button>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
-          )
-        })}
+      {/* 検索 box */}
+      <div className="relative mb-3">
+        <div className="flex items-center gap-2 bg-card border border-border rounded-xl
+          px-4 py-2.5 focus-within:border-accent transition-colors">
+          <Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+          <input
+            type="text"
+            placeholder="薬剤名・カテゴリで検索（例: ワルファリン、降圧、SSRI）"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="flex-1 bg-transparent text-[13px] text-foreground
+              placeholder:text-muted-foreground/50 outline-none"
+          />
+          {query && (
+            <button onClick={() => setQuery('')} aria-label="検索クリア"
+              className="text-muted-foreground hover:text-foreground transition-colors text-[16px] leading-none">
+              ×
+            </button>
+          )}
+        </div>
       </div>
+
+      {searchResults !== null ? (
+        /* 検索モード：フラット chip リスト */
+        searchResults.length === 0 ? (
+          <div className="bg-secondary/30 border border-border rounded-xl px-4 py-4 text-center">
+            <p className="text-[12.5px] text-muted-foreground">「{query}」に一致する医薬品がありません</p>
+          </div>
+        ) : (
+          <div className="flex flex-wrap gap-1.5">
+            {searchResults.map((e) => {
+              const active = selected.includes(e.key)
+              return (
+                <button key={e.key} onClick={() => onToggle(e.key)}
+                  className={`inline-flex items-center gap-1.5 text-[12px] font-medium px-3 py-1.5
+                    min-h-[36px] rounded-full border transition-all
+                    ${active
+                      ? 'bg-foreground text-background border-foreground'
+                      : 'bg-card text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground'}`}>
+                  {e.key}
+                  <span className="text-[10px] opacity-60">／{CATEGORY_LABEL[e.category]}</span>
+                </button>
+              )
+            })}
+          </div>
+        )
+      ) : (
+        /* カテゴリ accordion モード */
+        <div className="space-y-2">
+          {orderedCats.map((cat) => {
+            const items = grouped[cat]
+            if (!items || items.length === 0) return null
+            const isOpen = open === cat
+            const selectedCount = items.filter((e) => selected.includes(e.key)).length
+            return (
+              <div key={cat} className="border border-border rounded-xl overflow-hidden">
+                <button onClick={() => setOpen(isOpen ? null : cat)}
+                  className="w-full flex items-center justify-between px-4 py-2.5
+                    hover:bg-secondary/40 transition-colors text-left">
+                  <span className="text-[13px] font-medium text-foreground">
+                    {CATEGORY_LABEL[cat]}
+                    <span className="text-[11px] text-muted-foreground/80 ml-2">{items.length}件</span>
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {selectedCount > 0 && (
+                      <span className="text-[11px] font-semibold bg-accent/10 text-accent rounded-full px-2 py-0.5">
+                        {selectedCount}
+                      </span>
+                    )}
+                    <ChevronRight className={`w-4 h-4 text-muted-foreground transition-transform ${isOpen ? 'rotate-90' : ''}`} />
+                  </div>
+                </button>
+                {isOpen && (
+                  <div className="px-4 pb-3 pt-1 flex flex-wrap gap-1.5 border-t border-border bg-secondary/20">
+                    {items.map((e) => {
+                      const active = selected.includes(e.key)
+                      return (
+                        <button key={e.key} onClick={() => onToggle(e.key)}
+                          className={`inline-flex items-center text-[12px] font-medium px-3 py-1.5
+                            min-h-[36px] rounded-full border transition-all
+                            ${active
+                              ? 'bg-foreground text-background border-foreground'
+                              : 'bg-card text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground'}`}>
+                          {e.key}
+                        </button>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
@@ -607,11 +750,50 @@ function CurrentSupplementList({ slugs, onRemove, onClear }: {
   )
 }
 
-function EmptyState() {
+function EmptyState({ hasAnyInput, pregnancyActive, excludedByPregnancyCount, excludedByInteractionCount }: {
+  hasAnyInput: boolean
+  pregnancyActive: boolean
+  excludedByPregnancyCount: number
+  excludedByInteractionCount: number
+}) {
+  // ケース A: 何も入れていない
+  if (!hasAnyInput) {
+    return (
+      <div className="bg-secondary/30 border border-dashed border-border rounded-2xl px-5 py-8 text-center">
+        <p className="text-[14px] text-muted-foreground leading-relaxed">
+          ここに推奨3〜5件と相互作用警告が表示されます。<br />
+          <strong className="text-foreground">悩みを1つ以上選ぶ</strong>か、
+          生活習慣で<strong className="text-foreground">運動「しっかり」/ 飲酒「ほぼ毎日」/ 喫煙「毎日」/ 睡眠「6時間未満」/ 食事「菜食/外食」</strong>
+          のいずれかを選ぶと候補が出ます。
+        </p>
+      </div>
+    )
+  }
+  // ケース B: 入れたが全件除外された（妊娠中 + 抗凝固薬等の組み合わせで全 wipe される）
   return (
-    <div className="bg-secondary/30 border border-dashed border-border rounded-2xl px-5 py-8 text-center">
-      <p className="text-[14px] text-muted-foreground leading-relaxed">
-        悩みを<strong className="text-foreground">1つ以上</strong>選ぶと、ここに推奨3〜5件と相互作用警告が表示されます。
+    <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-6">
+      <div className="flex items-start gap-2 mb-3">
+        <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+        <div>
+          <p className="text-[14px] font-semibold text-amber-900 leading-relaxed">
+            該当する推奨成分が見つかりませんでした
+          </p>
+          <p className="text-[12.5px] text-amber-800 leading-relaxed mt-1">
+            選択された悩み・ライフスタイルに対する候補成分が、安全フィルタですべて除外されました。
+          </p>
+        </div>
+      </div>
+      <ul className="text-[12.5px] text-amber-800 space-y-1 pl-7 list-disc">
+        {pregnancyActive && excludedByPregnancyCount > 0 && (
+          <li>妊娠中・授乳中・妊活中の安全データ不足で <strong>{excludedByPregnancyCount}件</strong> を除外</li>
+        )}
+        {excludedByInteractionCount > 0 && (
+          <li>服用中の医薬品との重大な相互作用で <strong>{excludedByInteractionCount}件</strong> を除外</li>
+        )}
+        <li>悩みを増やす・生活習慣選択を見直すと候補が増える可能性があります</li>
+      </ul>
+      <p className="text-[12px] text-amber-700 mt-3 pl-7">
+        いずれの摂取も<strong>必ず医師・薬剤師にご相談ください</strong>。
       </p>
     </div>
   )
@@ -619,13 +801,14 @@ function EmptyState() {
 
 /* ───────────────────────── 結果セクション ───────────────────────── */
 
-function ResultsSection({ recommendations, interactionResults, medKeys, currentSlugs }: {
+function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction }: {
   recommendations: Recommendation[]
   interactionResults: InteractionResult[]
-  medKeys: string[]
-  currentSlugs: string[]
+  excludedByPregnancy: RecommendResult['excludedByPregnancy']
+  excludedByInteraction: RecommendResult['excludedByInteraction']
 }) {
   const platformLabel: Record<string, string> = { iherb: 'iHerb', amazon: 'Amazon', cosme: '@cosme' }
+  const totalExcluded = excludedByPregnancy.length + excludedByInteraction.length
 
   // 推奨成分に関連する interaction のみ抽出（既存サプリ由来は別表示）
   const recSlugSet = new Set(recommendations.map((r) => r.ing.slug))
@@ -674,6 +857,13 @@ function ResultsSection({ recommendations, interactionResults, medKeys, currentS
             tone="amber"
           />
         </section>
+      )}
+
+      {totalExcluded > 0 && (
+        <ExcludedSection
+          excludedByPregnancy={excludedByPregnancy}
+          excludedByInteraction={excludedByInteraction}
+        />
       )}
 
       {/* CTA：Interaction Checker で詳しく確認 */}
@@ -790,6 +980,81 @@ function RecommendationCard({ rec, rank, platformLabel, interactions }: {
         )}
       </div>
     </div>
+  )
+}
+
+function ExcludedSection({ excludedByPregnancy, excludedByInteraction }: {
+  excludedByPregnancy: RecommendResult['excludedByPregnancy']
+  excludedByInteraction: RecommendResult['excludedByInteraction']
+}) {
+  const [open, setOpen] = useState(false)
+  const total = excludedByPregnancy.length + excludedByInteraction.length
+  return (
+    <section className="mb-8">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between gap-3 px-4 py-3
+          bg-slate-50 border border-slate-200 rounded-2xl
+          hover:bg-slate-100 transition-colors text-left"
+        aria-expanded={open}
+      >
+        <div className="flex items-center gap-2">
+          <Search className="w-4 h-4 text-slate-500" />
+          <p className="text-[13.5px] font-semibold text-slate-700">
+            安全フィルタで除外された候補 <span className="tabular-nums">{total}件</span>
+          </p>
+        </div>
+        <ChevronRight className={`w-4 h-4 text-slate-500 transition-transform ${open ? 'rotate-90' : ''}`} />
+      </button>
+      {open && (
+        <div className="mt-3 space-y-3">
+          {excludedByPregnancy.length > 0 && (
+            <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
+              <p className="text-[12.5px] font-semibold text-amber-900 mb-2">
+                妊娠/授乳/妊活で除外（{excludedByPregnancy.length}件）
+              </p>
+              <ul className="space-y-1.5 text-[12px] text-amber-800">
+                {excludedByPregnancy.map((e, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-amber-600 mt-0.5">•</span>
+                    <Link href={`/ingredients/${e.ing.slug}`}
+                      className="font-medium hover:underline">
+                      {e.ing.nameJa}
+                    </Link>
+                    <span className="opacity-75 text-[11.5px]">— {e.reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {excludedByInteraction.length > 0 && (
+            <div className="bg-rose-50 border border-rose-200 rounded-2xl px-5 py-4">
+              <p className="text-[12.5px] font-semibold text-rose-900 mb-2">
+                服用医薬品との重大な相互作用で除外（{excludedByInteraction.length}件）
+              </p>
+              <ul className="space-y-1.5 text-[12px] text-rose-800">
+                {excludedByInteraction.map((e, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-rose-600 mt-0.5">•</span>
+                    <div>
+                      <Link href={`/ingredients/${e.ing.slug}`}
+                        className="font-medium hover:underline">
+                        {e.ing.nameJa}
+                      </Link>
+                      <span className="opacity-75 text-[11.5px]"> × {e.matchedKeys.join('・')}</span>
+                      <p className="text-[11.5px] opacity-80 mt-0.5">{e.mechanism}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[11px] text-rose-700 opacity-80 mt-3">
+                ※ いずれの摂取も必ず医師・薬剤師にご相談ください
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+    </section>
   )
 }
 
