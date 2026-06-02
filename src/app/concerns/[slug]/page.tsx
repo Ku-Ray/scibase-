@@ -9,6 +9,7 @@ import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import type { Metadata } from 'next'
 import type { EvidenceRank } from '@/lib/types'
 
@@ -290,6 +291,14 @@ export default async function ConcernPage({ params }: Props) {
             group-hover:translate-x-0.5 transition-transform" />
         </Link>
       )}
+
+      {/* Interaction Checker への導線（top 3 成分プリフィル） */}
+      <div className="mb-10">
+        <InteractionCheckerCta
+          variant="banner"
+          ingredientSlugs={all.slice(0, 3).map((i) => i.slug)}
+        />
+      </div>
 
       {/* ── 特に注意が必要な人（riskProfile） ── */}
       {concern.riskProfile && concern.riskProfile.length > 0 && (

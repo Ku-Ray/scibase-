@@ -8,6 +8,7 @@ import { FavoriteButton } from '@/components/FavoriteButton'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, PAIR_CUSTOM_FAQS, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import { NextReadCTA } from '@/components/NextReadCTA'
 import { buildCompareNextRead } from '@/lib/recommendation'
 import type { Metadata } from 'next'
@@ -915,6 +916,14 @@ export default async function ComparePage({ params }: Props) {
             今のサプリと組み合わせて診断する
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
+
+          {/* 服用中の薬との相互作用は Interaction Checker へ */}
+          <div className="mt-4">
+            <InteractionCheckerCta
+              variant="banner"
+              ingredientSlugs={[ingA.slug, ingB.slug]}
+            />
+          </div>
         </section>
 
         {/* Dual CTA（強化版）— コミットメント原理＋FOMO */}

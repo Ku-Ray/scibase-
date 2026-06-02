@@ -14,6 +14,7 @@ import { FavoriteButton } from '@/components/FavoriteButton'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { NextReadCTA } from '@/components/NextReadCTA'
 import { buildConcernGuideNextRead } from '@/lib/recommendation'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 
 const BASE_URL = 'https://scibase.app'
 
@@ -689,6 +690,18 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
           <RichParagraphs
             body={guide.closingSummary}
             className="text-[14px] sm:text-[15px] text-foreground/85 leading-[1.95] mb-4 last:mb-0"
+          />
+        </section>
+
+        {/* ── Interaction Checker（YMYL ガイド読了後の最重要導線）── */}
+        <section className="mb-14">
+          <InteractionCheckerCta
+            variant="banner"
+            ingredientSlugs={guide.solutionByType
+              .map((s) => s.bestPickSlug)
+              .filter((slug, i, arr) => slug && arr.indexOf(slug) === i)
+              .slice(0, 3)}
+            customLabel={`${concern.nameJa}サプリ × 服用中の薬の飲み合わせを check`}
           />
         </section>
 

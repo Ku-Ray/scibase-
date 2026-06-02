@@ -4,8 +4,12 @@ import { ArrowRight, Microscope, Pill } from 'lucide-react'
 interface Props {
   /** 配置場所のバリエーション */
   variant?: 'banner' | 'compact' | 'inline'
-  /** 引数 query: 該当成分 slug を1つ渡せば deep link で開く */
+  /** 1 成分プリフィル用 */
   ingredientSlug?: string
+  /** 複数成分プリフィル用（ingredientSlug より優先） */
+  ingredientSlugs?: readonly string[]
+  /** カスタム見出し文言（指定時は variant の default を上書き） */
+  customLabel?: string
   /** 既存 CTA との重複回避用クラス名 */
   className?: string
 }
@@ -19,11 +23,19 @@ interface Props {
 export function InteractionCheckerCta({
   variant = 'banner',
   ingredientSlug,
+  ingredientSlugs,
+  customLabel,
   className = '',
 }: Props) {
-  const href = ingredientSlug
-    ? `/tools/interaction-checker?ing=${encodeURIComponent(ingredientSlug)}`
+  const slugs = ingredientSlugs && ingredientSlugs.length > 0
+    ? ingredientSlugs
+    : ingredientSlug
+      ? [ingredientSlug]
+      : []
+  const href = slugs.length > 0
+    ? `/tools/interaction-checker?ing=${slugs.map(encodeURIComponent).join(',')}`
     : '/tools/interaction-checker'
+  const isMultiSlug = slugs.length >= 2
 
   if (variant === 'inline') {
     return (
@@ -62,12 +74,17 @@ export function InteractionCheckerCta({
       </div>
       <div className="flex-1">
         <p className="text-[14px] font-semibold text-blue-900">
-          サプリ × 薬の飲み合わせをまとめてチェック
+          {customLabel ??
+            (isMultiSlug
+              ? 'この組合せ × 服用中の薬の飲み合わせも check'
+              : 'サプリ × 薬の飲み合わせをまとめてチェック')}
         </p>
         <p className="mt-0.5 text-[12px] text-blue-900/70">
-          {ingredientSlug
-            ? '今見ている成分を含めて、他のサプリ・服用中の薬との相互作用を 30 秒で可視化（無料・登録不要）'
-            : '飲んでいるサプリと服用中の医薬品を入力するだけで、論文ベースの相互作用を 3 段階表示（無料・登録不要）'}
+          {isMultiSlug
+            ? '今見ている 2 成分を含めて、他のサプリ・服用薬との相互作用を 30 秒で可視化（無料・登録不要）'
+            : ingredientSlug
+              ? '今見ている成分を含めて、他のサプリ・服用中の薬との相互作用を 30 秒で可視化（無料・登録不要）'
+              : '飲んでいるサプリと服用中の医薬品を入力するだけで、論文ベースの相互作用を 3 段階表示（無料・登録不要）'}
         </p>
       </div>
       <ArrowRight className="size-5 shrink-0 text-blue-600 transition-transform group-hover:translate-x-1" />
