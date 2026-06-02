@@ -7347,7 +7347,7 @@ export const ingredients: Ingredient[] = [
     timing: '食事と一緒に2回に分けて摂取（60〜120mg×2）',
     duration: '効果の確認には12〜24週以上の継続が必要',
     sideEffects: ['頭痛・消化器症状（まれ）', '血液凝固阻害作用（抗凝固薬との相互作用）'],
-    contraindications: ['ワルファリン等の抗凝固薬・抗血小板薬服用中', '手術前後'],
+    contraindications: ['ワルファリン等の抗凝固薬・抗血小板薬服用中', '手術前後', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'Life Extension Ginkgo Biloba Certified Extract 120mg 365 Veg Capsules',
@@ -11639,7 +11639,7 @@ export const ingredients: Ingredient[] = [
     timing: '朝食前または食事と一緒に',
     duration: '8〜12週間の継続で効果が確認されることが多い',
     sideEffects: ['不眠（夜間摂取は避ける）', '頭痛（まれ）', '血圧への影響'],
-    contraindications: ['抗凝血薬服用中', '高血圧'],
+    contraindications: ['抗凝血薬服用中', '高血圧', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'Panax Ginseng 500mg（G115エキス）',
@@ -12491,7 +12491,7 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '食事と一緒に摂取',
     sideEffects: ['消化器症状（まれ）'],
-    contraindications: ['てんかん', '血液凝固薬服用中'],
+    contraindications: ['てんかん', '血液凝固薬服用中', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'NOW Foods Super Primrose Evening Primrose Oil 1,300 mg 120 Softgels',
@@ -15819,7 +15819,7 @@ export const ingredients: Ingredient[] = [
     timing: '食事と一緒に、または就寝1〜2時間前（睡眠目的の場合）',
     duration: '研究では4〜12週間で評価',
     sideEffects: ['軽度の消化器症状（まれ）', '口渇・鼻血の報告（まれ・高用量）'],
-    contraindications: ['抗凝固薬・免疫抑制剤との相互作用の可能性', '手術前2週間は中止を推奨（出血リスク）'],
+    contraindications: ['抗凝固薬・免疫抑制剤との相互作用の可能性', '手術前2週間は中止を推奨（出血リスク）', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'Reishi 120 Capsules',
@@ -16124,7 +16124,7 @@ export const ingredients: Ingredient[] = [
     timing: '朝または運動前（ATP産生促進目的）',
     duration: '研究では3〜8週間で評価',
     sideEffects: ['軽度の消化器症状（まれ）'],
-    contraindications: ['自己免疫疾患での使用は医師への相談を推奨（免疫活性化作用）', '抗凝固薬との相互作用の可能性'],
+    contraindications: ['自己免疫疾患での使用は医師への相談を推奨（免疫活性化作用）', '抗凝固薬との相互作用の可能性', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'Host Defense Mushrooms Cordyceps 60 Capsules',
@@ -17916,7 +17916,7 @@ export const ingredients: Ingredient[] = [
     timing: '食事と一緒（朝〜昼）',
     duration: '効果評価は6〜8週間',
     sideEffects: ['一般的に安全。甲状腺疾患（生マカはゴイトロゲンを含むため加熱処理済みが推奨）'],
-    contraindications: ['甲状腺疾患・ホルモン依存性疾患では注意。医師への相談を推奨'],
+    contraindications: ['甲状腺疾患・ホルモン依存性疾患では注意。医師への相談を推奨', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'NOW Foods Maca 500 mg 250 Veg Capsules',
@@ -18528,7 +18528,7 @@ export const ingredients: Ingredient[] = [
     timing: '朝〜昼食前（空腹時または食前30分が推奨）',
     duration: '効果評価は4〜12週間',
     sideEffects: ['一般的に安全。まれに不安・興奮・不眠（高用量）'],
-    contraindications: ['双極性障害への使用は注意。抗うつ薬との相互作用可能性'],
+    contraindications: ['双極性障害への使用は注意。抗うつ薬との相互作用可能性', '妊娠中・授乳中（安全データ不足）'],
     products: [
       {
         name: 'NOW Foods Rhodiola 500 mg 60 Veg Capsules',
@@ -64442,7 +64442,7 @@ export const ingredients: Ingredient[] = [
     timing: '食事と一緒に1日2回',
     duration: '認知機能評価は最低12週以上',
     sideEffects: ['軽度頭痛', '胃腸症状', 'まれに出血傾向'],
-    contraindications: ['出血性疾患', '抗凝固療法中', '手術前2週間', '癲癇'],
+    contraindications: ['出血性疾患', '抗凝固療法中', '手術前2週間', '癲癇', '妊娠中・授乳中（安全データ不足）'],
     interactions: [
       {
         substance: 'ワルファリン',

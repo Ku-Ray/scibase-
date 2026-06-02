@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:pregnancy": "python3 scripts/audit_pregnancy_contraindications.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.0",
