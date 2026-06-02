@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { AlertTriangle, ChevronRight, RotateCcw, Search, Star } from 'lucide-react'
-import { ingredients, concerns, getIngredient, getConcern } from '@/lib/data'
+import { AlertTriangle, ChevronRight, RotateCcw, Search, Star, Lightbulb } from 'lucide-react'
+import { concerns, getIngredient, getConcern } from '@/lib/data'
 import { EvidenceBadge } from './EvidenceBadge'
 import { OutboundProductLink } from './OutboundProductLink'
+import { RadarChart, type RadarData } from './RadarChart'
 import { trackEvent } from '@/lib/analytics'
 import {
   CANONICAL_INTERACTIONS,
@@ -15,7 +16,37 @@ import {
 } from '@/lib/interaction-canonical'
 import { checkInteractions, LEVEL_LABEL, type InteractionResult } from '@/lib/interaction'
 import { useFavorite } from '@/hooks/useFavorite'
-import type { Ingredient } from '@/lib/types'
+import type { AnalysisAxis, Ingredient } from '@/lib/types'
+
+/* 7 軸（AnalyzerClient と同じ定義） */
+const AXES: { key: AnalysisAxis; label: string; emoji: string }[] = [
+  { key: 'antiAging',  label: '抗老化',          emoji: '🔬' },
+  { key: 'skin',       label: '肌老化',          emoji: '🌿' },
+  { key: 'cognitive',  label: '脳・認知',        emoji: '🧠' },
+  { key: 'stress',     label: 'ストレス対策',    emoji: '🧘' },
+  { key: 'sleep',      label: '睡眠・回復',      emoji: '🌙' },
+  { key: 'immunity',   label: '免疫・炎症',      emoji: '🛡️' },
+  { key: 'metabolism', label: '代謝・エネルギー', emoji: '⚡' },
+]
+
+/* 推奨成分から 7 軸スコア（0-10）を算出 — AnalyzerClient の calcScores と同等ロジック */
+function calcAxisScores(selected: Ingredient[]): Record<AnalysisAxis, number> {
+  const raw = {} as Record<AnalysisAxis, number>
+  AXES.forEach(({ key }) => { raw[key] = 0 })
+  selected.forEach((ing) => {
+    if (!ing.axisScores) return
+    const w = RANK_WEIGHT[ing.evidenceRank] ?? 0.4
+    AXES.forEach(({ key }) => {
+      const v = ing.axisScores![key] ?? 0
+      raw[key] += Math.min(6, v) * w
+    })
+  })
+  const out = {} as Record<AnalysisAxis, number>
+  AXES.forEach(({ key }) => {
+    out[key] = Math.round(10 * (1 - Math.exp(-raw[key] / 12)) * 10) / 10
+  })
+  return out
+}
 
 /* ── 型定義 ── */
 type AgeBand = '20-29' | '30-39' | '40-49' | '50-59' | '60+' | ''
@@ -80,6 +111,8 @@ const PREGNANCY_HERB_FALLBACK = new Set<string>([
   'maca',
   'panax-ginseng',
   'rhodiola',
+  'cordyceps',
+  'reishi',
 ])
 
 /**
@@ -458,6 +491,7 @@ export function AnalyzerDeepMode() {
             excludedByPregnancy={recommendResult.excludedByPregnancy}
             excludedByInteraction={recommendResult.excludedByInteraction}
             currentSlugCount={currentSlugs.length}
+            concernSlugCount={concernSlugs.length}
           />
         ) : (
           <EmptyState
@@ -802,17 +836,20 @@ function EmptyState({ hasAnyInput, pregnancyActive, excludedByPregnancyCount, ex
 
 /* ───────────────────────── 結果セクション ───────────────────────── */
 
-function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugCount }: {
+function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugCount, concernSlugCount }: {
   recommendations: Recommendation[]
   interactionResults: InteractionResult[]
   excludedByPregnancy: RecommendResult['excludedByPregnancy']
   excludedByInteraction: RecommendResult['excludedByInteraction']
   currentSlugCount: number
+  concernSlugCount: number
 }) {
   const platformLabel: Record<string, string> = { iherb: 'iHerb', amazon: 'Amazon', cosme: '@cosme' }
   const totalExcluded = excludedByPregnancy.length + excludedByInteraction.length
   // polypharmacy nudge: 既に 4 件以上飲んでいる場合は段階導入を促す
   const showPolypharmacyNudge = currentSlugCount >= 4 && recommendations.length > 1
+  // 7軸 radar
+  const axisScores = useMemo(() => calcAxisScores(recommendations.map((r) => r.ing)), [recommendations])
 
   // 推奨成分に関連する interaction のみ抽出（既存サプリ由来は別表示）
   const recSlugSet = new Set(recommendations.map((r) => r.ing.slug))
@@ -875,11 +912,41 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
         </section>
       )}
 
+      {/* 7軸カバー radar */}
+      {recommendations.length > 0 && (
+        <section className="mb-8">
+          <h2 className="font-semibold text-[15px] text-foreground mb-1">
+            このスタックの 7軸カバー
+          </h2>
+          <p className="text-[12px] text-muted-foreground mb-5 leading-relaxed">
+            推奨 {recommendations.length} 件を全部追加した場合のカバー範囲。#1 から段階的に始めれば OK。
+          </p>
+          <RadarChart
+            data={AXES.map((a) => ({
+              axis: a.key, label: a.label, emoji: a.emoji,
+              score: axisScores[a.key], max: 10,
+            }))}
+            size={340}
+          />
+        </section>
+      )}
+
       {totalExcluded > 0 && (
         <ExcludedSection
           excludedByPregnancy={excludedByPregnancy}
           excludedByInteraction={excludedByInteraction}
         />
+      )}
+
+      {concernSlugCount < 2 && (
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 mb-6 flex items-start gap-2">
+          <Lightbulb className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <p className="text-[12.5px] text-amber-800 leading-relaxed">
+            {concernSlugCount === 0
+              ? '悩みを 1〜3 個追加すると、論文エビデンスに基づく推奨がさらに広がります。'
+              : '悩みを 2〜3 個に増やすと、複数悩みに横断的に効く成分が優先表示されます。'}
+          </p>
+        </div>
       )}
 
       {/* CTA：Interaction Checker で詳しく確認 */}

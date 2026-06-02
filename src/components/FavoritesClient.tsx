@@ -65,37 +65,7 @@ export function FavoritesClient() {
         ))}
       </div>
 
-      {totalCount === 0 && (
-        <div className="bg-secondary/30 border border-dashed border-border rounded-2xl px-5 py-10 text-center">
-          <Star className="w-8 h-8 text-muted-foreground/40 mx-auto mb-3" />
-          <p className="text-[14px] text-muted-foreground leading-relaxed">
-            まだお気に入りがありません。
-          </p>
-          <p className="text-[12.5px] text-muted-foreground/80 mt-1">
-            気になる成分・コラム・比較の <Star className="w-3.5 h-3.5 inline -mt-0.5 fill-yellow-400/0" /> ボタンを押すと保存されます。
-          </p>
-          <div className="mt-5 flex flex-wrap justify-center gap-2">
-            <Link href="/ingredients"
-              className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent
-                bg-accent/8 border border-accent/20 rounded-lg px-3 py-1.5
-                hover:bg-accent/15 transition-colors">
-              成分一覧 <ChevronRight className="w-3 h-3" />
-            </Link>
-            <Link href="/articles"
-              className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent
-                bg-accent/8 border border-accent/20 rounded-lg px-3 py-1.5
-                hover:bg-accent/15 transition-colors">
-              コラム <ChevronRight className="w-3 h-3" />
-            </Link>
-            <Link href="/compare"
-              className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent
-                bg-accent/8 border border-accent/20 rounded-lg px-3 py-1.5
-                hover:bg-accent/15 transition-colors">
-              成分比較 <ChevronRight className="w-3 h-3" />
-            </Link>
-          </div>
-        </div>
-      )}
+      {totalCount === 0 && <FavoritesOnboarding />}
 
       {tab === 'ingredient' && totalCount > 0 && (
         <IngredientList list={ingredientList.list} remove={ingredientList.remove} clear={ingredientList.clear} />
@@ -296,6 +266,80 @@ function EmptyTab({ label, linkHref, linkLabel }: {
           hover:bg-accent/15 transition-colors">
         {linkLabel} <ChevronRight className="w-3 h-3" />
       </Link>
+    </div>
+  )
+}
+
+/* ── Onboarding（初回訪問時の体験） ── */
+const SAMPLE_INGREDIENTS = ['ashwagandha', 'magnesium', 'omega3']
+
+function FavoritesOnboarding() {
+  const samples = SAMPLE_INGREDIENTS.map((s) => getIngredient(s)).filter((ing): ing is NonNullable<typeof ing> => !!ing)
+
+  return (
+    <div className="space-y-5">
+      <div className="bg-secondary/30 border border-dashed border-border rounded-2xl px-5 py-8 text-center">
+        <Star className="w-8 h-8 text-muted-foreground/40 mx-auto mb-3" />
+        <p className="text-[14px] text-foreground font-semibold leading-relaxed">
+          まだお気に入りがありません
+        </p>
+        <p className="text-[12.5px] text-muted-foreground/80 mt-1.5 leading-relaxed">
+          気になる成分・コラム・比較の <Star className="w-3.5 h-3.5 inline -mt-0.5" /> ボタンを押すと、このページに保存されます。
+        </p>
+      </div>
+
+      {/* オンボーディング：人気成分カードで「⭐ を試す」体験を提供 */}
+      <div>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-3">
+          まずは試してみる — 人気の成分から
+        </p>
+        <div className="space-y-2">
+          {samples.map((ing) => (
+            <div key={ing.slug}
+              className="flex items-center gap-3 bg-card border border-border rounded-xl
+                px-4 py-3 hover:border-foreground/20 transition-colors">
+              <Link href={`/ingredients/${ing.slug}`}
+                className="flex items-center gap-3 flex-1 min-w-0 group">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent" />
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-[14px] text-foreground group-hover:underline truncate">
+                    {ing.nameJa}
+                  </p>
+                  <p className="text-[11.5px] text-muted-foreground line-clamp-1">{ing.tagline}</p>
+                </div>
+                <span className="text-[11px] text-accent font-medium flex-shrink-0 inline-flex items-center gap-0.5">
+                  開いて <Star className="w-3 h-3" /> を押す
+                  <ChevronRight className="w-3 h-3" />
+                </span>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-2">
+        <Link href="/ingredients"
+          className="inline-flex flex-col items-center justify-center gap-1 text-[12px] font-semibold text-accent
+            bg-accent/8 border border-accent/20 rounded-xl px-3 py-3
+            hover:bg-accent/15 transition-colors min-h-[60px]">
+          <span>成分一覧</span>
+          <span className="text-[10px] opacity-70 font-normal">548件</span>
+        </Link>
+        <Link href="/articles"
+          className="inline-flex flex-col items-center justify-center gap-1 text-[12px] font-semibold text-accent
+            bg-accent/8 border border-accent/20 rounded-xl px-3 py-3
+            hover:bg-accent/15 transition-colors min-h-[60px]">
+          <span>コラム</span>
+          <span className="text-[10px] opacity-70 font-normal">論文ガイド</span>
+        </Link>
+        <Link href="/compare"
+          className="inline-flex flex-col items-center justify-center gap-1 text-[12px] font-semibold text-accent
+            bg-accent/8 border border-accent/20 rounded-xl px-3 py-3
+            hover:bg-accent/15 transition-colors min-h-[60px]">
+          <span>成分比較</span>
+          <span className="text-[10px] opacity-70 font-normal">300+ペア</span>
+        </Link>
+      </div>
     </div>
   )
 }
