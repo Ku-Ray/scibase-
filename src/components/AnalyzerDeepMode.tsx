@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { AlertTriangle, ChevronRight, RotateCcw, Search, Star, Lightbulb } from 'lucide-react'
-import { concerns, getIngredient, getConcern } from '@/lib/data'
+import { AlertTriangle, ChevronRight, Plus, RotateCcw, Search, Star, X, Lightbulb } from 'lucide-react'
+import { concerns, ingredients, getIngredient, getConcern } from '@/lib/data'
 import { EvidenceBadge } from './EvidenceBadge'
 import { OutboundProductLink } from './OutboundProductLink'
 import { RadarChart, type RadarData } from './RadarChart'
@@ -463,11 +463,18 @@ export function AnalyzerDeepMode() {
         <MedicationPicker selected={medKeys} onToggle={toggleMed} />
       </SectionWrap>
 
-      {/* ── Section 5: 既存サプリ（参考表示） ── */}
-      <SectionWrap step={5} title="飲んでいるサプリ（自動取得）" hint="既存「サプリ診断」の保存内容から取得・重複推奨を回避">
-        <CurrentSupplementList slugs={currentSlugs} onRemove={(slug) =>
-          setCurrentSlugs((prev) => prev.filter((s) => s !== slug))
-        } onClear={() => setCurrentSlugs([])} />
+      {/* ── Section 5: 飲んでいるサプリ ── */}
+      <SectionWrap
+        step={5}
+        title="飲んでいるサプリ"
+        hint={`${currentSlugs.length}件登録中 ・ 重複推奨を回避するため反映されます`}
+      >
+        <CurrentSupplementPicker
+          slugs={currentSlugs}
+          onAdd={(slug) => setCurrentSlugs((prev) => prev.includes(slug) ? prev : [...prev, slug])}
+          onRemove={(slug) => setCurrentSlugs((prev) => prev.filter((s) => s !== slug))}
+          onClear={() => setCurrentSlugs([])}
+        />
       </SectionWrap>
 
       {/* ── Reset ── */}
@@ -745,42 +752,127 @@ function MedicationPicker({ selected, onToggle }: {
   )
 }
 
-function CurrentSupplementList({ slugs, onRemove, onClear }: {
-  slugs: string[]; onRemove: (slug: string) => void; onClear: () => void
+function CurrentSupplementPicker({ slugs, onAdd, onRemove, onClear }: {
+  slugs: string[]
+  onAdd: (slug: string) => void
+  onRemove: (slug: string) => void
+  onClear: () => void
 }) {
-  if (slugs.length === 0) {
-    return (
-      <div className="bg-secondary/30 border border-dashed border-border rounded-xl px-4 py-5 text-center">
-        <p className="text-[12.5px] text-muted-foreground">
-          まだサプリを登録していません。各成分ページの「マイサプリに追加」から登録できます。
-        </p>
-      </div>
-    )
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
+
+  const candidates = useMemo(() => {
+    if (!query.trim()) return []
+    const q = query.toLowerCase()
+    return ingredients
+      .filter((i) =>
+        !slugs.includes(i.slug) &&
+        (i.nameJa.includes(query) || i.nameEn.toLowerCase().includes(q) ||
+         (i.aliases ?? []).some((a) => a.toLowerCase().includes(q) || a.includes(query))),
+      )
+      .slice(0, 8)
+  }, [query, slugs])
+
+  const handleAdd = (slug: string) => {
+    onAdd(slug)
+    setQuery('')
+    setOpen(false)
   }
+
   return (
     <div>
-      <div className="flex flex-wrap gap-1.5 mb-2">
-        {slugs.map((slug) => {
-          const ing = getIngredient(slug)
-          if (!ing) return null
-          return (
-            <span key={slug}
-              className="inline-flex items-center gap-1.5 bg-card border border-border
-                rounded-full pl-3 pr-2 py-1.5 text-[12.5px] font-medium">
-              <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
-              <span className="text-foreground">{ing.nameJa}</span>
-              <button onClick={() => onRemove(slug)} aria-label="削除"
-                className="text-muted-foreground hover:text-destructive transition-colors">
-                ×
+      {/* 既存サプリの chip 列（あれば表示） */}
+      {slugs.length > 0 && (
+        <div className="mb-3 pb-3 border-b border-border">
+          <div className="flex flex-wrap gap-1.5 mb-2">
+            {slugs.map((slug) => {
+              const ing = getIngredient(slug)
+              if (!ing) return null
+              return (
+                <span key={slug}
+                  className="inline-flex items-center gap-1.5 bg-card border border-border
+                    rounded-full pl-3 pr-2 py-1.5 text-[12.5px] font-medium">
+                  <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                  <span className="text-foreground">{ing.nameJa}</span>
+                  <button onClick={() => onRemove(slug)} aria-label="削除"
+                    className="text-muted-foreground hover:text-destructive transition-colors">
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                </span>
+              )
+            })}
+          </div>
+          <button onClick={onClear}
+            className="text-[11px] text-muted-foreground hover:text-destructive transition-colors">
+            すべて外す
+          </button>
+        </div>
+      )}
+
+      {/* 検索 + 追加 UI */}
+      <div className="relative">
+        <div className="flex items-center gap-2 bg-card border border-border rounded-xl
+          px-4 py-3 focus-within:border-accent transition-colors">
+          <Plus className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+          <input
+            type="text"
+            placeholder="成分名で検索して追加（例：ビタミンD、マグネシウム）"
+            value={query}
+            onChange={(e) => { setQuery(e.target.value); setOpen(true) }}
+            onFocus={() => setOpen(true)}
+            onBlur={() => setTimeout(() => setOpen(false), 150)}
+            className="flex-1 bg-transparent text-[14px] text-foreground
+              placeholder:text-muted-foreground/50 outline-none"
+          />
+        </div>
+
+        {open && candidates.length > 0 && (
+          <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border
+            rounded-xl shadow-lg overflow-hidden z-10">
+            {candidates.map((ing) => (
+              <button key={ing.slug} onMouseDown={() => handleAdd(ing.slug)}
+                className="w-full flex items-center gap-3 px-4 py-3
+                  hover:bg-secondary transition-colors text-left
+                  border-b border-border last:border-0">
+                <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[13px] font-medium text-foreground truncate">{ing.nameJa}</p>
+                  <p className="text-[11px] text-muted-foreground/60 truncate">{ing.nameEn}</p>
+                </div>
+                <Plus className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0" />
               </button>
-            </span>
-          )
-        })}
+            ))}
+          </div>
+        )}
+
+        {open && query.trim() && candidates.length === 0 && (
+          <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border
+            rounded-xl shadow-lg px-4 py-3 text-[13px] text-muted-foreground z-10">
+            「{query}」は見つかりませんでした
+          </div>
+        )}
       </div>
-      <button onClick={onClear}
-        className="text-[11px] text-muted-foreground hover:text-destructive transition-colors">
-        すべて外す
-      </button>
+
+      {/* 初回の見本：よく登録されている成分 */}
+      {slugs.length === 0 && (
+        <div className="mt-3">
+          <p className="text-[11px] text-muted-foreground mb-2">よく登録される成分から追加：</p>
+          <div className="flex flex-wrap gap-1.5">
+            {['vitamin-d', 'magnesium', 'omega3', 'creatine', 'collagen-peptide'].map((slug) => {
+              const ing = getIngredient(slug)
+              if (!ing) return null
+              return (
+                <button key={slug} onClick={() => onAdd(slug)}
+                  className="inline-flex items-center gap-1 text-[12px] bg-secondary border border-border
+                    rounded-full px-3 py-1.5 min-h-[36px] hover:border-accent hover:text-accent transition-colors">
+                  <Plus className="w-3 h-3" />
+                  {ing.nameJa}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
