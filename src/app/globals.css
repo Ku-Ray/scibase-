@@ -137,5 +137,52 @@
   .animate-slide-up {
     animation: slide-up 0.18s ease-out;
   }
+
+  /* ─── Analyzer Deep Mode dopamine animations ─── */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .delay-0    { animation-delay: 0ms; }
+  .delay-100  { animation-delay: 100ms; }
+  .delay-200  { animation-delay: 200ms; }
+  .delay-300  { animation-delay: 300ms; }
+  .delay-450  { animation-delay: 450ms; }
+  .delay-600  { animation-delay: 600ms; }
+  .delay-800  { animation-delay: 800ms; }
+  .delay-1000 { animation-delay: 1000ms; }
+  .delay-1200 { animation-delay: 1200ms; }
+
+  /* Calculating theatre pulse */
+  @keyframes calc-pulse {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 1; }
+  }
+  .animate-calc-pulse {
+    animation: calc-pulse 1.2s ease-in-out infinite;
+  }
+
+  /* Bar growth from 0 → target width */
+  @keyframes bar-grow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .animate-bar-grow {
+    transform-origin: left center;
+    animation: bar-grow 1.1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  /* Sparkle ping for completion */
+  @keyframes sparkle {
+    0%   { opacity: 0; transform: scale(0.5); }
+    50%  { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.5); }
+  }
+  .animate-sparkle {
+    animation: sparkle 0.8s ease-out;
+  }
 }
 

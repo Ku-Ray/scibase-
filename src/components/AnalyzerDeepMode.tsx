@@ -143,6 +143,159 @@ function getBonusInsight(axisScores: Record<AnalysisAxis, number>): { title: str
   return BONUS_INSIGHTS[ranked[0].key]
 }
 
+/* ── Rarity 算出（プロファイル特異度 = 入力数が増えるほど稀少） ── */
+function getRarityPercent(considerationsCount: number): number {
+  // 100 / 1.35^N で逓減。3 inputs ≒ 40%, 8 ≒ 11%, 12 ≒ 3.5%, 15+ ≒ 1%
+  const raw = 100 / Math.pow(1.35, Math.max(1, considerationsCount))
+  return Math.max(0.5, Math.min(45, Math.round(raw * 10) / 10))
+}
+
+/* ── Tribe %（このタイプの人の何%がこの成分を優先するか） ── */
+function getTribePercent(slug: string, selectedConcernSlugs: string[]): number | null {
+  if (selectedConcernSlugs.length === 0) return null
+  let totalPositions = 0
+  let hits = 0
+  for (const cslug of selectedConcernSlugs) {
+    const c = getConcern(cslug)
+    if (!c) continue
+    const idx = c.ingredientSlugs.indexOf(slug)
+    if (idx < 0) continue
+    hits++
+    totalPositions += idx
+  }
+  if (hits === 0) return null
+  const avgIdx = totalPositions / hits
+  // idx 0 (top) → 95% / idx 5 → 70% / idx 10 → 45%
+  const score = 95 - avgIdx * 5
+  return Math.max(30, Math.min(95, Math.round(score)))
+}
+
+/* ── Input Recap（Type Card に視覚化する入力の checklist） ── */
+function getInputRecap(
+  basicInfo: BasicInfo,
+  lifestyle: Lifestyle,
+  concernSlugs: string[],
+  medCount: number,
+  currentCount: number,
+): string[] {
+  const out: string[] = []
+  if (basicInfo.age) {
+    const ageLabel: Record<AgeBand, string> = {
+      '20-29': '20代', '30-39': '30代', '40-49': '40代',
+      '50-59': '50代', '60+': '60代以上', '': '',
+    }
+    if (ageLabel[basicInfo.age]) out.push(ageLabel[basicInfo.age])
+  }
+  if (basicInfo.gender === 'female') out.push('女性')
+  else if (basicInfo.gender === 'male') out.push('男性')
+  if (basicInfo.pregnancy === 'pregnant') out.push('妊娠中')
+  else if (basicInfo.pregnancy === 'nursing') out.push('授乳中')
+  else if (basicInfo.pregnancy === 'trying') out.push('妊活中')
+
+  for (const cslug of concernSlugs.slice(0, 5)) {
+    const c = getConcern(cslug)
+    if (c) out.push(c.nameJa)
+  }
+  if (concernSlugs.length > 5) out.push(`+${concernSlugs.length - 5}件`)
+
+  if (lifestyle.exercise === 'heavy') out.push('運動習慣あり')
+  if (lifestyle.alcohol === 'heavy') out.push('飲酒多め')
+  if (lifestyle.sleep === 'short') out.push('睡眠短')
+  if (lifestyle.smoking === 'daily') out.push('喫煙習慣')
+  if (lifestyle.diet === 'vegetarian') out.push('菜食')
+  if (lifestyle.diet === 'eat-out') out.push('外食多め')
+
+  if (medCount > 0) out.push(`服用薬 ${medCount}件`)
+  if (currentCount > 0) out.push(`既存サプリ ${currentCount}件`)
+  return out
+}
+
+/* ── useCountUp: 0 → target にカウントアップ（ease-out cubic・1.2s） ── */
+function useCountUp(target: number, duration: number = 1200, delay: number = 0): number {
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    let raf = 0
+    let started = false
+    const startTimer = setTimeout(() => {
+      started = true
+      let start: number | null = null
+      const step = (ts: number) => {
+        if (start === null) start = ts
+        const elapsed = ts - start
+        const progress = Math.min(1, elapsed / duration)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        setValue(Math.round(target * eased))
+        if (progress < 1) raf = requestAnimationFrame(step)
+      }
+      raf = requestAnimationFrame(step)
+    }, delay)
+    return () => {
+      clearTimeout(startTimer)
+      if (started) cancelAnimationFrame(raf)
+    }
+  }, [target, duration, delay])
+  return value
+}
+
+/* ── CalculationTheatre：分析中の期待構築演出 ── */
+function CalculationTheatre({ considerationsCount }: { considerationsCount: number }) {
+  const [step, setStep] = useState(0)
+  const lines = [
+    `あなたの ${Math.max(considerationsCount, 1)} 項目を読み込み中…`,
+    '548 成分 × 30 悩み軸を照合中…',
+    '相互作用と安全フィルタを適用中…',
+    'ベストマッチ 5 件を選定中…',
+  ]
+  useEffect(() => {
+    const interval = 1800 / lines.length
+    const timers = lines.map((_, i) =>
+      setTimeout(() => setStep(i + 1), interval * (i + 1)),
+    )
+    return () => timers.forEach(clearTimeout)
+  }, [lines.length])
+
+  return (
+    <section className="bg-gradient-to-br from-accent/5 via-card to-card border-2 border-accent/30
+      rounded-2xl p-7 sm:p-9 text-center my-4 animate-fade-up">
+      <div className="inline-flex items-center justify-center gap-1 mb-5">
+        <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
+          px-2 py-0.5 rounded-md">ANALYZING</span>
+      </div>
+      <p className="text-[28px] sm:text-[34px] font-bold text-foreground tabular-nums mb-2">
+        <span className="text-accent">{Math.min(100, Math.round((step / lines.length) * 100))}</span>
+        <span className="text-muted-foreground/40 text-[20px] sm:text-[24px]">%</span>
+      </p>
+      <div className="h-1.5 bg-secondary rounded-full overflow-hidden max-w-xs mx-auto mb-6">
+        <div
+          className="h-full bg-accent rounded-full transition-all duration-500 ease-out"
+          style={{ width: `${(step / lines.length) * 100}%` }}
+        />
+      </div>
+      <ul className="space-y-2 max-w-md mx-auto text-left">
+        {lines.map((line, i) => (
+          <li key={i}
+            className={`text-[13px] sm:text-[14px] flex items-center gap-2 transition-all duration-300
+              ${i < step ? 'text-foreground opacity-90' :
+                i === step ? 'text-foreground animate-calc-pulse' : 'text-muted-foreground/40'}`}>
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0">
+              {i < step ? (
+                <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              ) : i === step ? (
+                <span className="w-2 h-2 bg-accent rounded-full animate-calc-pulse" />
+              ) : (
+                <span className="w-2 h-2 bg-muted-foreground/30 rounded-full" />
+              )}
+            </span>
+            {line}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 /* 推奨成分から 7 軸スコア（0-10）を算出 — AnalyzerClient の calcScores と同等ロジック */
 function calcAxisScores(selected: Ingredient[]): Record<AnalysisAxis, number> {
   const raw = {} as Record<AnalysisAxis, number>
@@ -441,6 +594,22 @@ export function AnalyzerDeepMode() {
   const hasResults = recommendations.length > 0
   const hasAnyInput = concernSlugs.length > 0 || !noLifestyleBoost(lifestyle) || medKeys.length > 0
 
+  /* Calculation Theatre：hasResults が false→true に切り替わった時に 1.8s 演出を 1 回だけ発火 */
+  const [calculating, setCalculating] = useState(false)
+  const theatrePlayedRef = useRef(false)
+  useEffect(() => {
+    if (hasResults && !theatrePlayedRef.current) {
+      theatrePlayedRef.current = true
+      setCalculating(true)
+      const t = setTimeout(() => setCalculating(false), 1800)
+      return () => clearTimeout(t)
+    }
+    if (!hasResults) {
+      theatrePlayedRef.current = false
+      setCalculating(false)
+    }
+  }, [hasResults])
+
   /* GA4: complete_deep_analyzer */
   useEffect(() => {
     if (!hasResults || completeTrackedRef.current) return
@@ -605,13 +774,25 @@ export function AnalyzerDeepMode() {
 
       {/* ── 結果 ── */}
       <div ref={resultsRef} className="scroll-mt-6">
-        {hasResults ? (
+        {calculating ? (
+          <CalculationTheatre
+            considerationsCount={
+              concernSlugs.length +
+              (basic.age ? 1 : 0) + (basic.gender ? 1 : 0) +
+              (basic.pregnancy && basic.pregnancy !== 'none' ? 1 : 0) +
+              Object.values(lifestyle).filter(Boolean).length +
+              medKeys.length + currentSlugs.length
+            }
+          />
+        ) : hasResults ? (
           <ResultsSection
             recommendations={recommendations}
             interactionResults={interactionResults}
             excludedByPregnancy={recommendResult.excludedByPregnancy}
             excludedByInteraction={recommendResult.excludedByInteraction}
+            currentSlugs={currentSlugs}
             currentSlugCount={currentSlugs.length}
+            concernSlugs={concernSlugs}
             concernSlugCount={concernSlugs.length}
             basicInfo={basic}
             lifestyle={lifestyle}
@@ -1045,12 +1226,14 @@ function EmptyState({ hasAnyInput, pregnancyActive, excludedByPregnancyCount, ex
 
 /* ───────────────────────── 結果セクション ───────────────────────── */
 
-function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugCount, concernSlugCount, basicInfo, lifestyle, medKeysCount }: {
+function ResultsSection({ recommendations, interactionResults, excludedByPregnancy, excludedByInteraction, currentSlugs, currentSlugCount, concernSlugs, concernSlugCount, basicInfo, lifestyle, medKeysCount }: {
   recommendations: Recommendation[]
   interactionResults: InteractionResult[]
   excludedByPregnancy: RecommendResult['excludedByPregnancy']
   excludedByInteraction: RecommendResult['excludedByInteraction']
+  currentSlugs: string[]
   currentSlugCount: number
+  concernSlugs: string[]
   concernSlugCount: number
   basicInfo: BasicInfo
   lifestyle: Lifestyle
@@ -1058,16 +1241,42 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
 }) {
   const platformLabel: Record<string, string> = { iherb: 'iHerb', amazon: 'Amazon', cosme: '@cosme' }
   const totalExcluded = excludedByPregnancy.length + excludedByInteraction.length
-  // polypharmacy nudge: 既に 4 件以上飲んでいる場合は段階導入を促す
   const showPolypharmacyNudge = currentSlugCount >= 4 && recommendations.length > 1
-  // 7軸 radar
-  const axisScores = useMemo(() => calcAxisScores(recommendations.map((r) => r.ing)), [recommendations])
+
+  // 7軸 axis scores (推奨スタック適用後)
+  const afterAxisScores = useMemo(
+    () => calcAxisScores([...currentSlugs.map((s) => getIngredient(s)).filter((i): i is Ingredient => !!i), ...recommendations.map((r) => r.ing)]),
+    [recommendations, currentSlugs],
+  )
+  // 7軸 axis scores (現状・推奨適用前 = 既存サプリのみ)
+  const beforeAxisScores = useMemo(
+    () => calcAxisScores(currentSlugs.map((s) => getIngredient(s)).filter((i): i is Ingredient => !!i)),
+    [currentSlugs],
+  )
+  // 合計点数 (0-100) — 7 軸 × 10 を 100 換算
+  const beforeScore = useMemo(
+    () => Math.round(Object.values(beforeAxisScores).reduce((a, b) => a + b, 0) * (100 / 70)),
+    [beforeAxisScores],
+  )
+  const afterScore = useMemo(
+    () => Math.round(Object.values(afterAxisScores).reduce((a, b) => a + b, 0) * (100 / 70)),
+    [afterAxisScores],
+  )
+
   // Personality Type
   const personalityType = useMemo(
-    () => getPersonalityType(axisScores, basicInfo, lifestyle, concernSlugCount, medKeysCount, currentSlugCount),
-    [axisScores, basicInfo, lifestyle, concernSlugCount, medKeysCount, currentSlugCount],
+    () => getPersonalityType(afterAxisScores, basicInfo, lifestyle, concernSlugCount, medKeysCount, currentSlugCount),
+    [afterAxisScores, basicInfo, lifestyle, concernSlugCount, medKeysCount, currentSlugCount],
   )
-  const bonusInsight = useMemo(() => getBonusInsight(axisScores), [axisScores])
+  const bonusInsight = useMemo(() => getBonusInsight(afterAxisScores), [afterAxisScores])
+  const inputRecap = useMemo(
+    () => getInputRecap(basicInfo, lifestyle, concernSlugs, medKeysCount, currentSlugCount),
+    [basicInfo, lifestyle, concernSlugs, medKeysCount, currentSlugCount],
+  )
+  const rarityPercent = useMemo(
+    () => getRarityPercent(personalityType.considerationsCount),
+    [personalityType.considerationsCount],
+  )
   // Top score for match % computation
   const topScore = recommendations[0]?.score ?? 1
 
@@ -1078,23 +1287,37 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
 
   return (
     <>
-      {/* ── Personality Type Card（最上段で「自分のために」を演出）── */}
-      <PersonalityTypeCard
-        type={personalityType}
-        recommendationCount={recommendations.length}
-        excludedCount={totalExcluded}
-        currentSlugCount={currentSlugCount}
-      />
+      {/* ── Personality Type Card（最上段・delay 0）── */}
+      <div className="animate-fade-up delay-0">
+        <PersonalityTypeCard
+          type={personalityType}
+          recommendationCount={recommendations.length}
+          excludedCount={totalExcluded}
+          currentSlugCount={currentSlugCount}
+          inputRecap={inputRecap}
+          rarityPercent={rarityPercent}
+        />
+      </div>
+
+      {/* ── Before/After スコアバー（delay 200） ── */}
+      <div className="animate-fade-up delay-200">
+        <BeforeAfterScoreCard
+          beforeScore={beforeScore}
+          afterScore={afterScore}
+        />
+      </div>
 
       {recInteractions.length > 0 && (
-        <InteractionAlert
-          title="推奨成分と医薬品の相互作用"
-          results={recInteractions}
-        />
+        <div className="animate-fade-up delay-300">
+          <InteractionAlert
+            title="推奨成分と医薬品の相互作用"
+            results={recInteractions}
+          />
+        </div>
       )}
 
       {showPolypharmacyNudge && (
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl px-5 py-4 mb-4">
+        <div className="animate-fade-up delay-300 bg-blue-50 border border-blue-200 rounded-2xl px-5 py-4 mb-4">
           <p className="text-[13px] font-semibold text-blue-900 mb-1">
             既に {currentSlugCount} 件のサプリを摂取中
           </p>
@@ -1105,7 +1328,7 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
         </div>
       )}
 
-      <section className="mb-8">
+      <section className="mb-8 animate-fade-up delay-450">
         <div className="flex items-baseline gap-2 mb-4">
           <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
             px-2 py-0.5 rounded-md">RESULT</span>
@@ -1116,21 +1339,26 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
 
         <div className="space-y-3">
           {recommendations.map((r, idx) => (
-            <RecommendationCard
-              key={r.ing.slug}
-              rec={r}
-              rank={idx + 1}
-              platformLabel={platformLabel}
-              interactions={interactionResults.filter((i) => i.ingredientSlug === r.ing.slug)}
-              matchPercent={Math.round((r.score / topScore) * 100)}
-            />
+            <div key={r.ing.slug} className={`animate-fade-up ${idx === 0 ? 'delay-600' : idx === 1 ? 'delay-800' : idx === 2 ? 'delay-1000' : 'delay-1200'}`}>
+              <RecommendationCard
+                rec={r}
+                rank={idx + 1}
+                platformLabel={platformLabel}
+                interactions={interactionResults.filter((i) => i.ingredientSlug === r.ing.slug)}
+                matchPercent={Math.round((r.score / topScore) * 100)}
+                tribePercent={getTribePercent(r.ing.slug, concernSlugs)}
+                animationDelayMs={600 + idx * 200 + 300}
+              />
+            </div>
           ))}
         </div>
       </section>
 
       {/* ── Action Plan：段階導入の concrete steps ── */}
       {recommendations.length >= 2 && (
-        <ActionPlanSection recommendations={recommendations} />
+        <div className="animate-fade-up delay-1200">
+          <ActionPlanSection recommendations={recommendations} />
+        </div>
       )}
 
       {currentInteractions.length > 0 && (
@@ -1158,7 +1386,7 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
           <RadarChart
             data={AXES.map((a) => ({
               axis: a.key, label: a.label, emoji: a.emoji,
-              score: axisScores[a.key], max: 10,
+              score: afterAxisScores[a.key], max: 10,
             }))}
             size={340}
           />
@@ -1204,16 +1432,21 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
   )
 }
 
-function RecommendationCard({ rec, rank, platformLabel, interactions, matchPercent }: {
+function RecommendationCard({ rec, rank, platformLabel, interactions, matchPercent, tribePercent, animationDelayMs }: {
   rec: Recommendation
   rank: number
   platformLabel: Record<string, string>
   interactions: InteractionResult[]
   matchPercent: number
+  tribePercent: number | null
+  animationDelayMs: number
 }) {
   const { ing } = rec
   const topProduct = ing.products.find((p) => p.rank === 1) ?? ing.products[0]
   const { isFavorite, toggle } = useFavorite('ingredient', ing.slug)
+  // カウントアップ：表示開始から少し遅れて回す
+  const animatedMatch = useCountUp(Math.min(100, Math.max(0, matchPercent)), 1100, animationDelayMs + 200)
+  const animatedTribe = useCountUp(tribePercent ?? 0, 1100, animationDelayMs + 400)
 
   const hasAvoid = interactions.some((i) => i.level === 'avoid')
   const hasCaution = interactions.some((i) => i.level === 'caution')
@@ -1266,16 +1499,26 @@ function RecommendationCard({ rec, rank, platformLabel, interactions, matchPerce
         <p className={`font-semibold text-foreground ${rank === 1 ? 'text-[18px]' : 'text-[15px]'}`}>
           {ing.nameJa}
         </p>
-        <span className="text-[11px] font-medium text-accent tabular-nums ml-auto flex-shrink-0">
-          マッチ度 {Math.min(100, Math.max(0, matchPercent))}%
+        <span className="text-[11px] font-semibold text-accent tabular-nums ml-auto flex-shrink-0">
+          マッチ度 {animatedMatch}%
         </span>
       </div>
 
-      {/* マッチ度 bar */}
-      <div className="h-1 bg-secondary rounded-full overflow-hidden mb-3">
-        <div className="h-full bg-accent rounded-full transition-all duration-500"
-          style={{ width: `${Math.min(100, Math.max(0, matchPercent))}%` }} />
+      {/* マッチ度 bar — bar-grow keyframe で 0 → 100% に伸びる */}
+      <div className="h-1.5 bg-secondary rounded-full overflow-hidden mb-2">
+        <div className="h-full bg-accent rounded-full animate-bar-grow"
+          style={{
+            width: `${Math.min(100, Math.max(0, matchPercent))}%`,
+            animationDelay: `${animationDelayMs + 200}ms`,
+          }} />
       </div>
+
+      {tribePercent !== null && (
+        <p className="text-[11px] text-muted-foreground mb-3 inline-flex items-center gap-1">
+          <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+          同タイプの <strong className="text-foreground tabular-nums mx-0.5">{animatedTribe}%</strong> がこの成分を優先選択
+        </p>
+      )}
 
       <p className="text-[12.5px] text-muted-foreground leading-relaxed line-clamp-2 mb-3">
         {ing.tagline}
@@ -1358,25 +1601,41 @@ function RecommendationCard({ rec, rank, platformLabel, interactions, matchPerce
   )
 }
 
-/* ── Personality Type Card（結果トップで「自分のために設計された」を演出）── */
-function PersonalityTypeCard({ type, recommendationCount, excludedCount, currentSlugCount }: {
+/* ── Personality Type Card（結果トップ・人格化 + IKEA効果 + Scarcity）── */
+function PersonalityTypeCard({ type, recommendationCount, excludedCount, currentSlugCount, inputRecap, rarityPercent }: {
   type: PersonalityType
   recommendationCount: number
   excludedCount: number
   currentSlugCount: number
+  inputRecap: string[]
+  rarityPercent: number
 }) {
+  // 希少度の星表示
+  const rarityStars = rarityPercent < 5 ? 5 : rarityPercent < 12 ? 4 : rarityPercent < 22 ? 3 : rarityPercent < 35 ? 2 : 1
+  const rarityLabel = rarityStars >= 5 ? '極めて希少' : rarityStars >= 4 ? '希少' : rarityStars >= 3 ? '深掘り型' : rarityStars >= 2 ? '一般的' : 'ライト'
+
+  // count up
+  const animatedRarity = useCountUp(Math.round(rarityPercent * 10), 1100, 400)
+
   return (
     <section className="mb-6">
-      <div className="bg-gradient-to-br from-accent/8 via-card to-card border-2 border-accent/30 rounded-2xl p-5 shadow-sm">
-        <div className="flex items-baseline gap-2 mb-3">
+      <div className="bg-gradient-to-br from-accent/8 via-card to-card border-2 border-accent/30 rounded-2xl p-5 shadow-sm relative overflow-hidden">
+        <div className="flex items-baseline justify-between gap-2 mb-3">
           <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
             px-2 py-0.5 rounded-md">YOUR TYPE</span>
+          <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-700
+            bg-amber-50 border border-amber-200 rounded-full px-2 py-0.5">
+            {Array.from({ length: rarityStars }, (_, i) => (
+              <span key={i} className="text-amber-500">★</span>
+            ))}
+            <span className="ml-0.5">{rarityLabel}</span>
+          </span>
         </div>
 
-        <div className="flex items-start gap-3 mb-4">
-          <span className="text-[40px] leading-none flex-shrink-0">{type.emoji}</span>
+        <div className="flex items-start gap-3 mb-3">
+          <span className="text-[42px] leading-none flex-shrink-0">{type.emoji}</span>
           <div className="flex-1 min-w-0">
-            <p className="text-[20px] sm:text-[22px] font-bold text-foreground leading-tight mb-1">
+            <p className="text-[20px] sm:text-[24px] font-bold text-foreground leading-tight mb-1">
               {type.name}
             </p>
             {type.modifier && (
@@ -1387,11 +1646,37 @@ function PersonalityTypeCard({ type, recommendationCount, excludedCount, current
           </div>
         </div>
 
-        {/* 入力データの可視化（このタイプ判定に使った材料） */}
-        <div className="bg-card/60 rounded-xl px-4 py-3 mb-3">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-            あなたの入力から
+        {/* Rarity (Scarcity 訴求) */}
+        <div className="bg-card/70 border border-amber-100 rounded-xl px-4 py-2.5 mb-3 flex items-center gap-2">
+          <span className="text-[16px]">✨</span>
+          <p className="text-[12px] text-foreground leading-snug flex-1">
+            このタイプの組み合わせは <strong className="text-amber-700 tabular-nums">100人中 約{(animatedRarity / 10).toFixed(1)}人</strong>
+            <span className="text-muted-foreground">（プロファイル特異度）</span>
           </p>
+        </div>
+
+        {/* 入力 Recap chips (IKEA / Endowment 効果) */}
+        {inputRecap.length > 0 && (
+          <div className="mb-3">
+            <p className="text-[10.5px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">
+              あなたが入力した {inputRecap.length} 項目
+            </p>
+            <div className="flex flex-wrap gap-1">
+              {inputRecap.map((item, i) => (
+                <span key={i} className="inline-flex items-center gap-0.5 text-[11px] font-medium
+                  bg-card text-foreground border border-border rounded-full px-2 py-0.5">
+                  <svg className="w-2.5 h-2.5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 統計（推奨件数・既存・除外） */}
+        <div className="bg-card/60 rounded-xl px-4 py-2.5 mb-3">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1.5 text-[12px]">
             <div>
               <span className="text-muted-foreground">考慮要素</span>
@@ -1419,6 +1704,100 @@ function PersonalityTypeCard({ type, recommendationCount, excludedCount, current
         <p className="text-[12px] text-muted-foreground leading-relaxed">
           以下の {recommendationCount} 選は <strong className="font-semibold text-foreground">{type.topAxisLabel}</strong> を主軸に、
           あなたの入力すべてに最適化された結果です。
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/* ── BeforeAfterScoreCard（Loss Aversion + Anchoring + Goal Gradient）── */
+function BeforeAfterScoreCard({ beforeScore, afterScore }: {
+  beforeScore: number
+  afterScore: number
+}) {
+  const gain = Math.max(0, afterScore - beforeScore)
+  const lostPotential = Math.max(0, 100 - afterScore)
+  // count up
+  const animatedBefore = useCountUp(beforeScore, 900, 200)
+  const animatedAfter = useCountUp(afterScore, 1300, 500)
+  const animatedGain = useCountUp(gain, 1200, 700)
+
+  return (
+    <section className="mb-6">
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-baseline gap-2 mb-3">
+          <span className="text-[10px] font-semibold tracking-wider bg-foreground text-background
+            px-2 py-0.5 rounded-md">SCORE</span>
+          <h2 className="font-semibold text-[14px] text-foreground">あなたの 7軸 カバー完成度</h2>
+        </div>
+
+        {/* Before / After 数値 */}
+        <div className="grid grid-cols-3 items-center gap-3 mb-4">
+          <div className="text-center">
+            <p className="text-[10.5px] font-semibold uppercase tracking-wider text-muted-foreground mb-1">現状</p>
+            <p className="text-[28px] sm:text-[32px] font-bold text-muted-foreground/80 tabular-nums leading-none">
+              {animatedBefore}
+              <span className="text-[14px] text-muted-foreground/60 font-normal ml-0.5">/100</span>
+            </p>
+          </div>
+          <div className="text-center text-muted-foreground">
+            <span className="text-[20px]">→</span>
+          </div>
+          <div className="text-center">
+            <p className="text-[10.5px] font-semibold uppercase tracking-wider text-accent mb-1">推奨後</p>
+            <p className="text-[28px] sm:text-[34px] font-bold text-accent tabular-nums leading-none">
+              {animatedAfter}
+              <span className="text-[14px] text-muted-foreground/60 font-normal ml-0.5">/100</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Bar comparison */}
+        <div className="space-y-2 mb-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[11px] text-muted-foreground/80 w-12">現状</span>
+              <div className="flex-1 h-2.5 bg-secondary rounded-full overflow-hidden">
+                <div className="h-full bg-muted-foreground/40 rounded-full animate-bar-grow"
+                  style={{ width: `${beforeScore}%`, animationDelay: '300ms' }} />
+              </div>
+              <span className="text-[11px] font-semibold tabular-nums w-8 text-right">{animatedBefore}</span>
+            </div>
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[11px] text-accent w-12 font-semibold">推奨後</span>
+              <div className="flex-1 h-2.5 bg-secondary rounded-full overflow-hidden">
+                <div className="h-full bg-accent rounded-full animate-bar-grow"
+                  style={{ width: `${afterScore}%`, animationDelay: '600ms' }} />
+              </div>
+              <span className="text-[11px] font-semibold tabular-nums w-8 text-right text-accent">{animatedAfter}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Loss Aversion + Gain framing */}
+        <div className="grid grid-cols-2 gap-2 text-center">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-emerald-700 mb-0.5">
+              改善余地
+            </p>
+            <p className="text-[18px] font-bold text-emerald-700 tabular-nums leading-none">
+              +{animatedGain}<span className="text-[11px] font-normal">pt</span>
+            </p>
+          </div>
+          <div className="bg-rose-50 border border-rose-200 rounded-xl px-3 py-2">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-rose-700 mb-0.5">
+              取りこぼし中
+            </p>
+            <p className="text-[18px] font-bold text-rose-700 tabular-nums leading-none">
+              {lostPotential}<span className="text-[11px] font-normal">pt</span>
+            </p>
+          </div>
+        </div>
+
+        <p className="text-[11px] text-muted-foreground mt-3 leading-relaxed">
+          スコアは 7 軸（抗老化・肌・脳・ストレス・睡眠・免疫・代謝）のカバー合計を 100 換算した参考値です。
         </p>
       </div>
     </section>
