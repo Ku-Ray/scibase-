@@ -31,6 +31,7 @@ import {
 import {
   checkInteractions,
   EVIDENCE_LABEL,
+  findInteractionsByMedicationKey,
   getIngredientOptions,
   getPopularMedicationOptions,
   LEVEL_LABEL,
@@ -42,6 +43,7 @@ import {
 import { MEDICATION_EXAMPLES, QUICK_START_SAMPLES } from '@/lib/interaction-popular'
 
 const ANALYZER_STORAGE_KEY = 'scibase_analyzer_slugs'
+const FAVORITES_STORAGE_KEY = 'scibase_favorites_ingredients'
 
 /**
  * 検索クエリ・対象文字列の正規化：
@@ -72,11 +74,16 @@ const LEVEL_STYLE: Record<
   monitor: { bg: 'bg-sky-50', border: 'border-sky-300', text: 'text-sky-700', icon: Eye },
 }
 
+type CheckerMode = 'check' | 'reverse'
+
 export function InteractionCheckerClient() {
+  const [mode, setMode] = useState<CheckerMode>('check')
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([])
   const [selectedMedKeys, setSelectedMedKeys] = useState<string[]>([])
-  const [activePicker, setActivePicker] = useState<'supp' | 'med' | null>(null)
+  const [reverseMedKey, setReverseMedKey] = useState<string | null>(null)
+  const [activePicker, setActivePicker] = useState<'supp' | 'med' | 'reverse' | null>(null)
   const [analyzerBanner, setAnalyzerBanner] = useState<{ count: number } | null>(null)
+  const [favoritesCount, setFavoritesCount] = useState(0)
   const [copied, setCopied] = useState(false)
 
   const allSuppOptions = useMemo<IngredientOption[]>(() => getIngredientOptions(), [])
@@ -91,12 +98,23 @@ export function InteractionCheckerClient() {
   const popularMedOptions = useMemo<MedicationOption[]>(() => getPopularMedicationOptions(), [])
   const groupedAllMeds = useMemo(() => groupCanonicalByCategory(), [])
 
-  // ── URL state 復元（?ing=slug1,slug2 / ?med=key1,key2）
+  // ── URL state 復元（?mode=reverse&med=ワルファリン / ?ing=slug1,slug2&med=key1,key2）
   useEffect(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
+    const urlMode = params.get('mode')
     const ing = params.get('ing')
     const med = params.get('med')
+
+    if (urlMode === 'reverse' && med) {
+      const key = decodeURIComponent(med.split(',')[0] ?? '')
+      if (allMedOptions.some((o) => o.entry.key === key)) {
+        setMode('reverse')
+        setReverseMedKey(key)
+        return
+      }
+    }
+
     const ingSlugs = ing
       ? ing
           .split(',')
@@ -132,23 +150,67 @@ export function InteractionCheckerClient() {
     }
   }, [allSuppOptions, allMedOptions])
 
+  // ── お気に入り件数監視（一括読み込みボタン用）
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const read = () => {
+      try {
+        const raw = window.localStorage.getItem(FAVORITES_STORAGE_KEY)
+        if (!raw) return setFavoritesCount(0)
+        const arr = JSON.parse(raw) as string[]
+        setFavoritesCount(Array.isArray(arr) ? arr.length : 0)
+      } catch {
+        setFavoritesCount(0)
+      }
+    }
+    read()
+    const handler = () => read()
+    window.addEventListener('scibase:favorites-updated', handler)
+    return () => window.removeEventListener('scibase:favorites-updated', handler)
+  }, [])
+
+  // ── お気に入りから一括読み込み
+  const loadFavorites = useCallback(() => {
+    try {
+      const raw = window.localStorage.getItem(FAVORITES_STORAGE_KEY)
+      if (!raw) return
+      const arr = JSON.parse(raw) as string[]
+      if (!Array.isArray(arr)) return
+      const valid = arr.filter((s) => allSuppOptions.some((o) => o.slug === s))
+      if (valid.length === 0) return
+      setSelectedSlugs((prev) => Array.from(new Set([...prev, ...valid])))
+    } catch {
+      // ignore
+    }
+  }, [allSuppOptions])
+
   // ── URL state 同期（shallow・履歴非追加）
   useEffect(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
-    if (selectedSlugs.length) params.set('ing', selectedSlugs.join(','))
-    else params.delete('ing')
-    if (selectedMedKeys.length) params.set('med', selectedMedKeys.join(','))
-    else params.delete('med')
+    if (mode === 'reverse') {
+      params.set('mode', 'reverse')
+      if (reverseMedKey) params.set('med', reverseMedKey)
+      else params.delete('med')
+      params.delete('ing')
+    } else {
+      params.delete('mode')
+      if (selectedSlugs.length) params.set('ing', selectedSlugs.join(','))
+      else params.delete('ing')
+      if (selectedMedKeys.length) params.set('med', selectedMedKeys.join(','))
+      else params.delete('med')
+    }
     const qs = params.toString()
     const url = `${window.location.pathname}${qs ? `?${qs}` : ''}`
     window.history.replaceState(null, '', url)
-  }, [selectedSlugs, selectedMedKeys])
+  }, [mode, reverseMedKey, selectedSlugs, selectedMedKeys])
 
-  const results = useMemo(
-    () => checkInteractions(selectedSlugs, selectedMedKeys),
-    [selectedSlugs, selectedMedKeys],
-  )
+  const results = useMemo(() => {
+    if (mode === 'reverse') {
+      return reverseMedKey ? findInteractionsByMedicationKey(reverseMedKey) : []
+    }
+    return checkInteractions(selectedSlugs, selectedMedKeys)
+  }, [mode, reverseMedKey, selectedSlugs, selectedMedKeys])
 
   const grouped = useMemo(() => {
     const g: Record<InteractionLevel, InteractionResult[]> = { avoid: [], caution: [], monitor: [] }
@@ -156,7 +218,7 @@ export function InteractionCheckerClient() {
     return g
   }, [results])
 
-  const hasInput = selectedSlugs.length > 0
+  const hasInput = mode === 'reverse' ? !!reverseMedKey : selectedSlugs.length > 0
   const noFindings = hasInput && results.length === 0
 
   // ── 結果コピー（医師相談用テキスト）
@@ -164,14 +226,18 @@ export function InteractionCheckerClient() {
     const lines: string[] = []
     lines.push(`SciBase 飲み合わせチェック結果（${new Date().toLocaleDateString('ja-JP')}）`)
     lines.push('')
-    if (selectedSlugs.length) {
-      const names = selectedSlugs
-        .map((s) => allSuppOptions.find((o) => o.slug === s)?.nameJa ?? s)
-        .join('・')
-      lines.push(`【入力サプリ】${names}`)
-    }
-    if (selectedMedKeys.length) {
-      lines.push(`【入力医薬品】${selectedMedKeys.join('・')}`)
+    if (mode === 'reverse' && reverseMedKey) {
+      lines.push(`【逆引き対象薬】${reverseMedKey}`)
+    } else {
+      if (selectedSlugs.length) {
+        const names = selectedSlugs
+          .map((s) => allSuppOptions.find((o) => o.slug === s)?.nameJa ?? s)
+          .join('・')
+        lines.push(`【入力サプリ】${names}`)
+      }
+      if (selectedMedKeys.length) {
+        lines.push(`【入力医薬品】${selectedMedKeys.join('・')}`)
+      }
     }
     lines.push('')
     if (results.length === 0) {
@@ -194,7 +260,7 @@ export function InteractionCheckerClient() {
     } catch {
       // 古い browser fallback：エラー時は無視
     }
-  }, [allSuppOptions, results, selectedMedKeys, selectedSlugs])
+  }, [allSuppOptions, mode, results, reverseMedKey, selectedMedKeys, selectedSlugs])
 
   // ── シェア
   const handleShare = useCallback(async () => {
@@ -250,6 +316,32 @@ export function InteractionCheckerClient() {
         </ul>
       </header>
 
+      {/* ── モード切替タブ ─────── */}
+      <div className="mb-4 inline-flex rounded-lg border bg-card p-0.5 text-sm">
+        <button
+          type="button"
+          onClick={() => setMode('check')}
+          className={`rounded-md px-3 py-1.5 transition-colors ${
+            mode === 'check'
+              ? 'bg-foreground text-background'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          サプリ × 薬を check
+        </button>
+        <button
+          type="button"
+          onClick={() => setMode('reverse')}
+          className={`rounded-md px-3 py-1.5 transition-colors ${
+            mode === 'reverse'
+              ? 'bg-foreground text-background'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          薬から逆引き
+        </button>
+      </div>
+
       {/* ── Analyzer 連携 banner（R4） ─────── */}
       {analyzerBanner && (
         <div className="mb-4 flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50/70 px-3 py-2 text-sm text-emerald-900">
@@ -268,7 +360,53 @@ export function InteractionCheckerClient() {
         </div>
       )}
 
-      {/* ── 入力エリア ─────────────────── */}
+      {/* ── 逆引き入力 ── */}
+      {mode === 'reverse' && (
+        <section className="mb-6 rounded-xl border bg-card p-4 sm:p-5">
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold">
+            <AlertCircle className="size-4 text-rose-600" />
+            服用中の医薬品を 1 つ選択
+          </div>
+          {reverseMedKey ? (
+            <div className="mb-3 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1 rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-800">
+                {reverseMedKey}
+                <button
+                  type="button"
+                  onClick={() => setReverseMedKey(null)}
+                  aria-label="クリア"
+                  className="hover:text-rose-950"
+                >
+                  <X className="size-3" />
+                </button>
+              </span>
+              <button
+                type="button"
+                onClick={() => setActivePicker('reverse')}
+                className="text-xs text-muted-foreground underline-offset-2 hover:underline"
+              >
+                変更
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setActivePicker('reverse')}
+              className="inline-flex w-full items-center justify-center gap-1 rounded-md border border-dashed px-3 py-2.5 text-sm text-muted-foreground hover:border-foreground hover:bg-accent hover:text-foreground"
+            >
+              <Plus className="size-4" />
+              医薬品を選ぶ
+            </button>
+          )}
+          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+            選んだ薬と相互作用が報告されているサプリ・成分を一覧で表示します。
+          </p>
+        </section>
+      )}
+
+      {/* ── 入力エリア（通常モード）─────────── */}
+      {mode === 'check' && (
+      <>
       <section className="mb-6 grid gap-4 sm:grid-cols-2">
         {/* サプリ */}
         <div className="rounded-xl border bg-card p-4 sm:p-5">
@@ -353,15 +491,37 @@ export function InteractionCheckerClient() {
         </div>
       </section>
 
+      {/* お気に入りから読み込みボタン */}
+      {favoritesCount > 0 && (
+        <div className="mb-6 -mt-2 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          <button
+            type="button"
+            onClick={loadFavorites}
+            className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-amber-900 hover:bg-amber-100"
+          >
+            <Sparkles className="size-3" />
+            お気に入りから {favoritesCount} 件読み込む
+          </button>
+        </div>
+      )}
+      </>
+      )}
+
       {/* ── 結果 ─────────────────── */}
       <section aria-label="チェック結果" className="space-y-6">
-        {!hasInput && (
+        {!hasInput && mode === 'check' && (
           <EmptyStateQuickStart
             onApply={(ing, med) => {
               setSelectedSlugs(ing)
               setSelectedMedKeys(med)
             }}
           />
+        )}
+
+        {!hasInput && mode === 'reverse' && (
+          <div className="rounded-xl border border-dashed bg-muted/30 p-5 text-sm leading-relaxed text-muted-foreground">
+            上の欄から医薬品を選ぶと、その薬と相互作用が報告されているサプリ・成分が一覧で表示されます。
+          </div>
         )}
 
         {noFindings && (
@@ -371,8 +531,10 @@ export function InteractionCheckerClient() {
               該当する相互作用は見つかりませんでした
             </div>
             <p className="text-sm leading-relaxed text-emerald-900/80">
-              ただし本ツールが捕捉できるのは SciBase data.ts に収載済みの成分・物質の組み合わせのみです。
-              未収載の物質や個別体質による相互作用の可能性は残ります。実際の併用前は医師・薬剤師にご相談ください。
+              {mode === 'reverse'
+                ? `「${reverseMedKey}」と相互作用が報告されているサプリは SciBase 収載範囲では見つかりませんでした。ただし未収載の物質・個別体質による反応の可能性は残ります。`
+                : 'ただし本ツールが捕捉できるのは SciBase data.ts に収載済みの成分・物質の組み合わせのみです。未収載の物質や個別体質による相互作用の可能性は残ります。'}
+              実際の併用前は医師・薬剤師にご相談ください。
             </p>
           </div>
         )}
@@ -491,6 +653,19 @@ export function InteractionCheckerClient() {
           selectedKeys={selectedMedKeys}
           onSelect={(key) => {
             setSelectedMedKeys((arr) => (arr.includes(key) ? arr : [...arr, key]))
+          }}
+          onClose={() => setActivePicker(null)}
+        />
+      )}
+      {activePicker === 'reverse' && (
+        <MedicationPicker
+          popularOptions={popularMedOptions}
+          allOptions={allMedOptions}
+          groupedAll={groupedAllMeds}
+          selectedKeys={[]}
+          onSelect={(key) => {
+            setReverseMedKey(key)
+            setActivePicker(null)
           }}
           onClose={() => setActivePicker(null)}
         />

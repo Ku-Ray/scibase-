@@ -128,6 +128,43 @@ export function getPopularIngredientOptions(): IngredientOption[] {
   return getIngredientOptions().filter((o) => o.popularRank !== undefined)
 }
 
+/**
+ * 逆引き：指定した医薬品 canonical key と相互作用を持つ全成分を抽出。
+ *
+ * 「ワルファリン飲んでるんだけど、飲んじゃダメなサプリは？」型ユースケース。
+ *
+ * @param medicationKey - canonical key（"ワルファリン" 等）
+ * @returns severity 順にソートされた InteractionResult[]
+ */
+export function findInteractionsByMedicationKey(
+  medicationKey: string,
+): InteractionResult[] {
+  const results: InteractionResult[] = []
+  for (const ing of ingredients) {
+    if (!ing.interactions || ing.interactions.length === 0) continue
+    for (const interaction of ing.interactions) {
+      if (!matchesCanonicalKey(interaction.substance, medicationKey)) continue
+      results.push({
+        ingredientSlug: ing.slug,
+        ingredientNameJa: ing.nameJa,
+        substance: interaction.substance,
+        matchedKeys: [medicationKey],
+        level: interaction.level,
+        mechanism: interaction.mechanism,
+        action: interaction.action,
+        evidence: interaction.evidence,
+        source: interaction.source,
+      })
+    }
+  }
+
+  const order: Record<InteractionLevel, number> = { avoid: 0, caution: 1, monitor: 2 }
+  return results.sort((a, b) => {
+    if (a.level !== b.level) return order[a.level] - order[b.level]
+    return a.ingredientNameJa.localeCompare(b.ingredientNameJa, 'ja')
+  })
+}
+
 export interface MedicationOption {
   entry: CanonicalEntry
   /** 主要医薬品 rank。undefined=その他 */
