@@ -237,6 +237,90 @@ function useCountUp(target: number, duration: number = 1200, delay: number = 0):
   return value
 }
 
+/* ── DiagnoseCTA：明示的な「診断する」ボタン（ドーパミン起動装置） ── */
+function DiagnoseCTA({ ready, considerationsCount, onClick }: {
+  ready: boolean
+  considerationsCount: number
+  onClick: () => void
+}) {
+  if (!ready) {
+    return (
+      <section className="my-6">
+        <div className="bg-secondary/40 border border-dashed border-border rounded-2xl px-5 py-6 text-center">
+          <p className="text-[13px] text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">悩みを 1 つ以上選ぶ</strong>か、
+            生活習慣で 1 つ以上を回答すると診断ボタンが有効になります。
+          </p>
+        </div>
+      </section>
+    )
+  }
+  return (
+    <section className="my-6 animate-fade-up">
+      <button
+        onClick={onClick}
+        className="group relative w-full overflow-hidden
+          bg-gradient-to-br from-accent via-accent to-accent/90
+          text-primary-foreground rounded-2xl py-5 sm:py-6
+          shadow-lg hover:shadow-xl transition-all duration-300
+          hover:scale-[1.01] active:scale-[0.99]"
+      >
+        {/* 光沢シマー */}
+        <span aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent
+            -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+
+        <div className="relative flex items-center justify-center gap-3">
+          <span className="text-[24px] sm:text-[28px]">🔬</span>
+          <div className="text-left">
+            <p className="text-[18px] sm:text-[22px] font-bold leading-tight">
+              診断スタート
+            </p>
+            <p className="text-[11.5px] sm:text-[12px] opacity-80 leading-snug mt-0.5">
+              {considerationsCount} 項目を 548 成分と照合 → 推奨 5 件を選定
+            </p>
+          </div>
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+
+        {/* 軽いパルス装飾 */}
+        <span aria-hidden
+          className="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full
+            animate-calc-pulse" />
+      </button>
+      <p className="text-[11px] text-muted-foreground text-center mt-2 leading-relaxed">
+        ボタンを押すと「分析中…」演出のあと、あなた専用の推奨が出ます
+      </p>
+    </section>
+  )
+}
+
+/* ── RediagnoseCTA：入力変更後の「再診断」誘導 ── */
+function RediagnoseCTA({ onClick }: { onClick: () => void }) {
+  return (
+    <section className="my-4 animate-fade-up">
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 flex items-center gap-3">
+        <span className="text-[20px]">🔄</span>
+        <div className="flex-1 min-w-0">
+          <p className="text-[12.5px] font-semibold text-amber-900 leading-snug">
+            入力が変わりました
+          </p>
+          <p className="text-[11.5px] text-amber-700 leading-snug">
+            最新の入力で診断を再実行できます
+          </p>
+        </div>
+        <button onClick={onClick}
+          className="inline-flex items-center gap-1 bg-amber-600 hover:bg-amber-700 text-white
+            text-[12px] font-semibold rounded-full px-4 py-2 transition-colors flex-shrink-0">
+          再診断 →
+        </button>
+      </div>
+    </section>
+  )
+}
+
 /* ── CalculationTheatre：分析中の期待構築演出 ── */
 function CalculationTheatre({ considerationsCount }: { considerationsCount: number }) {
   const [step, setStep] = useState(0)
@@ -594,21 +678,32 @@ export function AnalyzerDeepMode() {
   const hasResults = recommendations.length > 0
   const hasAnyInput = concernSlugs.length > 0 || !noLifestyleBoost(lifestyle) || medKeys.length > 0
 
-  /* Calculation Theatre：hasResults が false→true に切り替わった時に 1.8s 演出を 1 回だけ発火 */
+  /* ── ステートマシン: idle → calculating → revealed ── */
+  /* ユーザーが「診断する」ボタンを明示的に押した時だけ theatre + reveal */
   const [calculating, setCalculating] = useState(false)
-  const theatrePlayedRef = useRef(false)
-  useEffect(() => {
-    if (hasResults && !theatrePlayedRef.current) {
-      theatrePlayedRef.current = true
-      setCalculating(true)
-      const t = setTimeout(() => setCalculating(false), 1800)
-      return () => clearTimeout(t)
-    }
-    if (!hasResults) {
-      theatrePlayedRef.current = false
+  const [diagnosed, setDiagnosed] = useState(false)
+  // 入力ハッシュ（診断後に入力が変わったかを検知して「再診断」CTA を出す）
+  const inputHash = useMemo(
+    () => JSON.stringify({ basic, concernSlugs, lifestyle, medKeys, currentSlugs }),
+    [basic, concernSlugs, lifestyle, medKeys, currentSlugs],
+  )
+  const [diagnosedHash, setDiagnosedHash] = useState<string | null>(null)
+  const inputChangedAfterDiagnosis = diagnosed && diagnosedHash !== null && diagnosedHash !== inputHash
+
+  const triggerDiagnosis = () => {
+    if (!hasAnyInput) return
+    setCalculating(true)
+    setDiagnosedHash(inputHash)
+    // 結果セクションへスクロール
+    setTimeout(() => {
+      resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
+    setTimeout(() => {
       setCalculating(false)
-    }
-  }, [hasResults])
+      setDiagnosed(true)
+    }, 1800)
+    trackEvent('start_analyzer', { mode: 'deep' })
+  }
 
   /* GA4: complete_deep_analyzer */
   useEffect(() => {
@@ -772,6 +867,26 @@ export function AnalyzerDeepMode() {
         </button>
       </div>
 
+      {/* ── 診断 CTA（未診断・入力あり時のみ・大きく目立つ）── */}
+      {!calculating && !diagnosed && (
+        <DiagnoseCTA
+          ready={hasAnyInput}
+          considerationsCount={
+            concernSlugs.length +
+            (basic.age ? 1 : 0) + (basic.gender ? 1 : 0) +
+            (basic.pregnancy && basic.pregnancy !== 'none' ? 1 : 0) +
+            Object.values(lifestyle).filter(Boolean).length +
+            medKeys.length + currentSlugs.length
+          }
+          onClick={triggerDiagnosis}
+        />
+      )}
+
+      {/* ── 入力変更時の「再診断」バナー（診断済 + 入力変更後）── */}
+      {diagnosed && !calculating && inputChangedAfterDiagnosis && (
+        <RediagnoseCTA onClick={triggerDiagnosis} />
+      )}
+
       {/* ── 結果 ── */}
       <div ref={resultsRef} className="scroll-mt-6">
         {calculating ? (
@@ -784,7 +899,7 @@ export function AnalyzerDeepMode() {
               medKeys.length + currentSlugs.length
             }
           />
-        ) : hasResults ? (
+        ) : diagnosed && hasResults ? (
           <ResultsSection
             recommendations={recommendations}
             interactionResults={interactionResults}
@@ -798,14 +913,14 @@ export function AnalyzerDeepMode() {
             lifestyle={lifestyle}
             medKeysCount={medKeys.length}
           />
-        ) : (
+        ) : diagnosed && !hasResults ? (
           <EmptyState
             hasAnyInput={hasAnyInput}
             pregnancyActive={pregnancyWarning}
             excludedByPregnancyCount={recommendResult.excludedByPregnancy.length}
             excludedByInteractionCount={recommendResult.excludedByInteraction.length}
           />
-        )}
+        ) : null}
       </div>
 
       {/* ── 免責 ── */}
