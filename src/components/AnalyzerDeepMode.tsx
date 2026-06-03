@@ -107,8 +107,8 @@ function getPersonalityType(
 /* ── Bonus Insight（軸別の意外な事実） ── */
 const BONUS_INSIGHTS: Record<AnalysisAxis, { title: string; body: string }> = {
   skin: {
-    title: '美白系で見落とされがちな組み合わせ',
-    body: 'ナイアシンアミド 5% × トラネキサム酸 3% の組み合わせは、単独使用より色素沈着改善で優位だった RCT が報告されている。「強い1本」より「相補的な2本」が論文支持。',
+    title: '美白・肌老化の経口アプローチ',
+    body: '内側からの介入は「コラーゲンペプチド 5-10g/日（皮膚弾力）」「ピクノジェノール 30-100mg/日（色素沈着）」「アスタキサンチン 4-12mg/日（光老化）」が複数 RCT で支持。外用と組み合わせると相乗効果が出やすい（外用の推奨は「成分から」モードへ）。',
   },
   antiAging: {
     title: '抗老化で「効果実感が早い」順',
@@ -506,13 +506,15 @@ function recommend(
   const matchedConcernMap = new Map<string, string[]>()
   const lifestyleBoostMap = new Map<string, string[]>()
 
-  // 1. 悩みベースのスコアリング
+  // 1. 悩みベースのスコアリング（経口のみ・外用 (topical) は除外）
   for (const cslug of concernSlugs) {
     const c = getConcern(cslug)
     if (!c) continue
     c.ingredientSlugs.forEach((slug, idx) => {
       const ing = getIngredient(slug)
       if (!ing) return
+      // 「飲んでいるサプリ」前提の診断なので外用は推奨対象外
+      if (ing.usageType === 'topical') return
       const rankW = RANK_WEIGHT[ing.evidenceRank] ?? 0.4
       const posBonus = Math.max(0.3, 1 - idx * 0.08)
       const delta = rankW * posBonus
@@ -844,8 +846,8 @@ export function AnalyzerDeepMode() {
       {/* ── Section 5: 飲んでいるサプリ ── */}
       <SectionWrap
         step={5}
-        title="飲んでいるサプリ"
-        hint={`${currentSlugs.length}件登録中 ・ 重複推奨を回避するため反映されます`}
+        title="飲んでいるサプリ（経口のみ）"
+        hint={`${currentSlugs.length}件登録中 ・ 経口サプリのみが対象（外用スキンケアは別モードへ）`}
       >
         <CurrentSupplementPicker
           slugs={currentSlugs}
@@ -1180,6 +1182,7 @@ function CurrentSupplementPicker({ slugs, onAdd, onRemove, onClear }: {
     return ingredients
       .filter((i) =>
         !slugs.includes(i.slug) &&
+        i.usageType !== 'topical' &&  // 「飲んでいるサプリ」なので外用は候補から除外
         (i.nameJa.includes(query) || i.nameEn.toLowerCase().includes(q) ||
          (i.aliases ?? []).some((a) => a.toLowerCase().includes(q) || a.includes(query))),
       )
@@ -1229,7 +1232,7 @@ function CurrentSupplementPicker({ slugs, onAdd, onRemove, onClear }: {
           <Plus className="w-4 h-4 text-muted-foreground flex-shrink-0" />
           <input
             type="text"
-            placeholder="成分名で検索して追加（例：ビタミンD、マグネシウム）"
+            placeholder="経口サプリを検索して追加（例：ビタミンD、マグネシウム）"
             value={query}
             onChange={(e) => { setQuery(e.target.value); setOpen(true) }}
             onFocus={() => setOpen(true)}
