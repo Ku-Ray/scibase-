@@ -492,7 +492,9 @@ export default async function IngredientPage({ params }: Props) {
 
       {/* ── Hero (light tinted block) ─────────────────── */}
       <div className={`${heroBg[ing.evidenceRank]} border-t-8 ${heroBorder[ing.evidenceRank]}`}>
-        <div className="max-w-2xl mx-auto px-5 pt-8 pb-10">
+        <div className="max-w-4xl mx-auto px-5 pt-8 pb-10">
+          <div className="flex gap-12 items-start">
+            <div className="flex-1 min-w-0">
 
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-8">
@@ -627,6 +629,9 @@ export default async function IngredientPage({ params }: Props) {
               診断結果を見る →
             </Link>
           </div>
+            </div>
+            <div className="hidden lg:block w-52 shrink-0" aria-hidden />
+          </div>
         </div>
 
         {/* Evidence bar at bottom of hero */}
@@ -648,7 +653,9 @@ export default async function IngredientPage({ params }: Props) {
         ]
         return (
           <div className="bg-secondary/20 border-b border-border">
-            <div className="max-w-2xl mx-auto px-5 py-6">
+            <div className="max-w-4xl mx-auto px-5 py-6">
+              <div className="flex gap-12 items-start">
+                <div className="flex-1 min-w-0">
               <div className={`bg-card ${c.border} border-2 rounded-2xl overflow-hidden`}>
                 <div className="px-5 py-3 border-b border-border bg-secondary/30 flex items-baseline justify-between gap-3">
                   <p className="text-[12px] font-semibold tracking-wide text-foreground">
@@ -705,6 +712,9 @@ export default async function IngredientPage({ params }: Props) {
                     → PEI（論文エビデンス指数）の計算方法を見る
                   </Link>
                 </div>
+              </div>
+                </div>
+                <div className="hidden lg:block w-52 shrink-0" aria-hidden />
               </div>
             </div>
           </div>
