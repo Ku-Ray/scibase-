@@ -498,7 +498,7 @@ function recommend(
   basicInfo: BasicInfo,
   medKeys: string[],
 ): RecommendResult {
-  if (concernSlugs.length === 0 && noLifestyleBoost(lifestyle)) {
+  if (concernSlugs.length === 0 && !hasPersonalBoost(basicInfo, lifestyle)) {
     return { recommendations: [], excludedByPregnancy: [], excludedByInteraction: [] }
   }
 
@@ -526,29 +526,115 @@ function recommend(
     })
   }
 
-  // 2. ライフスタイル由来のブースト（特定成分のスコア + 0.4）
-  //    slug 名は data.ts の実在 slug に揃える（vitamin-c-oral / whey-protein-isolate 等）
-  const lifestyleBoosts: Array<{ slug: string; reason: string; condition: boolean }> = [
-    { slug: 'milk-thistle',           reason: 'アルコール多飲', condition: lifestyle.alcohol === 'heavy' },
-    { slug: 'nac',                    reason: 'アルコール多飲', condition: lifestyle.alcohol === 'heavy' },
-    { slug: 'vitamin-b12',            reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
-    { slug: 'iron',                   reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
-    { slug: 'omega3',                 reason: '菜食傾向',       condition: lifestyle.diet === 'vegetarian' },
-    { slug: 'vitamin-d',              reason: '外食多め',       condition: lifestyle.diet === 'eat-out' },
-    { slug: 'magnesium',              reason: '睡眠時間短い',   condition: lifestyle.sleep === 'short' },
-    { slug: 'glycine',                reason: '睡眠時間短い',   condition: lifestyle.sleep === 'short' },
-    { slug: 'vitamin-c-oral',         reason: '喫煙習慣',       condition: lifestyle.smoking === 'daily' },
-    { slug: 'glutathione',            reason: '喫煙習慣',       condition: lifestyle.smoking === 'daily' },
-    { slug: 'creatine',               reason: '運動習慣あり',   condition: lifestyle.exercise === 'heavy' },
-    { slug: 'whey-protein-isolate',   reason: '運動習慣あり',   condition: lifestyle.exercise === 'heavy' },
-  ]
-  for (const b of lifestyleBoosts) {
-    if (!b.condition) continue
-    const ing = getIngredient(b.slug)
-    if (!ing) continue
-    scoreMap.set(b.slug, (scoreMap.get(b.slug) ?? 0) + 0.4)
-    const prev = lifestyleBoostMap.get(b.slug) ?? []
-    lifestyleBoostMap.set(b.slug, [...prev, b.reason])
+  // 2. パーソナル boost：年齢・性別・ライフスタイル（外用は applyBoost 内で除外）
+  const applyBoost = (slug: string, reason: string, boost: number) => {
+    const ing = getIngredient(slug)
+    if (!ing) return
+    if (ing.usageType === 'topical') return
+    scoreMap.set(slug, (scoreMap.get(slug) ?? 0) + boost)
+    const prev = lifestyleBoostMap.get(slug) ?? []
+    if (!prev.includes(reason)) lifestyleBoostMap.set(slug, [...prev, reason])
+  }
+
+  // 2a. 年齢 boost
+  const ageBoosts: Record<AgeBand, Array<{ slug: string; boost: number }>> = {
+    '20-29': [
+      { slug: 'magnesium', boost: 0.2 },
+      { slug: 'vitamin-d', boost: 0.2 },
+    ],
+    '30-39': [
+      { slug: 'collagen-peptide', boost: 0.5 },
+      { slug: 'coq10', boost: 0.3 },
+      { slug: 'hyaluronic-acid-oral', boost: 0.2 },
+    ],
+    '40-49': [
+      { slug: 'nmn', boost: 0.4 },
+      { slug: 'resveratrol', boost: 0.3 },
+      { slug: 'coq10', boost: 0.3 },
+      { slug: 'vitamin-d', boost: 0.3 },
+      { slug: 'collagen-peptide', boost: 0.4 },
+    ],
+    '50-59': [
+      { slug: 'calcium', boost: 0.4 },
+      { slug: 'vitamin-d', boost: 0.5 },
+      { slug: 'omega3', boost: 0.3 },
+      { slug: 'creatine', boost: 0.3 },
+      { slug: 'nmn', boost: 0.3 },
+    ],
+    '60+': [
+      { slug: 'creatine', boost: 0.5 },
+      { slug: 'omega3', boost: 0.5 },
+      { slug: 'curcumin', boost: 0.3 },
+      { slug: 'astaxanthin', boost: 0.3 },
+      { slug: 'vitamin-d', boost: 0.4 },
+      { slug: 'calcium', boost: 0.3 },
+    ],
+    '': [],
+  }
+  if (basicInfo.age && ageBoosts[basicInfo.age]) {
+    const ageLabel: Record<AgeBand, string> = {
+      '20-29': '20代', '30-39': '30代', '40-49': '40代',
+      '50-59': '50代', '60+': '60代以上', '': '',
+    }
+    for (const b of ageBoosts[basicInfo.age]) {
+      applyBoost(b.slug, ageLabel[basicInfo.age], b.boost)
+    }
+  }
+
+  // 2b. 性別 boost
+  if (basicInfo.gender === 'female') {
+    applyBoost('iron', '女性', 0.3)
+    applyBoost('folic-acid', '女性', 0.2)
+    applyBoost('calcium', '女性', 0.3)
+    applyBoost('vitamin-d', '女性', 0.2)
+  } else if (basicInfo.gender === 'male') {
+    applyBoost('zinc', '男性', 0.3)
+    applyBoost('selenium', '男性', 0.2)
+  }
+
+  // 2c. ライフスタイル boost（heavy / moderate で段階適用）
+  if (lifestyle.alcohol === 'heavy') {
+    applyBoost('milk-thistle', 'アルコール多飲', 0.4)
+    applyBoost('nac', 'アルコール多飲', 0.4)
+    applyBoost('vitamin-b-complex', 'アルコール多飲', 0.3)
+  } else if (lifestyle.alcohol === 'moderate') {
+    applyBoost('milk-thistle', '飲酒習慣', 0.2)
+    applyBoost('nac', '飲酒習慣', 0.2)
+  }
+  if (lifestyle.diet === 'vegetarian') {
+    applyBoost('vitamin-b12', '菜食傾向', 0.4)
+    applyBoost('iron', '菜食傾向', 0.3)
+    applyBoost('omega3', '菜食傾向', 0.4)
+    applyBoost('vitamin-d', '菜食傾向', 0.2)
+  } else if (lifestyle.diet === 'eat-out') {
+    applyBoost('vitamin-d', '外食多め', 0.3)
+    applyBoost('vitamin-b-complex', '外食多め', 0.3)
+    applyBoost('magnesium', '外食多め', 0.2)
+  } else if (lifestyle.diet === 'low-carb') {
+    applyBoost('magnesium', '糖質制限', 0.2)
+    applyBoost('potassium', '糖質制限', 0.2)
+  }
+  if (lifestyle.sleep === 'short') {
+    applyBoost('magnesium', '睡眠時間短い', 0.4)
+    applyBoost('glycine', '睡眠時間短い', 0.3)
+    applyBoost('l-theanine', '睡眠時間短い', 0.3)
+  } else if (lifestyle.sleep === 'long') {
+    applyBoost('vitamin-d', '日照不足の可能性', 0.2)
+  }
+  if (lifestyle.smoking === 'daily') {
+    applyBoost('vitamin-c-oral', '喫煙習慣', 0.4)
+    applyBoost('glutathione', '喫煙習慣', 0.4)
+    applyBoost('nac', '喫煙習慣', 0.3)
+  } else if (lifestyle.smoking === 'occasional') {
+    applyBoost('vitamin-c-oral', '喫煙あり', 0.2)
+  }
+  if (lifestyle.exercise === 'heavy') {
+    applyBoost('creatine', '運動しっかり', 0.4)
+    applyBoost('whey-protein-isolate', '運動しっかり', 0.4)
+    applyBoost('beta-alanine', '運動しっかり', 0.3)
+  } else if (lifestyle.exercise === 'moderate') {
+    applyBoost('creatine', '運動習慣', 0.2)
+    applyBoost('magnesium', '運動習慣', 0.2)
   }
 
   // 3. 既に飲んでいるサプリを除外（重複推奨を避ける）
@@ -611,9 +697,15 @@ function recommend(
 }
 
 function noLifestyleBoost(l: Lifestyle): boolean {
-  return l.exercise !== 'heavy' && l.alcohol !== 'heavy' &&
-         l.diet !== 'vegetarian' && l.diet !== 'eat-out' &&
-         l.sleep !== 'short' && l.smoking !== 'daily'
+  return l.exercise !== 'heavy' && l.exercise !== 'moderate' &&
+         l.alcohol !== 'heavy' && l.alcohol !== 'moderate' &&
+         l.diet !== 'vegetarian' && l.diet !== 'eat-out' && l.diet !== 'low-carb' &&
+         l.sleep !== 'short' && l.sleep !== 'long' &&
+         l.smoking !== 'daily' && l.smoking !== 'occasional'
+}
+
+function hasPersonalBoost(basicInfo: BasicInfo, lifestyle: Lifestyle): boolean {
+  return !!basicInfo.age || !!basicInfo.gender || !noLifestyleBoost(lifestyle)
 }
 
 /* ── concern カテゴリ表示 ── */
@@ -679,7 +771,8 @@ export function AnalyzerDeepMode() {
   )
 
   const hasResults = recommendations.length > 0
-  const hasAnyInput = concernSlugs.length > 0 || !noLifestyleBoost(lifestyle) || medKeys.length > 0
+  const hasAnyInput = concernSlugs.length > 0 || hasPersonalBoost(basic, lifestyle) ||
+    medKeys.length > 0 || currentSlugs.length > 0
 
   /* ── ステートマシン: idle → calculating → revealed ── */
   /* ユーザーが「診断する」ボタンを明示的に押した時だけ theatre + reveal */
@@ -1426,6 +1519,14 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
         />
       </div>
 
+      {/* ── Input Effect Map：入力がどう反映されたかの透明性表示（delay 300） ── */}
+      <div className="animate-fade-up delay-300">
+        <InputEffectMap
+          recommendations={recommendations}
+          concernSlugs={concernSlugs}
+        />
+      </div>
+
       {recInteractions.length > 0 && (
         <div className="animate-fade-up delay-300">
           <InteractionAlert
@@ -1840,6 +1941,79 @@ function PersonalityTypeCard({ type, recommendationCount, excludedCount, current
           以下の {recommendationCount} 選は <strong className="font-semibold text-foreground">{type.topAxisLabel}</strong> を主軸に、
           あなたの入力すべてに最適化された結果です。
         </p>
+      </div>
+    </section>
+  )
+}
+
+/* ── InputEffectMap：入力 → 推奨への反映を可視化（透明性）── */
+function InputEffectMap({ recommendations, concernSlugs }: {
+  recommendations: Recommendation[]
+  concernSlugs: string[]
+}) {
+  // reason → 推奨に含まれた成分名のセットを集計
+  const reasonToNames = new Map<string, Set<string>>()
+  for (const rec of recommendations) {
+    for (const reason of rec.matchedConcerns) {
+      if (!reasonToNames.has(reason)) reasonToNames.set(reason, new Set())
+      reasonToNames.get(reason)!.add(rec.ing.nameJa)
+    }
+    for (const reason of rec.lifestyleBoost) {
+      if (!reasonToNames.has(reason)) reasonToNames.set(reason, new Set())
+      reasonToNames.get(reason)!.add(rec.ing.nameJa)
+    }
+  }
+
+  // 表示順：悩み（concern.nameJa の順）→ 年齢ラベル → 性別 → ライフスタイル
+  const concernOrderedReasons: string[] = []
+  for (const cslug of concernSlugs) {
+    const c = getConcern(cslug)
+    if (c && reasonToNames.has(c.nameJa)) concernOrderedReasons.push(c.nameJa)
+  }
+  const personalReasonOrder = [
+    '20代', '30代', '40代', '50代', '60代以上',
+    '女性', '男性',
+    'アルコール多飲', '飲酒習慣',
+    '菜食傾向', '外食多め', '糖質制限',
+    '睡眠時間短い', '日照不足の可能性',
+    '喫煙習慣', '喫煙あり',
+    '運動しっかり', '運動習慣',
+  ]
+  const personalReasons = personalReasonOrder.filter((r) => reasonToNames.has(r))
+
+  const allEffects: Array<{ kind: 'concern' | 'personal'; reason: string; names: string[] }> = [
+    ...concernOrderedReasons.map((r) => ({ kind: 'concern' as const, reason: r, names: Array.from(reasonToNames.get(r) ?? []) })),
+    ...personalReasons.map((r) => ({ kind: 'personal' as const, reason: r, names: Array.from(reasonToNames.get(r) ?? []) })),
+  ]
+
+  if (allEffects.length === 0) return null
+
+  return (
+    <section className="mb-6">
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-baseline gap-2 mb-2">
+          <span className="text-[10px] font-semibold tracking-wider bg-emerald-600 text-white px-2 py-0.5 rounded-md">
+            HOW
+          </span>
+          <h2 className="font-semibold text-[14px] text-foreground">
+            あなたの入力が結果にどう反映されたか
+          </h2>
+        </div>
+        <p className="text-[11.5px] text-muted-foreground mb-3 leading-relaxed">
+          各入力 → 上位 5 件にどの成分が加点で残ったかのマッピング。「未反映」がない＝全入力が活きています。
+        </p>
+        <ul className="space-y-1.5">
+          {allEffects.map((e, i) => (
+            <li key={i} className="flex items-start gap-2 text-[12px] leading-snug">
+              <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+              <span className={`font-semibold flex-shrink-0 ${e.kind === 'concern' ? 'text-foreground' : 'text-accent'}`}>
+                {e.reason}
+              </span>
+              <span className="text-muted-foreground mx-1">→</span>
+              <span className="text-foreground/85 break-keep">{e.names.join('・')}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
