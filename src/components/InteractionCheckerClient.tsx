@@ -9,6 +9,7 @@ import {
   ChevronDown,
   ChevronUp,
   ClipboardCopy,
+  Clock,
   Eye,
   FileText,
   Info,
@@ -16,6 +17,7 @@ import {
   Microscope,
   Pill,
   Plus,
+  Printer,
   Search,
   Share2,
   Sparkles,
@@ -46,7 +48,10 @@ import {
 import { MEDICATION_EXAMPLES, QUICK_START_SAMPLES } from '@/lib/interaction-popular'
 
 const ANALYZER_STORAGE_KEY = 'scibase_analyzer_slugs'
+const ANALYZER_DEEP_MEDS_KEY = 'scibase_deep_medications'
 const FAVORITES_STORAGE_KEY = 'scibase_favorites_ingredients'
+const HISTORY_STORAGE_KEY = 'scibase_checker_history'
+const HISTORY_MAX = 5
 
 /**
  * 検索クエリ・対象文字列の正規化：
@@ -68,6 +73,30 @@ function normalizeForSearch(s: string): string {
     .trim()
 }
 
+/**
+ * テキスト内で normalizeForSearch(query) と一致する部分を <mark> で囲んで返す。
+ * Picker UI で「あれぐら」と入力したとき「アレグラ」部分を bold ハイライトする。
+ *
+ * 元テキスト・正規化テキストを並行スキャンして、一致区間の元テキスト位置を切り出す。
+ */
+function HighlightedText({ text, query }: { text: string; query: string }) {
+  const q = normalizeForSearch(query)
+  if (!q) return <>{text}</>
+  const norm = normalizeForSearch(text)
+  // 元テキスト i 文字目に対応する normalize 後の j 文字目を計算
+  // （normalize は文字単位の置換のみで長さ不変なので i === j）
+  const idx = norm.indexOf(q)
+  if (idx < 0) return <>{text}</>
+  const end = idx + q.length
+  return (
+    <>
+      {text.slice(0, idx)}
+      <mark className="bg-yellow-200 px-0.5 font-semibold text-foreground">{text.slice(idx, end)}</mark>
+      {text.slice(end)}
+    </>
+  )
+}
+
 const LEVEL_STYLE: Record<
   InteractionLevel,
   { bg: string; border: string; text: string; icon: typeof AlertCircle }
@@ -78,6 +107,37 @@ const LEVEL_STYLE: Record<
 }
 
 type CheckerMode = 'check' | 'reverse'
+
+interface HistoryEntry {
+  mode: CheckerMode
+  slugs: string[]
+  meds: string[]
+  ts: number
+}
+
+/**
+ * 履歴を localStorage に保存（最大 HISTORY_MAX 件・最新が先頭）。
+ * 同じ組合せがあれば前回 entry を消して先頭に再追加（dedup）。
+ */
+function saveHistory(
+  entry: HistoryEntry,
+  setter: (next: HistoryEntry[]) => void,
+): void {
+  if (typeof window === 'undefined') return
+  try {
+    const raw = window.localStorage.getItem(HISTORY_STORAGE_KEY)
+    const prev = raw ? (JSON.parse(raw) as HistoryEntry[]) : []
+    const sig = (e: HistoryEntry) =>
+      `${e.mode}|${[...e.slugs].sort().join(',')}|${[...e.meds].sort().join(',')}`
+    const incoming = sig(entry)
+    const deduped = prev.filter((e) => sig(e) !== incoming)
+    const next = [entry, ...deduped].slice(0, HISTORY_MAX)
+    window.localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(next))
+    setter(next)
+  } catch {
+    // ignore
+  }
+}
 
 export function InteractionCheckerClient() {
   const [mode, setMode] = useState<CheckerMode>('check')
@@ -136,20 +196,37 @@ export function InteractionCheckerClient() {
       return
     }
 
-    // URL に無ければ Analyzer の localStorage から取り込み
+    // URL に無ければ Analyzer の localStorage から取り込み（サプリ + 服用薬）
+    let importedSupps = 0
+    let importedMeds = 0
     try {
-      const raw = window.localStorage.getItem(ANALYZER_STORAGE_KEY)
-      if (!raw) return
-      const slugs = JSON.parse(raw) as string[]
-      const valid = Array.isArray(slugs)
-        ? slugs.filter((s) => allSuppOptions.some((o) => o.slug === s))
-        : []
-      if (valid.length > 0) {
-        setSelectedSlugs(valid)
-        setAnalyzerBanner({ count: valid.length })
+      const rawSlugs = window.localStorage.getItem(ANALYZER_STORAGE_KEY)
+      if (rawSlugs) {
+        const slugs = JSON.parse(rawSlugs) as string[]
+        const valid = Array.isArray(slugs)
+          ? slugs.filter((s) => allSuppOptions.some((o) => o.slug === s))
+          : []
+        if (valid.length > 0) {
+          setSelectedSlugs(valid)
+          importedSupps = valid.length
+        }
+      }
+      const rawMeds = window.localStorage.getItem(ANALYZER_DEEP_MEDS_KEY)
+      if (rawMeds) {
+        const meds = JSON.parse(rawMeds) as string[]
+        const valid = Array.isArray(meds)
+          ? meds.filter((k) => allMedOptions.some((o) => o.entry.key === k))
+          : []
+        if (valid.length > 0) {
+          setSelectedMedKeys(valid)
+          importedMeds = valid.length
+        }
       }
     } catch {
       // ignore
+    }
+    if (importedSupps + importedMeds > 0) {
+      setAnalyzerBanner({ count: importedSupps + importedMeds })
     }
   }, [allSuppOptions, allMedOptions])
 
@@ -171,6 +248,44 @@ export function InteractionCheckerClient() {
     window.addEventListener('scibase:favorites-updated', handler)
     return () => window.removeEventListener('scibase:favorites-updated', handler)
   }, [])
+
+  // ── 履歴
+  const [history, setHistory] = useState<HistoryEntry[]>([])
+
+  // 履歴 読み込み
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    try {
+      const raw = window.localStorage.getItem(HISTORY_STORAGE_KEY)
+      if (!raw) return
+      const arr = JSON.parse(raw) as HistoryEntry[]
+      if (Array.isArray(arr)) setHistory(arr)
+    } catch {
+      // ignore
+    }
+  }, [])
+
+  // 履歴 保存（input が変わったときに entry を作って保存・5 件まで）
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (mode === 'reverse') {
+      if (!reverseMedKey) return
+      saveHistory({
+        mode: 'reverse',
+        slugs: [],
+        meds: [reverseMedKey],
+        ts: Date.now(),
+      }, setHistory)
+    } else {
+      if (selectedSlugs.length === 0 && selectedMedKeys.length === 0) return
+      saveHistory({
+        mode: 'check',
+        slugs: [...selectedSlugs],
+        meds: [...selectedMedKeys],
+        ts: Date.now(),
+      }, setHistory)
+    }
+  }, [mode, selectedSlugs, selectedMedKeys, reverseMedKey])
 
   // ── お気に入りから一括読み込み
   const loadFavorites = useCallback(() => {
@@ -344,6 +459,35 @@ export function InteractionCheckerClient() {
           薬から逆引き
         </button>
       </div>
+
+      {/* ── 履歴（最近 check した組合せ）── */}
+      {history.length > 0 && !hasInput && (
+        <HistoryStrip
+          entries={history}
+          allSuppOptions={allSuppOptions}
+          onRecall={(entry) => {
+            if (entry.mode === 'reverse') {
+              setMode('reverse')
+              setReverseMedKey(entry.meds[0] ?? null)
+              setSelectedSlugs([])
+              setSelectedMedKeys([])
+            } else {
+              setMode('check')
+              setSelectedSlugs(entry.slugs)
+              setSelectedMedKeys(entry.meds)
+              setReverseMedKey(null)
+            }
+          }}
+          onClear={() => {
+            try {
+              window.localStorage.removeItem(HISTORY_STORAGE_KEY)
+            } catch {
+              // ignore
+            }
+            setHistory([])
+          }}
+        />
+      )}
 
       {/* ── Analyzer 連携 banner（R4） ─────── */}
       {analyzerBanner && (
@@ -624,6 +768,14 @@ export function InteractionCheckerClient() {
               <Share2 className="size-4" />
               この組み合わせをシェア
             </button>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-medium hover:bg-accent"
+            >
+              <Printer className="size-4" />
+              印刷 / PDF
+            </button>
           </div>
         )}
       </section>
@@ -681,6 +833,60 @@ export function InteractionCheckerClient() {
           onClose={() => setActivePicker(null)}
         />
       )}
+    </div>
+  )
+}
+
+// ============================================================================
+// HistoryStrip：最近 check した組合せをワンタップで再呼び出し
+// ============================================================================
+
+interface HistoryStripProps {
+  entries: HistoryEntry[]
+  allSuppOptions: IngredientOption[]
+  onRecall: (entry: HistoryEntry) => void
+  onClear: () => void
+}
+
+function HistoryStrip({ entries, allSuppOptions, onRecall, onClear }: HistoryStripProps) {
+  if (entries.length === 0) return null
+  return (
+    <div className="mb-4 rounded-lg border bg-card p-3">
+      <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+        <Clock className="size-3.5" />
+        最近 check した組合せ
+        <button
+          type="button"
+          onClick={onClear}
+          className="ml-auto text-[10px] font-normal text-muted-foreground/60 underline-offset-2 hover:text-foreground hover:underline"
+        >
+          履歴をクリア
+        </button>
+      </div>
+      <ul className="flex flex-wrap gap-1.5">
+        {entries.map((e, i) => {
+          const suppNames = e.slugs
+            .map((s) => allSuppOptions.find((o) => o.slug === s)?.nameJa ?? s)
+            .filter(Boolean)
+          const labelParts: string[] = []
+          if (e.mode === 'reverse') labelParts.push(`逆引き:${e.meds[0] ?? ''}`)
+          else {
+            if (suppNames.length) labelParts.push(suppNames.slice(0, 2).join('・') + (suppNames.length > 2 ? `他${suppNames.length - 2}` : ''))
+            if (e.meds.length) labelParts.push(e.meds.slice(0, 2).join('・') + (e.meds.length > 2 ? `他${e.meds.length - 2}` : ''))
+          }
+          return (
+            <li key={i}>
+              <button
+                type="button"
+                onClick={() => onRecall(e)}
+                className="inline-flex items-center gap-1 rounded-full border bg-background px-2.5 py-1 text-[11px] text-foreground/80 hover:border-foreground hover:bg-accent"
+              >
+                {labelParts.join(' × ') || '(空)'}
+              </button>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }
@@ -865,7 +1071,7 @@ function SupplementPicker({ allOptions, selectedSlugs, onSelect, onClose }: Supp
                 className="flex w-full items-center justify-between px-3 py-2.5 text-left text-sm hover:bg-accent"
               >
                 <span>
-                  {o.nameJa}
+                  <HighlightedText text={o.nameJa} query={query} />
                   {o.popularRank !== undefined && o.popularRank < 10 && (
                     <span className="ml-1.5 inline-flex items-center text-[10px] text-amber-600">
                       <Sparkles className="size-3" />
@@ -959,6 +1165,7 @@ function MedicationPicker({
               <li key={entry.key}>
                 <MedicationButton
                   entry={entry}
+                  query={query}
                   onClick={() => {
                     onSelect(entry.key)
                     setQuery('')
@@ -1029,7 +1236,15 @@ function MedicationPicker({
   )
 }
 
-function MedicationButton({ entry, onClick }: { entry: CanonicalEntry; onClick: () => void }) {
+function MedicationButton({
+  entry,
+  onClick,
+  query = '',
+}: {
+  entry: CanonicalEntry
+  onClick: () => void
+  query?: string
+}) {
   const example = MEDICATION_EXAMPLES[entry.key]
   return (
     <button
@@ -1038,8 +1253,14 @@ function MedicationButton({ entry, onClick }: { entry: CanonicalEntry; onClick: 
       className="flex w-full items-start justify-between gap-2 px-3 py-2.5 text-left hover:bg-accent"
     >
       <div className="flex-1">
-        <div className="text-sm font-medium">{entry.key}</div>
-        {example && <div className="text-xs text-muted-foreground">{example}</div>}
+        <div className="text-sm font-medium">
+          <HighlightedText text={entry.key} query={query} />
+        </div>
+        {example && (
+          <div className="text-xs text-muted-foreground">
+            <HighlightedText text={example} query={query} />
+          </div>
+        )}
       </div>
       <Plus className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
     </button>

@@ -15,6 +15,7 @@ import {
   type CanonicalCategory,
 } from '@/lib/interaction-canonical'
 import { checkInteractions, LEVEL_LABEL, type InteractionResult } from '@/lib/interaction'
+import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import { useFavorite } from '@/hooks/useFavorite'
 import type { AnalysisAxis, Ingredient } from '@/lib/types'
 
@@ -1476,6 +1477,22 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
       {recommendations.length >= 2 && (
         <div className="animate-fade-up delay-1200">
           <ActionPlanSection recommendations={recommendations} />
+        </div>
+      )}
+
+      {/* ── Interaction Checker 連携（推奨 + 既存サプリ + 服用薬を一括 check）── */}
+      {(recommendations.length > 0 || currentSlugCount > 0) && (
+        <div className="mb-8 animate-fade-up delay-1300">
+          <InteractionCheckerCta
+            variant="banner"
+            ingredientSlugs={Array.from(
+              new Set([
+                ...recommendations.map((r) => r.ing.slug),
+                ...currentSlugs,
+              ]),
+            )}
+            customLabel="推奨 + 既存サプリ × 服用薬 を Interaction Checker で詳細確認"
+          />
         </div>
       )}
 
