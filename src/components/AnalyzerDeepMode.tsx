@@ -238,6 +238,121 @@ function useCountUp(target: number, duration: number = 1200, delay: number = 0):
   return value
 }
 
+/* ── PrecisionMeter：入力中の sticky 精度バー（Goal Gradient + Variable Reward） ── */
+function PrecisionMeter({ precision, hideAfterDiagnosis }: {
+  precision: number
+  hideAfterDiagnosis: boolean
+}) {
+  if (hideAfterDiagnosis) return null
+  // Tier 別 microcopy
+  let copy = '入力を始めましょう'
+  let copyColor = 'text-muted-foreground'
+  if (precision >= 90) { copy = '✨ 高精度モード — ベストな推奨が出ます'; copyColor = 'text-amber-700 font-semibold' }
+  else if (precision >= 70) { copy = '🔥 もうすぐ完成 — あと少しで満点'; copyColor = 'text-emerald-700 font-medium' }
+  else if (precision >= 40) { copy = '👍 良いペース — 推奨の的中率が上がっています'; copyColor = 'text-foreground' }
+  else if (precision >= 15) { copy = '順調 — もう少し入れると候補が広がります'; copyColor = 'text-foreground/70' }
+
+  return (
+    <div className="sticky top-14 z-30 -mx-5 px-5 pt-2 pb-2.5 mb-0
+      bg-card/95 backdrop-blur-sm border-b border-border">
+      <div className="flex items-center gap-2.5">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/80">精度</span>
+        <div className="flex-1 h-1.5 bg-secondary rounded-full overflow-hidden">
+          <div
+            className={`h-full rounded-full transition-all duration-700 ease-out
+              ${precision >= 90 ? 'bg-gradient-to-r from-amber-400 to-emerald-500' : 'bg-accent'}`}
+            style={{ width: `${precision}%` }}
+          />
+        </div>
+        <span className={`text-[13px] font-bold tabular-nums tracking-tight ${precision >= 90 ? 'text-amber-700' : 'text-foreground'}`}>
+          {precision}<span className="text-[10px] opacity-60 font-normal">%</span>
+        </span>
+      </div>
+      <p className={`text-[10.5px] mt-1 leading-snug ${copyColor}`}>{copy}</p>
+    </div>
+  )
+}
+
+/* ── Share helper：X 投稿テンプレ生成 ── */
+function buildShareXUrl(typeName: string): string {
+  const lines = [
+    `私のサプリ診断タイプは『${typeName}』✨`,
+    '',
+    '論文ベースで推奨を出す @r_evidence_ の SciBase で診断してきた',
+    '',
+    'https://scibase.app/analyzer',
+  ]
+  const text = lines.join('\n')
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
+}
+
+/* ── CompletionCelebration：Peak-End 対応の最終 dopamine ハイ ── */
+function CompletionCelebration({ topRecommendation, considerationsCount, recommendationCount, typeName }: {
+  topRecommendation: Recommendation
+  considerationsCount: number
+  recommendationCount: number
+  typeName: string
+}) {
+  const { ing } = topRecommendation
+  const { isFavorite, toggle } = useFavorite('ingredient', ing.slug)
+  const shareUrl = buildShareXUrl(typeName)
+
+  return (
+    <section className="my-8">
+      <div className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-emerald-50/40 to-card
+        border-2 border-emerald-300/70 rounded-3xl p-6 sm:p-8 text-center shadow-md">
+        {/* 装飾 sparkle */}
+        <span aria-hidden className="absolute top-3 right-4 text-[22px] animate-sparkle" style={{ animationDelay: '0.2s' }}>✨</span>
+        <span aria-hidden className="absolute bottom-4 left-5 text-[18px] animate-sparkle" style={{ animationDelay: '0.6s' }}>✨</span>
+        <span aria-hidden className="absolute top-6 left-7 text-[14px] animate-sparkle" style={{ animationDelay: '1s' }}>⭐</span>
+        <span aria-hidden className="absolute bottom-6 right-8 text-[16px] animate-sparkle" style={{ animationDelay: '1.4s' }}>💫</span>
+
+        <p className="text-[52px] sm:text-[60px] leading-none mb-2">🎉</p>
+        <h2 className="text-[20px] sm:text-[24px] font-bold text-foreground mb-1.5 tracking-tight">
+          診断完了
+        </h2>
+        <p className="text-[13px] text-muted-foreground leading-relaxed max-w-md mx-auto mb-5">
+          <strong className="text-foreground">{considerationsCount} 項目</strong>の入力 × 論文エビデンスから、
+          あなた専用の <strong className="text-foreground">{recommendationCount} 件</strong>を導きました。
+          まず <strong className="text-emerald-700">#1 {ing.nameJa}</strong> から始めるのがおすすめ。
+        </p>
+
+        {/* メイン CTA: お気に入り保存 */}
+        <div className="space-y-2.5 max-w-sm mx-auto">
+          <button
+            onClick={toggle}
+            aria-pressed={isFavorite}
+            className={`group w-full inline-flex items-center justify-center gap-2 rounded-2xl py-3.5
+              text-[14px] font-bold transition-all duration-200
+              ${isFavorite
+                ? 'bg-yellow-100 border-2 border-yellow-300 text-yellow-900'
+                : 'bg-foreground text-background border-2 border-foreground hover:scale-[1.02] shadow-md hover:shadow-lg'}`}
+          >
+            <Star className={`w-4 h-4 ${isFavorite ? 'fill-yellow-400 text-yellow-500' : 'group-hover:scale-110 transition-transform'}`} />
+            {isFavorite ? `お気に入り済 — #1 ${ing.nameJa}` : `⭐ #1 ${ing.nameJa} をお気に入り保存`}
+          </button>
+
+          {/* シェア (X) */}
+          <a href={shareUrl} target="_blank" rel="noopener noreferrer"
+            className="group w-full inline-flex items-center justify-center gap-2 rounded-2xl py-2.5
+              border border-border bg-card text-foreground
+              text-[13px] font-semibold transition-colors
+              hover:bg-secondary hover:border-foreground/30">
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            X で「{typeName}」をシェア
+          </a>
+        </div>
+
+        <p className="text-[10.5px] text-muted-foreground mt-4 opacity-80">
+          結果はブラウザに保存中。次回も同じ条件で見直せます。
+        </p>
+      </div>
+    </section>
+  )
+}
+
 /* ── DiagnoseCTA：明示的な「診断する」ボタン（ドーパミン起動装置） ── */
 function DiagnoseCTA({ ready, considerationsCount, onClick }: {
   ready: boolean
@@ -832,8 +947,24 @@ export function AnalyzerDeepMode() {
 
   const pregnancyWarning = basic.pregnancy === 'pregnant' || basic.pregnancy === 'nursing' || basic.pregnancy === 'trying'
 
+  /* 精度 % 計算（5 セクションの入力充実度を 100 点換算）*/
+  const precision = useMemo(() => {
+    let s = 0
+    if (basic.age) s += 5
+    if (basic.gender) s += 5
+    if (basic.pregnancy) s += 5  // 'none' でも選択済とみなす
+    s += Math.min(30, concernSlugs.length * 10)
+    s += Object.values(lifestyle).filter(Boolean).length * 5
+    s += Math.min(10, medKeys.length * 5)
+    s += Math.min(20, currentSlugs.length * 4)
+    return Math.min(100, Math.round(s))
+  }, [basic, concernSlugs, lifestyle, medKeys, currentSlugs])
+
   return (
     <div className="space-y-10">
+      {/* ── Sticky 精度メーター（Goal Gradient + Variable Reward）── */}
+      <PrecisionMeter precision={precision} hideAfterDiagnosis={diagnosed} />
+
       {/* ── 注意書き ── */}
       <div className="bg-secondary/40 border border-border rounded-2xl px-5 py-4">
         <p className="text-[13px] text-foreground/80 leading-relaxed">
@@ -1632,6 +1763,16 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
       {/* ── Bonus Insight ── */}
       {bonusInsight && <BonusInsightCard insight={bonusInsight} />}
 
+      {/* ── 🎉 完了 celebration（Peak-End）── */}
+      {recommendations[0] && (
+        <CompletionCelebration
+          topRecommendation={recommendations[0]}
+          considerationsCount={personalityType.considerationsCount}
+          recommendationCount={recommendations.length}
+          typeName={personalityType.name}
+        />
+      )}
+
       {totalExcluded > 0 && (
         <ExcludedSection
           excludedByPregnancy={excludedByPregnancy}
@@ -1856,16 +1997,28 @@ function PersonalityTypeCard({ type, recommendationCount, excludedCount, current
   return (
     <section className="mb-6">
       <div className="bg-gradient-to-br from-accent/8 via-card to-card border-2 border-accent/30 rounded-2xl p-5 shadow-sm relative overflow-hidden">
-        <div className="flex items-baseline justify-between gap-2 mb-3">
+        <div className="flex items-center justify-between gap-2 mb-3">
           <span className="text-[10px] font-semibold tracking-wider bg-accent text-primary-foreground
             px-2 py-0.5 rounded-md">YOUR TYPE</span>
-          <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-700
-            bg-amber-50 border border-amber-200 rounded-full px-2 py-0.5">
-            {Array.from({ length: rarityStars }, (_, i) => (
-              <span key={i} className="text-amber-500">★</span>
-            ))}
-            <span className="ml-0.5">{rarityLabel}</span>
-          </span>
+          <div className="flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-700
+              bg-amber-50 border border-amber-200 rounded-full px-2 py-0.5">
+              {Array.from({ length: rarityStars }, (_, i) => (
+                <span key={i} className="text-amber-500">★</span>
+              ))}
+              <span className="ml-0.5">{rarityLabel}</span>
+            </span>
+            <a href={buildShareXUrl(type.name)} target="_blank" rel="noopener noreferrer"
+              aria-label="X でシェア"
+              title="X でシェア"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full
+                bg-card border border-border text-muted-foreground
+                hover:text-foreground hover:border-foreground/30 transition-colors">
+              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div className="flex items-start gap-3 mb-3">
