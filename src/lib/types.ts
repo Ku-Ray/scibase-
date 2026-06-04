@@ -312,6 +312,23 @@ export interface Ingredient {
    * YMYL レベル（medical advice の必要度）。high の成分は legal/factcheck 2 周必須。
    */
   ymylLevel?: 'low' | 'medium' | 'high'
+  /**
+   * H2 セクション冒頭の TL;DR ブロック（AIO/Perplexity 引用源最適化・Sprint 3）。
+   * 1-2 文で当該セクションの「答え」を先出し。未設定時は B 方式 fallback
+   * （whoFor[0]/papers[0]/dosage 等）が `getSectionTLDR()` で自動生成される。
+   * description は Wave 2C で Answer Capsule 化済のため対象外。
+   */
+  sectionSummaries?: {
+    whoFor?: string
+    papers?: string
+    publicDbReferences?: string
+    evidence?: string
+    dosage?: string
+    dosageLevels?: string
+    faq?: string
+    safety?: string
+    interactions?: string
+  }
   updatedAt: string
 }
 

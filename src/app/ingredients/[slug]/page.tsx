@@ -19,7 +19,8 @@ import { ComparisonTable } from '@/components/product/ComparisonTable'
 import { scoreProduct, computeAxisLeaders } from '@/lib/productScore'
 import type { TocSection } from '@/components/TableOfContents'
 import type { Metadata } from 'next'
-import type { EvidenceRank } from '@/lib/types'
+import type { EvidenceRank, Ingredient } from '@/lib/types'
+import { getSectionTLDR, type SectionSummaryKey } from '@/lib/sectionSummaries'
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -108,6 +109,21 @@ function paperEvidenceColor(overall: number): {
 }
 
 const BASE_URL = 'https://scibase.app'
+
+/* Sprint 3 Wave 3.1-α: H2 セクション冒頭の TL;DR ブロック（AIO/Perplexity 引用源化）。
+   ing.sectionSummaries[k] が手書きなら使い、なければ B 方式 fallback。null は非表示。 */
+function SectionTLDR({ ing, k }: { ing: Ingredient; k: SectionSummaryKey }) {
+  const tldr = getSectionTLDR(ing, k)
+  if (!tldr) return null
+  return (
+    <p className="text-[13px] text-foreground/85 leading-relaxed bg-foreground/[0.03]
+      border-l-2 border-foreground/40 rounded-r-md px-4 py-3 mb-4">
+      <span className="text-[10px] font-semibold text-foreground/55 mr-2
+        tracking-[0.1em] uppercase">要点</span>
+      {tldr}
+    </p>
+  )
+}
 
 /* Pillar #1（30代抗老化サプリ完全ガイド）で言及される主要成分。
    該当成分ページからのみ Pillar #1 への逆向き内部リンクを表示し、
@@ -867,6 +883,7 @@ export default async function IngredientPage({ params }: Props) {
             <h2 className="font-semibold text-[18px] text-foreground mb-4">
               こんな人に特に関係する
             </h2>
+            <SectionTLDR ing={ing} k="whoFor" />
             <div className="bg-card border border-border rounded-2xl p-5 space-y-3">
               {ing.whoFor.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
@@ -888,6 +905,7 @@ export default async function IngredientPage({ params }: Props) {
         {/* Papers */}
         <section id="papers" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-[18px] text-foreground mb-4">主要研究</h2>
+          <SectionTLDR ing={ing} k="papers" />
           <div className="space-y-3">
             {ing.papers.map((p, i) => {
               const paperUrl = p.pmid
@@ -944,6 +962,7 @@ export default async function IngredientPage({ params }: Props) {
             <h2 className="font-semibold text-[18px] text-foreground mb-2">
               公的データベース参照
             </h2>
+            <SectionTLDR ing={ing} k="publicDbReferences" />
             <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed">
               個別論文に加えて、国立研究開発法人など公的機関が複数の論文を横断してまとめた
               安全性・有効性・相互作用情報も参照できる。
@@ -1002,6 +1021,7 @@ export default async function IngredientPage({ params }: Props) {
           <h2 className="font-semibold text-[18px] text-foreground mb-4">
             このエビデンスをどう読むか
           </h2>
+          <SectionTLDR ing={ing} k="evidence" />
           <EvidenceBadge rank={ing.evidenceRank} variant="detail" />
         </section>
 
@@ -1010,6 +1030,7 @@ export default async function IngredientPage({ params }: Props) {
           <h2 className="font-semibold text-[18px] text-foreground mb-4">
             {ing.usageType === 'topical' ? '使用ガイド（論文ベース）' : '摂取ガイド（論文ベース）'}
           </h2>
+          <SectionTLDR ing={ing} k="dosage" />
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
             {[
               ing.dosageMin ? {
@@ -1036,6 +1057,7 @@ export default async function IngredientPage({ params }: Props) {
             <h2 className="font-semibold text-[18px] text-foreground mb-2">
               {ing.nameJa}の用量別の効果
             </h2>
+            <SectionTLDR ing={ing} k="dosageLevels" />
             <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed">
               論文で報告されている用量ごとの効果と、推奨される対象層を整理しました。
               数値はあくまで研究での投与量であり、個人差・服薬状況により最適量は異なります。
@@ -1081,6 +1103,7 @@ export default async function IngredientPage({ params }: Props) {
             <span className="text-[11px] text-muted-foreground bg-secondary border border-border
               rounded-full px-2.5 py-1">{faqItems.length}件</span>
           </div>
+          <SectionTLDR ing={ing} k="faq" />
           <div className="border border-border rounded-2xl overflow-hidden divide-y divide-border">
             {faqItems.map(({ q, a }, i) => (
               <details key={i} {...(i === 0 ? { open: true } : {})}
@@ -1110,6 +1133,7 @@ export default async function IngredientPage({ params }: Props) {
         {(ing.sideEffects?.length || ing.contraindications?.length) && (
           <section id="safety" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-4">副作用・注意事項</h2>
+            <SectionTLDR ing={ing} k="safety" />
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 space-y-4">
               {ing.sideEffects?.length ? (
                 <div>
@@ -1143,6 +1167,7 @@ export default async function IngredientPage({ params }: Props) {
         {ing.interactions !== undefined && ing.interactions.length === 0 ? (
           <section id="interactions" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-2">飲み合わせ・医薬品との相互作用</h2>
+            <SectionTLDR ing={ing} k="interactions" />
             <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
               <p className="text-[14px] text-emerald-900 font-semibold mb-2">
                 現時点で重要な相互作用は報告されていません
@@ -1161,6 +1186,7 @@ export default async function IngredientPage({ params }: Props) {
         {ing.interactions?.length ? (
           <section id="interactions" className="mb-10 scroll-mt-20">
             <h2 className="font-semibold text-[18px] text-foreground mb-2">飲み合わせ・医薬品との相互作用</h2>
+            <SectionTLDR ing={ing} k="interactions" />
             <p className="text-[13px] text-muted-foreground mb-4">
               添付文書・FDA警告・査読論文をもとに、併用に注意が必要な医薬品をまとめています。
             </p>
