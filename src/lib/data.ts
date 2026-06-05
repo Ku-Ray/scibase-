@@ -71924,7 +71924,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['高用量DHA', 'DHA眼科', 'high-dose DHA', 'DHA 1000mg', '網膜DHA', 'DHA retina'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: '高用量DHA1000mg｜AREDS2試験のnull結果と網膜膜流動性メカニズム',
+    seoTitle: '高用量DHA 1000mg｜AREDS2 nullと網膜膜の論文｜SciBase',
     seoDescription: '高用量DHA経口（1000mg/日）は網膜光受容体膜の主要構成脂質。AREDS2 JAMA 2013 RCT（n=4203・5年）で omega-3（DHA350+EPA650mg）単独 AMD 進行抑制効果は null（HR 0.97）。一方 Querques 2011 review で DHA は網膜膜流動性・integrity・抗アポトーシス役割。dose 1000mg DHA/日・脂質食と一緒｜SciBase',
     tagline: 'AREDS2はnull結果・メカニズム面で網膜DHA必須性・既存omega3と差別化',
     description:
@@ -71934,6 +71934,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '既存omega-3-fish-oil（一般用量250-500mg DHA/日）と異なり眼科特化の高用量・1000mg DHA/日に絞った選択肢。AREDS2のnull結果からAMD進行抑制を断言できないため「予防的選択肢」「網膜機能維持目的」として位置づけ。',
     concerns: ['eye-health', 'cognitive'],
+    sectionSummaries: {
+      whoFor: 'AMD 家族歴あり・50代以降の予防的アプローチ。ドライアイ・網膜機能維持目的で omega-3 を高用量摂取。既存 omega-3（250-500mg DHA）から切り替えたい層。',
+      papers: 'AREDS2 JAMA 2013 RCT n=4,203・5年（DHA 350mg+EPA 650mg+lutein/zeaxanthin で omega-3 単独の AMD 進行抑制効果は null・HR 0.97）+ Querques 2011 J Nutr Metab review（DHA は網膜光受容体外節膜のリン脂質 50-60% で膜流動性・retinal integrity を担う）の2軸が主柱。',
+      publicDbReferences: 'NIH ODS Omega-3 Fatty Acids HealthProfessional Fact Sheet が安全性基盤。',
+      evidence: 'B ランク・PEI 3.7（RCT 1 + review 1・recent15y=2）。AREDS2 null 結果から AMD 進行抑制は断言できないが、機序面で網膜 DHA の必須性は確立。',
+      dosage: 'DHA 800-1,000 mg/日（脂質を含む食事と一緒に1日1回）。Nordic Naturals DHA Xtra 1000mg/softgel が研究準拠規格。',
+      dosageLevels: '一般 omega-3（250-500mg DHA）→ 高用量眼科特化（800-1000mg DHA・Nordic Naturals DHA Xtra）の 2 段階。両者の併用は EPA+DHA 計 2-3g/日で出血傾向に注意。',
+      faq: 'AREDS2 null 結果でも摂る意味は？・既存 omega-3 サプリとの違い の 2 軸FAQで決断負荷を解消。',
+      safety: '抗血小板薬・抗凝固薬併用は出血リスクで医師相談・術前2週間中止。魚アレルギーは藻由来製品で代替可。AMD 進行抑制を断言できないため「予防的選択肢」位置付け。',
+      interactions: '抗血小板薬・抗凝固薬と相加で出血傾向 → 主治医相談・量調整。',
+    },
     papers: [
       {
         title: 'Lutein + Zeaxanthin and Omega-3 Fatty Acids for Age-Related Macular Degeneration: The Age-Related Eye Disease Study 2 (AREDS2) Randomized Clinical Trial',
@@ -72043,7 +72054,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
       },
     ],
-    updatedAt: '2026-05-23',
+    updatedAt: '2026-06-06',
     publicDbReferences: [
       {
         source: 'nih-ods',
