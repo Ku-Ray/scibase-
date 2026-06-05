@@ -66264,7 +66264,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['DHA', 'ドコサヘキサエン酸', 'docosahexaenoic acid', 'ピュアDHA'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: '高純度DHA｜認知機能・900mg・論文RCT・脳',
+    seoTitle: '高純度DHA｜900mg MIDAS・認知/胎児/網膜の論文｜SciBase',
     seoDescription: '高純度DHA魚油はDHA含有量を50%以上に高めた製品。900mg/日で軽度認知障害のない高齢者の記憶課題スコアがRCT（Yurko-Mauro 2010・n=485）で改善。網膜・胎児脳発達への用途も研究蓄積あり。既存omega3とは別エントリでDHA中心の使い方を整理。｜SciBase',
     tagline: 'DHA中心で脳・網膜・胎児に振り切った製品・認知機能RCTあり',
     description:
@@ -66274,6 +66274,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'ワルファリン等抗凝固薬併用は出血リスクで医師相談。EPAより心血管エビデンスは小さいため、心血管目的中心ならEPA高純度製品を選ぶ。妊娠・授乳中は混合または高純度DHAが一般的に選ばれる。',
     concerns: ['cognitive', 'inflammation'],
+    sectionSummaries: {
+      whoFor: '50代以降で記憶・認知機能の維持を目的にする方。妊娠・授乳期の胎児/乳児脳発達補助。EPA中心ではなくDHA特化エビデンスに注目したい層。',
+      papers: 'Yurko-Mauro 2010 Alzheimer\'s & Dement RCT n=485（MIDAS試験・900mg/日×24週で 55歳以上の記憶課題スコア有意改善）+ Pediatrics 2012 メタ解析 n=1,949（妊娠期DHA補給と乳児視力発達）+ Aging Clin Exp Res 2015 RCT n=86（BDNF上昇）の3軸が主柱。',
+      publicDbReferences: 'NIH ODS Omega-3 Fatty Acids HealthProfessional Fact Sheet（AI・EPA/DHA心血管/認知・抗凝固薬併用注意）が安全性基盤。',
+      evidence: 'A ランク・PEI 7.2（RCT 2 + メタ解析 1・recent15y=2）。DHA は脳・網膜・神経膜の主要構成脂質で、認知/視覚/胎児脳発達のRCTエビデンス確立。',
+      dosage: 'DHA 500-1,000 mg/日（食後・脂質と一緒）。妊婦・授乳婦は NIH 推奨 200-300 mg/日。研究用量は MIDAS 試験の 900mg/日が中核。',
+      dosageLevels: '妊婦・授乳期 200-300mg/日 → 一般予防 500mg/日（Nordic Naturals DHA 500mg 2粒）→ 認知/MIDAS用量 900-1000mg/日（高用量眼科特化なら dha-eye-amd-high ページ参照）の 3 段階。',
+      faq: '混合オメガ3 vs DHA単独の使い分け・妊娠/授乳中の安全性の 2 軸FAQで決断負荷を解消。',
+      safety: 'ワルファリン・DOAC等抗凝固薬併用は出血リスクで医師相談。げっぷ・魚臭の副作用。水銀・PCB等の重金属汚染リスクのため IFOS 等第三者検査品を選ぶ。タラ肝油はビタミンA過剰で妊娠中NG。',
+      interactions: '抗凝固薬（ワルファリン・DOAC）と血小板凝集抑制の上乗せで出血リスク → 主治医に併用を伝える。',
+    },
     papers: [
       {
         title: 'Beneficial effects of DHA on cognition in age-related cognitive decline (MIDAS)',
@@ -66385,7 +66396,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'established',
       },
     ],
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-06',
     publicDbReferences: [
       {
         source: 'nih-ods',
