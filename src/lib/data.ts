@@ -48085,6 +48085,17 @@ export const ingredients: Ingredient[] = [
       '日本人の平均的食生活で不足傾向を補完したい方',
       '腎機能正常・処方薬の服用がなく医師相談を経た方',
     ],
+    sectionSummaries: {
+      whoFor: '減塩中でも血圧が下がりにくい・むくみが気になる・野菜果物の摂取が少ない自覚がある成人。腎機能正常・処方薬の服用がない方が前提。',
+      papers: 'DASH 2001 NEJM RCT n=459（収縮期-5.5/拡張期-3.0mmHg）+ Aburto 2013 BMJ メタ解析 n=128,000（脳卒中リスク-24%）+ SSaSS 2021 NEJM RCT n=20,995（塩化K置換塩で脳卒中-14%）の3軸が主柱。',
+      publicDbReferences: 'hfnet（健康被害・利尿薬相互作用）+ NIH ODS Potassium Health Professional（RDA・血圧/腎/心臓影響・薬物相互作用）の2層で安全性が公的にカバー済。',
+      evidence: 'A ランク・PEI 6.5（RCT 2 + メタ解析 1 + コホート 1・recent15y=4）。血圧降下・脳卒中予防のRCTエビデンスが厚く、降圧薬と相加・代替の関係。',
+      dosage: 'サプリ追加 200-500 mg/日（食事と一緒・米国OTC上限99mg/錠）。日本食事摂取基準 2025 目標量=成人男性3,000mg・女性2,600mg・平均摂取量は約2,300mg/日（不足傾向）。',
+      dosageLevels: '食事改善が第一手段（野菜350g+果物200g/日で推奨量到達）→ サプリ補完 200-300mg/日（クエン酸K 99mg/錠×2-3粒）→ 高用量は医療処方領域（自己判断は致死的不整脈リスク）。',
+      faq: '日本人カリウム不足の現状・血圧降下のRCT・腎臓への影響・カリウムの多い食品・サプリ選び方の 5 軸FAQで決断負荷を解消。',
+      safety: '腎機能低下（CKD ステージ3以上・eGFR<60）・透析中は禁忌。ACE阻害薬・ARB・カリウム保持性利尿薬服用中はサプリ自己追加が禁忌（致死的不整脈リスク）。高用量サプリで胃部不快の可能性。',
+      interactions: 'ACE阻害薬・ARB・カリウム保持性利尿薬（スピロノラクトン）と相加で高K血症リスク → サプリ自己追加は禁忌。NSAIDs長期使用も腎機能低下を介した高K血症リスクで医師相談前提。',
+    },
     papers: [
       {
         title: 'A clinical trial of the effects of dietary patterns on blood pressure (DASH)',
@@ -48279,7 +48290,7 @@ export const ingredients: Ingredient[] = [
           '迷ったらまず野菜・果物の食事増で対応し、平均摂取2,300mg/日を3,000mg/日まで上げる食事改善が第一手段だ。サプリは食事改善が困難な場合の補完用途と理解するのが現代的な使い方になる。',
       },
     ],
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-06',
   },
   {
     slug: 'phosphorus',
