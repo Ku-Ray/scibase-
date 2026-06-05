@@ -582,7 +582,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['Mg', 'マグ', 'マグネ', 'マグネシウム おすすめ', 'マグネシウム サプリ', 'マグネシウム 種類', 'マグネシウム 市販', 'マグネシウム iherb', 'クエン酸マグネシウム', 'グリシン酸マグネシウム', '酸化マグネシウム', 'マグネシウム グリシネート', 'マグネシウム グリシ ネート', 'マグネシウム グリシ ネート 副作用', 'マグネシウム グリシ ネート 効果', 'マグネシウム グリシン酸 副作用', 'マグネシウム グリシン酸 効果', 'magnesium glycinate', 'magnesium citrate'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: 'マグネシウム｜不眠・便秘への効果と種類別の論文',
+    seoTitle: 'マグネシウム｜不眠/便秘/偏頭痛・形態別の論文｜SciBase',
     seoDescription: 'マグネシウムは必須ミネラル。日本人の食事摂取量は推奨量より約100mg/日不足。200〜400mg/日で睡眠の質・筋疲労軽減への効果がRCTで示されている。グリシン酸・クエン酸・酸化型の吸収率の違い、市販・iHerbで選べる種類別おすすめ、塗るマグネシウム・食材・抗菌薬/甲状腺薬との併用注意、副作用を査読済み論文で解説。',
     tagline: '日本人の平均摂取量は推奨量より約100mg/日不足。睡眠の質改善のRCTあり',
     description:
@@ -592,6 +592,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '500mg/日以上で下痢が出やすく、腎機能低下のある方は禁忌寄り。抗菌薬・甲状腺薬とはキレート形成のため2〜4時間ずらして服用する。',
     concerns: ['sleep', 'fatigue', 'stress', 'muscle'],
+    sectionSummaries: {
+      whoFor: '夜中の足のつり・寝つきの悪さ・ストレス食いしばり・便秘の30-50代。日本人は推奨量より平均約100mg/日不足。',
+      papers: 'Abbasi 2012 J Res Med Sci RCT n=46（高齢者不眠で睡眠時間・効率改善）と Eur J Clin Nutr 2020 メタ解析 n=1,800（インスリン抵抗性・血圧・CRP改善）の2軸が主柱。',
+      publicDbReferences: 'hfnet（耐容上限・腎機能）+ eJIM（NIH ODS 翻訳）+ NIH ODS Fact Sheet の3層。日本の医薬品ライン（マグミット錠）は別系統。',
+      evidence: 'S ランク・PEI 5.9（RCT1 + メタ解析1・recent15y=2）。睡眠・偏頭痛予防・便秘・神経鎮静で論文蓄積。',
+      dosage: '200-400 mg/日（睡眠目的は就寝1-2時間前）。偏頭痛予防は600 mg/日（Peikert 1996）。日本食事摂取基準 2020 推奨量=成人男性340-370mg・女性270-290mg。',
+      dosageLevels: 'グリシン酸キレート型（睡眠/神経・第一選択）→ クエン酸型（コスパ・日常補給）→ 酸化型（便秘薬・医薬品）→ 塩化Mg経皮（補助）の4形態を目的別に選ぶ。',
+      faq: '形態別効き方・飲むタイミング・食事だけで足りるか・飲み過ぎ・酸化Mg副作用・偏頭痛・iHerb選び方・便秘医薬品との違いの8軸FAQで決断負荷を解消。',
+      safety: '500 mg/日超で下痢・消化器症状。腎機能低下は高Mg血症（脱力/血圧低下/徐脈）リスクで医師相談必須。長期使用時は血清Mg値モニタリング推奨。',
+      interactions: 'テトラサイクリン系・キノロン系抗菌薬と2-3時間前/4-6時間後にずらす（吸収50-90%低下）。ビスホスホネート・甲状腺薬（レボチロキシン）も同様。',
+    },
     papers: [
       {
         title: 'The Effect of Magnesium Supplementation on Primary Insomnia in Elderly: A Double-Blind Placebo-Controlled Clinical Trial',
@@ -884,7 +895,7 @@ export const ingredients: Ingredient[] = [
         source: 'ThyroMag Trial（PMC12605969）／Drugs.com Levothyroxine-Magnesium',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-05',
   },
   {
     slug: 'vitamin-d',
