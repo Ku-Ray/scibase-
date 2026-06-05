@@ -5925,7 +5925,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'lactic-acid',
-    seoTitle: '乳酸｜疲労物質ではない真実と運動科学の論文',
+    seoTitle: '乳酸｜疲労物質神話とAHA 5-10%の論文｜SciBase',
     nameJa: '乳酸',
     nameEn: 'Lactic Acid',
     aliases: ['乳酸', 'AHA', 'lactic acid'],
@@ -5939,6 +5939,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'UV感受性が高まるため日焼け止め必須・使わない場合は使用不可。ヒリつきは濃度・頻度に依存。光感受性の増加に注意し、レチノール等との同時併用は段階導入。',
     concerns: ['skin-aging', 'dry-skin', 'pores', 'spots'],
+    sectionSummaries: {
+      whoFor: 'グリコール酸では刺激が強い敏感肌・酒さ素因のある 20-40 代女性。ピーリングしながら保湿も同時にしたい層。肌のくすみ・ザラつきが気になる方。',
+      papers: 'J Cosmet Dermatol 2018 RCT n=40（5% 乳酸外用 12週で角質水分量・皮膚弾力・色素沈着の有意改善・グリコール酸比で刺激スコア低）が主柱。',
+      publicDbReferences: '化粧品成分として広く流通（医薬部外品の有効成分なし・スキンケア外用カテゴリ）。安全性基盤は ICH Q3D 重金属基準・PMDA 化粧品ガイドライン。',
+      evidence: 'A ランク・PEI 2.8（RCT 1・recent15y=1）。AHAの中で分子サイズが大きく刺激が少ない・NMF（天然保湿因子）産生促進という独自機序。',
+      dosage: '外用 5-12%（夜のみ・SPF 必須）。週 2-3 回から開始 → 慣れたら毎日。4-8 週で評価。',
+      dosageLevels: '入門 5%（敏感肌・週 1-2 回）→ 標準 10%（The Ordinary Lactic Acid 10%・週 2-3 回 → 毎日）→ 強化 12%（経験者・上限濃度）の 3 段階。',
+      faq: 'sweet-spot KW で軸ズレ（乳酸菌系 KW は probiotics ページ範囲）のため lactic-acid 専用 FAQ なし・description で疲労物質神話の否定を明示。',
+      safety: 'UV感受性増加で SPF 必須。日焼け止め未使用なら使用不可。レチノール・高濃度ビタミン C との同時併用は段階導入（朝/夜分け）。妊娠中安全（外用 AHA は妊娠期問題なしのコンセンサス）。',
+      interactions: 'AHA × レチノール × BHA × 高濃度ビタミン C 同時併用で過剰刺激リスク → 朝/夜分けるか日を分ける運用。ベンゾイルパーオキサイドとも別タイミング。',
+    },
     papers: [
       {
         title: 'Lactic acid as an alpha-hydroxy acid for skin care',
@@ -6041,7 +6052,7 @@ export const ingredients: Ingredient[] = [
     heroStat: { value: '保湿+剥離', label: '唯一NMF産生を促すAHA成分' },
     axisScores: { antiAging: 3, skin: 8, cognitive: 0, stress: 0, sleep: 0, immunity: 0, metabolism: 0 },
     interactions: [],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-06',
   },
   {
     slug: 'copper-peptide',
