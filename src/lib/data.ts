@@ -8498,7 +8498,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['Fe', '鉄分', 'アイアン', 'ヘム鉄', '非ヘム鉄', 'グリシン酸鉄', 'フェロケル', 'Ferrochel', '硫酸鉄', 'フマル酸鉄'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: '鉄｜女性不足率とヘム/非ヘムの吸収差の論文',
+    seoTitle: '鉄サプリ｜女性疲労とヘム/非ヘム/妊婦の論文｜SciBase',
     seoDescription: '鉄サプリの選び方を研究の観点で解説。日本女性の20〜30%が潜在的鉄欠乏（フェリチン<30ng/mL の「隠れ貧血」）。非貧血でも疲労改善のRCT（CMAJ n=198）。ヘム鉄と非ヘム鉄の吸収率差（15-35% vs 2-20%）、ビスグリシン酸鉄キレート（Ferrochel）の優位性、妊婦・子供・男性の用量目安、フェリチン基準（12-30ng/mLが「隠れ貧血」）、飲むタイミング、効果が出るまでの期間、ビタミンC併用で2-3倍吸収、甲状腺薬・抗菌薬との相互作用まで査読済みエビデンスでカバー。',
     tagline: '日本女性の20〜30%が潜在的鉄欠乏。非貧血でも疲労改善のRCTあり',
     description:
@@ -8509,6 +8509,17 @@ export const ingredients: Ingredient[] = [
       '鉄過剰症（ヘモクロマトーシス）は絶対禁忌、甲状腺薬・テトラサイクリン系抗菌薬とは2-4時間以上空ける。3-6ヶ月でフェリチン改善が目安。',
 
     concerns: ['fatigue', 'hair', 'cognitive'],
+    sectionSummaries: {
+      whoFor: '月経過多・出産後・献血頻回・抜け毛が増えた20-40代女性。日本女性の20〜30%が潜在的鉄欠乏（フェリチン<30ng/mL）。',
+      papers: 'Vaucher 2012 CMAJ RCT n=198（非貧血鉄欠乏女性の80mg/日×12週で疲労スコア有意改善 p<0.001）が主柱。',
+      publicDbReferences: 'hfnet（耐容上限・相互作用）。日本処方薬ライン（クエン酸第一鉄Na・フェロミア・インクレミンシロップ）は別系統。',
+      evidence: 'S ランク・PEI 2.8（RCT 1・recent15y=1）。非貧血鉄欠乏（フェリチン低値）への補充エビデンスが核。',
+      dosage: '18-60 mg/日（元素鉄換算・空腹時 or 食間+ビタミンC）。日本食事摂取基準 2020 推奨量=月経のある女性10.5mg・妊娠中後期+8-9mg。',
+      dosageLevels: '維持 18-27mg（食事補完）→ 介入 27-36mg（フェリチン低値改善・CMAJ 2012 域）→ 医療管理 36-60mg（医師指導下）の 3 段階。隔日投与で総吸収量向上の報告も。',
+      faq: 'フェリチン基準・ヘム/非ヘムの選び方・市販vsiHerb・妊婦/子供/離乳食・タイミング+ビタミンC併用・効果出るまで・副作用対処・男性/閉経後の注意の10+軸FAQで決断負荷を解消。',
+      safety: '鉄過剰症（ヘモクロマトーシス）絶対禁忌。男性・閉経後女性の予防的高用量は推奨されず、フェリチン確認後に補充。子供の誤飲は中毒原因上位（手の届かない場所で保管）。',
+      interactions: '甲状腺薬（レボチロキシン）4時間以上・テトラサイクリン系/キノロン系抗菌薬 2-4時間ずらす。レボドパ（パーキンソン病）2時間。コーヒー/紅茶/緑茶のタンニンも吸収阻害。',
+    },
     papers: [
       {
         title: 'Iron supplementation improves fatigue and quality of life in iron-deficient non-anemic women',
@@ -8750,7 +8761,7 @@ export const ingredients: Ingredient[] = [
         },
       ],
     },
-    updatedAt: '2026-05-13',
+    updatedAt: '2026-06-06',
   },
   {
     slug: 'selenium',
