@@ -68578,7 +68578,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['C8 100%', 'カプリル酸100%', 'C8 MCT', 'pure C8'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'MCT C8 100%｜ケトン体応答3倍・Vandenberghe 2017・選び方',
+    seoTitle: 'MCT C8 100%｜混合とどう違う？ケトン応答3倍の論文｜SciBase',
     seoDescription: 'MCT C8 100%（カプリル酸特化）は通常のC8/C10混合MCTより血中ケトン応答が約3倍強い。Vandenberghe 2017のクロスオーバー試験で確認。認知補助・ケトジェニックダイエット導入期の使い方、下痢を避ける用量階段（5g→15g）を査読済み論文で解説。｜SciBase',
     tagline: '通常MCTより血中ケトン体応答が約3倍強い・C8純度100%品',
     description:
@@ -68588,6 +68588,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '下痢・腹痛・吐き気が脱落の最大要因で必ず低用量から開始する。糖尿病薬服用中はケトン体応答変動に注意。',
     concerns: ['cognitive', 'metabolism', 'brain-fog'],
+    sectionSummaries: {
+      whoFor: '通常の MCT オイル（C8/C10 混合）で認知・代謝補助に物足りなさを感じている・ケトジェニックダイエット導入期のケトフルー対策をしたい・軽度認知障害の補助層を探している家族層。バターコーヒー/キートコーヒー用途で C8 100% 規格を求める層が中心。',
+      papers: 'Vandenberghe 2017 Current Developments in Nutrition クロスオーバー RCT n=9（C8 カプリル酸単独が C8/C10 混合 MCT・ココナッツオイルより約 3 倍強い血中 β-ヒドロキシ酪酸 BHB 上昇）が主柱。Cunnane 2020 Alzheimer\'s & Dementia RCT n=83 26 週（MCT C8 主体 30g/日 6 ヶ月で軽度認知障害患者の ADAS-Cog・エピソード記憶・脳ケトン代謝率の有意改善）が認知補助軸の周辺エビデンス。',
+      publicDbReferences: 'NIH ODS には MCT 単独 fact sheet はないが、日本では食品衛生法上の食品扱い・健康補助食品として広く流通（日清オイリオ「日清 MCT オイル」等の市販規格）。米国 FDA は MCT を GRAS（一般に安全と認められる）成分扱いで、コーヒー業界用途（バターコーヒー）の確立で長期使用プロファイルあり。',
+      evidence: 'B ランク・PEI 5.4（confidence 0.67・papers 2 件: RCT 2）。血中ケトン応答上昇 A（C8 単独で混合品の 3 倍・RCT クロスオーバー）・軽度認知障害補助 A（30g/日 26 週で ADAS-Cog 改善 RCT）・ケトジェニックダイエット補助 B。「C8 特化 = ケトン応答強化」軸が確立。',
+      dosage: '5-30g/日（用量階段で漸増）。研究準拠は 5g（小さじ 1）→ 15g（大さじ 1）→ 30g（大さじ 2）の 3 段階で、各段階で 1-2 週間順応してから次に進む。朝食/昼食と一緒・空腹時単独より食事と一緒の方が消化器症状が出にくい。',
+      dosageLevels: '入門 5g/日（小さじ 1・順応 1-2 週・ヨーグルト/スムージー/コーヒーに混ぜる）→ 標準 15g/日（大さじ 1・C8 100% 推奨用量域・バターコーヒー定番）→ 強化 30g/日（大さじ 2・軽度認知障害補助 26 週 RCT 用量域・医師相談前提）の 3 段階。',
+      faq: '通常の MCT オイル（C8/C10 混合）との違い・下痢対策と用量階段 の 2 軸 FAQ で「C8 特化 = ケトン応答 3 倍」と「下痢が脱落最大要因 = 低用量から必須」を整理。',
+      safety: '下痢・腹痛・吐き気が脱落の最大要因で必ず 5g/日から開始必須。15g/日で下痢が続く場合は C8 100% が体質に合わない可能性で C8/C10 混合 MCT に切り替えが現実解。肝機能低下のある方は医師相談。',
+      interactions: '糖尿病治療薬（SGLT2 阻害薬等）は MCT 由来ケトン体上昇と SGLT2 阻害薬のケトーシス促進が相加する理論的リスクで使用回避か医師相談（Diabetes Care 2018 SGLT2/ketones safety review）。',
+    },
     papers: [
       {
         title: 'Tricaprylin alone increases plasma ketone response more than coconut oil or other medium-chain triglycerides',
@@ -68669,6 +68680,29 @@ export const ingredients: Ingredient[] = [
       '軽度認知障害の補助層を探している家族',
     ],
     heroStat: { value: '3倍', label: '血中BHB上昇（C8/C10混合比）' },
+    dosageLevels: [
+      {
+        dose: '5g',
+        category: '入門・順応 1-2 週',
+        effect: '小さじ 1 杯から始める順応用量。下痢・腹痛・吐き気が脱落の最大要因のため必ず低用量から開始。朝食のヨーグルト・スムージー・コーヒーに混ぜるのが研究で使われる方法。1-2 週間で消化器症状が出なければ次の標準用量に進む。',
+        whoFor: '初めて C8 100% を試す・通常 MCT で下痢経験あり・順応期間を取りたい層',
+        evidenceNote: '研究準拠の用量階段下限。空腹時単独より食事と一緒が消化器症状軽減に有効。',
+      },
+      {
+        dose: '15g',
+        category: '標準・C8 100% 推奨用量域',
+        effect: '大さじ 1 杯の C8 100% 推奨用量域。バターコーヒー・キートコーヒー用途で広く使われる用量で、Vandenberghe 2017 クロスオーバー RCT で C8 単独が C8/C10 混合 MCT・ココナッツオイルより約 3 倍強い血中 BHB 上昇を確認した研究準拠域。認知補助・ケトジェニックダイエット導入期のケトフルー対策に位置づけ。',
+        whoFor: 'バターコーヒー定番・通常 MCT で物足りない・認知補助を実験したい層',
+        evidenceNote: 'Sports Research / Bulletproof Brain Octane 等の C8 100% 規格品が 1 日大さじ 1 で論文準拠。',
+      },
+      {
+        dose: '30g',
+        category: '強化・軽度認知障害補助 RCT 用量',
+        effect: '大さじ 2 杯の上限用量。Cunnane 2020 Alzheimer\'s & Dementia RCT n=83 26 週で軽度認知障害患者の ADAS-Cog・エピソード記憶・脳ケトン代謝率の有意改善が確認された RCT 用量域。下痢リスクが上昇するため必ず 5g→15g→30g の用量階段で漸増し、医師相談前提。',
+        whoFor: '軽度認知障害補助層・家族で MCI 評価中・医師相談下で 26 週試験用量を狙う層',
+        evidenceNote: 'Cunnane 2020 26 週 RCT 用量。30g/日は下痢脱落リスクが上昇するため用量階段必須。',
+      },
+    ],
     axisScores: { antiAging: 3, skin: 1, cognitive: 5, stress: 2, sleep: 2, immunity: 2, metabolism: 4 },
     emerging: false,
     customFaqs: [
@@ -68691,7 +68725,7 @@ export const ingredients: Ingredient[] = [
           '15g/日で下痢が続く場合はC8 100%が体質に合わない可能性があり、通常のMCT（C8/C10混合）に切り替えるのが現実的です。',
       },
     ],
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-07',
   },
   {
     slug: 'c60-fullerene',
