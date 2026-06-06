@@ -6501,7 +6501,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'curcumin',
-    seoTitle: 'クルクミン｜吸収率の壁とBCM-95/Merivaの論文',
+    seoTitle: 'クルクミン｜ウコンの効果？吸収率の論文｜SciBase',
     nameJa: 'クルクミン',
     nameEn: 'Curcumin',
     aliases: ['ウコン', 'クルクミン', 'ターメリック', 'curcumin'],
@@ -6516,6 +6516,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '高用量で消化器症状や鉄吸収阻害が起こりうる。胆道疾患のある人・抗凝固薬（ワルファリン等）服用中は医師相談を前提とする。',
     concerns: ['inflammation', 'immunity', 'cognitive'],
+    sectionSummaries: {
+      whoFor: '関節リウマチ・変形性関節症・慢性炎症マーカー高値で抗炎症介入したい 40 代以上、食事のウコンだけでは不十分・「老化を炎症の観点」からアプローチしたい層。料理用ターメリックではなく吸収強化処方サプリ（BCM-95 / Meriva / C3+BioPerine）を選ぶ層が中心。',
+      papers: 'Critical Reviews in Food Science and Nutrition 2021 メタ解析 n=1,657 12 週（CRP・IL-6・TNF-α など主要炎症マーカーがプラセボ比有意低下 p<0.001・吸収強化製剤で効果大）が主柱。背景に Hewlings 2017 Foods 抗炎症レビュー・Daily 2016 J Med Food メタ解析（変形性関節症 1g/日 8 週で疼痛改善）・Sahebkar 2015 メタ解析（脂質改善）の周辺エビデンスあり。',
+      publicDbReferences: '国立健康・栄養研究所 hfnet 素材情報 DB（肝障害事例・抗凝固薬相互作用）+ 厚労省 eJIM（NCCIH 翻訳・統合医療情報）+ NIH NCCIH ターメリック原典 の 3 層で安全性と公的根拠をカバー。',
+      evidence: 'A ランク・PEI 3.3（confidence 0.33・papers 1 件: メタ解析 1）。抗炎症 CRP/IL-6/TNF-α 低下 A（メタ解析）・関節炎症状改善 B（補助エビデンス）・脂質改善 B・抗酸化 B。吸収率の壁を吸収強化処方で乗り越えるのが現実解。',
+      dosage: '500-2,000mg/日（メタ解析使用量レンジ）。単体クルクミン粉末は吸収率極低のため、C3+BioPerine（吸収約 20 倍）・Meriva フィトソーム（同 29 倍・Cuomo 2011 RCT 実証）・BCM-95（クルクミノイド + ターメロン）等の吸収強化処方が研究準拠。食事と一緒（脂溶性）。',
+      dosageLevels: '健常人 500mg/日（健常人予防・抗酸化ベース）→ 標準 1,000-1,500mg/日（関節炎症・脂質改善 RCT 中央値）→ 強化 2,000mg/日（短期高用量・医師相談前提・消化器症状リスク）の 3 段階。吸収強化処方の規格選びが用量より重要。',
+      faq: '副作用・併用禁忌薬・効果発現時間（8-12 週）・必要用量とピペリン併用・Meriva/BCM-95/通常クルクミンの違い の 5 軸 FAQ で「吸収率の壁」と「製品選び」を整理。',
+      safety: '高用量（2,000mg/日以上）で消化器症状（胃もたれ・吐き気・下痢）・鉄吸収阻害の可能性。胆道疾患（胆石・胆管閉塞）は胆汁分泌促進で症状悪化リスク・使用禁忌。妊娠中・授乳中は高用量データ限定的のため料理量にとどめる。',
+      interactions: '抗凝固薬・抗血小板薬（ワルファリン等）は INR 上昇・出血リスク症例ありで併用回避（British Journal of Clinical Pharmacology 2021 systematic review）。CYP3A4 基質薬（タクロリムス・一部スタチン・免疫抑制剤）は血中濃度上昇症例あり要医師相談（タクロリムス急性腎障害例）。糖尿病薬は低血糖リスク相加で併用前医師相談。',
+    },
     papers: [
       {
         title: 'Efficacy of curcumin supplementation on inflammation: a meta-analysis',
@@ -6650,6 +6661,29 @@ export const ingredients: Ingredient[] = [
       '老化を炎症の観点からアプローチしたい',
     ],
     heroStat: { value: 'CRP低下', label: '炎症マーカーがプラセボ比で有意改善（メタ解析）' },
+    dosageLevels: [
+      {
+        dose: '500mg',
+        category: '健常人予防・抗酸化ベース',
+        effect: '健常人の抗酸化・軽度な慢性炎症ケア用途。吸収強化処方（C3+BioPerine 等）と組み合わせて実質取り込み量を確保するのが現実解。短期での体感は乏しいが 8-12 週で炎症マーカー（CRP・IL-6）の改善が報告されている。',
+        whoFor: '抗炎症ケアを始めたい健常成人・サプリ初心者',
+        evidenceNote: 'Crit Rev Food Sci Nutr 2021 メタ解析の下限域。吸収強化なしの単体粉末は吸収率極低のため規格明示製品を選ぶ。',
+      },
+      {
+        dose: '1,000-1,500mg',
+        category: '標準・RCT 主流域',
+        effect: '関節炎症状・脂質改善 RCT の中央値レンジ。Crit Rev Food Sci Nutr 2021 メタ解析 n=1,657 12 週で CRP・IL-6・TNF-α 有意低下。Daily 2016 J Med Food メタ解析で変形性関節症 1g/日 8 週で疼痛・身体機能改善。BCM-95 / Meriva / C3+BioPerine 等の吸収強化処方が前提。',
+        whoFor: '関節リウマチ・変形性関節症・慢性炎症マーカー高値の 40 代以上',
+        evidenceNote: 'メタ解析使用量中央値。吸収強化処方なら 1,000mg/日でも研究準拠の血中濃度を確保。',
+      },
+      {
+        dose: '2,000mg',
+        category: '強化・短期高用量',
+        effect: '研究使用量上限の短期高用量域。重度の慢性炎症マーカー高値・症状重い場合の短期介入用途。消化器症状（胃もたれ・吐き気・下痢）・鉄吸収阻害のリスク上昇のため長期は推奨せず、医師相談下での 8-12 週限定使用が現実解。',
+        whoFor: '症状重い慢性炎症・短期介入希望・医師相談下',
+        evidenceNote: 'メタ解析使用量上限。長期高用量は消化器症状リスク上昇。吸収強化処方なら 1,000-1,500mg で十分な場合が多い。',
+      },
+    ],
     axisScores: { antiAging: 7, skin: 3, cognitive: 5, stress: 3, sleep: 1, immunity: 7, metabolism: 4 },
     customFaqs: [
       {
@@ -6724,7 +6758,7 @@ export const ingredients: Ingredient[] = [
         source: 'PubMed薬物動態研究／WebMD',
       },
     ],
-    updatedAt: '2026-04-20',
+    updatedAt: '2026-06-06',
   },
   {
     slug: 'taurine',
