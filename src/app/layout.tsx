@@ -1,10 +1,11 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Fraunces, Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { BottomNav } from '@/components/BottomNav'
 import { Toaster } from '@/components/Toaster'
+import { ServiceWorkerRegister } from '@/components/ServiceWorkerRegister'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -46,6 +47,21 @@ export const metadata: Metadata = {
     description: '悩みを選ぶだけで、論文に基づいた成分推薦が分かる。エビデンスレベルを透明に示す科学的成分データベース。',
   },
   alternates: { canonical: BASE_URL },
+  applicationName: 'SciBase',
+  appleWebApp: {
+    capable: true,
+    title: 'SciBase',
+    statusBarStyle: 'default',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0f172a',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 const websiteJsonLd = {
@@ -124,6 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <BottomNav />
         <Toaster />
+        <ServiceWorkerRegister />
       </body>
     </html>
   )
