@@ -4360,7 +4360,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['グリ', 'glycine'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'グリシン｜就寝前 3g/日で睡眠の質を上げる論文',
+    seoTitle: 'グリシン｜就寝前3g/睡眠の質/副作用｜SciBase',
     seoDescription: 'グリシンの副作用と効果を論文で整理。就寝30分前3g摂取で深部体温低下・入眠潜時短縮・徐波睡眠増加のRCTが確認されている。副作用は消化器症状（軽度・まれ）で安全性プロファイル良好。何g・何分前に摂るか、マグネシウムとの併用、コラーゲン産生への関与、長期摂取の注意点を査読済み論文で解説。',
     tagline: '睡眠の質・深睡眠の増加がRCTで確認されているアミノ酸',
     description:
@@ -4376,6 +4376,17 @@ export const ingredients: Ingredient[] = [
       'メラトニン以外で睡眠を整えたい方',
       '加齢で深睡眠が短くなった40代以上',
     ],
+    sectionSummaries: {
+      whoFor: '入眠困難・睡眠の質低下を感じる成人・寝起きの倦怠感が強い・睡眠薬に抵抗ある軽度不眠・冷え性自覚あり。',
+      papers: 'Yamadera 2007 Sleep Biol Rhythms RCT n=11（就寝前3gで主観的睡眠改善）+ Bannai 2012 Front Neurol（深部体温低下メカニズム）+ Inagawa 2006 Sleep Biol Rhythms（昼間眠気・疲労感の減少）の3軸が主柱。',
+      publicDbReferences: 'hfnet グリシン解説 + NIH ODS Glycine（メチオニン-ホモシステイン代謝経由）+ 厚労省 e-ヘルスネット アミノ酸の3層で公的カバー。',
+      evidence: 'B ランク・PEI 推定 4.0 域（小規模 RCT 中心・recent15y=2-3）。主観的睡眠改善 B・深部体温低下 B・統合失調症補助療法 C（研究段階）。',
+      dosage: '就寝30-60分前に 3g・温水/常温水で溶かして摂取。1-2週間継続で主観改善を評価。寝起きの倦怠感が出る場合は 1-2g に減量。',
+      dosageLevels: '入門 1-2g（睡眠悪化なし確認）→ 標準 3g（RCT 主流域）→ 強化 5-10g（医療研究域・統合失調症補助）。15g超で胃部不快の報告。',
+      faq: 'グリシンとは・就寝前3gの効果出るまで・副作用・うつ/統合失調症との関連・亜鉛サプリとの併用・市販サプリ選び方の6軸FAQで判断材料を網羅。',
+      safety: '副作用報告少（健常成人での RCT で重大事象なし）・大量摂取（>15g）で胃部不快・低血糖薬併用注意・妊娠中は安全データ限定で控えめに。',
+      interactions: 'クロザピン（統合失調症薬）と治療効果に影響の報告・低血糖薬で血糖変動・MAOI と理論的相互作用・抗不安薬と相加で過度の鎮静の可能性。',
+    },
     papers: [
       {
         title: 'Glycine ingestion improves subjective sleep quality in human volunteers',
@@ -4481,6 +4492,29 @@ export const ingredients: Ingredient[] = [
         source: 'American Journal of Psychiatry 2000／PubMed 9892314',
       },
     ],
+    dosageLevels: [
+      {
+        dose: '1-2g',
+        category: '入門・効果検証',
+        effect: '主観的な睡眠改善の有無を確認する開始量。寝起きのだるさが出るかを評価し、合えば 3g へステップアップ。',
+        whoFor: '初めて摂取する方・薬抵抗強い軽度不眠・体感重視で試したい方',
+        evidenceNote: 'Bannai 2012 Front Neurol（深部体温低下経路解析）',
+      },
+      {
+        dose: '3g',
+        category: 'RCT 標準域',
+        effect: '就寝30-60分前に3gで主観的睡眠改善（入眠潜時・睡眠の質・昼間眠気減少）が報告されている標準域。1-2週間継続で評価。',
+        whoFor: '1-2gで効果を感じにくかった方・RCT通り試したい方',
+        evidenceNote: 'Yamadera 2007 / Inagawa 2006 Sleep Biol Rhythms',
+      },
+      {
+        dose: '5-10g',
+        category: '高用量・医療研究域',
+        effect: '統合失調症補助療法・大うつ病補助での研究域。健常者の睡眠改善目的では3gとの上乗せ効果は限定的との報告が多い。',
+        whoFor: '医師指導下のみ。自己判断での高用量は推奨されない',
+        evidenceNote: 'Heresco-Levy 1999 Biol Psychiatry（統合失調症補助療法）',
+      },
+    ],
     customFaqs: [
       {
         q: 'グリシンに副作用はありますか？',
@@ -4526,7 +4560,7 @@ export const ingredients: Ingredient[] = [
         a: '数ヶ月〜年単位の長期摂取RCTは限定的ですが、内因性アミノ酸として通常の食事・代謝で大量に処理されているため、重大な蓄積リスクは低いと考えられています。腎機能低下のある方はアミノ酸負荷を医師相談で確認してください。',
       },
     ],
-    updatedAt: '2026-05-12',
+    updatedAt: '2026-06-06',
   },
 
   {
