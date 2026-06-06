@@ -9246,7 +9246,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['ビタミンB9', '5-MTHF', 'メチル葉酸', 'メチルフォレート', 'プテロイルモノグルタミン酸', 'Quatrefolic', 'Metafolin', 'L-メチルフォレート'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: '葉酸｜妊活前 0.4mg/日とメチル葉酸の論文',
+    seoTitle: '葉酸｜妊活0.4mg/食べ物/鉄併用の論文｜SciBase',
     seoDescription: '葉酸サプリの選び方を研究の観点で解説。妊活は3-6ヶ月前から400μg/日（神経管閉鎖障害予防の臨界期は妊娠4週まで）。適切な量は通常成人400μg/日・妊婦400-800μg/日・上限1,000μg/日。MTHFR遺伝子多型C677T（日本人10-15%保有）と5-MTHF（Quatrefolic/Metafolin）の活性型推奨根拠、メチル葉酸とモノグルタミン酸型の違い、市販ドラッグストアとiHerb（NaturesPlus/Doctor\'s Best）の選び分け、鉄との併用タイミング、不妊・男性妊活への意味、葉酸以外の妊活サプリ、抗てんかん薬・メトトレキサート相互作用までCochrane・メタ解析n=2,398でカバー。',
     tagline: 'メタ解析n=2,398で認知機能スコア・ホモシステイン値の改善を確認',
     description:
@@ -9256,6 +9256,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '抗てんかん薬（フェニトイン）・メトトレキサート併用は薬剤の血中濃度や作用に影響するため医師相談が前提。1mg超の高用量はB12欠乏隠蔽リスクで定期検査が必要。',
     concerns: ['cognitive', 'fatigue', 'immunity', 'metabolism', 'cardiovascular'],
+    sectionSummaries: {
+      whoFor: '妊活前-妊娠初期の女性（神経管閉鎖障害予防）・MTHFR遺伝子変異の自覚あり・鉄欠乏性貧血と併用検討・高齢者でホモシステイン高め。',
+      papers: 'MRC Vitamin Study 1991 Lancet（神経管閉鎖障害-72%）+ Czeizel & Dudás 1992 NEJM RCT n=4,753（初発予防）+ Lassi 2013 Cochrane Review メタ解析 + Bailey 2010 NHANES 大規模コホートの4軸が主柱。',
+      publicDbReferences: '厚労省 妊娠期葉酸推奨400μg/日 + NIH ODS Folate Health Professional + hfnet 葉酸 + WHO 妊婦推奨の4層で公的カバー。',
+      evidence: 'A ランク・神経管閉鎖障害予防 A（RCT複数+メタ解析）・貧血改善 A・認知低下予防 B（高齢者）・心血管 B（ホモシステイン経由）。',
+      dosage: '通常成人 240μg/日・妊活前-妊娠初期 400μg/日（食事+サプリ）・授乳期 340μg/日。MTHFR変異ありなら 5-MTHF メチル葉酸 400μg。',
+      dosageLevels: '通常240μg → 妊活/妊娠初期400μg → 高用量600-1000μg（医師指導下・神経学疾患予防研究域）。1日上限1mgでB12欠乏マスキングリスク。',
+      faq: '妊活前いつから・鉄サプリ併用・ビタミンB12併用・葉酸食べ物・メチル葉酸とは・MTHFR遺伝子・授乳期用量の12軸FAQで判断材料を網羅。',
+      safety: '過剰摂取（>1mg/日）でB12欠乏症の神経症状マスキング・甲状腺薬の吸収影響・妊娠後期は通常用量に戻す検討。',
+      interactions: 'メトトレキサート（拮抗関係）・抗てんかん薬（フェニトイン・カルバマゼピンで葉酸代謝阻害）・避妊薬で葉酸消費増・スルファサラジン吸収阻害。',
+    },
     papers: [
       {
         title: 'Folic acid supplementation and cognitive function: a meta-analysis of randomized controlled trials',
@@ -9514,7 +9525,7 @@ export const ingredients: Ingredient[] = [
           '抗てんかん薬（フェニトイン）・メトトレキサート服用中はどちらの形態でも医師相談が前提です。',
       },
     ],
-    updatedAt: '2026-05-13',
+    updatedAt: '2026-06-06',
   },
   {
     slug: 'calcium',
