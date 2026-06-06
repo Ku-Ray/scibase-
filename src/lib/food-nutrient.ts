@@ -438,22 +438,34 @@ export function calculateSufficiency(input: SufficiencyInput): SufficiencyResult
       continue
     }
 
-    // 5. 充足率
+    // 5. 充足率（参照値 = RDA or AI）
     const percent = ref.value > 0 ? (totalIntake / ref.value) * 100 : 0
 
-    // 6. status 判定（過剰 → 充足 → 不足の順）
-    // UL 判定: 通常は totalIntake で判定するが、ulExcludesFood の栄養素は supplementIntake のみで判定
+    // 6. status 判定（厚労省定義に基づく中立判定）
+    // - UL 80% 超 → excess_warning
+    // - 推奨量 RDA 達成 → sufficient（目安を満たしている可能性）
+    // - 必要量 EAR 達成・RDA 未達 → mild_deficit（推奨量に余地あり・健康被害は通常想定なし）
+    // - 必要量 EAR 未達 → severe_deficit（気にかける余地・血液検査推奨）
+    // - AI 系（RDA/EAR なし）は AI 80% / 50% 閾値で判定
     const meta = NUTRIENT_META[nutrient]
     const ulCheckIntake = meta?.ulExcludesFood ? supplementIntake : totalIntake
     let status: SufficiencyStatus
     if (rda.ul != null && ulCheckIntake >= rda.ul * 0.8) {
       status = 'excess_warning'
-    } else if (percent >= 80) {
-      status = 'sufficient'
-    } else if (percent >= 50) {
-      status = 'mild_deficit'
+    } else if (rda.rda != null) {
+      // RDA / EAR ベース判定（生理学的に意味のある分け方）
+      if (totalIntake >= rda.rda) {
+        status = 'sufficient'
+      } else if (rda.ear != null && totalIntake >= rda.ear) {
+        status = 'mild_deficit'  // EAR は満たしているが RDA 未達 → 推奨量に余地
+      } else {
+        status = 'severe_deficit'  // EAR 未満 → 気にかける余地大
+      }
     } else {
-      status = 'severe_deficit'
+      // AI 系（目安量のみ・厚労省で「これだけ摂れば十分」の参考値）
+      if (percent >= 80) status = 'sufficient'
+      else if (percent >= 50) status = 'mild_deficit'
+      else status = 'severe_deficit'
     }
 
     // 7. source

@@ -60,10 +60,10 @@ const AGE_OPTIONS: AgeGroup[] = ['10s', '20s', '30s', '40s', '50s', '60s', '70s+
 type Phase = 'idle' | 'calculating' | 'revealed'
 
 const STATUS_LABEL: Record<SufficiencyStatus, string> = {
-  excess_warning: '過剰摂取注意',
-  severe_deficit: '大幅に不足',
-  mild_deficit: 'やや不足',
-  sufficient: '充足の目安',
+  excess_warning: '上限に近い（要注意）',
+  severe_deficit: '気にかける余地が大きい',
+  mild_deficit: '推奨量に余地あり',
+  sufficient: '目安を満たしている可能性',
   no_data: 'データなし',
 }
 
@@ -128,26 +128,26 @@ function determinePersonality(
   const sufficientCount = results.filter(r => r.status === 'sufficient').length
   const severeCount = results.filter(r => r.status === 'severe_deficit').length
 
-  if (excessCount >= 2) return { emoji: '⚠️', name: 'サプリ盛り過ぎ型', desc: '熱意があるからこそ用量見直しが安心', rarity: 8, colorClass: 'from-rose-500 to-orange-500' }
-  if (excessCount === 1) return { emoji: '🚨', name: 'ピンポイント過剰型', desc: '1 栄養素だけ用量チェックを推奨', rarity: 11, colorClass: 'from-orange-500 to-amber-500' }
-  if (has('vegan')) return { emoji: '🌱', name: 'ヴィーガン挑戦者', desc: 'B12・鉄・カルシウム戦略が鍵', rarity: 4, colorClass: 'from-emerald-500 to-teal-500' }
-  if (has('vegetarian')) return { emoji: '🥬', name: 'ベジタリアン実践者', desc: '鉄と B12 のフォローが効きやすい', rarity: 9, colorClass: 'from-emerald-500 to-lime-500' }
+  if (excessCount >= 2) return { emoji: '⚠️', name: '上限近い栄養素あり型', desc: '熱意があるからこそ用量見直しが安心', rarity: 8, colorClass: 'from-rose-500 to-orange-500' }
+  if (excessCount === 1) return { emoji: '🚨', name: '1 つだけ要チェック型', desc: '1 栄養素だけ用量を見直してみる', rarity: 11, colorClass: 'from-orange-500 to-amber-500' }
+  if (has('vegan')) return { emoji: '🌱', name: 'ヴィーガン実践型', desc: 'B12・鉄・カルシウムを意識したい', rarity: 4, colorClass: 'from-emerald-500 to-teal-500' }
+  if (has('vegetarian')) return { emoji: '🥬', name: 'ベジタリアン実践型', desc: '鉄と B12 を振り返ってみると◎', rarity: 9, colorClass: 'from-emerald-500 to-lime-500' }
   if ((get('iron')?.status === 'severe_deficit') || (get('iron')?.percent ?? 100) < 50) {
-    return { emoji: '🩸', name: '鉄欠乏予備軍', desc: '月経・吸収阻害が積み重なるタイプ', rarity: 24, colorClass: 'from-rose-500 to-pink-500' }
+    return { emoji: '🩸', name: '鉄を意識したい型', desc: '月経・吸収阻害がある人は気にかける余地あり', rarity: 24, colorClass: 'from-rose-500 to-pink-500' }
   }
   if ((get('vitamin_d')?.percent ?? 100) < 60) {
-    return { emoji: '☀️', name: '日光不足の現代人', desc: 'デスクワーク × 紫外線回避でビタミン D 慢性不足', rarity: 38, colorClass: 'from-sky-500 to-blue-500' }
+    return { emoji: '☀️', name: 'ビタミン D 余地あり型', desc: 'デスクワーク × 紫外線回避の人に多い傾向', rarity: 38, colorClass: 'from-sky-500 to-blue-500' }
   }
-  if (sufficientCount >= 10) return { emoji: '👑', name: 'バランス神型', desc: '15 栄養素ほぼ達成は希少', rarity: 3, colorClass: 'from-amber-500 to-yellow-500' }
-  if (sufficientCount >= 8) return { emoji: '🌟', name: 'バランス上級者', desc: '主要栄養素を高水準でカバー', rarity: 12, colorClass: 'from-emerald-500 to-green-500' }
+  if (sufficientCount >= 10) return { emoji: '👑', name: 'バランス上位型', desc: '15 栄養素を高水準でカバーは希少', rarity: 3, colorClass: 'from-amber-500 to-yellow-500' }
+  if (sufficientCount >= 8) return { emoji: '🌟', name: 'バランス良好型', desc: '主要栄養素を高水準でカバー', rarity: 12, colorClass: 'from-emerald-500 to-green-500' }
   if (has('green_veg_daily') && (get('vitamin_a')?.status === 'sufficient' || (get('vitamin_a')?.percent ?? 0) >= 75)) {
     return { emoji: '🌿', name: '緑黄色野菜マスター', desc: 'ビタミン A・葉酸の獲得効率が高い', rarity: 18, colorClass: 'from-green-500 to-emerald-500' }
   }
   if (has('meat_fish_daily') && (get('iron')?.status === 'sufficient' || (get('vitamin_b12')?.percent ?? 0) >= 100)) {
     return { emoji: '🐟', name: '肉魚バランス型', desc: '動物性タンパクで鉄・B12 を効率取得', rarity: 22, colorClass: 'from-blue-500 to-cyan-500' }
   }
-  if (severeCount >= 8) return { emoji: '🔴', name: '改善余地たっぷり型', desc: 'まずは食事の柱を 2-3 個追加してみる', rarity: 27, colorClass: 'from-orange-500 to-red-500' }
-  return { emoji: '📊', name: '平均的な日本人型', desc: '弱点を 1-2 個つぶせばグッと変わる', rarity: 32, colorClass: 'from-slate-500 to-slate-600' }
+  if (severeCount >= 8) return { emoji: '📋', name: '振り返りどころが多い型', desc: 'まずは食事の柱を 2-3 個追加してみる', rarity: 27, colorClass: 'from-orange-500 to-amber-500' }
+  return { emoji: '📊', name: '平均的な日本人型', desc: '気になる栄養素を 1-2 個振り返ると◎', rarity: 32, colorClass: 'from-slate-500 to-slate-600' }
 }
 
 /* ─── PrecisionMeter (sticky top) ───────────────────────────────── */
@@ -577,27 +577,26 @@ export function NutrientSufficiencyClient() {
           {/* ① PersonalityType Hero */}
           <PersonalityHero personality={personality} score={stats.score} sufficient={stats.sufficient} total={stats.total} />
 
-          {/* ② ActionPlanSection (最重要・SciBase ASP 接続) */}
+          {/* ② Notice: 血液検査が真実 */}
+          <div className="rounded-xl border border-sky-200 bg-sky-50/70 p-4">
+            <div className="flex items-start gap-2">
+              <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-600" />
+              <div className="text-xs leading-relaxed text-sky-900 sm:text-sm">
+                <strong>本ツールは食事傾向の概算です。</strong>
+                厚労省 RDA 未達でも EAR（必要量）を満たしていれば、多くの場合に問題は想定されません。
+                実際の栄養状態は血液検査が必要です。気になる項目は医師にご相談ください。
+              </div>
+            </div>
+          </div>
+
+          {/* ③ ActionPlanSection (SciBase 論文・製品比較への中立な誘導) */}
           {(stats.severe + stats.mild) > 0 && (
             <ActionPlanSection results={results} score={stats.score} />
           )}
 
-          {/* ③ BeforeAfterCard (Loss Aversion) */}
-          {(beforeAfter.diff > 0 || supplements.filter(s => s.dose > 0).length > 0) && (
+          {/* ④ BeforeAfterCard - サプリ追加した時のみ表示（中立な比較） */}
+          {supplements.filter(s => s.dose > 0).length > 0 && beforeAfter.diff > 0 && (
             <BeforeAfterCard before={beforeAfter.dietScore} after={beforeAfter.fullScore} diff={beforeAfter.diff} />
-          )}
-
-          {/* ④ Deficiency Loss Aversion alert */}
-          {(stats.severe + stats.mild) >= 3 && (
-            <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-4">
-              <div className="flex items-start gap-2">
-                <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-600" />
-                <div className="text-sm text-amber-900">
-                  <strong>{stats.severe + stats.mild} 個の栄養素</strong>が RDA に届いていません。
-                  下のグループを開いて、不足成分の論文と製品をチェックしてみましょう。
-                </div>
-              </div>
-            </div>
           )}
 
           {/* ④ Status groups */}
@@ -753,12 +752,12 @@ function BeforeAfterCard({ before, after, diff }: { before: number; after: numbe
       </div>
       {diff > 0 && (
         <div className="mt-3 text-center text-xs text-emerald-700 sm:text-sm">
-          サプリで <strong className="text-base">+{diff} ポイント</strong> 改善できる見込みです
+          サプリ分で <strong className="text-base">+{diff} ポイント</strong> 上がる目安です（食事との重複は計算済み）
         </div>
       )}
       {diff === 0 && before < 70 && (
         <div className="mt-3 text-center text-xs text-amber-700 sm:text-sm">
-          食事・サプリ含めても改善余地があります。下の不足成分から検討を
+          下のグループから気になる成分の論文を SciBase で確認できます
         </div>
       )}
     </div>
@@ -805,12 +804,12 @@ function NutrientRow({ result, status, delay = 0 }: { result: SufficiencyResult;
         <Link href={`/ingredients/${meta.ingredientSlug}`}
           className="group mt-3 flex items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-emerald-50/60 p-3 transition hover:border-emerald-400 hover:from-emerald-100 hover:to-emerald-50">
           <div className="min-w-0 flex-1">
-            <div className="text-xs font-medium text-emerald-700">📊 SciBase の評価を見る</div>
+            <div className="text-xs font-medium text-emerald-700">📚 SciBase で論文を比べる</div>
             <div className="mt-0.5 truncate text-sm font-bold text-emerald-900">
-              あなたに必要な{meta.labelJa}サプリと論文
+              {meta.labelJa}の論文と製品比較を見る
             </div>
             <div className="mt-0.5 text-xs text-emerald-700/80">
-              評価ランキング・iHerb 製品・論文出典まで
+              中立な評価ランキング・論文出典・各 EC 価格まで
             </div>
           </div>
           <ChevronRight className="h-5 w-5 flex-shrink-0 text-emerald-600 transition group-hover:translate-x-0.5" />
@@ -842,8 +841,8 @@ function ActionPlanSection({ results, score }: { results: SufficiencyResult[]; s
           <Target className="h-5 w-5 text-emerald-600" />
         </div>
         <div>
-          <h3 className="text-base font-bold text-slate-900 sm:text-lg">あなたの不足解消アクションプラン</h3>
-          <div className="text-xs text-slate-600">不足度の高い {topDeficits.length} 栄養素を SciBase の論文ベースでフォロー</div>
+          <h3 className="text-base font-bold text-slate-900 sm:text-lg">気になる栄養素を SciBase で振り返る</h3>
+          <div className="text-xs text-slate-600">推奨量に余地のある {topDeficits.length} 栄養素を中立な論文ベースで確認</div>
         </div>
       </div>
 
@@ -853,15 +852,14 @@ function ActionPlanSection({ results, score }: { results: SufficiencyResult[]; s
         ))}
       </div>
 
-      {/* Bundle CTA */}
+      {/* まとめて確認 CTA */}
       <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
         <div className="flex items-start gap-2">
           <Package className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-700" />
           <div className="flex-1">
-            <div className="text-sm font-bold text-emerald-900">あなた専用 {topDeficits.length} 点セット</div>
+            <div className="text-sm font-bold text-emerald-900">気になる成分を SciBase でまとめて比べる</div>
             <div className="mt-1 text-xs text-emerald-800 sm:text-sm">
-              これらを朝/晩に分けて補うと、充足スコアは <strong>{score} → 約 {simulatedScore}%</strong> に改善見込み
-              <span className="text-emerald-700/80">（目安）</span>
+              論文の質・各製品の比較・価格まで中立な視点で確認できます。サプリ購入は体感や血液検査と照らし合わせて、ご自身でご判断ください
             </div>
           </div>
         </div>
@@ -887,8 +885,9 @@ function ActionPlanCard({ result, rank }: { result: SufficiencyResult; rank: num
   const action = NUTRIENT_ACTION[result.nutrient]
   if (!meta) return null
 
-  const deficitAmount = Math.max(result.reference - result.totalIntake, 0)
-  const deficitFormatted = formatAmount(deficitAmount, meta.unit)
+  const deficitToRda = Math.max(result.reference - result.totalIntake, 0)
+  const deficitFormatted = formatAmount(deficitToRda, meta.unit)
+  const earFormatted = result.ear != null ? formatAmount(result.ear, meta.unit) : null
   const isSevere = result.status === 'severe_deficit'
 
   return (
@@ -901,7 +900,8 @@ function ActionPlanCard({ result, rank }: { result: SufficiencyResult; rank: num
           <div>
             <div className="text-sm font-bold text-slate-900 sm:text-base">{meta.labelJa}</div>
             <div className={`text-xs font-medium ${isSevere ? 'text-orange-700' : 'text-amber-700'}`}>
-              {result.percent}% 充足・あと <strong>{deficitFormatted}</strong> 必要
+              {result.percent}% ・推奨量(RDA)まで <strong>{deficitFormatted}</strong>
+              {earFormatted && <span className="ml-1 opacity-80">・必要量(EAR) {earFormatted}</span>}
             </div>
           </div>
         </div>
@@ -912,14 +912,14 @@ function ActionPlanCard({ result, rank }: { result: SufficiencyResult; rank: num
           <div className="flex items-start gap-1.5">
             <Pill className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-500" />
             <div className="text-slate-700">
-              <strong className="text-slate-900">サプリの目安：</strong>
+              <strong className="text-slate-900">サプリで補うなら：</strong>
               {action.supplementDoseRangeJa}
             </div>
           </div>
           <div className="flex items-start gap-1.5">
             <Calendar className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-500" />
             <div className="text-slate-700">
-              <strong className="text-slate-900">続けたら：</strong>
+              <strong className="text-slate-900">続けた場合の目安：</strong>
               {action.benefitTimelineJa}
             </div>
           </div>
@@ -934,15 +934,15 @@ function ActionPlanCard({ result, rank }: { result: SufficiencyResult; rank: num
         <Link href={`/ingredients/${meta.ingredientSlug}`}
           className="group mt-3 flex items-center justify-between gap-2 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 px-4 py-2.5 text-white shadow-sm transition hover:from-emerald-700 hover:to-emerald-800 hover:shadow-md">
           <div className="text-left">
-            <div className="text-xs font-medium opacity-90">SciBase 評価ランキング</div>
-            <div className="text-sm font-bold">あなたに必要な{meta.labelJa}サプリを見る</div>
+            <div className="text-xs font-medium opacity-90">SciBase 中立評価</div>
+            <div className="text-sm font-bold">{meta.labelJa}の論文と製品比較を見る</div>
           </div>
           <ChevronRight className="h-5 w-5 flex-shrink-0 transition group-hover:translate-x-0.5" />
         </Link>
       )}
 
       <div className="mt-2 text-[10px] leading-relaxed text-slate-500 sm:text-xs">
-        ※ 数値は目安です。実際の用量・継続期間は個人差があるため、必ず医師・管理栄養士にご相談ください。
+        ※ 数値は目安です。RDA 未達でも EAR を満たせば多くの場合に問題は想定されません。実際の判定は血液検査が必要・継続摂取は医師にご相談ください。
       </div>
     </div>
   )
