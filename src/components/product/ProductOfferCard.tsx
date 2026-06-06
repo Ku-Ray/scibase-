@@ -29,6 +29,7 @@ const platformLabel: Record<Product['platform'], string> = {
   iherb: 'iHerb',
   amazon: 'Amazon',
   cosme: '公式',
+  asp: '公式サイト',
 }
 
 /**
@@ -354,11 +355,13 @@ const PLATFORM_TRUST_NOTE: Record<Product['platform'], string> = {
   iherb: '海外大手・全商品に分析証明書（COA）公開・40年以上の実績',
   amazon: '国内発送・原則翌日着・返品 30 日保証',
   cosme: '公式直販・正規品保証',
+  asp: '公式直販・正規品保証・PR（広告主提供）',
 }
 const PLATFORM_SEARCH_TRUST_NOTE: Record<Product['platform'], string> = {
   iherb: '海外大手・全商品 COA 公開',
   amazon: '国内発送・即日〜翌日着',
   cosme: '楽天市場：ポイント還元・実店舗保証あり',
+  asp: '公式直販・PR（広告主提供）',
 }
 
 /** 軸スコア値の色（mybest 風）。4以上=赤・3-4=amber・3未満=灰 */

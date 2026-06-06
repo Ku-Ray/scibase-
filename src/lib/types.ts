@@ -46,7 +46,7 @@ export interface PublicDbReference {
 export interface Product {
   name: string
   brand: string
-  platform: 'iherb' | 'amazon' | 'cosme'
+  platform: 'iherb' | 'amazon' | 'cosme' | 'asp'
   url: string
   priceJpy: number
   /** 1粒/1錠/1ソフトジェルあたりの含有量（mg）。`unitsPerDay` と乗じて1日量を算出 */

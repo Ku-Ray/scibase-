@@ -284,8 +284,8 @@ export default async function ComparePage({ params }: Props) {
   const overallTopProduct = overall.pick
     ? overall.pick.products.find(p => p.rank === 1) ?? overall.pick.products[0]
     : null
-  const platformLabel: Record<'iherb' | 'amazon' | 'cosme', string> = {
-    iherb: 'iHerbで価格を確認', amazon: 'Amazonで価格を確認', cosme: '@cosmeで価格を確認',
+  const platformLabel: Record<'iherb' | 'amazon' | 'cosme' | 'asp', string> = {
+    iherb: 'iHerbで価格を確認', amazon: 'Amazonで価格を確認', cosme: '@cosmeで価格を確認', asp: '公式サイトで価格を確認',
   }
   /* 禁忌・刺激性差・用途分担が明確なペアでは「迷ったらこれ」CTAを抑制 */
   const showQuickCTA = !DISABLE_QUICK_CTA_PAIRS.has(pair)

@@ -10,6 +10,7 @@ const platformShort: Record<Product['platform'], string> = {
   iherb: 'iHerb',
   amazon: 'Amazon',
   cosme: '公式',
+  asp: '公式',
 }
 
 interface Props {
@@ -154,7 +155,7 @@ export function ComparisonTable({ products, ingredient }: Props) {
                   {p.monthlyCostJpy != null ? `¥${p.monthlyCostJpy.toLocaleString()}` : '—'}
                 </td>
                 <td className="px-3 py-2 align-middle text-foreground">
-                  {p.shippingNote ?? (p.platform === 'amazon' ? '国内・即日〜' : p.platform === 'cosme' ? '公式・国内' : '海外・7-14日')}
+                  {p.shippingNote ?? (p.platform === 'amazon' ? '国内・即日〜' : p.platform === 'cosme' || p.platform === 'asp' ? '公式・国内' : '海外・7-14日')}
                 </td>
                 <td className="px-3 py-2 align-middle text-right">
                   <OutboundProductLink

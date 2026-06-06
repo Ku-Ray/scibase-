@@ -12,7 +12,7 @@ declare global {
 
 interface Props extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'target' | 'rel'> {
   href: string
-  platform: 'iherb' | 'amazon' | 'cosme'
+  platform: 'iherb' | 'amazon' | 'cosme' | 'asp'
   ingredientSlug?: string
   productRank?: 1 | 2 | 3
   /** ASP事業者識別子（a8/moshimo/afb/amazon-direct等）。直URLの場合は未設定 */
@@ -69,11 +69,14 @@ export function OutboundProductLink({
     onClick?.(e)
   }
 
+  const aspSponsored = aspProgram && ['a8', 'afb', 'moshimo', 'cosme-direct', 'rakuten'].includes(aspProgram)
+  const rel = aspSponsored ? 'sponsored noopener noreferrer' : 'noopener noreferrer'
+
   return (
     <a
       href={href}
       target="_blank"
-      rel="noopener noreferrer"
+      rel={rel}
       onClick={handleClick}
       {...rest}
     >

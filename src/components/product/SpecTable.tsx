@@ -9,6 +9,7 @@ const platformDisplay: Record<Product['platform'], string> = {
   iherb: 'iherb.com',
   amazon: 'amazon.co.jp',
   cosme: '公式サイト',
+  asp: '公式サイト',
 }
 
 /**
