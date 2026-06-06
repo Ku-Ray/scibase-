@@ -10,6 +10,7 @@
 
 import {
   ALL_NUTRIENT_KEYS,
+  NUTRIENT_META,
   getRDA,
   getReference,
   type AgeGroup,
@@ -51,6 +52,8 @@ export const FOOD_PRESETS: FoodPreset[] = [
       vitamin_d: 5.0,
       niacin: 8,
       selenium: 25,
+      potassium: 800,
+      magnesium: 25,
     },
   },
   {
@@ -64,6 +67,7 @@ export const FOOD_PRESETS: FoodPreset[] = [
       vitamin_d: 1.5,
       selenium: 16,
       folate: 22,
+      potassium: 70,
     },
   },
   {
@@ -76,6 +80,24 @@ export const FOOD_PRESETS: FoodPreset[] = [
       vitamin_b12: 0.6,
       vitamin_a: 75,
       vitamin_b6: 0.05,
+      potassium: 320,
+      magnesium: 22,
+    },
+  },
+  {
+    id: 'soy_legume_daily',
+    labelJa: '大豆・豆類を毎日（豆腐・納豆・豆乳・大豆）',
+    descJa: 'ベジタリアン/ヴィーガンの主要鉄・タンパク源',
+    category: 'food_habit',
+    contribution: {
+      iron: 3.5,
+      magnesium: 80,
+      calcium: 130,
+      vitamin_b6: 0.2,
+      folate: 55,
+      zinc: 1.8,
+      potassium: 650,
+      vitamin_e: 0.6,
     },
   },
   {
@@ -87,10 +109,12 @@ export const FOOD_PRESETS: FoodPreset[] = [
       vitamin_a: 350,
       folate: 180,
       vitamin_c: 35,
-      potassium: 500,
+      potassium: 700,
       iron: 1.0,
-      magnesium: 35,
-      calcium: 80,
+      magnesium: 55,
+      calcium: 90,
+      vitamin_e: 1.5,
+      vitamin_b6: 0.15,
     },
   },
   {
@@ -99,9 +123,11 @@ export const FOOD_PRESETS: FoodPreset[] = [
     descJa: 'みかん・キウイ・りんご等 200g 程度',
     category: 'food_habit',
     contribution: {
-      vitamin_c: 40,
+      vitamin_c: 70,
       folate: 30,
-      potassium: 400,
+      potassium: 480,
+      magnesium: 18,
+      vitamin_b6: 0.15,
     },
   },
   {
@@ -111,9 +137,12 @@ export const FOOD_PRESETS: FoodPreset[] = [
     category: 'food_habit',
     contribution: {
       vitamin_e: 6.5,
-      magnesium: 70,
+      magnesium: 75,
       zinc: 1.0,
       selenium: 4,
+      potassium: 200,
+      iron: 0.9,
+      vitamin_b6: 0.08,
     },
   },
   {
@@ -122,10 +151,13 @@ export const FOOD_PRESETS: FoodPreset[] = [
     descJa: '白米中心ではなく玄米・雑穀米・全粒粉が中心',
     category: 'food_habit',
     contribution: {
-      magnesium: 90,
+      magnesium: 110,
       vitamin_b6: 0.3,
       niacin: 4,
       zinc: 2.0,
+      potassium: 280,
+      iron: 1.2,
+      folate: 25,
     },
   },
   {
@@ -138,6 +170,7 @@ export const FOOD_PRESETS: FoodPreset[] = [
       magnesium: 30,
       calcium: 60,
       iron: 0.6,
+      potassium: 120,
     },
   },
   {
@@ -247,6 +280,34 @@ export const SUPPLEMENT_INPUT_UNIT: Record<string, string> = {
   'potassium': 'mg',
 }
 
+/**
+ * よく飲まれているサプリのプリセット（ワンタップ追加用）
+ * dose は市販サプリで一般的な 1 日量。ユーザーは UI で個別に変更可能。
+ */
+export interface SupplementPreset {
+  slug: string
+  labelJa: string
+  emoji: string
+  typicalDose: number
+  unit: string
+  descJa: string
+}
+
+export const SUPPLEMENT_PRESETS: SupplementPreset[] = [
+  { slug: 'vitamin-d', labelJa: 'ビタミンD', emoji: '☀️', typicalDose: 25, unit: 'μg', descJa: '1000 IU 相当' },
+  { slug: 'iron', labelJa: '鉄', emoji: '🩸', typicalDose: 15, unit: 'mg', descJa: '貧血対策の標準量' },
+  { slug: 'magnesium', labelJa: 'マグネシウム', emoji: '🌙', typicalDose: 300, unit: 'mg', descJa: '安眠・筋肉サポート' },
+  { slug: 'zinc', labelJa: '亜鉛', emoji: '🛡️', typicalDose: 15, unit: 'mg', descJa: '免疫・肌・髪' },
+  { slug: 'vitamin-b12', labelJa: 'ビタミンB12', emoji: '⚡', typicalDose: 100, unit: 'μg', descJa: 'ベジ/ヴィーガン定番' },
+  { slug: 'folic-acid', labelJa: '葉酸', emoji: '🌱', typicalDose: 400, unit: 'μg', descJa: '妊活・妊娠中の標準量' },
+  { slug: 'calcium', labelJa: 'カルシウム', emoji: '🦴', typicalDose: 500, unit: 'mg', descJa: '骨・歯のサポート' },
+  { slug: 'vitamin-c', labelJa: 'ビタミンC', emoji: '🍊', typicalDose: 500, unit: 'mg', descJa: '抗酸化・肌対策' },
+  { slug: 'selenium', labelJa: 'セレン', emoji: '✨', typicalDose: 100, unit: 'μg', descJa: '抗酸化ミネラル' },
+  { slug: 'vitamin-e', labelJa: 'ビタミンE', emoji: '🌰', typicalDose: 100, unit: 'mg', descJa: '抗酸化・血流' },
+  { slug: 'vitamin-a', labelJa: 'ビタミンA', emoji: '👁️', typicalDose: 700, unit: 'μgRAE', descJa: '視覚・皮膚' },
+  { slug: 'vitamin-b6', labelJa: 'ビタミンB6', emoji: '🧠', typicalDose: 10, unit: 'mg', descJa: '神経・代謝' },
+]
+
 export type SufficiencyStatus = 'sufficient' | 'mild_deficit' | 'severe_deficit' | 'excess_warning' | 'no_data'
 
 export interface SupplementInput {
@@ -349,8 +410,11 @@ export function calculateSufficiency(input: SufficiencyInput): SufficiencyResult
     const percent = ref.value > 0 ? (totalIntake / ref.value) * 100 : 0
 
     // 6. status 判定（過剰 → 充足 → 不足の順）
+    // UL 判定: 通常は totalIntake で判定するが、ulExcludesFood の栄養素は supplementIntake のみで判定
+    const meta = NUTRIENT_META[nutrient]
+    const ulCheckIntake = meta?.ulExcludesFood ? supplementIntake : totalIntake
     let status: SufficiencyStatus
-    if (rda.ul != null && totalIntake >= rda.ul * 0.8) {
+    if (rda.ul != null && ulCheckIntake >= rda.ul * 0.8) {
       status = 'excess_warning'
     } else if (percent >= 80) {
       status = 'sufficient'

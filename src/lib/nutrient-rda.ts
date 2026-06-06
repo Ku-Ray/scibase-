@@ -39,6 +39,8 @@ export interface NutrientMeta {
   category: NutrientCategory
   ingredientSlug?: string  // data.ts の対応 slug（不足時の link 先）
   noteJa?: string
+  /** UL を食事由来分には適用しない（サプリ等の通常以外の摂取のみ警告対象） */
+  ulExcludesFood?: boolean
 }
 
 /**
@@ -55,7 +57,7 @@ export const NUTRIENT_META: Record<string, NutrientMeta> = {
   niacin: { key: 'niacin', labelJa: 'ナイアシン', unit: 'mgNE', category: 'vitamin', ingredientSlug: 'niacin' },
   iron: { key: 'iron', labelJa: '鉄', unit: 'mg', category: 'mineral', ingredientSlug: 'iron', noteJa: '女性は月経有無で必要量が変動' },
   calcium: { key: 'calcium', labelJa: 'カルシウム', unit: 'mg', category: 'mineral', ingredientSlug: 'calcium' },
-  magnesium: { key: 'magnesium', labelJa: 'マグネシウム', unit: 'mg', category: 'mineral', ingredientSlug: 'magnesium', noteJa: 'サプリ等の通常以外摂取は成人350mg/日が上限' },
+  magnesium: { key: 'magnesium', labelJa: 'マグネシウム', unit: 'mg', category: 'mineral', ingredientSlug: 'magnesium', noteJa: 'サプリ等の通常以外摂取は成人350mg/日が上限（食事のみは対象外）', ulExcludesFood: true },
   zinc: { key: 'zinc', labelJa: '亜鉛', unit: 'mg', category: 'mineral', ingredientSlug: 'zinc' },
   selenium: { key: 'selenium', labelJa: 'セレン', unit: 'μg', category: 'mineral', ingredientSlug: 'selenium' },
   iodine: { key: 'iodine', labelJa: 'ヨウ素', unit: 'μg', category: 'mineral', ingredientSlug: 'iodine' },
