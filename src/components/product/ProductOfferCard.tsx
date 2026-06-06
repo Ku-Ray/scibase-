@@ -100,6 +100,23 @@ export function ProductOfferCard({
     return (
       <CardViewTracker cardId={cardId} ingredientSlug={ingredient.slug} position={cardPosition}>
       <div className="border-t border-border bg-card px-5 py-4">
+        {/* ヒーローバナー（ASP クリエイティブ・最上部・モバイルフルワイド） */}
+        {product.heroBannerUrl && product.heroBannerLinkUrl && (
+          <a
+            href={product.heroBannerLinkUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="block -mx-5 -mt-4 mb-4"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={product.heroBannerUrl}
+              alt={`${product.name} 公式バナー`}
+              loading="lazy"
+              className="w-full h-auto"
+            />
+          </a>
+        )}
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           <span className="inline-flex items-center justify-center text-[11px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5 leading-none">
             1位
@@ -216,6 +233,28 @@ export function ProductOfferCard({
             {product.qualityNote && <p>🔬 {product.qualityNote}</p>}
           </div>
         )}
+        {/* カード末尾の大きい CTA（pros/cons 読了後の再クリック動線） */}
+        <div className="mt-4 pt-4 border-t border-border/60">
+          <OutboundProductLink
+            href={product.url}
+            platform={product.platform}
+            ingredientSlug={ingredient.slug}
+            productRank={product.rank}
+            aspProgram={product.aspProgram}
+            aspId={product.aspId}
+            commissionRateBand={product.commissionRateBand}
+            productOfferCardId={cardId}
+            productName={product.name}
+            priceJpy={product.priceJpy}
+            className={`flex items-center justify-center gap-2 w-full text-[15px] font-bold rounded-xl px-4 h-14 transition-colors shadow-sm ${PRIMARY_CTA}`}
+          >
+            ▶ {platformLabel[product.platform]}で詳しく見る・購入する
+            <ExternalLink className="w-4 h-4" />
+          </OutboundProductLink>
+          <p className="mt-2 text-center text-[11px] text-muted-foreground">
+            ※公式サイトへ遷移します（PR / 提携リンク）
+          </p>
+        </div>
       </div>
       </CardViewTracker>
     )

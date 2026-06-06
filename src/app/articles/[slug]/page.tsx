@@ -879,6 +879,29 @@ export default async function ArticlePage({ params }: Props) {
           </section>
         )}
 
+        {/* 記事末尾の ASP ヒーローバナー（読了直後・最強訴求位置・PR / 提携リンク） */}
+        {article.footerBannerUrl && article.footerBannerLinkUrl && (
+          <section className="mt-12">
+            <a
+              href={article.footerBannerLinkUrl}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="block rounded-2xl overflow-hidden border border-border hover:opacity-95 transition-opacity"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={article.footerBannerUrl}
+                alt="記事末尾の広告バナー"
+                loading="lazy"
+                className="w-full h-auto block"
+              />
+            </a>
+            <p className="mt-2 text-center text-[11px] text-muted-foreground">
+              ※公式サイトへ遷移します（PR / 提携リンク）
+            </p>
+          </section>
+        )}
+
         {/* Interaction Checker CTA（読了直後の高関心ポイント） */}
         <section className="mt-12">
           <InteractionCheckerCta variant="banner" />

@@ -1878,6 +1878,8 @@ export const ingredients: Ingredient[] = [
         platform: 'asp',
         url: 'https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E',
         imageUrl: 'https://www21.a8.net/svt/bgt?aid=260606739412&wid=001&eno=01&mid=s00000021920002005000&mc=1',
+        heroBannerUrl: 'https://www28.a8.net/svt/bgt?aid=260606739412&wid=001&eno=01&mid=s00000021920002010000&mc=1',
+        heroBannerLinkUrl: 'https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+BYT9D',
         priceJpy: 39600,
         dosageMg: 250,
         rank: 1,

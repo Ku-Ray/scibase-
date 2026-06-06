@@ -76,6 +76,10 @@ export interface Product {
   qualityNote?: string
   /** 商品画像URL（Amazon/iHerbの公開imageURLをリンク参照のみ・自前ホスト/改変NG） */
   imageUrl?: string
+  /** ASP ヒーローバナー画像 URL（1200x628 等の横長バナー・商品カード最上部に表示） */
+  heroBannerUrl?: string
+  /** ASP ヒーローバナークリック先 URL（heroBannerUrl とセットで使う） */
+  heroBannerLinkUrl?: string
   /** 配送目安（「翌日配送」「7-14日」等） */
   shippingNote?: string
   /** 初回購入特典（「初回20% off」等） */
@@ -453,4 +457,8 @@ export interface Article {
   dateModified?: string
   /** true の場合、コラム一覧（/articles）に表示しない。supplement-guide 系で concern-guide-data.ts に正本がある DEPRECATED スタブ用 */
   hideFromList?: boolean
+  /** 記事末尾（参考文献の後）に表示する大バナー画像 URL（1200x628 等の ASP クリエイティブ） */
+  footerBannerUrl?: string
+  /** 記事末尾大バナーのクリック先 URL（footerBannerUrl とセットで使う） */
+  footerBannerLinkUrl?: string
 }

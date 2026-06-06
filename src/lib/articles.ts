@@ -2858,13 +2858,14 @@ NAD+前駆体の主観的な疲労改善は3〜6ヶ月の継続が前提。Remie
 
 化粧品開発の現場で原料を扱うとき、「純度 70% のビタミン C 誘導体」と「純度 99.9% のビタミン C 誘導体」を同じものとして扱うことはない。表記が同じでも、中身は別物だからだ。NMN サプリも同じ目線で見ると、市販品の選び方が変わる。
 
-**⚡ Quick Look｜時間がない人向け 3 行まとめ**
+:::point
+**⚡ 時間がない人向け｜まずこの 3 つから選ぶ**
+🥇 **本命（研究域準拠・国内製造）**：[GAAH NMN](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)（純度 99.9% × 国内 GMP × 250mg/日）月 ¥39,600・1 日 ¥1,320
+💰 **コスト重視（海外品・¥3,500）**：[Doctor's Best Stabilized NMN](/ingredients/nmn#products)（純度 99% × 150mg × 2 粒）月 ¥3,500・1 日 ¥117
+🔄 **NR で代用したい人**：[Tru Niagen NR 300mg](/articles/nad-40s)（NR は NMN よりヒト RCT 数が先行）月 ¥5,330・1 日 ¥178
+:::
 
-- 🥇 **Our pick**：GAAH NMN（純度 99.9% × 国内 GMP × 250mg/日）月¥39,600・1 日¥1,320
-- 💰 **Budget pick**：Doctor's Best Stabilized NMN（純度 99% × 150mg）月¥3,500・1 日¥117
-- 🔄 **代替（NR 派）**：Tru Niagen NR 300mg（ヒト RCT 数が NMN より先行）月¥5,330・1 日¥178
-
-詳細な比較表 + 商品カードは記事下部の「3 銘柄比較セクション」で。`,
+詳細な比較は記事下部の「3 銘柄を縦に並べて比較する」セクションで。`,
 
     scienceHeading: 'そもそも NAD+ が上がると体は何が変わるのか',
     scienceBody: `「NMN は飲むと NAD+ が上がる」とよく聞くが、**NAD+ が上がるとそもそも体は何が変わるのか**、ここを押さえないと「飲む価値があるか」の判断ができない。
@@ -2948,37 +2949,35 @@ NMN は NAD+ の直接前駆体（材料）で、経口摂取して血中 NAD+ �
 
 [[PRODUCT:nmn]]
 
-### 💰 Budget pick：Doctor's Best Stabilized NMN（コスト重視）
+### 💰 Budget pick：Doctor's Best Stabilized NMN（海外 iHerb・コスト重視）
 
-- **主成分**：NMN（化学合成・安定化処方）
-- **純度表示**：99% 以上表示
-- **1 日含有量**：300mg（150mg × 2 粒）
-- **製造**：海外 GMP（米国）
-- **含有量保証マーク**：なし
-- **月コスト / 1 日コスト**：¥3,500 / ¥117
-- **研究域 250mg 以上**：✅ 2 粒で充足
-- **入手経路**：iHerb（海外発送 7-14 日）
-- **PEI**：NMN 成分の 3.3（暫定）
+:::point
+**💰 Doctor's Best Stabilized NMN 150mg × 60 粒**
+🇺🇸 メーカー：Doctor's Best（米国）
+💊 純度 99% 以上 / 1 カプセル 150mg / 2 粒で 300mg/日（研究域）
+🏭 海外 GMP 認証 + 第三者検査公開
+💰 月 **¥3,500**（GAAH の 1/10 のコスト）・1 日 ¥117
+🚚 iHerb 海外発送 7-14 日
+:::
 
-プレミアム帯の 1/10 のコストで「NMN を試してみる」段階の評価には十分。第三者検査・GMP 認証あり。コストを抑えて 3 ヶ月評価したい人向け。
+「研究域 250mg 以上は必要だが、月¥3,500 でまず 3 ヶ月試したい」人向け。海外原料だが Doctor's Best ブランドの安定化処方 + GMP 認証 + 第三者検査公開で品質基盤あり。プレミアム帯の 1/10 のコストで「NMN を試してみる」段階の評価には十分。
 
-→ [Doctor's Best Stabilized NMN（iHerb）の詳細を見る](/ingredients/nmn#products)
+**▶ [iHerb で Doctor's Best NMN の詳細を見る](/ingredients/nmn#products)**
 
-### 🔄 代替：Tru Niagen NR（NR 派の第一選択）
+### 🔄 代替：Tru Niagen NR（NR 派・Amazon 国内即日）
 
-- **主成分**：NR（ニコチンアミドリボシド）
-- **純度表示**：NIAGEN 特許品
-- **1 日含有量**：300mg（1 カプセル）
-- **製造**：米国 GMP・NSF Certified for Sport 認証
-- **含有量保証マーク**：NIAGEN マーク
-- **月コスト / 1 日コスト**：¥5,330 / ¥178
-- **研究域**：Trammell 2016・Martens 2018・Remie 2020 で再現性高く血中 NAD+ 上昇
-- **入手経路**：Amazon（国内即日）
-- **PEI**：NR 成分の 2.8（暫定）
+:::point
+**🔄 TRU NIAGEN® NR 300mg × 90 粒**
+🇺🇸 メーカー：ChromaDex（米国・NIAGEN 特許保有）
+💊 NR 300mg / 1 カプセル（Remie 2020 用量域）
+🏭 米国 GMP + NSF Certified for Sport 認証
+💰 月 **¥5,330**・1 日 ¥178
+🚚 Amazon 国内即日着・返品 30 日保証
+:::
 
-ヒト RCT 数は NR が NMN より先行。「NMN ではなく NR で評価したい人」「Amazon 国内即日着が良い人」向け。
+「NMN ではなく NR で評価したい人」「Amazon 国内即日着が良い人」向け。ヒト RCT 数は NR が NMN より先行（Trammell 2016・Martens 2018・Remie 2020）。NSF 認証 + NIAGEN 特許で研究グレードの品質。
 
-→ [NR vs NMN 選び方記事（nad-40s）](/articles/nad-40s)`,
+**▶ [Amazon で Tru Niagen の詳細を見る](/ingredients/nicotinamide-riboside#products)** ｜ **▶ [NR vs NMN 選び方記事を読む](/articles/nad-40s)**`,
       },
       {
         heading: '結論：NMN を選ぶなら純度 99.9% × 250mg 以上 × 国内製造 GMP',
@@ -3097,6 +3096,49 @@ Yoshino 2021・Igarashi 2022 の研究使用域は ==250mg/日以上==。1 日�
 - 月 ¥6,600 の継続コストが家計を圧迫する状況にある
 
 該当の方は、自己判断で開始せず主治医・薬剤師に相談する。`,
+      },
+      {
+        heading: 'NMN を選ばない人へ｜代わりに何を試すか',
+        position: 'after-solution',
+        body: `「NMN は月 ¥39,600 で高すぎる」「論文の蓄積待ちの段階で買うのは早い」「3 ヶ月評価する覚悟がない」と感じる人にとって、NMN は最適解ではない。研究的にも経済的にも、別の老化軸を試す方が ROI が高いケースは多い。
+
+**「先に整えるべき土台」3 つ（ROI 高い順）**
+
+NMN より先にヒト RCT 蓄積が厚い 3 成分が老化軸の土台になる。30〜40 代で「まずやる 1 本」を選ぶならこの 3 つから。
+
+:::point
+**🐟 オメガ 3（EPA / DHA）｜慢性炎症・心血管・脳の土台**
+月 ¥2,000〜5,000 ・PEI 6.4 / S ランク・RCT 蓄積最厚
+→ [オメガ 3 で炎症は抑えられるか（記事）](/articles/omega3-inflammation)
+:::
+
+:::point
+**☀️ ビタミン D｜日本人 50% が不足・骨と免疫の基盤**
+月 ¥500〜2,000 ・PEI 6.4 / S ランク・血液検査で 25(OH)D 確認推奨
+→ [ビタミン D 不足の境界（記事）](/articles/vitamin-d-guide)
+:::
+
+:::point
+**💪 クレアチン｜筋肉・認知・回復のオールラウンド**
+月 ¥1,500〜3,000 ・PEI 6.4 / S ランク・モノハイドレート 3-5g/日
+→ [30 代で筋肉は減るのか（記事）](/articles/protein-sarcopenia)
+:::
+
+**「NMN ではなく NR」の選択肢**
+
+NAD+ 軸を試したいが「NMN は研究蓄積中で待ちたい」場合、ヒト RCT 数が先行する NR（ニコチンアミドリボシド）が現実的な選択肢になる。
+
+**▶ [NMN は NAD+ を上げるが臨床差未確立｜NR が先行（記事）](/articles/nad-40s)** で詳しく整理している。
+
+**「別の老化軸」を試すなら**
+
+NAD+ 経路以外にも、ヒト RCT で評価軸が確立した成分は複数ある。
+
+- 🧠 [アシュワガンダ（コルチゾール対策）](/ingredients/ashwagandha) PEI 7.9 / A ランク
+- 🌸 [コラーゲンペプチド（肌弾力 +28%）](/articles/collagen-question) PEI 5.4
+- 🌿 [レスベラトロール（サーチュイン活性化）](/ingredients/resveratrol) PEI 1.8 暫定
+
+老化対策は「NMN 1 本」より「複数軸の土台」のほうが体感差が出やすい。`,
       },
       {
         heading: '参考文献（References）',
@@ -3233,6 +3275,8 @@ NMN は「飲めば即体感」の成分ではない。Yoshino 2021・Igarashi 2
     concerns: ['longevity', 'fatigue', 'skin-aging'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
     dateModified: '2026-06-06',
+    footerBannerUrl: 'https://www21.a8.net/svt/bgt?aid=260606739412&wid=001&eno=01&mid=s00000021920002012000&mc=1',
+    footerBannerLinkUrl: 'https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+BZ8OX',
   },
 
   // ── 4. レチノール記事 ─────────────────────────────────────────────
