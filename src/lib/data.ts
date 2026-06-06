@@ -66695,7 +66695,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['EPA', 'エイコサペンタエン酸', 'eicosapentaenoic acid', 'ピュアEPA'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: '高純度EPA｜心血管・中性脂肪・1.8g・論文RCT',
+    seoTitle: '高純度EPA｜混合と何が違う？1.8g 心血管の論文｜SciBase',
     seoDescription: '高純度EPA魚油は混合フィッシュオイルからDHAを除きEPAを高濃度（85%以上）に精製した製品。1.8-4g/日で中性脂肪低下と心血管イベント抑制（REDUCE-IT 2019・n=8179）がRCTで報告された。既存omega3とは別エントリで、EPA単独効果に注目したい人向けに整理。｜SciBase',
     tagline: '混合フィッシュオイルからDHAを抜きEPAだけ高濃度化・心血管RCTのEPA量を狙いやすい',
     description:
@@ -66705,6 +66705,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'ワルファリン・DOAC等の抗凝固薬併用は出血リスクで医師相談が前提。手術予定がある場合は術前1週間程度の中止を主治医と検討。妊娠・授乳中は混合オメガ3が一般的に推奨される。',
     concerns: ['inflammation', 'cardiovascular'],
+    sectionSummaries: {
+      whoFor: 'スタチン治療下でも心血管リスクをさらに下げたい・中性脂肪が高めで食事改善だけでは追いつかない・DHA ではなく EPA 中心の研究エビデンスに注目したい 40-60 代層。妊娠中・授乳中は混合オメガ 3 が一般的に推奨される。',
+      papers: 'REDUCE-IT 2019 NEJM RCT n=8,179 約 4.9 年（スタチン治療下で EPA エチルエステル 4g/日が心血管イベントをプラセボ比 25% 低下）が主柱。JAMA 2018 メタ解析 n=68,680（83 試験で EPA 中心の高用量介入が心血管・代謝指標に独立効果）+ Atherosclerosis 2011 RCT n=240（高純度 EPA 1.8g/日で中性脂肪約 20% 低下・LDL 無影響）が周辺エビデンス。',
+      publicDbReferences: 'NIH ODS Omega-3 Fatty Acids HealthProfessional Fact Sheet（AI 摂取目安・EPA/DHA 心血管・認知・抗凝固薬併用注意）が主柱。スタチン治療下の追加介入は AHA Science Advisory 2019 でも一定の支持あり。',
+      evidence: 'A ランク・**PEI 7.9（confidence 1.0・papers 3 件: RCT 2・メタ解析 1）残候補最強**。心血管イベント低下 A（REDUCE-IT n=8,179 4.9 年）・中性脂肪低下 A（高純度 EPA 1.8g/日 20% 低下 RCT）・抗炎症 B。混合フィッシュオイル（EPA+DHA）では同等の心血管効果は確認されていない EPA 特化軸。',
+      dosage: '1.8-4g/日 EPA（食後・REDUCE-IT 用量域）。1.8g/日が研究で確認されている最小用量（Atherosclerosis 2011 中性脂肪 20% 低下）・4g/日が心血管イベント低下用量（REDUCE-IT）。日本人を含む現実世界では 1.8-2g/日から始めて主治医とフォロー。',
+      dosageLevels: '入門 1.8-2g/日（中性脂肪低下 RCT 最小用量・既存スタチン治療下の補助）→ 標準 2-4g/日（REDUCE-IT 用量域・心血管イベント 25% 低下）→ 強化 4g/日（REDUCE-IT 最大用量・心房細動軽度増加リスクで医師相談前提）の 3 段階。EPA 含有量 1g/カプセル以上の高純度製品を選ぶ。',
+      faq: '高純度 EPA と混合オメガ 3（EPA+DHA）の使い分け・4g/日の安全性と心房細動/出血リスクの 2 軸 FAQ で「EPA 特化軸」と「高用量の安全性」を整理。',
+      safety: 'げっぷ・魚臭が一般的・4g/日で心房細動の軽度増加（REDUCE-IT で約 0.5% プラセボ比増・5 年間）と出血傾向の軽度増加報告。日本人を含む現実世界では 1.8-2g/日から始めて主治医とフォローが安全側。妊娠・授乳中は混合オメガ 3 が一般的に推奨される。',
+      interactions: 'ワルファリン・DOAC（抗凝固薬）は血小板凝集抑制の上乗せで出血リスク上昇の理論的リスクで主治医相談必須・INR / 出血傾向経過観察（REDUCE-IT 2019 / 添付文書類）。抗血小板薬（アスピリン・クロピドグレル等）は出血傾向の重複で常用中は併用相談。手術予定がある場合は術前 1 週間程度の中止を主治医と検討。',
+    },
     papers: [
       {
         title: 'Cardiovascular Risk Reduction with Icosapent Ethyl for Hypertriglyceridemia (REDUCE-IT)',
@@ -66786,6 +66797,29 @@ export const ingredients: Ingredient[] = [
       'DHAではなくEPA中心の研究エビデンスに注目したい人',
     ],
     heroStat: { value: '1.8g', label: 'EPA論文最小用量' },
+    dosageLevels: [
+      {
+        dose: '1.8-2g',
+        category: '入門・中性脂肪低下 RCT 最小用量',
+        effect: 'Atherosclerosis 2011 RCT n=240 で確認された高純度 EPA 1.8g/日 中性脂肪約 20% 低下の研究準拠下限用量。LDL コレステロールには影響しないため、既存スタチン治療下での追加介入として位置づけられる。8 週以上の継続で中性脂肪値の有意低下を狙う。',
+        whoFor: '中性脂肪高め（150mg/dL 以上）で食事改善だけでは追いつかない・スタチン治療下の追加介入・EPA 特化を始めたい層',
+        evidenceNote: 'Atherosclerosis 2011 RCT 中央値域。日本人を含む現実世界では 1.8-2g/日から開始が現実的。',
+      },
+      {
+        dose: '2-4g',
+        category: '標準・心血管イベント低下用量域',
+        effect: 'REDUCE-IT 2019 NEJM RCT n=8,179 約 4.9 年で確認された心血管イベント 25% 低下の研究準拠用量域。スタチン治療下でも追加効果を示した EPA エチルエステル 4g/日が中央値。混合フィッシュオイル（EPA+DHA）では同等の心血管効果は確認されていないため EPA 特化規格製品が前提。',
+        whoFor: 'スタチン治療下で心血管リスクをさらに下げたい・中性脂肪 200mg/dL 以上・主治医フォローあり層',
+        evidenceNote: 'REDUCE-IT 4g/日が中央値。日本人を含む現実世界では 2g/日から段階的に増量し主治医と心房細動/出血リスクをフォロー。',
+      },
+      {
+        dose: '4g',
+        category: '強化・REDUCE-IT 最大用量',
+        effect: 'REDUCE-IT 試験で使われた最大用量域。心血管イベント 25% 低下と中性脂肪低下を最大化できるが、心房細動の軽度増加（プラセボ比約 0.5% / 5 年）と出血傾向の軽度増加が報告されている。日本人を含む現実世界では主治医相談前提の上級用量域。',
+        whoFor: '中性脂肪 300mg/dL 以上・スタチン治療下で REDUCE-IT 用量を狙いたい・主治医フォロー下層',
+        evidenceNote: 'REDUCE-IT 上限用量。心房細動既往・出血リスク高は禁忌寄り。手術予定は術前 1 週間中止検討。',
+      },
+    ],
     axisScores: { antiAging: 5, skin: 3, cognitive: 4, stress: 2, sleep: 3, immunity: 6, metabolism: 6 },
     customFaqs: [
       {
@@ -66824,7 +66858,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
       },
     ],
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-06',
     publicDbReferences: [
       {
         source: 'nih-ods',
