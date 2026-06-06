@@ -25381,7 +25381,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['MCT', 'MCTオイル', '中鎖脂肪酸', '中鎖トリグリセリド', 'カプリル酸', 'カプリン酸', 'C8', 'C10', 'MCT oil', 'ココナッツオイル抽出'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'MCTオイル｜ケトン体生成・認知・代謝・C8/C10論文・下痢副作用',
+    seoTitle: 'MCTオイル｜使い方・C8/C10・下痢の論文｜SciBase',
     seoDescription: 'MCTオイル（中鎖脂肪酸トリグリセリド）は肝臓で速やかにβ酸化されケトン体を生成。Cunnane 2020 Alzheimer Dement の軽度認知障害RCT・St-Onge 2008 Obesity の体組成RCT・Vandenberghe 2017 のケトン体応答試験が主要エビデンス。C8（カプリル酸）優位品の選び方・下痢を避ける用量階段（5g→15g→30g）・糖尿病薬連動を整理。',
     tagline: '肝臓で速やかにβ酸化されケトン体を生成・MCI/AD・体組成・運動パフォーマンスRCTで支持',
     description:
@@ -25390,6 +25390,17 @@ export const ingredients: Ingredient[] = [
       '下痢・腹痛・吐き気が脱落の最大要因で、用量階段（5g→15g→30g）必須。糖尿病薬服用中はケトン体応答変動に注意。',
 
     concerns: ['cognitive', 'metabolism', 'brain-fog'],
+    sectionSummaries: {
+      whoFor: 'ケトジェニック実践者・MCTバターコーヒー導入・運動パフォーマンス向上・認知機能維持目的の成人。脂質代謝が極端に低下している人は慎重に。',
+      papers: 'Vandenberghe 2017 J Lipid Res（C8はC10の3倍ケトン応答）+ Henderson 2009 Nutr Metab RCT n=152（軽度認知障害 MMSE改善）+ St-Onge 2003 Int J Obes RCT 体重減少の3軸が主柱。',
+      publicDbReferences: 'NIH ODS Medium-Chain Triglycerides / hfnet 中鎖脂肪酸の概説 / 厚労省 e-ヘルスネット 脂質の3層で公的カバー。',
+      evidence: 'B ランク・ケトン体応答 A・体重減少 B（メタ解析複数）・認知機能サポート C（軽度認知障害で部分支持）。',
+      dosage: '1日10-30g（小さじ2-大さじ2杯）・空腹時より食事と一緒が消化負担軽。コーヒー1杯あたり5-15mlから開始。',
+      dosageLevels: '入門5-10g（小さじ1-2）→ 標準15-20g（大さじ1強）→ 強化25-30g（上限・下痢リスク増）。空腹時の高用量は腹痛報告多数。',
+      faq: '使い方・始め方・C8とC10の違い・日清/勝山館等ブランド比較・下痢回避・コーヒー以外の使い方の6軸FAQで判断材料を網羅。',
+      safety: '下痢・腹痛は用量依存（初期に多い）・空腹時の大量摂取で頻度増。肝疾患・脂質代謝障害のある方は医師相談。妊娠中は推奨用量内で問題なし。',
+      interactions: 'ワルファリン併用で吸収影響の理論的懸念・血糖降下薬で食後血糖値変動・スタチン併用は脂質パネル要モニター。',
+    },
     papers: [
       {
         title: 'Brain ketone metabolism in mild cognitive impairment: a randomized controlled trial of a ketogenic medium chain triglyceride drink',
@@ -25529,7 +25540,7 @@ export const ingredients: Ingredient[] = [
         source: '小児難治性てんかんケト食ガイドライン',
       },
     ],
-    updatedAt: '2026-05-11',
+    updatedAt: '2026-06-06',
   },
   {
     slug: 'psyllium',
