@@ -128,6 +128,28 @@ const TESTS: TestCase[] = [
       'ヨウ素 海藻 220μg で 130μg RDA 大幅充足（過剰注意境界）',
     ],
   },
+  {
+    label: 'K. 40代男性・標準食 + マルチビタミン 1 錠（multivitamin 機能テスト）',
+    age: '40s', sex: 'male', lifeStage: 'normal',
+    foodPresetIds: ['meat_fish_daily', 'green_veg_daily'],
+    supplements: [{ slug: 'multivitamin', dose: 1 }],
+    expectations: [
+      'マルチ 1 錠で vitamin_a/d/e/c/b6/b12/folate/niacin/iron/zinc/selenium/iodine/calcium/magnesium/potassium 全てに dose 加算',
+      'たとえば iron 食事 3.0+1.0+マルチ 4.0 = 8.0 mg・RDA 7.5 で充足',
+      'iodine 食事 0+マルチ 100 = 100 μg・RDA 130 でやや不足',
+    ],
+  },
+  {
+    label: 'L. 50代女性・乳製品なし・カルシウム不足解消用にマルチ 2 錠',
+    age: '50s', sex: 'female', lifeStage: 'normal',
+    foodPresetIds: ['meat_fish_daily', 'green_veg_daily', 'fruit_daily'],
+    supplements: [{ slug: 'multivitamin', dose: 2 }],
+    expectations: [
+      'マルチ 2 錠で各成分の dose は 2 倍に',
+      'カルシウム 食事 90+マルチ 440 = 530 mg・RDA 650 でやや不足',
+      'B12 食事 3.0+マルチ 5.0 = 8.0μg・RDA 2.4 で充足',
+    ],
+  },
 ]
 
 function statusLabel(s: string): string {

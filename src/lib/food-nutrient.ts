@@ -278,6 +278,7 @@ export const SUPPLEMENT_INPUT_UNIT: Record<string, string> = {
   'selenium': 'μg',
   'iodine': 'μg',
   'potassium': 'mg',
+  'multivitamin': '錠',
 }
 
 /**
@@ -302,11 +303,37 @@ export const SUPPLEMENT_PRESETS: SupplementPreset[] = [
   { slug: 'folic-acid', labelJa: '葉酸', emoji: '🌱', typicalDose: 400, unit: 'μg', descJa: '妊活・妊娠中の標準量' },
   { slug: 'calcium', labelJa: 'カルシウム', emoji: '🦴', typicalDose: 500, unit: 'mg', descJa: '骨・歯のサポート' },
   { slug: 'vitamin-c', labelJa: 'ビタミンC', emoji: '🍊', typicalDose: 500, unit: 'mg', descJa: '抗酸化・肌対策' },
+  { slug: 'multivitamin', labelJa: 'マルチビタミン', emoji: '💊', typicalDose: 1, unit: '錠', descJa: '1 日 1 錠（複数栄養素同時）' },
   { slug: 'selenium', labelJa: 'セレン', emoji: '✨', typicalDose: 100, unit: 'μg', descJa: '抗酸化ミネラル' },
   { slug: 'vitamin-e', labelJa: 'ビタミンE', emoji: '🌰', typicalDose: 100, unit: 'mg', descJa: '抗酸化・血流' },
   { slug: 'vitamin-a', labelJa: 'ビタミンA', emoji: '👁️', typicalDose: 700, unit: 'μgRAE', descJa: '視覚・皮膚' },
   { slug: 'vitamin-b6', labelJa: 'ビタミンB6', emoji: '🧠', typicalDose: 10, unit: 'mg', descJa: '神経・代謝' },
+  { slug: 'niacin', labelJa: 'ナイアシン', emoji: '🔥', typicalDose: 15, unit: 'mgNE', descJa: '代謝・脂質サポート' },
+  { slug: 'iodine', labelJa: 'ヨウ素', emoji: '🌊', typicalDose: 150, unit: 'μg', descJa: '甲状腺・代謝（海藻代替）' },
+  { slug: 'potassium', labelJa: 'カリウム', emoji: '🍌', typicalDose: 500, unit: 'mg', descJa: '血圧・むくみ対策' },
 ]
+
+/**
+ * マルチビタミン 1 錠の代表的含有量（Centrum 系・複数製品の平均的な日本販売品）
+ * dose は「錠数」として扱い、calculateSufficiency 内で各栄養素に振り分ける
+ */
+export const MULTIVITAMIN_CONTRIBUTION: Record<string, number> = {
+  vitamin_a: 600,
+  vitamin_d: 12.5,  // 500 IU
+  vitamin_e: 30,
+  vitamin_c: 60,
+  vitamin_b6: 1.7,
+  vitamin_b12: 2.5,
+  folate: 200,
+  niacin: 14,
+  iron: 4,
+  zinc: 7,
+  selenium: 30,
+  iodine: 100,
+  calcium: 220,
+  magnesium: 100,
+  potassium: 30,
+}
 
 export type SufficiencyStatus = 'sufficient' | 'mild_deficit' | 'severe_deficit' | 'excess_warning' | 'no_data'
 
@@ -367,6 +394,11 @@ export function calculateSufficiency(input: SufficiencyInput): SufficiencyResult
     // 3. supplement intake
     let supplementIntake = 0
     for (const s of supplements) {
+      if (s.slug === 'multivitamin' && s.dose > 0) {
+        const contrib = MULTIVITAMIN_CONTRIBUTION[nutrient]
+        if (contrib != null) supplementIntake += contrib * s.dose
+        continue
+      }
       const mapped = SUPPLEMENT_SLUG_TO_NUTRIENT[s.slug]
       if (mapped === nutrient && s.dose > 0) supplementIntake += s.dose
     }

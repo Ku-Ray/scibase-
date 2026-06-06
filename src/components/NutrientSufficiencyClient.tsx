@@ -6,18 +6,23 @@ import {
   AlertCircle,
   AlertTriangle,
   Award,
+  Calendar,
   Check,
   ChevronDown,
   ChevronRight,
   ExternalLink,
+  FileText,
   Info,
+  Microscope,
   Minus,
+  Package,
   Pill,
   Plus,
   RotateCcw,
   Salad,
   Sparkles,
   Star,
+  Target,
   TrendingUp,
   Utensils,
   Zap,
@@ -47,7 +52,9 @@ import {
   type SufficiencyResult,
   type SufficiencyStatus,
   type SupplementInput,
+  type SupplementPreset,
 } from '@/lib/food-nutrient'
+import { NUTRIENT_ACTION, selectTopDeficits } from '@/lib/nutrient-action-plan'
 
 const AGE_OPTIONS: AgeGroup[] = ['10s', '20s', '30s', '40s', '50s', '60s', '70s+']
 type Phase = 'idle' | 'calculating' | 'revealed'
@@ -224,6 +231,7 @@ export function NutrientSufficiencyClient() {
   const [foodPresetIds, setFoodPresetIds] = useState<string[]>([])
   const [supplements, setSupplements] = useState<SupplementInput[]>([])
   const [phase, setPhase] = useState<Phase>('idle')
+  const [showAllSupplements, setShowAllSupplements] = useState(false)
   const [results, setResults] = useState<SufficiencyResult[] | null>(null)
   const [dietOnlyResults, setDietOnlyResults] = useState<SufficiencyResult[] | null>(null)
   const [expanded, setExpanded] = useState<Record<SufficiencyStatus, boolean>>({
@@ -485,34 +493,28 @@ export function NutrientSufficiencyClient() {
             飲んでいるサプリをワンタップで追加。何も追加せずに「計算する」を押してもOKです。
           </p>
 
-          {/* ワンタップ追加グリッド */}
+          {/* ワンタップ追加グリッド：基本 9 + 展開 7 */}
           <div>
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">よく飲まれているサプリ（タップで追加）</h3>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {SUPPLEMENT_PRESETS.map(p => {
-                const added = usedSupplementSlugs.has(p.slug)
-                return (
-                  <button type="button" key={p.slug}
-                    onClick={() => !added && addSupplementPreset(p.slug, p.typicalDose)}
-                    disabled={added}
-                    className={`flex items-start gap-2 rounded-lg border p-2.5 text-left transition ${
-                      added ? 'border-emerald-300 bg-emerald-50/70 opacity-70' : 'border-slate-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/40'
-                    }`}>
-                    <div className="text-lg">{p.emoji}</div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-baseline justify-between gap-1">
-                        <div className="truncate text-xs font-semibold text-slate-900 sm:text-sm">{p.labelJa}</div>
-                        {added && <Check className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" />}
-                      </div>
-                      <div className="mt-0.5 text-[10px] text-slate-600 sm:text-xs">
-                        {p.typicalDose} {p.unit}
-                      </div>
-                      <div className="mt-0.5 truncate text-[10px] text-slate-500">{p.descJa}</div>
-                    </div>
-                  </button>
-                )
-              })}
+              {SUPPLEMENT_PRESETS.slice(0, 9).map(p => (
+                <SupplementChip key={p.slug} preset={p} added={usedSupplementSlugs.has(p.slug)} onAdd={addSupplementPreset} />
+              ))}
             </div>
+            {!showAllSupplements && (
+              <button type="button" onClick={() => setShowAllSupplements(true)}
+                className="mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-slate-300 px-3 py-2 text-xs font-medium text-slate-600 transition hover:border-emerald-300 hover:bg-emerald-50/40 hover:text-emerald-700">
+                <Plus className="h-3.5 w-3.5" />
+                他のサプリ {SUPPLEMENT_PRESETS.length - 9} 種を見る（ナイアシン・ヨウ素・カリウム 等）
+              </button>
+            )}
+            {showAllSupplements && (
+              <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {SUPPLEMENT_PRESETS.slice(9).map(p => (
+                  <SupplementChip key={p.slug} preset={p} added={usedSupplementSlugs.has(p.slug)} onAdd={addSupplementPreset} />
+                ))}
+              </div>
+            )}
           </div>
 
           {/* 追加済みリスト（用量編集 + 削除） */}
@@ -575,12 +577,17 @@ export function NutrientSufficiencyClient() {
           {/* ① PersonalityType Hero */}
           <PersonalityHero personality={personality} score={stats.score} sufficient={stats.sufficient} total={stats.total} />
 
-          {/* ② BeforeAfterCard (Loss Aversion) */}
+          {/* ② ActionPlanSection (最重要・SciBase ASP 接続) */}
+          {(stats.severe + stats.mild) > 0 && (
+            <ActionPlanSection results={results} score={stats.score} />
+          )}
+
+          {/* ③ BeforeAfterCard (Loss Aversion) */}
           {(beforeAfter.diff > 0 || supplements.filter(s => s.dose > 0).length > 0) && (
             <BeforeAfterCard before={beforeAfter.dietScore} after={beforeAfter.fullScore} diff={beforeAfter.diff} />
           )}
 
-          {/* ③ Deficiency Loss Aversion alert */}
+          {/* ④ Deficiency Loss Aversion alert */}
           {(stats.severe + stats.mild) >= 3 && (
             <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-4">
               <div className="flex items-start gap-2">
@@ -796,11 +803,147 @@ function NutrientRow({ result, status, delay = 0 }: { result: SufficiencyResult;
       )}
       {(status === 'mild_deficit' || status === 'severe_deficit') && meta.ingredientSlug && (
         <Link href={`/ingredients/${meta.ingredientSlug}`}
-          className="mt-2 inline-flex items-center gap-1 rounded-md bg-white px-2.5 py-1.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 transition hover:bg-emerald-50">
-          {meta.labelJa}の論文と製品を見る <ChevronRight className="h-3 w-3" />
+          className="group mt-3 flex items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-emerald-50/60 p-3 transition hover:border-emerald-400 hover:from-emerald-100 hover:to-emerald-50">
+          <div className="min-w-0 flex-1">
+            <div className="text-xs font-medium text-emerald-700">📊 SciBase の評価を見る</div>
+            <div className="mt-0.5 truncate text-sm font-bold text-emerald-900">
+              あなたに必要な{meta.labelJa}サプリと論文
+            </div>
+            <div className="mt-0.5 text-xs text-emerald-700/80">
+              評価ランキング・iHerb 製品・論文出典まで
+            </div>
+          </div>
+          <ChevronRight className="h-5 w-5 flex-shrink-0 text-emerald-600 transition group-hover:translate-x-0.5" />
         </Link>
       )}
       {meta.noteJa && <div className="mt-2 text-xs text-slate-500">{meta.noteJa}</div>}
+    </div>
+  )
+}
+
+/* ─── ActionPlanSection (A+B+C+E) ──────────────────────────────── */
+
+function ActionPlanSection({ results, score }: { results: SufficiencyResult[]; score: number }) {
+  const topDeficits = useMemo(() => selectTopDeficits(results, 3), [results])
+  if (topDeficits.length === 0) return null
+
+  /* Bundle 効果 simulation: TOP 3 の不足が充足したと仮定したスコア */
+  const simulatedScore = useMemo(() => {
+    const totalCount = results.length
+    const currentSufficient = results.filter(r => r.status === 'sufficient').length
+    const newSufficient = currentSufficient + topDeficits.length
+    return Math.round((newSufficient / totalCount) * 100)
+  }, [results, topDeficits])
+
+  return (
+    <div className="rounded-2xl border-2 border-emerald-300 bg-gradient-to-br from-white via-emerald-50/30 to-white p-5 shadow-md sm:p-6">
+      <div className="mb-4 flex items-center gap-2">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100">
+          <Target className="h-5 w-5 text-emerald-600" />
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-slate-900 sm:text-lg">あなたの不足解消アクションプラン</h3>
+          <div className="text-xs text-slate-600">不足度の高い {topDeficits.length} 栄養素を SciBase の論文ベースでフォロー</div>
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        {topDeficits.map((r, i) => (
+          <ActionPlanCard key={r.nutrient} result={r} rank={i + 1} />
+        ))}
+      </div>
+
+      {/* Bundle CTA */}
+      <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+        <div className="flex items-start gap-2">
+          <Package className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-700" />
+          <div className="flex-1">
+            <div className="text-sm font-bold text-emerald-900">あなた専用 {topDeficits.length} 点セット</div>
+            <div className="mt-1 text-xs text-emerald-800 sm:text-sm">
+              これらを朝/晩に分けて補うと、充足スコアは <strong>{score} → 約 {simulatedScore}%</strong> に改善見込み
+              <span className="text-emerald-700/80">（目安）</span>
+            </div>
+          </div>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {topDeficits.map(r => {
+            const meta = NUTRIENT_META[r.nutrient]
+            if (!meta?.ingredientSlug) return null
+            return (
+              <Link key={r.nutrient} href={`/ingredients/${meta.ingredientSlug}`}
+                className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-300 transition hover:bg-emerald-100">
+                {meta.labelJa} <ChevronRight className="h-3 w-3" />
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ActionPlanCard({ result, rank }: { result: SufficiencyResult; rank: number }) {
+  const meta = NUTRIENT_META[result.nutrient]
+  const action = NUTRIENT_ACTION[result.nutrient]
+  if (!meta) return null
+
+  const deficitAmount = Math.max(result.reference - result.totalIntake, 0)
+  const deficitFormatted = formatAmount(deficitAmount, meta.unit)
+  const isSevere = result.status === 'severe_deficit'
+
+  return (
+    <div className={`rounded-xl border bg-white p-4 shadow-sm ${isSevere ? 'border-orange-200' : 'border-amber-200'}`}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <div className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${isSevere ? 'bg-orange-100 text-orange-700' : 'bg-amber-100 text-amber-700'}`}>
+            #{rank}
+          </div>
+          <div>
+            <div className="text-sm font-bold text-slate-900 sm:text-base">{meta.labelJa}</div>
+            <div className={`text-xs font-medium ${isSevere ? 'text-orange-700' : 'text-amber-700'}`}>
+              {result.percent}% 充足・あと <strong>{deficitFormatted}</strong> 必要
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {action && (
+        <div className="mt-3 space-y-1.5 rounded-lg bg-slate-50 p-3 text-xs sm:text-sm">
+          <div className="flex items-start gap-1.5">
+            <Pill className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-500" />
+            <div className="text-slate-700">
+              <strong className="text-slate-900">サプリの目安：</strong>
+              {action.supplementDoseRangeJa}
+            </div>
+          </div>
+          <div className="flex items-start gap-1.5">
+            <Calendar className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-500" />
+            <div className="text-slate-700">
+              <strong className="text-slate-900">続けたら：</strong>
+              {action.benefitTimelineJa}
+            </div>
+          </div>
+          <div className="flex items-start gap-1.5">
+            <Microscope className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-500" />
+            <div className="text-slate-700">{action.paperHintJa}</div>
+          </div>
+        </div>
+      )}
+
+      {meta.ingredientSlug && (
+        <Link href={`/ingredients/${meta.ingredientSlug}`}
+          className="group mt-3 flex items-center justify-between gap-2 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 px-4 py-2.5 text-white shadow-sm transition hover:from-emerald-700 hover:to-emerald-800 hover:shadow-md">
+          <div className="text-left">
+            <div className="text-xs font-medium opacity-90">SciBase 評価ランキング</div>
+            <div className="text-sm font-bold">あなたに必要な{meta.labelJa}サプリを見る</div>
+          </div>
+          <ChevronRight className="h-5 w-5 flex-shrink-0 transition group-hover:translate-x-0.5" />
+        </Link>
+      )}
+
+      <div className="mt-2 text-[10px] leading-relaxed text-slate-500 sm:text-xs">
+        ※ 数値は目安です。実際の用量・継続期間は個人差があるため、必ず医師・管理栄養士にご相談ください。
+      </div>
     </div>
   )
 }
@@ -830,6 +973,29 @@ function CompletionCelebration({ personality, score }: { personality: Personalit
         結果を X でシェア
       </a>
     </div>
+  )
+}
+
+/* ─── SupplementChip (Step 3 グリッド要素) ──────────────────────── */
+
+function SupplementChip({ preset, added, onAdd }: { preset: SupplementPreset; added: boolean; onAdd: (slug: string, dose: number) => void }) {
+  return (
+    <button type="button" onClick={() => !added && onAdd(preset.slug, preset.typicalDose)} disabled={added}
+      className={`flex items-start gap-2 rounded-lg border p-2.5 text-left transition ${
+        added ? 'border-emerald-300 bg-emerald-50/70 opacity-70' : 'border-slate-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/40'
+      }`}>
+      <div className="text-lg">{preset.emoji}</div>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline justify-between gap-1">
+          <div className="truncate text-xs font-semibold text-slate-900 sm:text-sm">{preset.labelJa}</div>
+          {added && <Check className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" />}
+        </div>
+        <div className="mt-0.5 text-[10px] text-slate-600 sm:text-xs">
+          {preset.typicalDose} {preset.unit}
+        </div>
+        <div className="mt-0.5 truncate text-[10px] text-slate-500">{preset.descJa}</div>
+      </div>
+    </button>
   )
 }
 
