@@ -8,7 +8,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['アシュワガンダ', 'インドニンジン', 'withania', 'Withania somnifera', 'KSM-66', 'Sensoril', 'Shoden', 'ksm66', 'sensoril', 'shoden', 'ksm66 アシュワガンダ', 'ksm66 効果', 'sensoril アシュワガンダ', 'アシュワガンダ サプリ', 'アシュワガンダ おすすめ', 'アシュワガンダ 選び方', 'アシュワガンダ iherb', 'アシュワガンダ 飲み合わせ', 'アシュワガンダ ロディオラ 違い'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: 'アシュワガンダ｜KSM-66 600mg・効果出るまで8週',
+    seoTitle: 'アシュワガンダ｜KSM-66 600mg・効果8週の論文｜SciBase',
     seoDescription: 'アシュワガンダはインド伝統医学のハーブ。300〜600mg/日でコルチゾール−27.9%・ストレス指標の改善がメタ解析で確認されている。KSM-66とSensorilの違い、エキスメーカー横断比較、iHerbで選べる市販品、SSRI・甲状腺薬・免疫抑制剤との併用注意、副作用を査読済み論文で解説。',
     tagline: 'コルチゾール−27.9%・8週RCTで確認されたストレス指標の改善',
     description:
@@ -18,6 +18,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '甲状腺機能亢進・自己免疫疾患・SSRI併用者は禁忌寄り。国内ドラッグストアの取り扱いは限定的で、iHerb等の個人輸入が主な入手経路。',
     concerns: ['stress', 'sleep', 'fatigue'],
+    sectionSummaries: {
+      whoFor: '仕事・育児で慢性的にコルチゾール高めの 30-40 代・就寝前に頭が冴える・夜なかなか寝付けない/眠りが浅い・疲れているのに休んでも回復しない層。アダプトゲンハーブで KSM-66/Sensoril/Shoden の規格別に研究使用域が異なる。妊娠中・授乳中・甲状腺疾患・自己免疫疾患・免疫抑制剤併用は禁忌寄り。',
+      papers: 'Medicine (Baltimore) 2021 メタ解析 n=590 8 週（ストレス・不安スコアの有意改善とコルチゾール関連指標への影響 p<0.05）+ Chandrasekhar 2012 Indian Journal of Psychological Medicine RCT n=64 8 週（KSM-66 600mg/日でコルチゾール値−27.9%・知覚ストレス 44% 低下）+ Lopresti 2019 Medicine (Baltimore) RCT n=60 8 週（Shoden 240mg/日でコルチゾール低下 + DHEA-S/テストステロン上昇傾向・男性）の 3 軸が主柱。',
+      publicDbReferences: 'NIH NCCIH Ashwagandha fact sheet（不眠・ストレス短期使用エビデンス・甲状腺/抗糖尿病/降圧薬相互作用・妊娠中 NG）が主柱。長期データは年単位 RCT 限定的で 8-12 週間隔の慣行サイクル使用が一般的。',
+      evidence: 'S ランク・**PEI 7.9（confidence 1.0・papers 3 件: RCT 2・メタ解析 1）残候補で最高品質**。コルチゾール低下 A（RCT 複数・メタ解析）・ストレス/不安スコア改善 A・睡眠の質改善 B・男性活力（DHEA-S/テストステロン）B（Lopresti 2019 Shoden）。adaptogen ハーブで最強エビデンス蓄積。',
+      dosage: '300-600mg/日（KSM-66 規格・第一選択）。Sensoril は 125-250mg/日（低用量設計・ストレス重点）・Shoden は 120-240mg/日（高濃度新興規格）。朝晩 2 回分割（各 150-300mg）でコルチゾール日内変動への影響を考慮した RCT プロトコル多い。夜単回（300-600mg）でも睡眠改善報告あり。',
+      dosageLevels: 'KSM-66（第一選択・市場主流・300-600mg/日・RCT 本数最多）→ Sensoril（ストレス/睡眠重点・125-250mg/日・低用量設計）→ 全草根エキス（コスパ標準・標準化なし）→ Shoden その他標準化エキス（新興・参考・120-240mg/日 Lopresti 2019）の 4 形態を目的別に選ぶ。',
+      faq: 'KSM-66 vs Sensoril vs Shoden 規格別選び分け・朝晩 vs 夜単回の飲むタイミング・長期使用の安全性・メーカー/ブランド選び・iHerb 選び方手順・マグネシウム/L-テアニン併用・マカ/ロディオラとの使い分け・形態別（カプセル/ガミー/粉末/ドリンク）・飲み合わせ早見表（薬・サプリ・カフェイン・お酒）の 13 軸 FAQ で「規格 × 形態 × 1 日コスト」の 3 軸決断負荷を解消。',
+      safety: '消化器症状（まれ）・過剰摂取で甲状腺機能に影響の可能性。妊娠中・授乳中（伝統的に堕胎薬として扱われた歴史で絶対禁忌）・自己免疫疾患（橋本病・全身性エリテマトーデス・関節リウマチ等で免疫賦活作用の理論的懸念）・甲状腺機能亢進症（T4・T3 上昇報告）は禁忌寄り。手術予定（特に全身麻酔下）は 2 週間前から中止が安全側。',
+      interactions: '甲状腺ホルモン薬（レボチロキシン等）は T3・T4 上昇報告で甲状腺機能亢進症状リスク・主治医相談必須（Merck Manual / NCCIH）。免疫抑制剤（シクロスポリン・タクロリムス等）は免疫賦活作用で薬効を弱める方向の理論的懸念で併用回避。ベンゾジアゼピン系・鎮静薬は鎮静作用の相加で夜間転倒リスク。糖尿病薬（インスリン・経口血糖降下薬）は血糖降下作用の相加で低血糖リスクで血糖モニタリング必須。',
+    },
     papers: [
       {
         title: 'Adaptogenic and Anxiolytic Effects of Ashwagandha Root Extract in Healthy Adults',
@@ -292,7 +303,7 @@ export const ingredients: Ingredient[] = [
           '結論として、医師の処方薬を3種類以上服用中の方や、自己免疫疾患・甲状腺疾患・がん既往のある方は医師相談を最初のステップに置くのが安全側です。健康な成人で処方薬なし・ピル/ビタミン剤程度なら比較的安全に開始可能、妊娠中・授乳中は絶対避ける、手術予定は2週間前から中止が原則です。「天然成分だから安全」は誤解で、アシュワガンダはホルモン・免疫・神経伝達に複数経路で作用する活性成分です。',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-07',
   },
   {
     slug: 'niacinamide',
