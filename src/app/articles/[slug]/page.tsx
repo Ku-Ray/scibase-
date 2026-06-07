@@ -948,6 +948,29 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── モバイル下部固定 CTA（ランキング型記事の本命銘柄誘導・PR / 提携リンク） ── */}
+      {article.stickyCta && (
+        <div className="md:hidden fixed bottom-0 inset-x-0 z-40 px-3 pb-3 pt-2
+          bg-gradient-to-t from-background via-background/95 to-background/0 pointer-events-none">
+          <a
+            href={article.stickyCta.href}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="pointer-events-auto block rounded-2xl bg-accent text-accent-foreground
+              px-4 py-3.5 text-center shadow-lg border border-accent/30
+              hover:opacity-95 transition-opacity"
+          >
+            <p className="text-[14px] font-bold leading-tight">{article.stickyCta.label}</p>
+            {article.stickyCta.sublabel && (
+              <p className="text-[11px] opacity-90 mt-0.5">{article.stickyCta.sublabel}</p>
+            )}
+          </a>
+          <p className="text-center text-[10px] text-muted-foreground mt-1">
+            ※公式サイトへ遷移します（PR / 提携リンク）
+          </p>
+        </div>
+      )}
     </>
   )
 }

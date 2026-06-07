@@ -461,4 +461,10 @@ export interface Article {
   footerBannerUrl?: string
   /** 記事末尾大バナーのクリック先 URL（footerBannerUrl とセットで使う） */
   footerBannerLinkUrl?: string
+  /** モバイル下部に表示する追従 CTA（ASP CVR +25-252.9% 装置・ランキング型記事の本命銘柄誘導用） */
+  stickyCta?: {
+    label: string
+    href: string
+    sublabel?: string
+  }
 }
