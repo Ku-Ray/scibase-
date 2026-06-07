@@ -59,6 +59,21 @@ import { NUTRIENT_ACTION, selectTopDeficits } from '@/lib/nutrient-action-plan'
 const AGE_OPTIONS: AgeGroup[] = ['10s', '20s', '30s', '40s', '50s', '60s', '70s+']
 type Phase = 'idle' | 'calculating' | 'revealed'
 
+const NUTRIENT_RESULTS_KEY = 'scibase_nutrient_results'
+const MAX_HISTORY = 3
+
+export interface SavedNutrientResult {
+  savedAt: string  // ISO
+  age: AgeGroup
+  sex: Sex
+  lifeStage: LifeStage
+  foodPresetIds: string[]
+  supplements: SupplementInput[]
+  results: SufficiencyResult[]
+  score: number
+  personality: { emoji: string; name: string; rarity: number }
+}
+
 const STATUS_LABEL: Record<SufficiencyStatus, string> = {
   excess_warning: '上限に近い（要注意）',
   severe_deficit: '気にかける余地が大きい',
@@ -308,6 +323,28 @@ export function NutrientSufficiencyClient() {
 
   const grouped = useMemo(() => (results ? groupResultsByStatus(results) : null), [results])
   const personality = useMemo(() => (results ? determinePersonality(results, foodPresetIds) : null), [results, foodPresetIds])
+
+  /* phase が revealed になったタイミングで localStorage に保存（最新 3 件履歴） */
+  useEffect(() => {
+    if (phase !== 'revealed' || !results || !personality) return
+    try {
+      const score = Math.round(results.filter(r => r.status === 'sufficient').length / results.length * 100)
+      const entry: SavedNutrientResult = {
+        savedAt: new Date().toISOString(),
+        age, sex, lifeStage,
+        foodPresetIds,
+        supplements: supplements.filter(s => s.dose > 0),
+        results, score,
+        personality: { emoji: personality.emoji, name: personality.name, rarity: personality.rarity },
+      }
+      const raw = localStorage.getItem(NUTRIENT_RESULTS_KEY)
+      const history: SavedNutrientResult[] = raw ? JSON.parse(raw) : []
+      const next = [entry, ...history].slice(0, MAX_HISTORY)
+      localStorage.setItem(NUTRIENT_RESULTS_KEY, JSON.stringify(next))
+    } catch {
+      /* localStorage 不可・隠匿モード等 */
+    }
+  }, [phase, results, personality, age, sex, lifeStage, foodPresetIds, supplements])
 
   const stats = useMemo(() => {
     if (!results) return null
@@ -636,6 +673,19 @@ export function NutrientSufficiencyClient() {
 
           {/* ⑤ CompletionCelebration + X share (Peak-End) */}
           <CompletionCelebration personality={personality} score={stats.score} />
+
+          {/* ⑥ マイページ保存通知 */}
+          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+            <div className="flex items-center justify-between gap-2 text-xs sm:text-sm">
+              <div className="flex items-center gap-1.5 text-slate-700">
+                <Check className="h-3.5 w-3.5 text-emerald-600" />
+                結果はブラウザに自動保存されました（最新 {MAX_HISTORY} 件まで）
+              </div>
+              <Link href="/my" className="inline-flex items-center gap-0.5 font-medium text-emerald-700 hover:underline">
+                マイページで見る <ChevronRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
 
           {/* Profile recap + Reset */}
           <div className="rounded-lg bg-slate-50 p-3 text-xs text-slate-700 sm:text-sm">

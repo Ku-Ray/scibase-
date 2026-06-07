@@ -73,7 +73,8 @@ export function Header() {
               { href: '/articles',    label: 'コラム'       },
               { href: '/compare',     label: '比較'         },
               { href: '/analyzer',    label: '🔬 診断'      },
-              { href: '/tools/interaction-checker', label: '💊 飲み合わせ' },
+              { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素' },
+              { href: '/tools/interaction-checker',  label: '💊 飲み合わせ' },
             ].map(({ href, label }) => (
               <Link
                 key={href}
@@ -85,9 +86,9 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/my/favorites"
-              aria-label="お気に入り"
-              title="お気に入り"
+              href="/my"
+              aria-label="マイページ"
+              title="マイページ"
               className="text-muted-foreground p-1.5 rounded-md
                 hover:bg-secondary hover:text-foreground transition-colors ml-0.5"
             >
@@ -98,8 +99,8 @@ export function Header() {
           {/* Right-aligned icons (mobile) */}
           <div className="sm:hidden ml-auto flex items-center gap-0.5">
             <Link
-              href="/my/favorites"
-              aria-label="お気に入り"
+              href="/my"
+              aria-label="マイページ"
               className="p-2 rounded-md hover:bg-secondary transition-colors"
             >
               <Star className="w-4.5 h-4.5 text-muted-foreground" />
