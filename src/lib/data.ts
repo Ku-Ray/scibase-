@@ -74968,7 +74968,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['C10', 'カプリン酸', 'C10 MCT', 'capric acid', 'Decanoic acid', 'デカン酸'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'MCT C10｜カプリン酸・C8との違い・ケトン応答・論文',
+    seoTitle: 'MCT C10｜C8とどう違う？持続型ケトンの論文｜SciBase',
     seoDescription: 'MCT C10（カプリン酸）はC8（カプリル酸）より緩やかなケトン体応答を示す中鎖脂肪酸。Vandenberghe 2017のクロスオーバー試験でC8単独より弱いが、ココナッツオイルより強い血中BHB上昇を確認。混合MCT油の主成分でC8と組み合わせると持続性が出る。下痢を避ける用量階段、ケトジェニックダイエットでの位置づけを査読済み論文で解説。｜SciBase',
     tagline: 'C8より緩やかで持続型のケトン応答・混合MCT油の主成分で速効型C8と相補',
     description:
@@ -74978,6 +74978,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '下痢・腹痛・吐き気が脱落の最大要因で必ず低用量から開始する。糖尿病薬服用中はケトン体応答変動に注意。長期データはC8より限定的。',
     concerns: ['cognitive', 'metabolism', 'brain-fog'],
+    sectionSummaries: {
+      whoFor: 'C8 100% 品で下痢が出やすく緩やかなケトン応答を求める・ケトジェニックダイエットで持続的なケトン体供給を狙う・混合 MCT 油の C10 比率を理解して選びたい層。C8（速効型）と C10（持続型）の補完設計を理解する中上級者向け。',
+      papers: 'Vandenberghe 2017 Current Developments in Nutrition クロスオーバー RCT n=9（C10 カプリン酸単独は C8 単独より弱いがココナッツオイル・長鎖脂肪酸より強い血中 BHB 上昇）と St-Pierre 2019 Frontiers in Nutrition RCT n=10（C10 単独は応答開始が遅く 2-4 時間で緩やかに上昇・持続時間長い持続型・C8 は応答速く短時間で消失する速効型）の 2 軸が主柱。Acta Neurologica Scandinavica 2017 RCT n=145 24 週（MCT ケトジェニックダイエット C8/C10 主体で薬剤抵抗性てんかん発作頻度の有意低減）が応用エビデンス。',
+      publicDbReferences: 'NIH ODS には MCT 単独 fact sheet はないが、日本では食品衛生法上の食品扱い・健康補助食品として広く流通（日清オイリオ「日清 MCT オイル」等の市販規格・C8+C10 混合品が主流）。米国 FDA は MCT を GRAS（一般に安全と認められる）成分扱いで、コーヒー業界用途（バターコーヒー）の確立で長期使用プロファイルあり。長期データは C8 より限定的だが、薬剤抵抗性てんかんの治療補助では Acta Neurol Scand 2017 RCT の医療領域エビデンス確立。',
+      evidence: 'B ランク・**PEI 7.9（confidence 1.0・papers 3 件: RCT 3）残候補で第 2 最強**。血中ケトン応答上昇 A（C10 はココナッツ油より強く C8 より弱い・持続型・RCT クロスオーバー）・薬剤抵抗性てんかん補助 A（24 週 RCT 用量で発作頻度有意低減）・ケトジェニックダイエット補助 B。「C10 = 持続型ケトン応答 + C8 より下痢出にくい」軸が確立。',
+      dosage: '5-20g/日（用量階段で漸増）。研究準拠は 5g（小さじ 1）→ 10g（大さじ 1）→ 20g（大さじ 2）の 3 段階で、各段階で 1-2 週間順応してから次に進む。朝食/昼食と一緒・空腹時単独より食事と一緒の方が消化器症状が出にくい。C10 単独 100% 品は市場に少なく、C8+C10 混合品（C10 比率 30-40%）が現実的な入手手段。',
+      dosageLevels: '入門 5g/日（小さじ 1・順応 1-2 週・ヨーグルト/スムージー/コーヒーに混ぜる）→ 標準 10g/日（大さじ 1・C10 持続型ケトン目標・C8 より下痢出にくい）→ 強化 20g/日（大さじ 2・ケトジェニックダイエット支援・てんかん補助 RCT 24 週用量域・医師相談前提）の 3 段階。',
+      faq: 'C8 と C10 の違いと選び分け（速効型 vs 持続型）・C10 は下痢が起きにくいか・C10 単独 100% 品の入手性（市場希少・混合品が現実解）の 3 軸 FAQ で「C8 速効型 = 即時認知ブースト・C10 持続型 = 日常的供給」「C10 = C8 より消化器症状少」を整理。',
+      safety: '下痢・腹痛・吐き気が脱落の最大要因だが C8 単独より頻度・重症度低い傾向（Vandenberghe 2017 / St-Pierre 2019）。必ず 5g/日から開始・各段階 1-2 週間順応。20g/日で下痢が続く場合は減量するかココナッツオイルに切り替えが現実解。肝機能低下のある方は医師相談。長期データは C8 より限定的。',
+      interactions: '糖尿病治療薬（SGLT2 阻害薬等）は MCT 由来ケトン体上昇と SGLT2 阻害薬のケトーシス促進が相加する理論的リスクで使用回避か医師相談（Diabetes Care 2018 SGLT2/ketones safety review）。',
+    },
     papers: [
       {
         title: 'Tricaprylin alone increases plasma ketone response more than coconut oil or other medium-chain triglycerides',
@@ -75067,6 +75078,29 @@ export const ingredients: Ingredient[] = [
       '混合MCT油のC10比率を理解して選びたい人',
     ],
     heroStat: { value: '持続型', label: 'C8速効型に対するC10の応答特性（St-Pierre 2019）' },
+    dosageLevels: [
+      {
+        dose: '5g',
+        category: '入門・順応 1-2 週',
+        effect: '小さじ 1 杯から始める順応用量。C8 100% 品より下痢が出にくい傾向だが、個体差が大きいため必ず低用量から開始。朝食のヨーグルト・スムージー・コーヒーに混ぜるのが研究で使われる方法。1-2 週間で消化器症状が出なければ次の標準用量に進む。',
+        whoFor: 'C8 100% で下痢経験あり・順応期間を取りたい・初めて C10 比率高め製品を試す層',
+        evidenceNote: '研究準拠の用量階段下限。空腹時単独より食事と一緒が消化器症状軽減に有効。',
+      },
+      {
+        dose: '10g',
+        category: '標準・持続型ケトン目標',
+        effect: '大さじ 1 杯の C10 持続型ケトン目標用量。St-Pierre 2019 Front Nutr RCT で C10 単独が応答開始 2-4 時間後・緩やかに上昇して持続することが確認された域。日常的なケトン体供給を狙うバターコーヒー・キートコーヒー用途で、C8 100% より下痢リスクが低い設計。',
+        whoFor: 'バターコーヒー定番・C8 で下痢が出やすい・日常的な持続ケトン供給希望層',
+        evidenceNote: 'Sports Research / NOW Foods MCT C8+C10 ブレンド品（C10 比率 30-40%）1 日大さじ 1 で研究準拠。',
+      },
+      {
+        dose: '20g',
+        category: '強化・てんかん補助 RCT 用量域',
+        effect: '大さじ 2 杯の上限用量。Acta Neurologica Scandinavica 2017 RCT n=145 24 週で MCT ケトジェニックダイエット C8/C10 主体が薬剤抵抗性てんかんの発作頻度を有意低減した RCT 用量域。下痢リスクが上昇するため必ず 5g→10g→20g の用量階段で漸増し、医師相談前提。',
+        whoFor: 'ケトジェニックダイエット支援・薬剤抵抗性てんかん補助（医師相談下）・本格的ケトン代謝介入層',
+        evidenceNote: 'Acta Neurol Scand 2017 24 週 RCT 用量。20g/日は下痢脱落リスクが上昇するため用量階段必須。',
+      },
+    ],
     axisScores: { antiAging: 3, skin: 1, cognitive: 4, stress: 2, sleep: 2, immunity: 2, metabolism: 4 },
     emerging: false,
     customFaqs: [
@@ -75098,7 +75132,7 @@ export const ingredients: Ingredient[] = [
           'C10比率を高めたい場合は製品ラベルの脂肪酸組成を確認し、C10が30%以上含まれる製品を選ぶのが研究準拠の選び方です。',
       },
     ],
-    updatedAt: '2026-05-27',
+    updatedAt: '2026-06-07',
   },
   {
     slug: 'citicoline-cdp-choline',
