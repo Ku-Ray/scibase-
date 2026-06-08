@@ -3645,10 +3645,10 @@ export const ingredients: Ingredient[] = [
     legalStatus: 'Drug',
     nameJa: 'アゼライン酸',
     nameEn: 'Azelaic Acid',
-    aliases: ['アゼライン酸', 'アゼライン', 'azelaic'],
+    aliases: ['アゼライン酸', 'アゼライン', 'azelaic', 'アゼライン酸 ニキビ', 'アゼライン酸 セラム', 'アゼライン酸 クリーム', 'アゼライン酸 シミ', 'アゼライン酸 酒さ', 'アゼライン酸 妊娠中', 'AzA'],
     evidenceRank: 'A',
     usageType: 'topical',
-    seoTitle: 'アゼライン酸｜ニキビ・色素沈着の論文エビデンス',
+    seoTitle: 'アゼライン酸とは｜ニキビ・酒さ・色素沈着の論文｜SciBase',
     seoDescription: 'アゼライン酸は穀物由来のジカルボン酸。15〜20%外用でニキビ・酒さ・色素沈着への効果が複数のRCTで示されている。推奨濃度・刺激リスク・トラネキサム酸との比較を査読済み論文で解説。',
     tagline: '色素沈着・ニキビ・酒さへの効果がRCTで確認されている多機能成分',
     description:
@@ -3658,6 +3658,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '開始2-4週目に一時的なピリつき・赤みが出ることがあるが通常は数週間で慣れる。ハイドロキノンと異なり長期使用が可で、妊婦も使える低リスク成分。',
     concerns: ['spots', 'acne', 'skin-aging'],
+    sectionSummaries: {
+      whoFor: '炎症性ニキビと炎症後色素沈着（PIH）が併発する 20-40 代・酒さ（ロザシア）素因あり・ハイドロキノンは刺激が強すぎた方・処方箋なしで使える外用美白成分を探している方。妊娠中・授乳中も使用可能な数少ない外用色素対策成分。',
+      papers: 'Archives of Dermatology 2006 RCT n=251 12 週（15% ゲルで酒さ炎症性病変有意減 p<0.001・FDA 承認の根拠試験）と Journal of Dermatological Treatment 2020 RCT n=40 24 週（20% クリームが 4% ハイドロキノンと同等の肝斑改善・安全性プロファイルは優秀）の 2 軸が主柱。',
+      publicDbReferences: 'NIH ODS には外用医薬品単独 fact sheet なし。日本では医療用医薬品（処方薬）として承認はないが、化粧品成分として 10-20% 配合品が市販流通。米国 FDA は 15% ゲル（Finacea®・酒さ）+ 20% クリーム（Azelex®・ニキビ）として処方薬承認。妊娠中カテゴリ B（動物試験で胎児リスクなし）。',
+      evidence: 'A ランク・PEI 4.7（confidence 0.67・papers 2 件: RCT 2）。酒さ炎症性病変減 A（Arch Dermatol 2006 12 週 RCT・FDA 承認根拠）・肝斑改善 A（J Dermatol Treatment 2020 24 週 RCT・ハイドロキノン非劣性）・ニキビ改善 B（複数の小規模 RCT）。「外用主軸 + 15% 標準・20% 強化・妊娠中 OK」軸が確立。',
+      dosage: '外用 10-20% 濃度・朝晩使用可・日焼け止め併用推奨。15% 濃度が処方薬 Finacea® と同等で研究準拠の標準。12-24 週の継続で色素沈着・ニキビ・酒さ改善効果が現れる。開始 2-4 週目に一時的なピリつき・赤みが出ることがあるが通常数週間で慣れる。',
+      dosageLevels: '10% 濃度（入門・敏感肌の慣らし用）→ 15% 濃度（標準・FDA 承認 Finacea® 同等・市販セラム主流）→ 20% 濃度（強化・FDA 承認 Azelex® 同等・肝斑強化用途）の 3 段階。継続 12-24 週前提・ハイドロキノンと違い長期使用可。',
+      faq: 'ニキビと酒さどちらに効くか・ハイドロキノンとの違い（刺激/長期使用可）・妊娠中授乳中の使用可否・トラネキサム酸との使い分け・処方薬 Finacea® と市販セラム 15% の違い の 5 軸 FAQ で「適応症別 + 安全性 + 入手経路」の決断負荷を解消（cFaq 拡充予定）。',
+      safety: '開始 2-4 週目に一時的なピリつき・軽い赤みが出るが通常は慣れる。ハイドロキノンと異なり長期使用可・妊娠中（カテゴリ B）授乳中も使用可能。日光感受性増加はなし。アゼライン酸アレルギー（非常に稀）の場合は使用不可。',
+      interactions: '外用で全身性の薬物相互作用は基本なし。ビタミン C 外用・ナイアシンアミド 外用・レチノール 外用と併用 OK（朝アゼライン酸+夜レチノールが定番パターン）。ハイドロキノン外用との同時併用は刺激相乗のため非推奨。日焼け止め併用必須（光保護で色素改善効果を底上げ）。',
+    },
     papers: [
       {
         title: 'Azelaic acid 15% gel in the treatment of papulopustular rosacea: a randomized, double-blind, vehicle-controlled study',
@@ -3708,6 +3719,29 @@ export const ingredients: Ingredient[] = [
     concentrationMaxPct: 20,
     timing: '朝晩使用可能。日焼け止めとの併用推奨',
     duration: '12〜24週間の継続で色素・ニキビ改善効果が現れる',
+    dosageLevels: [
+      {
+        dose: '10% 濃度',
+        category: '入門濃度',
+        effect: '市販セラム最低濃度帯。皮膚刺激の少ない慣らし用で、4-8 週で軽度のニキビ・色素沈着改善が期待できるレベル。敏感肌・初めて外用酸を使う方に最適。',
+        whoFor: '初めてアゼライン酸を試す方・敏感肌・併用レチノール等で刺激が強い方',
+        evidenceNote: '市販セラム入門濃度帯。研究準拠の標準（15%）の手前で 4-8 週評価して継続判断するのに最適',
+      },
+      {
+        dose: '15% 濃度',
+        category: '標準濃度',
+        effect: 'FDA 承認の Finacea® ゲル同等濃度。Arch Dermatol 2006 RCT (n=251・12 週) で酒さ炎症性病変が有意減少（p<0.001）した研究準拠の第一選択。市販セラムでも入手可。',
+        whoFor: '研究準拠で標準的に選びたい方・酒さ/炎症性ニキビ/PIH の改善目的',
+        evidenceNote: 'Arch Dermatol 2006 RCT n=251 12 週・FDA 承認 Finacea® 同等濃度・酒さ炎症性病変有意減 p<0.001',
+      },
+      {
+        dose: '20% 濃度',
+        category: '強化濃度',
+        effect: 'FDA 承認の Azelex® クリーム同等濃度。J Dermatol Treatment 2020 RCT (n=40・24 週) で 4% ハイドロキノンと同等の肝斑改善効果。色素沈着強化用途で 24 週継続が前提。',
+        whoFor: '肝斑・濃い色素沈着が気になる方・15% で効果実感が薄い方',
+        evidenceNote: 'J Dermatol Treatment 2020 RCT n=40 24 週・FDA 承認 Azelex® 同等濃度・4% ハイドロキノン非劣性',
+      },
+    ],
     sideEffects: ['使い始めのピリつき・軽い赤み（通常は数週間で慣れる）'],
     contraindications: ['アゼライン酸アレルギー（非常に稀）'],
     products: [
@@ -3745,9 +3779,10 @@ export const ingredients: Ingredient[] = [
       '酒さ（ロザシア）の赤みが気になる',
       'ハイドロキノンは刺激が強すぎた・処方箋なしで使える美白成分を探している',
     ],
+    heroStat: { value: '12週間', label: 'FDA 承認試験で酒さ炎症性病変有意減（p<0.001）が確認された期間（15% ゲル）' },
     axisScores: { antiAging: 2, skin: 7, cognitive: 0, stress: 0, sleep: 0, immunity: 3, metabolism: 0 },
     interactions: [],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-08',
   },
 
   {
