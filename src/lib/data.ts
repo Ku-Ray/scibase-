@@ -15594,9 +15594,9 @@ export const ingredients: Ingredient[] = [
     slug: 'nac',
     nameJa: 'NAC（N-アセチルシステイン）',
     nameEn: 'N-Acetyl Cysteine',
-    aliases: ['NAC', 'システイン', 'N-アセチルシステイン'],
+    aliases: ['NAC', 'システイン', 'N-アセチルシステイン', 'NAC サプリ', 'NAC グルタチオン', 'NAC 効果', 'NAC 副作用', 'NAC 飲み方', 'NAC 肝機能', 'アセチルシステイン'],
     evidenceRank: 'A',
-    seoTitle: 'NAC｜抗酸化・肝機能の論文エビデンス',
+    seoTitle: 'NACとは｜グルタチオンとどっち・用量と論文｜SciBase',
     seoDescription: 'N-アセチルシステインはシステインのアセチル化型。600〜1800mg/日でグルタチオン合成促進・肝機能・呼吸器への関与がRCTで示されている。有効量、空腹時摂取の是非、胃腸障害、アセトアミノフェン解毒の根拠を査読済み論文で解説。',
     usageType: 'oral',
     tagline: 'グルタチオン前駆体として細胞内抗酸化を底上げ。酸化ストレス・慢性炎症軽減がRCTで確認',
@@ -15607,6 +15607,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'ニトログリセリン併用は血管拡張増強で低血圧リスク。抗凝固薬・喘息発作期も要注意。中毒解毒の高用量投与は医師管理下のみ。',
     concerns: ['skin-aging', 'longevity', 'immunity', 'inflammation', 'fatigue'],
+    sectionSummaries: {
+      whoFor: '慢性気管支炎・喫煙歴あり・解毒経路をサポートしたい 40 代以上・大量飲酒や大気汚染への暴露が多い環境・肝機能サポートを成分ベースで進めたい・グルタチオン点滴の代替を食品成分で底上げしたい層。グルタチオンを直接摂るより前駆体経路で底上げするコスパ重視層に最適。',
+      papers: 'International Journal of COPD 2018 メタ解析（NAC の抗酸化作用 GSH 上昇 + MDA 低下を複数 RCT で一貫確認）と European Journal of Clinical Nutrition 2021 RCT n=60 12 週（NAC 1,200mg/日で NAFLD 患者の酸化ストレスマーカー有意低下 + グルタチオン有意上昇 p<0.05）の 2 軸が主柱。',
+      publicDbReferences: 'NIH ODS には NAC 単独 fact sheet なし（医薬品扱いのため）。日本では「ムコフィリン」名で医療用医薬品（去痰薬）として承認、米国 FDA はアセトアミノフェン中毒解毒の医療用医薬品として承認。サプリは食品由来システインのアセチル化型で別経路。',
+      evidence: 'A ランク・PEI 5.9（confidence 0.67・papers 2 件: メタ解析 1 + RCT 1）。グルタチオン上昇 A（EJCN 2021 RCT 12 週・複数メタ解析支持）・酸化ストレスマーカー低下 A（MDA 有意低下）・COPD 気道粘液分解 A（Int J COPD 2018 メタ解析）・肝機能 NAFLD B。「グルタチオン直接摂取より前駆体経路で底上げ」軸が確立。',
+      dosage: '600-1,800mg/日・食前または空腹時・2-3 回分割摂取が一般的（空腹時の悪心回避なら食後）。研究準拠の中心用量は 1,200mg/日。4-12 週で評価。硫黄臭が強いためカプセル製剤推奨。',
+      dosageLevels: '600mg/日（入門・研究使用量下限・1 カプセル 1 日）→ 1,200mg/日（標準・EJCN 2021 RCT 中心用量・NAFLD 12 週 RCT 域）→ 1,800mg/日（強化・COPD 補助療法域・喫煙歴/大気汚染暴露多の方）の 3 段階。継続使用前提で 4-12 週判定。',
+      faq: '副作用と喘息既往での可否・薬との併用（硝酸薬 avoid / SSRI 要相談）・効果が出るまでの期間・用量と分割摂取・グルタチオン/ビタミン C/αリポ酸との使い分け の 5 軸 FAQ で「前駆体経路 + 安全性 + 抗酸化複合戦略」の決断負荷を解消。',
+      safety: '通常用量（600-1,800mg/日）で重篤な副作用なし。空腹時悪心がまれ・3g/日超で消化器不快感。喘息既往者は気道刺激の症例報告で発作期・コントロール不良期は使用回避。妊娠中・授乳中のサプリ用量 RCT は限定的のため食事から先に検討。',
+      interactions: '硝酸薬（ニトログリセリン等）併用は S-ニトロソ NAC 形成で過度な血管拡張・低血圧・頭痛リスクで avoid（AHA Circulation 1995）。SSRI/SNRI 併用は理論的議論あり要相談。抗血小板薬・抗凝固薬併用は出血リスク増の理論的懸念で caution。アセトアミノフェン解毒の高用量投与は医師管理下のみ。',
+    },
     papers: [
       {
         title: 'N-Acetylcysteine as an antioxidant and mucolytic agent for the management of COPD',
@@ -15653,6 +15664,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '食前または空腹時。2〜3回に分割して摂取が一般的',
     duration: '研究では4〜12週間で評価されることが多い',
+    dosageLevels: [
+      {
+        dose: '600mg/日',
+        category: '入門用量',
+        effect: '研究使用量の下限。1 カプセル 1 日で完結し、酸化ストレス予防・健常人の解毒経路サポートを狙うレベル。グルタチオン点滴の前に食品成分で底上げを試したい方の現実的なスタート用量。',
+        whoFor: '初めて NAC を試す方・健常人の予防目的・コスト重視で長期継続したい方',
+        evidenceNote: '研究使用量（600-1,800mg/日）の下限・4-8 週で酸化ストレスマーカー評価',
+      },
+      {
+        dose: '1,200mg/日',
+        category: '標準用量',
+        effect: 'EJCN 2021 RCT (n=60・12 週) で NAFLD 患者の酸化ストレスマーカー有意低下 + グルタチオン有意上昇（p<0.05）が確認された中心用量。研究準拠の第一選択。',
+        whoFor: '研究準拠で標準的に選びたい方・肝機能サポート/NAFLD 予防/喫煙歴ある方',
+        evidenceNote: 'European Journal of Clinical Nutrition 2021 RCT n=60 12 週・NAFLD 酸化ストレス低下 + GSH 上昇 p<0.05',
+      },
+      {
+        dose: '1,800mg/日',
+        category: '強化用量',
+        effect: 'COPD 補助療法・大量飲酒/大気汚染暴露多の方の強化用量帯。Int J COPD 2018 メタ解析で抗酸化作用と気道粘液分解作用の一貫した効果が報告されている域。3g/日超で消化器不快感増のため上限注意。',
+        whoFor: 'COPD/慢性気管支炎の補助・喫煙歴/大気汚染暴露多・1,200mg で効果実感が薄い方',
+        evidenceNote: 'Int J COPD 2018 メタ解析・気道粘液分解 + GSH 上昇・3g/日超で消化器不快感増',
+      },
+    ],
     sideEffects: ['空腹時摂取で一部に悪心（まれ）', '高用量（3g以上）での消化器不快感'],
     contraindications: ['アスピリンとの相互作用の可能性', 'SSRIとの同時使用は医師への相談を推奨', '喘息既往者は呼吸器症状に注意'],
     products: [
@@ -15764,7 +15798,7 @@ export const ingredients: Ingredient[] = [
           '抗老化の組み立てとしては「NAC＋ビタミンC＋αリポ酸」のコンビネーションが研究で多く扱われ、解毒・肝サポート目線では「NAC＋ミルクシスル」、呼吸器サポートでは「NAC単独または＋ビタミンC」が一般的な整理です。',
       },
     ],
-    updatedAt: '2026-04-20',
+    updatedAt: '2026-06-08',
   },
 
   // ── L-トリプトファン ──────────────────────────────────────────────────
