@@ -53,6 +53,12 @@ interface Props {
   variant: 'hero' | 'secondary' | 'article-compact'
   axisLeaders?: AxisLeader[]
   showOverallRank?: boolean
+  /**
+   * article-compact variant でカード上部に表示する順位ラベル（1-5）。
+   * 未指定なら「1位」を表示（既存挙動）。ランキング記事で複数カードを並列表示する用途で 2 以上を指定。
+   * 0 を渡すと順位バッジを完全に非表示。
+   */
+  overallRank?: 1 | 2 | 3 | 4 | 5 | 0
   subPlatformLinks?: SubPlatformLink[]
   bestPickReason?: string
   /**
@@ -85,6 +91,7 @@ export function ProductOfferCard({
   variant,
   axisLeaders = [],
   showOverallRank,
+  overallRank,
   subPlatformLinks,
   bestPickReason,
   secondaryOffers,
@@ -94,6 +101,13 @@ export function ProductOfferCard({
   const isOverallRank1 = showOverallRank ?? variant === 'hero'
   const cardId = makeCardId(ingredient.slug, product.url, variant)
   const cardPosition = VARIANT_POSITION[variant]
+  // article-compact 用の順位ラベル：未指定なら 1（既存挙動）、0 なら非表示
+  const rankLabel = overallRank ?? 1
+  const showRankBadge = rankLabel !== 0
+  // 1 位は amber、2 位以降は slate で差別化（mybest 風ヒエラルキー）
+  const rankBadgeClass = rankLabel === 1
+    ? 'bg-amber-400 text-amber-950'
+    : 'bg-slate-200 text-slate-700'
 
   // ───────────── article-compact ─────────────
   if (variant === 'article-compact') {
@@ -118,10 +132,14 @@ export function ProductOfferCard({
           </a>
         )}
         <div className="flex items-center gap-2 mb-2 flex-wrap">
-          <span className="inline-flex items-center justify-center text-[11px] font-semibold tracking-wider bg-amber-400 text-amber-950 rounded px-1.5 py-0.5 leading-none">
-            1位
-          </span>
-          <AxisLeaderBadges leaders={axisLeaders} productUrl={product.url} maxBadges={2} />
+          {showRankBadge && (
+            <span className={`inline-flex items-center justify-center text-[11px] font-semibold tracking-wider ${rankBadgeClass} rounded px-1.5 py-0.5 leading-none`}>
+              {rankLabel}位
+            </span>
+          )}
+          {rankLabel === 1 && (
+            <AxisLeaderBadges leaders={axisLeaders} productUrl={product.url} maxBadges={2} />
+          )}
         </div>
         {product.benefitHeading && (
           <p className="text-[13px] text-foreground font-semibold leading-snug mb-2">

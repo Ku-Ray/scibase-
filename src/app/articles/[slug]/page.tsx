@@ -544,6 +544,7 @@ export default async function ArticlePage({ params }: Props) {
                       variant="article-compact"
                       axisLeaders={axisLeaders}
                       showOverallRank={!isIndexOverride}
+                      overallRank={isIndexOverride ? ((indexOverride as 2 | 3 | 4 | 5) ?? 1) : 1}
                       bestPickReason={isIndexOverride ? undefined : (ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位')}
                     />
                   </div>
