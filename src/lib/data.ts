@@ -18328,10 +18328,10 @@ export const ingredients: Ingredient[] = [
     slug: 'ceramide-oral',
     nameJa: 'セラミド（経口）',
     nameEn: 'Oral Ceramide',
-    aliases: ['セラミド', 'スフィンゴ脂質', 'ceramide'],
+    aliases: ['セラミド', 'スフィンゴ脂質', 'ceramide', '経口セラミド', 'セラミドサプリ', 'グルコシルセラミド', '米セラミド', '小麦セラミド', 'こんにゃくセラミド', 'フィトセラミド'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'セラミド（経口）｜副作用・経口摂取の効果・用量を論文で解説',
+    seoTitle: '経口セラミドとは｜外用との違い・効果と用量の論文｜SciBase',
     seoDescription: '6-30mg/日（グルコシルセラミド換算）・食事と一緒に摂取。Skin Pharmacology and Physiology 2009 RCT(n=51・12mg/日・4週)で皮膚水分量有意改善（p<0.01）・Journal of Cosmetic Dermatology 2022 RCT(n=64・12週)で角質水分量・TEWL改善。副作用は食品由来で安全性高い（C）が、小麦由来製品はグルテン不耐性・セリアック病の方は米由来選択（A）。経口×外用の役割分担、コラーゲンペプチドとの使い分けも化粧品メーカー視点で研究ベースに解説。',
     tagline: '肌の水分保持・バリア機能を内側から強化。小麦・米由来のグルコシルセラミドがRCTで確認',
     description:
@@ -18341,6 +18341,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '食品由来で安全性は高めだが、小麦由来製品はグルテン不耐性・セリアック病・小麦アレルギーの方は使用不可で、米由来を選択する。',
     concerns: ['dry-skin', 'barrier', 'skin-aging', 'wrinkles'],
+    sectionSummaries: {
+      whoFor: '外用セラミドで間に合わない全身性の乾燥肌・更年期前後で皮膚バリアが弱った 50 代女性・敏感肌や忙しさで外用を続けられない方・サプリで肌のベースから整えたい層。経口は 4-12 週かけて全身的に効くため、即効性を求める場合は外用主軸が研究準拠。',
+      papers: 'Tarutani 2009 Skin Pharmacology and Physiology RCT n=51 4 週（グルコシルセラミド 12mg/日で皮膚水分量と肌荒れ・乾燥スコア有意改善 p<0.01）と Journal of Cosmetic Dermatology 2022 RCT n=64 12 週（米由来セラミドエキスで角質水分量・TEWL 改善）の 2 軸が主柱。',
+      publicDbReferences: 'NIH ODS には経口セラミド単独 fact sheet なし（食品由来のため）。日本では消費者庁 機能性表示食品制度で「肌の水分保持を助ける」機能性関与成分としてグルコシルセラミドが届出公開済。米国 FDA は GRAS（一般に安全と認められる）食品成分として認可。',
+      evidence: 'A ランク・PEI 4.7（confidence 0.67・papers 2 件: RCT 2）。皮膚水分量改善 A（Tarutani 2009 4 週 RCT）・角質水分量/TEWL 改善 A（JoCD 2022 12 週 RCT）・乾燥肌バリア機能改善 B。「外用主軸 + 経口は別経路で全身蓄積」軸が確立。',
+      dosage: 'グルコシルセラミド 6-30mg/日・食事と一緒に摂取。RCT 多用は 12mg/日中心。初めての方は 6-12mg/日から始め、4 週で皮膚水分量・乾燥スコアを評価して継続判断する。米由来・小麦由来で原料を選択（小麦アレルギー・グルテン不耐性の方は米由来一択）。',
+      dosageLevels: '6mg/日（入門・敏感肌の慣らし用・国内サプリ最低用量）→ 12mg/日（標準・Tarutani 2009 RCT 中心用量・最も多くの試験で使用）→ 30mg/日（強化・Swanson/Life Extension の RCT 上限相当・継続コスト高）の 3 段階。継続使用前提で 4 週判定。',
+      faq: 'サプリの副作用は何が多いか・外用と経口どう違うか両方使うべきか・効果が出るまで何週間か・用量と小麦由来 vs 米由来の選び方・コラーゲンペプチドとの使い分けと併用 の 5 軸 FAQ で「外用と経口の使い分け + 原料選択 + 期間判定」の決断負荷を解消。',
+      safety: '食品由来成分のため安全性は高め（重篤な副作用なし）。軽度の消化器症状（腹部不快）が稀。小麦由来製品はグルテン不耐性・セリアック病・小麦アレルギーの方は使用不可で米由来へ切替。妊娠中・授乳中の使用エビデンスは限定的のため食事から先に検討。',
+      interactions: '薬物との臨床的に重要な相互作用は報告なし（食品由来）。外用セラミド・コラーゲンペプチド・ヒアルロン酸 経口とは経路独立で併用 OK（表皮 × 真皮 × 局所バリアの補完関係）。ビタミン D / ビタミン C との併用は皮膚指標で相加効果の可能性（限定的エビデンス）。',
+    },
     papers: [
       {
         title: 'Oral administration of plant ceramide-2 recovers dry skin condition: a double-blind placebo-controlled study',
@@ -18387,6 +18398,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（グルコシルセラミド換算）',
     timing: '食事と一緒',
     duration: '効果は4〜12週間で評価',
+    dosageLevels: [
+      {
+        dose: '6mg/日',
+        category: '入門用量',
+        effect: '皮膚水分量の主観的改善が出始めるレベルで、客観指標の有意差はやや控えめ。Tarutani 2009 中心用量の半分で、慣らし開始や継続コスト重視の方向け。',
+        whoFor: '初めて経口セラミドを試す方・敏感肌・継続コストを抑えたい方',
+        evidenceNote: '国内サプリ最低用量帯。Tarutani 2009 RCT 中心用量の半分・4 週評価で継続判断するのに最適',
+      },
+      {
+        dose: '12mg/日',
+        category: '標準用量',
+        effect: 'Tarutani 2009 RCT (n=51・4 週) で皮膚水分量と肌荒れ・乾燥スコアが有意改善（p<0.01）した中心用量。最も多くの試験で使用されており、研究準拠の第一選択。',
+        whoFor: '研究準拠で標準的に選びたい方・乾燥肌/敏感肌の改善目的',
+        evidenceNote: 'Tarutani 2009 Skin Pharmacol Physiol RCT (n=51・4 週) で皮膚水分量と肌荒れ・乾燥スコア有意改善した中心用量',
+      },
+      {
+        dose: '30mg/日',
+        category: '強化用量',
+        effect: 'Swanson PhytoCeramides / Life Extension Lipowheat の市販フィトセラミドサプリ用量。RCT 上限相当で、重度の乾燥肌・全身性バリア低下に対応。継続コスト高め。',
+        whoFor: '12mg で効果実感が薄い方・重度乾燥肌・全身性バリア低下の方',
+        evidenceNote: 'Swanson PhytoCeramides / Life Extension Lipowheat の RCT 上限相当・継続使用前提で 4 週判定',
+      },
+    ],
     sideEffects: ['食品由来成分のため安全性が高い。小麦アレルギーがある場合は小麦由来製品を避ける'],
     contraindications: ['グルテン不耐性・セリアック病の方は米由来製品を選択'],
     products: [
@@ -18473,7 +18507,7 @@ export const ingredients: Ingredient[] = [
           '併用の合理性は、コラーゲンRCTとセラミドRCTが異なる肌指標を測定しているため機序重複なし。月コスト¥2,000-5,000で両方カバー可能。詳しくは <a href="/compare/ceramide-oral-vs-collagen-peptide">セラミド経口×コラーゲンペプチド比較</a> または <a href="/concerns/dry-skin">乾燥肌ガイド</a> を参照してください。',
       },
     ],
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-06-08',
   },
 
   // ── ホスファチジルセリン詳細（既存slugあり確認済み）→ マンゴスチン ─────
