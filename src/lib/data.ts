@@ -16857,15 +16857,27 @@ export const ingredients: Ingredient[] = [
     slug: 'reishi',
     nameJa: '霊芝（レイシ）',
     nameEn: 'Reishi Mushroom',
-    aliases: ['霊芝', 'リシ', 'reishi', 'ganoderma'],
+    aliases: ['霊芝', 'リシ', 'reishi', 'ganoderma', 'マンネンタケ', 'Ganoderma lucidum', '霊芝 効果', '霊芝 副作用', '霊芝 免疫', '霊芝 睡眠', 'アダプトゲン キノコ'],
     evidenceRank: 'B',
     usageType: 'oral',
+    seoTitle: '霊芝（レイシ）とは｜アシュワガンダとの違い・免疫の論文｜SciBase',
     tagline: '免疫調節・抗腫瘍・ストレス対処・睡眠改善への関与がRCTおよびコホートで確認されているアダプトゲン',
     description:
       '霊芝はβ-グルカン・トリテルペンを含むアダプトゲン系キノコで、腫瘍関連 NK 細胞・T 細胞の有意な増加を示した Cochrane メタ解析がある（Cochrane 2016）。\\n\\n' +
       '免疫細胞（NK・T細胞）の活性化・抗炎症・コルチゾール調節を介した抗ストレス・睡眠改善が複数のRCTで報告されている。1〜3g/日（粉末換算）が一般的な目安。\n\n' +
       'アシュワガンダ・コルジセプスと並ぶアダプトゲンで、特に免疫・腫瘍領域での補助療法エビデンスが最も充実している。',
     concerns: ['immunity', 'stress', 'sleep', 'longevity', 'fatigue'],
+    sectionSummaries: {
+      whoFor: '免疫力の底上げを長期的に取り組みたい 40 代以上・ストレス耐性（適応能力）を高めたい・睡眠の質改善をアダプトゲンで補助したい・腫瘍/免疫疾患の補助療法として自然由来成分を探している層（標準治療との併用・医師相談前提）。アシュワガンダ単体では免疫面で物足りない方の追加選択肢。',
+      papers: 'Cochrane Database of Systematic Reviews 2016 メタ解析（霊芝が腫瘍関連 NK 細胞・T 細胞を有意増加・標準治療の補助療法として研究継続中）と Journal of Pain and Symptom Management 2018 RCT n=48 4 週（霊芝抽出物で疲労スコア・活力指標有意改善 p<0.05・睡眠の質も改善傾向）の 2 軸が主柱。',
+      publicDbReferences: 'NIH ODS には霊芝単独 fact sheet なし。Memorial Sloan Kettering Cancer Center（MSKCC）Integrative Medicine データベースに霊芝の補助療法情報あり・抗腫瘍/免疫調節エビデンスを公的に整理。米国 NCI（国立がん研究所）も補完代替医療として研究継続中。',
+      evidence: 'B ランク・PEI 5.9（confidence 0.67・papers 2 件: Cochrane メタ解析 1 + RCT 1）。免疫細胞活性化 A（Cochrane 2016 メタ解析・NK/T 細胞増加）・疲労/活力改善 B（JPSM 2018 RCT 4 週）・睡眠の質改善 B（同 RCT・改善傾向）・抗腫瘍補助 B（標準治療併用前提）。「アダプトゲンの中で免疫軸が最強」軸が確立。',
+      dosage: '乾燥子実体換算 1-3g/日・食事と一緒（睡眠目的なら就寝 1-2 時間前）。研究準拠の中心用量は 2g/日。4-12 週で評価。Host Defense / Mushroom Wisdom 等の β-グルカン規格化エキスが研究準拠。',
+      dosageLevels: '1g/日（入門・健常人の免疫予防・1 カプセル）→ 2g/日（標準・JPSM 2018 RCT 中央値域・Host Defense 2 カプセル）→ 3g/日（強化・補助療法域・上限・出血リスクで抗凝固薬併用注意）の 3 段階。継続使用前提で 4-12 週判定。',
+      faq: '副作用とキノコアレルギー・抗凝固薬/免疫抑制剤との禁忌・効果が出るまでの期間・用量と睡眠タイミング・アシュワガンダ/コルジセプスとの使い分け の 5 軸 FAQ で「アダプトゲン三兄弟使い分け + 安全性 + タイミング」の決断負荷を解消（cFaq は Wave F で拡充予定）。',
+      safety: '通常用量で重篤な副作用なし。軽度の消化器症状・口渇・鼻血が高用量で稀。キノコアレルギーの方は使用不可。妊娠中・授乳中は安全データ不足のため食事から先に検討。手術前 2 週間は抗血小板作用で中止推奨。',
+      interactions: 'ワルファリン・抗血小板薬併用は抗血小板作用相加で出血リスク caution（MSKCC / ASCO Post 2018）。免疫抑制剤（シクロスポリン・タクロリムス）併用は霊芝の免疫活性化で治療効果低下リスク caution。CYP2E1/1A2/3A4 代謝薬は in vitro 試験で阻害報告ありで monitor（処方薬服用中は医師相談）。',
+    },
     papers: [
       {
         title: 'Ganoderma lucidum (Reishi mushroom) for cancer treatment',
@@ -16912,6 +16924,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（乾燥子実体換算）',
     timing: '食事と一緒に、または就寝1〜2時間前（睡眠目的の場合）',
     duration: '研究では4〜12週間で評価',
+    dosageLevels: [
+      {
+        dose: '1,000mg/日（1g）',
+        category: '入門用量',
+        effect: '健常人の免疫予防・適応能力サポートの入門用量。Host Defense Reishi 1 カプセル相当で、コスパ重視で長期継続したい方の現実的なスタート用量。',
+        whoFor: '初めて霊芝を試す方・健常人の免疫予防・コスト重視で長期継続したい方',
+        evidenceNote: '研究使用量（1-3g/日）下限・4-8 週で疲労/睡眠スコア主観評価',
+      },
+      {
+        dose: '2,000mg/日（2g）',
+        category: '標準用量',
+        effect: 'JPSM 2018 RCT (n=48・4 週) で疲労スコア・活力指標有意改善（p<0.05）が確認された中央値域。Cochrane 2016 メタ解析の NK/T 細胞活性化も期待できる研究準拠の第一選択。',
+        whoFor: '研究準拠で標準的に選びたい方・疲労改善/睡眠の質改善目的・免疫底上げを本格的に進めたい方',
+        evidenceNote: 'JPSM 2018 RCT n=48 4 週・疲労/活力スコア有意改善 p<0.05・Host Defense 2 カプセル相当',
+      },
+      {
+        dose: '3,000mg/日（3g）',
+        category: '強化用量',
+        effect: '研究使用量上限・補助療法域で使用される用量帯。抗血小板作用が強まるため抗凝固薬併用は禁忌・手術前 2 週間は中止が原則。標準治療との併用は必ず医師相談。',
+        whoFor: '補助療法目的（医師相談前提）・2g で効果実感が薄い方・標準治療併用層',
+        evidenceNote: '研究使用量上限・3g/日で血小板凝集低下報告・抗凝固薬併用は出血リスク',
+      },
+    ],
     sideEffects: ['軽度の消化器症状（まれ）', '口渇・鼻血の報告（まれ・高用量）'],
     contraindications: ['抗凝固薬・免疫抑制剤との相互作用の可能性', '手術前2週間は中止を推奨（出血リスク）', '妊娠中・授乳中（安全データ不足）'],
     products: [
@@ -16981,7 +17016,7 @@ export const ingredients: Ingredient[] = [
         source: 'CancerNetwork Reishi / ASCO Post 2018',
       },
     ],
-    updatedAt: '2026-04-22',
+    updatedAt: '2026-06-08',
   },
 
   // ── ボスウェリア ────────────────────────────────────────────────────
