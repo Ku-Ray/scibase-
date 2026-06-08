@@ -299,7 +299,17 @@ export function NutrientSufficiencyClient() {
     setSupplements(prev => prev.filter((_, i) => i !== idx))
   }
 
+  /* 入力ゼロ状態の検出：食事もサプリも 1 件も無いと「全 0% severe_deficit」になり
+   * 不足煽りトーンになるため計算を実行しない。Step 1 に戻す */
+  const hasMeaningfulInput =
+    foodPresetIds.length > 0 || supplements.filter(s => s.dose > 0).length > 0
+
   const handleCalculate = () => {
+    if (!hasMeaningfulInput) {
+      setStep(2)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
     setPhase('calculating')
     /* 2 通り計算: diet のみ / diet+supplement で BeforeAfter 用 */
     const supps = supplements.filter(s => s.dose > 0)
@@ -587,14 +597,28 @@ export function NutrientSufficiencyClient() {
             ビタミンD 1000 IU ≒ 25 μg ／ ビタミンA 5000 IU ≒ 1500 μgRAE ／ ビタミンE 1 IU ≒ 0.67 mg。市販サプリが IU 表記の場合この目安で換算してください。
           </div>
 
+          {!hasMeaningfulInput && (
+            <div className="mt-5 rounded-lg border border-emerald-200 bg-emerald-50/60 p-3 text-xs leading-relaxed text-emerald-900 sm:text-sm">
+              <Info className="mr-1 inline h-3.5 w-3.5 text-emerald-700" />
+              計算には食事プリセットを <strong>1 つ以上</strong> 選ぶ必要があります。Step 2 に戻って、いつもの食事に近いものをタップしてみてください。
+            </div>
+          )}
+
           <div className="mt-6 flex items-center justify-between gap-2">
             <button type="button" onClick={() => setStep(2)}
               className="inline-flex items-center gap-1 rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50">
               戻る
             </button>
-            <button type="button" onClick={handleCalculate}
-              className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-3 text-sm font-bold text-white shadow-md transition hover:from-emerald-600 hover:to-emerald-700 hover:shadow-lg">
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            <button type="button" onClick={handleCalculate} disabled={!hasMeaningfulInput}
+              aria-disabled={!hasMeaningfulInput}
+              className={`group relative inline-flex items-center gap-1.5 overflow-hidden rounded-lg px-6 py-3 text-sm font-bold shadow-md transition ${
+                hasMeaningfulInput
+                  ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-600 hover:to-emerald-700 hover:shadow-lg'
+                  : 'cursor-not-allowed bg-slate-200 text-slate-400 shadow-none'
+              }`}>
+              {hasMeaningfulInput && (
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              )}
               <Sparkles className="h-4 w-4" /> 充足率を計算する
             </button>
           </div>
