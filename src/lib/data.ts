@@ -7206,6 +7206,7 @@ export const ingredients: Ingredient[] = [
     slug: 'berberine',
     nameJa: 'ベルベリン',
     nameEn: 'Berberine',
+    aliases: ['ベルベリン', 'berberine', 'ベルベリンHCl', 'Berberine HCl', 'ベルベリン塩酸塩', 'オウレン', '黄連', '黄柏', 'phellodendron', 'dihydroberberine', 'DHB', 'phytosome berberine', 'isoquinoline alkaloid', '植物性メトホルミン'],
     evidenceRank: 'A',
     usageType: 'oral',
     tagline: '血糖・脂質代謝への関与がメタ解析で示されている「植物性メトホルミン」',
@@ -7216,6 +7217,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '糖尿病薬・降圧薬・抗凝固薬と相加効果で要注意。妊娠・授乳中は禁忌（新生児黄疸リスク）。CYP酵素阻害で多薬併用は医師相談。',
     concerns: ['metabolism', 'inflammation', 'cardiovascular'],
+    sectionSummaries: {
+      whoFor: '食後の血糖スパイクや夕方の眠気が気になる 40 代以上の境界域血糖層・健診で HbA1c や空腹時血糖が高めと指摘された方・PCOS でインスリン抵抗性の補助を希望する女性（妊活中は使用不可）・糖化（AGEs）由来の老化を予防したい層が中心。糖尿病治療薬を服用中の方は低血糖リスクのため必ず医師相談の上で。',
+      papers: 'Yin 2008 系メタ解析（EBCAM 2012・n=1,068）が主柱。900〜1,500mg/日（500mg×3 回）で空腹時血糖・HbA1c・トリグリセリドのプラセボ比有意低下・メトホルミン 1,500mg/日とほぼ同等の血糖降下が報告された。PCOS では Wei 2012 EJE RCT n=89 でインスリン抵抗性（HOMA-IR）・脂質改善も報告。',
+      publicDbReferences: 'NIH NCCIH「Berberine and Weight Loss: What You Need to Know」で血糖低下・体重減への補助エビデンスと妊娠中禁忌（新生児ビリルビン蓄積）を明示。FDA は処方薬扱いではなくサプリ成分として流通・厚労省でも医薬品成分ではない。',
+      evidence: 'A ランク・PEI 3.3（confidence 0.33・papers 1 件 ※暫定・実態は系統的メタ解析 + 個別 RCT 多数あり）。HbA1c・空腹時血糖低下 A（Yin 2008 系メタ）・LDL/TG 低下 A・PCOS HOMA-IR 改善 B（Wei 2012 RCT）。「植物性メトホルミン」軸が確立。',
+      dosage: '900〜1,500mg/日が研究用量域。500mg×3 回/日を食前 30 分（食後血糖スパイク抑制のため）。消化器症状が多いため、500mg×1 回 → 1 週で 500mg×2 回 → 2 週目で 500mg×3 回と段階的増量が現実的。8〜16 週で HbA1c や空腹時血糖の改善を評価する。',
+      dosageLevels: '500mg/日（入門・段階的増量の開始用量）→ 1,000mg/日（標準・吸収率改善目的での DHB 200mg 相当）→ 1,500mg/日（強化・Yin 2008 メタ解析中心用量・メトホルミン同等の血糖降下を期待）の 3 段階。継続使用前提で 8〜16 週判定。',
+      faq: 'メトホルミン代替になるか・PCOS への有効性・消化器症状の対策と DHB/Phytosome 切替 の 3 軸 FAQ で「処方薬との関係 + 妊活時の中止 + 副作用回避策」の決断負荷を解消。糖尿病治療中・妊娠希望の方は医師相談の前提を明示。',
+      safety: '消化器症状（下痢・便秘・腹部不快）が 1,500mg/日相当で 20〜30% の頻度。低血糖リスク（糖尿病薬併用時）・肝疾患のある方は医師相談。妊娠中・授乳中は禁忌（新生児黄疸・ビリルビン蓄積のリスク報告）。CYP3A4 阻害により多くの処方薬の血中濃度を上昇させる可能性があり、処方薬服用中は必ず併用前に医師・薬剤師相談が必要。',
+      interactions: '糖尿病治療薬（メトホルミン/SU 剤/インスリン）・ワルファリン・CYP3A4 基質薬（一部スタチン/降圧薬/シクロスポリン）・タクロリムス・抗 HIV 薬の 5 系統で要注意。特にタクロリムス・抗 HIV 薬は併用回避（avoid）レベル。CYP3A4 阻害は強力なため多薬併用例は主治医・薬剤師相談が前提。',
+    },
     papers: [
       {
         title: 'Berberine for the treatment of type 2 diabetes: a systematic review and meta-analysis',
@@ -7263,6 +7275,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（分割摂取）',
     timing: '食前30分に300〜500mgを1日3回。食後の血糖スパイク抑制が目的',
     duration: '8〜16週間以上の継続を推奨',
+    dosageLevels: [
+      {
+        dose: '500mg/日',
+        category: '入門用量',
+        effect: '段階的増量の開始用量。消化器症状（下痢・便秘・腹部不快）が多い成分のため、500mg×1 回/日から開始して 1〜2 週ごとに増量するのが現実的。この用量域では血糖降下効果は限定的で、副作用評価と継続可否の判定が主な目的になる。',
+        whoFor: '初めてベルベリンを試す方・消化器症状が心配な方・段階的増量で継続性を最優先する方',
+        evidenceNote: 'メタ解析中心用量（1,500mg/日）の 1/3 で、副作用評価フェーズ。1 週で 500mg×2 回、2 週目で 500mg×3 回と増量するのが推奨パターン',
+      },
+      {
+        dose: '1,000mg/日（または DHB 200mg/日相当）',
+        category: '中間用量・吸収改善型',
+        effect: '段階的増量の中間または吸収率改善型（Dihydroberberine, DHB）への切替用量。標準ベルベリンHCl の吸収率は低く（5% 程度）、DHB は約 5 倍の吸収率が報告されており低用量で同等効果を狙える。消化器症状を軽減しつつ血糖補助を継続したい方向け。',
+        whoFor: '標準用量で消化器症状が出た方・吸収率改善で副作用を抑えたい方・DHB / Phytosome 製剤に切り替えたい方',
+        evidenceNote: 'Turner 2008 DHB 小規模研究で標準ベルベリンの 1/5 用量で同等の AMPK 活性化を報告。Berberine Phytosome 製剤も同様の吸収改善目的',
+      },
+      {
+        dose: '1,500mg/日（500mg×3 回・食前 30 分）',
+        category: '標準用量・研究準拠',
+        effect: 'Yin 2008 系メタ解析（EBCAM 2012・n=1,068）の中心用量で、空腹時血糖・HbA1c・トリグリセリドの有意低下が報告された。メトホルミン 1,500mg/日とほぼ同等の血糖降下効果が確認されている。8〜16 週で HbA1c や空腹時血糖の改善を評価する。',
+        whoFor: '研究準拠で標準的に選びたい方・境界域血糖の補助目的・PCOS のインスリン抵抗性補助（妊活中は使用不可）',
+        evidenceNote: 'Yin 2008 系メタ解析 EBCAM 2012 n=1,068 12 週で空腹時血糖・HbA1c・TG の有意低下。糖尿病薬併用時は低血糖リスクのため医師相談',
+      },
+    ],
     sideEffects: ['消化器症状（下痢・便秘・腹部不快感）が比較的多い', '低血糖リスク（糖尿病薬との併用）'],
     contraindications: ['糖尿病治療薬服用中（医師に相談）', '妊娠中・授乳中', '肝疾患のある方'],
     products: [
@@ -7293,8 +7328,8 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'HbA1c改善', label: 'メトホルミンと同等の血糖降下効果（メタ解析）' },
     axisScores: { antiAging: 6, skin: 2, cognitive: 3, stress: 0, sleep: 0, immunity: 3, metabolism: 9 },
-    seoTitle: 'ベルベリン｜血糖値への効果と 500mg/日の論文',
-    seoDescription: 'ベルベリンはアルカロイドの植物成分。500mg×3回/日で空腹時血糖・HbA1c・LDLコレステロール低下がメタ解析で示されている。メトホルミンとの比較、吸収率、副作用を査読済み論文で解説。',
+    seoTitle: 'ベルベリン効果｜植物性メトホルミン・血糖 HbA1c・1500mg/日の論文',
+    seoDescription: 'ベルベリンはオウレン由来イソキノリン系アルカロイド。500mg×3回/日（1,500mg/日）で空腹時血糖・HbA1c・トリグリセリドの低下がメタ解析で報告されメトホルミンとほぼ同等。メトホルミン代替の可否、吸収率（DHB/Phytosome）、副作用、CYP3A4 相互作用を査読論文で解説。',
     interactions: [
       {
         substance: '糖尿病治療薬（メトホルミン・スルホニルウレア・インスリン）',
@@ -7351,7 +7386,7 @@ export const ingredients: Ingredient[] = [
         a: 'ベルベリンの最も多い副作用は消化器症状で、1,500mg/日相当の通常用量摂取者の20〜30%程度で経験されています。\n\n【対策】①開始用量を低めに設定（500mg×1回/日→1週間で500mg×2回→2週間目で500mg×3回と段階的に増量）②食前30分摂取で胃酸刺激を抑える（食後では血糖スパイク抑制効果が低下するため食前ベース）③ジヒドロベルベリン（Dihydroberberine, DHB）100〜200mg/日への切り替えで吸収率が約5倍向上し低用量で同等効果が報告されている（Turner 2008・小規模研究）④フィトソーム化（Berberine Phytosome）製剤で消化器負担を軽減できる場合あり。便秘型の方はマグネシウム（クエン酸Mg・グリシン酸Mg）併用も実用的。改善しない場合は中止し医師相談。',
       },
     ],
-    updatedAt: '2026-05-12',
+    updatedAt: '2026-06-08',
   },
   {
     slug: 'egcg',
