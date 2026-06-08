@@ -497,31 +497,40 @@ export default async function ArticlePage({ params }: Props) {
             .map((ap, i) => ({ ap, i }))
             .filter(({ ap }) => ap.position === 'after-solution')
 
-          /* appendix body 内の [[PRODUCT:slug]] を ProductOfferCard で置換しながらレンダリング。
+          /* appendix body 内の [[PRODUCT:slug]] / [[PRODUCT:slug:N]] を ProductOfferCard で置換しながらレンダリング。
+             [[PRODUCT:slug]]   → rank 1 の商品カード（既存挙動・urgencyNote 表示あり）
+             [[PRODUCT:slug:N]] → rank N の商品カード（ランキング記事で 2 位以下を並列表示する用途・urgencyNote 非表示）
              商品カードを「論文ベースで選ぶならこれ」の説明の流れの中に埋め込むことで、
              ingredients フッターは「成分まとめ + エビデンス詳細リンク」だけのシンプル化を実現。 */
           const renderAppendixBody = (body: string) => {
-            const parts = body.split(/(\[\[PRODUCT:[a-z0-9-]+\]\])/g)
+            const parts = body.split(/(\[\[PRODUCT:[a-z0-9-]+(?::\d+)?\]\])/g)
             return parts.map((part, idx) => {
-              const m = part.match(/^\[\[PRODUCT:([a-z0-9-]+)\]\]$/)
+              const m = part.match(/^\[\[PRODUCT:([a-z0-9-]+)(?::(\d+))?\]\]$/)
               if (m) {
                 const slug = m[1]
+                const rankOverride = m[2] ? parseInt(m[2], 10) : null
                 const ing = article.ingredients.find(a => a.slug === slug)
                 const ingData = getIngredient(slug)
                 if (!ingData || !ing) return null
                 const sortedProducts = [...ingData.products]
                   .filter(p => p.platform !== 'cosme')
                   .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
-                let bestProduct = sortedProducts[0]
-                if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
-                  const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
-                  if (overrideMatch) bestProduct = overrideMatch
+                let bestProduct: typeof sortedProducts[number] | undefined
+                if (rankOverride != null) {
+                  bestProduct = sortedProducts.find(p => p.rank === rankOverride)
+                } else {
+                  bestProduct = sortedProducts[0]
+                  if (ing.productUrl && ing.productUrl !== bestProduct?.url) {
+                    const overrideMatch = ingData.products.find(p => p.url === ing.productUrl)
+                    if (overrideMatch) bestProduct = overrideMatch
+                  }
                 }
                 if (!bestProduct) return null
                 const axisLeaders = computeAxisLeaders(ingData)
+                const isRankOverride = rankOverride != null
                 return (
                   <div key={idx} className="my-6 border border-border rounded-2xl overflow-hidden bg-card">
-                    {ing.urgencyNote && (
+                    {!isRankOverride && ing.urgencyNote && (
                       <div className="bg-secondary px-5 pt-4 pb-2">
                         <p className="text-[14px] text-foreground/90 leading-[1.8] border-l-2 border-accent/40 pl-3">
                           <RichInline text={ing.urgencyNote} />
@@ -533,7 +542,8 @@ export default async function ArticlePage({ params }: Props) {
                       ingredient={ingData}
                       variant="article-compact"
                       axisLeaders={axisLeaders}
-                      bestPickReason={ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位'}
+                      showOverallRank={!isRankOverride}
+                      bestPickReason={isRankOverride ? undefined : (ing.bestPickReason ?? '6軸スコアで当サイト掲載商品中・総合最上位')}
                     />
                   </div>
                 )
