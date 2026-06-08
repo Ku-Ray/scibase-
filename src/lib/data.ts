@@ -34826,11 +34826,11 @@ export const ingredients: Ingredient[] = [
     slug: 'choline-bitartrate',
     nameJa: 'コリン酒石酸塩',
     nameEn: 'Choline Bitartrate',
-    aliases: ['コリン酒石酸塩', 'choline bitartrate', 'コリン', 'choline', 'ビタミンB様栄養素', 'choline base', 'コリン補給', 'phosphatidylcholine 基質'],
+    aliases: ['コリン酒石酸塩', 'choline bitartrate', 'コリン', 'choline', 'ビタミンB様栄養素', 'choline base', 'コリン補給', 'phosphatidylcholine 基質', 'ホスファチジルコリン', 'PC', 'phosphatidylcholine', 'レシチン', 'lecithin', 'コリン前駆体'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'コリン（コリン酒石酸塩）｜神経・肝臓・必須栄養素・AI 425-550mg',
-    seoDescription: 'コリン（choline）は IOM が必須栄養素として AI を設定したビタミンB様化合物。Zeisel 2009 必須栄養素レビュー・Yan 2012 妊娠中認知 RCT・Sherriff 2016 NAFLD 観察研究で神経・肝臓・妊娠中胎児神経発達への補助エビデンス。',
+    seoTitle: 'コリン｜ホスファチジルコリン（PC）前駆体・AI 425-550mg・神経膜基質',
+    seoDescription: 'コリン（choline）は IOM が必須栄養素として AI を設定したビタミンB様化合物で、神経膜ホスファチジルコリン（PC）の合成基質。Zeisel 2009 必須栄養素レビュー・Yan 2012 妊娠中 RCT・Sherriff 2016 NAFLD 観察研究で神経・肝臓・妊娠中胎児神経発達への補助エビデンス。',
     tagline: 'IOM 設定必須栄養素・神経膜PC基質・妊娠中胎児神経発達',
     description:
       'コリン酒石酸塩はIOM設定必須栄養素のコリン補給成分で、神経膜・アセチルコリン合成・メチル代謝の必須栄養素位置づけを整理した包括レビューがある（Zeisel 2009・米国成人90%がAI未満）。コリン酒石酸塩はそのサプリ形態。\n\n' +
@@ -34905,6 +34905,10 @@ export const ingredients: Ingredient[] = [
     axisScores: { antiAging: 3, skin: 1, cognitive: 4, stress: 1, sleep: 1, immunity: 2, metabolism: 3 },
     customFaqs: [
       {
+        q: 'ホスファチジルコリン（PC）とコリン酒石酸塩は同じものですか？',
+        a: '違います。どちらもコリン補給ですが原料形態と用途が異なります。\n\n【コリン酒石酸塩（choline bitartrate）】コリン+ 酒石酸の塩。コリン重量比 約41%・最も安価・サプリで広く使用。体内で PC 合成の基質になる。\n\n【ホスファチジルコリン（PC・phosphatidylcholine）】コリン+ グリセロリン酸+ 脂肪酸×2 のリン脂質。神経膜・肝膜の主要構成成分。サプリ原料としては大豆レシチン由来・卵黄レシチン由来として摂取される。\n\n【選び分け】必須栄養素 AI を満たしたい・コスト重視 → コリン酒石酸塩。脂質代謝補助・肝膜安定化を狙う → PC（レシチン）。神経補助で血液脳関門通過を狙う → CDP-コリン or α-GPC。\n\n【まとめ】コリン酒石酸塩は PC の前駆体・体内で PC に変換される基質関係。コスト最重視で AI を満たすならコリン酒石酸塩で十分。',
+      },
+      {
         q: 'CDP-コリン（シチコリン）・α-GPC と何が違いますか？',
         a: '同じコリン補給でもバイオアベイラビリティ・脳移行性が違います。\n\n【コリン酒石酸塩】最も安価・コリン重量比 約41%・血液脳関門通過は限定的。\n\n【CDP-コリン（シチコリン）】コリン+ CTP・脳卒中後遺症の処方薬（イタリア）・血液脳関門通過・神経補助 RCT 豊富（Saver 2008 メタ）。\n\n【α-GPC（アルファ GPC）】コリン+ グリセロリン酸・血液脳関門通過・運動パフォーマンス RCT あり（Bellar 2015）。\n\n【まとめ】コスト最重視 → コリン酒石酸塩・神経補助エビデンス重視 → CDP-コリン or α-GPC・必須栄養素 AI 満たすだけならコリン酒石酸塩で十分。',
       },
@@ -34935,7 +34939,7 @@ export const ingredients: Ingredient[] = [
         source: 'Drugs.com Choline Drug Interactions',
       },
     ],
-    updatedAt: '2026-05-13',
+    updatedAt: '2026-06-08',
     publicDbReferences: [
       {
         source: 'nih-ods',
