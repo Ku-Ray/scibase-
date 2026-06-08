@@ -19984,11 +19984,11 @@ export const ingredients: Ingredient[] = [
     slug: 'bcaa',
     nameJa: 'BCAA',
     nameEn: 'BCAA (Branched-Chain Amino Acids)',
-    aliases: ['分岐鎖アミノ酸', 'ロイシン・イソロイシン・バリン', 'Leucine Isoleucine Valine'],
+    aliases: ['分岐鎖アミノ酸', 'ロイシン・イソロイシン・バリン', 'Leucine Isoleucine Valine', 'BCAA', 'bcaa', 'Branched-Chain Amino Acids', 'BCAA 2:1:1', 'BCAA 4:1:1', 'BCAA 8:1:1', 'leucine-rich BCAA', 'ロイシン高配合 BCAA', 'BCAA サプリ'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'BCAA｜効果・飲み方・EAAとの違いの論文（2:1:1比率）',
-    seoDescription: 'BCAAは必須アミノ酸のうちロイシン・イソロイシン・バリン3種の総称。筋トレ前後5〜10gで筋肉痛・筋損傷マーカーの軽減がメタ解析で確認されている。EAAとの違い、2:1:1比率、糖尿病薬・抗パーキンソン薬との併用注意を査読済み論文で解説。',
+    seoTitle: 'BCAAとは｜効果と限界・EAA違い・2:1:1 vs 4:1:1 の論文',
+    seoDescription: 'BCAA は必須アミノ酸のうちロイシン・イソロイシン・バリン 3 種の総称。筋トレ前後 5〜10g で筋肉痛・筋損傷マーカーの軽減がメタ解析で確認されているが、食事タンパク質が体重 kg×1.6g 以上なら上乗せ効果は限定的とのメタ解析も。EAA との違い・2:1:1 vs 4:1:1 比率の選び分け・レボドパ/糖尿病薬との併用注意を査読論文で解説。',
     tagline: '筋トレ前後5〜10gで筋肉痛・筋損傷マーカーの軽減がメタ解析で確認されている',
     description:
       'BCAA はロイシン・イソロイシン・バリンの分岐鎖アミノ酸 3 種の総称で、運動後 CK・LDH 上昇抑制と筋肉痛スコア軽減を 4 週継続で示したメタ解析がある一方、十分なタンパク質摂取下では筋力・筋肥大の上乗せ効果は限定的（Appl Physiol Nutr Metab 2021・n=350）。' +
@@ -19997,6 +19997,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '食事のたんぱく質確保が前提で、BCAAは補助的位置づけが現実的。腎機能低下・既往疾患がある場合は医師相談を前提に運用する。',
     concerns: ['muscle', 'recovery', 'fatigue'],
+    sectionSummaries: {
+      whoFor: '週 3 回以上のレジスタンストレーニングをしている方・プロテインだけでは運動中の疲労感が気になる方・食事のたんぱく質摂取が体重 kg×1.6g 未満で不足気味の方・空腹時のトレーニングで筋肉のカタボリックを抑えたい層が中心。十分なタンパク質を食事から摂れている方は上乗せ効果が限定的のため、まずプロテイン量を見直すのが先。',
+      papers: 'Appl Physiol Nutr Metab 2021 メタ解析（n=350・4 週）が主柱：BCAA 補給群で CK（クレアチンキナーゼ）・LDH（乳酸脱水素酵素）の上昇が有意抑制・筋肉痛スコア軽減を確認。一方 Frontiers in Physiology 2020 RCT（n=36・8 週）と J ISSN 2017 review は「十分なタンパク質摂取下では筋力・筋肥大の上乗せは限定的」と honest reporting。MPS 最大化には EAA 9 種が必要。',
+      publicDbReferences: 'NIH ODS には BCAA 単独 fact sheet なし（食品由来アミノ酸のため）。FDA は GRAS（一般に安全と認められる）栄養補助食品成分として認可。日本では消費者庁 機能性表示食品制度でロイシン・BCAA を「運動後の筋たんぱく質合成」「運動疲労感軽減」の機能性関与成分として複数届出公開済。',
+      evidence: 'A ランク・PEI 7.4（confidence 1.0・papers 3 件: メタ 1 / RCT 1 / 観察 1）。CK・LDH 上昇抑制 A（Appl Physiol Nutr Metab 2021 メタ）・筋肉痛軽減 A・MPS 最大化には EAA 必要 A（J ISSN 2017 review）・タンパク質十分時の上乗せ限定 A（Frontiers 2020 RCT）。「迷ったら 2:1:1・食事十分なら不要・MPS 最大化なら EAA」の honest 軸が確立。',
+      dosage: '5〜10g/日が運動前後で標準。運動前 30 分〜運動中・運動直後の摂取が研究で標準的。運動前 5g + 運動中 5g の分割摂取の方が、運動前単独より筋損傷マーカー抑制効果の報告例が多い。空腹時トレーニングではカタボリック抑制目的で運動前 30 分が優先。',
+      dosageLevels: '5g/日（入門・60 分以下の短時間運動・体重 60kg 未満）→ 7〜10g/日（標準・90 分超の中〜高強度・体重 60〜80kg）→ 10〜20g/日（参考・マラソン/トライアスロン等の長時間運動・体重 80kg 超）の 3 段階。日常トレーニングでは 10g/日以上は過剰になりやすい。',
+      faq: 'BCAA と EAA の違い・食事タンパク十分なら不要か・タイミング（運動前 30 分+運動中）・2:1:1 vs 4:1:1 比率の選び分け・糖尿病薬/レボドパとの併用注意 の 5 軸 FAQ で「比率選択 + 食事との関係 + 薬併用」の決断負荷を解消。姉妹品 bcaa-2-1-1 / bcaa-4-1-1 / bcaa-leucine-rich とは異なり、親 ingredient として「迷ったら 2:1:1 で始める」軸を主軸とする。',
+      safety: '食品由来アミノ酸のため安全性は高め。過剰摂取で消化器症状（腹部不快）・高用量長期で他の必須アミノ酸吸収バランス変化の可能性が指摘される程度。メープルシロップ尿症（先天性 BCAA 代謝異常）・ALS 患者は専門医相談が必要。腎機能低下・既往疾患がある方は医師相談を前提に運用。',
+      interactions: 'レボドパ（パーキンソン病薬）との併用で薬効減弱（LAT1 トランスポーター競合）のため服用前後 2〜4 時間ずらすことが必須・糖尿病治療薬（インスリン/SU 剤）併用で低血糖リスク（ロイシンによるインスリン分泌刺激）が理論的に上昇のため血糖モニタリング強化。両薬剤を服用中の方は開始前に医師・薬剤師相談。',
+    },
     papers: [
       {
         title: 'The Effect of Branched-Chain Amino Acid on Muscle Damage Markers and Performance Following Strenuous Exercise: A Meta-Analysis',
@@ -20125,7 +20136,7 @@ export const ingredients: Ingredient[] = [
         source: 'Diabetes Care 2007 leucine-insulin secretion review',
       },
     ],
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-06-08',
   },
   {
     slug: 'eaa',
