@@ -55,7 +55,7 @@ export const NUTRIENT_META: Record<string, NutrientMeta> = {
   vitamin_b12: { key: 'vitamin_b12', labelJa: 'ビタミンB12', unit: 'μg', category: 'vitamin', ingredientSlug: 'vitamin-b12' },
   folate: { key: 'folate', labelJa: '葉酸', unit: 'μg', category: 'vitamin', noteJa: '妊娠を計画している女性は付加量が大きい' },
   niacin: { key: 'niacin', labelJa: 'ナイアシン', unit: 'mgNE', category: 'vitamin', ingredientSlug: 'niacin' },
-  iron: { key: 'iron', labelJa: '鉄', unit: 'mg', category: 'mineral', ingredientSlug: 'iron', noteJa: '女性は月経有無で必要量が変動' },
+  iron: { key: 'iron', labelJa: '鉄', unit: 'mg', category: 'mineral', ingredientSlug: 'iron', noteJa: '女性は月経有無で必要量が変動。耐容上限量 (UL) は強化食品・サプリ等からの過剰摂取を想定し、食事のみは対象外', ulExcludesFood: true },
   calcium: { key: 'calcium', labelJa: 'カルシウム', unit: 'mg', category: 'mineral', ingredientSlug: 'calcium' },
   magnesium: { key: 'magnesium', labelJa: 'マグネシウム', unit: 'mg', category: 'mineral', ingredientSlug: 'magnesium', noteJa: 'サプリ等の通常以外摂取は成人350mg/日が上限（食事のみは対象外）', ulExcludesFood: true },
   zinc: { key: 'zinc', labelJa: '亜鉛', unit: 'mg', category: 'mineral', ingredientSlug: 'zinc' },
