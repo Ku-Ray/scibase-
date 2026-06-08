@@ -14845,9 +14845,10 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'zeaxanthin',
-    seoTitle: 'ゼアキサンチン｜ルテイン併用・目の黄斑の論文',
+    seoTitle: 'ゼアキサンチンとは｜ルテインとの違い・黄斑の論文｜SciBase',
     nameJa: 'ゼアキサンチン',
     nameEn: 'Zeaxanthin',
+    aliases: ['ゼアキサンチン', 'zeaxanthin', 'メソゼアキサンチン', 'mesozeaxanthin', 'カロテノイド', 'マリーゴールド由来', 'ゼアキサンチン サプリ', 'ゼアキサンチン ルテイン', 'ゼアキサンチン 黄斑変性', 'ゼアキサンチン 効果', 'ゼアキサンチン 副作用'],
     evidenceRank: 'A',
     tagline: '目の黄斑部に集積するカロテノイド。加齢黄斑変性の予防効果が大規模RCTで確認されている',
     description:
@@ -14857,6 +14858,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '脂溶性のため食事（脂質）と一緒に摂取する。アスタキサンチン・βカロチン等の他カロテノイドとの大量併用は吸収競合のため摂取間隔をあける。',
     concerns: ['eye-health'],
+    sectionSummaries: {
+      whoFor: '1 日 6 時間以上スマホ/PC 作業で眼精疲労・コントラスト感度低下が気になる 30 代以上・加齢黄斑変性（AMD）の家族歴あり・ルテイン単体では満足できず黄斑中心部のケアまで踏み込みたい層。長期継続が前提（年単位の予防）。',
+      papers: 'JAMA Ophthalmology 2014 AREDS2 大規模 RCT n=4,203 5 年（ルテイン 10mg + ゼアキサンチン 2mg で中等度 AMD 進行リスク 26% 有意低下 p<0.001・NIH NEI 主導）と Ophthalmology 2012 RCT n=108 48 週（黄斑色素光学密度 MPOD 有意増加 + コントラスト感度/視力改善）の 2 軸が主柱。',
+      publicDbReferences: 'NIH ODS ビタミン A・カロテノイド Fact Sheet にゼアキサンチン記載あり（AREDS2 黄斑変性予防エビデンス引用）。NIH NEI（National Eye Institute）が AREDS2 試験を主導・公的根拠の信頼性高。',
+      evidence: 'A ランク・PEI 5.4（confidence 0.67・papers 2 件: RCT 2）。AMD 進行リスク低下 A（JAMA Ophth 2014 大規模 RCT n=4,203 5 年）・MPOD 黄斑色素光学密度改善 A（Ophth 2012 RCT 48 週）・コントラスト感度改善 A・視力改善 B。「ルテイン併用 10:2 比率が研究準拠」軸が確立。',
+      dosage: 'ゼアキサンチン 2mg/日（AREDS2 試験の標準用量・ルテイン 10mg と併用）・食事と一緒（脂溶性のため脂質を含む食事で吸収効率向上）。AMD 予防目的なら 5 年以上の継続が前提。MPOD 改善は 6-12 ヶ月で評価。',
+      dosageLevels: '2mg/日（標準・AREDS2 ルテイン 10mg : ゼアキサンチン 2mg 黄金比）→ 4mg/日（強化・メソゼアキサンチン併用品の用量帯）→ 10mg/日（高濃度・市販上位品レベル・短期 MPOD 評価用途）の 3 段階。継続前提で 6 ヶ月以上の評価。',
+      faq: '副作用と禁忌・薬との併用（脂溶性薬の影響）・効果が出るまでの期間・用量とルテインとの比率・ルテイン/アスタキサンチンとの使い分け の 5 軸 FAQ で「役割分担 + 比率 + 継続期間」の決断負荷を解消。',
+      safety: '通常用量で重篤な副作用なし。高用量での皮膚の黄染（カロテノイド沈着）は可逆性。β-カロテンと違い喫煙者の肺がんリスク増加報告なし（AREDS2 で安全性確認）。妊娠中・授乳中の高用量データは限定的のため食事から先に検討。',
+      interactions: '脂質吸収阻害薬（オルリスタット）・コレスチラミン併用で吸収が下がる可能性あり（時間ずらし推奨）。抗凝固薬・降圧薬・糖尿病薬との臨床的相互作用報告なし。アスタキサンチン・β-カロテンとの大量併用は吸収競合のため摂取間隔をあけるのが安全側。',
+    },
     papers: [
       {
         title: 'Secondary Analyses of the Effects of Lutein/Zeaxanthin on Age-Related Macular Degeneration Progression',
@@ -14914,6 +14926,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '脂溶性カロテノイドのため食事と一緒（特に脂質を含む食事）が吸収効率が高い',
     duration: '6〜12ヶ月以上の継続で黄斑色素密度の変化を確認した研究が多い',
+    dosageLevels: [
+      {
+        dose: '2mg/日',
+        category: '標準用量',
+        effect: 'AREDS2 試験で使用された標準用量（ルテイン 10mg : ゼアキサンチン 2mg の 10:2 比率）。中等度 AMD 進行リスク 26% 低下（JAMA Ophth 2014 n=4,203 5 年）と関連した研究準拠の第一選択。',
+        whoFor: 'AMD 家族歴あり・40 代以降で視力低下/かすみ目を予防したい方・研究準拠で標準的に選びたい方',
+        evidenceNote: 'AREDS2 試験（NIH NEI 主導・n=4,203・5 年 RCT）標準用量・ルテイン 10mg と併用',
+      },
+      {
+        dose: '4mg/日',
+        category: '強化用量',
+        effect: 'メソゼアキサンチン併用製品の用量帯（メソゼアキサンチン + ゼアキサンチン + ルテインの 3 点トリオ）。短期 MPOD 改善目的の RCT で使用される強化用量で、6 ヶ月以内の MPOD 客観評価を狙うレベル。',
+        whoFor: '黄斑中心部の MPOD 改善を本格的に狙う方・2mg で効果実感が薄い方',
+        evidenceNote: 'Ophthalmology 2012 RCT n=108 48 週・MPOD + コントラスト感度有意改善域',
+      },
+      {
+        dose: '10mg/日',
+        category: '高濃度',
+        effect: '市販アイケアサプリ上位品の高濃度帯。短期 MPOD 評価・クリニック検査連携用途で、年単位の継続前提なら 2mg/日標準に戻すのが安全側。皮膚黄染リスクは可逆性。',
+        whoFor: '短期 MPOD 介入評価・クリニックで検査連携する方',
+        evidenceNote: '市販アイケアサプリ上位品上限濃度帯・短期評価用途',
+      },
+    ],
     sideEffects: ['高用量での皮膚の黄染（カロテノイド沈着）：可逆性'],
     contraindications: ['特になし'],
     products: [
@@ -15009,7 +15044,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     interactions: [],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-08',
   },
   {
     slug: 'beta-glucan',
