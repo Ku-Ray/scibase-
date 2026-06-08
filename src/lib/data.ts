@@ -20086,10 +20086,10 @@ export const ingredients: Ingredient[] = [
     slug: 'iodine',
     nameJa: 'ヨウ素',
     nameEn: 'Iodine',
-    aliases: ['ヨード', 'iodide', 'ヨウ化物'],
+    aliases: ['ヨード', 'iodide', 'ヨウ化物', 'ヨウ素サプリ', 'ヨードサプリ', '海藻ヨウ素', '昆布ヨウ素', 'ヨウ素剤'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'ヨウ素｜甲状腺・推奨摂取量の論文（過剰摂取リスクも）',
+    seoTitle: 'ヨウ素・ヨードとは｜甲状腺と過剰摂取の論文｜SciBase',
     seoDescription: 'ヨウ素は甲状腺ホルモンの必須構成元素。日本人は海藻摂取で世界平均より多く、不足より過剰摂取（耐容上限3000μg）が論点。妊婦の必要量、橋本病・バセドウ病でのリスク、ヨード制限食を査読済み論文で解説。',
     tagline: '甲状腺ホルモンの必須元素。日本人は不足より過剰摂取（耐容上限3000μg）が論点',
     description:
@@ -20097,6 +20097,17 @@ export const ingredients: Ingredient[] = [
       '日本人は海藻（昆布・ワカメ・海苔）から日常的に高量を摂取し、世界平均の10倍以上の摂取量がある。日本では不足より「過剰摂取」が甲状腺機能障害（橋本病・バセドウ病）の論点になりやすい。日本人推奨量は成人130μg/日、耐容上限3,000μg/日。\n\n' +
       '妊婦・授乳婦は推奨量が増加。橋本病・バセドウ病・甲状腺がん治療前のヨード制限食では昆布類の厳格回避が必要。',
     concerns: ['metabolism', 'fatigue', 'cognitive'],
+    sectionSummaries: {
+      whoFor: '海藻・魚をほぼ食べないヴィーガン/海外在住者・妊娠/授乳中で必要量が増えた方。日本人の多くは食事で充足し、論点はむしろ過剰摂取側。',
+      papers: 'Am J Clin Nutr 2009 メタ解析 n=4,000（欠乏地域の妊婦補給で児の IQ・神経発達改善）と Thyroid 2014 コホート n=1,061（日本人の慢性高摂取と橋本病有病率の関連）の2軸が主柱。',
+      publicDbReferences: 'NIH ODS Fact Sheet（RDA・上限量1,100μg）+ 厚労省「日本人の食事摂取基準2025」（推奨量130μg・耐容上限3,000μg）の2層。日本独自の海藻多食を反映した上限差が論点。',
+      evidence: 'A ランク・PEI 5.7（メタ解析1 + コホート1 + 観察1・recent15y=2）。妊婦補給は欠乏地域で確立、日本では過剰摂取の安全域が論点。',
+      dosage: '成人推奨量130μg/日・妊婦240μg/日・授乳婦270μg/日・耐容上限3,000μg/日。日本食事摂取基準2025準拠。海藻多食で容易に推奨量を超える。',
+      dosageLevels: '130μg（推奨量・通常食で充足）→ 240μg（妊婦）→ 270μg（授乳婦）→ 3,000μg超（耐容上限・避ける）の4段階で過剰回避軸。',
+      faq: 'サプリ要否（日本食で充足）/橋本病・バセドウ病での注意/海藻量目安（昆布1g＝1,000-3,000μg）/妊婦の補給判断/ヨード添加塩の日本事情 の5軸FAQ。',
+      safety: '耐容上限3,000μg/日。橋本病既往者ではWolff-Chaikoff効果で甲状腺機能低下リスク・バセドウ病では症状増悪リスク。健常者も慢性高摂取で甲状腺自己抗体陽性リスク。',
+      interactions: '抗甲状腺薬（チアマゾール等）併用は薬効減弱で avoid。リチウム併用は甲状腺機能低下リスク相加で caution。アミオダロン1錠＝75,000μg内包で追加サプリは avoid。',
+    },
     papers: [
       {
         title: 'Iodine deficiency in pregnancy and the effects of maternal iodine supplementation on the offspring: a systematic review',
@@ -20236,7 +20247,7 @@ export const ingredients: Ingredient[] = [
         source: 'アミオダロン添付文書 / Circulation thyroid effects review',
       },
     ],
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-06-07',
     publicDbReferences: [
       {
         source: 'nih-ods',
@@ -20244,6 +20255,13 @@ export const ingredients: Ingredient[] = [
         url: 'https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/',
         accessedAt: '2026-06-01',
         note: 'NIH ODS HealthProfessional版。RDA・上限量1100μg、甲状腺機能・妊娠中需要増',
+      },
+      {
+        source: 'mhlw',
+        fullName: '厚生労働省「日本人の食事摂取基準（2025年版）」ヨウ素',
+        url: 'https://www.mhlw.go.jp/stf/newpage_45324.html',
+        accessedAt: '2026-06-07',
+        note: '日本人成人推奨量130μg/日・耐容上限3,000μg/日。妊婦+110μg・授乳婦+140μg。海藻多食国の独自基準',
       },
     ],
   },
