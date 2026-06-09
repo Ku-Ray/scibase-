@@ -35680,11 +35680,11 @@ export const ingredients: Ingredient[] = [
     slug: 'choline-citrate',
     nameJa: 'コリンクエン酸塩',
     nameEn: 'Choline Citrate',
-    aliases: ['コリンクエン酸塩', 'choline citrate', 'コリン', 'choline', '水溶性コリン', 'cholinated citric acid', 'CDP前駆体'],
+    aliases: ['コリンクエン酸塩', 'choline citrate', 'コリン', 'choline', '水溶性コリン', 'cholinated citric acid', 'CDP前駆体', 'ホスファチジルコリン', 'PC', 'phosphatidylcholine', '運動 コリン補給', '持久系 コリン', 'コリン サプリ 運動'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'コリンクエン酸塩｜水溶性コリン補給・吸収速度・必須栄養素',
-    seoDescription: 'コリンクエン酸塩はコリン酒石酸塩に比べて水溶性が高く吸収が速い形態のコリン補給。Zeisel 2009 必須栄養素レビュー・Penry 2008 認知 RCT・Buchman 2001 NAFLD 観察研究で必須栄養素 AI 補給・神経・肝臓への補助エビデンス。',
+    seoTitle: 'コリンクエン酸塩｜運動と即効性・吸収速度 vs 酒石酸塩・PC 前駆体',
+    seoDescription: 'コリンクエン酸塩は水溶性高・吸収速いコリン補給形態で、ホスファチジルコリン（PC）の前駆体。Penry 2008 で長時間運動後の血漿コリン低下と補給による持久力維持機序が報告。コリン酒石酸塩（コスト・AI 補給主軸）との吸収速度差別化、CDP-コリン/α-GPC との脳移行性比較、運動補給用途の選び分けを査読論文で解説。',
     tagline: '水溶性高・吸収速い・パフォーマンス志向のコリン補給形態',
     description:
       'コリンクエン酸塩は水溶性高・吸収速いコリン補給形態で、長時間運動後の血漿コリン低下・補給による持久力維持機序を整理したレビューがある（Penry 2008・米国成人90%がAI未満）。サプリ・経腸栄養剤で使われる。' +
@@ -35693,6 +35693,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '1 日 3.5g 以上の高用量で TMAO 産生増加（心血管リスクの理論的懸念）。抗コリン薬と相反。皮膚直接効果のヒト RCT は未確立。',
     concerns: ['cognitive', 'liver', 'focus'],
+    sectionSummaries: {
+      whoFor: '90 分以上の持久系運動（マラソン/トライアスロン/自転車ロングライド）で血漿コリン低下が気になる方・コリン酒石酸塩より吸収速度を求める方・必須栄養素 AI を満たしたい方・NAFLD で肝機能補助を希望する層が中心。短時間運動（筋トレ/スプリント）では効果限定的のため、コスト重視ならコリン酒石酸塩、神経補助なら CDP-コリン/α-GPC が現実的選択。',
+      papers: 'Penry 2008 Int J Sport Nutr Exerc Metab レビューが主柱：マラソン・トライアスロン等 2 時間以上の長時間運動後の血漿コリン低下・補給による持久力維持機序を報告。Zeisel 2009 Nutr Rev レビューでコリンの必須栄養素位置づけと米国成人 90% AI 不足を確認。Buchman 2001 Hepatology n=15 で長期経静脈栄養患者のコリン欠乏由来肝脂肪が IV コリン補給で可逆的改善。',
+      publicDbReferences: 'NIH ODS（Office of Dietary Supplements）HealthProfessional Fact Sheet にコリン全般として収載：AI 425-550mg/日・上限量 3.5g/日・肝機能/神経伝達物質前駆体としての位置づけを明示。FDA はサプリ成分として認可・処方薬扱いではない。',
+      evidence: 'B ランク・PEI 2.9（confidence 1.0・papers 3 件: 観察 3）。コリン AI 不足補正 B（Zeisel 2009）・持久系運動補助 B（Penry 2008）・NAFLD 可逆的改善 B（Buchman 2001）。差別化軸は「運動 + 即効性志向」で、姉妹 choline-bitartrate（コスト + AI 補給主軸）と役割分担を形成。RCT は限定的のため honest reporting：「効果はメタ解析未確立だが機序と観察エビデンスは支持的」.',
+      dosage: '500-2,000mg/日（コリンクエン酸塩として・コリン換算 90-360mg）が研究使用域。運動補給用途では運動前 30-60 分に 1,000-2,000mg、AI 補給用途では朝食後に 500-1,000mg が現実的。コリン重量比は約 18% で酒石酸塩（41%）より低いため、AI 充足には用量が多くなる点が選択時の判断材料。',
+      dosageLevels: '500mg/日（入門・運動補給入門 + AI 補完）→ 1,000mg/日（標準・90 分以上の持久系運動補助 + AI 部分充足）→ 2,000mg/日（強化・トライアスロン/フルマラソン直前 + AI 完全充足）の 3 段階。3,500mg/日超は TMAO 心血管リスクの理論的懸念のため上限。',
+      faq: 'コリン酒石酸塩との吸収速度比較・CDP-コリン/α-GPC との脳移行性比較・運動パフォーマンスへの効果・魚臭体臭の対処・NAFLD への効果・効果期間 の 5 軸 FAQ で「コリン 4 形態の選び分け（運動軸視点）+ 副作用回避 + 期間判定」の決断負荷を解消。姉妹 choline-bitartrate「コスト + AI 補給主軸」とは異なる「運動 + 即効性志向」軸を主軸とする。',
+      safety: '食品由来成分のため安全性は高め（重篤な副作用なし）。軽度の消化器不快・高用量（3g/日以上）で魚臭体臭（TMA 産生）・稀に低血圧が報告される程度。3,500mg/日超は心血管 TMAO リスクの理論的懸念・トリメチルアミン尿症（先天性 TMA 代謝障害）の方は使用不可。妊娠中の高用量データは限定的のため食事から先に検討。',
+      interactions: '抗コリン薬（抗ヒスタミン薬・三環系抗うつ薬・スコポラミン等）との併用でアセチルコリン作用と相反する可能性。抗コリン治療中の方は併用前に主治医相談が前提。コリン酒石酸塩・CDP-コリン・α-GPC との併用は経路重複のため、複数形態の同時摂取は推奨されない（単一形態で AI 充足が原則）。',
+    },
     papers: [
       {
         title: 'Choline: needed for normal development of memory',
@@ -35743,6 +35754,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（コリンクエン酸塩 → コリンとして約90-360mg）',
     timing: '朝食後・運動前30-60分',
     duration: '効果評価は4〜12週間',
+    dosageLevels: [
+      {
+        dose: '500mg/日',
+        category: '入門用量・運動補給 + AI 補完',
+        effect: 'コリンクエン酸塩 500mg = コリン換算約 90mg。運動補給入門 + 食事コリン不足の部分補完用量。米国成人 90% が AI 不足（Zeisel 2009）の状況で、卵 1-2 個 + 大豆食品の食事に追加するベース補完として現実的。短時間運動（筋トレ・スプリント）ではこの用量で十分。',
+        whoFor: '初めてコリン補給を試す方・食事コリン不足の部分補完目的・短時間運動補助・コスト重視で慎重に始めたい方',
+        evidenceNote: 'Penry 2008 運動補給入門域。コリン換算で AI 425-550mg/日の 20% 補完に相当',
+      },
+      {
+        dose: '1,000mg/日',
+        category: '標準用量・持久系運動補助',
+        effect: 'コリンクエン酸塩 1,000mg = コリン換算約 180mg。Penry 2008 レビューで報告された 90 分以上の持久系運動（マラソン/トライアスロン/自転車ロングライド）後の血漿コリン低下を補完する標準域。運動前 30-60 分摂取で吸収速度の高さを活用。',
+        whoFor: '90 分以上の持久系運動補助・水溶性高・吸収速度を求める方・継続的な運動補給目的',
+        evidenceNote: 'Penry 2008 中心用量域。長時間運動による血漿コリン低下の補完エビデンス',
+      },
+      {
+        dose: '2,000mg/日',
+        category: '強化用量・トライアスロン直前 + AI 完全充足',
+        effect: 'コリンクエン酸塩 2,000mg = コリン換算約 360mg で AI 425-550mg/日の 65-85% 充足。トライアスロン・フルマラソン直前の運動補給 + 食事コリン不足の完全補完を狙う用量。3,500mg/日超は心血管 TMAO リスクの理論的懸念のため上限近辺。',
+        whoFor: 'トライアスロン・フルマラソン直前補給・食事コリン不足が深刻・AI 完全充足を狙う方',
+        evidenceNote: 'Penry 2008 上限用量域。3,500mg/日超は TMAO リスクのため避ける',
+      },
+    ],
     sideEffects: ['消化器不快', '魚臭体臭（高用量時）', '稀に低血圧'],
     contraindications: [
       'トリメチルアミン尿症',
@@ -35790,7 +35824,7 @@ export const ingredients: Ingredient[] = [
         source: 'Drugs.com Choline Drug Interactions',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-09',
     publicDbReferences: [
       {
         source: 'nih-ods',
