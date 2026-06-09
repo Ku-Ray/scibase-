@@ -908,9 +908,6 @@ export default async function ArticlePage({ params }: Props) {
                 className="w-full h-auto block"
               />
             </a>
-            <p className="mt-2 text-center text-[11px] text-muted-foreground">
-              ※公式サイトへ遷移します（PR / 提携リンク）
-            </p>
           </section>
         )}
 
@@ -978,9 +975,6 @@ export default async function ArticlePage({ params }: Props) {
               <p className="text-[11px] opacity-90 mt-0.5">{article.stickyCta.sublabel}</p>
             )}
           </a>
-          <p className="text-center text-[10px] text-muted-foreground mt-1">
-            ※公式サイトへ遷移します（PR / 提携リンク）
-          </p>
         </div>
       )}
     </>
