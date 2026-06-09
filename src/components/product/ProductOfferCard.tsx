@@ -269,9 +269,6 @@ export function ProductOfferCard({
             ▶ {platformLabel[product.platform]}で詳しく見る・購入する
             <ExternalLink className="w-4 h-4" />
           </OutboundProductLink>
-          <p className="mt-2 text-center text-[11px] text-muted-foreground">
-            ※公式サイトへ遷移します（PR / 提携リンク）
-          </p>
         </div>
       </div>
       </CardViewTracker>
