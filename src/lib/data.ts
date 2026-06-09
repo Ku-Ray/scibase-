@@ -40451,6 +40451,134 @@ export const ingredients: Ingredient[] = [
   },
 
   {
+    slug: 'comfrey',
+    nameJa: 'コンフリー（ヒレハリソウ / Symphytum officinale）',
+    nameEn: 'Comfrey (Symphytum officinale)',
+    aliases: ['comfrey', 'Symphytum officinale', 'コンフリー', 'ヒレハリソウ', '鰭玻璃草', 'pyrrolizidine alkaloid', 'PA', 'ピロリジジンアルカロイド', 'allantoin', 'アラントイン'],
+    evidenceRank: 'C',
+    usageType: 'topical',
+    ymylLevel: 'high',
+    seoTitle: 'コンフリー｜内服 FDA 禁止・ピロリジジンアルカロイド肝毒性・外用のみ',
+    seoDescription: 'コンフリー（Symphytum officinale）はピロリジジンアルカロイド（PA）含有で肝静脈閉塞症（VOD）・肝硬変・肝癌リスク（Stickel 2000 Public Health Nutr レビュー）。米国 FDA は 2001 年に内服製品の販売を停止勧告（Import Alert 62-02）。日本でも 2004 年に厚労省が食品としての販売規制。外用は擦過傷・打撲の伝統使用あるが内服は厳禁。',
+    tagline: '【内服 FDA 禁止 2001】PA で肝静脈閉塞症・肝硬変・肝癌リスク・外用のみ',
+    description:
+      'コンフリー（Symphytum officinale・ヒレハリソウ）はムラサキ科の多年草で、葉・根にピロリジジンアルカロイド（PA）を含む。PA は肝臓で CYP3A4 により毒性代謝物（ピロール）に変換され、肝静脈閉塞症（VOD = veno-occlusive disease）・肝硬変・肝癌を起こすことが動物・ヒト症例の双方で確立されている（Stickel 2000）。' +
+      '\n\n' +
+      '米国 FDA は 2001 年にコンフリー含有内服製品の販売停止を勧告（Import Alert 62-02・Industry Advisory）。日本でも 2004 年に厚労省が食品としての販売規制を実施。一方で外用（擦過傷・打撲・関節痛への湿布）は伝統的に使用されており、アラントイン・タンニン等の創傷治癒成分は外用で局所作用するが PA の経皮吸収は限定的とされる。' +
+      '\n\n' +
+      '本ページは飲み合わせチェッカーで「内服してはいけないハーブ」として警告するための収載。サプリメント・ハーブティー・スムージーへの混入による内服リスクを警告する目的で、内服全般を「avoid」として記載。外用使用を希望する場合も傷口・粘膜・授乳期乳房・小児への使用は避ける。',
+    concerns: ['inflammation'],
+    papers: [
+      {
+        title: 'The efficacy and safety of comfrey',
+        journal: 'Public Health Nutrition',
+        year: 2000,
+        studyType: 'observational',
+        keyFinding: 'コンフリー含有ピロリジジンアルカロイド（PA）の肝毒性レビュー・肝静脈閉塞症（VOD）・肝硬変・肝癌の症例集積を解析・内服は安全用量を設定不可能と結論（Stickel F, Seitz HK）',
+      },
+      {
+        title: 'Health effects of pyrrolizidine alkaloids (PAs) – Reviews on toxic effects',
+        journal: 'Mutation Research / Toxicology Letters',
+        year: 2018,
+        studyType: 'observational',
+        keyFinding: 'PA の肝毒性・遺伝毒性・発がん性レビュー・低用量長期摂取でも肝障害リスク・コンフリー・フキ・ペタサイト等含有植物の食品混入規制が EFSA・FDA で進行（複数レビュー統合）',
+      },
+    ],
+    publicDbReferences: [
+      {
+        source: 'ejim',
+        fullName: '厚生労働省eJIM「統合医療」情報発信サイト',
+        url: 'https://www.ejim.mhlw.go.jp/pro/overseas/c03/13.html',
+        accessedAt: '2026-06-08',
+        note: 'コンフリー。NCCIH 翻訳版。内服は肝毒性のため FDA・厚労省が販売規制',
+      },
+      {
+        source: 'mhlw',
+        fullName: '厚生労働省',
+        url: 'https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/qa/040618-1.html',
+        accessedAt: '2026-06-08',
+        note: '2004 年コンフリー含有食品の販売規制についての厚労省 Q&A',
+      },
+    ],
+    dosageMin: 0,
+    dosageMax: 0,
+    dosageUnit: '（内服厳禁・外用のみ）',
+    timing: '内服厳禁・外用は短期使用',
+    duration: '【ご利用上の注意】内服は FDA・厚労省で規制・外用も傷口・粘膜・授乳期乳房・小児への使用回避',
+    sideEffects: ['【最重要】肝静脈閉塞症（VOD）・肝硬変・肝癌（内服時）', '皮膚刺激・接触皮膚炎（外用時稀）'],
+    contraindications: [
+      '【全員】内服厳禁（FDA・厚労省 規制）',
+      '外用も：傷口・潰瘍・粘膜・授乳期乳房・小児・妊婦への使用',
+      '肝疾患既往（外用でも理論的に経皮吸収リスク）',
+      '肝代謝薬服用中（アセトアミノフェン・スタチン等）',
+    ],
+    products: [],
+    whoFor: [
+      '【重要な警告】内服は絶対回避（FDA 2001 / 厚労省 2004 規制）',
+      '外用の打撲・擦過傷ケアで短期使用したい方のみ（傷口・粘膜回避）',
+    ],
+    heroStat: { value: '【内服 FDA 禁止 2001】PA 肝毒性', label: 'ピロリジジンアルカロイドが肝静脈閉塞症・肝硬変・肝癌を引き起こす。Stickel 2000 で安全な内服量は設定不可能と結論・米 FDA は内服製品の販売停止・日本も 2004 年食品規制' },
+    axisScores: { antiAging: 1, skin: 2, cognitive: 1, stress: 1, sleep: 1, immunity: 1, metabolism: 1 },
+    customFaqs: [
+      {
+        q: 'コンフリーのお茶やスムージーは飲めますか？',
+        a: '内服は厳禁です。\n\n【背景】コンフリー（ヒレハリソウ）の葉・根に含まれるピロリジジンアルカロイド（PA）は肝臓で毒性代謝物に変換され、肝静脈閉塞症（VOD）・肝硬変・肝癌を引き起こします。低用量・短期間でも肝障害症例が報告されており、安全な内服量を設定できないため米 FDA は 2001 年に内服製品の販売停止を勧告、日本も 2004 年に食品としての販売を規制しました。\n\n【まとめ】コンフリー茶・コンフリースムージー・コンフリー粉末入りハーブブレンドはすべて回避。家庭菜園で栽培しても葉を食べないでください。',
+      },
+      {
+        q: '外用なら安全？',
+        a: '短期・健常皮膚への外用は比較的安全とされますが完全に安全とは言えません。\n\n【背景】打撲・擦過傷・関節痛への外用は伝統的に使用され、アラントイン・タンニン等の創傷治癒成分が局所作用します。PA の経皮吸収は内服に比べ限定的ですが、傷口・潰瘍・粘膜・授乳期乳房・小児への使用は経皮吸収が増えるため避けるべきです。連続使用は 4-6 週間以内を目安に。\n\n【まとめ】健常皮膚への短期外用なら比較的安全だが、傷口・粘膜回避・連続使用 4-6 週以内・授乳期乳房への塗布回避を厳守してください。',
+      },
+      {
+        q: '昔は食用にしていたと聞きましたが？',
+        a: '1960-70 年代までは健康野菜として栽培・食用が広まりましたが、その後の肝毒性研究で内服禁止となりました。\n\n【背景】コンフリーは「英名 healing herb」として民間療法・ハーブ栽培で広く普及していましたが、1980 年代から PA による肝障害・肝癌症例が集積し、各国で規制が進みました。日本でも 2004 年の厚労省規制以前は健康食品として流通していた経緯があります。\n\n【まとめ】「伝統的に食べていた」ことは安全性の証拠になりません。肝毒性の科学的根拠が確立した現在は内服回避が原則です。',
+      },
+    ],
+    interactions: [
+      {
+        substance: '経口薬全般',
+        level: 'avoid',
+        mechanism: 'コンフリー内服自体が PA 肝毒性のため禁忌・肝代謝薬との併用は肝障害リスク重畳',
+        action: 'コンフリーの内服は絶対回避・外用も肝代謝薬服用中の方は処方医に相談',
+        evidence: 'established',
+        source: 'FDA Import Alert 62-02 / 厚労省 2004 規制',
+      },
+      {
+        substance: 'アセトアミノフェン',
+        level: 'avoid',
+        mechanism: 'アセトアミノフェン肝毒性と PA 肝毒性が重畳・劇症肝障害リスク',
+        action: 'コンフリー内服回避・アセトアミノフェン常用中は外用も処方医に相談',
+        evidence: 'theoretical',
+        source: 'Stickel 2000 Public Health Nutr',
+      },
+      {
+        substance: 'スタチン',
+        level: 'avoid',
+        mechanism: 'スタチン肝毒性と PA 肝毒性が重畳',
+        action: 'コンフリー内服回避・スタチン服用中は外用も処方医に相談',
+        evidence: 'theoretical',
+        source: 'Stickel 2000 Public Health Nutr',
+      },
+      {
+        substance: '肝毒性薬剤',
+        level: 'avoid',
+        mechanism: '肝毒性のある薬剤（抗結核薬・抗てんかん薬等）と PA の肝毒性が重畳',
+        action: 'コンフリー内服回避・肝毒性薬剤服用中は外用も処方医に相談',
+        evidence: 'theoretical',
+        source: 'Stickel 2000 Public Health Nutr',
+      },
+      {
+        substance: 'アルコール',
+        level: 'avoid',
+        mechanism: 'アルコール性肝障害と PA 肝毒性が重畳',
+        action: 'コンフリー内服回避・常用飲酒者は外用も慎重に',
+        evidence: 'theoretical',
+        source: 'Stickel 2000 Public Health Nutr',
+      },
+    ],
+    updatedAt: '2026-06-09',
+  },
+
+  {
     slug: 'betaine-hcl',
     nameJa: 'ベタイン塩酸塩（胃酸補助）',
     nameEn: 'Betaine HCl',
