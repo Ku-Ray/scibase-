@@ -42383,11 +42383,11 @@ export const ingredients: Ingredient[] = [
     slug: 'camu-camu',
     nameJa: 'カムカム',
     nameEn: 'Camu Camu',
-    aliases: ['camu-camu', 'Myrciaria dubia', 'カムカム果実', '高ビタミンC', 'Amazonian fruit'],
+    aliases: ['camu-camu', 'Myrciaria dubia', 'カムカム果実', '高ビタミンC', 'Amazonian fruit', 'カムカム', 'カムカム とは', 'カムカム サプリ', 'カムカム 粉末', 'スーパーフルーツ', '天然ビタミンC', '南米スーパーフード', 'アマゾン果実'],
     evidenceRank: 'C',
     usageType: 'oral',
-    seoTitle: 'カムカム｜高ビタミンC果実・抗酸化の論文と用量',
-    seoDescription: 'カムカム（Myrciaria dubia）はアマゾン原産・100gあたりビタミンC 2,800mg（オレンジの50倍）。Inoue 2008 J Cardiol 喫煙者 70日 RCT で酸化ストレス・炎症マーカー改善・小規模研究中心。',
+    seoTitle: 'カムカムとは｜高ビタミンC + ポリフェノール複合・喫煙者 RCT の論文',
+    seoDescription: 'カムカム（Myrciaria dubia）はアマゾン原産果実で 100g あたりビタミン C 2,800mg（オレンジの 50 倍）+ ポリフェノール（エラジック酸/ガリック酸）の複合抗酸化食品。Inoue 2008 J Cardiol 喫煙者 70 日 RCT n=20 で 8-OHdG/hs-CRP/IL-6 改善が小規模ながら確認。合成アスコルビン酸（コスパ + メガドーズ可）との使い分け、規格化粉末 1-3g/日の用量、ワルファリン併用注意を査読論文で解説。',
     tagline: 'ビタミンC 100gあたり2,800mg・抗酸化・炎症マーカー改善 RCT・小規模',
     description:
       'カムカム（Myrciaria dubia）はビタミン C を生果実 100g 中 2,800mg 含むアマゾン原産果実で、喫煙者の酸化ストレス（8-OHdG）と炎症マーカー（hs-CRP）の有意改善を 70ml/日 70 日で示した小規模 RCT がある（Inoue 2008・J Cardiol・n=20）。' +
@@ -42396,6 +42396,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '高用量継続で腎結石（シュウ酸塩）リスク・ワルファリン併用は経過観察・「天然ビタミンCは合成より良い」訴求は科学的根拠なし（化学的に同一）。',
     concerns: ['antioxidant', 'immunity-low'],
+    sectionSummaries: {
+      whoFor: '天然ビタミン C 源を希望する方（合成アスコルビン酸の代替）・複合抗酸化サプリを探している層・南米伝統サプリやスーパーフードへの関心が高い方・風邪予防補助や軽度の喫煙者の酸化ストレスケアを求める層が中心。腎結石既往・ヘモクロマトーシス・サラセミア・重度 GERD/胃潰瘍の方は使用前に医師相談が前提。',
+      papers: 'Inoue 2008 J Cardiol RCT n=20 70 日が主柱：喫煙者にカムカムジュース 70ml/日でビタミン C 同量補給より顕著な酸化ストレスマーカー（8-OHdG）・炎症マーカー（IL-6/TNF-α/hs-CRP）改善を報告（小規模 RCT のため大規模試験での再現待ち）。Schwertz 2012 Med Hypotheses でカムカムの植物化学成分とビタミン C 以外の活性成分（ポリフェノール/カロテノイド）レビュー。Chirinos 2010 Food Chem で果実・種子の抗酸化能（ORAC/DPPH）とフェノール化合物同定。',
+      publicDbReferences: 'NIH ODS には camu-camu 単独 fact sheet なし（果実のため）。ビタミン C 全般としては NIH ODS Vitamin C Fact Sheet で RDA 100mg/日・補助 200-1,000mg/日が安全範囲・腎結石リスクは 2g/日以上長期摂取で増加と明示。日本では消費者庁 機能性表示食品制度でビタミン C 機能性関与成分として複数届出。',
+      evidence: 'C ランク・PEI 4.6（confidence 1.0・papers 3 件: RCT 1 / 観察 2）。酸化ストレスマーカー改善 B（Inoue 2008 RCT 小規模・大規模試験待ち）・抗酸化能 B（Chirinos 2010・in vitro 中心）・複合抗酸化機序 B（Schwertz 2012 レビュー）。差別化軸は「南米果実 + ポリフェノール複合主軸」で、合成ビタミン C（コスパ + メガドーズ可）との対立軸を形成。honest reporting：「ビタミン C 自体は化学的に同一・複合成分での差別化が独自性」.',
+      dosage: '規格化粉末 1-3g/日が研究使用域（ビタミン C として 30-100mg 換算）。食事と一緒に摂取が現実的（鉄吸収補助なら食事中）。抗酸化マーカー評価は 4-8 週で実施可能・血中ビタミン C 飽和は 2-4 週で到達。スーパーフード訴求の安価品は合成 VC 添加でカムカム成分が稀薄の可能性のため、100% 果実粉末・規格化抽出品・無添加明記品を選ぶのが現実的。',
+      dosageLevels: '1,000mg/日（入門・天然志向で始める標準下限・ビタミン C 約 30mg）→ 2,000mg/日（標準・抗酸化補助の中心用量・ビタミン C 約 60mg）→ 3,000mg/日（強化・Inoue 2008 RCT 上限相当・ビタミン C 約 100mg）の 3 段階。健常者の安全範囲内・3g/日超は腎結石リスクのため避ける（健常者でも 2g/日以上長期は経過観察）。',
+      faq: '合成アスコルビン酸との違い（化学的同一性 + 複合差別化）・高用量摂取の腎結石リスク・「天然」表示の罠と添加物確認・ワルファリン併用注意・効果期間 の 5 軸 FAQ で「合成 vs 天然の選び分け + リスク回避 + 製品選択 + 薬併用 + 期間判定」の決断負荷を解消。姉妹 vitamin-c-oral（コスパ + メガドーズ主軸）とは異なり、「複合抗酸化 + 天然志向」軸を主軸とする。',
+      safety: '食品由来成分のため通常用量で安全性は高め。軽度の胃腸不快感・下痢・胃酸増加（GERD 増悪）・歯のエナメル質摩耗（粉末直接摂取）が報告される。腎結石既往（シュウ酸塩リスク）・ヘモクロマトーシス/サラセミア（鉄過剰）・重度 GERD/胃潰瘍の方は使用不可または医師相談が前提。妊娠中の高用量データは限定的のため食事から先に検討。',
+      interactions: 'ワルファリン併用で高用量ビタミン C による抗凝固効果変動（INR 上昇/低下）の症例報告（少数・大規模 RCT データなし）。鉄サプリと併用で非ヘム鉄吸収増加（健常者では利点・ヘモクロマトーシス/サラセミアでは過剰負荷リスク）。PPI/H2 ブロッカーと併用で胃酸増加による薬効の部分的拮抗（通常用量では問題少）。ワルファリン服用中は INR モニタリング + 摂取量一定保持が前提。',
+    },
     papers: [
       {
         title: 'Tropical fruit camu-camu (Myrciaria dubia) has anti-oxidative and anti-inflammatory properties',
@@ -42446,6 +42457,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（規格化粉末）',
     timing: '食事と一緒（鉄吸収補助なら食事中）',
     duration: '効果評価まで4-8週・抗酸化マーカー測定で確認',
+    dosageLevels: [
+      {
+        dose: '1,000mg/日（規格化粉末）',
+        category: '入門用量・天然志向の始め方',
+        effect: 'カムカム規格化粉末 1g/日（ビタミン C 約 30mg 含有）。天然志向で始めたい方の標準下限用量。Inoue 2008 RCT 下限相当で、抗酸化マーカーへの効果は控えめだが、複合ポリフェノール（エラジック酸/ガリック酸）の摂取が同時に可能。食事のビタミン C を補完する位置づけ。',
+        whoFor: '初めてカムカムを試す方・天然志向で始めたい方・食事ビタミン C の部分補完目的',
+        evidenceNote: 'Inoue 2008 RCT 下限域。ビタミン C 換算で AI 100mg/日の 30% 補完に相当',
+      },
+      {
+        dose: '2,000mg/日（規格化粉末）',
+        category: '標準用量・抗酸化補助の中心',
+        effect: 'カムカム規格化粉末 2g/日（ビタミン C 約 60mg 含有）。抗酸化補助の中心用量域で、4-8 週で酸化ストレスマーカー（8-OHdG/MDA/GSH）の改善を評価する標準域。複合ポリフェノールの摂取量も中心域に達し、ビタミン C 単独より抗酸化能（ORAC/DPPH）が高い研究報告（Chirinos 2010）.',
+        whoFor: '抗酸化補助を本格的に始める方・喫煙者の酸化ストレスケア・継続的な天然 VC 補給目的',
+        evidenceNote: 'Schwertz 2012 / Chirinos 2010 の植物化学成分研究で中心用量域',
+      },
+      {
+        dose: '3,000mg/日（規格化粉末）',
+        category: '強化用量・Inoue 2008 RCT 上限相当',
+        effect: 'カムカム規格化粉末 3g/日（ビタミン C 約 100mg 含有）。Inoue 2008 J Cardiol RCT 70ml/日 70 日相当の上限用量。喫煙者の酸化ストレス（8-OHdG）・炎症マーカー（hs-CRP/IL-6/TNF-α）改善が確認された RCT 用量域。3g/日超は腎結石リスクのため健常者でも避ける。',
+        whoFor: 'Inoue 2008 RCT 準拠で標準的に選びたい方・酸化ストレス/炎症マーカーの改善を狙う方・重度の喫煙者酸化ケア',
+        evidenceNote: 'Inoue 2008 J Cardiol RCT n=20 70 日中心用量域。3g/日超は腎結石リスクで避ける',
+      },
+    ],
     sideEffects: ['軽度胃腸不快感（高用量）', '下痢（高用量）', '胃酸増加（GERD 増悪）', '歯のエナメル質摩耗（粉末直接摂取）'],
     contraindications: [
       '腎結石既往（シュウ酸塩リスク）',
@@ -42509,7 +42543,7 @@ export const ingredients: Ingredient[] = [
         source: 'Natural Medicines Camu Camu Note',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-09',
   },
   {
     slug: 'tudca',
