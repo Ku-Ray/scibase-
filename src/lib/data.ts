@@ -6661,10 +6661,10 @@ export const ingredients: Ingredient[] = [
     slug: 'astaxanthin',
     nameJa: 'アスタキサンチン',
     nameEn: 'Astaxanthin',
-    aliases: ['アスタ', 'アスタキ', 'カロテノイド', 'astaxanthin'],
+    aliases: ['アスタ', 'アスタキ', 'カロテノイド', 'astaxanthin', 'アスタキサンチン サプリ', 'ヘマトコッカス藻', 'haematococcus', '赤色カロテノイド', 'AstaREAL', 'アスタリール'],
     evidenceRank: 'A',
-    seoTitle: 'アスタキサンチン｜6mg/日・抗酸化と抗凝固薬の論文',
-    seoDescription: 'アスタキサンチンはヘマトコッカス藻由来カロテノイド。4〜12mg/日で皮膚弾力・紫外線ダメージ軽減・眼疲労への関与がRCTで示されている。何mgで効くか、ワルファリン等抗凝固薬との併用注意、βカロテンとの抗酸化力比較、脂溶性吸収の注意点を査読済み論文で解説。',
+    seoTitle: 'アスタキサンチンとは｜皮膚弾力 4mg・抗酸化ネットワークの論文',
+    seoDescription: 'アスタキサンチンはヘマトコッカス藻由来の赤色カロテノイド抗酸化成分。Marine Drugs 2018 RCT n=65 16 週で 4mg/日が皮膚弾力・水分量改善 + シワ深度低下（p<0.05）・Nutrients 2020 RCT n=36 で UV 酸化ストレスマーカー有意低下。抗酸化ネットワーク（vitamin-e/C/CoQ10/selenium）との sibling 役割分担・ワルファリン症例報告・降圧薬併用注意を査読論文で解説｜SciBase',
     usageType: 'oral',
     tagline: '皮膚老化・酸化ストレスへのRCTで有効性が確認されているカロテノイド',
     description:
@@ -6674,6 +6674,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'ワルファリンなど抗凝固薬との併用は出血傾向増の症例報告あり、12mg以上の高用量は降圧薬併用で血圧過度低下の可能性があり医師相談が前提。',
     concerns: ['skin-aging', 'uv-damage', 'inflammation', 'cardiovascular'],
+    sectionSummaries: {
+      whoFor: '紫外線曝露が多く肌の老化を内側からケアしたい 30 代以上の屋外活動者・日焼けの酸化ダメージを軽減したい方・抗酸化成分をまとめて取りたい層・眼疲労 + 皮膚老化のダブルケアを希望する方が中心。抗酸化ネットワーク（vitamin-e 細胞膜脂質保護 honest 主軸 + vitamin-c 水溶性パートナー + coq10 ミトコンドリア + lutein/zeaxanthin 眼黄斑色素 + selenium GPx 補酵素）の中で「赤色カロテノイド + 皮膚 UV 専門軸」を担うポジション。',
+      papers: 'Marine Drugs 2018 RCT（n=65・16 週・4mg/日）で経口アスタキサンチンが皮膚弾力・水分量を有意改善 + シワ深度低下（p<0.05）が主柱。Nutrients 2020 RCT（n=36・16 週）で UV 誘発の酸化ストレスマーカー有意低下 + 外用との併用で皮膚保護効果増強が補完。両 RCT とも 16 週評価で皮膚関連エンドポイントを確立。背景に β-カロテンとの抗酸化力比較研究（アスタキサンチンが約 6 倍とされる）あり。',
+      publicDbReferences: '国立健康・栄養研究所 HFNET 素材情報 DB にアスタキサンチンとして収載。抗酸化・眼精疲労情報あり・ヘマトコッカス藻由来の食品成分として安全性は良好と公式整理。日本機能性表示食品でアスタキサンチン関連届出多数（FANCL/Suntory/AstaREAL 等）。「目のピント調節機能改善」「目の疲労感軽減」の機能性関与成分として広く採用される規制エビデンスあり。',
+      evidence: 'A ランク・PEI 5.4（confidence 0.67・papers 2 件: RCT 2）。皮膚弾力 + 水分量改善 A（Marine Drugs 2018 RCT n=65 16 週・p<0.05）・シワ深度低下 A（同 RCT）・UV 酸化ストレスマーカー低下 A（Nutrients 2020 RCT n=36）・眼疲労改善 A（機能性表示食品エビデンス）。差別化軸は「赤色カロテノイド・皮膚 UV 専門軸」で、vitamin-e（細胞膜脂質保護総合）と lutein/zeaxanthin（眼黄斑色素特化）との対立軸を形成。',
+      dosage: '4-12mg/日・脂質を含む食事と一緒に摂取が研究準拠用量+タイミング。Marine Drugs 2018 RCT 中心用量は 4mg/日（皮膚弾力改善確認）・Nutrients 2020 RCT は 4mg/日（UV 酸化ストレス低下）・機能性表示食品届出主流は 4-9mg/日。脂溶性カロテノイドのため必ず脂質を含む食事と一緒に摂取しないと吸収率が大きく下がる（朝食または夕食推奨）。8-16 週で評価。',
+      dosageLevels: '4mg/日（入門・dosageMin・皮膚弾力 RCT 用量）→ 6mg/日（標準・継続使用時の中央値・皮膚 + 眼疲労ダブルケア）→ 12mg/日（強化・dosageMax・UV 対策強化・降圧薬と要注意）の 3 段階。継続使用 8-16 週で評価・脂質食事併用必須。降圧薬服用中は 4mg/日から段階的に増量推奨。',
+      faq: '副作用と禁忌（皮膚黄色化・ワルファリン症例）・併用薬注意（降圧薬 12mg 以上で血圧低下）・効果が出るまでの期間（8-16 週）・第一選択用量（4mg + 脂質食事）・βカロテン/ルテイン/ゼアキサンチンとの使い分け の 5 軸 FAQ で「赤色カロテノイド + 皮膚 UV + 抗酸化ネットワーク」の決断負荷を解消。',
+      safety: '通常用量（4-12mg/日）で重篤な副作用は確認されていない。高用量での皮膚の可逆的黄色化（カロテノイド沈着）がまれに報告される程度で、摂取をやめれば数週で消失。ヘマトコッカス藻由来の食品成分として安全性は良好。妊娠中・授乳中の安全性データは限定的のため食事から検討。手術前 2 週間は中止が無難。',
+      interactions: 'ワルファリン（抗凝固薬）併用は症例報告（69 歳女性で皮下出血発生）あり・止血系への薬理作用による抗凝固増強の可能性で要医師相談。降圧薬併用は 12mg/日以上で拡張期血圧低下のメタ解析データあり・4mg/日から開始 + 血圧自己測定強化が現実的。CYP3A4 軽微阻害が理論的に議論されるが、臨床的に重要な相互作用は確認されていない。',
+    },
     papers: [
       {
         title: 'Astaxanthin improves skin elasticity and reduces wrinkle depth',
@@ -6731,6 +6742,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '脂溶性のため食事と一緒に摂取',
     duration: '8〜16週間で効果を確認した研究が多い',
+    dosageLevels: [
+      {
+        dose: '4mg/日',
+        category: '入門用量・皮膚弾力 RCT 用量',
+        effect: 'dosageMin に該当する基礎用量。Marine Drugs 2018 RCT n=65 16 週で皮膚弾力・水分量改善 + シワ深度低下が確認された研究準拠用量。California Gold Nutrition Astalif 等のソフトジェル 12mg を 3 日に 1 粒で実現可能 or 4mg 規格の機能性表示食品で対応。',
+        whoFor: '初めてアスタキサンチンを試す方・皮膚老化の内側ケア入門・コスト重視で長期継続したい方',
+        evidenceNote: 'Marine Drugs 2018 RCT 中心用量・皮膚弾力 + 水分量 + シワ深度 RCT 確認用量',
+      },
+      {
+        dose: '6mg/日',
+        category: '標準用量・皮膚 + 眼疲労',
+        effect: '皮膚 UV 対策 + 眼疲労（機能性表示食品「目のピント調節機能改善」）のダブルケア用量。継続使用時の中央値で、機能性表示食品届出主流レンジ。脂質食事併用で吸収最大化・8-16 週で皮膚と眼の自覚で評価。',
+        whoFor: '皮膚老化 + 眼疲労のダブルケア希望・継続的に抗酸化ケアを強化したい方・機能性表示食品基準で選びたい方',
+        evidenceNote: '機能性表示食品届出主流用量・皮膚 + 眼疲労ダブルエビデンス支持的',
+      },
+      {
+        dose: '12mg/日',
+        category: '強化用量・dosageMax・UV 対策',
+        effect: 'dosageMax に該当する研究上限用量。California Gold Nutrition Astalif 12mg ソフトジェル 1 粒で完結し、UV 曝露が極めて多い屋外作業者・強度の皮膚老化対策希望時の選択肢。ただし拡張期血圧低下のメタ解析データあり・降圧薬服用中は要回避。',
+        whoFor: 'UV 曝露が極めて多い屋外作業者・強度の皮膚老化対策希望・降圧薬非服用が前提',
+        evidenceNote: '研究上限用量・拡張期血圧低下メタ解析あり・降圧薬と要回避',
+      },
+    ],
     sideEffects: ['高用量での皮膚の黄色化（まれ）'],
     products: [
       {
@@ -6836,7 +6870,7 @@ export const ingredients: Ingredient[] = [
         source: 'Natural Medicine Journal',
       },
     ],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-10',
   },
   {
     slug: 'curcumin',
