@@ -23243,14 +23243,24 @@ export const ingredients: Ingredient[] = [
     aliases: ['Tocotrienols', 'トコトリエノール', 'T3', 'スーパービタミンE', 'TRF', 'Tocotrienol-Rich Fraction', 'デルタトコトリエノール', 'ガンマトコトリエノール', 'パームトコトリエノール', 'アナトートコトリエノール'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'トコトリエノール｜トコフェロールとの違いと効果',
-    seoDescription: 'トコトリエノール（T3）はビタミンE 8種のうち4種を占めるトコールの不飽和側鎖型。脳の白質病変進行抑制（200mg×2年RCT）・LDL・血圧改善が報告される「スーパービタミンE」。トコフェロール（α-T）との違い、有効量100〜400mg/日、パーム/アナトー由来の選び方、ワルファリン併用注意を査読済み論文で解説。',
+    seoTitle: 'トコトリエノールとは｜白質病変 2 年 RCT・α-T との独立摂取・論文',
+    seoDescription: 'トコトリエノール（T3）はビタミン E 8 種のうち不飽和側鎖を持つ 4 種異性体の総称。Stroke 2014 Gopalan RCT n=121 で高齢者 200mg×2/日 2 年が脳白質病変進行有意抑制・Atherosclerosis 2003 RCT n=32 で 100mg/日 4 ヶ月が LDL-C -23%。α-トコフェロール（vitamin-e 親）大量併用で吸収阻害のため独立摂取・パーム vs アナトー由来の選び方・ワルファリン併用注意を査読論文で解説｜SciBase',
     tagline: '200mg×2年で脳の白質病変進行を有意に抑制したRCT・α-トコフェロールより細胞内移行能が約50倍とされる「スーパービタミンE」',
     description:
       'トコトリエノール（T3）はビタミン E 8 種のうち不飽和側鎖を持つ 4 種の総称で、高齢者の脳白質病変進行の有意抑制を 200mg×2/日 2 年で示した RCT がある（Gopalan 2014・Stroke・n=121）。\n\n' +
       '細胞膜への移行が速く、in vitroではトコフェロールの約50倍の抗酸化能が報告される。脳・心血管・肝・骨への効果が複数のRCTで示され、100〜400mg/日が一般的な目安。\n\n' +
       'α-トコフェロール大量併用で吸収が阻害されるため独立摂取が推奨される。原料はパーム油由来とアナトー由来（δ単独）が主流。',
     concerns: ['cardiovascular', 'cognitive', 'longevity', 'liver', 'inflammation', 'skin-aging'],
+    sectionSummaries: {
+      whoFor: 'コレステロール・中性脂肪が気になりスタチン前段階の食事+サプリ介入を試したい方・中高年で認知機能/脳血管系の予防的ケアを行いたい方・α-トコフェロール（普通のビタミン E）を飲んでいるが手応えが薄い方・抗酸化サプリの「次の一手」を探している層が中心。ビタミン E 系 3 兄弟（vitamin-e 親 α-トコフェロール総合 honest 主軸 + tocotrienols 4 種異性体・神経保護 + 心血管脂質専門軸 + vitamin-e-tocotrienol-high 高用量強化軸）の中で「4 種異性体 T3・神経保護 + 心血管脂質専門軸」を担うポジション。',
+      papers: 'Stroke 2014 Gopalan RCT（n=121・2 年・パーム由来混合 T3 200mg×2/日）で高齢者白質病変進行が有意抑制（プラセボ群進行・T3 群抑制）が主柱。Atherosclerosis 2003 RCT（n=32・16 週・100mg/日）で高コレステロール血症患者の LDL-C -23%・総コレステロール -21%・トリグリセリド -12% 改善。Life Sciences 2006 レビューで「不飽和側鎖の細胞膜流動性への影響」「α-トコフェロール大量併用での吸収阻害」を整理。',
+      evidence: 'A ランク・PEI 5.6（confidence 1.0・papers 3 件: RCT 2 / observational 1）。脳白質病変進行抑制 A（Stroke 2014 RCT n=121 2 年・長期 RCT 強）・LDL-C 改善 A（Atherosclerosis 2003 RCT n=32 16 週・-23%）・抗酸化能 A（in vitro でα-T の約 50 倍）。差別化軸は「4 種異性体 T3・神経保護 + 心血管脂質専門軸」で、vitamin-e 親（α-トコフェロール総合 + 200 IU 線安全 honest 主軸）と vitamin-e-tocotrienol-high（高用量強化軸）との対立軸を形成。',
+      dosage: '100-400mg/日（混合 T3 / TRF）が研究準拠範囲。Atherosclerosis 2003 RCT 中心用量は 100mg/日（LDL 改善）・Stroke 2014 RCT 中心用量は 400mg/日（白質病変抑制）。脂溶性ビタミンのため食事（特に脂質を含む食事）と一緒に摂取・1 日 1-2 回分割推奨。α-トコフェロール大量サプリ（400 IU 等）との併用は吸収阻害のため独立摂取が原則。',
+      dosageLevels: '50-100mg/日（入門・基礎抗酸化・α-T 代替）→ 100-200mg/日（標準・心血管/脂質ケア・Atherosclerosis 2003 RCT 用量）→ 200-400mg/日（強化・神経保護・Gopalan 2014 RCT 用量・脳白質病変抑制）の 3 段階。短期評価（4-16 週）は LDL/脂質マーカー・長期評価（1-2 年）は脳白質病変等の構造的指標。',
+      faq: 'トコフェロール（α-T）との違い・パーム由来 vs アナトー由来・α-T 大量併用 NG・ワルファリン併用注意・効果実感の時間軸 の 5 軸 FAQ で「4 種異性体選択 + α-T 独立摂取 + 神経保護 vs 脂質ケア」の決断負荷を解消。',
+      safety: '通常用量（〜400mg/日）の臨床 RCT で深刻な副作用報告はまれ。稀に消化器症状（吐き気・下痢）・高用量（800mg/日超）で出血傾向の可能性。ワルファリン・DOAC・抗血小板薬服用中は併用避け・手術前 2 週間中止が原則。α-トコフェロール単独サプリ（400 IU 等）との併用は吸収阻害のため独立摂取。出血性疾患・手術前後は使用回避。',
+      interactions: 'ワルファリン・DOAC・抗血小板薬併用は出血リスク増の理論的懸念で caution・手術前 2 週間中止が原則。α-トコフェロール大量サプリ（400 IU 等）との併用は組織移行・代謝阻害で吸収落ちるため avoid（Life Sciences 2006 レビュー）・独立摂取が原則。スタチン系脂質低下薬併用は HMG-CoA 還元酵素阻害作用重複の理論的可能性で monitor 推奨（Atherosclerosis 2003 / Lipids 2007）。',
+    },
     papers: [
       {
         title: 'Effect of mixed tocotrienols in hypercholesterolemic subjects',
@@ -23394,7 +23404,7 @@ export const ingredients: Ingredient[] = [
         source: 'Atherosclerosis 2003 / Lipids 2007',
       },
     ],
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-06-10',
   },
   {
     slug: 'tongkat-ali',
