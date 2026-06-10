@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ChevronRight, Salad, Star } from 'lucide-react'
+import { ChevronRight, HeartPulse, Salad, Star } from 'lucide-react'
 import { NutrientHistoryClient } from '@/components/NutrientHistoryClient'
+import { PhenoAgeHistoryClient } from '@/components/PhenoAgeHistoryClient'
 import { FavoritesClient } from '@/components/FavoritesClient'
 
 const BASE_URL = 'https://scibase.app'
@@ -9,12 +10,12 @@ const BASE_URL = 'https://scibase.app'
 export const metadata: Metadata = {
   title: 'マイページ｜診断結果とお気に入りを集約｜SciBase',
   description:
-    '栄養素診断結果・お気に入り成分・コラム・成分比較を 1 画面に集約。完全無料・登録不要・ブラウザに自動保存されるので後で見返せる。',
+    '栄養素診断結果・生物学的年齢の計測結果・お気に入り成分・コラム・成分比較を 1 画面に集約。完全無料・登録不要・ブラウザに自動保存されるので後で見返せる。',
   alternates: { canonical: `${BASE_URL}/my` },
   robots: { index: false, follow: true },
   openGraph: {
     title: 'マイページ｜診断結果とお気に入りを集約｜SciBase',
-    description: '栄養素診断結果・お気に入り成分・コラム・成分比較を 1 画面に集約。完全無料・登録不要。',
+    description: '栄養素診断結果・生物学的年齢の計測結果・お気に入り成分・コラム・成分比較を 1 画面に集約。完全無料・登録不要。',
     url: `${BASE_URL}/my`,
     siteName: 'SciBase',
     locale: 'ja_JP',
@@ -64,7 +65,16 @@ export default function MyDashboardPage() {
           <NutrientHistoryClient />
         </section>
 
-        {/* Section 2: お気に入り */}
+        {/* Section 2: 生物学的年齢 */}
+        <section className="mb-10">
+          <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-foreground sm:text-xl">
+            <HeartPulse className="h-5 w-5 text-indigo-600" />
+            生物学的年齢の結果
+          </h2>
+          <PhenoAgeHistoryClient />
+        </section>
+
+        {/* Section 3: お気に入り */}
         <section>
           <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-foreground sm:text-xl">
             <Star className="h-5 w-5 text-amber-500" />
@@ -80,6 +90,10 @@ export default function MyDashboardPage() {
             <Link href="/tools/nutrient-sufficiency"
               className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm font-medium text-foreground ring-1 ring-slate-200 transition hover:bg-emerald-50/40 hover:ring-emerald-200">
               <span>🥗 栄養素チェッカー</span><ChevronRight className="h-4 w-4 text-slate-400" />
+            </Link>
+            <Link href="/tools/phenoage"
+              className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm font-medium text-foreground ring-1 ring-slate-200 transition hover:bg-emerald-50/40 hover:ring-emerald-200">
+              <span>🧬 生物学的年齢チェッカー</span><ChevronRight className="h-4 w-4 text-slate-400" />
             </Link>
             <Link href="/tools/interaction-checker"
               className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm font-medium text-foreground ring-1 ring-slate-200 transition hover:bg-emerald-50/40 hover:ring-emerald-200">

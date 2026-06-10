@@ -74,6 +74,7 @@ export function Header() {
               { href: '/compare',     label: '比較'         },
               { href: '/analyzer',    label: '🔬 診断'      },
               { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素' },
+              { href: '/tools/phenoage',             label: '🧬 生物年齢' },
               { href: '/tools/interaction-checker',  label: '💊 飲み合わせ' },
             ].map(({ href, label }) => (
               <Link

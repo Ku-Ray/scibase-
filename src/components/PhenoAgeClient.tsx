@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import Link from 'next/link'
 import {
   Activity,
   AlertCircle,
@@ -11,10 +12,12 @@ import {
   Footprints,
   HeartPulse,
   Info,
+  Microscope,
   Moon,
   RotateCcw,
   Sparkles,
   Stethoscope,
+  Target,
   TrendingDown,
   Utensils,
   Wind,
@@ -29,6 +32,7 @@ import {
   type LifestyleInput,
   type PersonalityTypeId,
   type PhenoAgeInput,
+  type PrecisionTier,
   type Sex,
   type SleepState,
   type SmokingState,
@@ -36,6 +40,27 @@ import {
 } from '@/lib/phenoage'
 
 type Phase = 'idle' | 'calculating' | 'revealed'
+
+/* ─── localStorage 保存（マイページ集約） ─────────────────────────── */
+
+const PHENOAGE_RESULTS_KEY = 'scibase_phenoage_results'
+const MAX_HISTORY = 3
+
+export interface SavedPhenoAgeResult {
+  savedAt: string // ISO
+  age: number
+  sex: Sex
+  bioAge: number
+  lower: number
+  upper: number
+  delta: number
+  lifestyleAdjustedAge: number | null
+  tier: PrecisionTier
+  personality: { id: PersonalityTypeId; emoji: string; name: string }
+  /** CRP/RDW の任意入力数（0–2） */
+  optionalCount: number
+  lifestyleCount: number
+}
 
 /* ─── useCountUp hook (ease-out cubic・小数 1 桁対応) ─────────────── */
 
@@ -79,6 +104,88 @@ const PERSONALITY_COLOR: Record<PersonalityTypeId, string> = {
   liver_bone: 'from-violet-500 to-purple-500',
   anemia: 'from-rose-500 to-pink-500',
   standard: 'from-slate-500 to-slate-600',
+}
+
+/* ─── PersonalityType → 成分マッピング（中立 ASP 動線） ─────────────
+ * 全 slug は data.ts 実在確認済（2026-06-10）。効果の断定・数値化はしない。
+ * kidney_caution はこの map に存在しない（hideAsp 分岐 + map 不在の二重ガード）。 */
+
+export interface PersonalityActionDef {
+  contextJa: string
+  ingredients: { slug: string; labelJa: string; hintJa: string }[]
+}
+
+export const PERSONALITY_ACTION: Partial<Record<PersonalityTypeId, PersonalityActionDef>> = {
+  inflammation: {
+    contextJa: 'CRP・白血球・リンパ球率など炎症関連の指標に特徴が出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'omega3', labelJa: 'オメガ3（EPA・DHA）', hintJa: 'EPA・DHA と炎症マーカーの関係は RCT・メタ解析の蓄積が厚い領域' },
+      { slug: 'curcumin', labelJa: 'クルクミン', hintJa: 'CRP などの炎症指標を評価した RCT が複数あるポリフェノール' },
+      { slug: 'quercetin', labelJa: 'ケルセチン', hintJa: '炎症・抗酸化の研究文脈で読まれるフラボノイド' },
+    ],
+  },
+  metabolic: {
+    contextJa: '血糖・ALP など代謝関連の指標に特徴が出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'berberine', labelJa: 'ベルベリン', hintJa: '血糖関連指標を評価した RCT・メタ解析が蓄積する植物アルカロイド' },
+      { slug: 'alpha-lipoic-acid', labelJa: 'アルファリポ酸（ALA）', hintJa: '糖代謝・抗酸化の研究文脈で読まれる補酵素様物質' },
+      { slug: 'cinnamon-extract', labelJa: 'シナモン抽出物', hintJa: '血糖関連指標を評価した研究が複数あるスパイス由来素材' },
+    ],
+  },
+  nutrition: {
+    contextJa: 'アルブミン・MCV・RDW にタンパク質や B 群を振り返る特徴が出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'whey-protein-isolate', labelJa: 'ホエイプロテイン（WPI）', hintJa: 'タンパク質補給の定番で、摂取試験の蓄積が厚い' },
+      { slug: 'collagen-peptide', labelJa: 'コラーゲンペプチド', hintJa: '経口摂取の RCT が蓄積するペプチド素材' },
+      { slug: 'vitamin-b12', labelJa: 'ビタミンB12', hintJa: 'MCV が高めの文脈で振り返られることが多い B 群' },
+    ],
+  },
+  immune: {
+    contextJa: '白血球・リンパ球率が低めに出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'vitamin-d', labelJa: 'ビタミンD', hintJa: '免疫関連の研究が広く蓄積する脂溶性ビタミン' },
+      { slug: 'zinc', labelJa: '亜鉛', hintJa: '免疫機能との関連研究が多い必須ミネラル' },
+      { slug: 'reishi', labelJa: '霊芝（レイシ）', hintJa: '伝統利用が長く、近年は臨床研究も進むキノコ素材' },
+    ],
+  },
+  liver_bone: {
+    contextJa: 'ALP・アルブミンなど肝・骨のターンオーバーに関わる指標に特徴が出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'vitamin-k2', labelJa: 'ビタミンK2', hintJa: '骨代謝マーカーを評価した研究が蓄積' },
+      { slug: 'vitamin-d', labelJa: 'ビタミンD', hintJa: '骨・カルシウム代謝の研究の基本となるビタミン' },
+      { slug: 'nac', labelJa: 'NAC（N-アセチルシステイン）', hintJa: 'グルタチオン前駆体として肝関連の研究文脈で読まれる' },
+    ],
+  },
+  anemia: {
+    contextJa: 'RDW が高めで赤血球サイズのばらつき傾向が出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'iron', labelJa: '鉄', hintJa: '造血に関わる必須ミネラル。過剰摂取リスクもあるため検査値との照合が前提' },
+      { slug: 'vitamin-b12', labelJa: 'ビタミンB12', hintJa: '赤血球サイズ（MCV・RDW）の文脈で振り返られる B 群' },
+      { slug: 'folic-acid', labelJa: '葉酸', hintJa: '赤血球の形成に関わる水溶性ビタミン' },
+    ],
+  },
+  accelerated: {
+    contextJa: '採血ベースの生物年齢が実年齢より高めに出たタイプの方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'nmn', labelJa: 'NMN', hintJa: 'NAD+ 前駆体としてヒト試験が進行中の素材' },
+      { slug: 'curcumin', labelJa: 'クルクミン', hintJa: '炎症指標を評価した RCT が複数あるポリフェノール' },
+      { slug: 'omega3', labelJa: 'オメガ3（EPA・DHA）', hintJa: '炎症・脂質関連の RCT・メタ解析の蓄積が厚い' },
+    ],
+  },
+  rejuvenated: {
+    contextJa: '指標は良好です。現在の状態の維持を意識する方が、摂取を検討するケースが多い成分です。',
+    ingredients: [
+      { slug: 'vitamin-d', labelJa: 'ビタミンD', hintJa: '基本の健康維持の文脈で広く研究される脂溶性ビタミン' },
+      { slug: 'omega3', labelJa: 'オメガ3（EPA・DHA）', hintJa: '心血管・脂質関連の研究が蓄積' },
+    ],
+  },
+  standard: {
+    contextJa: '大きな偏りはないタイプです。加齢研究の文脈で読まれることが多い成分です。',
+    ingredients: [
+      { slug: 'nmn', labelJa: 'NMN', hintJa: 'NAD+ 前駆体としてヒト試験が進行中の素材' },
+      { slug: 'resveratrol', labelJa: 'レスベラトロール', hintJa: 'サーチュイン研究の文脈で知られるポリフェノール' },
+    ],
+  },
 }
 
 /* ─── 健診マーカー定義（T1 必須 7 + 任意 2） ───────────────────────── */
@@ -339,6 +446,32 @@ export function PhenoAgeClient() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  /* phase が revealed になったタイミングで localStorage に保存（最新 3 件履歴） */
+  useEffect(() => {
+    if (phase !== 'revealed' || !result) return
+    try {
+      const entry: SavedPhenoAgeResult = {
+        savedAt: new Date().toISOString(),
+        age: result.age,
+        sex,
+        bioAge: result.bloodAge.value,
+        lower: result.bloodAge.lower,
+        upper: result.bloodAge.upper,
+        delta: result.clocks.phenoAge.delta,
+        lifestyleAdjustedAge: result.lifestyleAdjustedAge,
+        tier: result.bloodAge.tier,
+        personality: { id: result.personality.id, emoji: result.personality.emoji, name: result.personality.name },
+        optionalCount: (crpFilled ? 1 : 0) + (rdwFilled ? 1 : 0),
+        lifestyleCount,
+      }
+      const raw = localStorage.getItem(PHENOAGE_RESULTS_KEY)
+      const history: SavedPhenoAgeResult[] = raw ? JSON.parse(raw) : []
+      localStorage.setItem(PHENOAGE_RESULTS_KEY, JSON.stringify([entry, ...history].slice(0, MAX_HISTORY)))
+    } catch {
+      /* localStorage 不可・隠匿モード等 */
+    }
+  }, [phase, result, sex, crpFilled, rdwFilled, lifestyleCount])
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-6 sm:py-10">
       {phase !== 'revealed' && <PrecisionMeter percent={precision} />}
@@ -574,10 +707,24 @@ export function PhenoAgeClient() {
             <>
               <IntervalCard result={result} />
               {result.lifestyle && result.lifestyleAdjustedAge != null && <LifestyleCard result={result} />}
+              <ActionPlanSection result={result} />
             </>
           )}
 
           <CompletionCelebration result={result} />
+
+          {/* マイページ保存通知 */}
+          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+            <div className="flex items-center justify-between gap-2 text-xs sm:text-sm">
+              <div className="flex items-center gap-1.5 text-slate-700">
+                <Check className="h-3.5 w-3.5 text-indigo-600" />
+                結果はブラウザに自動保存されました（最新 {MAX_HISTORY} 件まで）
+              </div>
+              <Link href="/my" className="inline-flex items-center gap-0.5 font-medium text-indigo-700 hover:underline">
+                マイページで見る <ChevronRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
 
           {/* Profile recap + Reset */}
           <div className="rounded-lg bg-slate-50 p-3 text-xs text-slate-700 sm:text-sm">
@@ -831,6 +978,59 @@ function KidneyCautionNotice() {
             入力されたクレアチニン値が性別の正常範囲を超えています。腎機能の評価には医療機関での検査が必要です。生物学的年齢の推定値はあくまで研究指標であり、この場合はまず医師にご相談ください。
           </p>
         </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─── ActionPlanSection（PersonalityType → 成分ページの中立 ASP 動線）
+ * 押し売り・煽りの表現は使わない（中立トーン）。成分の年齢効果は数値化しない。
+ * 腎機能注意型は hideAsp 分岐の外側で除外済 + map 不在 + hideAsp 再チェックの三重ガード。 */
+
+function ActionPlanSection({ result }: { result: BiologicalAgeResult }) {
+  const p = result.personality
+  const action = PERSONALITY_ACTION[p.id]
+  if (!action || p.hideAsp) return null
+
+  return (
+    <div className="rounded-2xl border-2 border-indigo-300 bg-gradient-to-br from-white via-indigo-50/30 to-white p-5 shadow-md sm:p-6">
+      <div className="mb-2 flex items-center gap-2">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100">
+          <Target className="h-5 w-5 text-indigo-600" />
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-slate-900 sm:text-lg">
+            {p.emoji} {p.name}から振り返る成分
+          </h3>
+          <div className="text-xs text-slate-600">論文の蓄積状況を SciBase の中立評価で確認</div>
+        </div>
+      </div>
+      <p className="mb-4 text-xs leading-relaxed text-slate-600 sm:text-sm">{action.contextJa}</p>
+
+      <div className="space-y-3">
+        {action.ingredients.map((ing) => (
+          <Link
+            key={ing.slug}
+            href={`/ingredients/${ing.slug}`}
+            className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0 flex-1">
+                <div className="text-sm font-bold text-slate-900 sm:text-base">{ing.labelJa}</div>
+                <div className="mt-1 flex items-start gap-1.5 text-xs leading-relaxed text-slate-600">
+                  <Microscope className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-400" />
+                  <span>{ing.hintJa}</span>
+                </div>
+                <div className="mt-1.5 text-xs font-medium text-indigo-700">論文と製品比較を見る</div>
+              </div>
+              <ChevronRight className="h-5 w-5 flex-shrink-0 text-indigo-500 transition group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="mt-4 rounded-lg bg-slate-50 p-3 text-[10px] leading-relaxed text-slate-500 sm:text-xs">
+        ※ ここに挙げた成分は「{p.name}の方が摂取を検討するケースが多い」という研究文脈の紹介であり、摂取で生物学的年齢の数値が変わることを保証するものではありません。購入は血液検査や体感と照らし合わせてご自身でご判断ください。医薬品を服用中の方・持病のある方・妊娠中の方は医師にご相談ください。
       </div>
     </div>
   )
