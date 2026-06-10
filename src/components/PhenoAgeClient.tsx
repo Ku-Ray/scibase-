@@ -517,19 +517,49 @@ export function PhenoAgeClient() {
           </h2>
           <div className="space-y-5">
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">実年齢</label>
-              <div className="flex items-center gap-3">
+              <label className="mb-3 block text-sm font-medium text-slate-700">実年齢</label>
+              <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-4 sm:p-5">
+                <div className="flex items-center justify-center gap-5 sm:gap-6">
+                  <button
+                    type="button"
+                    onClick={() => setAge(Math.max(18, age - 1))}
+                    aria-label="1歳減らす"
+                    className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white text-2xl font-bold text-slate-500 shadow-sm transition hover:border-indigo-400 hover:text-indigo-600 active:scale-90"
+                  >
+                    −
+                  </button>
+                  <div className="flex items-baseline gap-1 tabular-nums">
+                    <span className="text-5xl font-bold tracking-tight text-indigo-600 sm:text-6xl">{age}</span>
+                    <span className="text-xl font-medium text-slate-500">歳</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setAge(Math.min(100, age + 1))}
+                    aria-label="1歳増やす"
+                    className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white text-2xl font-bold text-slate-500 shadow-sm transition hover:border-indigo-400 hover:text-indigo-600 active:scale-90"
+                  >
+                    ＋
+                  </button>
+                </div>
                 <input
-                  type="number"
+                  type="range"
                   min={18}
                   max={100}
                   value={age}
-                  onChange={(e) => setAge(Math.max(18, Math.min(100, Number(e.target.value) || 0)))}
-                  className="w-28 rounded-lg border border-slate-300 bg-white px-3 py-2 text-base text-slate-900 focus:border-indigo-500 focus:outline-none"
+                  onChange={(e) => setAge(Number(e.target.value))}
+                  aria-label="年齢スライダー"
+                  className="mt-5 w-full cursor-pointer accent-indigo-600"
                 />
-                <span className="text-sm text-slate-600">歳</span>
+                <div className="relative mt-1.5 h-1 w-full overflow-hidden rounded-full bg-slate-200">
+                  <div className="absolute h-full rounded-full bg-indigo-300" style={{ left: '26.8%', width: '48.8%' }} />
+                </div>
+                <div className="mt-1.5 flex justify-between text-[11px] text-slate-400">
+                  <span>18</span>
+                  <span className="font-medium text-indigo-500">40–80 が最も妥当</span>
+                  <span>100</span>
+                </div>
               </div>
-              <p className="mt-1.5 text-xs text-slate-500">PhenoAge は 40–80 歳で最も妥当とされる研究指標です（若年層は低めに出る傾向）。</p>
+              <p className="mt-2 text-xs text-slate-500">PhenoAge は 40–80 歳で最も妥当とされる研究指標です（若年層は低めに出る傾向）。</p>
             </div>
             <div>
               <label className="mb-2 block text-sm font-medium text-slate-700">性別</label>
@@ -749,7 +779,7 @@ export function PhenoAgeClient() {
               <Info className="h-4 w-4" /> ご注意（重要）
             </div>
             <p>
-              本ツールが示す「生物学的年齢」は Levine 2018 の PhenoAge をベースにした<strong>研究指標</strong>であり、医学的な診断や寿命の予測ではありません。原式は主に 40–80 歳の集団で検証されており、若年層では実年齢より低く出る傾向があります。
+              本ツールが示す「生物学的年齢」は Levine 2018 の PhenoAge をベースにした<strong>研究指標</strong>であり、医学的な診断や寿命の予測ではありません。原式は主に 40–80 歳の集団で検証されており、若年層や採血値が良好な方では実年齢よりかなり低めに出ることがあります（病気がないことを保証するものではありません）。
             </p>
             <p className="mt-2">
               数値は採血当日の状態を反映する概算で、体調・脱水・感染などで変動します。健康状態の評価は必ず医師にご相談ください。
