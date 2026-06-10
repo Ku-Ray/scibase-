@@ -13262,11 +13262,11 @@ export const ingredients: Ingredient[] = [
     legalStatus: 'Drug',
     nameJa: '5-HTP',
     nameEn: '5-Hydroxytryptophan',
-    aliases: ['5HTP', 'ヒドロキシトリプトファン'],
+    aliases: ['5HTP', 'ヒドロキシトリプトファン', '5-HTP', '5-HTP サプリ', '5-HTP 効果', '5-HTP 副作用', 'グリフォニア種子', 'Griffonia simplicifolia', 'セロトニン前駆体', 'PSQI 睡眠品質', 'NOW Foods 5-HTP', 'SSRI 併用注意 サプリ'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: '5-HTP｜効果が出るまで・用量・SSRI併用と副作用を論文で',
-    seoDescription: '50-200mg/日・就寝30-60分前。100mg/日 8週RCT(n=110)でPSQI 睡眠品質指数が有意改善・効果実感は2-4週が目安。副作用は空腹時の消化器症状（C）・過剰摂取でセロトニン症候群（B）の2層。SSRI・MAOI・トラマドール・レボドパ/カルビドパ併用はセロトニン症候群リスクで絶対NG（A）。トリプトファンとの違い・1日摂取上限・睡眠での使い方も研究の観点で解説。',
+    seoTitle: '5-HTP とは｜100mg/日 8 週 PSQI 改善・SSRI/MAOI 併用 NG・グリフォニア由来の論文',
+    seoDescription: '5-HTP（5-ヒドロキシトリプトファン）はグリフォニア種子由来のセロトニン直接前駆体。Eur Neuropsychopharmacol 2018 RCT n=110 100mg/日 8 週で PSQI（睡眠品質指数）有意改善・入眠時間短縮・深睡眠増加が確認。効果実感は 2-4 週で蓄積型。SSRI・MAOI・トラマドール・レボドパ/カルビドパ併用はセロトニン症候群リスクで絶対 NG（4 系統）。トリプトファンとの即効性差・50/100/200mg/日の段階運用・グリフォニア標準化エキスの選び方を査読論文で解説。',
     tagline: 'トリプトファン→セロトニン→メラトニンの前駆体。気分・睡眠改善にコホート研究',
     description:
       '5-HTP はトリプトファンからセロトニンへの変換中間体で、100mg/日 8 週で PSQI（睡眠品質指数）の有意改善（p<0.05）を示した RCT がある（Eur Neuropsychopharmacol 2018・n=110）。SSRI 併用はセロトニン症候群リスクで避ける。' +
@@ -13275,6 +13275,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'SSRI・MAOI・トラマドール・レボドパ併用はセロトニン症候群リスクで絶対回避。空腹時摂取で消化器症状が出ることがあるため食後が無難。妊娠・授乳は避ける。',
     concerns: ['sleep', 'stress'],
+    sectionSummaries: {
+      whoFor: '寝つきが悪い・夜中に何度も起きる入眠/中途覚醒型不眠の方・気分の波が大きく朝の起きづらさ/夕方の落ち込みが続く 30-40 代・食欲コントロールを意識する方・PMS（月経前症候群）の精神症状が気になる女性が中心。SSRI/SNRI/MAOI/三環系抗うつ薬/トラマドール/レボドパ・カルビドパ服用中の方は絶対併用禁忌・自己免疫疾患・妊娠中・授乳中も使用不可。',
+      papers: 'European Neuropsychopharmacology 2018 RCT n=110 8 週（5-HTP 100mg/日で PSQI 睡眠品質指数有意改善 p<0.05・入眠時間短縮・深睡眠増加）が主柱。Memorial Sloan Kettering 5-HTP monograph で歴史的な安全性プロファイル整理。1990 年代の好酸球増多筋痛症候群（EMS）汚染問題は L-トリプトファン由来で 5-HTP 自体ではないが、グリフォニア種子由来の標準化エキスを選ぶことで品質を担保するのが現実解。',
+      publicDbReferences: 'NIH ODS には 5-HTP 単独 fact sheet なし。日本では schemaType:Drug 扱いで医薬品成分として管理（医薬部外品扱いに準じる）。FDA では 1991 年以前は OTC 流通だったが好酸球増多筋痛症候群（EMS）事件以降は dietary supplement 扱いで継続。Memorial Sloan Kettering Cancer Center 5-HTP monograph と Drugs.com 相互作用 DB が安全性の基盤。',
+      evidence: 'B ランク・PEI 2.8（confidence 0.33・papers 1 件 RCT のみ ※暫定）。PSQI 睡眠品質改善 A（Eur Neuropsychopharmacol 2018 RCT n=110）・気分改善 B（小規模 RCT + コホート研究）・食欲制御 C（限定的）。「セロトニン直接前駆体 + トリプトファンより即効性 + 4 系統薬剤絶対併用回避の YMYL 重」の honest 軸が確立。',
+      dosage: '50-200mg/日・就寝 30-60 分前が研究準拠の標準。Eur Neuropsychopharmacol 2018 RCT 中心用量は 100mg/日。50mg から開始し、1-2 週で副作用（空腹時消化器症状）がなければ 100mg/日 → 4 週で効果不十分なら 200mg/日まで段階的に増量。300mg/日超でセロトニン症候群リスク上昇のため避ける。空腹時の吐き気/嘔吐を避けるため食後または就寝直前摂取が無難。',
+      dosageLevels: '50mg/日（入門・段階的増量開始）→ 100mg/日（標準・Eur Neuropsychopharmacol 2018 RCT 中心用量・PSQI 改善エビデンス域）→ 200mg/日（強化・研究使用域上限・100mg で 4 週効果不十分時）の 3 段階。継続使用前提で 2-4 週判定・8 週で効果なければ中止して別経路（メラトニン/グリシン/マグネシウム）検討。',
+      faq: '効果が出るまでの期間（2-4 週）・副作用の重大度別 3 層・SSRI/MAOI/トラマドール/レボドパ-カルビドパ 4 系統絶対併用 NG・段階的増量プロトコル・トリプトファンとの使い分け の 5 軸 FAQ で「即効性 + YMYL 重 + 兄弟成分役割分担」の決断負荷を解消。',
+      safety: '通常用量（50-200mg/日）で重篤な副作用なし。空腹時摂取で消化器症状（吐き気・嘔吐・下痢）が出やすいため食後または就寝直前摂取が安全。300mg/日超で単独でもセロトニン症候群リスク。自己免疫疾患（特に強皮症様反応の歴史的事例）・妊娠中・授乳中は使用不可。最も重要な YMYL は 4 系統薬剤併用：SSRI/SNRI/三環系抗うつ薬/MAOI/トラマドール/メペリジン/レボドパ・カルビドパ製剤 すべて絶対併用回避。',
+      interactions: '4 系統薬剤との併用がセロトニン症候群リスクで絶対 NG（avoid）：SSRI（セルトラリン・パロキセチン・エスシタロプラム等）/ MAOI（フェネルジン・トラニルシプロミン等・最高リスク）/ セロトニン作動性オピオイド（トラマドール・メペリジン）/ レボドパ-カルビドパ製剤（カルビドパが 5-HTP の末梢代謝阻害で血中濃度 15 倍上昇）。Memorial Sloan Kettering / UpToDate / Drugs.com / Australian Prescriber の established / case-report レベルで報告。これらの治療中は医師管理下でない限り使用不可。',
+    },
     papers: [
       {
         title: '5-HTP supplementation and sleep quality: a randomized controlled trial',
@@ -13312,6 +13323,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '就寝30〜60分前が最も研究が多い',
     duration: '2〜4週間で効果を実感するケースが多い',
+    dosageLevels: [
+      {
+        dose: '50mg/日',
+        category: '入門・段階的増量開始',
+        effect: '研究使用域下限・段階的増量プロトコルの開始用量。就寝 30-60 分前 1 回摂取で、空腹時消化器症状の発生有無・忍容性確認が主目的。1-2 週で問題なければ 100mg/日に増量。グリフォニア種子由来の標準化エキス（NOW Foods 5-HTP 100mg を半割など）が品質ベースライン。',
+        whoFor: '初めて 5-HTP を試す方・消化器症状が心配な方・段階的増量で継続性を最優先する方',
+        evidenceNote: 'Eur Neuropsychopharmacol 2018 RCT 中心用量の 1/2。副作用評価フェーズ',
+      },
+      {
+        dose: '100mg/日',
+        category: '標準・Eur Neuropsychopharmacol 2018 RCT 中心用量',
+        effect: 'Eur Neuropsychopharmacol 2018 RCT n=110 8 週の中心用量で、PSQI（睡眠品質指数）有意改善・入眠時間短縮・深睡眠増加が確認された研究準拠の標準用量。NOW Foods 5-HTP 100mg カプセル 1 粒で完結。就寝 30-60 分前・食後摂取が消化器忍容性を保つ実装。',
+        whoFor: '研究準拠で標準的に試したい方・睡眠の質改善が主目的の方・グリフォニア種子由来標準化エキス希望者',
+        evidenceNote: 'Eur Neuropsychopharmacol 2018 RCT n=110 8 週 PSQI 有意改善 p<0.05・効果実感 2-4 週で蓄積型',
+      },
+      {
+        dose: '200mg/日',
+        category: '強化・研究使用域上限',
+        effect: '研究使用域（50-200mg/日）の上限。100mg/日で 4 週評価して効果不十分な場合の段階的増量先。NOW Foods 5-HTP 100mg を朝夕 1 粒ずつ分割摂取が現実的な実装。300mg/日超は単独でもセロトニン症候群リスクが上がるため絶対上限として認識する。',
+        whoFor: '100mg/日で 4 週効果不十分な方・気分症状の補助を強化したい方・研究使用域上限を試したい方',
+        evidenceNote: '研究使用域上限。300mg/日超はセロトニン症候群リスクで推奨されない。8 週で効果なければ中止して別経路検討',
+      },
+    ],
     sideEffects: ['消化器症状（空腹時摂取時）', '過剰摂取でセロトニン症候群のリスク'],
     contraindications: ['SSRIなど抗うつ薬との併用禁忌'],
     products: [
@@ -13346,6 +13380,7 @@ export const ingredients: Ingredient[] = [
       },
     ],
     whoFor: ['気分の波が大きく、朝の起きづらさや夕方の落ち込みが続く30-40代', '寝つきが悪い', '食欲コントロールをしたい'],
+    heroStat: { value: '100mg/日 8 週', label: 'Eur Neuropsychopharmacol 2018 RCT n=110 で PSQI 睡眠品質指数有意改善（p<0.05）' },
     axisScores: { antiAging: 2, skin: 0, cognitive: 3, stress: 6, sleep: 7, immunity: 1, metabolism: 2 },
     interactions: [
       {
@@ -13403,7 +13438,7 @@ export const ingredients: Ingredient[] = [
         a: 'トリプトファン（必須アミノ酸）→5-HTP（5-hydroxytryptophan）→セロトニン→メラトニンの代謝経路で、5-HTPはトリプトファンよりも一段「セロトニン側」にあります。\n\n【5-HTPの利点】変換率が高く即効性がある（2-4週）・低用量（50-200mg/日）で済む。\n\n【トリプトファンの利点】食品由来（バナナ・乳製品・大豆）として日常摂取しやすい・セロトニン以外のニコチンアミド合成経路にも使われる・医薬品との相互作用リスクが低い。\n\n【判断基準】SSRI等を服用中・即効性を求めない方→トリプトファン（500-1,000mg/日）を選択。短期間で睡眠の質を改善したい・医薬品服用なし→5-HTPが第一選択。なお、5-HTPは食品ではなくサプリ専用成分（グリフォニア種子由来）なので、食事から代替するのは不可能です。詳しくは <a href="/concerns/sleep">睡眠ガイド</a> も参照してください。',
       },
     ],
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-06-10',
   },
   {
     slug: 'urolithin-a',
