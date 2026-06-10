@@ -37823,8 +37823,8 @@ export const ingredients: Ingredient[] = [
     aliases: ['シャタバリ', 'shatavari', 'Asparagus racemosus', 'インドアスパラガス', '女性のためのハーブ', 'ayurvedic female tonic', 'シャタヴァリ'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'シャタバリ｜女性ホルモン・更年期・授乳期・アーユルヴェーダの論文',
-    seoDescription: 'シャタバリ（Asparagus racemosus）はアーユルヴェーダ「女性のためのハーブ」と呼ばれる伝統薬。Pandey 2015 PMS RCT・Sharma 1996 授乳期 RCT・Bopana 2007 ハーブレビューで PMS・更年期・授乳補助への補助エビデンス。',
+    seoTitle: 'シャタバリとは｜PMS+授乳期 RCT・女性アダプトゲンの論文',
+    seoDescription: 'シャタバリ（Asparagus racemosus）はアーユルヴェーダ「女性のためのハーブ」と呼ばれる伝統薬。Pandey 2015 PMS RCT n=60 8 週で身体+気分症状有意改善・Sharma 1996 授乳期 RCT n=60 4 週で母乳分泌+プロラクチン血中濃度有意増加。アダプトゲン 4 軸（ashwagandha ストレス + reishi 免疫 + cordyceps 持久力 + shatavari 女性ホルモン）の sibling 役割分担・エストロゲン依存性疾患禁忌を査読論文で解説｜SciBase',
     tagline: 'アーユルヴェーダ女性ハーブの代表・PMS+更年期+授乳補助の研究蓄積',
     description:
       'シャタバリはアーユルヴェーダの女性ハーブで、PMS 60 名の身体・気分症状を 500mg×2/日 8 週で有意改善した RCT がある（Pandey 2015）。サポニン類が主要活性成分。' +
@@ -37833,6 +37833,16 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '利尿薬・ホルモン療法・糖尿病薬と理論的相加作用があり要注意。妊娠中・乳がん既往はエストロゲン様作用懸念で慎重判断。皮膚直接効果のヒト RCT は未確立。',
     concerns: ['menopause', 'mood'],
+    sectionSummaries: {
+      whoFor: 'PMS 症状改善希望の 20-40 代女性・更年期障害補助的な位置づけで自然由来を試したい層・授乳期母乳分泌補助（産婦人科相談前提）・アーユルヴェーダ女性ホルモン補助に興味がある方が中心。アダプトゲン 4 軸（ashwagandha ストレス主軸 + reishi 免疫主軸 + cordyceps 持久力主軸 + shatavari 女性ホルモン PMS+授乳期専門軸）の中で「女性ホルモン PMS+授乳期専門軸」を担うポジション。',
+      papers: 'Pandey 2015 J Altern Complement Med RCT（n=60・8 週・500mg×2/日）で PMS 女性の身体+気分症状有意改善が主柱。Sharma 1996 Indian J Med Res RCT（n=60・4 週・シャタバリ含有処方）で授乳期女性の母乳分泌+プロラクチン血中濃度有意増加（30% 以上の母乳量増加）。Bopana 2007 J Ethnopharmacol レビューで伝統的使用・サポニン化学・女性生殖機能・抗酸化・抗ストレス・抗潰瘍を整理。',
+      evidence: 'B ランク・PEI 5.6（confidence 1.0・papers 3 件: RCT 2 / observational 1）。PMS 身体+気分症状改善 A（Pandey 2015 RCT n=60 8 週）・授乳期母乳分泌+プロラクチン増加 A（Sharma 1996 RCT n=60 4 週・30% 以上）・伝統ハーブ薬理学 B（Bopana 2007 レビュー）。差別化軸は「アダプトゲン女性ホルモン PMS+授乳期専門軸」で、ashwagandha（ストレス主軸 RCT 強）と reishi（免疫主軸）との対立軸を形成。',
+      dosage: '500-2,000mg/日（シャタバリ抽出）が研究準拠範囲。Pandey 2015 RCT 中心用量は 500mg×2/日（=1,000mg/日）。Sharma 1996 RCT は授乳期処方ベース。食後 1 日 2 回分割・4-12 週で評価。授乳期は産婦人科相談前提で 1,000-2,000mg/日が現実的。エクオール・大豆イソフラボン（更年期 RCT 強）との使い分け推奨。',
+      dosageLevels: '500mg/日（入門・dosageMin・健常女性予防）→ 1,000mg/日（標準・Pandey 2015 RCT 中心用量・PMS 改善メイン）→ 2,000mg/日（強化・dosageMax・授乳期母乳分泌補助・産婦人科相談前提）の 3 段階。継続使用 4-12 週で評価・PMS は 8 週・授乳期は 4 週で有意改善が報告される範囲。',
+      faq: 'エクオール/大豆イソフラボンとの違い（女性ホルモン 3 軸の使い分け）・エストロゲン依存性疾患（乳癌/子宮筋腫）で飲めるか・授乳期の母乳分泌効果・男性も飲めるか・効果が出るまでの期間 の 5 軸 FAQ で「アーユルヴェーダ女性ハーブ + アダプトゲン補完軸 + 禁忌判定」の決断負荷を解消。',
+      safety: '通常用量（500-2,000mg/日）で軽度 GI 不快感・稀にアレルギー反応（アスパラガス科）・頭痛が報告される程度。アスパラガス科アレルギー・エストロゲン依存性疾患（乳癌/子宮筋腫/子宮内膜症）の既往・治療中は禁忌（in vitro でエストロゲン受容体結合報告あり）。利尿薬・糖尿病薬服用中は理論的相加作用で医師相談。妊娠中の高用量は医師相談前提。',
+      interactions: 'ホルモン療法（エストロゲン製剤）併用はエストロゲン様作用の理論的相加で caution（Bopana 2007 J Ethnopharmacol）・ホルモン治療中は主治医相談。利尿薬併用は軽微な利尿作用との相加で caution（Drugs.com）。糖尿病薬併用は理論的血糖低下相加で慎重。アシュワガンダ/レイシ等他のアダプトゲンとの併用は理論的衝突なし・むしろ補完的（ストレス + 免疫 + 女性ホルモンの 3 軸統合）。',
+    },
     papers: [
       {
         title: 'Effect of Shatavari (Asparagus racemosus) on premenstrual syndrome',
@@ -37886,6 +37896,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '食後に1日2回分割',
     duration: '効果評価は4〜12週間',
+    dosageLevels: [
+      {
+        dose: '500mg/日',
+        category: '入門用量・dosageMin・健常女性予防',
+        effect: 'dosageMin に該当する基礎用量。健常女性の予防的補充・軽度の PMS 症状・更年期前症状の補助に。アーユルヴェーダ女性ハーブ入門用量として現実的で、4-8 週継続で軽度症状の改善を評価。シャタバリ抽出 500mg/日の単剤製品で完結。',
+        whoFor: '初めてシャタバリを試す方・健常女性の予防目的・軽度 PMS 症状の方・更年期前症状の方',
+        evidenceNote: 'dosageMin・健常女性予防用量・伝統的アーユルヴェーダ使用域',
+      },
+      {
+        dose: '1,000mg/日',
+        category: '標準用量・Pandey 2015 RCT 中心',
+        effect: 'Pandey 2015 J Altern Complement Med RCT n=60 8 週中心用量（500mg×2/日）。PMS 女性の身体+気分症状有意改善が確認された研究準拠用量。中等度の PMS・継続的な女性ホルモンサポートを希望する方の標準レンジ。',
+        whoFor: 'PMS 症状改善希望の 20-40 代女性・継続的な女性ホルモンサポート希望者・Pandey 2015 RCT 準拠で選びたい方',
+        evidenceNote: 'Pandey 2015 J Altern Complement Med RCT n=60 8 週中心用量・PMS 身体+気分症状有意改善',
+      },
+      {
+        dose: '2,000mg/日',
+        category: '強化用量・dosageMax・授乳期補助',
+        effect: 'dosageMax に該当する研究上限用量。Sharma 1996 授乳期 RCT の処方ベース上限域。授乳期母乳分泌補助・更年期障害補助・PMS 重度症状の方の強化用量。授乳期使用は産婦人科・小児科主治医相談前提・主軸は授乳頻度+水分+栄養+ストレス管理。',
+        whoFor: '授乳期母乳分泌不足の方（産婦人科相談前提）・更年期障害補助希望・PMS 重度症状の方',
+        evidenceNote: 'Sharma 1996 RCT 授乳期処方ベース上限域・授乳期使用は主治医相談前提',
+      },
+    ],
     sideEffects: ['軽度GI不快感', '稀にアレルギー反応（アスパラガス科）', '頭痛'],
     contraindications: [
       'アスパラガス科アレルギー',
@@ -37943,7 +37976,7 @@ export const ingredients: Ingredient[] = [
         source: 'Drugs.com Shatavari Drug Interactions',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-10',
   },
 
   {
