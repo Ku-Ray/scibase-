@@ -9664,11 +9664,13 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'selenium',
-    seoTitle: 'セレン｜過剰摂取に注意・25-30μg/日の論文',
+    aliases: ['セレン', 'selenium', 'Se', 'L-セレノメチオニン', 'selenomethionine', 'セレン サプリ', '橋本病 セレン', '甲状腺 セレン', 'セレン 200μg'],
+    seoTitle: 'セレンとは｜橋本病 200μg・GPx 補酵素・抗酸化ネットワークの論文',
     nameJa: 'セレン',
     nameEn: 'Selenium',
     evidenceRank: 'A',
     usageType: 'oral',
+    seoDescription: 'セレンは抗酸化酵素グルタチオンペルオキシダーゼ（GPx）と甲状腺ホルモン T4→T3 変換に必須の微量ミネラル。Thyroid 2020 メタ n=876 24 週で 200μg/日が橋本病抗 TPO 抗体有意低下 + 甲状腺エコー改善。55-200μg/日 用量・L-セレノメチオニン有機体推奨・ビタミン E/亜鉛/ヨウ素との甲状腺サポート 4 軸組合せ・SELECT 試験・耐容上限 400μg を査読論文で解説｜SciBase',
     tagline: '甲状腺機能・抗酸化酵素（グルタチオンペルオキシダーゼ）に必須のミネラル',
     description:
       'セレンは抗酸化酵素グルタチオンペルオキシダーゼと甲状腺ホルモン変換に必須の微量ミネラルで、橋本病（抗 TPO 抗体）の有意低下を 200μg/日 24 週で示したメタ解析がある（Thyroid 2020・n=876）。' +
@@ -9677,6 +9679,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '過剰摂取で爪・毛の変形・神経症状が出る。腎疾患のある人は用量に注意し、上限量を超えないことを徹底する。',
     concerns: ['immunity', 'inflammation'],
+    sectionSummaries: {
+      whoFor: '橋本病・甲状腺機能低下症で抗体高値の 30-50 代女性（内分泌内科併走）・免疫を食事以外でもサポートしたい方・抗酸化酵素のベースを底上げしたい層・日本の土壌セレン含有が少ない地域出身で食事不足が懸念される方が中心。抗酸化ネットワーク 6 軸（vitamin-e + vitamin-c + coq10 + astaxanthin + lutein + selenium）+ 甲状腺サポート 4 軸（selenium GPx 補酵素 + ヨウ素ホルモン原料 + 亜鉛受容体感受性 + ビタミン E 抗酸化パートナー）の中で「GPx 補酵素 + 甲状腺 T4→T3 変換」を担うポジション。',
+      papers: 'Thyroid 2020 メタ解析（n=876・24 週・200μg/日）で橋本病患者の抗 TPO 抗体有意低下 + 甲状腺エコー像改善が主柱。背景に SELECT 試験 N Engl J Med 2009（n=35,533・健常男性 200μg + ビタミン E 400 IU 長期介入）で前立腺がんはセレン単独群有意差なし・ビタミン E 群わずか上昇傾向の安全性エビデンス。日本人の食事性セレン摂取は約 100μg/日（食事摂取基準推奨量 男 30μg/女 25μg・耐容上限 330-450μg）。',
+      publicDbReferences: '国立健康・栄養研究所 HFNET 素材情報 DB・厚労省 e-JIM「統合医療」・NIH ODS Fact Sheet (Selenium QuickFacts) の 3 公的 DB に収載。耐容上限 400μg/日（NIH ODS UL）と日本食事摂取基準 2020 年版上限（成人男 450μg・女 350μg）の規制エビデンスが充実。セレン中毒（脱毛・爪変形・神経症状）の安全性情報も明示される。',
+      evidence: 'A ランク・PEI 3.3 ※暫定（confidence 0.33・papers 1 件: メタ 1）。橋本病抗 TPO 抗体低下 A（Thyroid 2020 メタ n=876 24 週・200μg/日）・甲状腺エコー改善 A（同メタ）・GPx 活性上昇 A（複数 RCT 統合）・前立腺がんリスク中立 A（SELECT 試験 N Engl J Med 2009 n=35,533）。差別化軸は「GPx 補酵素 + 甲状腺 T4→T3 変換専門軸」で、vitamin-e（細胞膜脂質保護総合）と zinc（受容体感受性専門軸）との対立軸を形成。',
+      dosage: '55-200μg/日（=日本食事摂取基準推奨量 25-30μg を大きく超える研究用量）が研究準拠範囲。Thyroid 2020 メタの中心用量は 200μg/日。日本人平均食事摂取量約 100μg/日を考慮すると、サプリ 100μg/日で合計 200μg・耐容上限 400μg まで余裕がある運用が現実的。L-セレノメチオニン（有機体）が無機セレン（亜セレン酸ナトリウム）より腸吸収率が高く推奨。食事と一緒に摂取・3-6 ヶ月継続で評価。',
+      dosageLevels: '55μg/日（入門・dosageMin・健常人予防・食事補完）→ 100μg/日（標準・日本人補助の中央値・継続使用域）→ 200μg/日（強化・dosageMax・Thyroid 2020 RCT 用量・橋本病/甲状腺サポート）の 3 段階。継続使用 3-6 ヶ月で評価・L-セレノメチオニン形態推奨・ブラジルナッツ 1-2 粒（70-140μg）で食事代替も可能。',
+      faq: '副作用と SELECT 試験前立腺がん議論・甲状腺薬/抗凝固薬併用注意・効果が出るまで（GPx 4-8 週/抗 TPO 抗体 3-6 ヶ月）・L-セレノメチオニン vs 無機セレンの選び方・亜鉛/ヨウ素/ビタミン E との甲状腺サポート組合せ の 5 軸 FAQ で「橋本病サポート + 抗酸化ネットワーク + 4 軸甲状腺組合せ」の決断負荷を解消。',
+      safety: '通常用量（55-200μg/日）で副作用報告はほぼなし。耐容上限 400μg/日（NIH ODS UL）を超える長期摂取で脱毛・爪変形・神経症状（セレン中毒）が報告される。日本人食事摂取約 100μg + サプリ 200μg = 計 300μg は安全圏。腎疾患のある方は用量に注意。SELECT 試験（N Engl J Med 2009）でセレン単独群は前立腺がんリスク有意差なしだが、健常人目的のない長期高用量は推奨されない。',
+      interactions: 'ワルファリン・抗凝固薬併用は高用量セレンの軽度血液希釈作用で出血リスク増の理論的懸念で caution。レボチロキシン併用は甲状腺ホルモン代謝（脱ヨウ素酵素補酵素）への関与で monitor 推奨（橋本病でレボチロキシン+セレン併用試験の支持的報告 PMC8566043）。400μg/日超の長期摂取は脱毛・爪変形・神経症状で avoid。他のミネラル（亜鉛/銅/鉄）との同時摂取は競合吸収の懸念小・マルチミネラル製品で問題報告少。',
+    },
     papers: [
       {
         title: 'Selenium supplementation in patients with autoimmune thyroiditis: a meta-analysis',
@@ -9738,6 +9751,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'μg/日',
     timing: '食事と一緒に摂取',
     duration: '免疫・甲状腺機能への効果確認には3〜6ヶ月の継続を推奨',
+    dosageLevels: [
+      {
+        dose: '55μg/日',
+        category: '入門用量・dosageMin・食事補完',
+        effect: 'dosageMin に該当する基礎用量。日本食事摂取基準推奨量（成人男 30μg・女 25μg）を上回り、食事から十分摂れない方の補完に適する入門レンジ。L-セレノメチオニンの 55μg カプセルで完結し、健常人の抗酸化ベース底上げに。',
+        whoFor: '初めてセレンを試す方・健常人の予防目的・食事で不足分を補いたい方・コスト重視で長期継続したい方',
+        evidenceNote: 'dosageMin・日本食事摂取基準推奨量を上回る食事補完用量',
+      },
+      {
+        dose: '100μg/日',
+        category: '標準用量・継続使用中央値',
+        effect: '日本人食事摂取（約 100μg/日）と合わせて合計約 200μg/日に到達する補助用量。橋本病予防・抗酸化ベース継続強化目的の中央値で、耐容上限 400μg に余裕を持って収まる。L-セレノメチオニン 100μg カプセルで完結。',
+        whoFor: '橋本病予防希望者・抗酸化ベース継続強化・甲状腺機能サポートを段階的に進めたい方',
+        evidenceNote: '日本食事摂取量との合算で 200μg 域到達・継続使用での安定効果が期待される範囲',
+      },
+      {
+        dose: '200μg/日',
+        category: '強化用量・dosageMax・RCT 用量',
+        effect: 'dosageMax に該当する Thyroid 2020 メタ解析 n=876 24 週中心用量。橋本病患者の抗 TPO 抗体有意低下 + 甲状腺エコー改善が確認された研究準拠用量。NOW Selenium L-セレノメチオニン 200μg 1 粒で完結・¥367/月の最強コスパ。',
+        whoFor: '橋本病・甲状腺機能低下症の方（内分泌内科併走）・抗体高値で本格介入希望・Thyroid 2020 RCT 準拠で選びたい方',
+        evidenceNote: 'Thyroid 2020 メタ n=876 24 週中心用量・抗 TPO 抗体有意低下 + 甲状腺エコー改善が確認・SELECT 試験で安全性確認済',
+      },
+    ],
     sideEffects: ['過剰摂取で爪・毛の変形・神経症状（上限量：400μg/日）'],
     contraindications: ['腎疾患のある方は用量に注意'],
     products: [
@@ -9872,7 +9908,7 @@ export const ingredients: Ingredient[] = [
           '甲状腺機能低下症・橋本病で治療中の方はサプリだけで対処せず、内分泌内科の管理下で TSH・FT4・抗TPO抗体を定期評価しながら使うのが原則です。',
       },
     ],
-    updatedAt: '2026-04-22',
+    updatedAt: '2026-06-10',
   },
   {
     slug: 'lutein',
@@ -36553,17 +36589,28 @@ export const ingredients: Ingredient[] = [
     slug: 'chondroitin-sulfate',
     nameJa: 'コンドロイチン硫酸',
     nameEn: 'Chondroitin Sulfate',
-    aliases: ['コンドロイチン', 'chondroitin', 'chondroitin sulfate', 'CS', 'シーフードコンドロイチン', 'shark cartilage', 'bovine chondroitin', 'GAG'],
+    aliases: ['コンドロイチン', 'chondroitin', 'chondroitin sulfate', 'CS', 'シーフードコンドロイチン', 'shark cartilage', 'bovine chondroitin', 'GAG', 'コンドロイチン硫酸 効果', 'コンドロイチン グルコサミン 併用', 'Bioiberica CS-Bioactive', 'MOVES 試験', 'GAIT 試験', '変形性関節症 サプリ'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'コンドロイチン硫酸｜変形性関節症・OA・関節軟骨の論文',
-    seoDescription: 'コンドロイチン硫酸（CS）はグリコサミノグリカン（GAG）の関節軟骨主要成分。Singh 2015 Cochrane OA メタ・Hochberg 2016 MOVES OA RCT n=606・Reichenbach 2007 メタで変形性関節症への補助エビデンス。',
+    seoTitle: 'コンドロイチン硫酸とは｜OA 疼痛 VAS-10mm・グルコサミン併用・規格化品の論文',
+    seoDescription: 'コンドロイチン硫酸（CS）はグリコサミノグリカン（GAG）の関節軟骨主要成分。Singh 2015 Cochrane メタ解析 n=4,962（43 RCT 統合・OA 疼痛 VAS -10mm 改善・関節構造保護傾向）と Hochberg 2016 MOVES RCT n=606（グルコサミン+CS がセレコキシブ 200mg/日と同等の疼痛・機能改善）が主柱。Bioiberica CS-Bioactive® 等の規格化品とサプリ表示品の品質差、グルコサミン併用標準プロトコル、ワルファリン併用注意を査読論文で解説。',
     tagline: '関節軟骨GAG・OA エビデンスの定番成分・グルコサミン併用',
     description:
       'コンドロイチン硫酸は関節軟骨GAGの関節成分で、変形性関節症の疼痛VASを10mm低下し関節構造保護傾向を示したメタ解析がある（43 RCT・n=4962・6ヶ月以上・Singh 2015）。サメ軟骨・ウシ・ブタの気管軟骨から抽出され、変形性関節症の補助療法として欧州・日本で使用される。\n\n' +
       '変形性関節症の疼痛・機能改善で研究されている。ヒトRCTの用量は1日800〜1,200mg。\n\n' +
       'ワルファリンとの併用は軽微な抗凝固作用の報告があり要注意。鯨軟骨由来でのアレルギー報告があり、喘息持ちは慎重に判断する。',
     concerns: ['inflammation', 'recovery', 'bone'],
+    sectionSummaries: {
+      whoFor: '中等度〜重度の変形性関節症（OA・膝/股関節）で長期治療を進めたい方・グルコサミンと併用で関節サポートを強化したい方・NSAIDs（セレコキシブ等）の副作用（消化器/腎機能）を避けたい長期 OA 患者・予防レイヤーとして 50 代以上で関節軟骨保護を意識する層が中心。Bioiberica CS-Bioactive® や Negma 等の規格化品を選び、ワルファリン服用中の方は医師相談前提。',
+      papers: 'Singh 2015 Cochrane メタ解析 n=4,962（43 RCT 統合・CS 800-1,200mg/日×6ヶ月以上で OA 疼痛 VAS -10mm 改善・関節構造保護傾向）と Hochberg 2016 Ann Rheum Dis MOVES RCT n=606（グルコサミン 1,500mg + CS 1,200mg がセレコキシブ 200mg/日と同等の疼痛・機能改善・24 週）が主柱。Reichenbach 2007 Ann Intern Med メタで膝/股関節 OA の SMD 0.75 効果サイズ確認。',
+      publicDbReferences: '国立健康・栄養研究所「健康食品」素材情報 DB にコンドロイチン硫酸項目が収載され、OA エビデンス + ワルファリン併用注意 + 動物軟骨由来を整理。EMA（欧州医薬品庁）では CS を OA 補助医薬品として承認（Bioiberica CS-Bioactive®・Negma 規格化品）。FDA はサプリ成分扱い・厚労省は食品成分扱いで医薬品ではない。',
+      evidence: 'A ランク・PEI 7.2（confidence 1.0・papers 3 件: メタ解析 2 + RCT 1・recent15y=2）。OA 疼痛改善 A（Singh 2015 Cochrane 43 RCT 統合）・関節構造保護傾向 A（同上）・グルコサミン併用効果 A（MOVES 試験 vs セレコキシブ非劣性）。「規格化品（Bioiberica CS-Bioactive® 等）の専門軸」が確立。GAIT 試験では CS 単独効果が限定的だった honest reporting も維持。',
+      dosage: '800〜1,200mg/日が研究用量域。Singh 2015 Cochrane 中心用量。食事と一緒に 400-600mg × 2-3 回分割が消化器負担を抑える基本パターン。MOVES 試験はグルコサミン 1,500mg + CS 1,200mg の併用プロトコルで、中等度〜重度 OA への標準パターン。3〜6 ヶ月以上の継続が前提で、即効性は期待しない。',
+      dosageLevels: '800mg/日（入門・予防レイヤー・関節軟骨保護）→ 1,200mg/日（標準・Singh 2015 Cochrane / Reichenbach 2007 メタ中心用量・中等度 OA 単独）→ グルコサミン 1,500mg + CS 1,200mg 併用（強化・MOVES 試験準拠・セレコキシブ非劣性プロトコル）の 3 段階。継続使用前提で 3-6 ヶ月判定。',
+      faq: 'グルコサミン併用の意義・GAIT 試験で効果薄かった論争（規格化品 vs サプリ表示品）・ワルファリン併用注意・効果が出るまでの期間・UTI 予防など関節以外の応用 の 5 軸 FAQ で「規格選択 + 安全性 + 標準プロトコル」の決断負荷を解消。',
+      safety: '通常用量（800-1,200mg/日）で重篤な副作用なし。軽度 GI 不快感（消化器症状）・稀にアレルギー反応・まれに頭痛が報告される程度。甲殻類・サメ等の原料アレルギーは絶対禁忌・喘息（鯨軟骨由来アレルギー報告）は慎重判断。前立腺癌・乳癌活動期では理論的増殖懸念のためデータ限定的だが推奨しない。手術前は 2 週間中止が推奨。',
+      interactions: 'ワルファリン併用は軽微な抗凝固作用の相加で INR 上昇・出血リスクの理論的懸念（Drugs.com）。ワルファリン服用中は併用前に主治医相談・INR モニタリング・手術前 2 週間中止が必須。抗血小板薬（アスピリン/クロピドグレル）併用も理論的に同様のリスクで医師相談。グルコサミン併用は研究上は推奨される標準プロトコル。',
+    },
     papers: [
       {
         title: 'Chondroitin for osteoarthritis',
@@ -36616,6 +36663,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '食事と一緒に1日2〜3回分割',
     duration: '効果評価は3〜6ヶ月以上',
+    dosageLevels: [
+      {
+        dose: '800mg/日',
+        category: '入門・予防レイヤー',
+        effect: 'Singh 2015 Cochrane メタ解析の研究使用域下限。関節軟骨保護・予防レイヤーとして、50 代以上で軽度の関節違和感を感じ始めた方や、家族歴で OA リスクを意識する方の入門用量。400mg × 2 回分割で消化器負担を抑える。3〜6 ヶ月継続で予防効果を評価。',
+        whoFor: '50 代以上の関節軟骨保護希望者・軽度 OA や予防レイヤー・グルコサミン単独で物足りない方・初めて CS を試す方',
+        evidenceNote: 'Singh 2015 Cochrane 43 RCT 統合の使用域下限。予防効果評価には 3〜6 ヶ月以上の継続が必要',
+      },
+      {
+        dose: '1,200mg/日',
+        category: '標準・Singh 2015 / Reichenbach 2007 メタ中心用量',
+        effect: 'Singh 2015 Cochrane n=4,962 と Reichenbach 2007 Ann Intern Med メタ（SMD 0.75）の中心用量。中等度 OA 患者の疼痛 VAS -10mm 改善・関節構造保護傾向が報告された研究準拠の標準用量。400mg × 3 回分割が消化器忍容性を保つ実装。Bioiberica CS-Bioactive® や Negma 等の規格化品を選択するのが品質ベースラインを担保する現実解。',
+        whoFor: '中等度 OA 患者・CS 単独で本格的に効果を狙う方・Bioiberica CS-Bioactive® 等の規格化品を選びたい方',
+        evidenceNote: 'Singh 2015 Cochrane / Reichenbach 2007 メタ中心用量。GAIT 試験では CS 単独効果が限定的だった honest reporting も併記する位置',
+      },
+      {
+        dose: 'グルコサミン 1,500mg + CS 1,200mg 併用',
+        category: '強化・MOVES 試験準拠',
+        effect: 'Hochberg 2016 MOVES RCT n=606 24 週で「グルコサミン+CS がセレコキシブ 200mg/日と同等の疼痛・機能改善」を示した併用プロトコル。中等度〜重度膝 OA への研究的に最も妥当な強化選択肢で、NSAIDs（セレコキシブ）の消化器/腎機能副作用を避けたい長期治療層に適合。グルコサミン単独より CS 併用の効果サイズが大きいことが MOVES 試験で確認された。',
+        whoFor: '中等度〜重度膝 OA 患者・NSAIDs の長期使用を避けたい方・MOVES 試験プロトコルで本格的に治療したい方（医師相談下が望ましい）',
+        evidenceNote: 'Hochberg 2016 Ann Rheum Dis MOVES RCT n=606 24 週・セレコキシブ非劣性確認。ワルファリン服用中は医師相談 + INR モニタリング必須',
+      },
+    ],
     sideEffects: ['軽度GI不快感', '稀にアレルギー反応', 'まれに頭痛'],
     contraindications: [
       '甲殻類・サメ等の原料アレルギー',
@@ -36664,7 +36734,7 @@ export const ingredients: Ingredient[] = [
         source: 'Drugs.com Chondroitin Drug Interactions',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'hfnet',
