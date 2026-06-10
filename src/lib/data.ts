@@ -43690,8 +43690,8 @@ export const ingredients: Ingredient[] = [
     aliases: ['5-HTP from Griffonia', 'グリフォニア由来 5-HTP', 'Griffonia simplicifolia', 'グリフォニア種子抽出', '天然5-HTP'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: '5-HTP（グリフォニア由来）｜セロトニン前駆体・要注意の論文',
-    seoDescription: '5-HTP（5-ヒドロキシトリプトファン・西アフリカ Griffonia simplicifolia 種子由来・天然抽出）はセロトニン前駆体・気分・睡眠補助。Birdsall 1998 Altern Med Rev レビュー・SSRI 併用は避けるべき・要注意。',
+    seoTitle: '5-HTP グリフォニア由来とは｜天然抽出・合成 5-HTP との違い論文',
+    seoDescription: '5-HTP（Griffonia simplicifolia 西アフリカ種子由来・天然抽出）はセロトニン直接前駆体。Caruso 1990 J Int Med Res RCT n=50 で線維筋痛症の疼痛+睡眠+倦怠感有意改善・Cangiano 1992 Am J Clin Nutr RCT n=20 で食欲低下+体重減少・Birdsall 1998 Altern Med Rev で 16 RCT 統合レビュー。5-htp 親（合成）との sibling 役割分担・SSRI 絶対 NG（セロトニン症候群リスク）+ EMS 第三者認証品選択を査読論文で解説｜SciBase',
     tagline: 'Griffonia 種子由来・天然5-HTP・気分・睡眠補助・SSRI 併用は避けるべき・要注意',
     description:
       '5-HTP（グリフォニア種子由来）はセロトニンの直接前駆体で、線維筋痛症の疼痛・朝の硬直感・睡眠の質・倦怠感の有意改善を 100mg×3/日 30 日で示した RCT がある（Caruso 1990・J Int Med Res・n=50）。SSRI 併用は避ける。Griffonia種子由来の天然抽出品は合成5-HTPと化学的に同一で、原料由来の違いで区別される。' +
@@ -43700,6 +43700,16 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'SSRI/SNRI/MAOI/トラマドール併用は絶対NG（セロトニン症候群・致死リスク）。双極性障害・妊娠中・18歳未満は避け、第三者認証品を選ぶ。',
     concerns: ['mood-anxiety', 'sleep'],
+    sectionSummaries: {
+      whoFor: '軽度の気分の落ち込み補助希望者・睡眠の質改善補助希望者・天然由来志向（合成より天然原料を優先したい層）・PMS 気分症状補助（処方医の指導の下）が中心。5-htp 系姉妹（5-htp 親 honest 主軸・合成 + 天然両方カバー + 5-htp-griffonia 原料植物専門軸・天然 Griffonia simplicifolia）の中で「Griffonia 天然原料 + 天然志向専門軸」を担うポジション。**🚨 YMYL 重: schemaType Drug・SSRI/SNRI/MAOI/トラマドール服用中は絶対 NG（セロトニン症候群・致死リスク）・妊娠中/18 歳未満禁忌**。',
+      papers: 'Caruso 1990 J Int Med Res RCT（n=50・30 日・100mg×3/日）で線維筋痛症の疼痛+朝の硬直感+睡眠の質+倦怠感有意改善が主柱。Cangiano 1992 Am J Clin Nutr RCT（n=20・12 週・8mg/kg/日）で肥満女性の食欲低下+体重減少+食事順守度向上。Birdsall 1998 Altern Med Rev で 5-HTP のうつ病/不安/線維筋痛症/片頭痛/肥満/不眠での 16 RCT 統合レビュー + 効果機序の整理 + SSRI 併用警告。Griffonia 由来は合成と化学的に同一物質。',
+      evidence: 'B ランク・PEI 4.9（confidence 1.0・papers 3 件: RCT 2 / observational 1）。線維筋痛症疼痛+睡眠改善 A（Caruso 1990 RCT n=50 30 日）・肥満食欲低下+体重減少 A（Cangiano 1992 RCT n=20 12 週）・気分+睡眠+食欲補助 B（Birdsall 1998 16 RCT 統合レビュー）。差別化軸は「Griffonia 天然原料 + 天然志向専門軸」で、5-htp 親（honest 主軸・合成 + 天然両方カバー）との対立軸を形成。化学構造は合成と同一・原料の差で区別。',
+      dosage: '50-300mg/日が研究準拠範囲（気分/睡眠補助は 100-200mg）。Caruso 1990 RCT 中心用量は 100mg×3/日（=300mg/日）・Cangiano 1992 RCT は 8mg/kg/日（体重 60kg で 480mg/日）。夕食後または就寝前摂取で睡眠補助・分割摂取で気分/食欲補助。4-8 週で評価。カルビドパ併用で末梢副作用減・用量減量可能（神経内科処方医判断のみ）。',
+      dosageLevels: '50mg/日（入門・dosageMin・健常人の軽度補助）→ 100mg/日（標準・気分/睡眠補助・継続使用中央値）→ 200-300mg/日（強化・dosageMax・Caruso 1990 RCT 中心用量・線維筋痛症補助・処方医相談前提）の 3 段階。継続使用 4-8 週で評価・夕食後または就寝前摂取・第三者認証品（GMP/USP/NSF）選択必須・SSRI 服用中は絶対 NG。',
+      faq: '合成 5-HTP との違い（化学構造同一・原料差）・SSRI と併用できるか（絶対 NG）・EMS リスク（1989 年 L-トリプトファン汚染歴史 + 第三者検査品選択）・カルビドパ併用（処方医相談）・効果が出るまでの期間（4-8 週評価）の 5 軸 FAQ で「天然原料選択 + YMYL 安全 + 薬物相互作用」の決断負荷を解消。',
+      safety: '🚨 schemaType Drug の YMYL 重成分。軽度胃腸不快感+下痢+頭痛+眠気+稀に皮膚反応が報告される程度だが、SSRI/SNRI/MAOI/トラマドール併用でセロトニン症候群（高熱+発汗+震え+興奮+意識障害+痙攣+致死）リスク・**絶対回避**。1989 年 L-トリプトファン汚染（Showa Denko 製）で EMS（好酸球増多筋痛症候群）1,500 人以上発症+37 名死亡の歴史的問題・現代 5-HTP は別物だが第三者認証品（GMP/USP/NSF）+ Peak X 検査品選択必須。妊娠中/授乳中/18 歳未満/双極性障害躁転既往は禁忌。',
+      interactions: '**🚨 SSRI/SNRI/MAOI（フルオキセチン/セルトラリン/パロキセチン/モクロベミド等）+ トラマドール併用は絶対 avoid（セロトニン症候群・致死リスク・Birdsall 1998 + FDA Warning）・処方薬切替時 2-4 週休薬期間必要**。カルビドパ（パーキンソン病処方薬）併用は神経内科処方医相談（適切使用で末梢副作用減）。リチウム・他抗精神病薬併用はセロトニン作動性増強の理論的可能性で処方医相談。アルコール・中枢神経抑制薬併用は鎮静増強で運転/機械操作リスク・避ける。',
+    },
     papers: [
       {
         title: '5-Hydroxytryptophan: a clinically-effective serotonin precursor',
@@ -43751,6 +43761,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（分割または夕食後単回）',
     timing: '夕食後または就寝前（睡眠補助）・分割摂取（気分・食欲）',
     duration: '効果評価まで4-8週・気分・睡眠主観評価',
+    dosageLevels: [
+      {
+        dose: '50mg/日',
+        category: '入門用量・dosageMin・健常人の軽度補助',
+        effect: 'dosageMin に該当する基礎用量。健常人の軽度の気分の落ち込み補助・天然由来志向の入門用量・第三者認証品選択前提。Griffonia 天然抽出 50mg/日の単剤製品で完結し、SSRI 服用中でないことを確認した上で慎重に開始。',
+        whoFor: '初めて 5-HTP を試す方・天然由来志向で軽度補助希望者・SSRI/SNRI 非服用が前提・健常人の予防目的',
+        evidenceNote: 'dosageMin・健常人補助用量・第三者認証品（GMP/USP/NSF）選択必須',
+      },
+      {
+        dose: '100mg/日',
+        category: '標準用量・気分+睡眠補助中央値',
+        effect: '継続使用時の中央値用量。気分/睡眠補助の標準レンジで、Birdsall 1998 レビューの 16 RCT 統合エビデンスから 100-200mg/日が気分改善示唆。夕食後または就寝 30-60 分前 100mg で急性入眠補助 + 4-8 週継続で気分改善評価。',
+        whoFor: '軽度-中等度の気分落ち込み補助希望者・睡眠の質改善補助希望者・継続的に天然 5-HTP を使いたい方',
+        evidenceNote: 'Birdsall 1998 16 RCT 統合レビュー気分/睡眠改善示唆用量・継続 4-8 週で評価',
+      },
+      {
+        dose: '200-300mg/日',
+        category: '強化用量・dosageMax・Caruso RCT 中心',
+        effect: 'dosageMax に該当する研究上限用量。Caruso 1990 RCT n=50 中心用量（100mg×3/日）で線維筋痛症の疼痛+朝の硬直感+睡眠+倦怠感有意改善が確認された研究準拠用量。線維筋痛症・PMS 気分症状補助希望時の選択肢（処方医相談前提）。',
+        whoFor: '線維筋痛症の補助希望者・PMS 気分症状補助希望者・処方医相談前提で本格使用希望・Caruso 1990 RCT 準拠で選びたい方',
+        evidenceNote: 'Caruso 1990 J Int Med Res RCT n=50 30 日中心用量・線維筋痛症疼痛+睡眠+倦怠感有意改善・処方医相談前提',
+      },
+    ],
     sideEffects: ['軽度胃腸不快感', '下痢', '頭痛', '眠気', '稀に皮膚反応', 'セロトニン症候群（処方薬併用時）'],
     contraindications: [
       'SSRI/SNRI/MAOI/トラマドール服用中（絶対に避けるべき）',
@@ -43824,7 +43857,7 @@ export const ingredients: Ingredient[] = [
         source: 'Natural Medicines 5-HTP Note',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-10',
   },
   {
     slug: 'nad-plus',
