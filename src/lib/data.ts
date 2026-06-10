@@ -14347,11 +14347,12 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'sulforaphane',
-    seoTitle: 'スルフォラファン｜ブロッコリースプラウトの論文',
     nameJa: 'スルフォラファン',
     nameEn: 'Sulforaphane',
-    aliases: ['ブロッコリースプラウト', 'sulforaphane'],
+    aliases: ['ブロッコリースプラウト', 'sulforaphane', 'スルフォラファン', 'スルフォラファン サプリ', 'スルフォラファン 効果', 'スルフォラファングルコシノレート', 'SGS', 'BroccoMax', 'ミロシナーゼ', 'myrosinase', 'Nrf2 活性化成分', 'broccoli sprout', 'Redox Biology 2022 RCT'],
     evidenceRank: 'B',
+    seoTitle: 'スルフォラファンとは｜Nrf2 活性化・肝脂肪/ALT 改善・30-100mg/日の論文',
+    seoDescription: 'スルフォラファンはブロッコリースプラウト由来の Nrf2 活性化成分（イソチオシアネート系）。Redox Biology 2022 RCT n=65（30-100mg/日 16 週で肥満成人の肝脂肪・ALT・酸化ストレスマーカーをプラセボ比有意改善）と OMCL 2019 包括レビュー（200+ 研究統合・抗炎症/抗がん/神経保護/糖尿病予防整理）が主柱。大規模メタ解析は未確立で研究蓄積は中段階・甲状腺ゴイトロジェン作用と CYP3A4 干渉に注意。30/50/100mg/日の段階運用を査読論文で解説。',
     emerging: true,
     tagline: 'ブロッコリー由来のNrf2活性化成分。抗炎症・解毒酵素誘導がヒト試験で確認されている',
     description:
@@ -14361,6 +14362,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '高用量では甲状腺機能への懸念があり、甲状腺疾患のある人は注意。消化器症状はまれだが、長期高用量データはまだ限定的。',
     concerns: ['inflammation', 'skin-aging', 'longevity'],
+    sectionSummaries: {
+      whoFor: '健診で ALT・γGTP・LDL が高め指摘の方・脂肪肝（NAFLD）の補助レイヤーを試したい方・抗酸化/抗炎症マーカー（CRP/TNF-α/IL-6）を下げたい慢性炎症層・Nrf2 経路活性化で解毒酵素誘導を狙う最先端志向層が中心。甲状腺疾患・甲状腺ホルモン製剤服用中の方は超高用量を避ける、CYP3A4/CYP2D6 で代謝される治療域の狭い薬剤服用者は医師相談が前提。',
+      papers: 'Redox Biology 2022 RCT n=65 16 週（肥満成人にスルフォラファン 30-100mg/日でプラセボ比 肝脂肪・ALT・酸化ストレスマーカー有意改善）と Oxidative Medicine and Cellular Longevity 2019 包括レビュー（200+ 研究統合・Nrf2 経路活性化による抗炎症/抗がん/神経保護/糖尿病予防への寄与を整理）が主柱。大規模メタ解析は未確立で研究蓄積は中段階・PEI 4.4 ※暫定の honest reporting。',
+      publicDbReferences: '国立健康・栄養研究所「健康食品」素材情報 DB にスルフォラファン項目が収載され、ブロッコリースプラウト由来・解毒酵素誘導・抗酸化の機能性整理を提供。FDA・厚労省ともに食品成分扱いで医薬品ではない。サプリ流通の主要規格は Jarrow Formulas BroccoMax SGS（スルフォラファングルコシノレート + ミロシナーゼ酵素活性化）で吸収効率を担保。',
+      evidence: 'B ランク・PEI 4.4（confidence 0.67・papers 2 件: RCT 1 + review 1・recent15y=2）。肝脂肪/ALT 改善 A（Redox Biology 2022 RCT n=65 16 週）・抗炎症/抗酸化 B（200+ 研究レビュー・大規模メタ未確立）・Nrf2 経路活性化 A（mechanism 確立）。「ブロッコリースプラウト由来 Nrf2 単独活性化成分の RCT 主軸」が確立。',
+      dosage: '30-100mg/日（スルフォラファン換算）が研究用量域。Redox Biology 2022 RCT は 30-100mg/日 16 週で肝脂肪・ALT 改善を確認。食事と一緒の摂取で吸収効率が高く、空腹時でも可。BroccoMax SGS 17.5mg × 2 粒（35mg）が研究使用域下限で、ミロシナーゼ酵素活性化を担保。8-16 週で炎症マーカー・肝機能の変化を評価。',
+      dosageLevels: '30mg/日（入門・SGS 17.5mg × 2 粒・ミロシナーゼ活性）→ 50mg/日（標準・Redox Biology 2022 中間用量・肝脂肪/ALT 改善域）→ 100mg/日（強化・Redox Biology 2022 上限・抗炎症最大化）の 3 段階。継続使用前提で 8-16 週判定。',
+      faq: 'ブロッコリーをそのまま食べた方が良いか・ミロシナーゼ酵素活性化の意味・効果が出るまでの期間・甲状腺疾患での可否・CYP3A4 干渉の薬剤併用注意 の 5 軸 FAQ で「サプリ vs 食材 + 規格化品の意義 + 安全運用」の決断負荷を解消。',
+      safety: '通常用量（30-100mg/日）で重篤な副作用なし。消化器症状はまれで、長期高用量データはまだ限定的。超高用量ではゴイトロジェン作用（甲状腺ヨウ素取り込み阻害）の理論的懸念があり、甲状腺機能低下症・橋本病・バセドウ病等の甲状腺疾患がある方や甲状腺ホルモン製剤（レボチロキシン等）服用中の方は高用量摂取を避け医師相談。妊娠中・授乳中は安全性データ限定的のため医師相談。',
+      interactions: 'CYP3A4・CYP2D6 で代謝される治療域の狭い薬剤（一部の免疫抑制剤・抗がん剤・抗うつ薬等）併用は in vitro 阻害報告で monitor レベル（ScienceDirect / PMC7603454）。in vivo での臨床的影響は限定的との報告もあるが、血中濃度変動の可能性ある薬剤は医師相談前提。甲状腺機能低下症の治療薬・甲状腺疾患はアブラナ科ゴイトロジェン作用の理論的懸念で caution（OMCL 2019）。',
+    },
     papers: [
       {
         title: 'Sulforaphane reduces hepatic fat, liver enzymes and lipid peroxidation in obese adults: A randomized controlled trial',
@@ -14407,6 +14419,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（スルフォラファン換算）',
     timing: '食事と一緒が吸収効率が高い。空腹時でも可',
     duration: '8〜16週間以上の継続で炎症マーカー変化を確認した研究が多い',
+    dosageLevels: [
+      {
+        dose: '30mg/日（SGS 17.5mg × 2 粒）',
+        category: '入門・ミロシナーゼ活性化下限',
+        effect: 'Jarrow Formulas BroccoMax SGS（スルフォラファングルコシノレート + ミロシナーゼ酵素活性化）17.5mg を 2 粒 / 日で 35mg 相当の研究使用域下限。Phase II 解毒酵素誘導・健常人の抗酸化レイヤーを試す入門用量。8-12 週で評価し、ALT/γGTP の改善傾向を確認。',
+        whoFor: '初めてスルフォラファンを試す方・健常人の抗酸化レイヤーを足したい方・Phase II 解毒酵素誘導の入門域',
+        evidenceNote: 'Redox Biology 2022 RCT 用量範囲（30-100mg/日）の下限・ミロシナーゼ酵素活性化により吸収効率を担保',
+      },
+      {
+        dose: '50mg/日',
+        category: '標準・Redox Biology 2022 RCT 中間用量',
+        effect: 'Redox Biology 2022 RCT n=65 16 週の研究使用域中間。肥満成人の肝脂肪・ALT・酸化ストレスマーカーの有意改善が確認された研究準拠の標準用量。脂肪肝（NAFLD）補助・慢性炎症マーカー低下を狙う中等度ケアレイヤー。',
+        whoFor: '脂肪肝補助・慢性炎症マーカー低下希望者・健診で ALT/γGTP 高め指摘の方・Redox Biology 2022 RCT 準拠',
+        evidenceNote: 'Redox Biology 2022 RCT n=65 16 週で肝脂肪・ALT・酸化ストレスマーカー有意改善（プラセボ比）',
+      },
+      {
+        dose: '100mg/日',
+        category: '強化・Redox Biology 2022 RCT 上限用量',
+        effect: '研究使用域上限の強化用量。Nrf2 経路活性化の最大化・抗炎症/抗酸化マーカー強化を狙う上級用量。8-16 週継続で評価。超高用量域のためゴイトロジェン作用（甲状腺ヨウ素取り込み阻害）の理論的懸念があり、甲状腺疾患のある方は医師相談・健常者でも長期高用量は避けるのが安全側。',
+        whoFor: '抗炎症最大化を狙う層・健常者で 50mg で効果実感薄い方・長期高用量を医師相談下で試したい方',
+        evidenceNote: 'Redox Biology 2022 RCT 上限。長期データはまだ限定的で、甲状腺機能・CYP3A4 干渉に注意',
+      },
+    ],
     sideEffects: ['消化器症状（まれ）', '甲状腺機能に対する影響（超高用量での懸念）'],
     contraindications: ['甲状腺疾患のある方（高用量注意）'],
     products: [
@@ -14450,7 +14485,7 @@ export const ingredients: Ingredient[] = [
         source: 'Oxidative Medicine and Cellular Longevity 2019',
       },
     ],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'hfnet',
