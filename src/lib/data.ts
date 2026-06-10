@@ -72293,7 +72293,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['トコトリエノール', 'Annatto tocotrienols', 'DeltaGold', 'gamma-tocotrienol', 'delta-tocotrienol', 'T3'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: '高用量トコトリエノール｜トコフェロールとの違い・骨・心血管・コレステロール',
+    seoTitle: '高用量トコトリエノールとは｜DeltaGold 300mg・コレステロール RCT 論文',
     seoDescription: '高用量トコトリエノール（300-600mg/日）はビタミンEの2大形態のうちトコフェロールとは別の不飽和側鎖構造を持ち、抗酸化活性はα-トコフェロール比40-60倍。DeltaGold規格（アンナットー由来δ90%+γ10%・tocopherol-free）が研究の中心。Shen 2018 postmenopausal RCT（n=89・12週・300mg）で安全性確認、コレステロール降下・骨密度・心血管研究が進行中｜SciBase',
     tagline: 'トコフェロールとは別物質・抗酸化活性40-60倍・コレステロール降下と骨密度の研究',
     description:
@@ -72303,6 +72303,16 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '健常成人での日常的補給は確立した推奨用量がない研究段階。脂溶性のため脂質を含む食事と一緒に摂取。',
     concerns: ['cardiovascular', 'bone', 'antioxidant', 'longevity'],
+    sectionSummaries: {
+      whoFor: '通常の α-トコフェロール単独サプリから「ビタミン E の別形態」に切り替えを検討する方・閉経後の骨密度/体組成サポートに研究段階の選択肢を探している方・高コレステロール傾向で食事+運動と並行して栄養介入を試したい方・トコトリエノール特有の抗酸化（α-トコフェロール比 40-60 倍）+神経保護研究に関心がある方が中心。ビタミン E 系 3 兄弟（vitamin-e 親 α-トコフェロール総合 + tocotrienols パーム由来混合 + vitamin-e-tocotrienol-high アンナットー由来 DeltaGold 高用量）の中で「アンナットー DeltaGold + コレステロール降下高用量専門軸」を担うポジション。',
+      papers: 'Phytother Res 2017 RCT（n=90・24 週・アンナットー由来 T3 250mg/日）で 2 型糖尿病患者の総コレステロール -7.2% + LDL -8.5% + 炎症マーカー有意改善が主柱。Shen 2018 J Nutr Health Aging RCT（n=89・12 週・DeltaGold 300mg/日）で閉経後女性の肝/腎機能マーカー異常なし + QoL/体組成許容範囲 + 骨吸収マーカー低下傾向。Aggarwal 2010 Biochem Pharmacol レビューでトコトリエノールの抗酸化活性が α-トコフェロール比 40-60 倍・HMG-CoA reductase 阻害（statin 類似経路）でコレステロール降下機序を整理。',
+      evidence: 'B ランク・PEI 5.6（confidence 1.0・papers 3 件: RCT 2 / review 1）。総コレステロール -7.2% + LDL -8.5% A（Phytother Res 2017 RCT n=90 24 週）・閉経後骨吸収マーカー低下傾向 A（Shen 2018 RCT n=89 12 週）・抗酸化 40-60 倍 + HMG-CoA reductase 阻害機序 A（Aggarwal 2010 レビュー）。差別化軸は「アンナットー DeltaGold δ90%+γ10%・高用量 + コレステロール降下 + 閉経後骨密度専門軸」で、vitamin-e 親（α-トコフェロール総合）と tocotrienols（パーム由来混合・神経保護）との対立軸を形成。',
+      dosage: '125-600mg/日（DeltaGold アンナットー由来 δ+γ T3 量）が研究準拠範囲。Phytother Res 2017 RCT 中心用量は 250mg/日（コレステロール降下）・Shen 2018 RCT は 300mg/日（閉経後安全性確認）。脂溶性のため脂質を含む食事と一緒に摂取で吸収最適化。12-24 週継続で評価。α-トコフェロール単独高用量サプリとの併用は δ・γ T3 の細胞内代謝を干渉する可能性で avoid。',
+      dosageLevels: '125mg/日（入門・dosageMin・健常人補完）→ 250-300mg/日（標準・Phytother Res 2017 / Shen 2018 RCT 中心用量・コレステロール降下 + 閉経後骨密度）→ 600mg/日（強化・dosageMax・研究上限・短期 12 週まで）の 3 段階。継続使用 12-24 週で評価・α-トコフェロール単独高用量サプリ併用回避が原則。',
+      faq: 'トコフェロール（普通のビタミン E）との違い（抗酸化 40-60 倍 + HMG-CoA 阻害特有）・アンナットー由来 vs パームオイル由来（DeltaGold tocopherol-free が研究準拠）・高用量副作用と安全性（Shen 2018 で 300mg/日 12 週安全確認）の 3 軸 FAQ で「3 兄弟選択 + 由来選択 + 高用量安全性」の決断負荷を解消。',
+      safety: 'Shen 2018 Postmenopausal RCT（n=89・12 週・300mg/日）で肝/腎機能マーカー異常なし + 忍容性良好を確認。アンナットー由来 600mg/日 12 週までは概ね安全とされる。理論的懸念は抗凝固作用（血小板凝集抑制）でワルファリン/抗血小板薬服用中は主治医監督必要・ビタミン K 拮抗作用も理論段階。健常成人の日常的補給用量（125-300mg/日）は安全性データ揃いつつある段階・12 週以上の長期データは限定的。',
+      interactions: 'ワルファリン・抗血小板薬併用は血小板凝集抑制相加で出血リスク・主治医相談 + INR 監視必須で caution。α-トコフェロール単独高用量サプリとの併用は δ・γ T3 の細胞内代謝を干渉する前臨床報告あり avoid（トコトリエノール独立摂取が原則）。スタチン併用は HMG-CoA reductase 阻害作用重複の理論的可能性で monitor 推奨（医師相談）。他のビタミン E 系（mix トコフェロール程度の低用量併摂）は問題報告少。',
+    },
     papers: [
       {
         title: 'A 12-week evaluation of annatto tocotrienol supplementation for postmenopausal women: safety, quality of life, body composition, physical activity, and nutrient intake',
@@ -72358,6 +72368,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（δ+γトコトリエノール量）',
     timing: '脂質を含む食事と一緒（脂溶性のため吸収率向上）',
     duration: 'コレステロール変化は12-24週・骨マーカーは12週以上で評価',
+    dosageLevels: [
+      {
+        dose: '125mg/日',
+        category: '入門用量・dosageMin・健常人補完',
+        effect: 'dosageMin に該当する基礎用量。健常成人の予防的補充・α-トコフェロール単独サプリからの切り替え入門用量。Life Extension Super Absorbable Tocotrienols 60mg×2 粒で 120mg/日相当・SupraBio 吸収技術で従来比 250% 吸収最適化。',
+        whoFor: '初めて高用量トコトリエノールを試す方・健常成人の予防目的・α-トコフェロール単独サプリからの切り替え検討者',
+        evidenceNote: 'dosageMin・健常人補完用量・SupraBio 吸収最適化製品域',
+      },
+      {
+        dose: '250-300mg/日',
+        category: '標準用量・コレステロール+骨密度 RCT',
+        effect: 'Phytother Res 2017 RCT n=90 24 週中心用量（250mg/日）+ Shen 2018 RCT n=89 12 週中心用量（DeltaGold 300mg/日）。2 型糖尿病患者の総コレステロール -7.2% + LDL -8.5% + 炎症マーカー有意改善 + 閉経後女性の安全性 + 骨吸収マーカー低下傾向が確認された研究準拠用量。Sunergetic Annatto Max DeltaGold 300mg 1 粒で完結。',
+        whoFor: '高コレステロール傾向で栄養介入希望者・閉経後の骨密度/体組成サポート希望・2 型糖尿病補助で研究準拠用量希望・DeltaGold 規格を選びたい方',
+        evidenceNote: 'Phytother Res 2017 + Shen 2018 RCT 中心用量域・コレステロール降下 + 閉経後安全性が研究準拠で確認',
+      },
+      {
+        dose: '600mg/日',
+        category: '強化用量・dosageMax・研究上限',
+        effect: 'dosageMax に該当する研究上限用量。アンナットー由来 600mg/日 12 週までは概ね安全とされるが、長期データは限定的。短期 12 週までの集中介入・特殊な栄養介入希望時のみ選択肢。日常的補給ではなく研究文脈での使用が原則。',
+        whoFor: '特殊な栄養介入希望者・短期 12 週までの集中介入・研究文脈での使用希望者・通常は 300mg/日推奨',
+        evidenceNote: '研究上限用量・12 週以上の長期データは限定的・抗凝固薬非服用 + 主治医相談前提',
+      },
+    ],
     sideEffects: [
       '通常用量でほぼ報告なし',
       '高用量で軽度の頭痛・GI不快感（まれ）',
@@ -72470,7 +72503,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
       },
     ],
-    updatedAt: '2026-05-23',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'nih-ods',
