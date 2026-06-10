@@ -70288,11 +70288,11 @@ export const ingredients: Ingredient[] = [
     slug: 'silymarin-milk-thistle-high',
     nameJa: '高シリマリン ミルクシスル',
     nameEn: 'High-Silymarin Milk Thistle',
-    aliases: ['シリマリン', 'silymarin', 'milk thistle', 'ミルクシスル80%規格', 'silibinin'],
+    aliases: ['シリマリン', 'silymarin', 'milk thistle', 'ミルクシスル80%規格', 'silibinin', 'シリマリン 効果', 'シリマリン サプリ', 'ミルクシスル サプリ', 'マリアアザミ', 'milk thistle 80%', 'フラボノリグナン', 'シリビニン', '肝臓 サプリ'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: '高シリマリン｜肝機能・420mg・論文RCT',
-    seoDescription: '高シリマリン規格ミルクシスル（シリマリン80%以上）は肝細胞保護のフラボノリグナン群。420-600mg/日でアルコール性・薬剤性肝障害のALT・AST改善がRCT・メタ解析（Saller 2007）で報告。既存milk-thistleとは規格・濃度別エントリで「効く規格」を明示。｜SciBase',
+    seoTitle: 'シリマリンの効果｜80% 規格 420-600mg・肝機能 ALT/AST の論文',
+    seoDescription: '高シリマリン規格ミルクシスル（シリマリン 80% 以上）は肝細胞保護のフラボノリグナン群。Forsch Komplementmed 2007 systematic review n=1,850 で 420-600mg/日のシリマリン換算がアルコール性・薬剤性肝障害の ALT/AST 改善傾向・Ann Intern Med 2012 RCT n=154 で慢性 C 型肝炎は honest（プラセボ有意差限定的）。silybin-phytosome 吸収主軸との使い分け、80% 規格選択法、ワルファリン/免疫抑制薬 CYP 相互作用注意を査読論文で解説.',
     tagline: '80%規格を選ばないと論文用量に届かない・肝臓系の補助層',
     description:
       'シリマリンはミルクシスル種子由来のフラボノリグナン複合体で、アルコール性・薬剤性肝障害の ALT・AST 改善傾向を 420-600mg/日で示したシステマティックレビューがある（Forsch Komplementmed 2007・n=1,850）。' +
@@ -70301,6 +70301,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       'キク科アレルギーがある人は注意。エストロゲン感受性がある成分のため乳がん・子宮筋腫等のホルモン依存性疾患既往は医師相談。妊娠・授乳中は安全性データが限定的。',
     concerns: ['inflammation'],
+    sectionSummaries: {
+      whoFor: 'アルコール摂取が多めで肝機能サポートを探している方・薬剤性肝障害のリスク薬を服用中で主治医管理下の補助を探している方・通常のミルクシスル製品（30-50% 規格）で効果を感じにくかった方が中心。キク科アレルギー（ブタクサ/キク/タンポポ）・ホルモン依存性疾患既往（乳がん/子宮筋腫）・妊娠/授乳中は使用前に医師相談が必須.',
+      papers: 'Forsch Komplementmed 2007 Saller systematic review n=1,850 が主柱：シリマリン 420-600mg/日でアルコール性・薬剤性肝障害の ALT/AST 改善傾向を確認。Ann Intern Med 2012 RCT n=154 24 週で慢性 C 型肝炎にシリマリン 420-700mg/日投与し ALT 改善傾向はあるが「プラセボとの有意差は限定的」と honest reporting。研究準拠用量到達には 80% 規格が必須.',
+      publicDbReferences: 'NIH NCCIH Milk Thistle Fact Sheet にシリマリンの肝機能保護研究と CYP3A4/CYP2C9 軽度阻害による薬物相互作用・キク科アレルギー注意を明示。FDA はサプリ成分として認可・処方薬扱いではない。日本では消費者庁 機能性表示食品制度での届出は限定的.',
+      evidence: 'A ランク・PEI 5.2（confidence 0.67・papers 2 件: メタ 1 / RCT 1）。アルコール性・薬剤性肝障害 ALT/AST 改善傾向 A（Saller 2007 systematic review n=1,850）・慢性 C 型肝炎 ALT 改善傾向 B（Ann Intern Med 2012 RCT・honest reporting プラセボ有意差限定）。差別化軸は「シリマリン 80% 規格・論文用量到達主軸」で、silybin-phytosome（吸収 10 倍主軸）との sibling 役割分担を形成.',
+      dosage: 'シリマリン換算 420-600mg/日（80% 規格製品で 1 回 140-200mg×3 回・食後分割）が研究使用域。通常のミルクシスル製品（シリマリン含有率 30-50%）では 1,000-2,000mg/日と大量摂取が必要のため、Jarrow Formulas Silymarin 175mg 80% 規格×3 粒で 1 日 525mg 論文用量に届く製品選択が現実的。12 週以上の継続が効果評価の前提.',
+      dosageLevels: '420mg/日（入門・Saller 2007 メタ下限・80% 規格 175mg×2.4 粒相当）→ 525mg/日（標準・Jarrow Formulas Silymarin 175mg×3 粒・主流用量）→ 600mg/日（強化・Saller 2007 メタ上限・80% 規格 175mg×3.4 粒相当）の 3 段階。12 週以上の継続使用前提・効果評価は ALT/AST 検査値で.',
+      faq: '高シリマリン規格と通常ミルクシスルの違い・副作用と CYP3A4/CYP2C9 相互作用・キク科アレルギー注意・ホルモン依存性疾患既往の医師相談 の 4 軸 FAQ で「規格選択 + 多剤併用注意 + アレルギー回避 + ホルモン感受性疾患の安全側」の決断負荷を解消。「80% 規格を選ばないと論文用量に届かない」honest reporting を主軸とする.',
+      safety: 'まれに胃部不快感・軟便の報告がある程度で通常用量での重篤な副作用は稀。キク科アレルギー（ブタクサ/キク/タンポポ）の方は皮膚症状・呼吸器症状のリスクで使用不可。エストロゲン受容体への弱い結合作用が報告されており、ホルモン依存性疾患既往（乳がん/子宮筋腫等）の方は医師相談必須。妊娠/授乳中は安全性データが限定的のため食事から先に検討.',
+      interactions: 'CYP3A4 軽度阻害でタクロリムス/シクロスポリン等の免疫抑制薬の血中濃度上昇の可能性・CYP2C9 軽度阻害でワルファリンの血中濃度上昇・INR 変動の可能性が薬物動態研究で報告されている。スタチン・一部の降圧薬の血中濃度変動も理論的可能性あり。多剤併用中は薬剤師に相互作用チェック依頼が必須.',
+    },
     papers: [
       {
         title: 'Use of milk thistle in liver disease: systematic review',
@@ -70348,6 +70359,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（シリマリン換算）',
     timing: '食後（朝昼晩分割）',
     duration: '12週以上',
+    dosageLevels: [
+      {
+        dose: '420mg/日（シリマリン換算・80% 規格 175mg×2.4 粒相当）',
+        category: '入門用量・Saller 2007 メタ下限',
+        effect: 'Forsch Komplementmed 2007 Saller systematic review n=1,850 のメタ下限用量。アルコール性・薬剤性肝障害の ALT/AST 改善傾向が報告された研究用量域の入口。シリマリン 80% 規格製品でないと到達困難（通常 30-50% 規格では 800-1,400mg/日と大量摂取が必要）.',
+        whoFor: '初めて高シリマリンを試す方・軽度肝機能低下の予防的補助・80% 規格製品の動作確認',
+        evidenceNote: 'Saller 2007 systematic review n=1,850 下限用量。80% 規格 175mg×2.4 粒で到達',
+      },
+      {
+        dose: '525mg/日（シリマリン換算・80% 規格 175mg×3 粒）',
+        category: '標準用量・主流製品準拠',
+        effect: 'Jarrow Formulas Silymarin Milk Thistle 175mg 80% 規格 1 日 3 粒（朝昼晩食後分割）で到達する主流用量域。Saller 2007 メタの中心用量に近く、アルコール性・薬剤性肝障害補助の標準的選択肢。慢性 C 型肝炎は Ann Intern Med 2012 で「プラセボ有意差限定」honest reporting のため、その用途は主治医管理下が前提.',
+        whoFor: 'アルコール摂取が多めで肝機能サポート希望・薬剤性肝障害リスクで主治医管理下の補助・通常ミルクシスルで効果実感弱かった方',
+        evidenceNote: 'Jarrow Formulas Silymarin 175mg 80% 規格×3 粒の主流用量。Saller 2007 メタ中心用量に近い',
+      },
+      {
+        dose: '600mg/日（シリマリン換算・80% 規格 175mg×3.4 粒相当）',
+        category: '強化用量・Saller 2007 メタ上限',
+        effect: 'Saller 2007 systematic review のメタ上限用量。Ann Intern Med 2012 RCT n=154 24 週の上限相当（420-700mg/日範囲）。高用量強化使用となるため CYP3A4/CYP2C9 相互作用への注意が標準用量より上がり、ワルファリン/免疫抑制薬服用中は主治医必須相談が前提。',
+        whoFor: '通常用量で効果実感が弱い方・主治医管理下の本格的肝機能ケア・多剤併用していない方',
+        evidenceNote: 'Saller 2007 メタ上限用量。多剤併用は CYP 相互作用リスクが上がるため主治医相談必須',
+      },
+    ],
     sideEffects: ['まれに胃部不快感・軟便', 'キク科アレルギーで皮膚症状'],
     contraindications: ['キク科アレルギー', 'ホルモン依存性疾患既往は医師相談', '妊娠・授乳中（安全性データ限定）'],
     products: [
@@ -70411,7 +70445,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
       },
     ],
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'nccih',
