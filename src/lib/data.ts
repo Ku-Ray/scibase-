@@ -54363,11 +54363,11 @@ export const ingredients: Ingredient[] = [
     slug: 'trimethylglycine-tmg',
     nameJa: 'TMG（トリメチルグリシン）',
     nameEn: 'Trimethylglycine',
-    aliases: ['TMG', 'ベタイン', 'Betaine'],
+    aliases: ['TMG', 'ベタイン', 'Betaine', 'トリメチルグリシン', 'trimethylglycine', 'Betaine Anhydrous', '無水ベタイン', 'ホモシステイン サプリ', 'メチル化 サプリ', 'TMG ベタイン'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'TMG（ベタイン）｜論文・ホモシステイン・運動',
-    seoDescription: 'TMG（トリメチルグリシン・ベタイン）の効果・推奨用量・副作用を査読済み論文で整理。Olthof 2003 RCTでホモシステイン低下、Trepanowski 2011メタ解析で運動パフォーマンス補助が報告。メチル化サイクル支援の選び方判断軸まで解説｜SciBase',
+    seoTitle: 'TMG（ベタイン）とは｜ホモシステイン-9%・運動 2.5g RCT・MTHFR',
+    seoDescription: 'TMG（トリメチルグリシン・ベタイン）は甜菜由来の天然メチル基ドナー。Olthof 2003 Am J Clin Nutr RCT n=78 で 6g/日 6 週で空腹時ホモシステイン-9~12% 低下・Trepanowski 2011 メタ n=410 で 2.5g/日が筋持久力・パワー出力有意改善・Cholewa 2013 RCT で除脂肪体重 +1RM 増加。メチル化サイクル支援・MTHFR 多型陽性者の代替・葉酸/B12 との協働を査読論文で解説｜SciBase',
     tagline: 'ホモシステイン低下・運動パフォーマンス補助の両RCT報告があるメチル供与体',
     description:
       'TMG（トリメチルグリシン・ベタイン）は甜菜由来の天然メチル供与体で、空腹時ホモシステイン濃度を 9-12% 低下させたのを 6g/日 6 週で示した RCT がある（Olthof 2003・Am J Clin Nutr・n=78）。' +
@@ -54382,6 +54382,16 @@ export const ingredients: Ingredient[] = [
       'メチレーション系（B12・葉酸・SAMe）と併用したい',
       'メチル化遺伝子多型（MTHFR等）が気になる方',
     ],
+    sectionSummaries: {
+      whoFor: 'ホモシステイン値高値が指摘された方（循環器予防）・MTHFR 遺伝子多型陽性で葉酸代謝サイクルに不安がある方・筋トレ常用者でメチル化代謝の補助を狙う層・メチレーション系（B12 + 葉酸 + SAMe）と併用したい方が中心。メチル化サポート系（葉酸 + B12 + TMG + SAMe）の中で「天然メチル供与体・ホモシステイン直接低下」を担うポジション。',
+      papers: 'Olthof 2003 Am J Clin Nutr RCT（n=78・6 週・6g/日）で空腹時ホモシステイン濃度を 9-12% 有意低下させた根拠論文が主柱。Trepanowski 2011 J Int Soc Sports Nutr メタ（n=410）で 2.5g/日の筋持久力・パワー出力有意改善・運動パフォーマンス補助エビデンス確立。Cholewa 2013 J Strength Cond Res RCT（n=23）で 2.5g/日 6 週の除脂肪体重 + 1RM 有意増加が確認。',
+      publicDbReferences: '国立健康・栄養研究所「健康食品」素材情報 DB にベタイン・トリメチルグリシンとして収載なし。米国 NIH ODS には Betaine 単独 fact sheet なし。日本では機能性表示食品・特定保健用食品いずれにも届出例なし。エビデンスはサプリ研究主導で、葉酸/B12 サイクルとの併用研究が中心。',
+      evidence: 'A ランク・PEI 7.2（confidence 1.0・papers 3 件: RCT 2 / meta 1）。ホモシステイン低下 A（Olthof 2003 RCT n=78・SMD 議論レベル）・筋持久力/パワー出力改善 A（Trepanowski 2011 メタ n=410）・除脂肪体重 + 1RM 増加 A（Cholewa 2013 RCT n=23）。差別化軸は「天然メチル供与体・ホモシステイン直接低下 + 運動補助の二刀流」軸で、葉酸/B12（前駆体経路）と SAMe（高コスト代替）との対立軸を形成。',
+      dosage: '1,500-6,000mg/日（=1.5-6g）が研究準拠範囲。Olthof 2003 RCT ホモシステイン低下用量は 6g/日（高用量）・Trepanowski 2011 メタ運動補助用量は 2.5g/日（標準）・Cholewa 2013 RCT 筋肉量増加用量は 2.5g/日。迷ったら朝食時に 2.5g 継続が研究準拠で安全寄り。6g/日は短期効果評価で使用し、長期は 2.5-3g/日で運用が現実的。',
+      faq: 'TMG = ベタインの同一性・ホモシステイン低下用量（6g/日 RCT）・運動パフォーマンス用量（2.5g/日 RCT）・副作用と注意点（脂質異常症で総コレステロール微増）・コスパと買う価値 の 5 軸 FAQ で「メチル化 + ホモシステイン + 運動補助 + 用量別使い分け」の決断負荷を解消。MTHFR 多型陽性者には葉酸/B12 との組合せが現代的アプローチ。',
+      safety: '健常成人で 1.5-6g/日では胃部不快感が稀に起きる程度。Olthof 2003 RCT 6g/日継続群で総コレステロール微増が報告されたため、脂質異常症（特に高 LDL）の方は 2.5g/日に抑え、定期的な血液検査が望ましい。妊娠・授乳期はデータ不足のため自己判断使用は非推奨。腎機能低下例は用量に注意。ホモシステイン値を血液検査で確認しながら用いる科学的アプローチが現実的。',
+      interactions: '臨床的に重要な薬物相互作用は確認されていない。葉酸・ビタミン B12 との併用はメチル化サイクル相乗で推奨される。SAMe との併用は理論的にメチル基過剰のリスクがあるが、通常用量では問題報告なし。クレアチンとの併用研究もあり、メチル供与体としてクレアチン生合成・タウリン代謝を補助する機序が想定される。脂質異常症治療中（スタチン服用中）は LDL モニタリング推奨。',
+    },
     papers: [
       {
         title: 'Betaine supplementation lowers plasma homocysteine',
@@ -54480,7 +54490,7 @@ export const ingredients: Ingredient[] = [
     interactions: [],
     heroStat: { value: '-9~12%', label: 'ホモシステイン（RCT）' },
     axisScores: { antiAging: 5, skin: 2, cognitive: 3, stress: 2, sleep: 2, immunity: 2, metabolism: 7 },
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-10',
   },
 
   {
