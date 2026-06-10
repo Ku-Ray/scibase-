@@ -21249,18 +21249,29 @@ export const ingredients: Ingredient[] = [
     slug: 'ergothioneine',
     nameJa: 'エルゴチオネイン',
     nameEn: 'Ergothioneine',
-    aliases: ['EGT', 'L-エルゴチオネイン', 'L-Ergothioneine'],
+    aliases: ['EGT', 'L-エルゴチオネイン', 'L-Ergothioneine', 'エルゴチオネイン サプリ', 'ergothioneine', '長寿ビタミン', 'OCTN1', 'マイタケ エルゴチオネイン', 'キノコ アミノ酸 EGT'],
     evidenceRank: 'B',
     usageType: 'oral',
     emerging: true,
-    seoTitle: 'エルゴチオネイン｜長寿アミノ酸の論文（OCTN1選択輸送）',
-    seoDescription: 'エルゴチオネインはキノコ・全粒粉に含まれる含硫アミノ酸誘導体。OCTN1トランスポーターで細胞内に選択輸送され血中半減期が長い。5〜30mg/日でフレイル・認知機能との関連が観察研究で報告。副作用・注意点を査読済み論文で解説。',
+    seoTitle: 'エルゴチオネインとは｜OCTN1 選択輸送・半減期 1 ヶ月・長寿論文',
+    seoDescription: 'エルゴチオネイン（EGT）はキノコ・全粒粉に含まれる含硫アミノ酸誘導体。Heart 2020 コホート n=3,236 20 年追跡で血中 EGT 高位群が心血管疾患罹患率・全死亡率有意低下（HR 0.79・p<0.01）。OCTN1 トランスポーターで細胞内に選択輸送・血中半減期約 1 ヶ月。5-30mg/日 用量・抗酸化ネットワーク（vitamin-e/C/CoQ10/astaxanthin）との sibling 役割分担・「長寿ビタミン」候補としての位置付けを査読論文で解説｜SciBase',
     tagline: 'OCTN1トランスポーターで細胞内に選択輸送される含硫アミノ酸。血中半減期約1ヶ月',
     description:
       'エルゴチオネイン（EGT）はキノコ・全粒粉等に含まれる含硫アミノ酸誘導体で、血中 EGT 濃度高位群が心血管疾患罹患率・全死亡率の有意低下（HR 0.79・p<0.01）を 20 年追跡コホートで示している（Smith 2020・Heart・n=3,236）。\n\n' +
       '専用の選択的トランスポーターを介してミトコンドリア・赤血球・脳・肝・腎に集積し、血中半減期が約1ヶ月と一般の抗酸化物質より桁違いに長いのが特徴。5〜30mg/日が一般的な目安。\n\n' +
       '観察研究では低血中濃度がフレイル・認知機能低下・心血管疾患リスクと関連し、近年「長寿ビタミン」候補として再評価されている。',
     concerns: ['longevity', 'cognitive', 'inflammation'],
+    sectionSummaries: {
+      whoFor: 'キノコ類をほとんど食べない方・加齢による認知機能/フレイルが気になる中高年・抗酸化サプリで効果実感が薄い方・長期摂取できる安全性の高い成分を求めている層が中心。抗酸化ネットワーク 7 軸（vitamin-e + vitamin-c + coq10 + astaxanthin + lutein + selenium + ergothioneine）の中で「OCTN1 選択輸送 + 血中半減期 1 ヶ月・長寿ビタミン候補軸」を担うポジション。',
+      papers: 'Heart 2020 コホート研究（n=3,236・20 年追跡）で血中 EGT 濃度高位群が心血管疾患罹患率・全死亡率有意低下（HR 0.79・p<0.01）が主柱。J Nutr Sci 2020 レビューで「Longevity Vitamin」候補として提唱・血中 EGT 濃度低下と老化関連疾患（神経変性・フレイル・心血管）リスク上昇の関連を疫学・基礎研究から包括整理。British J Nutr 2023 メタ解析でヒト介入研究統合・経口摂取で血中濃度用量依存的上昇 + 酸化ストレスマーカー低下傾向を確認（臨床アウトカム RCT は小規模・限定的）。',
+      publicDbReferences: '国立健康・栄養研究所 HFNET 素材情報 DB にエルゴチオネインとして収載（きのこ由来含硫アミノ酸・抗酸化・安全性情報）。米国 NIH ODS には独立 fact sheet なし（emerging 成分のため）。日本では機能性表示食品で「エルゴチオネイン」関連届出が増加中（雪国まいたけ等のキノコメーカー由来）。',
+      evidence: 'B ランク・PEI 6.4（confidence 1.0・papers 3 件: cohort 1 / meta 1 / observational 1）。心血管疾患罹患率/全死亡率低下 A（Heart 2020 コホート n=3,236 20 年追跡・HR 0.79）・血中濃度用量依存的上昇 A（British J Nutr 2023 メタ介入研究）・「長寿ビタミン」候補 B（J Nutr Sci 2020 レビュー）。差別化軸は「OCTN1 選択輸送 + 血中半減期 1 ヶ月の長寿ビタミン候補軸」で、vitamin-e（細胞膜脂質保護総合）と coq10（ミトコンドリア専門）との対立軸を形成。',
+      dosage: '5-30mg/日が研究準拠範囲。Heart 2020 コホート研究の高位群は推定 5-15mg/日相当（食事由来）。British J Nutr 2023 メタ介入研究の用量範囲は 5-30mg/日。食事と一緒の摂取で吸収が安定・血中半減期約 1 ヶ月のため 1 日 1 回摂取で十分。摂取開始から 12-16 週で血中濃度定常状態に達する蓄積型成分。',
+      dosageLevels: '5mg/日（入門・食事補完・欧米平均食事摂取量に近い水準・キノコをほぼ食べない方の補完）→ 15-30mg/日（臨床研究用量・介入研究の血中濃度上昇 + 酸化ストレスマーカー低下用量）→ 食事から 5-15mg/日（マイタケ・ヒラタケ 100g で 2-10mg・週 3-4 回キノコ料理で Heart 2020 高位群相当）の 3 段階。サプリ vs 食事の選択肢提示。',
+      faq: '普通の抗酸化サプリとの違い（OCTN1 + 半減期 1 ヶ月 + 体内合成不可の 3 特徴）・食事のキノコだけで足りるか（マイタケ 100g で 2-10mg）・摂取タイミング（半減期長く 1 日 1 回 OK）・効果が出るまでの期間（血中濃度 12-16 週で定常）・副作用と抗がん薬注意 の 5 軸 FAQ で「OCTN1 選択輸送 + 長寿ビタミン候補 + 長期投資型」の決断負荷を解消。',
+      safety: '介入研究で報告されている副作用はほぼなく、高用量（30mg/日以上）でも忍容性は良好。長期摂取の安全性は中程度の RCT では確認されているが、10 年以上の長期データは限定的。妊娠中・授乳中・小児はデータ不足のため使用を控える。OCTN1 トランスポーターは医薬品（一部の化学療法薬等）の細胞内取込にも関与するため、抗がん治療中の方は主治医相談が安全側。',
+      interactions: 'OCTN1 トランスポーターは一部の抗がん薬（化学療法薬）の細胞内取込にも関与しており、EGT との競合により薬効が変動する可能性が理論的に指摘される（Drug Metab Dispos 2014 OCTN1 substrate review）・抗がん治療中の方は主治医相談推奨で caution。それ以外の薬剤との臨床的に重要な相互作用は確認されていない。他の抗酸化サプリ（vitamin-e/C/CoQ10/selenium）との併用は理論的衝突なし・むしろ補完的。',
+    },
     papers: [
       {
         title: 'Is ergothioneine a "longevity vitamin" limited in the American diet?',
@@ -21378,7 +21389,7 @@ export const ingredients: Ingredient[] = [
         source: 'Drug Metab Dispos 2014 OCTN1 substrate review',
       },
     ],
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'hfnet',
