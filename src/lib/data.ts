@@ -23650,8 +23650,8 @@ export const ingredients: Ingredient[] = [
     aliases: ['Leucine', 'ロイシン', 'L-Leucine', 'L-ロイシン', 'BCAA leucine', 'mTORトリガーアミノ酸', '分岐鎖アミノ酸（ロイシン単独）'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'ロイシン｜論文と用量・MPS閾値・サルコペニア対策',
-    seoDescription: 'ロイシンは筋タンパク質合成（MPS）のmTOR経路を起動する必須アミノ酸。Devries 2018メタ解析（n=370 高齢者）・Katsanos 2009 RCT等で1回2〜3gのロイシン閾値（leucine threshold）が確立。サルコペニア対策、anabolic resistance、BCAA/EAAとの違い、有効量と相互作用を研究の観点で解説。',
+    seoTitle: 'ロイシンとは｜MPS 閾値 2.5g・BCAA との違い・サルコペニア論文',
+    seoDescription: 'ロイシンは筋タンパク質合成（MPS）の mTOR 経路を直接起動する単独必須アミノ酸。Devries 2018 メタ n=370 高齢者・Katsanos 2009 RCT で 1 食 2.5g の leucine threshold が確立。サルコペニア対策・anabolic resistance 克服・BCAA（親 honest 主軸）/WPI/casein 3 兄弟との sibling 役割分担・有効量と相互作用（レボドパ）を査読論文で解説｜SciBase',
     tagline: '高齢者MPSメタ解析n=370で1回2〜3gのロイシン閾値が確立・mTOR経路を直接起動する「アナボリック・トリガー」必須アミノ酸',
     description:
       'ロイシンは分岐鎖アミノ酸（BCAA）の一つで、60 歳以上のレジスタンス運動 + ロイシン強化タンパク質（1 食 2.5-3g）24 週で除脂肪体重・筋力の有意改善を示したメタ解析がある（Devries 2018・J Nutr・n=370）。\n\n' +
@@ -23659,6 +23659,17 @@ export const ingredients: Ingredient[] = [
       '単独の高用量摂取は他のBCAA（バリン・イソロイシン）の吸収を競合する理論的懸念があるため、長期は食事と運動を主軸に補助で使う。',
 
     concerns: ['muscle', 'recovery', 'longevity', 'metabolism'],
+    sectionSummaries: {
+      whoFor: '60 歳以降でサルコペニア（加齢性筋肉減少）対策を始めたい方・食事タンパク質摂取が少なく 1 食 15g 未満になりがちな方・運動後の筋タンパク質合成を最大化したい筋トレ層・BCAA を飲んでいるがロイシン単独の意義を知りたい層が中心。BCAA 4 兄弟（親 honest 主軸 + 2:1:1/4:1:1/leucine-rich 比率専門軸）+ protein 3 兄弟（親/WPI 低乳糖/casein 緩徐吸収）+ leucine（単独 mTOR トリガー専門軸）の総合運動栄養系の中で「mTOR 閾値 2.5g 専門軸」を担うポジション。',
+      papers: 'Devries 2018 J Nutr メタ解析（n=370・24 週・60 歳以上）でレジスタンス運動 + ロイシン強化タンパク質（1 食 2.5-3g）が除脂肪体重・筋力を有意改善したのが主柱。Katsanos 2009 Am J Physiol Endocrinol Metab RCT（n=16・高齢男性）でロイシン強化 EAA（ロイシン 2.8g）が通常 EAA（1.7g）より MPS 率有意上昇・MPS 閾値概念の根拠論文。Norton/Layman 2006 J Nutr レビューで「leucine threshold（ロイシン閾値）1 食 2-3g」概念と anabolic resistance 対策を整理。',
+      publicDbReferences: '国立健康・栄養研究所「健康食品」素材情報 DB にロイシンとして収載。分岐鎖アミノ酸（BCAA）・mTOR 経路・運動時補給データを公式整理。L-ロイシンは必須アミノ酸 9 種の 1 つで通常の食事（肉/魚/卵/乳/大豆）から十分摂取可能。高齢者の anabolic resistance 克服に 1 食 2.5g 以上が推奨される背景説明あり。',
+      evidence: 'A ランク・PEI 6.1（confidence 1.0・papers 3 件: RCT 1 / meta 1 / observational 1）。除脂肪体重増加 A（Devries 2018 メタ n=370）・筋力改善 A（同メタ）・MPS 閾値 2.5g 確立 A（Katsanos 2009 RCT n=16）・anabolic resistance 克服 A（Norton 2006 レビュー支持的）。差別化軸は「単独アミノ酸 mTOR トリガー・MPS 閾値 2.5g 専門軸」で、bcaa 親（honest 主軸・食事十分なら不要）と protein 3 兄弟（タンパク質源主軸）との対立軸を形成。',
+      dosage: '1 食 2,000-5,000mg（=2-5g）のロイシン量が研究準拠の MPS 閾値。Devries 2018 メタ準拠の標準用量は 1 食 2.5-3g、Katsanos 2009 RCT 中心用量は 1 食 2.8g。1 日合計より「1 食あたり 2.5g 以上」が anabolic resistance 克服の鍵。プロテイン 20-25g + 食事で十分到達可能なケースも多く、ロイシン単独サプリは「タンパク質量を増やさず閾値を確保したい」高齢者・小食の方向け。',
+      dosageLevels: '2,000-2,500mg/回（入門・MPS 閾値下限・プロテイン上乗せ）→ 2,500-3,000mg/回（標準・Devries 2018 メタ + Katsanos 2009 RCT 中心用量・高齢者 MPS 最大化）→ 3,000-5,000mg/回（上限・若年-中年ハードトレ層・MPS 自体は 2.5g で頭打ち）の 3 段階。タンパク質源と組合せて使用・運動後 30 分以内が研究主流。',
+      faq: 'ロイシン単独で筋肉は増えるか・BCAA/EAA/ロイシン単独の使い分け・プロテインとのコスパ対比・高齢者での有効性・副作用と上限 の 5 軸 FAQ で「mTOR トリガー + 食事併用 + 高齢者用途」の決断負荷を解消。BCAA 親・protein 3 兄弟との sibling 役割分担を明示。',
+      safety: '通常用量（〜5g/回）の臨床 RCT で深刻な副作用報告はまれ。高用量（10g/回超）で他の BCAA（イソロイシン・バリン）との競合阻害・トリプトファン取り込み低下による睡眠/気分への影響が理論上指摘される。メープルシロップ尿症（先天性 BCAA 代謝異常）・重度肝腎機能障害は禁忌。妊娠中/授乳中の高用量データなし。レボドパ服用中は服薬時間との間隔が必須。',
+      interactions: 'レボドパ（パーキンソン病薬）との併用は BCAA 全体が腸管・血液脳関門 LAT1 で競合しレボドパの吸収・脳内移行を阻害（Neurology 1986・Mov Disord 2014）。服薬時間から 1-2 時間空ける運用が必要。糖尿病薬（メトホルミン/SU 薬/インスリン）併用はロイシンのインスリン分泌促進作用で低血糖リスク微増の理論的懸念で monitor 推奨。重要な相互作用はこの 2 件のみ。',
+    },
     papers: [
       {
         title: 'A high proportion of leucine is required for optimal stimulation of the rate of muscle protein synthesis by essential amino acids in the elderly',
@@ -23795,7 +23806,7 @@ export const ingredients: Ingredient[] = [
         source: 'J Nutr 2006 review',
       },
     ],
-    updatedAt: '2026-05-11',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'hfnet',
@@ -69009,11 +69020,11 @@ export const ingredients: Ingredient[] = [
     slug: 'fish-oil-pure-dha',
     nameJa: '高純度DHA魚油',
     nameEn: 'High-Purity DHA Fish Oil',
-    aliases: ['DHA', 'ドコサヘキサエン酸', 'docosahexaenoic acid', 'ピュアDHA'],
+    aliases: ['DHA', 'ドコサヘキサエン酸', 'docosahexaenoic acid', 'ピュアDHA', 'dha epa', '高純度 DHA', 'high purity DHA', '純粋 DHA', 'DHA サプリ', '認知機能 DHA', '妊婦 DHA', '胎児 DHA', 'MIDAS DHA'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: '高純度DHA｜900mg MIDAS・認知/胎児/網膜の論文｜SciBase',
-    seoDescription: '高純度DHA魚油はDHA含有量を50%以上に高めた製品。900mg/日で軽度認知障害のない高齢者の記憶課題スコアがRCT（Yurko-Mauro 2010・n=485）で改善。網膜・胎児脳発達への用途も研究蓄積あり。既存omega3とは別エントリでDHA中心の使い方を整理。｜SciBase',
+    seoTitle: '高純度 DHA とは｜MIDAS 900mg 認知 RCT・dha epa 使い分け・妊婦 200mg',
+    seoDescription: '高純度 DHA 魚油は DHA を 50% 以上に精製した製品。Yurko-Mauro 2010 Alzheimer\'s & Dement RCT n=485（MIDAS 試験）で 900mg/日 24 週で 55 歳以上の記憶課題スコア有意改善・Pediatrics 2012 メタ n=1,949 で妊娠期 DHA と乳児視力発達の関連。EPA 中心（心血管主軸）・DHA-eye 高用量（眼科特化）との使い分け、妊婦 200-300mg/日、IFOS 認証品の選び方、抗凝固薬併用注意を査読論文で解説.',
     tagline: 'DHA中心で脳・網膜・胎児に振り切った製品・認知機能RCTあり',
     description:
       '高純度DHA魚油はDHAを50%以上に精製した製品で、55歳以上の記憶課題スコアをプラセボより有意改善したRCTがある（Yurko-Mauro 2010・Alzheimers Dement・900mg/日 24週・n=485）。' +
@@ -69087,6 +69098,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（DHA）',
     timing: '食後',
     duration: '24週以上のRCT報告あり',
+    dosageLevels: [
+      {
+        dose: 'DHA 200-300mg/日',
+        category: '妊婦・授乳期用量',
+        effect: 'NIH 推奨 + 米国産科婦人科学会推奨域。妊娠期の胎児脳発達・授乳期の乳児神経発達補助として確立。Pediatrics 2012 メタ解析 n=1,949 で妊娠期 DHA 補給と乳児視力発達指標への正の関連を確認。IFOS 等第三者検査で重金属（水銀/PCB）が低い製品を選ぶのが安全側.',
+        whoFor: '妊娠中・授乳中の方・胎児/乳児の脳/視力発達補助希望・第三者検査品を選びたい方',
+        evidenceNote: 'NIH 推奨 200-300mg/日。Pediatrics 2012 メタ n=1,949。タラ肝油はビタミン A 過剰で妊娠中 NG',
+      },
+      {
+        dose: 'DHA 500mg/日',
+        category: '一般予防・記憶維持',
+        effect: '健常成人の認知機能維持・記憶補助用量。Nordic Naturals DHA 500mg ソフトジェル 2 粒で MIDAS 試験用量に近づけられる柔軟な開始用量。Aging Clin Exp Res 2015 RCT n=86 で 900mg/日 投与時の BDNF 上昇傾向が報告された下限域として位置づけ.',
+        whoFor: '40-50 代の認知機能予防・健常成人の記憶維持・MIDAS 用量への段階的増量を希望する方',
+        evidenceNote: 'Yurko-Mauro 2010 MIDAS RCT 900mg/日 の下限域。Nordic Naturals DHA 500mg×2 粒で MIDAS 用量到達可能',
+      },
+      {
+        dose: 'DHA 900-1,000mg/日',
+        category: 'MIDAS 用量・認知機能 RCT 準拠',
+        effect: 'Yurko-Mauro 2010 Alzheimer\'s & Dement MIDAS RCT n=485 24 週の中心用量。55 歳以上の軽度認知障害のない高齢者の記憶課題スコアがプラセボより有意改善（p<0.01）した研究準拠用量。Aging Clin Exp Res 2015 RCT n=86 で BDNF 上昇傾向を確認。継続使用前提で 24 週判定.',
+        whoFor: '55 歳以上の記憶・認知機能維持の本格対策・MIDAS RCT 準拠で標準的に選びたい方・抗凝固薬未使用',
+        evidenceNote: 'Yurko-Mauro 2010 MIDAS RCT n=485 24 週中心用量。抗凝固薬服用中は医師相談',
+      },
+    ],
     sideEffects: ['げっぷ・魚臭', 'まれに軽度出血傾向'],
     contraindications: ['抗凝固薬服用中は医師相談'],
     products: [
@@ -69144,7 +69178,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'established',
       },
     ],
-    updatedAt: '2026-06-06',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'nih-ods',
