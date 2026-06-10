@@ -74964,11 +74964,11 @@ export const ingredients: Ingredient[] = [
     slug: 'dha-eye-amd-high',
     nameJa: '高用量DHA（眼科特化・1000mg）',
     nameEn: 'High-Dose DHA (Eye-Health Focus, 1000mg)',
-    aliases: ['高用量DHA', 'DHA眼科', 'high-dose DHA', 'DHA 1000mg', '網膜DHA', 'DHA retina'],
+    aliases: ['高用量DHA', 'DHA眼科', 'high-dose DHA', 'DHA 1000mg', '網膜DHA', 'DHA retina', 'dha epa', 'AREDS2 DHA', '黄斑変性 DHA', 'AMD 予防 DHA', '網膜 サプリ', 'DHA Xtra', '光受容体 DHA'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: '高用量DHA 1000mg｜AREDS2 nullと網膜膜の論文｜SciBase',
-    seoDescription: '高用量DHA経口（1000mg/日）は網膜光受容体膜の主要構成脂質。AREDS2 JAMA 2013 RCT（n=4203・5年）で omega-3（DHA350+EPA650mg）単独 AMD 進行抑制効果は null（HR 0.97）。一方 Querques 2011 review で DHA は網膜膜流動性・integrity・抗アポトーシス役割。dose 1000mg DHA/日・脂質食と一緒｜SciBase',
+    seoTitle: '高用量 DHA 1000mg とは｜眼科特化・AREDS2 null・dha epa 使い分け',
+    seoDescription: '高用量 DHA（1000mg/日）は網膜光受容体外節膜の主要リン脂質。AREDS2 JAMA 2013 RCT n=4,203 5 年で omega-3 単独 AMD 進行抑制は null（HR 0.97）の honest 開示。Querques 2011 で DHA は網膜膜流動性・integrity・抗アポトーシス役割を担う機序を確立。EPA 中心（心血管主軸）・DHA 単独（認知/胎児主軸）との使い分け、Nordic Naturals DHA Xtra 1000mg/粒、抗凝固薬併用注意を査読論文で解説.',
     tagline: 'AREDS2はnull結果・メカニズム面で網膜DHA必須性・既存omega3と差別化',
     description:
       '高用量DHA（眼科特化・1000mg）は網膜光受容体外節膜の主要リン脂質で、AREDS2でAMD進行抑制に有意差は出なかったRCTがある（JAMA 2013・DHA 350mg+EPA 650mg追加・n=4,203・5年・網膜膜流動性維持の生理学的必須性は確立）。' +
@@ -75034,6 +75034,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg DHA/日（高用量・眼科特化）',
     timing: '脂質を含む食事と一緒に1日1回',
     duration: '効果評価は3〜6ヶ月（網膜機能・OCT検査での評価）',
+    dosageLevels: [
+      {
+        dose: 'DHA 500mg/日（一般 omega-3 用量）',
+        category: '入門用量・一般 omega-3 から段階移行',
+        effect: '既存 omega-3 一般用量帯（EPA + DHA 計 1,000mg/日・DHA 250-500mg/日）からの段階移行用量。網膜 DHA 補給を始めたい入門層に適する。AMD 進行抑制を断言できないため、「網膜機能維持目的」「ドライアイ補助」「予防的選択肢」として位置づけ.',
+        whoFor: '初めて高用量 DHA に切り替える方・既存一般 omega-3 から段階移行する方・AMD 予防の初期アプローチを希望する方',
+        evidenceNote: '一般 omega-3 用量域。Nordic Naturals 通常 DHA 500mg 等で代替可能・段階移行の中間ステップ',
+      },
+      {
+        dose: 'DHA 1,000mg/日（眼科特化・研究準拠）',
+        category: '標準用量・眼科特化',
+        effect: '眼科特化の高用量帯で研究準拠の中心用量。Nordic Naturals DHA Xtra 1000mg/softgel 1 粒で完結する研究準拠規格。Querques 2011 review が示す網膜光受容体外節膜の DHA 必須性（リン脂質 50-60%）の補完を狙う。AREDS2 RCT で AMD 進行抑制は null だが、網膜膜流動性維持・retinal integrity 維持の機序ベースで合理的.',
+        whoFor: 'AMD 家族歴あり・50 代以降の予防的アプローチ・ドライアイや網膜機能維持目的・Nordic Naturals DHA Xtra 規格で本格的に始める方',
+        evidenceNote: 'Nordic Naturals DHA Xtra 1000mg/softgel 研究準拠規格。AREDS2 RCT n=4,203 5 年で omega-3 単独の AMD 進行抑制は null（HR 0.97）の honest 開示',
+      },
+      {
+        dose: 'DHA 1,000mg + EPA 500-1,000mg/日 併用',
+        category: '高用量併用・eye + cardio 多角',
+        effect: 'eye-health（DHA 高用量）+ cardio（EPA 中用量）の多角アプローチ。EPA + DHA 計 2,000-3,000mg/日の高用量摂取となるため出血傾向のある方・抗凝固薬服用中は主治医相談必須。lutein-zeaxanthin サプリ（AREDS2 で有意効果あり）との併用が研究準拠で合理的.',
+        whoFor: 'eye + cardio 多角ケア希望・抗凝固薬未使用・lutein-zeaxanthin との多角アプローチを希望する方',
+        evidenceNote: 'EPA + DHA 計 2-3g/日。出血傾向に注意・術前 2 週間中止・抗凝固薬併用は主治医必須相談',
+      },
+    ],
     sideEffects: [
       'まれに魚臭いげっぷ・GI不快感',
       '稀に出血傾向（高用量での理論的懸念）',
@@ -75097,7 +75120,7 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
       },
     ],
-    updatedAt: '2026-06-06',
+    updatedAt: '2026-06-10',
     publicDbReferences: [
       {
         source: 'nih-ods',
