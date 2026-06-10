@@ -53887,10 +53887,11 @@ export const ingredients: Ingredient[] = [
     slug: 'bcaa-leucine-rich',
     nameJa: 'ロイシンBCAA',
     nameEn: 'Leucine-Rich BCAA',
+    aliases: ['ロイシンBCAA', 'leucine-rich BCAA', 'BCAA 4:1:1', 'BCAA 8:1:1', 'bcaa とは', 'ロイシン高配合 BCAA', 'mTOR BCAA', '高ロイシン BCAA', 'トレ中 BCAA', 'BCAA Powder', 'NOW BCAA 4:1:1', 'ロイシン サプリ'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'BCAA（ロイシン高配合）｜論文・効果・選び方',
-    seoDescription: 'ロイシン高配合BCAA（4:1:1・8:1:1）の効果・推奨用量・副作用を査読済み論文で整理。Norton 2006でロイシン2.5gが筋タンパク合成の閾値。EAAとの違い、トレ中ドリンク用途の選び方判断軸まで解説｜SciBase',
+    seoTitle: 'ロイシンBCAAとは｜4:1:1 / 8:1:1・ロイシン 2.5g mTOR しきい値の論文',
+    seoDescription: 'ロイシン BCAA は 4:1:1 / 8:1:1 の高ロイシン比配合で mTOR シグナル強化を狙う BCAA。Norton 2006 J Nutr review でロイシン 2.5g/食以上が筋タンパク合成シグナルしきい値・J Sports Sci 2017 メタ n=480 で運動後筋損傷マーカー軽減を確認。bcaa 親「迷ったら 2:1:1」「食事十分なら不要」honest 主軸との使い分け、4:1:1 / 8:1:1 規格選択、トレ中ドリンク 5-10g 用量、EAA との違いを査読論文で解説.',
     tagline: 'ロイシン高配合でトレ中・トレ後の筋タンパク合成シグナルを補助するBCAA',
     description:
       'ロイシン BCAA はロイシン:イソロイシン:バリン = 4:1:1 や 8:1:1 の高ロイシン比配合で、ロイシン 2.5g/食以上で筋タンパク合成シグナル（mTOR 経路）のしきい値活性化が示されている（Norton 2006・J Nutr）。' +
@@ -53905,6 +53906,17 @@ export const ingredients: Ingredient[] = [
       '長時間トレーニング・有酸素運動中の筋分解抑制',
       'コスパでアミノ酸補給したい方',
     ],
+    sectionSummaries: {
+      whoFor: 'トレーニング中のドリンクとしてアミノ酸補給したい筋トレ層・プロテイン/EAA より低カロリーで補給したい方・長時間トレーニングや有酸素運動中の筋分解抑制を狙う層・コスパでアミノ酸補給したい方が中心。bcaa 親（迷ったら 2:1:1）からのステップアップで「ロイシン高配合 + mTOR 強化」を意図的に狙う場合に適する.',
+      papers: 'Norton 2006 J Nutr review が主柱：ロイシン 2.5g/食以上で筋タンパク合成シグナル（mTOR 経路）が活性化するしきい値を確立。J Sports Sci 2017 メタ解析 n=480 で高強度運動後の筋損傷マーカー（CK/LDH）・遅発性筋肉痛（DOMS）の軽減を確認。Frontiers in Physiology 2017 review は BCAA 単独では他の EAA（リジン/メチオニン）が律速となり最終合成は頭打ちと honest reporting.',
+      publicDbReferences: 'NIH ODS には BCAA 単独 fact sheet なし（食品由来アミノ酸のため）。FDA は GRAS（一般に安全と認められる）栄養補助食品成分として認可。日本では消費者庁 機能性表示食品制度でロイシン・BCAA を「運動後の筋たんぱく質合成」「運動疲労感軽減」の機能性関与成分として複数届出公開済.',
+      evidence: 'A ランク・PEI 5.7（confidence 1.0・papers 3 件: メタ 1 / 観察 2）。ロイシン 2.5g/食 mTOR しきい値活性化 A（Norton 2006）・筋損傷マーカー軽減 A（J Sports Sci 2017 メタ）・MPS 最大化には EAA 必要 A（Frontiers 2017 review）。差別化軸は「ロイシン高配合・mTOR 強化専門軸」で、bcaa 親「迷ったら 2:1:1 + honest 主軸」との役割分担を形成.',
+      dosage: '5-10g/食が研究使用域（4:1:1 配合なら 5g でロイシン 約 3.3g・mTOR しきい値 2.5g を超過）。トレ前 30 分・トレ中・トレ直後の摂取が研究で標準的。トレ中ドリンクは水 500ml に 5-10g 溶かす濃度が一般的で、糖質・電解質併用で吸収補助 + エネルギー補給を兼ねられる.',
+      dosageLevels: '5g/食（入門・トレ中ドリンク・体重 60kg 未満）→ 7-10g/食（標準・90 分超の中〜高強度トレ・体重 60-80kg）→ 10-15g/食（強化・マラソン/トライアスロン等の長時間運動・体重 80kg 超）の 3 段階。日常トレーニングでは 10g/食以上は過剰になりやすい.',
+      faq: 'BCAA 2:1:1 vs 4:1:1 vs 8:1:1 の使い分け・BCAA vs EAA の合成最大化比較・疲労回復への効果・トレ中ドリンク用途・買う価値（コスパ判定）の 5 軸 FAQ で「比率選択 + EAA との役割分担 + リカバリー + ドリンク用途 + コスパ」の決断負荷を解消。bcaa 親「迷ったら 2:1:1」軸とは異なり、「意図的にロイシン高配合を選ぶ層」を主軸とする.',
+      safety: '食品由来アミノ酸のため安全性は高め。まれに腹部膨満感・高用量で疲労感（中枢性疲労説）の報告がある程度。フェニルケトン尿症（PKU）の方は禁忌・重度腎機能低下のある方は医師相談が前提。妊娠中の高用量データは限定的のため食事から先に検討.',
+      interactions: 'レボドパ（パーキンソン病薬）との併用で薬効減弱（LAT1 トランスポーター競合）のため服用前後 2-4 時間ずらすことが必須（bcaa 親と同じ）。糖尿病治療薬（インスリン/SU 剤）併用で低血糖リスク（ロイシンによるインスリン分泌刺激）が理論的に上昇のため血糖モニタリング強化。両薬剤を服用中の方は開始前に医師・薬剤師相談.',
+    },
     papers: [
       {
         title: 'Leucine as a critical regulator of protein synthesis',
@@ -53957,6 +53969,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/食（5〜10g）',
     timing: 'トレ前・トレ中・トレ直後。空腹時の補助にも',
     duration: '8週以上の継続でトレーニング効果の補助が報告されるレンジ',
+    dosageLevels: [
+      {
+        dose: '5g/食（運動前・運動中）',
+        category: '入門用量・トレ中ドリンク',
+        effect: '60 分以下の運動前後の摂取で筋肉痛・疲労感の軽減を狙う最低ライン。4:1:1 配合なら 5g でロイシン約 3.3g 摂取となり Norton 2006 の mTOR しきい値 2.5g を超過。トレ中ドリンクの入門用量として水 500ml に溶かす濃度が一般的.',
+        whoFor: '初めて使う方・短時間トレーニング・体重 60kg 未満・bcaa 親（2:1:1）からステップアップ',
+        evidenceNote: 'Norton 2006 ロイシン mTOR しきい値 2.5g を 4:1:1 配合 5g で超過可能。トレ中ドリンク入門用量',
+      },
+      {
+        dose: '7-10g/食（運動前+運動中）',
+        category: '標準用量・中〜高強度トレ',
+        effect: '90 分超の運動・高強度トレーニングで研究の標準量。運動前 5g + 運動中 5g の分割摂取が筋損傷マーカー（CK/LDH）抑制で報告例が多い（J Sports Sci 2017 メタ n=480）。4:1:1 配合 10g でロイシン約 6.7g 摂取と mTOR しきい値を大幅超過.',
+        whoFor: '中〜高強度の運動・体重 60-80kg・本格的に mTOR 強化を狙う方・トレ後リカバリー目的',
+        evidenceNote: 'J Sports Sci 2017 メタ解析 n=480 の研究中心用量。運動前 5g + 運動中 5g の分割摂取が推奨',
+      },
+      {
+        dose: '10-15g/食（参考・長時間運動）',
+        category: '強化用量・持久系',
+        effect: 'マラソン・トライアスロン等の長時間運動（90 分以上）での疲労軽減・中枢性疲労抑制目的での使用報告。日常トレーニングでは過剰になりやすく、4:1:1 配合 15g ではロイシン約 10g 摂取となり他の EAA とのバランス崩れリスクが上がる.',
+        whoFor: '持久系競技者・体重 80kg 超・運動時間 2 時間超・bcaa 親より積極的に mTOR 強化を狙う方',
+        evidenceNote: '長距離マラソンでの中枢性疲労抑制報告あり。日常トレでは過剰のため上限近辺',
+      },
+    ],
     sideEffects: ['まれに腹部膨満感', '高用量で疲労感（中枢性疲労説）'],
     contraindications: ['フェニルケトン尿症（PKU）の方は禁忌', '重度腎機能低下のある方は医師相談'],
     products: [
@@ -54002,7 +54037,7 @@ export const ingredients: Ingredient[] = [
     interactions: [],
     heroStat: { value: '2.5g', label: 'ロイシンしきい値' },
     axisScores: { antiAging: 3, skin: 2, cognitive: 2, stress: 2, sleep: 2, immunity: 3, metabolism: 6 },
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-10',
   },
 
   {
