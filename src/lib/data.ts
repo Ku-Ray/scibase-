@@ -38687,11 +38687,11 @@ export const ingredients: Ingredient[] = [
     slug: 'vanadium',
     nameJa: 'バナジウム',
     nameEn: 'Vanadium',
-    aliases: ['Vanadium', 'バナジウム', 'vanadyl sulfate', 'バナジルサルフェート', 'BMOV', 'bis-maltolato-oxovanadium', '必須微量元素'],
+    aliases: ['Vanadium', 'バナジウム', 'vanadyl sulfate', 'バナジルサルフェート', 'BMOV', 'bis-maltolato-oxovanadium', '必須微量元素', 'バナジウム とは', 'バナジウム サプリ', 'V', 'バナジン酸', 'vanadate', 'バナジウム 血糖'],
     evidenceRank: 'C',
     usageType: 'oral',
-    seoTitle: 'バナジウム｜微量元素・インスリン感受性の論文',
-    seoDescription: 'バナジウム（vanadium）は必須微量元素候補で、インスリン様作用が動物実験で示される。Goldfine 1995 IDDM RCT・Cusi 2001 ヒトインスリン感受性・Thompson 1999 BMOV 動物で血糖補助の限定的エビデンス・ヒト RCT は小規模で慎重評価。',
+    seoTitle: 'バナジウムとは｜インスリン様作用・ヒト RCT 小規模・クロム比較',
+    seoDescription: 'バナジウム（vanadium）は必須微量元素候補で、Goldfine 1995 RCT n=6 と Cusi 2001 RCT n=16 でバナジルサルフェート 100-150mg/日が 2 型糖尿病患者のインスリン感受性軽度改善を報告。ヒト RCT はすべて小規模で大規模試験は未確立。クロムピコリン酸（A ランク・第一選択）との使い分け、バナジルサルフェート vs BMOV の形態、糖尿病薬併用の低血糖リスクを査読論文で解説。',
     tagline: '必須微量元素候補・インスリン様作用・ヒト RCT は限定的',
     description:
       'バナジウムは必須微量元素候補で、小規模 RCT（n=16）でバナジルサルフェート 150mg/日 6 週が 2 型糖尿病患者の肝・筋インスリン感受性改善を示したが、大規模 RCT は未確立（Cusi 2001・Diabetes）。' +
@@ -38700,6 +38700,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '高用量で腎・肝・消化管毒性の報告があり、100mg/日超は推奨されない。サプリ用量は食事補完レベルに留める。',
     concerns: ['blood-sugar', 'metabolism'],
+    sectionSummaries: {
+      whoFor: 'インスリン抵抗性の補助（低用量・医師相談前提）を希望する方・微量元素として食事補完を考える方・血糖管理に他の介入と組み合わせて使いたい層が中心。腎機能低下・糖尿病薬服用中・妊娠/授乳中・高用量長期服用希望者は使用不可または医師相談が必須。クロムピコリン酸（A ランク・RCT 豊富）が第一選択で、バナジウムは補助的位置づけが現実的.',
+      papers: 'Goldfine 1995 J Clin Endocrinol Metab RCT n=6（バナジルサルフェート 100mg/日×4 週で 2 型糖尿病患者の空腹時血糖低下・末梢インスリン感受性軽度改善）と Cusi 2001 Diabetes RCT n=16（同 150mg/日×6 週で肝・筋インスリン感受性改善）の 2 軸が主柱。Thompson 1999 Mol Cell Biochem 動物で BMOV による STZ 糖尿病ラットの血糖正常化を確認。ヒト RCT はすべて小規模（n<20）で大規模試験は未確立.',
+      publicDbReferences: 'NIH NCCIH Vanadium Fact Sheet にインスリン様作用と糖尿病補助エビデンスの限定性・腎/肝/消化管毒性の高用量リスクを明示。FDA はサプリ成分として認可・処方薬扱いではない。日本では必須微量元素としての RDA 未確立で、消費者庁 機能性表示食品制度での届出も限定的.',
+      evidence: 'C ランク・PEI 4.2（confidence 1.0・papers 3 件: RCT 2 / 動物 1）。インスリン感受性改善 C（Goldfine 1995 + Cusi 2001 小規模 RCT・大規模試験未確立）・血糖低下 C（同 2 RCT）・動物試験での血糖正常化 B（Thompson 1999 BMOV）。**差別化軸は honest 軸＝「インスリン様作用 + ヒト RCT 小規模・大規模未確立」**で、クロムピコリン酸（A ランク・RCT 豊富）との対立軸を形成。honest reporting：「クロムが第一選択・バナジウムは補助的な位置づけ」.',
+      dosage: '50-150mg/日（バナジルサルフェート換算）が研究使用域。食事と一緒に分割服用で GI 負担軽減・血糖改善は 4-6 週で評価。サプリ用量は健常者向け食事補完レベル（15-50mg/日・バナジウム元素 5-15mg）に留めるのが現実的で、Goldfine 1995/Cusi 2001 の RCT 用量（100-150mg/日）は医師指導下の使用が前提。100mg/日超の長期使用は腎/肝/消化管毒性リスクのため避ける.',
+      dosageLevels: '50mg/日（入門・食事補完レベル）→ 100mg/日（標準・Goldfine 1995 RCT 中心用量・医師指導下）→ 150mg/日（強化・Cusi 2001 RCT 中心用量・医師指導下）の 3 段階。150mg/日超は推奨されない（毒性報告）・健常者向けサプリは 50mg/日以下が現実的.',
+      faq: 'クロムピコリン酸との違い（クロム第一選択 + バナジウム補助）・高用量毒性と安全範囲・バナジルサルフェート vs BMOV vs vanadate の形態選択・糖尿病薬併用の低血糖リスク・食品からの摂取可能性 の 5 軸 FAQ で「クロムとの使い分け + 安全範囲 + 形態選択 + 薬併用 + 食事補完」の決断負荷を解消.',
+      safety: '高用量で毒性報告あり（100mg/日超のバナジルサルフェートで GI 副作用・腎機能影響）。サプリ用量は 15-50mg/日（バナジウム元素 5-15mg）・3 ヶ月以内・腎機能正常確認・医師指導下が前提。腎機能低下例は蓄積リスクのため使用不可・妊娠/授乳中はデータ不足・舌の緑色変色や稀に腎機能影響の報告あり.',
+      interactions: 'インスリン・経口糖尿病薬との併用でインスリン様作用との相加で低血糖リスクが理論的に高まる。糖尿病治療中は処方医必須相談 + 血糖モニタリング強化が前提。抗凝固薬（ワルファリン）との併用で理論的な血小板機能影響の可能性のため INR モニタリング推奨。クロムピコリン酸との併用は経路重複のため、単独使用が原則.',
+    },
     papers: [
       {
         title: 'Metabolic effects of vanadyl sulfate in humans with non-insulin-dependent diabetes mellitus: in vivo and in vitro studies',
@@ -38753,6 +38764,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '食事と一緒に分割服用（GI 負担軽減）',
     duration: '血糖改善は4〜6週で評価',
+    dosageLevels: [
+      {
+        dose: '50mg/日（バナジルサルフェート）',
+        category: '入門用量・食事補完レベル',
+        effect: 'バナジルサルフェート 50mg（バナジウム元素 約 15mg）。食事補完レベルの安全用量域で、健常者の微量元素補助やインスリン抵抗性の予防的補助に位置づけ。Goldfine 1995/Cusi 2001 RCT 用量の 1/2-1/3 で、3 ヶ月以内の試用期間で効果評価する低リスク開始用量。',
+        whoFor: '初めてバナジウムを試す方・食事補完レベルで始めたい方・健常者のインスリン抵抗性予防補助・腎機能正常で短期試用希望',
+        evidenceNote: 'Goldfine 1995 RCT 下限の半量。健常者向け食事補完レベル・3 ヶ月以内の使用が現実的',
+      },
+      {
+        dose: '100mg/日（バナジルサルフェート・医師指導下）',
+        category: '標準用量・Goldfine 1995 RCT 準拠',
+        effect: 'バナジルサルフェート 100mg（バナジウム元素 約 30mg）。Goldfine 1995 J Clin Endocrinol Metab RCT n=6 4 週の中心用量で、2 型糖尿病患者の空腹時血糖低下・末梢インスリン感受性軽度改善が報告された用量域。糖尿病治療中の方は必ず医師指導下で使用・血糖モニタリング必須.',
+        whoFor: 'Goldfine 1995 RCT 準拠で標準的に選びたい方・2 型糖尿病補助（医師指導下）・腎機能正常確認済',
+        evidenceNote: 'Goldfine 1995 J Clin Endocrinol Metab RCT n=6 4 週中心用量。医師指導下が前提',
+      },
+      {
+        dose: '150mg/日（バナジルサルフェート・医師指導下）',
+        category: '強化用量・Cusi 2001 RCT 準拠',
+        effect: 'バナジルサルフェート 150mg（バナジウム元素 約 45mg）。Cusi 2001 Diabetes RCT n=16 6 週の中心用量で、2 型糖尿病患者の肝・筋インスリン感受性改善が報告された用量域。150mg/日超は腎/肝/消化管毒性リスクのため推奨されず、医師指導下の短期使用が前提.',
+        whoFor: 'Cusi 2001 RCT 準拠で重度のインスリン抵抗性補助希望者・医師指導下の短期使用希望・血糖モニタリング体制ある方',
+        evidenceNote: 'Cusi 2001 Diabetes RCT n=16 6 週中心用量。150mg/日超は毒性リスクで避ける',
+      },
+    ],
     sideEffects: ['GI 不快感・下痢（高用量時）', '舌の緑色変色', '稀に腎機能影響'],
     contraindications: [
       '腎機能低下例（蓄積リスク）',
@@ -38808,7 +38842,7 @@ export const ingredients: Ingredient[] = [
         source: 'Drugs.com Vanadium Interactions',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-10',
   },
 
   {
