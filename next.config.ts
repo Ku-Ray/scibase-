@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         destination: '/articles/:slug-supplement-guide',
         permanent: true,
       },
+      // tmg slug → trimethylglycine-tmg 統合（2026-06-10・重複定義整理）
+      {
+        source: '/ingredients/tmg',
+        destination: '/ingredients/trimethylglycine-tmg',
+        permanent: true,
+      },
     ]
   },
 }
