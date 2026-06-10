@@ -48837,11 +48837,11 @@ export const ingredients: Ingredient[] = [
     slug: 'nac-extended-release',
     nameJa: 'NAC徐放型',
     nameEn: 'Extended-Release NAC',
-    aliases: ['NAC sustained', 'NAC徐放', 'N-A-C Sustain', 'bilayer NAC', 'スローリリース NAC'],
+    aliases: ['NAC sustained', 'NAC徐放', 'N-A-C Sustain', 'bilayer NAC', 'スローリリース NAC', 'NAC 徐放', 'NAC 徐放型', '徐放型 NAC', 'NAC 持続型', 'NAC 1日1錠', 'Jarrow N-A-C Sustain', '二層錠 NAC', 'Sustained Release N-Acetyl Cysteine'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'NAC徐放型｜半減期延長・通常型との違い・服用回数の論文',
-    seoDescription: 'NAC徐放型（sustained release）は1/3速放出+2/3徐放の二層錠で、通常型NACの短い半減期（5.6時間）を補う設計。1日1錠で12時間効果持続を狙う。胃腸不快感・硫黄臭の発生も低減。通常型NACのRCT（Atkuri 2007 等）と組み合わせて使い分け。',
+    seoTitle: 'NAC徐放型とは｜1日1錠の二層錠・通常型 NAC との使い分け・600mg の論文',
+    seoDescription: 'NAC徐放型は 1/3 速放出+2/3 徐放の二層錠で、通常型 NAC（半減期 5.6 時間・1 日 2-3 回分割）を 1 日 1 錠 12 時間持続に再設計したサプリ。胃腸不快感・硫黄臭の発生も低減。徐放型自体のヒト RCT は未確立で、親 NAC の RCT エビデンス（EJCN 2021・Int J COPD 2018）を外挿。服用継続性・消化器忍容性を優先する方への選択肢を 600/1,200/1,800mg の 3 段階で解説。',
     tagline: '1/3速放+2/3徐放の二層錠で1日1錠・通常型の半減期5.6時間を補う設計',
     description:
       'NAC徐放型は通常NACの半減期5.6時間を補う二層錠の抗酸化物質で、徐放化の薬理意義・1日1回投与の臨床利点を整理したレビューがある（Atkuri 2007・徐放型ヒトRCTは未確立）。' +
@@ -48854,6 +48854,17 @@ export const ingredients: Ingredient[] = [
       'NAC通常型で胃腸不快感・硫黄臭が気になった方',
       '1日1錠で済ませたい方',
     ],
+    sectionSummaries: {
+      whoFor: '通常 NAC を試したが胃腸不快感・硫黄臭で続かなかった方・1 日 2-3 回の分割服用が難しい働き世代・夜間の酸化ストレス対策で 12 時間持続を狙いたい層が中心。親 nac の RCT エビデンス（EJCN 2021 NAFLD RCT・Int J COPD 2018 メタ解析）を 1 日 1 錠で実装したい服用継続性重視層に最適。',
+      papers: 'Atkuri 2007 Curr Opin Pharmacol レビュー（NAC 包括レビュー・半減期 5.6 時間と徐放化の薬理意義を整理）が主柱。徐放型自体のヒト RCT は未確立で、親 nac のメタ解析・RCT エビデンスを「同じ前駆体経路 + 持続性を上げる製剤設計」として外挿する位置付け。',
+      publicDbReferences: 'NIH ODS には NAC 単独 fact sheet なし（医薬品扱いのため）。徐放型は米国 FDA・日本厚労省ともにサプリ流通形態で、医薬品「ムコフィリン」（去痰薬・通常型）とは別カテゴリ。Jarrow Vegan N-A-C Sustain（米国流通・GMP）が代表的な二層錠製剤。',
+      evidence: 'B ランク・PEI 1.1（confidence 0.33・papers 1 件 observational のみ）。徐放型単独のヒト RCT 未確立を反映・親 nac の A ランクエビデンス（PEI 5.9）を外挿する前提。Atkuri 2007 で「徐放化により分割投与の臨床的負担を減らせる」薬理学的妥当性は確立。臨床的優越性のヒト RCT は未実施。',
+      dosage: '600-1,800mg/日・食後・1 日 1 錠が基本パターン（二層錠の 1 錠で 12 時間持続を狙う設計）。研究準拠の中心用量は親 nac の 1,200mg/日 = 二層錠 2 錠相当。4-8 週で血中 GSH・酸化ストレスマーカーの評価を行う。',
+      dosageLevels: '600mg/日（入門・1 日 1 錠・服用継続性主軸）→ 1,200mg/日（標準・2 錠・親 nac EJCN 2021 RCT 中心用量と等価）→ 1,800mg/日（強化・3 錠・COPD 補助療法域・喫煙歴/大気汚染暴露多の方）の 3 段階。継続使用前提で 4-8 週判定。',
+      faq: '通常型 NAC との選び方・1 日 1 錠で本当に持続するか・徐放型固有の副作用・親 NAC との価格比較・服用継続性の現実的判断 の 5 軸 FAQ で「製剤形態の差別化 + エビデンス外挿の限界 + 服用継続性」の決断負荷を解消。',
+      safety: '通常用量（600-1,800mg/日）で重篤な副作用なし。徐放化により胃腸不快感・硫黄臭の発生は通常型より低減と報告されるが、ヒト RCT 比較データは未確立。喘息既往者は気道刺激の症例報告で発作期・コントロール不良期は使用回避。妊娠中・授乳中は医師相談。',
+      interactions: '硝酸薬（ニトログリセリン等）併用は血管拡張作用の相加で caution（AHA Circulation 1995）。SSRI/SNRI 併用は理論的議論あり要相談。抗血小板薬・抗凝固薬併用は出血リスク増の理論的懸念で caution。徐放型固有の薬物相互作用は報告されていないため、親 nac と同じ相互作用プロファイルで運用。',
+    },
     papers: [
       {
         title: 'N-Acetylcysteine—a safe antidote for cysteine/glutathione deficiency',
@@ -48890,6 +48901,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日',
     timing: '1日1回・食後',
     duration: '4-8週で血中GSH上昇',
+    dosageLevels: [
+      {
+        dose: '600mg/日（1 錠）',
+        category: '入門・服用継続性主軸',
+        effect: '二層錠 1 錠で 1 日 1 回投与の入門用量。1/3 速放出（即効性 GSH 上昇）+ 2/3 徐放（12 時間持続）の設計で、通常型 NAC の分割服用負担を最小化。健常人の酸化ストレス予防・継続性を最優先したい方の現実解。',
+        whoFor: '初めて NAC 徐放型を試す方・1 日 1 錠で完結したい働き世代・通常型で胃腸不快感が出た方',
+        evidenceNote: '研究準拠用量（600-1,800mg/日）の下限・徐放型単独のヒト RCT は未確立。親 nac の研究準拠用量の 1/2 で予防レイヤー位置付け',
+      },
+      {
+        dose: '1,200mg/日（2 錠）',
+        category: '標準・親 nac EJCN 2021 RCT 等価',
+        effect: '親 nac の EJCN 2021 RCT n=60 12 週 NAFLD（中心用量 1,200mg/日）と等価の研究準拠用量。1 日 1 錠の徐放型 2 錠 = 12 時間持続を 2 系統重ねる形で、グルタチオン合成促進・酸化ストレス低減を狙う。4-12 週で評価。',
+        whoFor: '研究準拠で標準的に試したい方・親 nac の RCT エビデンスを徐放型で実装したい方・NAFLD・酸化ストレス補助希望者',
+        evidenceNote: '親 nac EJCN 2021 RCT n=60 12 週 NAFLD で酸化ストレスマーカー有意低下 + GSH 有意上昇。徐放型固有の臨床試験は未確立で、親 nac エビデンスを外挿',
+      },
+      {
+        dose: '1,800mg/日（3 錠）',
+        category: '強化・COPD 補助療法域',
+        effect: '親 nac の Int J COPD 2018 メタ解析 COPD 補助療法の用量域。喫煙歴・大気汚染暴露が多い方・呼吸器症状の補助を狙う方が中心。徐放型 3 錠での服用継続性が、通常型 600mg×3 回分割と同等の運用負担に近づく上限域。',
+        whoFor: '喫煙歴・大気汚染暴露多の方・COPD 補助療法希望者・酸化ストレス強化目的層',
+        evidenceNote: '親 nac Int J COPD 2018 メタ解析 COPD 補助療法用量域。徐放型固有の COPD RCT は未確立で外挿。長期使用は医師相談が安全側',
+      },
+    ],
     sideEffects: ['軽度の上部GI不快感', '硫黄臭ゲップ'],
     contraindications: ['妊娠・授乳中は医師相談', '喘息は気管支痙攣の理論的可能性'],
     interactions: [
@@ -48927,7 +48961,7 @@ export const ingredients: Ingredient[] = [
         a: '通常NACは半減期5.6時間で1日2-3回分割服用が必要。徐放型は1日1錠で12時間効果が続く設計。\n\n服用継続性なら徐放型優位。コストなら通常型優位（徐放型は若干高価）。胃腸不快感・硫黄臭が気になる人は徐放型推奨。',
       },
     ],
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-06-10',
   },
   {
     slug: 'nrf2-activator-blend',
