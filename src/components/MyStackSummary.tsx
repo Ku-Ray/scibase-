@@ -4,10 +4,16 @@ import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Calendar, ChevronRight, Package, RotateCcw } from 'lucide-react'
 import {
+  calcIntakeStreak,
+  getDayProgress,
   getStackInventory,
   getStackItemName,
+  INTAKE_STORAGE_KEY,
+  sanitizeIntakeLog,
   STACK_RESULTS_KEY,
   STACK_STORAGE_KEY,
+  todayKey,
+  type IntakeLog,
   type MyStackData,
   type SavedStackResult,
 } from '@/lib/my-stack'
@@ -23,6 +29,7 @@ function formatDate(iso: string): string {
 export function MyStackSummary() {
   const [stack, setStack] = useState<MyStackData | null>(null)
   const [lastResult, setLastResult] = useState<SavedStackResult | null>(null)
+  const [intakeLog, setIntakeLog] = useState<IntakeLog>({})
   const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
@@ -38,6 +45,8 @@ export function MyStackSummary() {
         const history = JSON.parse(rawResults) as SavedStackResult[]
         if (Array.isArray(history) && history.length > 0) setLastResult(history[0])
       }
+      const rawIntake = localStorage.getItem(INTAKE_STORAGE_KEY)
+      if (rawIntake) setIntakeLog(sanitizeIntakeLog(JSON.parse(rawIntake)))
     } catch {
       /* noop */
     }
@@ -114,6 +123,21 @@ export function MyStackSummary() {
           </span>
         )}
       </div>
+
+      {(() => {
+        const progress = getDayProgress(stack.items, intakeLog, todayKey())
+        const { streak } = calcIntakeStreak(intakeLog)
+        if (progress.total === 0) return null
+        const allDone = progress.done === progress.total
+        return (
+          <div className={`mb-3 rounded-lg px-3 py-2 text-xs ${
+            allDone ? 'bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200' : 'bg-slate-50 text-slate-600 ring-1 ring-slate-200'
+          }`}>
+            📅 今日の服用 {progress.done}/{progress.total}{allDone && ' ✅'}
+            {streak > 0 && <span className="ml-1.5">・🔥 {streak} 日連続</span>}
+          </div>
+        )
+      })()}
 
       {soonest && (
         <div className={`mb-3 rounded-lg px-3 py-2 text-xs ${

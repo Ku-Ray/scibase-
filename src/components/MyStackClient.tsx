@@ -12,6 +12,7 @@ import {
   Check,
   ChevronRight,
   Eye,
+  Flame,
   Info,
   JapaneseYen,
   Minus,
@@ -30,13 +31,19 @@ import {
 } from 'lucide-react'
 import {
   analyzeStack,
+  buildIntakeIcs,
   buildRestockIcs,
+  calcIntakeStreak,
+  getDayProgress,
   getDoseUnit,
   getInventoryStatus,
   getStackIngredientOptions,
   getStackInventory,
   getStackItemName,
+  INTAKE_MILESTONES,
+  INTAKE_STORAGE_KEY,
   SAMPLE_STACKS,
+  sanitizeIntakeLog,
   STACK_PRESETS,
   STACK_RESULTS_KEY,
   STACK_RESULTS_MAX,
@@ -44,6 +51,9 @@ import {
   TIMING_EMOJI,
   TIMING_LABEL,
   TIMING_ORDER,
+  todayKey,
+  type IntakeLog,
+  type IntakeSlot,
   type MyStackData,
   type SavedStackResult,
   type StackAnalysis,
@@ -183,6 +193,7 @@ function CalculationTheatre({ onComplete }: { onComplete: () => void }) {
 export function MyStackClient() {
   const [items, setItems] = useState<StackItem[]>([])
   const [meds, setMeds] = useState<string[]>([])
+  const [intakeLog, setIntakeLog] = useState<IntakeLog>({})
   const [phase, setPhase] = useState<Phase>('shelf')
   const [analysis, setAnalysis] = useState<StackAnalysis | null>(null)
   const [hydrated, setHydrated] = useState(false)
@@ -196,6 +207,12 @@ export function MyStackClient() {
   /* ── localStorage 復元 */
   useEffect(() => {
     setHydrated(true)
+    try {
+      const rawIntake = localStorage.getItem(INTAKE_STORAGE_KEY)
+      if (rawIntake) setIntakeLog(sanitizeIntakeLog(JSON.parse(rawIntake)))
+    } catch {
+      /* 破損時は空ログから */
+    }
     try {
       const raw = localStorage.getItem(STACK_STORAGE_KEY)
       if (!raw) return
@@ -238,6 +255,16 @@ export function MyStackClient() {
     }
   }, [hydrated, items, meds])
 
+  /* ── 服用ログの自動保存 */
+  useEffect(() => {
+    if (!hydrated) return
+    try {
+      localStorage.setItem(INTAKE_STORAGE_KEY, JSON.stringify(intakeLog))
+    } catch {
+      /* noop */
+    }
+  }, [hydrated, intakeLog])
+
   /* ── 分析履歴の保存（revealed 時） */
   useEffect(() => {
     if (phase !== 'revealed' || !analysis) return
@@ -273,19 +300,36 @@ export function MyStackClient() {
     return Math.round(countPct + dosePct + timingPct + invPct)
   }, [items])
 
-  /* ── 買い替えリマインダー .ics ダウンロード */
-  const handleIcsDownload = () => {
-    const ics = buildRestockIcs(getStackInventory(items))
-    if (!ics) return
-    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' })
+  /* ── .ics ダウンロード（買い替え / 服用リマインダー共通） */
+  const downloadIcs = (content: string | null, filename: string) => {
+    if (!content) return
+    const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'scibase-my-stack-restock.ics'
+    a.download = filename
     document.body.appendChild(a)
     a.click()
     a.remove()
     URL.revokeObjectURL(url)
+  }
+  const handleIcsDownload = () => downloadIcs(buildRestockIcs(getStackInventory(items)), 'scibase-my-stack-restock.ics')
+  const handleIntakeIcs = () => downloadIcs(buildIntakeIcs(items), 'scibase-my-stack-intake.ics')
+
+  /* ── 今日の服用トグル */
+  const toggleIntake = (slug: string, slot: IntakeSlot) => {
+    setIntakeLog((prev) => {
+      const key = todayKey()
+      const day = { ...(prev[key] ?? {}) }
+      const arr = day[slug] ?? []
+      const next = arr.includes(slot) ? arr.filter((s) => s !== slot) : [...arr, slot]
+      if (next.length === 0) delete day[slug]
+      else day[slug] = next
+      const merged = { ...prev }
+      if (Object.keys(day).length === 0) delete merged[key]
+      else merged[key] = day
+      return merged
+    })
   }
 
   /* ── 棚操作 */
@@ -364,6 +408,11 @@ export function MyStackClient() {
                 <X className="h-4 w-4" />
               </button>
             </div>
+          )}
+
+          {/* 今日の服用（チェックリスト + ストリーク + カレンダー） */}
+          {hydrated && items.length > 0 && (
+            <IntakeSection items={items} log={intakeLog} onToggle={toggleIntake} onIcs={handleIntakeIcs} />
           )}
 
           {/* 棚（現在のアイテム） */}
@@ -700,6 +749,192 @@ function ShelfItemRow({ item, onRemove, onUpdate, onToggleTiming }: {
           )}
         </div>
       )}
+    </div>
+  )
+}
+
+/* ─── 今日の服用（チェックリスト + ストリーク + カレンダー） ────── */
+
+function IntakeSection({ items, log, onToggle, onIcs }: {
+  items: StackItem[]
+  log: IntakeLog
+  onToggle: (slug: string, slot: IntakeSlot) => void
+  onIcs: () => void
+}) {
+  const tKey = todayKey()
+  const todayRec = log[tKey] ?? {}
+  const { streak, todayDone } = calcIntakeStreak(log)
+  const { done, total } = getDayProgress(items, log, tKey)
+  const streakAnim = useCountUp(streak, 900, 100, true)
+  const allDone = total > 0 && done === total
+  const isMilestone = todayDone && INTAKE_MILESTONES.includes(streak)
+  const hasPastRecords = Object.keys(log).some((k) => k !== tKey)
+  const untimed = items.filter((i) => i.timing.length === 0)
+  const hasTimedItems = items.some((i) => i.timing.length > 0)
+
+  return (
+    <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/60 via-white to-white p-5 shadow-sm sm:p-6">
+      <div className="flex items-center justify-between gap-2">
+        <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900">
+          📅 今日の服用
+        </h2>
+        <div className={`flex items-center gap-1 rounded-full px-3 py-1 text-sm font-bold ${
+          streak > 0 ? 'bg-orange-100 text-orange-700' : 'bg-slate-100 text-slate-500'
+        }`}>
+          <Flame className="h-4 w-4" />
+          {streak > 0 ? `${Math.round(streakAnim)} 日連続` : '今日から'}
+        </div>
+      </div>
+
+      {/* 進捗バー */}
+      <div className="mt-3 flex items-center gap-2">
+        <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
+          <div className="h-full bg-gradient-to-r from-emerald-400 to-emerald-600 transition-[width] duration-500 ease-out"
+            style={{ width: `${total > 0 ? (done / total) * 100 : 0}%` }} />
+        </div>
+        <div className="flex-shrink-0 text-xs font-bold text-slate-700">{done}/{total}</div>
+      </div>
+
+      {/* 節目の祝福（Peak） */}
+      {isMilestone && (
+        <div className="mt-3 rounded-xl bg-gradient-to-r from-orange-100 to-amber-100 p-3 text-center text-sm font-bold text-orange-800">
+          🎉 {streak} 日連続！すごい積み重ねです
+        </div>
+      )}
+      {allDone && !isMilestone && (
+        <div className="mt-3 rounded-xl bg-emerald-100/70 p-2.5 text-center text-xs font-medium text-emerald-800 sm:text-sm">
+          ✅ 今日の分は完了。おつかれさまでした
+        </div>
+      )}
+      {!todayDone && streak === 0 && hasPastRecords && (
+        <div className="mt-3 rounded-xl bg-slate-50 p-2.5 text-center text-xs text-slate-600">
+          記録が途切れても大丈夫。また今日から積み上げれば OK です
+        </div>
+      )}
+
+      {/* タイミング別チェックリスト */}
+      <div className="mt-4 space-y-2">
+        {TIMING_ORDER.map((slot) => {
+          const slotItems = items.filter((i) => i.timing.includes(slot))
+          if (slotItems.length === 0) return null
+          return (
+            <div key={slot} className="flex items-start gap-2">
+              <div className="w-20 flex-shrink-0 pt-1.5 text-xs font-semibold text-slate-700">
+                {TIMING_EMOJI[slot]} {TIMING_LABEL[slot]}
+              </div>
+              <div className="flex min-w-0 flex-1 flex-wrap gap-1.5">
+                {slotItems.map((i) => {
+                  const checked = (todayRec[i.slug] ?? []).includes(slot)
+                  return (
+                    <button key={i.slug} type="button" onClick={() => onToggle(i.slug, slot)}
+                      aria-pressed={checked}
+                      className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                        checked
+                          ? 'border-emerald-500 bg-emerald-500 text-white shadow-sm'
+                          : 'border-slate-300 bg-white text-slate-700 hover:border-emerald-400 hover:bg-emerald-50/50'
+                      }`}>
+                      {checked && <Check className="h-3 w-3" />}
+                      {getStackItemName(i.slug)}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })}
+        {untimed.length > 0 && (
+          <div className="flex items-start gap-2">
+            <div className="w-20 flex-shrink-0 pt-1.5 text-xs font-semibold text-slate-500">💊 いつでも</div>
+            <div className="flex min-w-0 flex-1 flex-wrap gap-1.5">
+              {untimed.map((i) => {
+                const checked = (todayRec[i.slug] ?? []).includes('unscheduled')
+                return (
+                  <button key={i.slug} type="button" onClick={() => onToggle(i.slug, 'unscheduled')}
+                    aria-pressed={checked}
+                    className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                      checked
+                        ? 'border-emerald-500 bg-emerald-500 text-white shadow-sm'
+                        : 'border-slate-300 bg-white text-slate-700 hover:border-emerald-400 hover:bg-emerald-50/50'
+                    }`}>
+                    {checked && <Check className="h-3 w-3" />}
+                    {getStackItemName(i.slug)}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 月カレンダー（達成度の濃淡） */}
+      <IntakeCalendar items={items} log={log} />
+
+      {/* 服用リマインダー .ics */}
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <button type="button" onClick={onIcs} disabled={!hasTimedItems}
+          className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
+            hasTimedItems
+              ? 'border-slate-300 bg-white text-slate-700 hover:border-emerald-300 hover:bg-emerald-50/40 hover:text-emerald-700'
+              : 'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400'
+          }`}>
+          <CalendarPlus className="h-3.5 w-3.5" /> 服用リマインダーをカレンダーに追加（.ics）
+        </button>
+        <span className="text-[10px] text-slate-500 sm:text-xs">
+          {hasTimedItems
+            ? '毎日繰り返しの予定として追加（タイミング設定済みのサプリが対象）'
+            : '棚のアイテムにタイミングを設定すると使えます'}
+        </span>
+      </div>
+    </section>
+  )
+}
+
+function IntakeCalendar({ items, log }: { items: StackItem[]; log: IntakeLog }) {
+  const now = new Date()
+  const year = now.getFullYear()
+  const month = now.getMonth()
+  const daysInMonth = new Date(year, month + 1, 0).getDate()
+  const startWeekday = new Date(year, month, 1).getDay()
+  const tKey = todayKey(now)
+  const pad = (n: number) => `${n}`.padStart(2, '0')
+
+  return (
+    <div className="mt-4">
+      <div className="mb-1.5 flex items-baseline justify-between">
+        <div className="text-xs font-semibold text-slate-700">{month + 1} 月の記録</div>
+        <div className="flex items-center gap-1 text-[10px] text-slate-500">
+          少 <span className="h-2.5 w-2.5 rounded-sm bg-emerald-200" /><span className="h-2.5 w-2.5 rounded-sm bg-emerald-400" /><span className="h-2.5 w-2.5 rounded-sm bg-emerald-600" /> 全部
+        </div>
+      </div>
+      <div className="grid grid-cols-7 gap-1 text-center">
+        {['日', '月', '火', '水', '木', '金', '土'].map((w) => (
+          <div key={w} className="text-[10px] font-medium text-slate-400">{w}</div>
+        ))}
+        {Array.from({ length: startWeekday }).map((_, i) => <div key={`blank-${i}`} />)}
+        {Array.from({ length: daysInMonth }).map((_, i) => {
+          const d = i + 1
+          const key = `${year}-${pad(month + 1)}-${pad(d)}`
+          const { done, total } = getDayProgress(items, log, key)
+          const ratio = total > 0 ? done / total : 0
+          const isFuture = key > tKey
+          const isToday = key === tKey
+          const cellClass = isFuture
+            ? 'bg-white text-slate-300 ring-1 ring-slate-100'
+            : ratio === 0
+              ? 'bg-slate-100 text-slate-400'
+              : ratio < 0.5
+                ? 'bg-emerald-200 text-emerald-900'
+                : ratio < 1
+                  ? 'bg-emerald-400 text-white'
+                  : 'bg-emerald-600 text-white'
+          return (
+            <div key={key}
+              className={`flex h-7 items-center justify-center rounded-md text-[11px] font-medium ${cellClass} ${isToday ? 'ring-2 ring-emerald-500' : ''}`}>
+              {d}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

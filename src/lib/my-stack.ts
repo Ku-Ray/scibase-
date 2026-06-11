@@ -286,6 +286,142 @@ export function buildRestockIcs(statuses: InventoryStatus[], now: Date = new Dat
   return lines.join('\r\n')
 }
 
+/* ─── 服用記録・ストリーク（E2.6①） ─────────────────────────────── */
+
+export const INTAKE_STORAGE_KEY = 'scibase_my_stack_intake'
+/** 服用ログの保持日数（肥大化防止） */
+export const INTAKE_RETENTION_DAYS = 60
+/** ストリーク節目（Completion 祝福を出す日数） */
+export const INTAKE_MILESTONES = [7, 30, 100]
+
+/** 服用記録のスロット。timing 未設定のアイテムは 'unscheduled'（いつでも）で記録 */
+export type IntakeSlot = StackTiming | 'unscheduled'
+
+/**
+ * 服用ログ。日付 → slug → 飲んだスロットの配列。
+ * 例: { '2026-06-11': { 'vitamin-d': ['morning'], 'zinc': ['unscheduled'] } }
+ */
+export type IntakeLog = Record<string, Record<string, IntakeSlot[]>>
+
+const DATE_KEY_RE = /^\d{4}-\d{2}-\d{2}$/
+const VALID_INTAKE_SLOTS = new Set<string>([...TIMING_ORDER, 'unscheduled'])
+
+export function todayKey(now: Date = new Date()): string {
+  return toDateOnly(now)
+}
+
+/** localStorage から読んだ生データを検証し、保持期間外を落とす */
+export function sanitizeIntakeLog(raw: unknown, now: Date = new Date()): IntakeLog {
+  if (raw == null || typeof raw !== 'object' || Array.isArray(raw)) return {}
+  const cutoff = toDateOnly(new Date(now.getTime() - INTAKE_RETENTION_DAYS * MS_PER_DAY))
+  const out: IntakeLog = {}
+  for (const [dateKey, day] of Object.entries(raw as Record<string, unknown>)) {
+    if (!DATE_KEY_RE.test(dateKey) || dateKey < cutoff) continue
+    if (day == null || typeof day !== 'object' || Array.isArray(day)) continue
+    const cleanDay: Record<string, IntakeSlot[]> = {}
+    for (const [slug, slots] of Object.entries(day as Record<string, unknown>)) {
+      if (!Array.isArray(slots)) continue
+      const valid = slots.filter((s): s is IntakeSlot => typeof s === 'string' && VALID_INTAKE_SLOTS.has(s))
+      if (valid.length > 0) cleanDay[slug] = Array.from(new Set(valid))
+    }
+    if (Object.keys(cleanDay).length > 0) out[dateKey] = cleanDay
+  }
+  return out
+}
+
+/** その日に飲むべきスロット一覧（timing 未設定は 'unscheduled' 1 枠） */
+export function getExpectedSlots(items: StackItem[]): { slug: string; slot: IntakeSlot }[] {
+  return items.flatMap((it) =>
+    it.timing.length > 0
+      ? it.timing.map((slot) => ({ slug: it.slug, slot: slot as IntakeSlot }))
+      : [{ slug: it.slug, slot: 'unscheduled' as IntakeSlot }],
+  )
+}
+
+/** 指定日の服用進捗（現在の棚構成に対する記録数） */
+export function getDayProgress(
+  items: StackItem[],
+  log: IntakeLog,
+  dateKey: string,
+): { done: number; total: number } {
+  const expected = getExpectedSlots(items)
+  const day = log[dateKey]
+  const done = day
+    ? expected.filter((e) => day[e.slug]?.includes(e.slot)).length
+    : 0
+  return { done, total: expected.length }
+}
+
+/**
+ * 連続服用日数。ルール＝「その日、棚のどれか 1 つでも記録があれば継続」
+ * （全部必須は厳しすぎるため）。今日が未記録なら昨日まで遡って数える。
+ */
+export function calcIntakeStreak(log: IntakeLog, now: Date = new Date()): { streak: number; todayDone: boolean } {
+  const hasRecord = (key: string) => {
+    const day = log[key]
+    return !!day && Object.values(day).some((arr) => Array.isArray(arr) && arr.length > 0)
+  }
+  const today = toDateOnly(now)
+  const todayDone = hasRecord(today)
+  let cursor = new Date(`${today}T00:00:00`)
+  if (!todayDone) cursor = new Date(cursor.getTime() - MS_PER_DAY)
+  let streak = 0
+  for (let i = 0; i < 400; i++) {
+    const key = toDateOnly(cursor)
+    if (!hasRecord(key)) break
+    streak++
+    cursor = new Date(cursor.getTime() - MS_PER_DAY)
+  }
+  return { streak, todayDone }
+}
+
+/** 服用リマインダーの開始時刻（floating local time・各 timing の代表時刻） */
+const INTAKE_SLOT_TIME: Record<StackTiming, string> = {
+  empty_stomach: '070000',
+  morning: '080000',
+  noon: '123000',
+  night: '193000',
+  bedtime: '223000',
+}
+
+/**
+ * 服用リマインダーの iCalendar（.ics）。timing が設定されたサプリを
+ * タイミングごとに `RRULE:FREQ=DAILY` の毎日繰り返しイベントにする。
+ * 時刻はタイムゾーン指定なし（floating）＝端末のローカル時刻で解釈される。
+ */
+export function buildIntakeIcs(items: StackItem[], now: Date = new Date()): string | null {
+  const slots = TIMING_ORDER
+    .map((t) => ({
+      slot: t,
+      names: items.filter((i) => i.timing.includes(t)).map((i) => getStackItemName(i.slug)),
+    }))
+    .filter((s) => s.names.length > 0)
+  if (slots.length === 0) return null
+  const dtstamp = now.toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z')
+  const startDate = toDateOnly(now).replaceAll('-', '')
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//SciBase//My Stack//JA',
+    'CALSCALE:GREGORIAN',
+  ]
+  for (const { slot, names } of slots) {
+    const label = names.slice(0, 3).join('・') + (names.length > 3 ? `・他${names.length - 3}品` : '')
+    lines.push(
+      'BEGIN:VEVENT',
+      `UID:scibase-mystack-intake-${slot}@scibase.app`,
+      `DTSTAMP:${dtstamp}`,
+      `DTSTART:${startDate}T${INTAKE_SLOT_TIME[slot]}`,
+      'RRULE:FREQ=DAILY',
+      `SUMMARY:${icsEscape(`💊 ${TIMING_LABEL[slot]}のサプリ（${label}）`)}`,
+      `DESCRIPTION:${icsEscape('SciBase My Stack の服用リマインダー。今日の記録: https://scibase.app/tools/my-stack')}`,
+      'END:VEVENT',
+    )
+  }
+  lines.push('END:VCALENDAR')
+  return lines.join('\r\n')
+}
+
 /* ─── 吸収競合（時間分離の提案） ────────────────────────────────── */
 
 interface SeparationPairDef {
