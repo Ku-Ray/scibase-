@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {
   ArrowRight,
+  ExternalLink,
   Target,
   Lightbulb,
   CheckCircle,
@@ -22,6 +23,7 @@ import { getIngredient } from '@/lib/data'
  *
  * 段落レベル：
  *   - 段落区切りは「空行（\n\n）」
+ *   - 段落全体が `**▶ [text](https://..)**` のみ → 商品CTAボタン（emerald・rel=sponsored）に昇格（内部リンクは対象外）
  *   - 段落全体が `**...**` のみ → <h4> 自動昇格
  *   - 段落の全行が `- ` で始まる → <ul><li> リストとして描画
  *
@@ -131,6 +133,13 @@ function renderToken(t: Token, key: number): ReactNode {
 function isBoldOnlyParagraph(text: string): string | null {
   const m = text.trim().match(/^\*\*([^*\n]+)\*\*$/)
   return m ? m[1] : null
+}
+
+/** 段落全体が「**▶ [text](https://..)**」のみ → 商品CTAボタンに昇格（外部リンク限定・内部導線は従来のテキストリンク） */
+function parseCtaButton(text: string): { label: string; href: string } | null {
+  const m = text.trim().match(/^\*\*\s*▶?\s*\[([^\]\n]+)\]\((https?:\/\/[^)\n]+)\)\s*\*\*$/)
+  if (!m) return null
+  return { label: m[1], href: m[2] }
 }
 
 const BULLET_LINE = /^\s*-\s+/
@@ -247,6 +256,24 @@ export function RichParagraphs({
             >
               {tokenize(h2Match[1]).map(renderToken)}
             </h2>
+          )
+        }
+        const ctaButton = parseCtaButton(para)
+        if (ctaButton) {
+          return (
+            <p key={i} className="my-6 not-prose">
+              <a
+                href={ctaButton.href}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="flex w-full sm:inline-flex sm:w-auto items-center justify-center gap-2
+                  text-[15px] font-bold text-white bg-emerald-600 hover:bg-emerald-700
+                  rounded-xl px-6 py-4 sm:px-8 shadow-sm transition-colors no-underline"
+              >
+                <span className="text-center leading-snug">{ctaButton.label}</span>
+                <ExternalLink className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              </a>
+            </p>
           )
         }
         const boldText = isBoldOnlyParagraph(para)
