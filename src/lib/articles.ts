@@ -2716,7 +2716,7 @@ NRで反応を確認したあと、より直接前駆体に近いアプローチ
 
 NRではなくNMNを選びたい人向けには、銘柄選びの3軸（純度==≥99%==・含有量 ==≥250mg/日==・特許プロセス開示）とGAAH NMN（純度99.9%・国内製造GMP）の解説を別記事で整理している。「NMNを試したい」と決めた人は、純度50-70%の安価品でつまずく前にこちらの判断軸を確認したい。
 
-→ [NMN サプリは効くのか｜純度 × 含有量で論文整理](/articles/nmn-supplement-effects-buying-guide)
+→ [NMN の効果はどこまで本当か｜純度 × 含有量で論文整理](/articles/nmn-supplement-effects-buying-guide)
 
 **強化案：サーチュイン・ミトコンドリアの補助軸**
 
@@ -2827,30 +2827,30 @@ NAD+前駆体の主観的な疲労改善は3〜6ヶ月の継続が前提。Remie
     dateModified: '2026-06-06',
   },
 
-  // ── 3.5 NMN サプリ「選び方」CV 記事（KW: nmn サプリ 効果 VOL 4,400・KGR 0.012）─
+  // ── 3.5 NMN「効果」CV 記事（KW: nmn 効果 VOL 9,900・KGR 0.016 ＋ nmn サプリ 効果 VOL 4,400・KGR 0.055）─
   {
     slug: 'nmn-supplement-effects-buying-guide',
-    title: 'NMN サプリは本当に効くのか｜純度 × 含有量で論文整理',
-    seoTitle: 'NMN サプリは効くのか｜純度 × 含有量で論文整理｜SciBase',
+    title: 'NMN サプリの効果はどこまで本当か｜NAD+ は上がる・体感は銘柄次第',
+    seoTitle: 'NMN の効果は本当にあるのか｜12RCT メタ解析で整理｜SciBase',
     description:
-      'NMN サプリは血中 NAD+ を有意に上昇させるのは事実だが、臨床体感差は「純度・含有量・特許プロセス」の 3 軸で決まる。化粧品メーカー現役視点で原料 QC 三点セットの見極め方を論文ベースで整理する。',
+      'NMN の効果は「血中 NAD+ 上昇は確認済み・臨床体感は研究蓄積中」が論文の現在地。効果の確度マップ（再現済み / 単一 RCT / 蓄積中）と「効果を感じない人」の 3 パターン、純度 × 含有量 × 製造の銘柄 3 軸を化粧品メーカー現役視点で整理する。',
     seoDescription:
-      'NMN サプリは血中 NAD+ を有意に上昇させる（Yoshino 2021 RCT・Igarashi 2022・Yi 2023）が、2024 メタ解析（12RCT・n=513）で臨床指標への明確な改善は研究蓄積中。「効く / 効かない」は純度（≥99%）× 含有量（≥250mg/日）× 特許プロセス開示の 3 軸で銘柄選びが決まる。化粧品メーカー現役視点で原料 QC 三点セット（純度表示 / 特許 / 第三者検査）の見極め方を整理。GAAH NMN（純度 99.9%・国内製造・医療従事者推奨）が研究使用域を満たす数少ない国内銘柄。妊娠・授乳中・がん既往・抗がん剤併用は医師相談必須。',
+      'NMN の効果はどこまで論文で確認されているか。血中 NAD+ 上昇は Yoshino 2021・Igarashi 2022・Yi 2023 のヒト RCT で再現性高く確認済みだが、疲労・体組成・認知機能など臨床指標への効果は 2024 メタ解析（12RCT・n=513）で研究蓄積中。効果の確度マップ（再現済み / 単一 RCT / 蓄積中）と、効果を感じない人の 3 パターン（純度 50-70% 品・250mg/日未満・3 ヶ月未満で中断）、純度 × 含有量 × 製造プロセスの銘柄 3 軸を化粧品メーカー現役視点で整理。研究使用域を満たす国内銘柄は GAAH NMN（純度 99.9%・国内 GMP・250mg/日）など少数。妊娠・授乳中・がん既往・抗がん剤併用は医師相談必須。',
     category: 'anti-aging',
     categoryLabel: '抗老化',
     publishedAt: '2026-06-06',
-    updatedAt: '2026-06-06',
-    readingMinutes: 7,
+    updatedAt: '2026-06-11',
+    readingMinutes: 8,
     heroStat: { value: '+28%', label: 'NMN 経口 12 週で血中 NAD+ が上昇する平均（複数 RCT 集約値）' },
     lossAversionHook:
-      'NMN サプリで体感が出ない人の多くは「純度 50% 以下」「含有量不足」「特許未取得」のいずれかが原因。安価な NMN は飲んでも血中 NAD+ がほぼ上がらない。',
+      'NMN の効果を感じられない人の多くは「純度 50% 以下」「含有量不足」「3 ヶ月未満で中断」のいずれかが原因。安価な NMN は飲んでも血中 NAD+ がほぼ上がらない。',
     keyConclusions:
-      'NMN サプリは血中 NAD+ を有意に上昇させる（Yoshino 2021・Igarashi 2022・Yi 2023 で再現性高く確認）。ただし臨床体感差は 2024 メタ解析（n=513）で研究蓄積中。「効く / 効かない」は純度（≥99% 表示）・含有量（≥250mg/日が研究使用域）・特許プロセス開示の 3 軸で銘柄が決まる。市販 NMN の純度 50-70% 品は表示量と中身が乖離するケースが報告される。化粧品メーカー視点の原料 QC 三点セット（純度表示・特許プロセス・第三者検査）で見極めるのが現実的。妊娠・授乳中・がん既往・パーキンソン病・抗がん剤併用は主治医相談必須。',
+      'NMN の効果で論文確認済みなのは「血中 NAD+ 上昇」（Yoshino 2021・Igarashi 2022・Yi 2023 で再現性高く確認）。疲労・体組成・認知機能など臨床体感への効果は 2024 メタ解析（n=513）で研究蓄積中。「効く / 効かない」は純度（≥99% 表示）・含有量（≥250mg/日が研究使用域）・特許プロセス開示の 3 軸で銘柄が決まる。市販 NMN の純度 50-70% 品は表示量と中身が乖離するケースが報告される。化粧品メーカー視点の原料 QC 三点セット（純度表示・特許プロセス・第三者検査）で見極めるのが現実的。妊娠・授乳中・がん既往・パーキンソン病・抗がん剤併用は主治医相談必須。',
 
-    problemHeading: 'NMN サプリは「効く」のか「効かない」のか',
-    problemBody: `📋 *化粧品メーカー現役研究者 ｜ 更新日：2026-06-06 ｜ 本ページは広告（PR）を含む*
+    problemHeading: 'NMN の効果は「ある」のか「ない」のか',
+    problemBody: `📋 *化粧品メーカー現役研究者 ｜ 更新日：2026-06-11 ｜ 本ページは広告（PR）を含む*
 
-**「NMN サプリは効くのか」を 1 行で答えるなら「血中 NAD+ は上がる。体感は銘柄次第」だ。**
+**「NMN の効果は本当にあるのか」を 1 行で答えるなら「血中 NAD+ を上げる効果は確認済み。体感は銘柄次第」だ。**
 
 これは 2024 年メタ解析（12 RCT・n=513）が示した現時点の結論で、==Yoshino 2021==（Science・250mg/日 10 週で血中 NAD+ 有意上昇）以降のヒト RCT が再現性高く示してきた。
 
@@ -2860,9 +2860,9 @@ NAD+前駆体の主観的な疲労改善は3〜6ヶ月の継続が前提。Remie
 
 :::point
 **⚡ 時間がない人向け｜まずこの 3 つから選ぶ**
-🥇 **本命（研究域準拠・国内製造）**：[GAAH NMN](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)（純度 99.9% × 国内 GMP × 250mg/日）月 ¥39,600・1 日 ¥1,320
-💰 **コスト重視（海外品・¥3,500）**：[Doctor's Best Stabilized NMN](/ingredients/nmn#products)（純度 99% × 150mg × 2 粒）月 ¥3,500・1 日 ¥117
-🔄 **NR で代用したい人**：[Tru Niagen NR 300mg](/articles/nad-40s)（NR は NMN よりヒト RCT 数が先行）月 ¥5,330・1 日 ¥178
+🥇 **本命（研究域準拠・国内 GMP）**：[GAAH NMN](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)（純度 99.9% × 250mg/日）月 ¥39,600・1 日 ¥1,320
+💰 **コスパで研究域（Amazon 国内）**：[ビクトリーロード NMN 220 カプセル](https://www.amazon.co.jp/dp/B0FQ2LRRTC?tag=scibase-22)（1 粒 250mg × 国内 GMP）¥4,580・実質月 ¥654
+🌷 **複合 1 本完結（NMN 単体評価には不向き）**：[Re:Bloom](https://t.afi-b.com/visit.php?a=f13282t-8437248W&p=y979258Z)（NMN 150mg/日 + 美容・健康 10 成分）定期初回 ¥3,980
 :::
 
 詳細な比較は記事下部の「3 銘柄を縦に並べて比較する」セクションで。`,
@@ -2890,6 +2890,27 @@ NMN は NAD+ の直接前駆体（材料）で、経口摂取して血中 NAD+ �
 
 2024 年メタ解析（12 RCT・n=513）では血中 NAD+ 上昇は consistent だが、疲労 / 体組成 / 認知機能等の臨床指標への有意差は「研究蓄積中」が結論だ。安全性は良好で、Yoshino 2021 では 1,250mg/日まで有意な副作用なし。長期データはまだ 12 週以下の RCT が中心で、年単位のヒトデータは限定的という前提も押さえておきたい。
 
+### NMN の効果マップ｜何がどこまで確認されているか（確度順）
+
+「NMN の効果」と一口に言っても、論文上の確度はバラバラだ。ヒト試験の再現性で 3 段に分けると、現在地はこう整理できる。
+
+**確度高（複数 RCT で再現済み）**：
+
+- 血中 NAD+ の上昇——Yoshino 2021・Igarashi 2022・Yi 2023 で一貫して確認。Yi 2023 では用量依存性も確認
+
+**単一 RCT で報告（追試待ち）**：
+
+- 筋インスリン感受性の改善——Yoshino 2021（閉経前肥満女性 25 名）
+- 歩行速度・下肢機能の改善——Igarashi 2022（高齢男性 42 名）
+- 午後摂取群での眠気・下肢機能の改善——==Kim 2022==（高齢者 108 名・250mg/日 × 12 週）
+
+**研究蓄積中（まだ「効果あり」とは言えない）**：
+
+- 疲労感・体組成・認知機能・運動能・睡眠——2024 メタ解析（12 RCT・n=513）で一貫した有意差は確認されていない
+- 「若返り」「寿命延長」——マウス研究の報告はあるが、ヒトでは未検証
+
+この確度マップを押さえると、「NMN は効く」と断定する記事も「効かない詐欺成分」と切り捨てる記事も、どちらも論文の現在地とずれていることが分かる。
+
 :::term
 **HPLC（高速液体クロマトグラフィー）**：化合物の純度を測定する分析手法。NMN サプリで「純度 99% 以上」と表示があるかは HPLC 測定値が根拠。表示なしは中身の精度を保証していない。
 :::
@@ -2906,7 +2927,7 @@ NMN は NAD+ の直接前駆体（材料）で、経口摂取して血中 NAD+ �
 
     appendixSections: [
       {
-        heading: 'NMN は本当に効くのか｜否定派論文も読む（反論セクション）',
+        heading: 'NMN の効果は本当か｜否定派論文も読む（反論セクション）',
         position: 'before-solution',
         body: `NMN を巡っては、効果を支持する論文と懐疑的な論文が共存している。両論を踏まえずに「効く」「効かない」を結論するのは誠実ではない。化粧品メーカーの開発現場では、肯定論文だけ集めて結論を急ぐと後で痛い目に遭うことが多い。
 
@@ -2929,7 +2950,7 @@ NMN は NAD+ の直接前駆体（材料）で、経口摂取して血中 NAD+ �
       {
         heading: '3 銘柄を縦に並べて比較する',
         position: 'after-solution',
-        body: `論文ベースで選ぶなら、市場の NMN サプリは「研究域に届くか」「コスト」「NR との使い分け」の 3 軸で 3 つに分かれる。
+        body: `論文ベースで選ぶなら、市場の NMN サプリは「研究域に届くか」「コスト」「1 本で何役か」の 3 軸で 3 つに分かれる。
 
 **コスト感のアンカリング**：GAAH NMN の月 ¥39,600 は ==1 日換算で ¥1,320==。動画配信サブスク 2 つ分（Netflix Standard ¥1,490 + Spotify ¥980）と同程度。逆に純度・含有量が研究域に届かない安価品を 3 ヶ月飲むのは、コストが安くても「研究域外の試行」で評価が成立しないため機会損失が大きい。
 
@@ -2949,35 +2970,40 @@ NMN は NAD+ の直接前駆体（材料）で、経口摂取して血中 NAD+ �
 
 [[PRODUCT:nmn]]
 
-### 💰 Budget pick：Doctor's Best Stabilized NMN（海外 iHerb・コスト重視）
+### 💰 コスパで研究域：ビクトリーロード NMN 220 カプセル（Amazon・¥4,580）
 
 :::point
-**💰 Doctor's Best Stabilized NMN 150mg × 60 粒**
-🇺🇸 メーカー：Doctor's Best（米国）
-💊 純度 99% 以上 / 1 カプセル 150mg / 2 粒で 300mg/日（研究域）
-🏭 海外 GMP 認証 + 第三者検査公開
-💰 月 **¥3,500**（GAAH の 1/10 のコスト）・1 日 ¥117
-🚚 iHerb 海外発送 7-14 日
+**💰 ビクトリーロード NMN 55,000mg 220 カプセル**
+🇯🇵 1 粒 250mg で研究使用域（Yoshino 2021 と同等用量）を 1 粒でカバー
+🏭 国内 GMP 工場製造・純度 99% 表示
+💰 ¥4,580 / 220 粒（1 日 1 粒で約 7 ヶ月分・実質月 ¥654）
+🚚 Amazon 国内即日着
+⚠️ 第三者検査の公開と β-NMN 明記は未達（SciBase 採点 3/5）
 :::
 
-「研究域 250mg 以上は必要だが、月¥3,500 でまず 3 ヶ月試したい」人向け。海外原料だが Doctor's Best ブランドの安定化処方 + GMP 認証 + 第三者検査公開で品質基盤あり。プレミアム帯の 1/10 のコストで「NMN を試してみる」段階の評価には十分。
+「研究域 250mg/日は外したくないが、まず数千円で試したい」人の現実解。純度 99% 表示 + 1 粒 250mg + 国内 GMP の 3 軸をクリアし、220 粒の大容量で実質月 ¥654 まで下がる。第三者検査公開と β-NMN 明記が未達のため採点は 3/5 で、研究域に厳密に揃えたい人は GAAH が筋だ。
 
-**▶ [iHerb で Doctor's Best NMN の詳細を見る](/ingredients/nmn#products)**
+**▶ [Amazon でビクトリーロード NMN の詳細を見る](https://www.amazon.co.jp/dp/B0FQ2LRRTC?tag=scibase-22)**
 
-### 🔄 代替：Tru Niagen NR（NR 派・Amazon 国内即日）
+### 🌷 複合 1 本完結：Re:Bloom（リブルーム）｜定期初回 ¥3,980・国内製造
 
 :::point
-**🔄 TRU NIAGEN® NR 300mg × 90 粒**
-🇺🇸 メーカー：ChromaDex（米国・NIAGEN 特許保有）
-💊 NR 300mg / 1 カプセル（Remie 2020 用量域）
-🏭 米国 GMP + NSF Certified for Sport 認証
-💰 月 **¥5,330**・1 日 ¥178
-🚚 Amazon 国内即日着・返品 30 日保証
+**🌷 Re:Bloom NMN 4,500mg + 複合成分 30 粒**
+🇯🇵 国内製造・学術顧問に医師
+💊 NMN 150mg/日 + 美容 3 成分 + 健康 7 成分の複合設計
+💰 定期初回 ¥3,980（定期コースの回数条件・解約方法は公式ページで購入前に確認）
+⚠️ 1 日量 150mg は研究使用域（250mg/日）未達＝NMN 単体の効果評価には不向き
 :::
 
-「NMN ではなく NR で評価したい人」「Amazon 国内即日着が良い人」向け。ヒト RCT 数は NR が NMN より先行（Trammell 2016・Martens 2018・Remie 2020）。NSF 認証 + NIAGEN 特許で研究グレードの品質。
+「NMN そのものの効果」を 3 ヶ月評価したいなら GAAH かビクトリーロードが筋。逆に「サプリの本数を増やしたくない・美容も健康も 1 本でまとめたい」というニーズなら、Re:Bloom の複合設計が収まる。1 日量が研究域に届かない点は割り切りが必要だ。
 
-**▶ [Amazon で Tru Niagen の詳細を見る](/ingredients/nicotinamide-riboside#products)** ｜ **▶ [NR vs NMN 選び方記事を読む](/articles/nad-40s)**`,
+**▶ [Re:Bloom 公式で詳細を見る（PR）](https://t.afi-b.com/visit.php?a=f13282t-8437248W&p=y979258Z)**
+
+### 海外品・NR で代用したい人へ
+
+iHerb の海外品で研究域を満たすなら [Doctor's Best Stabilized NMN（150mg × 2 粒で 300mg/日・月 ¥3,500）](/ingredients/nmn#products)、NMN ではなく NR で評価するなら [Tru Niagen NR 300mg（ヒト RCT 数は NR が先行）](/articles/nad-40s) が現実解になる。
+
+50 銘柄から 5 つの判断軸で絞った 4 本の採点詳細は [NMN おすすめランキング](/articles/nmn-recommended-ranking-guide) で整理している。`,
       },
       {
         heading: '結論：NMN を選ぶなら純度 99.9% × 250mg 以上 × 国内製造 GMP',
@@ -2989,7 +3015,7 @@ NMN は NAD+ の直接前駆体（材料）で、経口摂取して血中 NAD+ �
 純度 99.9% × 含有量 ==≥250mg/日== × 国内製造 GMP の 3 軸を満たす銘柄を選ぶのが、Yoshino 2021・Igarashi 2022 の研究使用域を再現する最短路だ。
 
 :::conclusion
-NMN は「飲めば血中 NAD+ は上がる」段階に到達済み。臨床体感は純度・含有量・特許の 3 軸で決まる。月 ¥6,600〜運用可能だが、研究域の銘柄は ¥30,000 前後がプレミアム帯のラインだ。
+NMN は「飲めば血中 NAD+ は上がる」段階に到達済み。臨床体感は純度・含有量・特許の 3 軸で決まる。研究域の銘柄は実質月 ¥654（Amazon コスパ枠）から運用でき、国内プレミアム帯は ¥39,600 前後だ。
 :::
 
 **1 位　GAAH NMN（純度 99.9%・医療従事者推奨 No.1）**
@@ -3002,7 +3028,7 @@ NMN は「飲めば血中 NAD+ は上がる」段階に到達済み。臨床体�
 
 「NMN を飲んだけど効果なかった」というレビューの多くは、銘柄が悪かったのではなく、3 軸の判断基準を持たずに「価格が手頃で口コミが良さそう」で選んでしまった結果として、研究域から外れた製品を 3 ヶ月飲んでいた、というケースが多い。同じ ¥3,000-5,000 帯でも、純度 50% と 99% では研究上の評価対象が違う。広告コピーで売っている製品でも、中身の品質が裏付けされていれば、それは別の話だ。
 
-[[PRODUCT:nmn]]
+**▶ [GAAH NMN を公式で見る（PR）](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**
 
 **化粧品メーカー視点：原料 QC 三点セット**
 
@@ -3043,9 +3069,7 @@ NMN は「飲めば血中 NAD+ は上がる」段階に到達済み。臨床体�
 
 → [NMN は NAD+ を上げるが臨床差未確立｜NR が先行](/articles/nad-40s)（NR 派の詳細はこちら）
 
----
-
-**この成分の月コスト目安は ¥6,600〜¥39,600**（純度 99.9% × 国内製造プレミアム帯）。コスト重視なら海外原料の Doctor's Best NMN（月 ¥3,500）もあるが、純度表示と用量で研究域に届くかを確認したい。
+**この成分の月コスト目安は実質 ¥654（Amazon コスパ枠）〜¥39,600（国内プレミアム帯）**。価格差の中身は「研究域 250mg/日を満たすか」「純度表示・第三者検査の有無」で決まるので、安い銘柄ほどこの 2 点を先に確認したい。
 
 詳細は [NMN 成分ページ](/ingredients/nmn) で 12 RCT メタ解析の詳細・安全性データ・他成分との併用注意を整理している。`,
       },
@@ -3083,7 +3107,7 @@ Yoshino 2021・Igarashi 2022 の研究使用域は ==250mg/日以上==。1 日�
 
 - 40 歳以上で、徹夜後の立ち直りの遅さ・運動後の翌日の疲労感・肌のくすみが取れにくい等の体感変化を 1 つ以上自覚している
 - 既存サプリ（オメガ 3・ビタミン D・コラーゲン等）の土台はすでに整っており、次の手として NAD+ 軸を試したい
-- 月 ¥6,600〜¥39,600 の継続コストを「健康投資」として 3 ヶ月以上組める
+- 研究域の銘柄（実質月 ¥654〜¥39,600）を「健康投資」として 3 ヶ月以上続ける予算を組める
 - 研究域に届く純度・含有量の銘柄を 3 ヶ月評価する覚悟がある
 
 **取らなくていい人（優先順位が低い or 避けるべき）**：
@@ -3093,7 +3117,7 @@ Yoshino 2021・Igarashi 2022 の研究使用域は ==250mg/日以上==。1 日�
 - パーキンソン病・神経変性疾患（NAD+ 介入のデータが限定的）
 - 抗がん剤・PARP 阻害薬を併用中（理論的リスク）
 - 30 代以下で土台サプリ（オメガ 3・ビタミン D 等）も整っていない（先にそちらが ROI 高い）
-- 月 ¥6,600 の継続コストが家計を圧迫する状況にある
+- 3 ヶ月評価の初期費用（最安でも ¥4,580〜）すら家計を圧迫する状況にある
 
 該当の方は、自己判断で開始せず主治医・薬剤師に相談する。`,
       },
@@ -3138,7 +3162,13 @@ NAD+ 経路以外にも、ヒト RCT で評価軸が確立した成分は複数�
 - 🌸 [コラーゲンペプチド（肌弾力 +28%）](/articles/collagen-question) PEI 5.4
 - 🌿 [レスベラトロール（サーチュイン活性化）](/ingredients/resveratrol) PEI 1.8 暫定
 
-老化対策は「NMN 1 本」より「複数軸の土台」のほうが体感差が出やすい。`,
+老化対策は「NMN 1 本」より「複数軸の土台」のほうが体感差が出やすい。
+
+**NMN をもっと知る（SciBase の NMN 記事クラスタ）**
+
+- 🏆 [NMN おすすめランキング｜50 銘柄を 5 軸で絞った 4 本](/articles/nmn-recommended-ranking-guide)
+- 🔄 [NR vs NMN｜どちらを先に試すか](/articles/nad-40s)
+- 🧪 [NMN 成分ページ｜12 RCT メタ解析・安全性・併用注意](/ingredients/nmn)`,
       },
       {
         heading: '参考文献（References）',
@@ -3150,6 +3180,7 @@ NAD+ 経路以外にも、ヒト RCT で評価軸が確立した成分は複数�
 - Yoshino M, et al. (2021) Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women. **Science** 372(6547):1224-1229. [PubMed: 33888596](https://pubmed.ncbi.nlm.nih.gov/33888596/)
 - Igarashi M, et al. (2022) Chronic nicotinamide mononucleotide supplementation elevates blood nicotinamide adenine dinucleotide levels and alters muscle function in healthy older men. **npj Aging** 8(1):5. [PubMed: 35927242](https://pubmed.ncbi.nlm.nih.gov/35927242/)
 - Yi L, et al. (2023) The efficacy and safety of β-nicotinamide mononucleotide (NMN) supplementation in healthy middle-aged adults: a randomized, multicenter, double-blind, placebo-controlled, parallel-group, dose-dependent clinical trial. **GeroScience** 45(1):29-43. [PubMed: 36482258](https://pubmed.ncbi.nlm.nih.gov/36482258/)
+- Kim M, et al. (2022) Effect of 12-Week Intake of Nicotinamide Mononucleotide on Sleep Quality, Fatigue, and Physical Performance in Older Japanese Adults: A Randomized, Double-Blind Placebo-Controlled Study. **Nutrients** 14(4):755. [PubMed: 35215405](https://pubmed.ncbi.nlm.nih.gov/35215405/)
 
 **メタ解析・システマティックレビュー**：
 
@@ -3196,10 +3227,8 @@ NMN は「飲めば即体感」の成分ではない。Yoshino 2021・Igarashi 2
 :::
 
 :::summary
-判断軸 3 つを満たす NMN を 3 ヶ月以上継続評価する。コスト重視なら [Doctor's Best NMN](/ingredients/nmn)（月 ¥3,500）も候補。妊娠・授乳中・がん既往・抗がん剤併用は医師相談必須。
+判断軸 3 つを満たす NMN を 3 ヶ月以上継続評価する。コスパ重視なら 1 粒 250mg・国内 GMP のビクトリーロード（実質月 ¥654・Amazon）も候補。妊娠・授乳中・がん既往・抗がん剤併用は医師相談必須。
 :::
-
----
 
 **「とりあえず研究域の NMN を試したい」人へ**
 
@@ -3223,6 +3252,11 @@ NMN は「飲めば即体感」の成分ではない。Yoshino 2021・Igarashi 2
     ],
 
     faqs: [
+      {
+        question: 'NMN にはどんな効果がありますか？',
+        answer:
+          '複数のヒト RCT で再現されているのは「血中 NAD+ の上昇」（Yoshino 2021・Igarashi 2022・Yi 2023）。単一 RCT では筋インスリン感受性（Yoshino 2021）・歩行速度（Igarashi 2022）・午後摂取での眠気軽減（Kim 2022）が報告されている。疲労感・体組成・認知機能への効果は 2024 メタ解析（12 RCT・n=513）で研究蓄積中だ。',
+      },
       {
         question: 'NMN サプリは本当に効きますか？',
         answer:
@@ -3270,11 +3304,11 @@ NMN は「飲めば即体感」の成分ではない。Yoshino 2021・Igarashi 2
       },
     ],
 
-    relatedIngredientSlugs: ['nmn', 'nicotinamide-riboside', 'resveratrol', 'coq10', 'spermidine', 'tmg'],
-    relatedArticleSlugs: ['nad-40s', 'anti-aging-supplement-guide-30s'],
+    relatedIngredientSlugs: ['nmn', 'nicotinamide-riboside', 'resveratrol', 'coq10', 'spermidine', 'trimethylglycine-tmg'],
+    relatedArticleSlugs: ['nmn-recommended-ranking-guide', 'nad-40s', 'anti-aging-supplement-guide-30s'],
     concerns: ['longevity', 'fatigue', 'skin-aging'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
-    dateModified: '2026-06-06',
+    dateModified: '2026-06-11',
     footerBannerUrl: 'https://www21.a8.net/svt/bgt?aid=260606739412&wid=001&eno=01&mid=s00000021920002012000&mc=1',
     footerBannerLinkUrl: 'https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+BZ8OX',
   },
@@ -3738,7 +3772,7 @@ NR の選び方は、別記事で整理している。
 
 買う前提が固まっていない段階なら、こっちを先に読む方が判断がブレない。
 
-**▶ [NMN サプリは本当に効くのか（記事）](/articles/nmn-supplement-effects-buying-guide)**
+**▶ [NMN の効果はどこまで本当か（記事）](/articles/nmn-supplement-effects-buying-guide)**
 
 ---
 
