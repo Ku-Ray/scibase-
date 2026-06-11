@@ -13,6 +13,7 @@ import { ConcernGuideTestKitCTACard } from '@/components/ConcernGuideTestKitCTAC
 import { FavoriteButton } from '@/components/FavoriteButton'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { NextReadCTA } from '@/components/NextReadCTA'
+import { NewsletterSignup } from '@/components/NewsletterSignup'
 import { buildConcernGuideNextRead } from '@/lib/recommendation'
 import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 
@@ -704,6 +705,11 @@ export function ConcernGuideArticle({ concernSlug }: Props) {
             customLabel={`${concern.nameJa}サプリ × 服用中の薬の飲み合わせを check`}
           />
         </section>
+
+        {/* ── Newsletter（ソフトゲート・任意）── */}
+        <div className="mt-10">
+          <NewsletterSignup source={`guide:${concernSlug}`} />
+        </div>
 
         {/* ── Cross-type 次に読む（比較 + ランキング + 関連悩み）── */}
         <NextReadCTA

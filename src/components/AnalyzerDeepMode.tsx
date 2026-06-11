@@ -8,6 +8,7 @@ import { EvidenceBadge } from './EvidenceBadge'
 import { OutboundProductLink } from './OutboundProductLink'
 import { RadarChart, type RadarData } from './RadarChart'
 import { trackEvent } from '@/lib/analytics'
+import { NewsletterSignup } from './NewsletterSignup'
 import {
   CANONICAL_INTERACTIONS,
   CATEGORY_LABEL,
@@ -1772,6 +1773,11 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
           typeName={personalityType.name}
         />
       )}
+
+      {/* ── Newsletter（ソフトゲート・任意）── */}
+      <div className="mb-6">
+        <NewsletterSignup source="analyzer-deep" />
+      </div>
 
       {totalExcluded > 0 && (
         <ExcludedSection

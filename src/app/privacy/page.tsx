@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const UPDATED_AT = '2026-04-25'
+const UPDATED_AT = '2026-06-11'
 
 export default function PrivacyPage() {
   return (
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           <ul className="space-y-2 text-muted-foreground list-disc pl-5">
             <li><strong className="text-foreground">アクセス情報</strong>：IPアドレス、ブラウザ種別、リファラー、閲覧ページ、滞在時間、デバイス情報（Google Analytics 4を通じて自動取得）</li>
             <li><strong className="text-foreground">Cookie</strong>：閲覧体験向上・アクセス解析・アフィリエイトプログラムの計測に使用</li>
-            <li><strong className="text-foreground">メールアドレス</strong>：メルマガ・ニュースレターに登録された場合のみ</li>
+            <li><strong className="text-foreground">メールアドレス</strong>：ニュースレター（メルマガ）に同意のうえ登録された場合のみ取得します。配信は外部配信サービス（Buttondown, Inc.）に委託しており、登録時に確認メールによる本人確認（ダブルオプトイン）を行います。各メールに記載の解除リンクから、いつでも1クリックで配信停止できます。配信停止後のアドレスは配信リストから削除されます</li>
             <li><strong className="text-foreground">お問い合わせ内容</strong>：X DM等を通じてユーザーから送信された情報</li>
           </ul>
           <p className="text-muted-foreground mt-3">氏名・住所・電話番号などの個人を特定する情報は、原則として取得しません。</p>

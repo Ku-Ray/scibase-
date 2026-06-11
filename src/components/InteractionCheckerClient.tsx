@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import { NewsletterSignup } from '@/components/NewsletterSignup'
 import {
   AlertCircle,
   AlertTriangle,
@@ -778,6 +779,9 @@ export function InteractionCheckerClient() {
             </button>
           </div>
         )}
+
+        {/* Newsletter（ソフトゲート・任意） */}
+        {results.length > 0 && <NewsletterSignup source="interaction-checker" />}
       </section>
 
       {/* ── 免責 ─────────────────── */}

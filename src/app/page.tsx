@@ -6,6 +6,7 @@ import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import { HeroSearch } from '@/components/HeroSearch'
 import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
+import { NewsletterSignup } from '@/components/NewsletterSignup'
 import type { Metadata } from 'next'
 
 const totalPapers = ingredients.reduce((acc, i) => acc + i.papers.length, 0)
@@ -754,6 +755,13 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Newsletter（ソフトゲート・任意）────── */}
+      <section className="border-t border-border px-5 py-16">
+        <div className="max-w-2xl mx-auto">
+          <NewsletterSignup source="top" />
         </div>
       </section>
     </>

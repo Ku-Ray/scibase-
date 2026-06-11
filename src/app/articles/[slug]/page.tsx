@@ -23,6 +23,7 @@ import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
 import { ArticleConclusionBoxes } from '@/components/ArticleConclusionBoxes'
 import { NextReadCTA } from '@/components/NextReadCTA'
+import { NewsletterSignup } from '@/components/NewsletterSignup'
 import { buildArticleNextRead } from '@/lib/recommendation'
 import type { Metadata } from 'next'
 
@@ -844,6 +845,11 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* ── Newsletter（ソフトゲート・任意）── */}
+        <div className="mb-10">
+          <NewsletterSignup source={`article:${article.slug}`} />
+        </div>
 
         {/* ── Cross-type 次に読む（比較ペア + 悩みハブ + 別カテゴリコラム）── */}
         <NextReadCTA

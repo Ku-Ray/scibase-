@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import { NewsletterSignup } from '@/components/NewsletterSignup'
 import {
   AlertCircle,
   AlertTriangle,
@@ -710,6 +711,9 @@ export function NutrientSufficiencyClient() {
               </Link>
             </div>
           </div>
+
+          {/* ⑦ Newsletter（ソフトゲート・任意） */}
+          <NewsletterSignup source="nutrient-sufficiency" />
 
           {/* Profile recap + Reset */}
           <div className="rounded-lg bg-slate-50 p-3 text-xs text-slate-700 sm:text-sm">

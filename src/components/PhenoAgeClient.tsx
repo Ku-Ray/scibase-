@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import { NewsletterSignup } from '@/components/NewsletterSignup'
 import {
   Activity,
   AlertCircle,
@@ -755,6 +756,9 @@ export function PhenoAgeClient() {
               </Link>
             </div>
           </div>
+
+          {/* Newsletter（ソフトゲート・任意） */}
+          <NewsletterSignup source="phenoage" />
 
           {/* Profile recap + Reset */}
           <div className="rounded-lg bg-slate-50 p-3 text-xs text-slate-700 sm:text-sm">
