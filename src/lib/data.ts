@@ -1962,7 +1962,7 @@ export const ingredients: Ingredient[] = [
         aspId: 'a8-gaah-nmn',
         commissionRateBand: '>20%',
         benefitHeading: '純度99.9%・国内製造GMP・含有量保証250mg/日・医療従事者推奨No.1',
-        descriptionLong: '化粧品メーカーの原料調達現場で見ると、純度99.9%・国内GMP・含有量保証250mg/日の3点が揃っているのは市販NMNの中では希少な部類。Yoshino 2021・Igarashi 2022 RCTの研究使用域を1カプセルでカバーする。広告コピーの「医療従事者推奨No.1」は判断保留しつつ、化粧品の機能性原料を見極める三点セット（純度表示・特許プロセス・第三者検査）で見ると、海外原料の純度50-70%品とは別物として扱える銘柄だ。妊娠中・授乳中・がん既往・パーキンソン病・抗がん剤併用中は医師相談必須。',
+        descriptionLong: '化粧品メーカーの原料 QC 目線で、純度 99.9%（HPLC）・国内 GMP・含有量保証 250mg/日の 3 点が揃う市販 NMN は希少。Yoshino 2021・Igarashi 2022 の研究使用域を 1 カプセルでカバーする。',
         pros: [
           '純度99.9%（HPLC測定値・原料QC三点セット）',
           '1カプセル250mg・Yoshino 2021研究使用域',
