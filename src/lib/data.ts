@@ -1878,6 +1878,17 @@ export const ingredients: Ingredient[] = [
       '\n\n' +
       '化学療法中・がん既往ではPARP活性・SASP増強の理論的リスクから併用回避。NAD+前駆体ではヒトRCT蓄積の多いNRを選ぶのが研究準拠。',
     concerns: ['fatigue', 'skin-aging'],
+    sectionSummaries: {
+      whoFor: '老化の最先端研究（NAD+/サーチュイン）に関心があり、ヒトデータより動物実験の知見を先取りして試したい層・自己責任で「先頭領域の最新研究」を実験的に取り入れたい方が中心。「効果が確定した成分」を期待するなら現時点では S/A ランク（クレアチン/マグネシウム/オメガ3）を優先すべき。**化学療法中・がん既往・PARP 阻害薬使用中・パーキンソン病・妊娠/授乳中は使用回避**（医師相談前提）。',
+      papers: 'Tandfonline Systematic Review 2024 メタ解析（12 RCT・n=513・12 週）が主柱：血中 NAD+ の有意な上昇は確認されたが、血糖・脂質・体組成・運動能・睡眠など、ほとんどの臨床アウトカムで有意差なしと結論。**「NAD+ は上がる。体の指標はほぼ変わらない」**が現時点の honest reporting。動物実験では抗老化効果が示されているが、ヒトでの臨床効果は限定的。NR（ニコチンアミドリボシド・Niagen 特許）の方がヒト RCT 本数多い（Conze 2019 + Martens 2018 + Brakedal 2022 PD 等）.',
+      publicDbReferences: '国立健康・栄養研究所「健康食品」素材情報 DB に NMN として収載：安全性データ限定・長期影響未確認を明示。FDA は NDIN（新規食品成分通知）対象成分で 2022 年に Dietary Supplement 適格性が議論された経緯あり。日本では消費者庁 機能性表示食品制度の届出は限定的.',
+      evidence: 'B ランク・PEI 3.3 ※暫定（confidence 0.33・papers 1 件: メタ 1）。血中 NAD+ 上昇 A（Damgaard 2023 メタ n=513）・臨床アウトカム改善 ✗（同メタで血糖/脂質/体組成/運動能/睡眠ほぼ有意差なし）・動物試験での抗老化機序 B（Sinclair 研究・Yoshino RCT）。**差別化軸は「NAD+ は上がる・体は変わらない」honest 主軸**で、NR との sibling 役割分担（NR = ヒト RCT 本数多い vs NMN = 先頭領域最新研究）.',
+      dosage: '250-1,000mg/日が研究使用域（Yoshino 2021 Science n=25 250mg/日 10 週 + Igarashi 2022 NPJ Aging 等）。朝摂取が多い・ヒト RCT は 12 週以内が中心で長期データは限定的。**testKitCTA（GeneLife 遺伝子検査）で自分の NAD+ 消費プロファイル/SIRT 遺伝子型を把握してから補充判断**するのが月 ¥3,980-39,600 の継続投資の現実的アンカー.',
+      dosageLevels: '250mg/日（入門・Yoshino 2021 RCT 下限・GAAH NMN ¥39,600/月 + ビクトリーロード ¥654/月 で到達）→ 500mg/日（中用量・市販主流・コスパとバランス）→ 1,000mg/日（高用量・Yoshino 拡張 RCT 上限・長期データ未確立・自己責任）の 3 段階。**用量を上げても臨床アウトカム差は明確でない**（Damgaard 2023 メタ）.',
+      faq: 'NMN は本当に効果があるか（NAD+ は上がるが臨床アウトカム限定的）・NMN vs NR の選び方（NR は RCT 本数多い）・値段と効果の関係（高い＝効くではない）・経口 NMN vs 経口 NAD+ vs 点滴の論文比較（経口 NAD+ も結局 NMN/NR に分解吸収・点滴は RCT 極めて限定的）の 4 軸 FAQ で「honest 効果評価 + 形態選択 + 費用対効果 + 投与経路比較」の決断負荷を解消.',
+      safety: '12 週以内の短期 RCT では比較的安全とされるが、**長期安全性データは限定的**。妊娠中・授乳中はデータ不足のため使用不可。動物試験で pancreatic ductal adenocarcinoma 進行促進・化学療法誘発性末梢神経障害モデルでの軸索変性促進の報告あり、化学療法中・がん既往・PARP 阻害薬使用中・SASP 活性化状態は使用回避（avoid レベル）.',
+      interactions: '化学療法・がん治療中は **avoid（回避）**（PMC10177531 NMN がん研究 + AACR Cancer Res 81(13):3727・腫瘍学会推奨で NAD 前駆体一時中止）。免疫療法・PARP 阻害薬との併用は **avoid（回避）**（NAD+ 前駆体が PARP 活性に影響・治療効果変動の理論的懸念）。がん既往・慢性炎症疾患は **caution（要注意）**（NMN 補充がオンコジーン誘導性老化細胞 SASP 増強の可能性報告あり PMC11473484）.',
+    },
     papers: [
       {
         title: 'The effects of NMN supplementation on metabolic outcomes in adults: a systematic review and meta-analysis',
@@ -2197,7 +2208,7 @@ export const ingredients: Ingredient[] = [
       medicalDisclaimer:
         '※検査結果は医療診断ではありません。心配な数値・症状は医師に相談してください。\n※遺伝子検査の結果は将来予測であって運命や治療指針ではありません。検査会社の個人情報・遺伝情報管理方針を必ず確認してください。\n※PR：当サイトはアフィリエイトプログラムに参加しています。',
     },
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-11',
   },
   {
     slug: 'probiotics',
