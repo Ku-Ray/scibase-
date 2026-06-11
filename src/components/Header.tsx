@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { ChevronDown, Search, Star } from 'lucide-react'
+import { ChevronDown, CircleUser, Search } from 'lucide-react'
 import { SearchModal } from './SearchModal'
 
 const CONTENT_LINKS = [
@@ -129,7 +129,7 @@ export function Header() {
               className="text-muted-foreground p-1.5 rounded-md ml-0.5
                 hover:bg-secondary hover:text-foreground transition-colors"
             >
-              <Star className="w-4 h-4" />
+              <CircleUser className="w-4 h-4" />
             </Link>
           </nav>
 
@@ -140,7 +140,7 @@ export function Header() {
               aria-label="マイページ"
               className="p-2 rounded-md hover:bg-secondary transition-colors"
             >
-              <Star className="w-4.5 h-4.5 text-muted-foreground" />
+              <CircleUser className="w-4.5 h-4.5 text-muted-foreground" />
             </Link>
             <button
               onClick={() => setSearchOpen(true)}
