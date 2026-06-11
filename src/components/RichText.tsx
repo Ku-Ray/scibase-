@@ -135,11 +135,14 @@ function isBoldOnlyParagraph(text: string): string | null {
   return m ? m[1] : null
 }
 
-/** 段落全体が「**▶ [text](https://..)**」のみ → 商品CTAボタンに昇格（外部リンク限定・内部導線は従来のテキストリンク） */
-function parseCtaButton(text: string): { label: string; href: string } | null {
+/** 段落全体が「**▶ [text](https://..)**」のみ → 商品CTAボタンに昇格（外部リンク限定・内部導線は従来のテキストリンク）
+ *  ラベル内の「｜」でメイン（短い行動文言）とサブコピー（価格アンカー等・小サイズ）に2段分割する */
+function parseCtaButton(text: string): { label: string; sub: string | null; href: string } | null {
   const m = text.trim().match(/^\*\*\s*▶?\s*\[([^\]\n]+)\]\((https?:\/\/[^)\n]+)\)\s*\*\*$/)
   if (!m) return null
-  return { label: m[1], href: m[2] }
+  const sep = m[1].indexOf('｜')
+  if (sep === -1) return { label: m[1], sub: null, href: m[2] }
+  return { label: m[1].slice(0, sep).trim(), sub: m[1].slice(sep + 1).trim() || null, href: m[2] }
 }
 
 const BULLET_LINE = /^\s*-\s+/
@@ -270,7 +273,14 @@ export function RichParagraphs({
                   text-[15px] font-bold text-white bg-emerald-600 hover:bg-emerald-700
                   rounded-xl px-6 py-4 sm:px-8 shadow-sm transition-colors no-underline"
               >
-                <span className="text-center leading-snug">{ctaButton.label}</span>
+                <span className="flex flex-col items-center text-center leading-snug">
+                  <span>{ctaButton.label}</span>
+                  {ctaButton.sub && (
+                    <span className="text-[12px] font-semibold opacity-90 tabular-nums">
+                      {ctaButton.sub}
+                    </span>
+                  )}
+                </span>
                 <ExternalLink className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
               </a>
             </p>
