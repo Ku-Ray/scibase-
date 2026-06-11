@@ -7,6 +7,8 @@ import {
   AlertCircle,
   AlertTriangle,
   Award,
+  BellRing,
+  CalendarPlus,
   Check,
   ChevronRight,
   Eye,
@@ -28,8 +30,11 @@ import {
 } from 'lucide-react'
 import {
   analyzeStack,
+  buildRestockIcs,
   getDoseUnit,
+  getInventoryStatus,
   getStackIngredientOptions,
+  getStackInventory,
   getStackItemName,
   SAMPLE_STACKS,
   STACK_PRESETS,
@@ -204,6 +209,9 @@ export function MyStackClient() {
             slug: it.slug,
             dose: typeof it.dose === 'number' && it.dose > 0 ? it.dose : undefined,
             timing: Array.isArray(it.timing) ? it.timing.filter((t) => TIMING_ORDER.includes(t)) : [],
+            unitsPerDay: typeof it.unitsPerDay === 'number' && it.unitsPerDay > 0 ? it.unitsPerDay : undefined,
+            unitsTotal: typeof it.unitsTotal === 'number' && it.unitsTotal > 0 ? it.unitsTotal : undefined,
+            startedAt: typeof it.startedAt === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(it.startedAt) ? it.startedAt : undefined,
           }))
         : []
       const validMeds = Array.isArray(data.meds)
@@ -258,19 +266,35 @@ export function MyStackClient() {
   /* ── 棚の充実度（ShelfMeter） */
   const shelfPercent = useMemo(() => {
     if (items.length === 0) return 0
-    const countPct = 30 + Math.min(items.length, 6) / 6 * 40
+    const countPct = 25 + Math.min(items.length, 6) / 6 * 35
     const dosePct = items.some((i) => (i.dose ?? 0) > 0) ? 15 : 0
-    const timingPct = items.some((i) => i.timing.length > 0) ? 15 : 0
-    return Math.round(countPct + dosePct + timingPct)
+    const timingPct = items.some((i) => i.timing.length > 0) ? 10 : 0
+    const invPct = items.some((i) => getInventoryStatus(i) != null) ? 15 : 0
+    return Math.round(countPct + dosePct + timingPct + invPct)
   }, [items])
+
+  /* ── 買い替えリマインダー .ics ダウンロード */
+  const handleIcsDownload = () => {
+    const ics = buildRestockIcs(getStackInventory(items))
+    if (!ics) return
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'scibase-my-stack-restock.ics'
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    URL.revokeObjectURL(url)
+  }
 
   /* ── 棚操作 */
   const addItem = (slug: string, dose?: number) => {
     setItems((prev) => (prev.some((i) => i.slug === slug) ? prev : [...prev, { slug, dose, timing: [] }]))
   }
   const removeItem = (slug: string) => setItems((prev) => prev.filter((i) => i.slug !== slug))
-  const updateDose = (slug: string, dose: number | undefined) =>
-    setItems((prev) => prev.map((i) => (i.slug === slug ? { ...i, dose } : i)))
+  const updateItem = (slug: string, patch: Partial<StackItem>) =>
+    setItems((prev) => prev.map((i) => (i.slug === slug ? { ...i, ...patch } : i)))
   const toggleTiming = (slug: string, t: StackTiming) =>
     setItems((prev) =>
       prev.map((i) =>
@@ -375,12 +399,15 @@ export function MyStackClient() {
                 {items.map((it) => (
                   <ShelfItemRow key={it.slug} item={it}
                     onRemove={() => removeItem(it.slug)}
-                    onDose={(d) => updateDose(it.slug, d)}
+                    onUpdate={(patch) => updateItem(it.slug, patch)}
                     onToggleTiming={(t) => toggleTiming(it.slug, t)} />
                 ))}
               </div>
             )}
           </section>
+
+          {/* 飲み切りが近いサプリのアラート（買い替え瞬間の導線） */}
+          <InventoryAlert items={items} onIcs={handleIcsDownload} />
 
           {/* 追加セクション */}
           <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
@@ -495,6 +522,7 @@ export function MyStackClient() {
           <DuplicateUlSection analysis={analysis} />
           <TimingSection items={items} analysis={analysis} />
           <CostSection analysis={analysis} />
+          <InventorySection items={items} onIcs={handleIcsDownload} />
           <SuggestionSection analysis={analysis} />
 
           {analysis.optimizedScore > analysis.score && (
@@ -556,13 +584,35 @@ export function MyStackClient() {
 
 /* ─── 棚アイテム行 ──────────────────────────────────────────────── */
 
-function ShelfItemRow({ item, onRemove, onDose, onToggleTiming }: {
+function todayDateStr(): string {
+  const d = new Date()
+  const m = `${d.getMonth() + 1}`.padStart(2, '0')
+  const day = `${d.getDate()}`.padStart(2, '0')
+  return `${d.getFullYear()}-${m}-${day}`
+}
+
+/** '2026-06-16' → '6/16' */
+function fmtMd(dateStr: string): string {
+  const [, m, d] = dateStr.split('-')
+  return `${Number(m)}/${Number(d)}`
+}
+
+function parsePositiveInt(value: string): number | undefined {
+  if (value === '') return undefined
+  const n = Math.floor(Number(value))
+  return n > 0 ? n : undefined
+}
+
+function ShelfItemRow({ item, onRemove, onUpdate, onToggleTiming }: {
   item: StackItem
   onRemove: () => void
-  onDose: (dose: number | undefined) => void
+  onUpdate: (patch: Partial<StackItem>) => void
   onToggleTiming: (t: StackTiming) => void
 }) {
   const unit = getDoseUnit(item.slug)
+  const inv = getInventoryStatus(item)
+  const hasInvFields = item.unitsPerDay != null || item.unitsTotal != null || item.startedAt != null
+  const [invOpen, setInvOpen] = useState(false)
   return (
     <div className="rounded-xl border border-slate-200 bg-emerald-50/20 p-3">
       <div className="flex items-center gap-2">
@@ -571,7 +621,7 @@ function ShelfItemRow({ item, onRemove, onDose, onToggleTiming }: {
         </Link>
         <input type="number" min={0} step={unit === 'μg' || unit === 'μgRAE' ? 0.5 : 1} placeholder="用量"
           value={item.dose ?? ''}
-          onChange={(e) => onDose(e.target.value === '' ? undefined : Math.max(0, Number(e.target.value)) || undefined)}
+          onChange={(e) => onUpdate({ dose: e.target.value === '' ? undefined : Math.max(0, Number(e.target.value)) || undefined })}
           className="w-20 rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none" />
         <span className="w-12 flex-shrink-0 text-xs text-slate-600">{unit}/日</span>
         <button type="button" onClick={onRemove} aria-label="棚から外す"
@@ -591,7 +641,147 @@ function ShelfItemRow({ item, onRemove, onDose, onToggleTiming }: {
             </button>
           )
         })}
+        <button type="button" onClick={() => setInvOpen((v) => !v)}
+          className={`rounded-full border px-2.5 py-1 text-[11px] font-medium transition ${
+            inv
+              ? inv.level === 'ok'
+                ? 'border-emerald-300 bg-white text-emerald-700'
+                : 'border-amber-400 bg-amber-50 text-amber-800'
+              : 'border-dashed border-slate-300 bg-white text-slate-500 hover:border-emerald-300 hover:text-emerald-700'
+          }`}>
+          {inv
+            ? inv.level === 'out'
+              ? '📦 飲み切り済みかも'
+              : `📦 残り約 ${inv.daysLeft} 日`
+            : '📦 残量を管理'}
+        </button>
       </div>
+      {invOpen && (
+        <div className="mt-2 rounded-lg border border-slate-200 bg-white p-2.5">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-slate-700">
+            <label className="flex items-center gap-1">
+              ボトル
+              <input type="number" min={1} placeholder="60" value={item.unitsTotal ?? ''}
+                onChange={(e) => onUpdate({ unitsTotal: parsePositiveInt(e.target.value) })}
+                className="w-16 rounded-md border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none" />
+              粒
+            </label>
+            <label className="flex items-center gap-1">
+              1日
+              <input type="number" min={1} placeholder="2" value={item.unitsPerDay ?? ''}
+                onChange={(e) => onUpdate({ unitsPerDay: parsePositiveInt(e.target.value) })}
+                className="w-14 rounded-md border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none" />
+              粒
+            </label>
+            <label className="flex items-center gap-1">
+              開始日
+              <input type="date" value={item.startedAt ?? ''}
+                onChange={(e) => onUpdate({ startedAt: e.target.value || undefined })}
+                className="rounded-md border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none" />
+            </label>
+            <button type="button" onClick={() => onUpdate({ startedAt: todayDateStr() })}
+              className="rounded-md border border-emerald-300 bg-emerald-50 px-2 py-1 text-[11px] font-medium text-emerald-700 hover:bg-emerald-100">
+              今日から
+            </button>
+          </div>
+          {inv ? (
+            <div className="mt-2 text-[11px] text-slate-600">
+              残り約 {inv.remainingUnits} 粒 → <strong className="text-slate-900">{fmtMd(inv.depletionDate)} ごろ飲み切り</strong>（毎日 {inv.unitsPerDay} 粒の概算・飲み忘れは反映されません）
+            </div>
+          ) : (
+            <div className="mt-2 text-[11px] text-slate-500">3 つ入力すると飲み切り日を予測します</div>
+          )}
+          {hasInvFields && (
+            <button type="button"
+              onClick={() => onUpdate({ unitsPerDay: undefined, unitsTotal: undefined, startedAt: undefined })}
+              className="mt-2 text-[11px] text-slate-400 underline-offset-2 hover:text-rose-600 hover:underline">
+              残量管理を解除
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+/* ─── 飲み切りアラート（棚画面・買い替え瞬間の導線） ────────────── */
+
+function InventoryAlert({ items, onIcs }: { items: StackItem[]; onIcs: () => void }) {
+  const urgent = getStackInventory(items).filter((s) => s.level !== 'ok')
+  if (urgent.length === 0) return null
+  return (
+    <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4 sm:p-5">
+      <div className="flex items-center gap-2 text-sm font-bold text-amber-900">
+        <BellRing className="h-4 w-4" /> そろそろ飲み切りのサプリがあります
+      </div>
+      <ul className="mt-2 space-y-1.5">
+        {urgent.map((s) => (
+          <li key={s.slug} className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-xs sm:text-sm">
+            <span className="font-medium text-amber-900">
+              {s.nameJa}：{s.level === 'out' ? '飲み切り済みの可能性' : `あと約 ${s.daysLeft} 日（${fmtMd(s.depletionDate)} ごろ）`}
+            </span>
+            <Link href={`/ingredients/${s.slug}`} className="inline-flex items-center gap-0.5 font-medium text-emerald-700 hover:underline">
+              買い替え前に評価と価格を確認 <ChevronRight className="h-3 w-3" />
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <button type="button" onClick={onIcs}
+        className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-medium text-amber-900 transition hover:bg-amber-100">
+        <CalendarPlus className="h-3.5 w-3.5" /> 買い替えリマインダーをカレンダーに追加（.ics）
+      </button>
+    </div>
+  )
+}
+
+/* ─── 在庫と買い替えタイミング（結果画面） ──────────────────────── */
+
+function InventorySection({ items, onIcs }: { items: StackItem[]; onIcs: () => void }) {
+  const inv = getStackInventory(items)
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div className="mb-3 flex items-center gap-2">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-100">
+          <BellRing className="h-5 w-5 text-amber-600" />
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-slate-900 sm:text-lg">在庫と買い替えタイミング</h3>
+          <div className="text-xs text-slate-600">粒数ベースの飲み切り予測（概算・飲み忘れは反映されません）</div>
+        </div>
+      </div>
+
+      {inv.length === 0 ? (
+        <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50/60 p-4 text-xs leading-relaxed text-slate-600 sm:text-sm">
+          棚の各アイテムの「📦 残量を管理」でボトルの粒数・1 日の粒数・開始日を入れると、飲み切り日を予測して買い替えのタイミングをここでお知らせします。リマインダーのカレンダー追加（.ics）にも対応。
+        </div>
+      ) : (
+        <>
+          <div className="space-y-1.5">
+            {inv.map((s) => (
+              <div key={s.slug} className={`rounded-lg px-3 py-2 text-sm ${
+                s.level === 'out' ? 'bg-rose-50 ring-1 ring-rose-200' : s.level === 'soon' ? 'bg-amber-50 ring-1 ring-amber-200' : 'bg-slate-50/70'
+              }`}>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-0.5">
+                  <span className="font-medium text-slate-900">{s.nameJa}</span>
+                  <span className={`text-xs font-semibold ${s.level === 'out' ? 'text-rose-700' : s.level === 'soon' ? 'text-amber-700' : 'text-slate-600'}`}>
+                    {s.level === 'out' ? '飲み切り済みの可能性' : `あと約 ${s.daysLeft} 日（${fmtMd(s.depletionDate)} ごろ・残り約 ${s.remainingUnits} 粒）`}
+                  </span>
+                </div>
+                {s.level !== 'ok' && (
+                  <Link href={`/ingredients/${s.slug}`}
+                    className="mt-1 inline-flex items-center gap-0.5 text-xs font-medium text-emerald-700 hover:underline">
+                    買い替え前に評価と価格を確認 <ChevronRight className="h-3 w-3" />
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+          <button type="button" onClick={onIcs}
+            className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50/40 hover:text-emerald-700">
+            <CalendarPlus className="h-3.5 w-3.5" /> 買い替えリマインダーをカレンダーに追加（.ics）
+          </button>
+        </>
+      )}
     </div>
   )
 }

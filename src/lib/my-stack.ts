@@ -53,6 +53,12 @@ export interface StackItem {
   dose?: number
   /** 飲むタイミング（複数可・未設定可） */
   timing: StackTiming[]
+  /** 残量管理（任意）：1 日に飲む粒数 */
+  unitsPerDay?: number
+  /** 残量管理（任意）：ボトルの粒数 */
+  unitsTotal?: number
+  /** 残量管理（任意）：飲み始めた日（YYYY-MM-DD） */
+  startedAt?: string
 }
 
 export interface MyStackData {
@@ -172,6 +178,112 @@ export function getDoseUnit(slug: string): string {
 
 export function getStackItemName(slug: string): string {
   return getIngredient(slug)?.nameJa ?? slug
+}
+
+/* ─── 残量・飲み切り予測 ────────────────────────────────────────── */
+
+export const INVENTORY_SOON_DAYS = 7
+const RESTOCK_REMINDER_LEAD_DAYS = 3
+const MS_PER_DAY = 24 * 60 * 60 * 1000
+
+export interface InventoryStatus {
+  slug: string
+  nameJa: string
+  unitsPerDay: number
+  unitsTotal: number
+  startedAt: string
+  /** 残り粒数（概算・0 下限） */
+  remainingUnits: number
+  /** あと何日分あるか（概算・0 = 今日が最後） */
+  daysLeft: number
+  /** 飲み切り予測日（YYYY-MM-DD） */
+  depletionDate: string
+  level: 'out' | 'soon' | 'ok'
+}
+
+function toDateOnly(d: Date): string {
+  const m = `${d.getMonth() + 1}`.padStart(2, '0')
+  const day = `${d.getDate()}`.padStart(2, '0')
+  return `${d.getFullYear()}-${m}-${day}`
+}
+
+/**
+ * 粒数ベースの飲み切り予測。「開始日から毎日 unitsPerDay 粒」の概算で、
+ * 飲み忘れ・増減は反映されない（UI で「概算」と明示する）。
+ */
+export function getInventoryStatus(item: StackItem, now: Date = new Date()): InventoryStatus | null {
+  const { unitsPerDay, unitsTotal, startedAt } = item
+  if (!unitsPerDay || unitsPerDay <= 0 || !unitsTotal || unitsTotal <= 0 || !startedAt) return null
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(startedAt)) return null
+  const start = new Date(`${startedAt}T00:00:00`)
+  if (Number.isNaN(start.getTime())) return null
+  const today = new Date(`${toDateOnly(now)}T00:00:00`)
+  const daysElapsed = Math.max(0, Math.floor((today.getTime() - start.getTime()) / MS_PER_DAY))
+  const remainingUnits = Math.max(0, unitsTotal - daysElapsed * unitsPerDay)
+  const daysLeft = Math.floor(remainingUnits / unitsPerDay)
+  const depletion = new Date(today.getTime() + daysLeft * MS_PER_DAY)
+  const level: InventoryStatus['level'] =
+    remainingUnits <= 0 ? 'out' : daysLeft <= INVENTORY_SOON_DAYS ? 'soon' : 'ok'
+  return {
+    slug: item.slug,
+    nameJa: getStackItemName(item.slug),
+    unitsPerDay,
+    unitsTotal,
+    startedAt,
+    remainingUnits,
+    daysLeft,
+    depletionDate: toDateOnly(depletion),
+    level,
+  }
+}
+
+/** 残量管理が設定済みのアイテムの在庫一覧（飲み切りが近い順） */
+export function getStackInventory(items: StackItem[], now: Date = new Date()): InventoryStatus[] {
+  return items
+    .map((i) => getInventoryStatus(i, now))
+    .filter((s): s is InventoryStatus => s != null)
+    .sort((a, b) => a.daysLeft - b.daysLeft)
+}
+
+function icsEscape(s: string): string {
+  return s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n')
+}
+
+/**
+ * 買い替えリマインダーの iCalendar（.ics）を生成。
+ * 各アイテムの飲み切り 3 日前（過去なら今日）に終日イベントを置く。
+ * サーバー不要＝メール基盤が無くても通知が成立する仕掛け。
+ */
+export function buildRestockIcs(statuses: InventoryStatus[], now: Date = new Date()): string | null {
+  const events = statuses.filter((s) => s.level !== 'out')
+  if (events.length === 0) return null
+  const todayStr = toDateOnly(now)
+  const dtstamp = now.toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z')
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//SciBase//My Stack//JA',
+    'CALSCALE:GREGORIAN',
+  ]
+  for (const s of events) {
+    const depletion = new Date(`${s.depletionDate}T00:00:00`)
+    const remind = new Date(depletion.getTime() - RESTOCK_REMINDER_LEAD_DAYS * MS_PER_DAY)
+    const remindStr = toDateOnly(remind) < todayStr ? todayStr : toDateOnly(remind)
+    const dateLabel = s.depletionDate.replaceAll('-', '/')
+    lines.push(
+      'BEGIN:VEVENT',
+      `UID:scibase-mystack-${s.slug}-${s.depletionDate.replaceAll('-', '')}@scibase.app`,
+      `DTSTAMP:${dtstamp}`,
+      `DTSTART;VALUE=DATE:${remindStr.replaceAll('-', '')}`,
+      `SUMMARY:${icsEscape(`💊 ${s.nameJa} がそろそろ飲み切り（${dateLabel} ごろ）`)}`,
+      `DESCRIPTION:${icsEscape(
+        `SciBase My Stack の飲み切り予測です。買い替え前に論文評価と価格を確認:\nhttps://scibase.app/ingredients/${s.slug}\n棚を開く: https://scibase.app/tools/my-stack`,
+      )}`,
+      'END:VEVENT',
+    )
+  }
+  lines.push('END:VCALENDAR')
+  return lines.join('\r\n')
 }
 
 /* ─── 吸収競合（時間分離の提案） ────────────────────────────────── */

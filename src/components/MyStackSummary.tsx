@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Calendar, ChevronRight, Package, RotateCcw } from 'lucide-react'
 import {
+  getStackInventory,
   getStackItemName,
   STACK_RESULTS_KEY,
   STACK_STORAGE_KEY,
@@ -41,6 +42,12 @@ export function MyStackSummary() {
       /* noop */
     }
   }, [])
+
+  const soonest = useMemo(() => {
+    if (!stack) return null
+    const inv = getStackInventory(stack.items)
+    return inv.length > 0 ? inv[0] : null
+  }, [stack])
 
   if (!hasMounted) {
     return (
@@ -107,6 +114,17 @@ export function MyStackSummary() {
           </span>
         )}
       </div>
+
+      {soonest && (
+        <div className={`mb-3 rounded-lg px-3 py-2 text-xs ${
+          soonest.level !== 'ok' ? 'bg-amber-50 text-amber-900 ring-1 ring-amber-200' : 'bg-slate-50 text-slate-600 ring-1 ring-slate-200'
+        }`}>
+          ⏳ 次の飲み切り：{soonest.nameJa}{' '}
+          {soonest.level === 'out'
+            ? '（飲み切り済みの可能性）'
+            : `あと約 ${soonest.daysLeft} 日（${soonest.depletionDate.split('-').slice(1).map(Number).join('/')} ごろ）`}
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
         <div>
