@@ -247,7 +247,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <h2 className="font-semibold text-[20px] text-foreground mb-1">無料ツール</h2>
           <p className="text-[13px] text-muted-foreground mb-6">登録不要・ブラウザで完結・3 ステップで結果が出ます</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <Link href="/tools/phenoage"
               className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-indigo-300 hover:shadow-sm sm:p-5">
               <div className="text-2xl">🧬</div>
@@ -287,6 +287,17 @@ export default function Home() {
               <div className="min-w-0 flex-1">
                 <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">サプリ Analyzer</div>
                 <div className="mt-0.5 text-[12px] text-muted-foreground">あなたの悩みから論文ベースで成分を推奨</div>
+                <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
+                  試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
+                </div>
+              </div>
+            </Link>
+            <Link href="/tools/my-stack"
+              className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
+              <div className="text-2xl">🧺</div>
+              <div className="min-w-0 flex-1">
+                <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">My Stack（サプリ棚）</div>
+                <div className="mt-0.5 text-[12px] text-muted-foreground">棚を登録して飲み合わせ・重複・月額コストを一括チェック</div>
                 <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
                   試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
                 </div>

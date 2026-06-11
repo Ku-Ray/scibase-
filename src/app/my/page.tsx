@@ -1,16 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ChevronRight, HeartPulse, Salad, Star } from 'lucide-react'
+import { ChevronRight, HeartPulse, Package, Salad, Star } from 'lucide-react'
 import { NutrientHistoryClient } from '@/components/NutrientHistoryClient'
 import { PhenoAgeHistoryClient } from '@/components/PhenoAgeHistoryClient'
 import { FavoritesClient } from '@/components/FavoritesClient'
+import { MyStackSummary } from '@/components/MyStackSummary'
 
 const BASE_URL = 'https://scibase.app'
 
 export const metadata: Metadata = {
   title: 'マイページ｜診断結果とお気に入りを集約｜SciBase',
   description:
-    '栄養素診断結果・生物学的年齢の計測結果・お気に入り成分・コラム・成分比較を 1 画面に集約。完全無料・登録不要・ブラウザに自動保存されるので後で見返せる。',
+    '栄養素診断結果・生物学的年齢の計測結果・サプリ棚（My Stack）・お気に入り成分・コラム・成分比較を 1 画面に集約。完全無料・登録不要・ブラウザに自動保存されるので後で見返せる。',
   alternates: { canonical: `${BASE_URL}/my` },
   robots: { index: false, follow: true },
   openGraph: {
@@ -74,7 +75,16 @@ export default function MyDashboardPage() {
           <PhenoAgeHistoryClient />
         </section>
 
-        {/* Section 3: お気に入り */}
+        {/* Section 3: My Stack（サプリ棚） */}
+        <section className="mb-10">
+          <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-foreground sm:text-xl">
+            <Package className="h-5 w-5 text-emerald-600" />
+            My Stack（サプリ棚）
+          </h2>
+          <MyStackSummary />
+        </section>
+
+        {/* Section 4: お気に入り */}
         <section>
           <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-foreground sm:text-xl">
             <Star className="h-5 w-5 text-amber-500" />
@@ -98,6 +108,10 @@ export default function MyDashboardPage() {
             <Link href="/tools/interaction-checker"
               className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm font-medium text-foreground ring-1 ring-slate-200 transition hover:bg-emerald-50/40 hover:ring-emerald-200">
               <span>💊 飲み合わせチェッカー</span><ChevronRight className="h-4 w-4 text-slate-400" />
+            </Link>
+            <Link href="/tools/my-stack"
+              className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm font-medium text-foreground ring-1 ring-slate-200 transition hover:bg-emerald-50/40 hover:ring-emerald-200">
+              <span>🧺 My Stack（サプリ棚）</span><ChevronRight className="h-4 w-4 text-slate-400" />
             </Link>
             <Link href="/analyzer"
               className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm font-medium text-foreground ring-1 ring-slate-200 transition hover:bg-emerald-50/40 hover:ring-emerald-200">

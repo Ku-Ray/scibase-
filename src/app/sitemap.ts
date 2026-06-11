@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/analyzer`,      lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/tools/nutrient-sufficiency`, lastModified: '2026-06-06', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/tools/phenoage`, lastModified: '2026-06-10', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/tools/my-stack`, lastModified: '2026-06-11', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/about`,         lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/privacy`,       lastModified: '2026-04-25',     changeFrequency: 'yearly',  priority: 0.3 },
   ]

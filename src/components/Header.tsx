@@ -18,6 +18,7 @@ const TOOL_LINKS = [
   { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素チェッカー', desc: '食事＋サプリで充足率を可視化' },
   { href: '/tools/phenoage',             label: '🧬 生物学的年齢',     desc: '健診の採血値で身体の年齢を概算' },
   { href: '/tools/interaction-checker',  label: '💊 飲み合わせ',       desc: 'サプリと薬の相互作用を確認' },
+  { href: '/tools/my-stack',             label: '🧺 My Stack',         desc: 'サプリ棚の飲み合わせ・コストを一括チェック' },
 ]
 
 export function Header() {
