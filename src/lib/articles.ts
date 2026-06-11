@@ -403,7 +403,7 @@ iHerbなどでRCTで使われた成分形態（オメガ3ならEPA+DHA合計1g/�
       'vitamin-k2',
       'vitamin-e',
       'alpha-lipoic-acid',
-      'tmg',
+      'trimethylglycine-tmg',
     ],
     relatedArticleSlugs: [
       'supplement-drug-interaction-guide',
@@ -2821,7 +2821,7 @@ NAD+前駆体の主観的な疲労改善は3〜6ヶ月の継続が前提。Remie
       },
     ],
 
-    relatedIngredientSlugs: ['nmn', 'nicotinamide-riboside', 'resveratrol', 'coq10', 'quercetin', 'spermidine', 'tmg'],
+    relatedIngredientSlugs: ['nmn', 'nicotinamide-riboside', 'resveratrol', 'coq10', 'quercetin', 'spermidine', 'trimethylglycine-tmg'],
     concerns: ['longevity', 'fatigue', 'cognitive'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
     dateModified: '2026-06-06',
@@ -3909,7 +3909,7 @@ NR の選び方は、別記事で整理している。
       },
     ],
 
-    relatedIngredientSlugs: ['nmn', 'nicotinamide-riboside', 'resveratrol', 'coq10', 'spermidine', 'tmg'],
+    relatedIngredientSlugs: ['nmn', 'nicotinamide-riboside', 'resveratrol', 'coq10', 'spermidine', 'trimethylglycine-tmg'],
     relatedArticleSlugs: ['nmn-supplement-effects-buying-guide', 'nad-40s', 'anti-aging-supplement-guide-30s'],
     concerns: ['longevity', 'fatigue', 'skin-aging'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
@@ -4607,7 +4607,7 @@ Doctor's Best Alpha-Lipoic Acid 600mgは1日1粒でZiegler 2003使用量の上�
       },
     ],
 
-    relatedIngredientSlugs: ['carnosine', 'berberine', 'alpha-lipoic-acid', 'egcg', 'niacinamide', 'vitamin-c-oral', 'arbutin', 'chondroitin', 'tmg'],
+    relatedIngredientSlugs: ['carnosine', 'berberine', 'alpha-lipoic-acid', 'egcg', 'niacinamide', 'vitamin-c-oral', 'arbutin', 'chondroitin', 'trimethylglycine-tmg'],
     concerns: ['skin-aging', 'longevity', 'metabolism'],
     author: { name: 'SciBase 編集者', role: '化粧品メーカー現役研究者', url: '/about#author' },
     dateModified: '2026-05-18',
