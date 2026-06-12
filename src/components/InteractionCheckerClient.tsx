@@ -12,7 +12,6 @@ import {
   ClipboardCopy,
   Clock,
   Eye,
-  FileText,
   Info,
   Lightbulb,
   Microscope,
@@ -22,7 +21,6 @@ import {
   Search,
   Share2,
   Sparkles,
-  Stethoscope,
   X,
 } from 'lucide-react'
 import {
@@ -405,36 +403,20 @@ export function InteractionCheckerClient() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
       {/* ── ヒーロー ─────────────────── */}
-      <header className="mb-6 sm:mb-8">
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-          <Microscope className="size-4" />
+      <header className="mb-6 text-center sm:mb-8">
+        <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+          <Microscope className="h-3.5 w-3.5" />
           論文・添付文書ベース
         </div>
-        <h1 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
           サプリ・薬の飲み合わせチェッカー
         </h1>
-        <p className="text-base font-medium text-foreground sm:text-lg">
+        <p className="mt-3 text-base font-medium text-foreground sm:text-lg">
           飲んでいるサプリ × 薬の危険な組み合わせを防ぐ
         </p>
         <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          サプリと医薬品を入力すると、相互作用の可能性を論文・添付文書ベースで「要回避・要注意・経過観察」の 3 段階で表示。完全無料・登録不要・所要 30 秒。
+          サプリと医薬品を入力すると、相互作用の可能性を「要回避・要注意・経過観察」の 3 段階で表示（出典明記・日本の医薬品名で検索可能）。完全無料・登録不要・所要 30 秒。
         </p>
-
-        {/* 差別化バッジ（R8） */}
-        <ul className="mt-4 flex flex-wrap gap-2 text-xs">
-          <li className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-emerald-800">
-            <FileText className="size-3" />
-            論文・添付文書出典明記
-          </li>
-          <li className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-blue-800">
-            <Stethoscope className="size-3" />
-            日本の医薬品名で検索可能
-          </li>
-          <li className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-violet-800">
-            <Sparkles className="size-3" />
-            完全無料・登録不要
-          </li>
-        </ul>
       </header>
 
       {/* ── モード切替タブ ─────── */}

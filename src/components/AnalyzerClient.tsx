@@ -191,10 +191,12 @@ export function AnalyzerClient() {
 
   return (
     <div className="max-w-2xl mx-auto px-5 pb-10 pt-2">
-      {/* ── モードタブ ── */}
-      <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
-        {modeDescription[mode]}
-      </p>
+      {/* ── モードタブ（deep は AnalyzerDeepMode 自身の説明があるため重複表示しない） ── */}
+      {mode !== 'deep' && (
+        <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
+          {modeDescription[mode]}
+        </p>
+      )}
       <div className="mb-10 inline-flex flex-wrap gap-1 p-1 bg-secondary rounded-xl">
         {(['deep', 'concern', 'ingredient'] as Mode[]).map((m) => (
           <button

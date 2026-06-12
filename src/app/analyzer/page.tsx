@@ -1,4 +1,5 @@
 import { AnalyzerClient } from '@/components/AnalyzerClient'
+import { Microscope } from 'lucide-react'
 import type { Metadata } from 'next'
 
 const BASE_URL = 'https://scibase.app'
@@ -105,30 +106,20 @@ export default function AnalyzerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <header className="max-w-2xl mx-auto px-5 pt-10 pb-2">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
-          Supplement Analyzer
-        </p>
-        <h1 className="text-[28px] sm:text-[34px] font-semibold text-foreground tracking-tight mb-3 leading-tight">
+      <header className="max-w-2xl mx-auto px-5 pt-10 pb-2 text-center">
+        <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-xs font-medium text-violet-700">
+          <Microscope className="h-3.5 w-3.5" />
+          メタ解析・RCT準拠で診断
+        </div>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           サプリ診断｜論文で選ぶ自分に必要な成分
         </h1>
-        <p className="text-[16px] sm:text-[17px] font-medium text-foreground mb-2">
+        <p className="mt-3 text-base font-medium text-foreground sm:text-lg">
           悩みに合う成分を、論文から選ぶ
         </p>
-        <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
-          サプリ or 悩みを選ぶだけで、7軸（抗老化・肌・脳・ストレス・睡眠・免疫・代謝）をエビデンスランク S〜C で評価します。
+        <p className="mt-1.5 mb-4 text-xs text-muted-foreground sm:text-sm">
+          サプリ or 悩みを選ぶだけで、7軸（抗老化・肌・脳・ストレス・睡眠・免疫・代謝）をエビデンスランク S〜C で評価。完全無料・登録不要・所要 3 分。
         </p>
-        <ul className="flex flex-wrap gap-2 text-[12px]">
-          <li className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-foreground font-medium">
-            完全無料・登録不要
-          </li>
-          <li className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-foreground font-medium">
-            所要3分
-          </li>
-          <li className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-foreground font-medium">
-            メタ解析・RCT準拠
-          </li>
-        </ul>
       </header>
 
       <AnalyzerClient />
