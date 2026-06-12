@@ -247,62 +247,83 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <h2 className="font-semibold text-[20px] text-foreground mb-1">無料ツール</h2>
           <p className="text-[13px] text-muted-foreground mb-6">登録不要・ブラウザで完結・3 ステップで結果が出ます</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Link href="/tools/phenoage"
-              className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-indigo-300 hover:shadow-sm sm:p-5">
-              <div className="text-2xl">🧬</div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">生物学的年齢チェッカー</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">健診の採血値で「体の年齢」を測る</div>
-                <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-indigo-700">
-                  試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
-                </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-4">
+            {/* 測る */}
+            <div>
+              <div className="mb-2 text-[12px] font-semibold tracking-wide text-muted-foreground">📏 測る</div>
+              <div className="space-y-3">
+                <Link href="/tools/phenoage"
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-indigo-300 hover:shadow-sm sm:p-5">
+                  <div className="text-2xl">🧬</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">生物学的年齢チェッカー</div>
+                    <div className="mt-0.5 text-[12px] text-muted-foreground">健診の採血値で「体の年齢」を測る</div>
+                    <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-indigo-700">
+                      試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/tools/nutrient-sufficiency"
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
+                  <div className="text-2xl">🥗</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">栄養素チェッカー</div>
+                    <div className="mt-0.5 text-[12px] text-muted-foreground">毎日の食事に足りない栄養素を見つける</div>
+                    <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
+                      試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </Link>
-            <Link href="/tools/nutrient-sufficiency"
-              className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
-              <div className="text-2xl">🥗</div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">栄養素チェッカー</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">毎日の食事に足りない栄養素を見つける</div>
-                <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
-                  試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
-                </div>
+            </div>
+            {/* 選ぶ */}
+            <div>
+              <div className="mb-2 text-[12px] font-semibold tracking-wide text-muted-foreground">🔍 選ぶ</div>
+              <div className="space-y-3">
+                <Link href="/analyzer"
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-violet-300 hover:shadow-sm sm:p-5">
+                  <div className="text-2xl">🔬</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="text-[14px] font-semibold text-foreground sm:text-[15px]">サプリ診断</span>
+                      <span className="rounded bg-violet-100 px-1.5 py-0.5 text-[10px] font-semibold text-violet-700">まずはこれ</span>
+                    </div>
+                    <div className="mt-0.5 text-[12px] text-muted-foreground">悩みに合う成分を論文から選ぶ</div>
+                    <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-violet-700">
+                      試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </Link>
-            <Link href="/tools/interaction-checker"
-              className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
-              <div className="text-2xl">💊</div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">飲み合わせチェッカー</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">サプリ × 薬の危険な組み合わせを防ぐ</div>
-                <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
-                  試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
-                </div>
+            </div>
+            {/* 管理する */}
+            <div>
+              <div className="mb-2 text-[12px] font-semibold tracking-wide text-muted-foreground">🗂 管理する</div>
+              <div className="space-y-3">
+                <Link href="/tools/my-stack"
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
+                  <div className="text-2xl">🧺</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">My Stack（サプリ棚）</div>
+                    <div className="mt-0.5 text-[12px] text-muted-foreground">サプリ棚の重複・飲み合わせ・コストを整理</div>
+                    <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
+                      試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/tools/interaction-checker"
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-blue-300 hover:shadow-sm sm:p-5">
+                  <div className="text-2xl">💊</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">飲み合わせチェッカー</div>
+                    <div className="mt-0.5 text-[12px] text-muted-foreground">サプリ × 薬の危険な組み合わせを防ぐ</div>
+                    <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-blue-700">
+                      試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </Link>
-            <Link href="/analyzer"
-              className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
-              <div className="text-2xl">🔬</div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">サプリ Analyzer</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">悩みに合う成分を論文から選ぶ</div>
-                <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
-                  試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
-                </div>
-              </div>
-            </Link>
-            <Link href="/tools/my-stack"
-              className="group flex items-start gap-3 rounded-2xl border border-border bg-background p-4 transition hover:border-emerald-300 hover:shadow-sm sm:p-5">
-              <div className="text-2xl">🧺</div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">My Stack（サプリ棚）</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">サプリ棚の重複・飲み合わせ・コストを整理</div>
-                <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
-                  試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
-                </div>
-              </div>
-            </Link>
+            </div>
           </div>
         </div>
       </section>

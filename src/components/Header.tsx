@@ -13,12 +13,27 @@ const CONTENT_LINKS = [
   { href: '/compare',     label: '比較'         },
 ]
 
-const TOOL_LINKS = [
-  { href: '/analyzer',                   label: '🔬 サプリ診断',       desc: '悩みに合う成分を論文から選ぶ' },
-  { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素チェッカー', desc: '食事に足りない栄養素を見つける' },
-  { href: '/tools/phenoage',             label: '🧬 生物学的年齢',     desc: '健診の採血値で「体の年齢」を測る' },
-  { href: '/tools/interaction-checker',  label: '💊 飲み合わせ',       desc: 'サプリ×薬の危険な組み合わせを防ぐ' },
-  { href: '/tools/my-stack',             label: '🧺 My Stack',         desc: '棚の重複・飲み合わせ・コストを整理' },
+const TOOL_GROUPS = [
+  {
+    title: '📏 測る',
+    links: [
+      { href: '/tools/phenoage',             label: '🧬 生物学的年齢',     desc: '健診の採血値で「体の年齢」を測る' },
+      { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素チェッカー', desc: '食事に足りない栄養素を見つける' },
+    ],
+  },
+  {
+    title: '🔍 選ぶ',
+    links: [
+      { href: '/analyzer',                   label: '🔬 サプリ診断',       desc: '悩みに合う成分を論文から選ぶ' },
+    ],
+  },
+  {
+    title: '🗂 管理する',
+    links: [
+      { href: '/tools/my-stack',             label: '🧺 My Stack',         desc: '棚の重複・飲み合わせ・コストを整理' },
+      { href: '/tools/interaction-checker',  label: '💊 飲み合わせ',       desc: 'サプリ×薬の危険な組み合わせを防ぐ' },
+    ],
+  },
 ]
 
 export function Header() {
@@ -107,15 +122,22 @@ export function Header() {
               <div className="invisible absolute right-0 top-full z-50 pt-2 opacity-0 transition-all duration-150
                 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <div className="w-60 rounded-xl border border-border bg-card p-1.5 shadow-lg">
-                  {TOOL_LINKS.map(({ href, label, desc }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="block rounded-lg px-3 py-2 transition-colors hover:bg-secondary"
-                    >
-                      <div className="text-[13px] font-medium text-foreground">{label}</div>
-                      <div className="text-[11px] text-muted-foreground">{desc}</div>
-                    </Link>
+                  {TOOL_GROUPS.map(({ title, links }) => (
+                    <div key={title}>
+                      <div className="px-3 pt-2 pb-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground">
+                        {title}
+                      </div>
+                      {links.map(({ href, label, desc }) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          className="block rounded-lg px-3 py-2 transition-colors hover:bg-secondary"
+                        >
+                          <div className="text-[13px] font-medium text-foreground">{label}</div>
+                          <div className="text-[11px] text-muted-foreground">{desc}</div>
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
               </div>
