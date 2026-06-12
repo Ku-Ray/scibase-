@@ -1689,21 +1689,42 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
           </h2>
         </div>
 
-        <div className="space-y-3">
-          {recommendations.map((r, idx) => (
-            <div key={r.ing.slug} className={`animate-fade-up ${idx === 0 ? 'delay-600' : idx === 1 ? 'delay-800' : idx === 2 ? 'delay-1000' : 'delay-1200'}`}>
-              <RecommendationCard
-                rec={r}
-                rank={idx + 1}
-                platformLabel={platformLabel}
-                interactions={interactionResults.filter((i) => i.ingredientSlug === r.ing.slug)}
-                matchPercent={Math.round((r.score / topScore) * 100)}
-                tribePercent={getTribePercent(r.ing.slug, concernSlugs)}
-                animationDelayMs={600 + idx * 200 + 300}
-              />
+        {/* #1 を主役ヒーローに昇格（「結局どれ？」の結論を最初に大きく） */}
+        {recommendations[0] && (
+          <div className="animate-fade-up delay-600 mb-4">
+            <HeroRecommendationCard
+              rec={recommendations[0]}
+              platformLabel={platformLabel}
+              interactions={interactionResults.filter((i) => i.ingredientSlug === recommendations[0].ing.slug)}
+              matchPercent={Math.round((recommendations[0].score / topScore) * 100)}
+              tribePercent={getTribePercent(recommendations[0].ing.slug, concernSlugs)}
+            />
+          </div>
+        )}
+
+        {/* #2 以降は通常カード */}
+        {recommendations.length > 1 && (
+          <>
+            <p className="text-[12px] font-semibold text-muted-foreground mb-2 mt-5">
+              次の候補（{recommendations.length - 1} 件）
+            </p>
+            <div className="space-y-3">
+              {recommendations.slice(1).map((r, i) => (
+                <div key={r.ing.slug} className={`animate-fade-up ${i === 0 ? 'delay-800' : i === 1 ? 'delay-1000' : 'delay-1200'}`}>
+                  <RecommendationCard
+                    rec={r}
+                    rank={i + 2}
+                    platformLabel={platformLabel}
+                    interactions={interactionResults.filter((x) => x.ingredientSlug === r.ing.slug)}
+                    matchPercent={Math.round((r.score / topScore) * 100)}
+                    tribePercent={getTribePercent(r.ing.slug, concernSlugs)}
+                    animationDelayMs={800 + i * 200 + 300}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </section>
 
       {/* ── Action Plan：段階導入の concrete steps ── */}
@@ -1812,6 +1833,158 @@ function ResultsSection({ recommendations, interactionResults, excludedByPregnan
         </div>
       </section>
     </>
+  )
+}
+
+/* ── HeroRecommendationCard：#1 を主役化（「結局どれ？」の結論を大きく + ASP 出口）── */
+function HeroRecommendationCard({ rec, platformLabel, interactions, matchPercent, tribePercent }: {
+  rec: Recommendation
+  platformLabel: Record<string, string>
+  interactions: InteractionResult[]
+  matchPercent: number
+  tribePercent: number | null
+}) {
+  const { ing } = rec
+  const topProduct = ing.products.find((p) => p.rank === 1) ?? ing.products[0]
+  const { isFavorite, toggle } = useFavorite('ingredient', ing.slug)
+  const animatedMatch = useCountUp(Math.min(100, Math.max(0, matchPercent)), 1100, 800)
+  const animatedTribe = useCountUp(tribePercent ?? 0, 1100, 1000)
+
+  const hasAvoid = interactions.some((i) => i.level === 'avoid')
+  const hasCaution = interactions.some((i) => i.level === 'caution')
+
+  const dosageStr = ing.dosageMin && ing.dosageMax
+    ? `${ing.dosageMin}〜${ing.dosageMax} ${ing.dosageUnit}`
+    : ing.dosageMin ? `${ing.dosageMin} ${ing.dosageUnit}` : null
+
+  return (
+    <div className={`relative overflow-hidden rounded-3xl border-2 p-5 sm:p-6 shadow-md
+      ${hasAvoid ? 'border-rose-300 bg-rose-50/40' : 'border-amber-300 bg-gradient-to-br from-amber-50 via-card to-emerald-50/30'}`}>
+      {/* バッジ + お気に入り */}
+      <div className="flex items-center gap-2 mb-3 flex-wrap">
+        <span className="inline-flex items-center gap-1 text-[12px] font-bold tracking-wide
+          bg-gradient-to-r from-amber-400 to-amber-500 text-white px-3 py-1 rounded-full shadow-sm">
+          🏆 まずはこれ — No.1 おすすめ
+        </span>
+        <EvidenceBadge rank={ing.evidenceRank} variant="dot" />
+        {rec.hits > 1 && (
+          <span className="text-[10px] bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 text-emerald-700">
+            {rec.hits}悩み横断
+          </span>
+        )}
+        {hasAvoid && (
+          <span className="text-[10px] bg-rose-50 border border-rose-200 rounded px-1.5 py-0.5 text-rose-700 inline-flex items-center gap-1">
+            <AlertTriangle className="w-3 h-3" /> 要回避警告
+          </span>
+        )}
+        {!hasAvoid && hasCaution && (
+          <span className="text-[10px] bg-amber-50 border border-amber-200 rounded px-1.5 py-0.5 text-amber-700 inline-flex items-center gap-1">
+            <AlertTriangle className="w-3 h-3" /> 要注意
+          </span>
+        )}
+        <button onClick={toggle} aria-label={isFavorite ? 'お気に入りから削除' : 'お気に入りに追加'}
+          className="ml-auto text-muted-foreground hover:text-foreground transition-colors">
+          <Star className={`w-5 h-5 ${isFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />
+        </button>
+      </div>
+
+      {/* 成分名 特大 */}
+      <h3 className="text-[26px] sm:text-[30px] font-bold text-foreground leading-none tracking-tight mb-2">
+        {ing.nameJa}
+      </h3>
+      <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">{ing.tagline}</p>
+
+      {/* マッチ度 大 */}
+      <div className="flex items-center gap-3 mb-3">
+        <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-amber-400 to-emerald-500 rounded-full animate-bar-grow"
+            style={{ width: `${Math.min(100, Math.max(0, matchPercent))}%`, animationDelay: '800ms' }} />
+        </div>
+        <span className="text-[18px] font-bold text-amber-700 tabular-nums flex-shrink-0">
+          マッチ {animatedMatch}%
+        </span>
+      </div>
+
+      {tribePercent !== null && (
+        <p className="text-[11.5px] text-muted-foreground mb-4 inline-flex items-center gap-1">
+          <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+          同じタイプの <strong className="text-foreground tabular-nums mx-0.5">{animatedTribe}%</strong> がこの成分を優先選択
+        </p>
+      )}
+
+      {/* あなたに合う理由 */}
+      {(rec.matchedConcerns.length > 0 || rec.lifestyleBoost.length > 0) && (
+        <div className="bg-white/70 rounded-xl px-3.5 py-3 mb-4 border border-amber-100">
+          <p className="text-[10.5px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">
+            あなたに合う理由
+          </p>
+          <div className="space-y-1">
+            {rec.matchedConcerns.length > 0 && (
+              <p className="text-[12.5px] text-foreground leading-relaxed">
+                🎯 <strong className="font-semibold">悩み</strong>:&nbsp;
+                {rec.matchedConcerns.slice(0, 3).join('・')}
+                {rec.matchedConcerns.length > 3 && ` ほか${rec.matchedConcerns.length - 3}件`}
+                {rec.hits > 1 && ` の${rec.hits}つに該当`}
+              </p>
+            )}
+            {rec.lifestyleBoost.length > 0 && (
+              <p className="text-[12.5px] text-foreground leading-relaxed">
+                ⚡ <strong className="font-semibold">ライフスタイル</strong>:&nbsp;
+                {Array.from(new Set(rec.lifestyleBoost)).join('・')} と相性 ◎
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 用量・効果実感・タイミング */}
+      {(dosageStr || ing.duration || ing.timing) && (
+        <div className="grid grid-cols-3 gap-2 mb-4 text-center">
+          {dosageStr && (
+            <div className="bg-white/60 rounded-lg px-2 py-2">
+              <p className="text-[9.5px] uppercase tracking-wider text-muted-foreground mb-0.5">用量</p>
+              <p className="text-[11px] font-semibold text-foreground leading-tight">{dosageStr}</p>
+            </div>
+          )}
+          {ing.duration && (
+            <div className="bg-white/60 rounded-lg px-2 py-2">
+              <p className="text-[9.5px] uppercase tracking-wider text-muted-foreground mb-0.5">効果実感</p>
+              <p className="text-[11px] font-semibold text-foreground leading-tight line-clamp-2">{ing.duration.replace(/^[^0-9０-９]*/, '').slice(0, 20)}</p>
+            </div>
+          )}
+          {ing.timing && (
+            <div className="bg-white/60 rounded-lg px-2 py-2">
+              <p className="text-[9.5px] uppercase tracking-wider text-muted-foreground mb-0.5">タイミング</p>
+              <p className="text-[11px] font-semibold text-foreground leading-tight line-clamp-2">{ing.timing.slice(0, 18)}</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* CTA 大 — エビデンス + 購入（ASP 出口を主役に） */}
+      <div className="flex flex-col sm:flex-row items-stretch gap-2">
+        <Link href={`/ingredients/${ing.slug}`}
+          className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl py-3
+            border border-border bg-card text-[13px] font-semibold text-foreground hover:bg-secondary transition-colors">
+          論文エビデンスを見る
+        </Link>
+        {topProduct && (
+          <OutboundProductLink
+            href={topProduct.url}
+            platform={topProduct.platform}
+            ingredientSlug={ing.slug}
+            productRank={topProduct.rank}
+            aspProgram={topProduct.aspProgram}
+            aspId={topProduct.aspId}
+            commissionRateBand={topProduct.commissionRateBand}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl py-3
+              bg-accent text-primary-foreground text-[13px] font-bold shadow-sm hover:opacity-90 transition-opacity"
+          >
+            {platformLabel[topProduct.platform]}で見る →
+          </OutboundProductLink>
+        )}
+      </div>
+    </div>
   )
 }
 

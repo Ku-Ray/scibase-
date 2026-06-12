@@ -12,8 +12,8 @@ export type LifeStage = 'normal' | 'pregnancy' | 'lactation'
 export const AGE_GROUP_LABEL: Record<AgeGroup, string> = {
   '10s': '15-17歳',
   '20s': '18-29歳',
-  '30s': '30-49歳',
-  '40s': '30-49歳',
+  '30s': '30-39歳',
+  '40s': '40-49歳',
   '50s': '50-64歳',
   '60s': '65-74歳',
   '70s+': '75歳以上',
