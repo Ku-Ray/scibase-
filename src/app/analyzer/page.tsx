@@ -112,8 +112,11 @@ export default function AnalyzerPage() {
         <h1 className="text-[28px] sm:text-[34px] font-semibold text-foreground tracking-tight mb-3 leading-tight">
           サプリ診断｜論文で選ぶ自分に必要な成分
         </h1>
-        <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
-          飲んでいるサプリ or 悩みを選ぶだけで、<strong className="text-foreground">7軸（抗老化・肌・脳・ストレス・睡眠・免疫・代謝）</strong>を論文エビデンスで評価。エビデンスランクS〜Cで自分に必要な成分が見える。
+        <p className="text-[16px] sm:text-[17px] font-medium text-foreground mb-2">
+          悩みに合う成分を、論文から選ぶ
+        </p>
+        <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
+          サプリ or 悩みを選ぶだけで、7軸（抗老化・肌・脳・ストレス・睡眠・免疫・代謝）をエビデンスランク S〜C で評価します。
         </p>
         <ul className="flex flex-wrap gap-2 text-[12px]">
           <li className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-foreground font-medium">

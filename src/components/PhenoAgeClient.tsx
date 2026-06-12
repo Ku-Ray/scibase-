@@ -508,8 +508,11 @@ export function PhenoAgeClient() {
           健康診断の数値で測る
         </div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">生物学的年齢チェッカー</h1>
-        <p className="mt-3 text-sm text-slate-600 sm:text-base">
-          Levine 2018（<i>Aging</i>）の PhenoAge 式をベースに、健診の採血 9 項目から「身体の年齢」の<strong>研究指標</strong>を概算します。
+        <p className="mt-3 text-base font-medium text-slate-800 sm:text-lg">
+          健診の採血値で「体の年齢」を測る
+        </p>
+        <p className="mt-1.5 text-xs text-slate-500 sm:text-sm">
+          Levine 2018（<i>Aging</i>）の PhenoAge 式をベースに、採血 9 項目から<strong>研究指標</strong>として概算（無料・登録不要）
         </p>
       </header>
 

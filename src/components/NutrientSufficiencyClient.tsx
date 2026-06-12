@@ -390,8 +390,11 @@ export function NutrientSufficiencyClient() {
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           栄養素充足率チェッカー
         </h1>
-        <p className="mt-3 text-sm text-slate-600 sm:text-base">
-          厚生労働省 食事摂取基準 2020 年版をベースに、15 栄養素の 1 日充足率の<strong>目安</strong>を概算します。
+        <p className="mt-3 text-base font-medium text-slate-800 sm:text-lg">
+          毎日の食事に足りない栄養素を見つける
+        </p>
+        <p className="mt-1.5 text-xs text-slate-500 sm:text-sm">
+          厚生労働省 食事摂取基準 2020 年版をベースに、15 栄養素の 1 日充足率の目安を概算（無料・登録不要）
         </p>
       </header>
 

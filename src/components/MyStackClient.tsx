@@ -405,8 +405,11 @@ export function MyStackClient() {
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           My Stack｜サプリ棚チェッカー
         </h1>
-        <p className="mt-3 text-sm text-slate-600 sm:text-base">
-          飲んでいるサプリを棚に登録すると、<strong>飲み合わせ・重複・耐容上限・月額コスト・タイミング</strong>を一括チェック。棚は端末内にだけ保存されます。
+        <p className="mt-3 text-base font-medium text-slate-800 sm:text-lg">
+          サプリ棚の重複・飲み合わせ・コストを整理する
+        </p>
+        <p className="mt-1.5 text-xs text-slate-500 sm:text-sm">
+          棚に登録すると重複・耐容上限・月額コスト・タイミングを一括チェック。棚は端末内にだけ保存されます。
         </p>
       </header>
 

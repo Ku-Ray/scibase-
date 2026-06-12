@@ -14,11 +14,11 @@ const CONTENT_LINKS = [
 ]
 
 const TOOL_LINKS = [
-  { href: '/analyzer',                   label: '🔬 サプリ診断',       desc: '悩みから論文ベースで成分提案' },
-  { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素チェッカー', desc: '食事＋サプリで充足率を可視化' },
-  { href: '/tools/phenoage',             label: '🧬 生物学的年齢',     desc: '健診の採血値で身体の年齢を概算' },
-  { href: '/tools/interaction-checker',  label: '💊 飲み合わせ',       desc: 'サプリと薬の相互作用を確認' },
-  { href: '/tools/my-stack',             label: '🧺 My Stack',         desc: 'サプリ棚の飲み合わせ・コストを一括チェック' },
+  { href: '/analyzer',                   label: '🔬 サプリ診断',       desc: '悩みに合う成分を論文から選ぶ' },
+  { href: '/tools/nutrient-sufficiency', label: '🥗 栄養素チェッカー', desc: '食事に足りない栄養素を見つける' },
+  { href: '/tools/phenoage',             label: '🧬 生物学的年齢',     desc: '健診の採血値で「体の年齢」を測る' },
+  { href: '/tools/interaction-checker',  label: '💊 飲み合わせ',       desc: 'サプリ×薬の危険な組み合わせを防ぐ' },
+  { href: '/tools/my-stack',             label: '🧺 My Stack',         desc: '棚の重複・飲み合わせ・コストを整理' },
 ]
 
 export function Header() {

@@ -253,7 +253,7 @@ export default function Home() {
               <div className="text-2xl">🧬</div>
               <div className="min-w-0 flex-1">
                 <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">生物学的年齢チェッカー</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">健診の採血値から「身体の年齢」の研究指標を概算</div>
+                <div className="mt-0.5 text-[12px] text-muted-foreground">健診の採血値で「体の年齢」を測る</div>
                 <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-indigo-700">
                   試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
                 </div>
@@ -264,7 +264,7 @@ export default function Home() {
               <div className="text-2xl">🥗</div>
               <div className="min-w-0 flex-1">
                 <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">栄養素チェッカー</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">食事+サプリで 15 栄養素の充足率を可視化</div>
+                <div className="mt-0.5 text-[12px] text-muted-foreground">毎日の食事に足りない栄養素を見つける</div>
                 <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
                   試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
                 </div>
@@ -275,7 +275,7 @@ export default function Home() {
               <div className="text-2xl">💊</div>
               <div className="min-w-0 flex-1">
                 <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">飲み合わせチェッカー</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">サプリと医薬品の相互作用を 3 段階で表示</div>
+                <div className="mt-0.5 text-[12px] text-muted-foreground">サプリ × 薬の危険な組み合わせを防ぐ</div>
                 <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
                   試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
                 </div>
@@ -286,7 +286,7 @@ export default function Home() {
               <div className="text-2xl">🔬</div>
               <div className="min-w-0 flex-1">
                 <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">サプリ Analyzer</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">あなたの悩みから論文ベースで成分を推奨</div>
+                <div className="mt-0.5 text-[12px] text-muted-foreground">悩みに合う成分を論文から選ぶ</div>
                 <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
                   試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
                 </div>
@@ -297,7 +297,7 @@ export default function Home() {
               <div className="text-2xl">🧺</div>
               <div className="min-w-0 flex-1">
                 <div className="text-[14px] font-semibold text-foreground sm:text-[15px]">My Stack（サプリ棚）</div>
-                <div className="mt-0.5 text-[12px] text-muted-foreground">棚を登録して飲み合わせ・重複・月額コストを一括チェック</div>
+                <div className="mt-0.5 text-[12px] text-muted-foreground">サプリ棚の重複・飲み合わせ・コストを整理</div>
                 <div className="mt-2 inline-flex items-center gap-0.5 text-[11px] font-medium text-emerald-700">
                   試してみる <ArrowRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
                 </div>

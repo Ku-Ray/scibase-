@@ -413,9 +413,11 @@ export function InteractionCheckerClient() {
         <h1 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl">
           サプリ・薬の飲み合わせチェッカー
         </h1>
-        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-          飲んでいるサプリと服用中の医薬品を入力すると、論文・添付文書ベースで相互作用の可能性を
-          「要回避・要注意・経過観察」の 3 段階で可視化します。完全無料・登録不要・所要 30 秒。
+        <p className="text-base font-medium text-foreground sm:text-lg">
+          飲んでいるサプリ × 薬の危険な組み合わせを防ぐ
+        </p>
+        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          サプリと医薬品を入力すると、相互作用の可能性を論文・添付文書ベースで「要回避・要注意・経過観察」の 3 段階で表示。完全無料・登録不要・所要 30 秒。
         </p>
 
         {/* 差別化バッジ（R8） */}
