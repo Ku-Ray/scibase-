@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import {
+  ArrowDown,
   ArrowRight,
   ExternalLink,
   Target,
@@ -24,6 +25,7 @@ import { getIngredient } from '@/lib/data'
  * 段落レベル：
  *   - 段落区切りは「空行（\n\n）」
  *   - 段落全体が `**▶ [text](https://..)**` のみ → 商品CTAボタン（emerald・rel=sponsored）に昇格（内部リンクは対象外）
+ *   - 段落全体が `**▼ [text](#anchor)**` のみ → ページ内スキップボタン（outline・記事内ナビ用・sponsored なし）に昇格
  *   - 段落全体が `**...**` のみ → <h4> 自動昇格
  *   - 段落の全行が `- ` で始まる → <ul><li> リストとして描画
  *
@@ -145,6 +147,16 @@ function parseCtaButton(text: string): { label: string; sub: string | null; href
   return { label: m[1].slice(0, sep).trim(), sub: m[1].slice(sep + 1).trim() || null, href: m[2] }
 }
 
+/** 段落全体が「**▼ [text](#anchor)**」のみ → ページ内スキップボタン（記事内ナビ・広告CTAと区別する outline スタイル）
+ *  ラベル内の「｜」でメインとサブコピー（小サイズ）に2段分割する */
+function parseSkipButton(text: string): { label: string; sub: string | null; href: string } | null {
+  const m = text.trim().match(/^\*\*\s*[▼▶]?\s*\[([^\]\n]+)\]\((#[a-zA-Z0-9_-]+)\)\s*\*\*$/)
+  if (!m) return null
+  const sep = m[1].indexOf('｜')
+  if (sep === -1) return { label: m[1], sub: null, href: m[2] }
+  return { label: m[1].slice(0, sep).trim(), sub: m[1].slice(sep + 1).trim() || null, href: m[2] }
+}
+
 const BULLET_LINE = /^\s*-\s+/
 
 /** 段落の全行が `- ` で始まる場合 true（bullet list段落）*/
@@ -259,6 +271,29 @@ export function RichParagraphs({
             >
               {tokenize(h2Match[1]).map(renderToken)}
             </h2>
+          )
+        }
+        const skipButton = parseSkipButton(para)
+        if (skipButton) {
+          return (
+            <p key={i} className="my-6 not-prose">
+              <a
+                href={skipButton.href}
+                className="flex w-full sm:inline-flex sm:w-auto items-center justify-center gap-2
+                  text-[14px] font-semibold text-emerald-700 bg-white border border-emerald-600/40
+                  hover:bg-emerald-50 rounded-xl px-6 py-3.5 sm:px-8 shadow-sm transition-colors no-underline"
+              >
+                <span className="flex flex-col items-center text-center leading-snug">
+                  <span>{skipButton.label}</span>
+                  {skipButton.sub && (
+                    <span className="text-[11px] font-medium text-emerald-700/70">
+                      {skipButton.sub}
+                    </span>
+                  )}
+                </span>
+                <ArrowDown className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              </a>
+            </p>
           )
         }
         const ctaButton = parseCtaButton(para)
