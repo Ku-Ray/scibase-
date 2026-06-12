@@ -166,14 +166,22 @@ export function getStackIngredientOptions(): StackIngredientOption[] {
     .map((i) => ({ slug: i.slug, nameJa: i.nameJa, nameEn: i.nameEn, aliases: i.aliases }))
 }
 
-/** 棚アイテムの用量入力単位 */
+/**
+ * 棚アイテムの用量入力単位。
+ * data.ts の dosageUnit は「mg/日」「mg/日（分3）」「製品ラベル指示」等の表記揺れがあるため、
+ * 純粋な単位トークン（mg/μg/g/CFU…）に正規化する（UI 側で「/日」を付けて表示）。
+ */
 export function getDoseUnit(slug: string): string {
   const nutrientKey = STACK_SLUG_TO_NUTRIENT[slug]
   if (nutrientKey) {
     const mapped = SUPPLEMENT_INPUT_UNIT[slug] ?? NUTRIENT_META[nutrientKey]?.unit
     if (mapped) return mapped
   }
-  return getIngredient(slug)?.dosageUnit ?? 'mg'
+  const raw = getIngredient(slug)?.dosageUnit ?? 'mg'
+  const m = raw.match(/^([a-zA-ZμIU%]+)\s*[／/]日/)
+  if (m) return m[1]
+  if (/^[a-zA-ZμIU%]+$/.test(raw)) return raw
+  return 'mg'
 }
 
 export function getStackItemName(slug: string): string {
@@ -517,11 +525,37 @@ export interface CostRow {
   brand?: string
 }
 
+/** 買い替え提案行（SciBase 評価 1 位の製品） */
+export interface SuggestionRow {
+  slug: string
+  nameJa: string
+  /** brand + name（name に brand が含まれる場合は重複させない） */
+  label: string
+  monthlyCostJpy?: number
+}
+
+/** brand が name に含まれる製品（NOW Foods NOW Foods… 等）の二重表示を防ぐ */
+export function productDisplayName(p: Product): string {
+  return p.name.includes(p.brand) ? p.name : `${p.brand} ${p.name}`
+}
+
 /** rank 1（推奨順位 1 位）の製品。無ければ先頭 */
 export function getTopProduct(slug: string): Product | null {
   const ing = getIngredient(slug)
   if (!ing || ing.products.length === 0) return null
   return ing.products.find((p) => p.rank === 1) ?? ing.products[0]
+}
+
+/**
+ * monthlyCostJpy が最も安い製品。コスト目安は「最安の収載製品」で計算する
+ * （rank 1 は高価格帯のこともあり、棚の維持費目安として過大になるため）。
+ */
+export function getCheapestProduct(slug: string): Product | null {
+  const ing = getIngredient(slug)
+  if (!ing) return null
+  const priced = ing.products.filter((p) => p.monthlyCostJpy != null)
+  if (priced.length === 0) return null
+  return priced.reduce((min, p) => ((p.monthlyCostJpy ?? Infinity) < (min.monthlyCostJpy ?? Infinity) ? p : min))
 }
 
 /* ─── 棚タイプ（PersonalityType） ───────────────────────────────── */
@@ -569,6 +603,7 @@ export interface StackAnalysis {
   ulFindings: UlFinding[]
   separations: SeparationFinding[]
   costRows: CostRow[]
+  suggestions: SuggestionRow[]
   totalMonthlyCost: number
   costKnownCount: number
   costUnknownCount: number
@@ -736,19 +771,29 @@ export function analyzeStack(items: StackItem[], meds: string[]): StackAnalysis 
     })
   }
 
-  /* 4. 月額コスト */
+  /* 4. 月額コスト（最安の収載製品で計算）+ 買い替え提案（評価 1 位） */
   const costRows: CostRow[] = items.map((it) => {
-    const top = getTopProduct(it.slug)
+    const cheapest = getCheapestProduct(it.slug)
     return {
       slug: it.slug,
       nameJa: getStackItemName(it.slug),
-      monthlyCostJpy: top?.monthlyCostJpy,
-      productName: top?.name,
-      brand: top?.brand,
+      monthlyCostJpy: cheapest?.monthlyCostJpy,
+      productName: cheapest?.name,
+      brand: cheapest?.brand,
     }
   })
   const known = costRows.filter((r) => r.monthlyCostJpy != null)
   const totalMonthlyCost = known.reduce((s, r) => s + (r.monthlyCostJpy ?? 0), 0)
+  const suggestions: SuggestionRow[] = items.flatMap((it) => {
+    const top = getTopProduct(it.slug)
+    if (!top) return []
+    return [{
+      slug: it.slug,
+      nameJa: getStackItemName(it.slug),
+      label: productDisplayName(top),
+      monthlyCostJpy: top.monthlyCostJpy,
+    }]
+  })
 
   /* 5. スコア（確認ポイントが少ないほど高い・健康状態の評価ではない） */
   const ulOver = ulFindings.filter((f) => f.level === 'over').length
@@ -788,6 +833,7 @@ export function analyzeStack(items: StackItem[], meds: string[]): StackAnalysis 
     ulFindings,
     separations,
     costRows,
+    suggestions,
     totalMonthlyCost,
     costKnownCount: known.length,
     costUnknownCount: costRows.length - known.length,

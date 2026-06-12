@@ -153,7 +153,7 @@ export function MyStackSummary() {
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
         <div>
           {stack.items.length} 品
-          {lastResult?.totalMonthlyCost != null && `・月あたり目安 ¥${lastResult.totalMonthlyCost.toLocaleString()}`}
+          {lastResult?.totalMonthlyCost != null && `・月あたり目安 ¥${lastResult.totalMonthlyCost.toLocaleString()}〜`}
           {lastResult != null && `・確認ポイント ${lastResult.checkpointCount} 件`}
         </div>
         <Link href="/tools/my-stack"

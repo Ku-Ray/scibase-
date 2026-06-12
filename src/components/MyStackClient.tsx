@@ -10,6 +10,7 @@ import {
   BellRing,
   CalendarPlus,
   Check,
+  ChevronDown,
   ChevronRight,
   Eye,
   Flame,
@@ -199,6 +200,9 @@ export function MyStackClient() {
   const [hydrated, setHydrated] = useState(false)
   const [restored, setRestored] = useState(false)
   const [showAllPresets, setShowAllPresets] = useState(false)
+  /* 再訪時（棚あり）は追加・薬セクションを畳んで「今日の服用→分析」への動線を短くする */
+  const [addOpen, setAddOpen] = useState(true)
+  const [medsOpen, setMedsOpen] = useState(true)
   const resultRef = useRef<HTMLDivElement>(null)
 
   const allOptions = useMemo(() => getStackIngredientOptions(), [])
@@ -238,6 +242,10 @@ export function MyStackClient() {
         setItems(validItems)
         setMeds(validMeds)
         setRestored(validItems.length > 0)
+        if (validItems.length > 0) {
+          setAddOpen(false)
+          setMedsOpen(false)
+        }
       }
     } catch {
       /* localStorage 不可・破損時は空棚から */
@@ -289,6 +297,11 @@ export function MyStackClient() {
       /* noop */
     }
   }, [phase, analysis])
+
+  /* 棚が空になったら追加セクションを自動で開く */
+  useEffect(() => {
+    if (hydrated && items.length === 0) setAddOpen(true)
+  }, [hydrated, items.length])
 
   /* ── 棚の充実度（ShelfMeter） */
   const shelfPercent = useMemo(() => {
@@ -460,10 +473,13 @@ export function MyStackClient() {
 
           {/* 追加セクション */}
           <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-            <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-slate-900">
+            <button type="button" onClick={() => setAddOpen((v) => !v)} aria-expanded={addOpen}
+              className={`flex w-full items-center gap-2 text-left text-lg font-bold text-slate-900 ${addOpen ? 'mb-4' : ''}`}>
               <Plus className="h-5 w-5 text-emerald-600" />
               棚に追加する
-            </h2>
+              <ChevronDown className={`ml-auto h-4 w-4 text-slate-400 transition ${addOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {addOpen && (<>
 
             {/* 定番プリセット */}
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">定番サプリ（タップで追加・一般的な市販量入り）</h3>
@@ -498,15 +514,19 @@ export function MyStackClient() {
             {/* 全成分検索 */}
             <h3 className="mb-2 mt-5 text-xs font-semibold uppercase tracking-wide text-slate-500">全 {allOptions.length} 成分から検索（NMN・アシュワガンダ・コラーゲン 等）</h3>
             <IngredientSearchAdd options={allOptions} stackSlugs={stackSlugs} onAdd={(slug) => addItem(slug)} />
+            </>)}
           </section>
 
           {/* 服用中の薬（任意） */}
           <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-            <h2 className="mb-1 flex items-center gap-2 text-lg font-bold text-slate-900">
+            <button type="button" onClick={() => setMedsOpen((v) => !v)} aria-expanded={medsOpen}
+              className={`flex w-full items-center gap-2 text-left text-lg font-bold text-slate-900 ${medsOpen ? 'mb-1' : ''}`}>
               <Stethoscope className="h-5 w-5 text-rose-600" />
               服用中の薬（任意）
               <span className="ml-auto rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-bold text-rose-800">{meds.length} 件</span>
-            </h2>
+              <ChevronDown className={`h-4 w-4 text-slate-400 transition ${medsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {medsOpen && (<>
             <p className="mb-4 text-xs text-slate-600 sm:text-sm">
               選んでおくと、棚の成分との相互作用（論文・添付文書ベース）を毎回の分析でまとめて確認できます。
             </p>
@@ -524,6 +544,7 @@ export function MyStackClient() {
               </ul>
             )}
             <MedSearchAdd selected={meds} onToggle={toggleMed} popularKeys={popularMeds.map((m) => m.entry.key)} />
+            </>)}
           </section>
 
           {/* 分析 CTA */}
@@ -1232,6 +1253,11 @@ function InteractionSection({ analysis }: { analysis: StackAnalysis }) {
           <p className="text-xs leading-relaxed text-emerald-900/80 sm:text-sm">
             ただし照合できるのは SciBase 収載の組み合わせのみです。未収載の物質・個人の体質による反応の可能性は残るため、併用前は医師・薬剤師にご相談ください。
           </p>
+          {medCount === 0 && (
+            <p className="mt-2 rounded-lg bg-white/70 p-2.5 text-xs leading-relaxed text-emerald-900">
+              💡 棚の編集画面で「服用中の薬」を選んでおくと、成分×薬の組み合わせも毎回まとめてチェックできます。
+            </p>
+          )}
         </div>
       ) : (
         <div className="mt-3 space-y-3">
@@ -1442,14 +1468,14 @@ function CostSection({ analysis }: { analysis: StackAnalysis }) {
         </div>
         <div>
           <h3 className="text-base font-bold text-slate-900 sm:text-lg">棚の月額コスト目安</h3>
-          <div className="text-xs text-slate-600">SciBase 収載の評価上位製品で計算した参考値</div>
+          <div className="text-xs text-slate-600">SciBase 収載の最も手頃な製品で計算した下限の目安</div>
         </div>
       </div>
 
       <div className="rounded-xl bg-emerald-50/60 p-4 text-center">
         <div className="text-xs font-medium text-emerald-800">月あたり合計（{costKnownCount} 品）</div>
         <div className="mt-0.5 text-3xl font-bold text-emerald-700 sm:text-4xl">
-          ¥{Math.round(totalAnim).toLocaleString()}
+          ¥{Math.round(totalAnim).toLocaleString()}<span className="text-xl">〜</span>
         </div>
         {costUnknownCount > 0 && (
           <div className="mt-1 text-[11px] text-emerald-800/80">価格データ未収載 {costUnknownCount} 品は含まれていません</div>
@@ -1464,13 +1490,13 @@ function CostSection({ analysis }: { analysis: StackAnalysis }) {
               {r.brand && <span className="ml-1.5 truncate text-[11px] text-slate-500">{r.brand}</span>}
             </div>
             <div className="flex-shrink-0 font-semibold text-slate-900">
-              {r.monthlyCostJpy != null ? `¥${r.monthlyCostJpy.toLocaleString()}/月` : <span className="text-xs font-normal text-slate-400">未収載</span>}
+              {r.monthlyCostJpy != null ? `¥${r.monthlyCostJpy.toLocaleString()}/月〜` : <span className="text-xs font-normal text-slate-400">未収載</span>}
             </div>
           </div>
         ))}
       </div>
       <div className="mt-2 text-[10px] leading-relaxed text-slate-500 sm:text-xs">
-        ※ 実際の購入製品・為替・セールにより変動します。
+        ※ 各成分とも収載製品のうち最も安い製品の価格です。実際の購入製品・為替・セールにより変動します。
       </div>
     </div>
   )
@@ -1479,7 +1505,7 @@ function CostSection({ analysis }: { analysis: StackAnalysis }) {
 /* ─── 買い替え・追加の検討（ASP 出口・中立） ────────────────────── */
 
 function SuggestionSection({ analysis }: { analysis: StackAnalysis }) {
-  const rows = analysis.costRows.filter((r) => r.productName).slice(0, 8)
+  const rows = analysis.suggestions.slice(0, 8)
   if (rows.length === 0) return null
   return (
     <div className="rounded-2xl border-2 border-emerald-300 bg-gradient-to-br from-white via-emerald-50/30 to-white p-5 shadow-md sm:p-6">
@@ -1499,7 +1525,7 @@ function SuggestionSection({ analysis }: { analysis: StackAnalysis }) {
             <div className="min-w-0 flex-1">
               <div className="text-sm font-bold text-slate-900">{r.nameJa}</div>
               <div className="mt-0.5 truncate text-xs text-slate-600">
-                SciBase 評価上位：{r.brand} {r.productName}
+                SciBase 評価上位：{r.label}
                 {r.monthlyCostJpy != null && `・月あたり目安 ¥${r.monthlyCostJpy.toLocaleString()}`}
               </div>
             </div>
@@ -1542,7 +1568,7 @@ function BeforeAfterCard({ before, after }: { before: number; after: number }) {
 
 function CompletionCelebration({ analysis }: { analysis: StackAnalysis }) {
   const { personality, score, itemCount, totalMonthlyCost, costKnownCount } = analysis
-  const costPart = costKnownCount > 0 ? `・月あたり目安 ¥${totalMonthlyCost.toLocaleString()}` : ''
+  const costPart = costKnownCount > 0 ? `・月あたり目安 ¥${totalMonthlyCost.toLocaleString()}〜` : ''
   const shareText = encodeURIComponent(
     `私のサプリ棚は ${personality.emoji} ${personality.name}\n棚スコア ${score}/100（${itemCount} 品${costPart}）\n\n#SciBase My Stack`
   )
