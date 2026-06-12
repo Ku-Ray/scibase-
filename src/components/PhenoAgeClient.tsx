@@ -191,30 +191,50 @@ export const PERSONALITY_ACTION: Partial<Record<PersonalityTypeId, PersonalityAc
 
 /* ─── 健診マーカー定義（T1 必須 7 + 任意 2） ───────────────────────── */
 
+/** 結果票の「どの欄を見ればよいか」のグルーピング（健診票の並びに合わせる） */
+type MarkerSection = 'cbc' | 'liver' | 'kidney' | 'glucose' | 'inflammation'
+
+const SECTION_META: Record<MarkerSection, { labelJa: string; whereJa: string }> = {
+  cbc: { labelJa: '血液一般（血算）', whereJa: '「血液一般」「血球数算定」などの欄' },
+  liver: { labelJa: '肝機能', whereJa: '「肝機能」の欄' },
+  kidney: { labelJa: '腎機能', whereJa: '「腎機能」の欄' },
+  glucose: { labelJa: '血糖（代謝）', whereJa: '「血糖」「代謝系」の欄' },
+  inflammation: { labelJa: '炎症', whereJa: '「炎症反応」の欄' },
+}
+
+const SECTION_ORDER: MarkerSection[] = ['cbc', 'liver', 'kidney', 'glucose', 'inflammation']
+
 interface MarkerDef {
   key: keyof PhenoAgeInput
   labelJa: string
+  /** 健診結果票での略称・別表記（探す手がかり） */
+  aliasJa: string
+  section: MarkerSection
   unit: string
   placeholder: string
   rangeJa: string
   optional?: boolean
   step: number
+  /** 単位換算・測定法などの注意（誤入力を防ぐ） */
+  hintJa?: string
 }
 
 const CORE_MARKERS: MarkerDef[] = [
-  { key: 'albumin_gdL', labelJa: 'アルブミン', unit: 'g/dL', placeholder: '4.5', rangeJa: '基準 4.1–5.1', step: 0.1 },
-  { key: 'creatinine_mgdL', labelJa: 'クレアチニン', unit: 'mg/dL', placeholder: '0.8', rangeJa: '基準 男0.65–1.07 / 女0.46–0.79', step: 0.01 },
-  { key: 'glucose_mgdL', labelJa: '空腹時血糖', unit: 'mg/dL', placeholder: '90', rangeJa: '基準 70–100', step: 1 },
-  { key: 'lymphocyte_pct', labelJa: 'リンパ球率', unit: '%', placeholder: '32', rangeJa: '基準 20–40', step: 0.1 },
-  { key: 'mcv_fL', labelJa: 'MCV（赤血球容積）', unit: 'fL', placeholder: '90', rangeJa: '基準 85–100', step: 0.1 },
-  { key: 'alp_UL', labelJa: 'ALP', unit: 'U/L', placeholder: '70', rangeJa: '基準 38–113（IFCC）', step: 1 },
-  { key: 'wbc_10_3uL', labelJa: '白血球数（WBC）', unit: '×10³/µL', placeholder: '5.5', rangeJa: '基準 3.3–8.6', step: 0.1 },
+  { key: 'wbc_10_3uL', section: 'cbc', labelJa: '白血球数', aliasJa: 'WBC', unit: '×10³/µL', placeholder: '5.5', rangeJa: '基準 3.3–8.6', step: 0.1, hintJa: '結果票が「5,500 /µL」なら1000で割って 5.5。「55（×10²/µL）」表記も 5.5 です' },
+  { key: 'mcv_fL', section: 'cbc', labelJa: 'MCV（赤血球の大きさ）', aliasJa: 'MCV', unit: 'fL', placeholder: '90', rangeJa: '基準 85–100', step: 0.1 },
+  { key: 'lymphocyte_pct', section: 'cbc', labelJa: 'リンパ球（割合）', aliasJa: 'リンパ球 / Lymph%', unit: '%', placeholder: '32', rangeJa: '基準 20–40', step: 0.1, hintJa: '「白血球分画」の欄にある％。基本健診にはなく、人間ドックや詳しい血液検査に載ります' },
+  { key: 'albumin_gdL', section: 'liver', labelJa: 'アルブミン', aliasJa: 'Alb / ALB', unit: 'g/dL', placeholder: '4.5', rangeJa: '基準 4.1–5.1', step: 0.1 },
+  { key: 'alp_UL', section: 'liver', labelJa: 'ALP（アルカリホスファターゼ）', aliasJa: 'ALP', unit: 'U/L', placeholder: '70', rangeJa: '基準 38–113（IFCC法）', step: 1, hintJa: '2020年に測定法がIFCCに変わりました。2020年より前の結果（基準値が100〜340など高め）はそのままでは使えません' },
+  { key: 'creatinine_mgdL', section: 'kidney', labelJa: 'クレアチニン', aliasJa: 'Cr / CRE', unit: 'mg/dL', placeholder: '0.8', rangeJa: '基準 男0.65–1.07 / 女0.46–0.79', step: 0.01 },
+  { key: 'glucose_mgdL', section: 'glucose', labelJa: '空腹時血糖', aliasJa: '血糖 / FPG / Glu', unit: 'mg/dL', placeholder: '90', rangeJa: '基準 70–100', step: 1, hintJa: 'HbA1c（%）ではなく血糖値（mg/dL）です。空腹時でない場合は参考値になります' },
 ]
 
 const OPTIONAL_MARKERS: MarkerDef[] = [
-  { key: 'crp_mgdL', labelJa: 'CRP', unit: 'mg/dL', placeholder: '0.05', rangeJa: '基準 0.30 未満・任意', optional: true, step: 0.01 },
-  { key: 'rdw_pct', labelJa: 'RDW（赤血球分布幅）', unit: '%', placeholder: '13.0', rangeJa: '基準 11.0–14.5・任意', optional: true, step: 0.1 },
+  { key: 'crp_mgdL', section: 'inflammation', labelJa: 'CRP', aliasJa: 'CRP / C反応性蛋白', unit: 'mg/dL', placeholder: '0.05', rangeJa: '基準 0.30 未満', optional: true, step: 0.01, hintJa: 'まれに mg/L 表記の検査もあります。その場合は10で割って mg/dL に（例 1.5 mg/L → 0.15）' },
+  { key: 'rdw_pct', section: 'cbc', labelJa: 'RDW（赤血球サイズのばらつき）', aliasJa: 'RDW / RDW-CV', unit: '%', placeholder: '13.0', rangeJa: '基準 11.0–14.5', optional: true, step: 0.1, hintJa: '人間ドックなど詳しい血算に載る項目。なくても計算できます' },
 ]
+
+const ALL_MARKERS: MarkerDef[] = [...CORE_MARKERS, ...OPTIONAL_MARKERS]
 
 /* ─── 生活習慣設問（T3・6 問） ─────────────────────────────────── */
 
@@ -222,6 +242,8 @@ interface LifestyleQuestion {
   key: keyof LifestyleInput
   labelJa: string
   icon: typeof Wind
+  /** 設問の判断目安（主観的になりがちな項目を具体化） */
+  hintJa?: string
   options: { value: string; labelJa: string }[]
 }
 
@@ -257,21 +279,23 @@ const LIFESTYLE_QUESTIONS: LifestyleQuestion[] = [
   },
   {
     key: 'grip',
-    labelJa: '握力・歩行速度',
+    labelJa: '握力・歩く速さ',
     icon: Footprints,
+    hintJa: 'ペットボトルのフタが開けにくい・横断歩道を青信号で渡り切れない →「弱い」。同年代より力がある・速く歩ける →「強い」',
     options: [
       { value: 'weak', labelJa: '弱い' },
-      { value: 'normal', labelJa: '標準' },
+      { value: 'normal', labelJa: 'ふつう' },
       { value: 'strong', labelJa: '強い' },
     ],
   },
   {
     key: 'waist',
-    labelJa: '腹囲・座位時間',
+    labelJa: 'おなかまわり・座っている時間',
     icon: HeartPulse,
+    hintJa: '腹囲が男性85cm・女性90cm以上、または1日に合計7時間以上座っている →「おなか高め・座りがち」',
     options: [
-      { value: 'normal', labelJa: '標準' },
-      { value: 'high', labelJa: '高め・座りがち' },
+      { value: 'normal', labelJa: '標準的（よく動く）' },
+      { value: 'high', labelJa: 'おなか高め・座りがち' },
     ],
   },
   {
@@ -600,34 +624,47 @@ export function PhenoAgeClient() {
             <Droplet className="h-5 w-5 text-indigo-600" />
             Step 2: 健診の採血値
           </h2>
-          <p className="mb-4 text-xs text-slate-600 sm:text-sm">
-            お手元の健康診断結果から入力してください。下 7 項目が必須です。
+          <p className="mb-3 text-xs text-slate-600 sm:text-sm">
+            お手元の結果票を見ながら入力してください。各項目は結果票の<strong>決まった欄</strong>にあります（下の見出しが目印）。「任意」以外の 7 項目が必須です。
           </p>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            {CORE_MARKERS.map((m) => (
-              <MarkerInput key={m.key} def={m} value={markers[m.key] ?? ''} onChange={(v) => setMarker(m.key, v)} />
-            ))}
+          {/* どの結果が使えるか（期待値ずれを最初に防ぐ） */}
+          <div className="mb-5 rounded-xl border border-indigo-200 bg-indigo-50/50 p-3 text-xs leading-relaxed text-indigo-900 sm:text-sm">
+            <div className="mb-1 flex items-center gap-1.5 font-semibold">
+              <Info className="h-3.5 w-3.5" /> どの健診結果が使える？
+            </div>
+            血液一般（血算）を含む<strong>会社の定期健診・人間ドック</strong>の結果が向いています。メタボ健診（特定健診）だけでは血算が含まれず、入力できない項目があることがあります。
           </div>
 
-          {/* 任意 2 項目（入力すると区間が狭まる） */}
-          <div className="mt-5 rounded-xl border border-indigo-200 bg-indigo-50/40 p-4">
-            <div className="mb-3 flex items-center gap-1.5 text-xs font-semibold text-indigo-800">
-              <TrendingDown className="h-3.5 w-3.5" />
-              任意：入力すると推定の信頼区間が狭まります
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {OPTIONAL_MARKERS.map((m) => (
-                <MarkerInput key={m.key} def={m} value={markers[m.key] ?? ''} onChange={(v) => setMarker(m.key, v)} />
-              ))}
-            </div>
-            <p className="mt-2 text-xs text-indigo-700">未入力でも人口平均値で補完して計算できます（その分だけ区間が広がります）。</p>
-          </div>
+          {/* 結果票の欄ごとにグルーピングして配置 */}
+          {SECTION_ORDER.map((sec) => {
+            const ms = ALL_MARKERS.filter((m) => m.section === sec)
+            if (ms.length === 0) return null
+            const meta = SECTION_META[sec]
+            return (
+              <div key={sec} className="mb-5">
+                <div className="mb-2 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 border-b border-slate-100 pb-1.5">
+                  <h3 className="text-sm font-bold text-slate-800">{meta.labelJa}</h3>
+                  <span className="text-[11px] text-slate-500">結果票の {meta.whereJa}</span>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {ms.map((m) => (
+                    <MarkerInput key={m.key} def={m} value={markers[m.key] ?? ''} onChange={(v) => setMarker(m.key, v)} />
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+
+          <p className="mb-1 flex items-start gap-1.5 text-xs leading-relaxed text-slate-500">
+            <TrendingDown className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-indigo-500" />
+            <span>「任意」の CRP・RDW は未入力でも人口平均で補完して計算します（入力すると推定の幅が狭まります）。</span>
+          </p>
 
           {!coreFilled && (
             <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50/70 p-3 text-xs leading-relaxed text-amber-800 sm:text-sm">
               <Info className="mr-1 inline h-3.5 w-3.5" />
-              必須 7 項目をすべて入力すると計算できます。
+              「任意」以外の 7 項目をすべて入力すると計算できます。結果票に見当たらない項目は、血液一般を含む健診・人間ドックの結果でお試しください。
             </div>
           )}
 
@@ -666,10 +703,13 @@ export function PhenoAgeClient() {
               const Icon = q.icon
               return (
                 <div key={q.key}>
-                  <div className="mb-2 flex items-center gap-1.5 text-sm font-medium text-slate-700">
+                  <div className="mb-1 flex items-center gap-1.5 text-sm font-medium text-slate-700">
                     <Icon className="h-4 w-4 text-indigo-500" />
                     {q.labelJa}
                   </div>
+                  {q.hintJa && (
+                    <p className="mb-2 text-[11px] leading-relaxed text-slate-500 sm:text-xs">{q.hintJa}</p>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {q.options.map((opt) => {
                       const selected = lifestyle[q.key] === opt.value
@@ -809,24 +849,33 @@ export function PhenoAgeClient() {
 function MarkerInput({ def, value, onChange }: { def: MarkerDef; value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <label className="mb-1 flex items-baseline justify-between gap-1 text-sm font-medium text-slate-700">
+      <label className="mb-0.5 flex items-baseline justify-between gap-1 text-sm font-medium text-slate-700">
         <span>
           {def.labelJa}
           {def.optional && <span className="ml-1 text-xs font-normal text-indigo-600">任意</span>}
         </span>
         <span className="text-xs font-normal text-slate-400">{def.unit}</span>
       </label>
+      <div className="mb-1 inline-flex items-center gap-1 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600 sm:text-[11px]">
+        結果票では <span className="font-semibold text-slate-700">{def.aliasJa}</span>
+      </div>
       <input
         type="number"
         inputMode="decimal"
         min={0}
         step={def.step}
         value={value}
-        placeholder={def.placeholder}
+        placeholder={`例: ${def.placeholder}`}
         onChange={(e) => onChange(e.target.value)}
         className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-300 focus:border-indigo-500 focus:outline-none"
       />
       <p className="mt-1 text-[10px] text-slate-400 sm:text-xs">{def.rangeJa}</p>
+      {def.hintJa && (
+        <p className="mt-1 flex items-start gap-1 text-[10px] leading-relaxed text-amber-700 sm:text-[11px]">
+          <Info className="mt-0.5 h-3 w-3 flex-shrink-0" />
+          <span>{def.hintJa}</span>
+        </p>
+      )}
     </div>
   )
 }
