@@ -3871,8 +3871,6 @@ NMN には、体内で実際に働く形と、働かない形の 2 種類があ�
 
 [[PRODUCT:nmn:2]]
 
-**▶ [GAAH NMN を公式サイトで見る｜迷ったら 5 軸全クリアの 1 位](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**
-
 ### 🥉 3 位　ビクトリーロード NMN 55,000mg 220 カプセル｜3 点・¥4,580・Amazon コスパ枠
 
 > 「複合じゃなく NMN 単体で、まずは安く 3 ヶ月試したい」人の現実解。
@@ -3906,8 +3904,6 @@ NMN には、体内で実際に働く形と、働かない形の 2 種類があ�
 「まず 3 ヶ月、研究と同じ量で試してから判断したい」段階の入り口に、最も無理のない 1 本。
 
 [[PRODUCT:nmn:3]]
-
-**▶ [GAAH NMN を公式サイトで見る｜研究域 250mg を 1 カプセル](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**
 
 ### 🏅 4 位　Nature In NMN 30,000mg 100 粒｜3 点・¥3,990・1 粒 300mg 高用量枠
 
@@ -3943,8 +3939,6 @@ NMN には、体内で実際に働く形と、働かない形の 2 種類があ�
 3 位のコスパ枠と並べてみて、「もう少し量で攻めたいか / 安く 7 ヶ月続けたいか」で選ぶのが現実的だ。
 
 [[PRODUCT:nmn:4]]
-
-**▶ [GAAH NMN を公式サイトで見る｜本命の 5 点満点](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**
 
 ### 5 位　国内ジェネリック NMN｜3 点・¥6,000-8,000・銘柄差が大きい中堅帯
 
@@ -4227,11 +4221,6 @@ NR の選び方は、別記事で整理している。
     dateModified: '2026-06-11',
     footerBannerUrl: 'https://www21.a8.net/svt/bgt?aid=260606739412&wid=001&eno=01&mid=s00000021920002012000&mc=1',
     footerBannerLinkUrl: 'https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+BZ8OX',
-    stickyCta: {
-      label: '迷ったら、1 位 GAAH NMN を見る',
-      sublabel: '5 軸全部クリアの唯一の銘柄・公式サイトへ',
-      href: 'https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E',
-    },
   },
 
   // ── 4. レチノール記事 ─────────────────────────────────────────────

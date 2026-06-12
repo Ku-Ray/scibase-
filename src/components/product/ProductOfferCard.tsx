@@ -219,19 +219,13 @@ export function ProductOfferCard({
             className="mt-3 text-[14px] text-foreground/90 leading-[1.8] mb-3 last:mb-0"
           />
         )}
-        {product.descriptionLong && (
-          <div className="mt-3 pt-3 border-t border-border/60">
-            <p className="text-[11px] font-semibold tracking-wider text-muted-foreground mb-1.5 uppercase">この商品の特徴</p>
-            <p className="text-[14px] text-foreground/90 leading-[1.8]">{product.descriptionLong}</p>
-          </div>
-        )}
         {(product.pros && product.pros.length > 0) || (product.cons && product.cons.length > 0) ? (
           <div className="mt-3 pt-3 border-t border-border/60 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {product.pros && product.pros.length > 0 && (
               <div>
                 <p className="text-[11px] font-semibold tracking-wider text-emerald-700 mb-1.5 uppercase">✓ 良い点</p>
                 <ul className="text-[13px] text-foreground/85 leading-[1.7] space-y-1">
-                  {product.pros.map((p, i) => <li key={i} className="pl-3 -indent-3">・{p}</li>)}
+                  {product.pros.slice(0, 3).map((p, i) => <li key={i} className="pl-3 -indent-3">・{p}</li>)}
                 </ul>
               </div>
             )}
@@ -239,16 +233,15 @@ export function ProductOfferCard({
               <div>
                 <p className="text-[11px] font-semibold tracking-wider text-amber-700 mb-1.5 uppercase">⚠ 気になる点</p>
                 <ul className="text-[13px] text-foreground/85 leading-[1.7] space-y-1">
-                  {product.cons.map((c, i) => <li key={i} className="pl-3 -indent-3">・{c}</li>)}
+                  {product.cons.slice(0, 2).map((c, i) => <li key={i} className="pl-3 -indent-3">・{c}</li>)}
                 </ul>
               </div>
             )}
           </div>
         ) : null}
-        {(product.shippingNote || product.qualityNote) && (
-          <div className="mt-3 pt-3 border-t border-border/60 text-[12px] text-muted-foreground leading-[1.7] space-y-1">
-            {product.shippingNote && <p>📦 {product.shippingNote}</p>}
-            {product.qualityNote && <p>🔬 {product.qualityNote}</p>}
+        {product.shippingNote && (
+          <div className="mt-3 pt-3 border-t border-border/60 text-[12px] text-muted-foreground leading-[1.7]">
+            <p>📦 {product.shippingNote}</p>
           </div>
         )}
         {/* カード末尾の大きい CTA（pros/cons 読了後の再クリック動線） */}
