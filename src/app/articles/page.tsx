@@ -290,7 +290,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
           足りている成分を重複購入しているだけ、という状態を防ぐ。
         </p>
         <Link
-          href="/analyzer"
+          href="/analyzer?mode=ingredient"
           className="inline-flex items-center gap-2 text-[14px] font-semibold
             bg-foreground text-background rounded-xl px-5 py-3
             hover:opacity-85 transition-opacity"

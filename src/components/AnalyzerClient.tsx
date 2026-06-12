@@ -96,7 +96,7 @@ const STORAGE_SLUGS     = 'scibase_analyzer_slugs'
 const STORAGE_CONCERNS  = 'scibase_analyzer_concerns'
 
 export function AnalyzerClient() {
-  const [mode, setMode] = useState<Mode>('concern')
+  const [mode, setMode] = useState<Mode>('deep')
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([])
   const [selectedConcernSlugs, setSelectedConcernSlugs] = useState<string[]>([])
   const [query, setQuery] = useState('')
@@ -150,11 +150,16 @@ export function AnalyzerClient() {
     else setSelectedConcernSlugs([])
   }
 
-  /* localStorage 読み込み */
+  /* URL パラメータ > localStorage の順でモード復元 */
   useEffect(() => {
     try {
-      const m = localStorage.getItem(STORAGE_MODE)
-      if (m === 'ingredient' || m === 'concern' || m === 'deep') setMode(m)
+      const urlMode = new URLSearchParams(window.location.search).get('mode')
+      if (urlMode === 'ingredient' || urlMode === 'concern' || urlMode === 'deep') {
+        setMode(urlMode)
+      } else {
+        const m = localStorage.getItem(STORAGE_MODE)
+        if (m === 'ingredient' || m === 'concern' || m === 'deep') setMode(m)
+      }
       const s = localStorage.getItem(STORAGE_SLUGS)
       if (s) setSelectedSlugs(JSON.parse(s))
       const c = localStorage.getItem(STORAGE_CONCERNS)
@@ -175,7 +180,7 @@ export function AnalyzerClient() {
 
   const modeDescription: Record<Mode, string> = {
     ingredient: '今飲んでいるサプリメント・スキンケア成分を選ぶと、7軸でカバー状況を可視化し、不足している成分をレコメンドします。',
-    concern: '悩みを1〜3個選ぶと、論文エビデンスが一致する3成分を組み立てます。複数選ぶほど、横断的に効く成分が優先されます。',
+    concern: '悩みを1〜3個選ぶと、論文エビデンスが一致する3成分を組み立てます。複数選ぶほど、複数の悩みに重なる成分が優先されます。',
     deep: '基本情報・悩み・生活習慣・服用中の医薬品をまとめて入れると、論文エビデンス × 相互作用チェックを組み合わせた経口サプリの推奨3〜5件を返します（外用は対象外・「成分から」モードへ）。',
   }
   const modeLabel: Record<Mode, string> = {
@@ -191,7 +196,7 @@ export function AnalyzerClient() {
         {modeDescription[mode]}
       </p>
       <div className="mb-10 inline-flex flex-wrap gap-1 p-1 bg-secondary rounded-xl">
-        {(['ingredient', 'concern', 'deep'] as Mode[]).map((m) => (
+        {(['deep', 'concern', 'ingredient'] as Mode[]).map((m) => (
           <button
             key={m}
             onClick={() => setMode(m)}
@@ -203,8 +208,8 @@ export function AnalyzerClient() {
           >
             {modeLabel[m]}
             {m === 'deep' && (
-              <span className="ml-1.5 text-[9px] font-semibold bg-accent text-primary-foreground
-                rounded px-1 py-0.5 tracking-wider">NEW</span>
+              <span className="ml-1.5 text-[10px] font-semibold bg-accent text-primary-foreground
+                rounded px-1 py-0.5">おすすめ</span>
             )}
           </button>
         ))}

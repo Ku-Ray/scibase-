@@ -192,7 +192,7 @@ export default function Home() {
               🔍 悩みから成分を探す
             </Link>
             <Link
-              href="/analyzer"
+              href="/analyzer?mode=ingredient"
               className="inline-flex items-center gap-2 bg-card border border-border text-foreground
                 text-[13px] font-medium rounded-xl px-5 py-3 min-h-[44px]
                 hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
@@ -457,7 +457,7 @@ export default function Home() {
               },
               {
                 num: '03',
-                href: '/analyzer',
+                href: '/analyzer?mode=ingredient',
                 icon: Microscope,
                 title: '今のサプリを診断する',
                 desc: '現在摂っているサプリを選ぶと、7軸（抗老化・肌・認知・ストレス・睡眠・免疫・代謝）でスコア診断。',

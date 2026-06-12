@@ -18,7 +18,7 @@ export function AddArticleToAnalyzerButton({ slugs }: Props) {
       const merged = Array.from(new Set([...saved, ...slugs]))
       localStorage.setItem(STORAGE_KEY, JSON.stringify(merged))
     } catch {}
-    router.push('/analyzer')
+    router.push('/analyzer?mode=ingredient')
   }
 
   return (

@@ -75,7 +75,7 @@ export function AddToAnalyzerButton({ slug, variant = 'default' }: Props) {
 export function AnalyzerBanner({ count }: { count: number }) {
   if (count === 0) return null
   return (
-    <Link href="/analyzer"
+    <Link href="/analyzer?mode=ingredient"
       className="flex items-center justify-between gap-3
         bg-accent/8 border border-accent/20 rounded-xl px-4 py-3 min-h-[44px]
         hover:bg-accent/12 transition-colors group">
