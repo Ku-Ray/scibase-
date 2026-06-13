@@ -686,6 +686,34 @@ export default async function ArticlePage({ params }: Props) {
           )
         })()}
 
+        {/* ── FAQ（比較・CTA の直後・意思決定直後の疑問解消） ── */}
+        <section id="faq" className="mb-12 scroll-mt-20">
+          <h2 className="text-[17px] font-semibold text-foreground mb-5">よくある質問</h2>
+          <div className="space-y-3">
+            {article.faqs.map((faq, i) => (
+              <details
+                key={i}
+                {...(i === 0 ? { open: true } : {})}
+                className="group border border-border rounded-xl overflow-hidden"
+              >
+                <summary className="cursor-pointer flex items-start justify-between gap-3
+                  px-5 py-4 hover:bg-secondary transition-colors select-none">
+                  <span className="font-semibold text-[14px] text-foreground leading-snug">
+                    {faq.question}
+                  </span>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5
+                    group-open:rotate-90 transition-transform" />
+                </summary>
+                <div className="px-5 pb-4 pt-2 border-t border-border bg-secondary/50">
+                  <p className="text-[13px] text-foreground leading-[1.8]">
+                    <RichInline text={faq.answer} />
+                  </p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
         {/* ── Ingredient CTAs ── */}
         <section id="ingredients" className="mb-12 scroll-mt-20">
           <h2 className="text-[17px] font-semibold text-foreground mb-5">
@@ -795,34 +823,6 @@ export default async function ArticlePage({ params }: Props) {
               </div>
             )
           })()}
-        </section>
-
-        {/* ── FAQ ── */}
-        <section id="faq" className="mb-12 scroll-mt-20">
-          <h2 className="text-[17px] font-semibold text-foreground mb-5">よくある質問</h2>
-          <div className="space-y-3">
-            {article.faqs.map((faq, i) => (
-              <details
-                key={i}
-                {...(i === 0 ? { open: true } : {})}
-                className="group border border-border rounded-xl overflow-hidden"
-              >
-                <summary className="cursor-pointer flex items-start justify-between gap-3
-                  px-5 py-4 hover:bg-secondary transition-colors select-none">
-                  <span className="font-semibold text-[14px] text-foreground leading-snug">
-                    {faq.question}
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5
-                    group-open:rotate-90 transition-transform" />
-                </summary>
-                <div className="px-5 pb-4 pt-2 border-t border-border bg-secondary/50">
-                  <p className="text-[13px] text-foreground leading-[1.8]">
-                    <RichInline text={faq.answer} />
-                  </p>
-                </div>
-              </details>
-            ))}
-          </div>
         </section>
 
         {/* ── Analyzer CTA（記事の成分を一括診断） ── */}
