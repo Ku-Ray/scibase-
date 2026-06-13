@@ -8,7 +8,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['アシュワガンダ', 'インドニンジン', 'withania', 'Withania somnifera', 'KSM-66', 'Sensoril', 'Shoden', 'ksm66', 'sensoril', 'shoden', 'ksm66 アシュワガンダ', 'ksm66 効果', 'sensoril アシュワガンダ', 'アシュワガンダ サプリ', 'アシュワガンダ おすすめ', 'アシュワガンダ 選び方', 'アシュワガンダ iherb', 'アシュワガンダ 飲み合わせ', 'アシュワガンダ ロディオラ 違い'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: 'アシュワガンダ｜KSM-66 600mg・効果8週の論文｜SciBase',
+    seoTitle: 'アシュワガンダの効果｜コルチゾール−27.9%のRCTと選び方',
     seoDescription: 'アシュワガンダはインド伝統医学のハーブ。300〜600mg/日でコルチゾール−27.9%・ストレス指標の改善がメタ解析で確認されている。KSM-66とSensorilの違い、エキスメーカー横断比較、iHerbで選べる市販品、SSRI・甲状腺薬・免疫抑制剤との併用注意、副作用を査読済み論文で解説。',
     tagline: 'コルチゾール−27.9%・8週RCTで確認されたストレス指標の改善',
     description:
@@ -604,7 +604,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['Mg', 'マグ', 'マグネ', 'マグネシウム おすすめ', 'マグネシウム サプリ', 'マグネシウム 種類', 'マグネシウム 市販', 'マグネシウム iherb', 'クエン酸マグネシウム', 'グリシン酸マグネシウム', '酸化マグネシウム', 'マグネシウム グリシネート', 'マグネシウム グリシ ネート', 'マグネシウム グリシ ネート 副作用', 'マグネシウム グリシ ネート 効果', 'マグネシウム グリシン酸 副作用', 'マグネシウム グリシン酸 効果', 'magnesium glycinate', 'magnesium citrate'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: 'マグネシウム｜不眠/便秘/偏頭痛・形態別の論文｜SciBase',
+    seoTitle: 'マグネシウムの選び方｜不眠・便秘・偏頭痛に形態別おすすめ',
     seoDescription: 'マグネシウムは必須ミネラル。日本人の食事摂取量は推奨量より約100mg/日不足。200〜400mg/日で睡眠の質・筋疲労軽減への効果がRCTで示されている。グリシン酸・クエン酸・酸化型の吸収率の違い、市販・iHerbで選べる種類別おすすめ、塗るマグネシウム・食材・抗菌薬/甲状腺薬との併用注意、副作用を査読済み論文で解説。',
     tagline: '日本人の平均摂取量は推奨量より約100mg/日不足。睡眠の質改善のRCTあり',
     description:
@@ -7790,6 +7790,7 @@ export const ingredients: Ingredient[] = [
     slug: 'lions-mane',
     nameJa: 'ヤマブシタケ（ライオンズメイン）',
     nameEn: "Lion's Mane (Hericium erinaceus)",
+    aliases: ['ライオンズメイン', 'ヤマブシタケ', 'Hericium erinaceus', 'lions mane', 'ライオンズメイン 効果', 'ライオンズメイン サプリ', 'ライオンズメイン おすすめ', 'ヤマブシタケ 効果', 'ヤマブシタケ サプリ', 'ヤマブシタケ 認知機能', 'ライオンズメイン 飲み方'],
     evidenceRank: 'B',
     usageType: 'oral',
     tagline: 'NGF産生促進・認知機能改善への関与がRCTで示されているキノコ由来成分',
@@ -7876,7 +7877,7 @@ export const ingredients: Ingredient[] = [
     ],
     heroStat: { value: 'MMSE改善', label: '軽度認知機能低下で有意な認知スコア改善（16週RCT）' },
     axisScores: { antiAging: 6, skin: 0, cognitive: 9, stress: 4, sleep: 2, immunity: 4, metabolism: 1 },
-    seoTitle: 'ライオンズメイン（ヤマブシタケ）｜効能・副作用・用量を論文で',
+    seoTitle: 'ライオンズメインの効果｜ヤマブシタケの認知機能RCTと選び方',
     seoDescription: '500-3,000mg/日（RCT 1g×3回/日）・朝食と一緒に摂取。Phytotherapy Research 2009 RCT(n=30・16週)で軽度認知機能低下高齢者のMMSEスコアが有意改善。Journal of Medicinal Food 2019 RCT(n=77・8週)で不安・うつスコア改善。副作用は軽度の消化器症状・キノコアレルギー（C・まれ）が中心、抗凝固薬・糖尿病薬との併用は理論的相互作用で医師相談（A）。菌糸体 vs 子実体・抽出法の違い、NMN/PQQ/ホスファチジルセリンとの認知ケア使い分けも研究の観点で解説。',
     interactions: [
       {
@@ -14469,7 +14470,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Magnesium Glycinate',
     aliases: ['マグネシウムグリシン', 'グリシン酸マグネシウム'],
     evidenceRank: 'A',
-    seoTitle: 'マグネシウムグリシネート｜副作用・効果・吸収率を論文で解説',
+    seoTitle: 'マグネシウムグリシネートの効果｜睡眠RCTと吸収率・副作用',
     seoDescription: '200-400mg/日（元素Mg量）・就寝1-2時間前または分割摂取。J Res Med Sci 2012 RCT(n=46・8週)で高齢者の入眠時間・睡眠時間・睡眠効率が有意改善・血中メラトニン/コルチゾールにも好影響。Nutrients 2017 メタ解析で軽度不安・ストレスへの有効性。副作用は高用量（350mg超/日）の軟便がグリシネート型で稀（C）、抗菌薬・甲状腺薬・ビスホスホネートはキレート形成で吸収阻害（A）。酸化Mg/クエン酸Mgとの吸収率比較、L-テアニン・GABAとの使い分けも研究の観点で解説。',
     tagline: '吸収率が高く胃腸への負担が少ないマグネシウム形態。睡眠・ストレスへのエビデンスが最も充実している',
     description:
@@ -16110,7 +16111,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'N-Acetyl Cysteine',
     aliases: ['NAC', 'システイン', 'N-アセチルシステイン', 'NAC サプリ', 'NAC グルタチオン', 'NAC 効果', 'NAC 副作用', 'NAC 飲み方', 'NAC 肝機能', 'アセチルシステイン'],
     evidenceRank: 'A',
-    seoTitle: 'NACとは｜グルタチオンとどっち・用量と論文｜SciBase',
+    seoTitle: 'NACの効果｜グルタチオンとどっち・肝機能・用量・副作用',
     seoDescription: 'N-アセチルシステインはシステインのアセチル化型。600〜1800mg/日でグルタチオン合成促進・肝機能・呼吸器への関与がRCTで示されている。有効量、空腹時摂取の是非、胃腸障害、アセトアミノフェン解毒の根拠を査読済み論文で解説。',
     usageType: 'oral',
     tagline: 'グルタチオン前駆体として細胞内抗酸化を底上げ。酸化ストレス・慢性炎症軽減がRCTで確認',
