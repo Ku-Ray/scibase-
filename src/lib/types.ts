@@ -406,6 +406,30 @@ export interface ArticleItemList {
   items: { ingredientSlug: string; rank: number }[]
 }
 
+/** ASP サービス（検査キット等・data.ts 成分でない外部 ASP 商品）のカード。本文に [[ASPCARD:id]] で配置 */
+export interface AspOffer {
+  /** 本文トークン [[ASPCARD:id]] の参照 id（半角英数ハイフン） */
+  id: string
+  /** バッジ文言（例: 'Our pick：初めて測るなら' / 'Runner-up：実績で選ぶなら'）。省略可 */
+  badge?: string
+  /** サービス名（カード見出し） */
+  name: string
+  /** 短い説明（名称直下・省略可） */
+  tagline?: string
+  /** 訴求ポイント（チェック付き箇条書き） */
+  points: string[]
+  /** 価格目安などの注記（小サイズ・省略可） */
+  priceNote?: string
+  /** CTA ボタンのメイン文言 */
+  ctaLabel: string
+  /** CTA ボタンのサブ文言（小サイズ・省略可） */
+  ctaSub?: string
+  /** ASP アフィリエイト URL（外部 https・rel=sponsored で描画） */
+  url: string
+  /** true で Our pick 強調スタイル（accent 枠） */
+  highlight?: boolean
+}
+
 export interface Article {
   slug: string
   title: string
@@ -467,4 +491,6 @@ export interface Article {
     href: string
     sublabel?: string
   }
+  /** ASP サービスカード（検査キット等）。本文に [[ASPCARD:id]] を置くと該当 id のカードを描画 */
+  aspOffers?: AspOffer[]
 }

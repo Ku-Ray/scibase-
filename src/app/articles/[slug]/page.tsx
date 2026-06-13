@@ -21,6 +21,7 @@ import { AppendixSectionTracker } from '@/components/AppendixSectionTracker'
 import { ConcernGuideArticle } from '@/components/ConcernGuideArticle'
 import { computeAxisLeaders } from '@/lib/productScore'
 import { RichParagraphs, RichInline } from '@/components/RichText'
+import { AspOfferCard } from '@/components/AspOfferCard'
 import { ArticleConclusionBoxes } from '@/components/ArticleConclusionBoxes'
 import { NextReadCTA } from '@/components/NextReadCTA'
 import { NewsletterSignup } from '@/components/NewsletterSignup'
@@ -505,8 +506,14 @@ export default async function ArticlePage({ params }: Props) {
              商品カードを「論文ベースで選ぶならこれ」の説明の流れの中に埋め込むことで、
              ingredients フッターは「成分まとめ + エビデンス詳細リンク」だけのシンプル化を実現。 */
           const renderAppendixBody = (body: string) => {
-            const parts = body.split(/(\[\[PRODUCT:[a-z0-9-]+(?::\d+)?\]\])/g)
+            const parts = body.split(/(\[\[(?:PRODUCT|ASPCARD):[a-z0-9-]+(?::\d+)?\]\])/g)
             return parts.map((part, idx) => {
+              const aspM = part.match(/^\[\[ASPCARD:([a-z0-9-]+)\]\]$/)
+              if (aspM) {
+                const offer = article.aspOffers?.find((o) => o.id === aspM[1])
+                if (!offer) return null
+                return <AspOfferCard key={idx} offer={offer} />
+              }
               const m = part.match(/^\[\[PRODUCT:([a-z0-9-]+)(?::(\d+))?\]\]$/)
               if (m) {
                 const slug = m[1]
