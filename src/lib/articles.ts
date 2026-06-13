@@ -4087,7 +4087,9 @@ NMN には、体内で実際に働く形と、働かない形の 2 種類があ�
 
 同じ金額で、ランキング 3 位のビクトリーロード（¥4,580・220 粒）を 1 袋買えば、実質 7 ヶ月分が研究と同じ条件で回る。
 
-安い銘柄で 3 ヶ月よりも、研究と同じ条件で 1 ヶ月の方が、結局学びが多い。`,
+安い銘柄で 3 ヶ月よりも、研究と同じ条件で 1 ヶ月の方が、結局学びが多い。
+
+**▶ [研究と同じ条件で 3 ヶ月｜GAAH NMN（1 日 ¥1,320）](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**`,
       },
       {
         heading: 'NMN を買うか迷っている人へ｜2 つの選択肢',
@@ -4179,11 +4181,11 @@ NR の選び方は、別記事で整理している。
 
 私が自分で 1 本選ぶなら、5 点満点の GAAH NMN だ。
 
-**▶ [GAAH NMN を公式サイトで見る｜月 ¥39,600・1 日 ¥1,320](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**
+どうしても今月 ¥39,600 が組めないなら、まず 3 位の [ビクトリーロード NMN（¥4,580・220 粒・国内 GMP・Amazon 国内即日）](https://www.amazon.co.jp/dp/B0FQ2LRRTC?tag=scibase-22) で研究と同じ用量から試し、手応えが出てから乗り換える手もある。1 本で美容＋健康もまとめたいなら 2 位の [Re:Bloom（定期初回 ¥3,980・国内製造）](https://t.afi-b.com/visit.php?a=f13282t-8437248W&p=y979258Z)、中用量で攻めたいなら 4 位の [Nature In NMN（¥3,990・1 粒 300mg・Amazon 国内即日）](https://www.amazon.co.jp/dp/B0DFVGXKH4?tag=scibase-22) だ。
 
-予算が組みづらい場合は、2 位の [Re:Bloom（定期初回 ¥3,980・複合・国内製造）](https://t.afi-b.com/visit.php?a=f13282t-8437248W&p=y979258Z) か、3 位の [ビクトリーロード NMN（¥4,580・220 粒・国内 GMP・Amazon）](https://www.amazon.co.jp/dp/B0FQ2LRRTC?tag=scibase-22) で 3 ヶ月試して、効きを確認してから 1 位へ乗り換えるルートもある。
+ただ、月 ¥39,600 を組めるなら、遠回りはおすすめしない。純度も用量も足りない銘柄で 3 ヶ月「効いたのか分からないまま」過ごすより、研究と同じ条件で一度きちんと答えを出す方が、時間もお金も結局いちばん安く済む。1 日に直せば ¥1,320、コンビニのコーヒー 2 杯ぶんだ。
 
-中用量 300mg で攻めたい人は、4 位の [Nature In NMN（¥3,990・1 粒 300mg・国内 GMP・Amazon 国内即日）](https://www.amazon.co.jp/dp/B0DFVGXKH4?tag=scibase-22)。`,
+**▶ [GAAH NMN を公式サイトで見る｜1 日 ¥1,320・5 軸クリアの 1 本](https://px.a8.net/svt/ejp?a8mat=4B5PG3+6TAM0I+4P4W+C2O5E)**`,
 
     ingredients: [
       {
