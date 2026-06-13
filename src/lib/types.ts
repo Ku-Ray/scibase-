@@ -426,7 +426,11 @@ export interface AspOffer {
   ctaSub?: string
   /** ASP アフィリエイト URL（外部 https・rel=sponsored で描画） */
   url: string
-  /** true で Our pick 強調スタイル（accent 枠） */
+  /** ASP バナークリエイティブ画像 URL（A8 bgt 等）。カード上部にクリック可能なバナーとして表示。トラッキング維持のため next/image でなく <img> で描画 */
+  imageUrl?: string
+  /** バナー画像の代替テキスト（省略時は name を使用） */
+  imageAlt?: string
+  /** true で Our pick 強調スタイル（accent リボン+枠・大きめ）。false は Runner-up のコンパクト表示 */
   highlight?: boolean
 }
 

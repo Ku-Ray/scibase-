@@ -1,47 +1,86 @@
-import { ExternalLink, Check } from 'lucide-react'
+import { ExternalLink, Check, Crown } from 'lucide-react'
 import type { AspOffer } from '@/lib/types'
 
 /**
  * ASP サービス（検査キット等・data.ts 成分でない外部 ASP 商品）用のカード。
  * 本文の [[ASPCARD:id]] トークンから article.aspOffers[] を引いて描画する。
- * 成分の ProductOfferCard と視覚的に揃え（border rounded-2xl bg-card・accent 強調・emerald CTA）、
- * 検査キット/サービスでも「サプリと同様のカード」で訴求できるようにする。
+ * 成分の ProductOfferCard と視覚的に揃え（border rounded-2xl bg-card・emerald CTA）、
+ * highlight=true（Our pick）は accent リボン+太枠+大きめ、false（Runner-up）はコンパクトで
+ * 「メリハリ（決定的な第一候補と、検討用の次点）」を視覚化する。
+ * バナー画像（offer.imageUrl）は ASP の表示回数計測を保つため next/image でなく <img> で描画。
  */
 export function AspOfferCard({ offer }: { offer: AspOffer }) {
+  const hi = offer.highlight
+
   return (
     <div
       className={`my-6 not-prose rounded-2xl overflow-hidden bg-card ${
-        offer.highlight ? 'border-2 border-accent/60 shadow-sm' : 'border border-border'
+        hi ? 'border-2 border-accent/60 shadow-md' : 'border border-border shadow-sm'
       }`}
     >
-      <div className="px-5 pt-4 pb-5 sm:px-6">
-        <div className="flex items-center justify-between gap-2 mb-2">
-          {offer.badge ? (
-            <span
-              className={`inline-flex items-center gap-1 text-[12px] font-bold rounded-full px-2.5 py-1 ${
-                offer.highlight ? 'bg-accent/15 text-accent' : 'bg-secondary text-foreground/70'
-              }`}
-            >
-              {offer.highlight ? '🥇 ' : ''}
-              {offer.badge}
-            </span>
-          ) : (
-            <span />
-          )}
-          <span className="text-[11px] font-medium text-foreground/40 flex-shrink-0">PR</span>
+      {/* Our pick：上部 accent リボン（メリハリの核） */}
+      {hi && (
+        <div className="flex items-center justify-between bg-accent/10 px-5 py-2 sm:px-6 border-b border-accent/20">
+          <span className="flex items-center gap-1.5">
+            <Crown className="w-4 h-4 text-accent" strokeWidth={2.5} aria-hidden="true" />
+            <span className="text-[12.5px] font-bold text-accent tracking-wide">{offer.badge ?? 'Our pick'}</span>
+          </span>
+          <span className="text-[11px] font-semibold text-accent/60">PR</span>
         </div>
+      )}
 
-        <h4 className="text-[18px] sm:text-[19px] font-bold text-foreground leading-snug">{offer.name}</h4>
+      <div className={`px-5 sm:px-6 ${hi ? 'pt-4 pb-5' : 'pt-3.5 pb-4'}`}>
+        {/* Runner-up：バッジ + PR 行（highlight は上のリボンに集約） */}
+        {!hi && (
+          <div className="flex items-center justify-between gap-2 mb-2.5">
+            {offer.badge ? (
+              <span className="inline-flex items-center gap-1 text-[12px] font-semibold rounded-full px-2.5 py-1 bg-secondary text-foreground/70">
+                {offer.badge}
+              </span>
+            ) : (
+              <span />
+            )}
+            <span className="text-[11px] font-medium text-foreground/40 flex-shrink-0">PR</span>
+          </div>
+        )}
+
+        {/* バナー画像（クリック可能・トラッキング維持のため <img>） */}
+        {offer.imageUrl && (
+          <a
+            href={offer.url}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="block mb-3.5 no-underline"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={offer.imageUrl}
+              alt={offer.imageAlt ?? offer.name}
+              width={300}
+              height={250}
+              loading="lazy"
+              className={`w-full h-auto mx-auto rounded-xl border border-border ${hi ? 'max-w-[320px]' : 'max-w-[260px]'}`}
+            />
+          </a>
+        )}
+
+        <h4 className={`font-bold text-foreground leading-snug ${hi ? 'text-[19px] sm:text-[20px]' : 'text-[16px] sm:text-[17px]'}`}>
+          {offer.name}
+        </h4>
 
         {offer.tagline && (
           <p className="text-[13px] text-foreground/70 mt-1.5 leading-relaxed">{offer.tagline}</p>
         )}
 
         {offer.points.length > 0 && (
-          <ul className="mt-3 space-y-1.5">
+          <ul className={`mt-3 ${hi ? 'space-y-1.5' : 'space-y-1'}`}>
             {offer.points.map((p, i) => (
               <li key={i} className="flex items-start gap-2 text-[14px] text-foreground/90 leading-relaxed">
-                <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-accent" strokeWidth={2.5} aria-hidden="true" />
+                <Check
+                  className={`w-4 h-4 mt-0.5 flex-shrink-0 ${hi ? 'text-accent' : 'text-foreground/40'}`}
+                  strokeWidth={2.5}
+                  aria-hidden="true"
+                />
                 <span>{p}</span>
               </li>
             ))}
@@ -56,8 +95,10 @@ export function AspOfferCard({ offer }: { offer: AspOffer }) {
           href={offer.url}
           target="_blank"
           rel="sponsored noopener noreferrer"
-          className="mt-4 flex w-full items-center justify-center gap-2 text-[15px] font-bold text-white
-            bg-emerald-600 hover:bg-emerald-700 rounded-xl px-6 py-4 shadow-sm transition-colors no-underline"
+          className={`mt-4 flex w-full items-center justify-center gap-2 font-bold text-white bg-emerald-600
+            hover:bg-emerald-700 rounded-xl shadow-sm transition-colors no-underline ${
+              hi ? 'text-[15px] px-6 py-4' : 'text-[14px] px-5 py-3.5'
+            }`}
         >
           <span className="flex flex-col items-center text-center leading-snug">
             <span>{offer.ctaLabel}</span>
