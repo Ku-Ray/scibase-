@@ -196,7 +196,10 @@ export function buildCompareNextRead(ingA: Ingredient, ingB: Ingredient): NextRe
     seen.add(a.slug)
     articleCandidates.push(a)
   }
-  for (const a of articleCandidates.slice(0, 1)) {
+  // compare → コラム（稼ぐ記事）への内部リンクを 1→2 本に強化（S3）。
+  // compare ページ本体は両成分ページへ既にリンクしているため NextRead の成分枠は冗長。
+  // 記事2本に広げ、compare ハブ（pos1-9 が多い）の内部権威を稼ぐ記事へ流す。
+  for (const a of articleCandidates.slice(0, 2)) {
     out.push({
       type: 'article',
       href: `/articles/${a.slug}`,
