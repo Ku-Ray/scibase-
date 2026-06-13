@@ -200,11 +200,11 @@ export default function AboutPage() {
           {/* 数値カード3枚 */}
           <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-border">
             <div className="text-center">
-              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">400<span className="text-accent">+</span></p>
+              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">1,300<span className="text-accent">+</span></p>
               <p className="text-[10px] text-muted-foreground leading-tight">参照論文（査読済み）</p>
             </div>
             <div className="text-center border-x border-border">
-              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">225</p>
+              <p className="text-[20px] sm:text-[24px] font-bold text-foreground tabular-nums leading-none mb-1">520<span className="text-accent">+</span></p>
               <p className="text-[10px] text-muted-foreground leading-tight">成分DB エントリ数</p>
             </div>
             <div className="text-center">
@@ -491,6 +491,17 @@ export default function AboutPage() {
             掲載内容は研究情報の提供を目的としており、特定成分・商品の効果・効能を保証するものではありません。
             サプリメントの使用・スキンケアの変更を行う際は、医師・薬剤師・専門家にご相談ください。
             個人の体質・健康状態・服用薬との相互作用については、本サイトでは責任を負いかねます。
+          </p>
+        </section>
+
+        {/* 情報の更新・訂正方針 */}
+        <section className="mb-12">
+          <h2 className="text-[15px] font-semibold text-foreground mb-3">情報の更新・訂正方針</h2>
+          <p className="text-[13px] text-muted-foreground leading-relaxed">
+            各ページは公開後も継続的に見直し、新しいメタ解析・RCTが報告された場合は内容と更新日を改めます。
+            記載内容の誤り・古くなった情報にお気づきの際は
+            <span className="font-semibold text-foreground">X（<a href="https://x.com/r_evidence_" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">@r_evidence_</a>）</span>
+            までご指摘ください。一次情報（査読済み論文）と照合のうえ訂正し、該当ページの更新日に反映します。
           </p>
         </section>
 
