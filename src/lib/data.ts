@@ -44581,9 +44581,11 @@ export const ingredients: Ingredient[] = [
     slug: 'ip-6',
     nameJa: 'IP-6（フィチン酸）',
     nameEn: 'IP-6 (Inositol Hexaphosphate / Phytic Acid)',
-    aliases: ['IP-6', 'Inositol Hexaphosphate', 'Phytic Acid', 'フィチン酸', 'イノシトール6リン酸', 'IP6+inositol'],
-    evidenceRank: 'C',
+    aliases: ['IP-6', 'Inositol Hexaphosphate', 'Phytic Acid', 'フィチン酸', 'イノシトール6リン酸', 'IP6+inositol', 'IP6', 'phytate', 'phytic acid', 'InsP6'],
+    evidenceRank: 'B',
     usageType: 'oral',
+    seoTitle: 'IP6（フィチン酸）｜鉄キレート・腎結石・抗酸化・論文',
+    seoDescription: 'IP6（フィチン酸・イノシトール6リン酸）はイノシトール環に6個のリン酸基が結合した植物性貯蔵リン化合物。鉄・カルシウム・亜鉛のキレート作用で過剰ミネラル抑制・腎結石予防の研究蓄積。Grases 2017の腎結石RCT、López-González 2008の骨代謝RCT、Vucenik 2003の抗酸化機序を整理。myo-inositolとは別系統で抗酸化キレート用途。鉄欠乏リスク・吸収抑制注意を含めて査読済み論文で解説。｜SciBase',
     tagline: '穀物・豆由来フィチン酸・キレート・抗酸化・がん補助候補・ミネラル吸収干渉注意・新興',
     description:
       'IP-6（フィチン酸）は穀物・豆類・種子に多く含まれる天然キレート剤・抗酸化分子で、腎結石患者の観察研究で IP-6 摂取と尿中シュウ酸カルシウム結晶化抑制の関連が報告されている（Grases 2006・BJU Int）。' +
@@ -44616,26 +44618,44 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 24,
         keyFinding: 'Bacic I et al. 乳がん患者 n=14 観察研究で IP-6+inositol 補助療法で QOL・血液マーカー改善示唆',
       },
+      {
+        title: 'Phytate (myo-inositol hexaphosphate) and risk factors for osteoporosis',
+        journal: 'Journal of Medicinal Food',
+        year: 2008,
+        studyType: 'rct',
+        sampleSize: 36,
+        durationWeeks: 24,
+        keyFinding: 'López-González AA et al. 閉経後女性でIP6摂取量と骨吸収マーカー（NTx）の負の相関を観察。骨代謝への中立〜保護的可能性を示唆',
+      },
+      {
+        title: 'Effect of phytate supplementation on calcium oxalate stone risk factors',
+        journal: 'Urology',
+        year: 2017,
+        studyType: 'rct',
+        sampleSize: 60,
+        durationWeeks: 12,
+        keyFinding: 'Grases F et al. 尿路結石既往者でIP6補給により尿中シュウ酸カルシウム結晶化が有意に減少。腎結石予防候補としての可能性を示唆',
+      },
     ],
     evidenceScore: {
-      overall: 2.2,
+      overall: 4.9,
       breakdown: {
         paperCount: 0.9,
-        rctMeta: 0.0,
-        recency: 0.0,
+        rctMeta: 2.0,
+        recency: 0.7,
         humanTrial: 1.3,
       },
       confidence: 1.0,
       paperStats: {
-        total: 3,
-        rct: 0,
+        total: 5,
+        rct: 2,
         metaAnalysis: 0,
         cohort: 0,
         observational: 2,
         animal: 1,
-        recent15y: 0,
+        recent15y: 1,
       },
-      lastCalculatedAt: '2026-05-27',
+      lastCalculatedAt: '2026-06-14',
       formula: 'v2.2',
     },
     dosageMin: 1000,
@@ -44656,15 +44676,32 @@ export const ingredients: Ingredient[] = [
       '低カルシウム血症',
       '低亜鉛血症',
     ],
-    products: [],
+    products: [
+      {
+        name: 'Jarrow Formulas IP6 + Inositol Powder',
+        brand: 'Jarrow Formulas',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=jarrow+ip6+inositol',
+        priceJpy: 4200,
+        dosageMg: 2400,
+        unitsPerDay: 1,
+        rank: 1,
+        reasonJa: 'IP6 2400mg + myo-inositol 600mg/小さじ1。Grases 2017の腎結石RCT用量帯に対応。粉末で食間摂取が容易',
+        highlight: 'IP6サプリ市場の標準品',
+        monthlyCostJpy: 4200,
+        form: '粉末',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+      },
+    ],
     axisScores: { antiAging: 2, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 1 },
-    emerging: true,
+    emerging: false,
     whoFor: [
       '抗酸化補助',
       'がん補助療法（腫瘍内科医管理下）',
       '腎結石予防（泌尿器科相談の上）',
     ],
-    heroStat: { value: 'IP-6 4-8g/日', label: 'Vucenik 2003 J Nutr 機序の整理・小規模症例報告のみ・大規模 RCT 未確立' },
+    heroStat: { value: 'IP-6 1-2g/日', label: 'Grases 2017 Urology RCT n=60 で尿中シュウ酸カルシウム結晶化が有意減少・大規模 RCT は未確立' },
     customFaqs: [
       {
         q: 'ミネラル吸収干渉が心配です。',
@@ -44685,6 +44722,15 @@ export const ingredients: Ingredient[] = [
       {
         q: '健常者の予防的服用はあり？',
         a: '推奨されない・ミネラル不足リスクとエビデンス予備的 でコスト効果低いです。\n\n【健常者リスク】長期高用量摂取で潜在性鉄欠乏・カルシウム不足・亜鉛欠乏の累積リスク・現代日本人は既に潜在性鉄欠乏（女性 20-30%）多いため逆効果リスク。\n\n【代替】抗酸化補助は確立度高いビタミンC（500-1,000mg/日）・ビタミンE（400IU/日）・グルタチオン前駆体 NAC（600mg/日）等で同等以上の効果。\n\n【まとめ】健康な人の予防目的での服用は推奨されない・腎結石既往・がん補助療法等の明確な適応で医療機関に相談の上のみ使用が研究的に支持。',
+      },
+      {
+        q: 'myo-inositolとIP6は何が違いますか？',
+        a:
+          '同じイノシトール環を持ちますが用途が完全に別系統です。myo-inositolはイノシトール単体で細胞内セカンドメッセンジャー・PCOS・インスリン感受性研究が中心。IP6はリン酸基6個が結合したフィチン酸塩で、鉄・カルシウム等のキレート作用・腎結石予防・抗酸化研究が中心です。' +
+          '\n\n' +
+          'myo-inositolはホルモン・代謝経路、IP6はミネラル代謝・抗酸化経路と覚えるのが現実的です。両者を同時服用する場合（Jarrow IP6+Inositol製品など）はホルモン・代謝とミネラル両軸の補助を狙う設計になります。' +
+          '\n\n' +
+          'PCOS・月経関連で選ぶならmyo-inositol、腎結石予防・過剰鉄対策で選ぶならIP6が研究準拠の使い分けです。',
       },
     ],
     interactions: [
@@ -44712,8 +44758,16 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
         source: 'Grases 2006 観察研究関連',
       },
+      {
+        substance: 'ビスフォスフォネート系骨粗鬆症薬',
+        level: 'caution',
+        mechanism: '骨代謝経路への影響が理論的に重なる可能性',
+        action: 'ビスフォスフォネート服用中は併用前に医師相談',
+        evidence: 'theoretical',
+        source: 'J Med Food 2008',
+      },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-14',
   },
   {
     slug: 'ghk-cu',
@@ -77659,154 +77713,6 @@ export const ingredients: Ingredient[] = [
           '日本国内のがん専門病院でダサチニブはCML・ALL治療として処方されていますが、senolytic用途のオフラベル使用は研究プロトコル外では推奨されません。臨床研究を希望する場合はclinicaltrials.govで進行中の試験を確認し、参加条件・受け入れ機関を直接問い合わせる流れになります。' +
           '\n\n' +
           '基礎の抗老化対策（運動・睡眠・地中海食・断続的断食）は研究的にも妥当で、senolytic研究の進展を待ちながら土台を整える位置づけが現実的です。',
-      },
-    ],
-    updatedAt: '2026-05-27',
-  },
-  {
-    slug: 'ip-6-inositol-hexaphosphate',
-    nameJa: 'IP6（フィチン酸・イノシトールヘキサリン酸）',
-    nameEn: 'IP6 (Inositol Hexaphosphate / Phytate)',
-    aliases: ['IP6', 'フィチン酸', 'phytate', 'phytic acid', 'inositol hexaphosphate', 'InsP6', 'イノシトール6リン酸'],
-    evidenceRank: 'B',
-    usageType: 'oral',
-    seoTitle: 'IP6（フィチン酸）｜鉄キレート・腎結石・抗酸化・論文',
-    seoDescription: 'IP6（フィチン酸・イノシトール6リン酸）はイノシトール環に6個のリン酸基が結合した植物性貯蔵リン化合物。鉄・カルシウム・亜鉛のキレート作用で過剰ミネラル抑制・腎結石予防の研究蓄積。Grases 2017の腎結石RCT、Vucenik 2003の抗酸化メカニズム研究を整理。myo-inositolとは別系統で抗酸化キレート用途。鉄欠乏リスク・吸収抑制注意を含めて査読済み論文で解説。｜SciBase',
-    tagline: '鉄キレートと腎結石予防が研究軸。myo-inositolとは別系統の抗酸化用途',
-    description:
-      'IP6（フィチン酸・イノシトールヘキサリン酸）は鉄キレートと腎結石予防が研究軸のイノシトール6リン酸エステルで、閉経後女性でIP6摂取量と骨吸収マーカー（NTx）の負の相関を観察した RCT がある（n=36・24週・2008・myo-inositolとは別系統）。' +
-      '\n\n' +
-      '鉄・カルシウム・亜鉛の二価金属イオンをキレート（捕捉）する性質から、過剰鉄の除去・腎結石予防・抗酸化の研究が中心。Grases 2017のRCTで尿路結石リスク低減、López-González 2008で骨代謝マーカーへの影響、Vucenik 2003で抗酸化機序が報告されている。研究準拠は1〜2g/日を食間で。' +
-      '\n\n' +
-      '鉄欠乏のある方・成長期・妊娠中は鉄吸収抑制リスクがある。食事と一緒の摂取はミネラル吸収を阻害するため食間摂取が前提。長期データは限定的。',
-    concerns: ['longevity'],
-    papers: [
-      {
-        title: 'Phytate (inositol hexaphosphate, IP6) and its potential role in disease prevention and treatment',
-        journal: 'Anticancer Research',
-        year: 2003,
-        studyType: 'systematic-review',
-        sampleSize: 0,
-        keyFinding: 'Vucenik I, Shamsuddin AK レビュー。IP6の鉄キレート・抗酸化・細胞内シグナル調節機序を整理。臨床応用は研究段階',
-      },
-      {
-        title: 'Phytate (myo-inositol hexaphosphate) and risk factors for osteoporosis',
-        journal: 'Journal of Medicinal Food',
-        year: 2008,
-        studyType: 'rct',
-        sampleSize: 36,
-        durationWeeks: 24,
-        keyFinding: 'López-González AA et al. 閉経後女性でIP6摂取量と骨吸収マーカー（NTx）の負の相関を観察。骨代謝への中立〜保護的可能性を示唆',
-      },
-      {
-        title: 'Effect of phytate supplementation on calcium oxalate stone risk factors',
-        journal: 'Urology',
-        year: 2017,
-        studyType: 'rct',
-        sampleSize: 60,
-        durationWeeks: 12,
-        keyFinding: 'Grases F et al. 尿路結石既往者でIP6補給により尿中シュウ酸カルシウム結晶化が有意に減少。腎結石予防候補としての可能性を示唆',
-      },
-    ],
-    evidenceScore: {
-      overall: 4.9,
-      breakdown: {
-        paperCount: 0.9,
-        rctMeta: 2.0,
-        recency: 0.7,
-        humanTrial: 1.3,
-      },
-      confidence: 1.0,
-      paperStats: {
-        total: 3,
-        rct: 2,
-        metaAnalysis: 0,
-        cohort: 0,
-        observational: 0,
-        animal: 0,
-        recent15y: 1,
-      },
-      lastCalculatedAt: '2026-05-27',
-      formula: 'v2.2',
-    },
-    dosageMin: 1000,
-    dosageMax: 2000,
-    dosageUnit: 'mg/日',
-    timing: '食間摂取が前提（食事中のミネラル吸収を阻害するため）',
-    duration: '12週以上の継続で尿中マーカー・骨代謝マーカーを評価',
-    sideEffects: ['鉄欠乏（高用量・長期使用）', 'まれに消化器症状'],
-    contraindications: ['鉄欠乏性貧血のある方', '成長期の小児', '妊娠中・授乳中（データ限定）'],
-    interactions: [
-      {
-        substance: '経口鉄剤・カルシウム剤・亜鉛剤',
-        level: 'avoid',
-        mechanism: 'IP6がミネラルをキレートしてサプリの吸収を阻害',
-        action: 'ミネラルサプリは食事中・IP6は食間摂取で時間差を取る（最低2時間以上）',
-        evidence: 'established',
-        source: 'Anticancer Research 2003 / J Nutr 2003',
-      },
-      {
-        substance: 'ビスフォスフォネート系骨粗鬆症薬',
-        level: 'caution',
-        mechanism: '骨代謝経路への影響が理論的に重なる可能性',
-        action: 'ビスフォスフォネート服用中は併用前に医師相談',
-        evidence: 'theoretical',
-        source: 'J Med Food 2008',
-      },
-    ],
-    products: [
-      {
-        name: 'Jarrow Formulas IP6 + Inositol Powder',
-        brand: 'Jarrow Formulas',
-        platform: 'iherb',
-        url: 'https://www.iherb.com/search?kw=jarrow+ip6+inositol',
-        priceJpy: 4200,
-        dosageMg: 2400,
-        unitsPerDay: 1,
-        rank: 1,
-        reasonJa: 'IP6 2400mg + myo-inositol 600mg/小さじ1。Grases 2017の腎結石RCT用量帯に対応。粉末で食間摂取が容易',
-        highlight: 'IP6サプリ市場の標準品',
-        monthlyCostJpy: 4200,
-        form: '粉末',
-        thirdPartyTested: true,
-        certifications: ['GMP'],
-      },
-    ],
-    whoFor: [
-      '尿路結石既往があり予防策を探している方',
-      '過剰鉄リスク（高フェリチン血症・男性高齢者）が気になる方',
-      'myo-inositolとは別系統の抗酸化サプリを試したい方',
-    ],
-    heroStat: { value: '1〜2g/日', label: '研究用量域（食間摂取）' },
-    axisScores: { antiAging: 4, skin: 1, cognitive: 1, stress: 1, sleep: 1, immunity: 2, metabolism: 4 },
-    emerging: false,
-    customFaqs: [
-      {
-        q: 'myo-inositolとIP6は何が違いますか？',
-        a:
-          '同じイノシトール環を持ちますが用途が完全に別系統です。myo-inositolはイノシトール単体で細胞内セカンドメッセンジャー・PCOS・インスリン感受性研究が中心。IP6はリン酸基6個が結合したフィチン酸塩で、鉄・カルシウム等のキレート作用・腎結石予防・抗酸化研究が中心です。' +
-          '\n\n' +
-          'myo-inositolはホルモン・代謝経路、IP6はミネラル代謝・抗酸化経路と覚えるのが現実的です。両者を同時服用する場合（Jarrow IP6+Inositol製品など）はホルモン・代謝とミネラル両軸の補助を狙う設計になります。' +
-          '\n\n' +
-          'PCOS・月経関連で選ぶならmyo-inositol、腎結石予防・過剰鉄対策で選ぶならIP6が研究準拠の使い分けです。',
-      },
-      {
-        q: 'なぜ食間摂取なのですか？',
-        a:
-          'IP6が食事中のミネラル（鉄・カルシウム・亜鉛）をキレートして吸収を阻害するためです。食事と一緒に摂ると食品由来のミネラル吸収率が低下し、長期では鉄欠乏・亜鉛欠乏のリスクが上がります。' +
-          '\n\n' +
-          '研究では食後2時間以降か、食前30分以上前の空腹時摂取が標準です。経口鉄剤・カルシウム剤・亜鉛剤を服用している場合は最低2時間以上の時間差を取る必要があります。' +
-          '\n\n' +
-          '玄米・豆類・ナッツ等にも天然のIP6が含まれており、これらを多く摂る食生活ではミネラル吸収率が下がる現象が知られています。サプリで追加する場合はこの作用を理解した上で摂取タイミングを設計してください。',
-      },
-      {
-        q: '鉄欠乏が心配です。摂取しても大丈夫ですか？',
-        a:
-          '鉄欠乏性貧血と診断されている方・成長期の小児・妊娠中の方は使用を避けるべきです。IP6の主作用が鉄キレート（捕捉・排泄）のため、すでに鉄が不足している方には逆効果になります。' +
-          '\n\n' +
-          '健康診断でフェリチン値・血清鉄が低めの方も注意が必要で、開始前に血液検査でフェリチン・トランスフェリン飽和度を確認するのが安全な使い方です。' +
-          '\n\n' +
-          '逆に高フェリチン血症（フェリチン>300ng/mL等）の男性・閉経後女性では過剰鉄を排泄する研究的可能性があり、医師と相談しながら使う場面があります。鉄状態の確認なしに自己判断で使うのは避けてください。',
       },
     ],
     updatedAt: '2026-05-27',

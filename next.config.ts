@@ -71,6 +71,11 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/calcium-d-glucarate',
         permanent: true,
       },
+      {
+        source: '/ingredients/ip-6-inositol-hexaphosphate',
+        destination: '/ingredients/ip-6',
+        permanent: true,
+      },
     ]
   },
 }
