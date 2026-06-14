@@ -98,6 +98,16 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/nad-plus',
         permanent: true,
       },
+      {
+        source: '/ingredients/vitamin-b3-niacin',
+        destination: '/ingredients/niacin',
+        permanent: true,
+      },
+      {
+        source: '/compare/vitamin-b3-niacin-vs-red-yeast-rice',
+        destination: '/compare/niacin-vs-red-yeast-rice',
+        permanent: true,
+      },
     ]
   },
 }

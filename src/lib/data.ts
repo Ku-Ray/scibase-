@@ -14012,14 +14012,17 @@ export const ingredients: Ingredient[] = [
     slug: 'niacin',
     nameJa: 'ナイアシン（ニコチン酸）',
     nameEn: 'Niacin / Nicotinic Acid',
+    aliases: ['ナイアシン', 'ニコチン酸', 'Niacin', 'Nicotinic Acid', 'nicotinic acid', 'ビタミンB3', 'Vitamin B3', 'ビタミンB3 ナイアシン'],
     evidenceRank: 'A',
     usageType: 'oral',
+    seoTitle: 'ナイアシン｜フラッシュ・コレステロール・niacinamide違い',
+    seoDescription: 'ナイアシン（ニコチン酸・ビタミンB3）の推奨量・フラッシュ反応・脂質改善作用を論文で整理。日本人推奨は男性14・女性12mgNE/日。高用量1,500-3,000mg/日でHDL+20-25%・トリグリセリド-25-35%がCoronary Drug Project 1986（n=8,341）で示された一方、AIM-HIGH 2011はスタチン併用で心血管イベント追加抑制を示せず中止。ナイアシンアミド（niacinamide）との形態違いも整理｜SciBase',
     tagline: 'NAD+合成の前駆体。脂質プロファイル改善・エネルギー代謝をRCTで確認',
     description:
       'ナイアシン（ビタミン B3・ニコチン酸）は水溶性ビタミンで、HDL +23%・LDL -25%・中性脂肪 -22% の脂質改善（いずれも p<0.001）を高用量 24 週で示したメタ解析がある（J Am Coll Cardiol 2014・n=6,748）。\n\n' +
       '高用量ではHDLコレステロールを著明に増加させ、LDL・中性脂肪を低下させる効果がRCTで確認されている。NMN・NRと異なる経路でNAD+産生に関わる。日常推奨量は成人男性15mg・女性12mg/日、脂質改善目的の高用量は500〜2,000mg/日で医師管理下。\n\n' +
       '高用量で顔面紅潮（フラッシュ）・肝障害・高血糖のリスクあり。脂質改善目的の高用量摂取は必ず医師管理下で。',
-    concerns: ['metabolism', 'cognitive', 'fatigue'],
+    concerns: ['metabolism', 'cardiovascular', 'cognitive', 'fatigue'],
     papers: [
       {
         title: 'Niacin treatment increases HDL cholesterol: a systematic review and meta-analysis',
@@ -14030,26 +14033,69 @@ export const ingredients: Ingredient[] = [
         durationWeeks: 24,
         keyFinding: 'ナイアシン高用量でHDLが平均+23%増加、LDL-25%低下、中性脂肪-22%低下（いずれもp<0.001）',
       },
+      {
+        title: 'Fifteen year mortality in Coronary Drug Project patients: long-term benefit with niacin',
+        journal: 'Journal of the American College of Cardiology',
+        year: 1986,
+        studyType: 'rct',
+        sampleSize: 8341,
+        durationWeeks: 312,
+        keyFinding: 'ニコチン酸3g/日で心筋梗塞既往の男性の総死亡率が15年追跡で11%低下（最長期RCT）',
+      },
+      {
+        title: 'Niacin in patients with low HDL cholesterol levels receiving intensive statin therapy (AIM-HIGH)',
+        journal: 'New England Journal of Medicine',
+        year: 2011,
+        studyType: 'rct',
+        sampleSize: 3414,
+        durationWeeks: 156,
+        keyFinding: '徐放性ナイアシン1,500-2,000mg/日のスタチン併用で心血管イベントの追加抑制効果を示せず・試験中止（AIM-HIGH）',
+      },
+      {
+        title: 'Effects of extended-release niacin with laropiprant in high-risk patients (HPS2-THRIVE)',
+        journal: 'New England Journal of Medicine',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 25673,
+        durationWeeks: 208,
+        keyFinding: 'ナイアシン+ラロピプラント併用で重篤な有害事象（糖尿病・出血・感染）増加・スタチン併用での心血管イベント抑制効果なし',
+      },
+      {
+        title: 'Effect of niacin on lipid and lipoprotein levels and glycemic control',
+        journal: 'JAMA',
+        year: 2000,
+        studyType: 'meta-analysis',
+        sampleSize: 30000,
+        durationWeeks: 24,
+        keyFinding: 'ニコチン酸1,500-3,000mg/日でHDL+20-25%・LDL-15-20%・トリグリセリド-25-35%の脂質改善',
+      },
+      {
+        title: 'Dietary Reference Intakes for Japanese 2025',
+        journal: 'Ministry of Health, Labour and Welfare',
+        year: 2025,
+        studyType: 'guideline',
+        keyFinding: '日本人推奨量・男性14・女性12mgNE/日・耐容上限ニコチン酸として300mg/日',
+      },
     ],
     evidenceScore: {
-      overall: 3.3,
+      overall: 6.8,
       breakdown: {
-        paperCount: 0.5,
-        rctMeta: 1.5,
-        recency: 0.7,
-        humanTrial: 0.7,
+        paperCount: 1.2,
+        rctMeta: 2.9,
+        recency: 1.2,
+        humanTrial: 1.5,
       },
-      confidence: 0.33,
+      confidence: 1.0,
       paperStats: {
-        total: 1,
-        rct: 0,
-        metaAnalysis: 1,
+        total: 6,
+        rct: 3,
+        metaAnalysis: 2,
         cohort: 0,
         observational: 0,
         animal: 0,
-        recent15y: 1,
+        recent15y: 4,
       },
-      lastCalculatedAt: '2026-05-27',
+      lastCalculatedAt: '2026-06-14',
       formula: 'v2.2',
     },
     dosageMin: 16,
@@ -14141,6 +14187,14 @@ export const ingredients: Ingredient[] = [
         evidence: 'established',
         source: 'HPS2-THRIVE試験／PMC3770072',
       },
+      {
+        substance: '降圧薬（α遮断薬等）',
+        level: 'caution',
+        mechanism: 'ナイアシンの血管拡張作用と重複し起立性低血圧のリスクがある',
+        action: '降圧薬服用中の高用量ナイアシン開始時は血圧モニタリングを行う',
+        evidence: 'theoretical',
+        source: 'Drugs.com',
+      },
     ],
     customFaqs: [
       {
@@ -14200,8 +14254,22 @@ export const ingredients: Ingredient[] = [
           '\n\n' +
           'HDL を上げたい・脂質パネルを改善したい方は、まず食事（魚・オリーブオイル・運動・禁煙）＋オメガ3（EPA＋DHA）の食事ベースで、それでも不十分な脂質異常症で治療中の方が高用量ナイアシンを医師管理下で検討する流れが現実的です。健常人の HDL+ 目的での自己判断高用量介入は推奨されません。',
       },
+      {
+        q: 'ナイアシンで本当にLDLコレステロールが下がりますか？',
+        a:
+          'ナイアシン1,500-3,000mg/日でLDLは15-20%低下・HDLは20-25%上昇するメタ解析データがあります（JAMA 2000）。ただし2011年のAIM-HIGH試験以降、スタチン併用での心血管イベント追加抑制が示せず、現在の循環器ガイドラインではナイアシンは第一選択ではなくなりました。' +
+          '\n\n' +
+          'それでもナイアシンモノセラピー時代の長期データ（Coronary Drug Project 15年追跡）では総死亡率11%低下が示されており、スタチン不耐性・スタチン使用不可の方の選択肢としては残っています。判断は循環器内科・脂質代謝外来との相談が現実的です。',
+      },
+      {
+        q: 'ナイアシンを飲むと糖尿病になりますか？',
+        a:
+          '高用量1,500-3,000mg/日で耐糖能が悪化することは確立した副作用です。AIM-HIGH試験では新規糖尿病発症が増加し、空腹時血糖・HbA1cが有意に上昇しました。糖尿病既往者・境界型・代謝症候群の方は使用前後でHbA1cと空腹時血糖の評価が必須になります。' +
+          '\n\n' +
+          '一方、推奨量レベル（14-16mg/日）では糖尿病リスクは確認されていません。「ビタミンだから安全」という理解は高用量領域では成立しません。食事摂取基準内のマルチビタミン由来は通常問題になりません。',
+      },
     ],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-14',
     publicDbReferences: [
       {
         source: 'nih-ods',
@@ -50781,229 +50849,6 @@ export const ingredients: Ingredient[] = [
         url: 'https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/',
         accessedAt: '2026-06-01',
         note: 'NIH ODS HealthProfessional版。RDA・上限量3000μgRAE、催奇形性・脂溶性蓄積に注意',
-      },
-    ],
-  },
-  {
-    slug: 'vitamin-b3-niacin',
-    nameJa: 'ナイアシン（ビタミンB3・ニコチン酸）',
-    nameEn: 'Niacin (Vitamin B3)',
-    evidenceRank: 'A',
-    usageType: 'oral',
-    seoTitle: 'ナイアシン｜フラッシュ・コレステロール・niacinamide違い',
-    seoDescription: 'ナイアシン（ニコチン酸・ビタミンB3）の推奨量・フラッシュ反応・脂質改善作用を論文で整理。日本人推奨は男性14・女性12mgNE/日。高用量1,500-3,000mg/日でHDL+20-25%・トリグリセリド-25-35%がCoronary Drug Project 1986（n=8,341）で示された一方、AIM-HIGH 2011はスタチン併用で心血管イベント追加抑制を示せず中止。ナイアシンアミド（niacinamide）との形態違いも整理｜SciBase',
-    tagline: '高用量で脂質改善が確立。ただしフラッシュと肝障害リスクで処方薬グレードの議論',
-    description:
-      'ナイアシン（ビタミン B3）は水溶性ビタミンで、HDL +20-25%・LDL -15-20%・中性脂肪 -25-35% の脂質改善を 1,500-3,000mg/日 24 週で示したメタ解析がある（JAMA 2000・n=30,000）。' +
-      '\n\n' +
-      '推奨量は男性14・女性12mgNE/日（食事摂取基準）。高用量1,500-3,000mg/日でHDL+20-25%・トリグリセリド-25-35%の脂質改善がCoronary Drug Project 1986（n=8,341）で示されているが、AIM-HIGH 2011はスタチン併用での心血管イベント追加抑制を示せず試験が中止された。' +
-      '\n\n' +
-      '高用量はフラッシュ（顔・首の紅潮・かゆみ）が必発で、肝障害・耐糖能悪化のリスクもある。処方薬グレード用量は医師管理下が前提。皮膚のニキビ・抗炎症目的はナイアシンアミド（niacinamide）が別枠になる。',
-    concerns: ['heart-vascular', 'metabolic-health', 'cardiovascular'],
-    whoFor: [
-      'LDL・トリグリセリド高値で食事・運動・スタチンの次手段を医師と検討する方',
-      'NAD+前駆体として代謝サポートを意図する中高年',
-      'ナイアシンアミド（皮膚）とニコチン酸（脂質）の違いを整理したい方',
-      'フラッシュ反応の許容と肝機能定期確認ができる方',
-    ],
-    papers: [
-      {
-        title: 'Fifteen year mortality in Coronary Drug Project patients: long-term benefit with niacin',
-        journal: 'Journal of the American College of Cardiology',
-        year: 1986,
-        studyType: 'rct',
-        sampleSize: 8341,
-        durationWeeks: 312,
-        keyFinding: 'ニコチン酸3g/日で心筋梗塞既往の男性の総死亡率が15年追跡で11%低下（最長期RCT）',
-      },
-      {
-        title: 'Niacin in patients with low HDL cholesterol levels receiving intensive statin therapy (AIM-HIGH)',
-        journal: 'New England Journal of Medicine',
-        year: 2011,
-        studyType: 'rct',
-        sampleSize: 3414,
-        durationWeeks: 156,
-        keyFinding: '徐放性ナイアシン1,500-2,000mg/日のスタチン併用で心血管イベントの追加抑制効果を示せず・試験中止',
-      },
-      {
-        title: 'Effects of extended-release niacin with laropiprant in high-risk patients (HPS2-THRIVE)',
-        journal: 'New England Journal of Medicine',
-        year: 2014,
-        studyType: 'rct',
-        sampleSize: 25673,
-        durationWeeks: 208,
-        keyFinding: 'ナイアシン+ラロピプラント併用で重篤な有害事象（糖尿病・出血・感染）増加・スタチン併用での心血管イベント抑制効果なし',
-      },
-      {
-        title: 'Effect of niacin on lipid and lipoprotein levels and glycemic control',
-        journal: 'JAMA',
-        year: 2000,
-        studyType: 'meta-analysis',
-        sampleSize: 30000,
-        durationWeeks: 24,
-        keyFinding: 'ニコチン酸1,500-3,000mg/日でHDL+20-25%・LDL-15-20%・トリグリセリド-25-35%の脂質改善',
-      },
-      {
-        title: 'Dietary Reference Intakes for Japanese 2025',
-        journal: 'Ministry of Health, Labour and Welfare',
-        year: 2025,
-        studyType: 'guideline',
-        sampleSize: 0,
-        durationWeeks: 0,
-        keyFinding: '日本人推奨量・男性14・女性12mgNE/日・耐容上限ニコチン酸として300mg/日',
-      },
-    ],
-    evidenceScore: {
-      overall: 6.7,
-      breakdown: {
-        paperCount: 1.2,
-        rctMeta: 2.7,
-        recency: 1.2,
-        humanTrial: 1.6,
-      },
-      confidence: 1.0,
-      paperStats: {
-        total: 5,
-        rct: 3,
-        metaAnalysis: 1,
-        cohort: 0,
-        observational: 0,
-        animal: 0,
-        recent15y: 3,
-      },
-      lastCalculatedAt: '2026-05-27',
-      formula: 'v2.2',
-    },
-    dosageMin: 14,
-    dosageMax: 1000,
-    dosageUnit: 'mg/日',
-    timing: '低用量は食後・高用量は徐放性タイプで食後・フラッシュ回避はアスピリン前投与の選択肢あり',
-    duration: '脂質改善目的は8-12週で再評価。肝機能・血糖の定期確認が必須',
-    sideEffects: [
-      'フラッシュ（顔・首の紅潮・かゆみ・熱感）',
-      '高用量で肝障害・肝逸脱酵素上昇',
-      '耐糖能悪化・血糖上昇',
-      '消化器症状・吐き気',
-    ],
-    contraindications: [
-      '肝疾患・高度肝機能障害',
-      '消化性潰瘍の活動期',
-      '高度の耐糖能異常・コントロール不良の糖尿病',
-      '通風・高尿酸血症の悪化既往',
-    ],
-    products: [
-      {
-        name: 'Niacin 500mg (Flush)',
-        brand: 'NOW Foods',
-        platform: 'iherb',
-        url: 'https://www.iherb.com/pr/now-foods-niacin-500-mg-100-tablets',
-        imageUrl: '',
-        priceJpy: 1200,
-        dosageMg: 500,
-        rank: 1,
-        reasonJa: 'フラッシュ型500mg/錠で脂質改善目的の用量域に対応・1回250-500mgから漸増可能。徐放性は肝障害リスクが高いため非推奨',
-        highlight: '脂質改善設計',
-        monthlyCostJpy: 720,
-        unitsPerDay: 2,
-        form: 'タブレット',
-        thirdPartyTested: true,
-        certifications: ['GMP'],
-        benefitHeading: 'フラッシュ型500mg・脂質改善文脈での標準形態',
-        pros: [
-          'フラッシュ型は徐放性より肝障害リスクが低い',
-          '500mg/錠で漸増しやすい',
-          'NOW Foods GMP製造',
-        ],
-        cons: [
-          'フラッシュ反応は使用初期に必発',
-          '高用量は医師の脂質パネル・肝機能評価が前提',
-          '糖尿病・通風既往は不向き',
-        ],
-        qualityNote: 'NOW Foods GMP工場製造・第三者検査済み・フラッシュ型は徐放性より肝障害発生率が低い文献データあり',
-      },
-    ],
-    heroStat: { value: '+25%', label: 'HDL上昇（高用量1.5-3g/日メタ解析）' },
-    axisScores: { antiAging: 3, skin: 3, cognitive: 3, stress: 0, sleep: 0, immunity: 0, metabolism: 8 },
-    interactions: [
-      {
-        substance: 'スタチン系（アトルバスタチン・ロスバスタチン等）',
-        level: 'caution',
-        mechanism: '横紋筋融解症リスクの加算（特に高用量ナイアシン）',
-        action: 'スタチン服用中の高用量ナイアシン併用は医師管理下で・CK・肝機能を定期確認',
-        evidence: 'established',
-        source: 'FDA Drug Safety Communication',
-      },
-      {
-        substance: '降圧薬（α遮断薬等）',
-        level: 'caution',
-        mechanism: 'ナイアシンの血管拡張作用と重複し起立性低血圧リスク',
-        action: '降圧薬服用中の高用量ナイアシン開始時は血圧モニタリング',
-        evidence: 'theoretical',
-        source: 'Drugs.com',
-      },
-      {
-        substance: '糖尿病治療薬',
-        level: 'caution',
-        mechanism: 'ナイアシンによる耐糖能悪化',
-        action: '糖尿病既往者は高用量ナイアシン開始時にHbA1c・空腹時血糖を再評価',
-        evidence: 'established',
-        source: 'AIM-HIGH 2011',
-      },
-    ],
-    customFaqs: [
-      {
-        q: 'ナイアシンとナイアシンアミド（niacinamide）はどう違いますか？',
-        a:
-          '物質としては同じビタミンB3だが、形態の違いで作用・適応・副作用が全く異なる。ニコチン酸（ナイアシン）は高用量でHDL上昇・トリグリセリド低下の脂質改善作用を持ち、フラッシュ反応（顔・首の紅潮）が必発になる。' +
-          '\n\n' +
-          '一方、ニコチンアミド（ナイアシンアミド）は脂質改善作用がなくフラッシュも起こさず、皮膚科では美白・抗炎症・ニキビ予防の文脈で使われる。SciBaseはniacinamideを別ページで扱っている。「ビタミンB3」というだけで同じものと判断すると目的が達成できない可能性がある。',
-      },
-      {
-        q: 'ナイアシンのフラッシュ反応は危険ですか？',
-        a:
-          'フラッシュ反応自体は危険ではない。皮膚血管の急激な拡張で顔・首・上半身が紅潮しチクチクする現象で、プロスタグランジンD2を介した生理的反応だ。通常は摂取後15-30分で出始め、1-2時間で軽減する。' +
-          '\n\n' +
-          '初回・空腹時・アルコール併用で強く出やすい。食後摂取・アスピリン325mgの30分前投与・徐放性タイプ使用でフラッシュは軽減できる。ただし徐放性は肝障害リスクが上がるため、脂質改善目的でも医師管理下が前提になる。「フラッシュがあるから効いている証拠」という解釈は機序上は妥当だが、副作用リスクを軽視する判断材料には使わない。',
-      },
-      {
-        q: 'ナイアシンで本当にLDLコレステロールが下がりますか？',
-        a:
-          'ナイアシン1,500-3,000mg/日でLDLは15-20%低下・HDLは20-25%上昇するメタ解析データがある（JAMA 2000）。ただし2011年AIM-HIGH試験以降、スタチン併用での心血管イベント追加抑制が示せず、現在の循環器ガイドラインではナイアシンは第一選択ではなくなった。' +
-          '\n\n' +
-          'それでもナイアシンモノセラピー時代の長期データ（Coronary Drug Project 15年追跡）では総死亡率11%低下が示されており、スタチン不耐性・スタチン使用不可の方の選択肢として残っている。判断は循環器内科・脂質代謝外来との相談が現実的になる。',
-      },
-      {
-        q: 'ナイアシンを飲むと糖尿病になりますか？',
-        a:
-          '高用量1,500-3,000mg/日で耐糖能が悪化することは確立した副作用だ。AIM-HIGH試験では新規糖尿病発症が増加し、空腹時血糖・HbA1cが有意に上昇した。糖尿病既往者・境界型・代謝症候群の方は使用前後でHbA1cと空腹時血糖の評価が必須になる。' +
-          '\n\n' +
-          '一方、推奨量レベル（14-16mg/日）では糖尿病リスクは確認されていない。「ビタミンだから安全」という理解は高用量領域では成立しない。食事摂取基準内のマルチビタミン由来は通常問題にならない。',
-      },
-      {
-        q: 'NAD+前駆体としてナイアシン・NMN・NRはどれを選ぶべきですか？',
-        a:
-          '3つともNAD+合成経路に乗るが、研究の段階と用途が異なる。ナイアシン（ニコチン酸）は最も歴史が長く、脂質改善・NAD+補給の両方でヒトデータが豊富だがフラッシュと肝障害リスクがある。' +
-          '\n\n' +
-          'NR（ニコチンアミドリボシド）はヒトでのNAD+上昇とミトコンドリア機能改善が示されているが、寿命・健康寿命への直接的長期エビデンスは未確立。NMN（ニコチンアミドモノヌクレオチド）はヒトRCTが増えているが長期データはNRより薄い。' +
-          '\n\n' +
-          '「とにかくNAD+を上げたい」目的なら、ヒトでの安全性データが厚いNR 250-500mg/日が中庸的な選択になる。ナイアシン高用量はフラッシュと肝臓・血糖の負荷を考慮する必要があり、健康サプリ目的では非推奨。SciBaseはNR・NMNを別ページで扱っている。',
-      },
-      {
-        q: 'ナイアシンサプリの選び方は？',
-        a:
-          '判断軸は3つある。1点目は形態：脂質改善目的ならフラッシュ型（ニコチン酸即放）が肝障害リスクが低く第一選択・徐放性は肝障害リスクが高いため避ける・「ノーフラッシュナイアシン」（イノシトールヘキサニコチネート）は脂質改善エビデンスが不確実。2点目は用量：栄養補給は20-50mg/日・脂質改善は500-2,000mg/日（医師管理下）。3点目は併用安全性：スタチン・降圧薬・糖尿病薬・ワルファリン服用中は医師相談が前提。' +
-          '\n\n' +
-          '迷ったらまず食事摂取基準内のマルチビタミンB群で開始し、脂質改善目的は医師判断下で500mgから漸増する流れが安全だ。',
-      },
-    ],
-    updatedAt: '2026-05-21',
-    publicDbReferences: [
-      {
-        source: 'nih-ods',
-        fullName: 'NIH ODS (Office of Dietary Supplements) HealthProfessional Fact Sheet',
-        url: 'https://ods.od.nih.gov/factsheets/Niacin-HealthProfessional/',
-        accessedAt: '2026-06-01',
-        note: 'NIH ODS HealthProfessional版。RDA・フラッシュ作用、脂質改善エビデンス、肝毒性リスク',
       },
     ],
   },

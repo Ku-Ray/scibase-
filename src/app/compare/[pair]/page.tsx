@@ -143,7 +143,7 @@ const YMYL_PAIRS = new Set<string>([
   // C2-η Batch 1 パイロット YMYL 中 1 件（2026-05-24）
   'algal-oil-vs-omega3',                       // 妊娠中授乳中 DHA 推奨・抗凝固薬併用注意・ヴィーガン代替判断
   // C2-η Batch 2 YMYL 1 件（2026-05-24・スタチン同等薬理）
-  'vitamin-b3-niacin-vs-red-yeast-rice',       // 横紋筋融解・肝障害・スタチン併用絶対禁忌・EU 2022規制・小林製薬事案
+  'niacin-vs-red-yeast-rice',                  // 横紋筋融解・肝障害・スタチン併用絶対禁忌・EU 2022規制・小林製薬事案
   // C2-η Batch 2 YMYL 中 1 件（2026-05-24・腎機能/降圧薬境界）
   'potassium-vs-magnesium',                    // 慢性腎臓病・ARB/ACE 阻害薬・K 保持性利尿薬で高 K 血症リスク
   // C2-η Batch 2 YMYL 中 1 件（2026-05-24・胆道閉塞・処方薬境界）
