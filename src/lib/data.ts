@@ -17864,7 +17864,8 @@ export const ingredients: Ingredient[] = [
   {
     slug: 'cordyceps',
     nameJa: 'コルジセプス（冬虫夏草）',
-    nameEn: 'Cordyceps Militaris',
+    nameEn: 'Cordyceps (Cordyceps sinensis)',
+    aliases: ['冬虫夏草', 'Cordyceps sinensis', 'Ophiocordyceps sinensis', 'コルジセプス', 'トウチュウカソウ', '天然コルジセプス', 'Cs-4'],
     evidenceRank: 'B',
     usageType: 'oral',
     tagline: 'ATP産生促進・酸素利用効率改善・疲労軽減がRCTで確認されているアダプトゲン系キノコ',
@@ -17974,7 +17975,7 @@ export const ingredients: Ingredient[] = [
         source: 'WebMD Cordyceps Interactions',
       },
     ],
-    updatedAt: '2026-04-22',
+    updatedAt: '2026-06-14',
   },
 
   // ── シリカ（ケイ素）────────────────────────────────────────────────
