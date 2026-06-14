@@ -7,7 +7,7 @@
 サイト: https://scibase.app
 案内図: https://scibase.app/llms.txt
 最終生成: 2026-06-14
-成分 524 種 / 比較ペア 305 / エビデンスランク内訳 S=15 / A=186 / B=245 / C=78
+成分 517 種 / 比較ペア 305 / エビデンスランク内訳 S=15 / A=182 / B=244 / C=76
 
 ## 注目の評価ガイド（深掘り記事）
 
@@ -210,11 +210,6 @@ IBS症状改善RCTと鉄吸収補助研究で研究蓄積がある植物乳酸�
 URL: https://scibase.app/ingredients/l-citrulline
 経口吸収率の高いNO産生アミノ酸。疲労軽減・運動パフォーマンスをRCTで確認
 代表論文: RCT · Journal of Strength and Conditioning Research 2010 · n=41 · 2週 — シトルリンマレート8gで筋肉痛が40%以上軽減。
-
-### N-アセチルシステイン（NAC）（N-Acetylcysteine (NAC)） — エビデンスランク A
-URL: https://scibase.app/ingredients/n-acetylcysteine
-世界処方薬実績・グルタチオン前駆体・気道粘液溶解+アセトアミノフェン解毒
-代表論文: メタ解析 · European Respiratory Review 2015 · n=4155 — COPD・慢性気管支炎患者対象 13 RCT 統合メタで NAC 600-1,200mg/日で急性増悪リスク 25% 低下（Cazzola M et al.）
 
 ### NAC（N-アセチルシステイン）（N-Acetyl Cysteine） — エビデンスランク A
 URL: https://scibase.app/ingredients/nac
@@ -496,11 +491,6 @@ URL: https://scibase.app/ingredients/citicoline
 注意・処理速度・記憶のRCT複数・脳卒中後認知のメタ解析支持・Cognizin®規格が代表
 代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2005 — 高齢者の慢性脳血管障害に対するシチコリンRCT 14本（n=884）のCochraneレビューで、記憶・行動・全般評価の改善を支持（Fioravanti M & Yanagi M）
 
-### シチコリン（CDP-コリン）（Citicoline (CDP-Choline)） — エビデンスランク A
-URL: https://scibase.app/ingredients/citicoline-cdp-choline
-膜リン脂質合成型のコリン補給。α-GPC（運動研究）と並ぶ認知系の主要形態
-代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2005 · n=1372 — Fioravanti M, Yanagi M. 高齢者の慢性脳血管障害でCDP-コリンが記憶・行動の有意な改善を示した。
-
 ### シトルリンマレート（Citrulline Malate） — エビデンスランク A
 URL: https://scibase.app/ingredients/citrulline-malate
 6-8gで筋持久力・反復回数の有意な増加がRCTで確認されたパンプ補助
@@ -605,11 +595,6 @@ URL: https://scibase.app/ingredients/bacopa-monnieri
 URL: https://scibase.app/ingredients/banaba-corosolic-1pct
 コロソリン酸1%規格・48mg/日の論文用量を確実に取れる規格
 代表論文: RCT · Journal of Health Science 2006 · n=31 · 2週 — コロソリン酸10mg/日2週間で軽度2型糖尿病の食後血糖が有意改善
-
-### パルミトイルエタノラミド（PEA）（Palmitoylethanolamide (PEA)） — エビデンスランク A
-URL: https://scibase.app/ingredients/palmitoylethanolamide-pea
-内因性脂肪酸アミド・慢性疼痛のメタ解析あり・日本流通は限定的
-代表論文: メタ解析 · Pain Physician 2016 · n=1484 — 16試験のメタ解析でPEA 600-1200mg/日が慢性疼痛VASスコアをプラセボ・対照群より有意に低下 [PMID:26815247 https://pubmed.ncbi.nlm.nih.gov/26815247/]
 
 ### パルミトイルペプチド（Pal-KTTKS等）（Palmitoyl Peptides） — エビデンスランク A
 URL: https://scibase.app/ingredients/palmitoyl-tripeptide
@@ -825,11 +810,6 @@ URL: https://scibase.app/ingredients/magnesium-glycinate
 URL: https://scibase.app/ingredients/myo-inositol
 女性のホルモンバランス・インスリン感受性への効果がメタ解析で確認されている
 代表論文: メタ解析 · International Journal of Endocrinology 2016 · n=640 · 12週 — PCOS女性においてミオイノシトール補給は月経周期・排卵率・インスリン感受性・アンドロゲン値を有意に改善
-
-### ミオイノシトール（myo-inositol）（Myo-Inositol） — エビデンスランク A
-URL: https://scibase.app/ingredients/inositol-myo
-PCOS排卵改善・パニック障害でRCTエビデンス・1日2〜4gが研究用量
-代表論文: メタ解析 · Endocrine Connections 2017 · n=1000 — ミオイノシトール4g/日 12〜24週でPCOSの排卵率・月経周期・HOMA-IR・テストステロンの有意改善
 
 ### メチルフォレート（5-MTHF）（Methylfolate (5-MTHF / L-5-MTHF)） — エビデンスランク A
 URL: https://scibase.app/ingredients/methyl-folate
@@ -1111,10 +1091,10 @@ URL: https://scibase.app/ingredients/indole-3-carbinol
 DIMの前駆体・胃酸下で複数代謝物に変換される複雑な作用
 代表論文: RCT · Journal of the National Cancer Institute 1997 · n=60 · 12週 — I3C 400mg/日で2-OHE:16α-OHE比が有意に上昇（エストロゲン代謝経路シフト）
 
-### IP6（フィチン酸・イノシトールヘキサリン酸）（IP6 (Inositol Hexaphosphate / Phytate)） — エビデンスランク B
-URL: https://scibase.app/ingredients/ip-6-inositol-hexaphosphate
-鉄キレートと腎結石予防が研究軸。myo-inositolとは別系統の抗酸化用途
-代表論文: システマティックレビュー · Anticancer Research 2003 — Vucenik I, Shamsuddin AK レビュー。
+### IP-6（フィチン酸）（IP-6 (Inositol Hexaphosphate / Phytic Acid)） — エビデンスランク B
+URL: https://scibase.app/ingredients/ip-6
+穀物・豆由来フィチン酸・キレート・抗酸化・がん補助候補・ミネラル吸収干渉注意・新興
+代表論文: RCT · Journal of Medicinal Food 2008 · n=36 · 24週 — López-González AA et al. 閉経後女性でIP6摂取量と骨吸収マーカー（NTx）の負の相関を観察。
 
 ### JNKA認証ナットウキナーゼ（JNKA-Certified Nattokinase） — エビデンスランク B
 URL: https://scibase.app/ingredients/nattokinase-jnka-grade
@@ -1209,7 +1189,7 @@ URL: https://scibase.app/ingredients/pdrn
 ### PEA（パルミトイルエタノールアミド）（Palmitoylethanolamide (PEA)） — エビデンスランク B
 URL: https://scibase.app/ingredients/pea-palmitoylethanolamide
 内因性脂肪酸アミド・PPAR-α活性化による神経炎症・慢性疼痛抑制が複数RCTで確認
-代表論文: メタ解析 · Pain Physician 2017 · n=1484 · 12週 — PEA経口投与（600〜1,200mg/日）が慢性疼痛（坐骨神経痛・線維筋痛・糖尿病性神経障害・帯状疱疹後神経痛等）の疼痛スコア（VAS）を有意に低下させることをn=1,484の複数RCT統合で確認
+代表論文: メタ解析 · Pain Physician 2016 · n=1484 · 12週 — Paladini らの16試験統合メタ解析。 [PMID:26815247 https://pubmed.ncbi.nlm.nih.gov/26815247/]
 
 ### PHA（グルコノラクトン）（PHA Gluconolactone） — エビデンスランク B
 URL: https://scibase.app/ingredients/pha-gluconolactone
@@ -1425,11 +1405,6 @@ URL: https://scibase.app/ingredients/calanus-oil-omega-3
 URL: https://scibase.app/ingredients/calcium-d-glucarate
 腸肝循環を断つβ-グルクロニダーゼ阻害。エストロゲン代謝サポートの研究領域
 代表論文: レビュー · Cancer Detection and Prevention 1997 — β-グルクロニダーゼ阻害によるホルモン依存性がん予防機序の総説・ヒト試験の必要性を提起
-
-### カルシウムD-グルカル酸（カルシウムD-サッカレート）（Calcium D-Glucarate (Calcium D-Saccharate)） — エビデンスランク B
-URL: https://scibase.app/ingredients/calcium-d-saccharate
-β-グルクロニダーゼ阻害・第II相代謝サポートの研究軸
-代表論文: 観察研究 · Carcinogenesis 1990 — D-グルカル酸が動物試験で肝臓・腎臓β-グルクロニダーゼ活性を有意阻害・代謝物排泄促進
 
 ### カルノシン（Carnosine） — エビデンスランク B
 URL: https://scibase.app/ingredients/carnosine
@@ -2286,11 +2261,6 @@ URL: https://scibase.app/ingredients/gdf11
 老化マウスで機能回復を示した「若返り因子」候補・反証論文もあり議論中の基礎研究段階
 代表論文: 観察研究 · Cell 2013 · n=20 — 老化マウスへの異種共生（heterochronic parabiosis）でGDF11が心肥大の機能回復に関与する可能性が報告された（Loffredo FS et al.・基礎研究）
 
-### IP-6（フィチン酸）（IP-6 (Inositol Hexaphosphate / Phytic Acid)） — エビデンスランク C
-URL: https://scibase.app/ingredients/ip-6
-穀物・豆由来フィチン酸・キレート・抗酸化・がん補助候補・ミネラル吸収干渉注意・新興
-代表論文: 観察研究 · BJU International / Urology 2006 — Grases F et al. 腎結石患者 観察研究で IP-6 摂取とシュウ酸カルシウム結晶化抑制関連・尿中 IP-6 濃度測定
-
 ### KPV ペプチド（KPV Peptide (Lysine-Proline-Valine)） — エビデンスランク C
 URL: https://scibase.app/ingredients/kpv-peptide
 α-MSH 由来トリペプチド・抗炎症・腸管炎症候補・予備的・FDA 未承認・重要な注意
@@ -2631,11 +2601,6 @@ URL: https://scibase.app/ingredients/he-shou-wu
 中国伝統薬「何首烏」・生品は肝障害高リスク・処理品（製何首烏）でも医師の管理下
 代表論文: 観察研究 · Evidence-Based Complementary and Alternative Medicine 2015 — 何首烏関連肝障害76症例の系統的レビュー・急性肝炎・胆汁うっ滞・肝不全症例・生品摂取・長期高用量で重篤化リスク（Lei X et al.）
 
-### 何首烏（ホーショーウー）（He Shou Wu） — エビデンスランク C
-URL: https://scibase.app/ingredients/ho-shou-wu
-TCM 白髪・若返りハーブ・WHO/Health Canada 肝毒性警告・特に重要な注意
-代表論文: 観察研究 · Phytotherapy Research 2018 · n=200 — Lin L et al. SR 200+ 肝毒性症例統合・急性肝障害・肝不全・肝移植症例報告・生何首烏で頻度高・処方何首烏でも報告ありで安全性懸念明示
-
 ### 低用量ナルトレキソン（LDN）（Low-Dose Naltrexone (LDN)） — エビデンスランク C
 URL: https://scibase.app/ingredients/low-dose-naltrexone
 オピオイド拮抗薬・低用量オフラベル・自己免疫補助候補・FDA 未承認用途・重要な注意
@@ -2899,7 +2864,7 @@ URL: https://scibase.app/ingredients/low-dose-naltrexone
 - elderberry-extract vs vitamin-c-oral: https://scibase.app/compare/elderberry-extract-vs-vitamin-c-oral
 - glucomannan vs psyllium: https://scibase.app/compare/glucomannan-vs-psyllium
 - lions-mane vs reishi: https://scibase.app/compare/lions-mane-vs-reishi
-- palmitoylethanolamide-pea vs curcumin: https://scibase.app/compare/palmitoylethanolamide-pea-vs-curcumin
+- pea-palmitoylethanolamide vs curcumin: https://scibase.app/compare/pea-palmitoylethanolamide-vs-curcumin
 - collagen-uc-ii vs collagen-peptide: https://scibase.app/compare/collagen-uc-ii-vs-collagen-peptide
 - collagen-uc-ii vs glucosamine-sulfate-2kcl: https://scibase.app/compare/collagen-uc-ii-vs-glucosamine-sulfate-2kcl
 - gymnema vs berberine: https://scibase.app/compare/gymnema-vs-berberine
