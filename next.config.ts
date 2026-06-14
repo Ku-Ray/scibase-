@@ -61,6 +61,11 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/nac',
         permanent: true,
       },
+      {
+        source: '/ingredients/ho-shou-wu',
+        destination: '/ingredients/he-shou-wu',
+        permanent: true,
+      },
     ]
   },
 }
