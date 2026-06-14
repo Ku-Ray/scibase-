@@ -76,6 +76,17 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/ip-6',
         permanent: true,
       },
+      {
+        source: '/ingredients/palmitoylethanolamide-pea',
+        destination: '/ingredients/pea-palmitoylethanolamide',
+        permanent: true,
+      },
+      // 上記統合に伴う比較ページの slug 変更（成分 slug 正規化）
+      {
+        source: '/compare/palmitoylethanolamide-pea-vs-curcumin',
+        destination: '/compare/pea-palmitoylethanolamide-vs-curcumin',
+        permanent: true,
+      },
     ]
   },
 }

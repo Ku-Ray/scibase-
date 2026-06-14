@@ -397,7 +397,7 @@ export const POPULAR_PAIRS: [string, string][] = [
   ['elderberry-extract',        'vitamin-c-oral'],
   ['glucomannan',               'psyllium'],
   ['lions-mane',                'reishi'],
-  ['palmitoylethanolamide-pea', 'curcumin'],
+  ['pea-palmitoylethanolamide', 'curcumin'],
 
   // ── C2-ε Phase 2: collagen-uc-ii ペア 2 件（2026-05-23・C2-δ ブロック解消） ────────────
   ['collagen-uc-ii',       'collagen-peptide'],
@@ -594,7 +594,7 @@ export const DISABLE_QUICK_CTA_PAIRS: Set<string> = new Set([
   'elderberry-extract-vs-vitamin-c-oral',      // 補完（急性期 vs 予防継続）
   'glucomannan-vs-psyllium',                   // 別カテゴリ（吸水ゲル vs 大腸蠕動）
   'lions-mane-vs-reishi',                      // 別カテゴリ（NGF 認知 vs β-glucan 免疫）
-  'palmitoylethanolamide-pea-vs-curcumin',     // 補完（神経痛 vs 関節炎・異経路）
+  'pea-palmitoylethanolamide-vs-curcumin',     // 補完（神経痛 vs 関節炎・異経路）
 
   // C2-ζ
   'silica-vs-collagen-peptide',                // 補完（コラーゲン架橋補助 vs 本体）
@@ -1068,7 +1068,7 @@ export const PAIR_CATEGORIES: Record<string, string> = {
   'elderberry-extract-vs-vitamin-c-oral':           'supplement',
   'glucomannan-vs-psyllium':                        'gut',
   'lions-mane-vs-reishi':                           'cognitive',
-  'palmitoylethanolamide-pea-vs-curcumin':          'joint',
+  'pea-palmitoylethanolamide-vs-curcumin':          'joint',
 
   // ── C2-ε Phase 2: collagen-uc-ii ペア 2 件（2026-05-23） ────────────
   'collagen-uc-ii-vs-collagen-peptide':             'joint',
@@ -2195,7 +2195,7 @@ export const PAIR_SEO: Record<string, { title: string; description: string }> = 
     title: 'ライオンズメイン vs 霊芝｜機能性きのこの認知 vs 免疫・併用OK？論文で比較',
     description: 'ライオンズメイン（ヤマブシタケ Hericium erinaceus 500〜3,000mg/日・¥3,500-5,500/月）と霊芝（レイシ Ganoderma lucidum 1〜3g/日・¥2,500-4,000/月）の違いを論文で比較。両者とも機能性きのこサプリだが、作用機序・主目的・エビデンス階層が完全に異なる補完関係。\n\nライオンズメインは神経成長因子（NGF）産生促進に関与する薬用キノコで、Mori 2009 Phytother Res RCT n=30 16週でヤマブシタケ粉末 1g×3回/日が軽度認知機能低下（MCI）高齢者の MMSE 認知機能スコアを有意改善（投与中止後8週で効果減弱）・Vigliante 2019 J Med Food RCT n=77 8週で過体重成人の不安・うつスコアの有意改善・集中力・注意力の自己評価向上を報告。霊芝は東洋医学で数千年使われてきた β-グルカン・トリテルペン・多糖体含有のアダプトゲン系キノコで、Jin 2016 Cochrane Database Syst Rev メタ解析で腫瘍関連免疫細胞（NK 細胞・T細胞）の有意増加・標準治療補助療法として研究継続、Zhao 2018 J Pain Symptom Manage RCT n=48 4週で霊芝抽出物が疲労スコア・活力指標の有意改善・睡眠の質スコア改善傾向を報告。\n\n「集中力・記憶力・MCI軽度認知障害・うつ気分・神経保護」ならライオンズメイン（500-1,000mg/日朝食時 8-16週継続）、「免疫・がん補助治療・睡眠の質・ストレス回復・アダプトゲン作用」なら霊芝（1-2g/日 4-8週で効果評価）が論文準拠の使い分け。両者は経路独立で併用OK・「朝ライオンズメイン（認知活性）+ 夜霊芝（睡眠・免疫）」の二段スタックが現実的。注意点：①両者とも抗凝固薬・抗血小板薬との併用は出血リスクで医師相談、②糖尿病治療薬との併用は低血糖相加に注意、③キノコアレルギーは少量から試す、④妊娠中・授乳中は安全性データ限定的、⑤霊芝は免疫抑制剤と相互作用報告あり医師相談必須。化粧品メーカー視点では慢性ストレス・認知機能低下→コルチゾール上昇→皮膚バリア低下のループ介入として両者の意義を明示、皮膚直接効果のRCTは限定的。',
   },
-  'palmitoylethanolamide-pea-vs-curcumin': {
+  'pea-palmitoylethanolamide-vs-curcumin': {
     title: 'PEA vs クルクミン｜抗炎症サプリの神経痛と関節炎の使い分けを論文で比較',
     description: 'パルミトイルエタノラミド PEA（内因性脂質メディエーター ultramicronized 600〜1,200mg/日・¥4,500-7,000/月）とクルクミン（ウコン由来ポリフェノール 500〜2,000mg/日・¥3,000-5,000/月）の違いを論文で比較。両者とも抗炎症サプリだが、起源・作用機序・主目的・エビデンス階層が完全に異なる補完関係。\n\nPEA はヒトの体内で天然に作られる脂肪酸アミドで PPARα 受容体を介した抗炎症・神経保護・FAAH 経路調節が中心軸、Paladini 2016 Pain Physician メタ解析 n=1,484（16試験統合）で 600-1,200mg/日が慢性疼痛 VAS スコアをプラセボ・対照群より有意低下・Schifilliti 2014 J Peripher Nerv Syst RCT n=30 60日で ultramicronized PEA 600mg/日が糖尿病性神経障害の VAS・神経機能スコア改善・Del Giorno 2015 Pain Res Treat 観察研究 n=80 で線維筋痛症の疼痛スコア・睡眠の質改善を報告。クルクミンはウコン（ターメリック）の主要活性ポリフェノールで NF-κB 経路を介した炎症性サイトカイン抑制が中心軸、Qin 2021 Crit Rev Food Sci Nutr メタ解析 n=1,657 12週で CRP・IL-6・TNF-α など主要炎症マーカーの有意低下（p<0.001・吸収強化製剤で効果大）・Daily 2016 J Med Food メタ解析で変形性関節症の疼痛・機能改善が報告。\n\n「神経痛・神経障害性疼痛・線維筋痛症・末梢神経サポート」なら PEA（ultramicronized 600mg/日 8週以上）、「変形性関節症・関節炎・慢性炎症マーカー・全身性炎症」ならクルクミン（500-1,000mg/日 ピペリン or リポソーム製剤）がメタ解析上の使い分け。両者は作用機序が独立（内因性脂質メディエーター vs 植物ポリフェノール）で併用OK・「PEA 神経経路 + クルクミン 全身炎症経路」の異経路相乗が理論上合理的。注意点：①PEA は ultramicronized 品質の確保が必須（粒度が効果に直結）、②クルクミンは吸収率が低く単体では効果薄・ピペリン併用 or リポソーム製剤が研究的目安、③両者とも抗凝固薬（ワルファリン等）服用中は医師相談（クルクミンは抗血小板作用）、④胆道疾患のあるクルクミン使用は禁忌、⑤妊娠・授乳中は安全性データ限定的で慎重判断。化粧品メーカー視点ではクルクミンの NF-κB 抑制が慢性 inflammaging→皮膚老化加速のループ介入として意義あり、外用クルクミンの皮膚抗炎症 RCT は限定的を明示。',
   },
@@ -6303,7 +6303,7 @@ export const PAIR_CUSTOM_FAQS: Record<string, { q: string; a: string }[]> = {
     },
   ],
 
-  'palmitoylethanolamide-pea-vs-curcumin': [
+  'pea-palmitoylethanolamide-vs-curcumin': [
     {
       q: 'PEA とクルクミンの違いは？',
       a: "起源・作用機序・主目的が完全に異なる補完関係です。\n\nPEA（パルミトイルエタノラミド ultramicronized 600〜1,200mg/日）はヒトの体内で天然に作られる脂肪酸アミドで PPARα 受容体を介した抗炎症・神経保護・FAAH 経路調節が中心軸。Paladini 2016 Pain Physician メタ解析 n=1,484（16 試験統合）で慢性疼痛 VAS スコアをプラセボ・対照群より有意低下、Schifilliti 2014 J Peripher Nerv Syst RCT n=30 60 日で ultramicronized PEA 600mg/日が糖尿病性神経障害の VAS・神経機能スコア改善、Del Giorno 2015 Pain Res Treat 観察研究 n=80 で線維筋痛症の疼痛スコア・睡眠の質改善を報告。\n\nクルクミン（ウコン由来ポリフェノール 500〜2,000mg/日）はターメリックの主要活性成分で NF-κB 経路を介した炎症性サイトカイン抑制が中心軸、Qin 2021 Crit Rev Food Sci Nutr メタ解析 n=1,657 12 週で CRP・IL-6・TNF-α など主要炎症マーカーの有意低下（p<0.001・吸収強化製剤で効果大）、Daily 2016 J Med Food メタ解析で変形性関節症の疼痛・機能改善を報告。「内因性脂質メディエーター・神経痛軸（PEA）」vs「植物ポリフェノール・関節炎軸（クルクミン）」の対比と覚えると整理しやすい。",

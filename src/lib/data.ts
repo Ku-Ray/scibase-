@@ -29957,7 +29957,7 @@ export const ingredients: Ingredient[] = [
     slug: 'pea-palmitoylethanolamide',
     nameJa: 'PEA（パルミトイルエタノールアミド）',
     nameEn: 'Palmitoylethanolamide (PEA)',
-    aliases: ['PEA', 'パルミトイルエタノールアミド', 'palmitoylethanolamide', 'PeaPure', 'Normast', 'Ultramicronized PEA', 'um-PEA', 'マイクロ化PEA'],
+    aliases: ['PEA', 'パルミトイルエタノールアミド', 'palmitoylethanolamide', 'PeaPure', 'Normast', 'Ultramicronized PEA', 'um-PEA', 'マイクロ化PEA', 'パルミドロール'],
     evidenceRank: 'B',
     usageType: 'oral',
     emerging: true,
@@ -29976,12 +29976,13 @@ export const ingredients: Ingredient[] = [
       {
         title: 'Palmitoylethanolamide in the treatment of chronic pain caused by different etiopathogenesis: a systematic review and meta-analysis',
         journal: 'Pain Physician',
-        year: 2017,
+        year: 2016,
         studyType: 'meta-analysis',
         sampleSize: 1484,
         durationWeeks: 12,
         keyFinding:
-          'PEA経口投与（600〜1,200mg/日）が慢性疼痛（坐骨神経痛・線維筋痛・糖尿病性神経障害・帯状疱疹後神経痛等）の疼痛スコア（VAS）を有意に低下させることをn=1,484の複数RCT統合で確認',
+          'Paladini らの16試験統合メタ解析。PEA経口投与（600〜1,200mg/日）が慢性疼痛（坐骨神経痛・線維筋痛・糖尿病性神経障害・帯状疱疹後神経痛等）の疼痛スコア（VAS）を有意に低下させることをn=1,484の複数RCT統合で確認',
+        pmid: '26815247',
       },
       {
         title: 'Ultramicronized palmitoylethanolamide in sciatic pain: a randomized controlled trial',
@@ -30001,26 +30002,42 @@ export const ingredients: Ingredient[] = [
         keyFinding:
           'PEAのPK・安全性・効果プロファイル包括レビュー。Ultramicronized形態（um-PEA）が結晶サイズ縮小により生体利用率を10倍以上向上させること、長期摂取（最大1年）でも重篤副作用がほぼないことを整理',
       },
+      {
+        title: 'Ultramicronized PEA in diabetic neuropathy',
+        journal: 'Journal of the Peripheral Nervous System',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 30,
+        keyFinding: 'ultramicronized PEA 600mg/日60日間で糖尿病性神経障害のVAS・神経機能スコアが改善',
+      },
+      {
+        title: 'PEA in fibromyalgia: open-label pilot study',
+        journal: 'Pain Research and Treatment',
+        year: 2015,
+        studyType: 'observational',
+        sampleSize: 80,
+        keyFinding: '線維筋痛症患者でPEA併用により疼痛スコア改善・睡眠の質改善（オープンラベル試験）',
+      },
     ],
     evidenceScore: {
-      overall: 7.4,
+      overall: 7.6,
       breakdown: {
-        paperCount: 0.9,
+        paperCount: 1.1,
         rctMeta: 2.5,
         recency: 2.0,
         humanTrial: 2.0,
       },
       confidence: 1.0,
       paperStats: {
-        total: 3,
-        rct: 1,
+        total: 5,
+        rct: 2,
         metaAnalysis: 1,
         cohort: 0,
-        observational: 1,
+        observational: 2,
         animal: 0,
-        recent15y: 3,
+        recent15y: 5,
       },
-      lastCalculatedAt: '2026-05-27',
+      lastCalculatedAt: '2026-06-14',
       formula: 'v2.2',
     },
     dosageMin: 600,
@@ -30030,7 +30047,23 @@ export const ingredients: Ingredient[] = [
     duration: '効果評価は3〜12週間が研究ベース。慢性疼痛では2週間目から痛みスコア改善が報告される',
     sideEffects: ['軽度の消化器症状（吐き気・腹部不快）はまれ', '長期高用量データは1年程度まで'],
     contraindications: ['妊娠中・授乳中（安全性データ不足）', '小児（データ不足）'],
-    products: [],
+    products: [
+      {
+        name: 'Ultramicronized PEA 400mg (60 caps)',
+        brand: 'Russell Science / Vitalitus等',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=palmitoylethanolamide',
+        priceJpy: 5400,
+        dosageMg: 400,
+        unitsPerDay: 2,
+        rank: 1,
+        reasonJa: 'ultramicronized品質を明示した400mg/粒製品で2粒800mg/日が組みやすい。微粒子化で吸収性に配慮',
+        highlight: 'ultramicronized品質',
+        monthlyCostJpy: 5400,
+        form: 'カプセル',
+        thirdPartyTested: false,
+      },
+    ],
     whoFor: [
       '坐骨神経痛・線維筋痛・糖尿病性神経障害等の慢性疼痛で薬剤副作用を避けたい',
       '神経炎症・慢性炎症が背景にある体調不良が続く',
@@ -30079,6 +30112,15 @@ export const ingredients: Ingredient[] = [
         q: '他の慢性疼痛・神経痛サプリ（クルクミン・ボスウェリア・オメガ3）との使い分けは？',
         a: '同じ抗炎症・疼痛軸でも作用機序が異なるため、目的別の使い分けが論文に基づく判断です。\n\n【PEA】PPAR-α・マスト細胞・神経炎症経路。神経痛・線維筋痛・坐骨神経痛で最強のエビデンス。\n\n【クルクミン（ターメリック）】NF-κB・COX-2阻害。関節炎・全身性炎症で強いエビデンス。\n\n【ボスウェリア】5-LOX阻害。膝OA・関節炎で標的型エビデンス。\n\n【オメガ3（EPA/DHA）】SPM（specialized pro-resolving mediators）経由の解消型抗炎症。心血管・うつ・関節炎で広範なエビデンス。\n\n【まとめ】神経痛・しびれ・線維筋痛→PEA / 関節炎・全身炎症→クルクミン / 膝OA→ボスウェリア / 心血管・うつ→オメガ3。複数併用は理論的に補完的（機序が重ならない）で、PEA+オメガ3、PEA+クルクミンの併用例も研究されています。',
       },
+      {
+        q: 'PEAはどんな痛みに使われていますか？医薬品との違いは？',
+        a:
+          'PEAは慢性疼痛・神経障害性疼痛・線維筋痛症の補助層として研究蓄積があり、医薬品ではなく食品成分（米国DSHEA下のサプリ・欧州一部で機能性食品）扱いです。' +
+          '\n\n' +
+          'メタ解析（Paladini 2016・16試験 n=1,484）で慢性疼痛VASスコアの有意低下が示されており、糖尿病性神経障害・坐骨神経痛・線維筋痛症など機能性疼痛の補助エビデンスが蓄積されています。医薬品の鎮痛薬と異なり依存性・呼吸抑制リスクはほぼ報告されていません。' +
+          '\n\n' +
+          'ただし、医薬品グレードのオピオイドやプレガバリン等を置き換える成分ではなく、主治医治療を主軸にした補助層として位置づけ、自己判断で処方薬を減量・中止しないでください。',
+      },
     ],
     interactions: [
       {
@@ -30090,7 +30132,7 @@ export const ingredients: Ingredient[] = [
         source: 'Petrosino 2017 Br J Clin Pharmacol safety review',
       },
     ],
-    updatedAt: '2026-05-12',
+    updatedAt: '2026-06-14',
   },
   {
     slug: 'aged-garlic-extract',
@@ -69804,120 +69846,6 @@ export const ingredients: Ingredient[] = [
         mechanism: '理論上の吸収干渉が指摘されている',
         action: '甲状腺ホルモン製剤と4時間以上空けて服用',
         evidence: 'theoretical',
-      },
-    ],
-    updatedAt: '2026-05-21',
-  },
-  {
-    slug: 'palmitoylethanolamide-pea',
-    nameJa: 'パルミトイルエタノラミド（PEA）',
-    nameEn: 'Palmitoylethanolamide (PEA)',
-    aliases: ['PEA', 'パルミドロール', 'palmitoylethanolamide', 'ultramicronized PEA'],
-    evidenceRank: 'A',
-    usageType: 'oral',
-    seoTitle: 'PEA｜慢性疼痛・600mg・論文メタ解析',
-    seoDescription: 'PEA（パルミトイルエタノラミド）は内因性脂肪酸アミドで抗炎症・神経保護作用が研究されている。600-1200mg/日で慢性疼痛・神経障害性疼痛の症状スコア改善がメタ解析（Paladini 2016・16試験 n=1484）で報告。日本ではサプリ流通が限定的だが海外でPEA研究が蓄積。｜SciBase',
-    tagline: '内因性脂肪酸アミド・慢性疼痛のメタ解析あり・日本流通は限定的',
-    description:
-      'PEA（パルミトイルエタノラミド）はPPAR-α作動の内因性脂肪酸アミドで、慢性疼痛VASをプラセボ・対照群より有意低下させた16試験統合メタ解析がある（Pain Physician 2016・600-1,200mg/日・n=1,484）。' +
-      '\n\n' +
-      '600-1200mg/日（ultramicronized PEA）で慢性疼痛・神経障害性疼痛の症状スコア改善がPaladini 2016のメタ解析（16試験・n=1484）で報告された。研究準拠の使い方は600mg/日（朝晩300mgずつ）を食後に継続。8週以上で評価。' +
-      '\n\n' +
-      '通常用量で重篤な副作用報告はないが、ultramicronized品質の確保と日本市場での入手性が課題。妊娠・授乳中は安全性データが限定的。',
-    concerns: ['inflammation'],
-    papers: [
-      {
-        title: 'Palmitoylethanolamide in the treatment of chronic pain: meta-analysis',
-        journal: 'Pain Physician',
-        year: 2016,
-        studyType: 'meta-analysis',
-        sampleSize: 1484,
-        keyFinding: '16試験のメタ解析でPEA 600-1200mg/日が慢性疼痛VASスコアをプラセボ・対照群より有意に低下',
-        pmid: '26815247',
-      },
-      {
-        title: 'Ultramicronized PEA in diabetic neuropathy',
-        journal: 'Journal of the Peripheral Nervous System',
-        year: 2013,
-        studyType: 'rct',
-        sampleSize: 30,
-        keyFinding: 'ultramicronized PEA 600mg/日60日間で糖尿病性神経障害のVAS・神経機能スコア改善',
-      },
-      {
-        title: 'PEA in fibromyalgia: open-label pilot study',
-        journal: 'Pain Research and Treatment',
-        year: 2015,
-        studyType: 'observational',
-        sampleSize: 80,
-        keyFinding: '線維筋痛症患者でPEA併用により疼痛スコア改善・睡眠の質改善',
-      },
-    ],
-    evidenceScore: {
-      overall: 7.4,
-      breakdown: {
-        paperCount: 0.9,
-        rctMeta: 2.5,
-        recency: 2.0,
-        humanTrial: 2.0,
-      },
-      confidence: 1.0,
-      paperStats: {
-        total: 3,
-        rct: 1,
-        metaAnalysis: 1,
-        cohort: 0,
-        observational: 1,
-        animal: 0,
-        recent15y: 3,
-      },
-      lastCalculatedAt: '2026-05-27',
-      formula: 'v2.2',
-    },
-    dosageMin: 600,
-    dosageMax: 1200,
-    dosageUnit: 'mg/日',
-    timing: '食後（朝晩分割）',
-    duration: '8週以上',
-    sideEffects: ['まれに胃部不快感'],
-    contraindications: ['妊娠・授乳中（安全性データ限定）'],
-    products: [
-      {
-        name: 'Ultramicronized PEA 400mg (60 caps)',
-        brand: 'Russell Science / Vitalitus等',
-        platform: 'iherb',
-        url: 'https://www.iherb.com/search?kw=palmitoylethanolamide',
-        priceJpy: 5400,
-        dosageMg: 400,
-        unitsPerDay: 2,
-        rank: 1,
-        reasonJa: 'ultramicronized品質を明示した400mg/粒製品で2粒800mg/日が組みやすい。微粒子化で吸収性に配慮',
-        highlight: 'ultramicronized品質',
-        monthlyCostJpy: 5400,
-        form: 'カプセル',
-        thirdPartyTested: false,
-      },
-    ],
-    whoFor: [
-      '慢性疼痛・神経障害性疼痛で薬物療法以外の補助を探している人',
-      '線維筋痛症など機能性疼痛の補助を考えている人',
-      '海外流通品の入手と医師との連携が可能な人',
-    ],
-    heroStat: { value: '600mg', label: '論文標準用量' },
-    axisScores: { antiAging: 3, skin: 2, cognitive: 3, stress: 3, sleep: 4, immunity: 5, metabolism: 2 },
-    customFaqs: [
-      {
-        q: 'PEAはどんな痛みに使われていますか？医薬品との違いは？',
-        a:
-          'PEAは慢性疼痛・神経障害性疼痛・線維筋痛症の補助層として研究蓄積があり、医薬品ではなく食品成分（米国DSHEA下のサプリ・欧州一部で機能性食品）扱いです。' +
-          '\n\n' +
-          'メタ解析（Paladini 2016・16試験 n=1484）で慢性疼痛VASスコアの有意低下が示されており、糖尿病性神経障害・坐骨神経痛・線維筋痛症など機能性疼痛の補助エビデンスが蓄積されています。医薬品の鎮痛薬と異なり依存性・呼吸抑制リスクはほぼ報告されていません。' +
-          '\n\n' +
-          'ただし、医薬品グレードのオピオイドやプレガバリン等を置き換える成分ではなく、主治医治療を主軸にした補助層として位置づけ、自己判断で処方薬を減量・中止しないでください。',
-      },
-      {
-        q: 'ultramicronized PEAと通常のPEAは違いますか？',
-        a:
-          'ultramicronized（極微粒子化）品質は通常PEAより吸収効率が高いことが製剤研究で示されており、主要RCTもこの品質で行われています。',
       },
     ],
     updatedAt: '2026-05-21',
