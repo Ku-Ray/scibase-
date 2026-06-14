@@ -108,6 +108,11 @@ const nextConfig: NextConfig = {
         destination: '/compare/niacin-vs-red-yeast-rice',
         permanent: true,
       },
+      {
+        source: '/ingredients/pregnenolone-supplement',
+        destination: '/ingredients/pregnenolone',
+        permanent: true,
+      },
     ]
   },
 }
