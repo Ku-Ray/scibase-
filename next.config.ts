@@ -56,6 +56,11 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/myo-inositol',
         permanent: true,
       },
+      {
+        source: '/ingredients/n-acetylcysteine',
+        destination: '/ingredients/nac',
+        permanent: true,
+      },
     ]
   },
 }
