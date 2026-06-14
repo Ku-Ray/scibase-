@@ -66,6 +66,11 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/he-shou-wu',
         permanent: true,
       },
+      {
+        source: '/ingredients/calcium-d-saccharate',
+        destination: '/ingredients/calcium-d-glucarate',
+        permanent: true,
+      },
     ]
   },
 }
