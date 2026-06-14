@@ -93,6 +93,11 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/astaxanthin',
         permanent: true,
       },
+      {
+        source: '/ingredients/nad-direct',
+        destination: '/ingredients/nad-plus',
+        permanent: true,
+      },
     ]
   },
 }

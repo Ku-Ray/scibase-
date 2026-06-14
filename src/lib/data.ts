@@ -28820,166 +28820,6 @@ export const ingredients: Ingredient[] = [
     updatedAt: '2026-05-11',
   },
   {
-    slug: 'nad-direct',
-    nameJa: 'NAD+（直接補充・経口/点滴）',
-    nameEn: 'NAD+ (Direct Supplementation)',
-    aliases: ['NAD', 'NAD+', 'ニコチンアミドアデニンジヌクレオチド', '直接補充', '点滴', 'IV NAD', '経口NAD', 'NAD-direct'],
-    evidenceRank: 'C',
-    usageType: 'oral',
-    emerging: true,
-    seoTitle: 'NAD+直接補充｜経口の生体利用率と点滴の医療領域・NMN/NRとの違い',
-    seoDescription: 'NAD+を直接補充する経口サプリ・点滴の研究的整理。経口NAD+は腸でNAM/NMN/NRに分解吸収され生体利用率が低い・点滴NAD+は自由診療領域・NMN/NRと経路差分のヒトRCTは未確立。Trammell 2016・Brakedal 2022 を基に「先行投資型」位置づけを徹底解説。',
-    tagline: '経口NAD+の生体利用率は限定的・点滴は医療領域・NMN/NRと経路差分のヒトRCTは未確立な先行投資型',
-    description:
-      'NAD+直接補給は老化に伴うNAD+低下を補う候補で、経口投与のヒトPK研究では前駆体（NR/NMN）経由で組織NAD+に変換されることが示された（Trammell 2016・直接NAD+のRCTは未確立）。' +
-      '\n\n' +
-      '経口NAD+は腸管でNAM/NMN/NRなどの前駆体に分解されて吸収されるため、血中NAD+として直接到達する量は限定的。点滴NAD+は自由診療領域で500〜1,000mg/回が用いられるが、二重盲検RCTは極めて少ない。' +
-      '\n\n' +
-      'NMN/NRは組織NAD+上昇が確認され研究蓄積はそちらが厚く、経口NAD+が別経路で優れる根拠はヒト試験で未確立。費用対効果を理解した上で選択する。',
-    concerns: ['longevity', 'fatigue', 'cognitive', 'recovery'],
-    papers: [
-      {
-        title: 'Nicotinamide riboside is uniquely and orally bioavailable in mice and humans',
-        journal: 'Nature Communications',
-        year: 2016,
-        studyType: 'rct',
-        sampleSize: 12,
-        keyFinding: 'ヒト経口投与でNR・NA・NAM・NMN・NAD+を投与時の血中・組織NAD+上昇パターンを比較・経口NAD+も最終的には前駆体経由のNAD+補充に集約することが示された（Trammell SAJ et al.・前駆体比較ヒトPK研究）',
-      },
-      {
-        title: 'The NAD-Booster Nicotinamide Riboside Potently Stimulates Mitochondrial Function in Parkinson Disease',
-        journal: 'Cell Metabolism',
-        year: 2022,
-        studyType: 'rct',
-        sampleSize: 30,
-        durationWeeks: 4,
-        keyFinding: 'パーキンソン病患者にNR 1,000mg/日×30日経口投与で脳内NAD+上昇・運動症状の限定的改善を観察（Brakedal B et al.・NAD+経路への経口介入が脳組織NAD+を上昇させることをヒトで確認・ただし「点滴NAD+」のRCTではない点に注意）',
-      },
-      {
-        title: 'Effect of long-term nicotinamide mononucleotide supplementation on aging biomarkers in middle-aged adults: a randomized controlled trial',
-        journal: 'Signal Transduction and Targeted Therapy',
-        year: 2024,
-        studyType: 'rct',
-        sampleSize: 80,
-        durationWeeks: 12,
-        keyFinding: '中高年へのNMN経口投与で血中NAD+上昇・動脈硬度指標の改善傾向（Liao B et al.・前駆体経由のNAD+補充がヒトで生体利用可能な経路として確立）',
-      },
-    ],
-    evidenceScore: {
-      overall: 7.9,
-      breakdown: {
-        paperCount: 0.9,
-        rctMeta: 3.0,
-        recency: 2.0,
-        humanTrial: 2.0,
-      },
-      confidence: 1.0,
-      paperStats: {
-        total: 3,
-        rct: 3,
-        metaAnalysis: 0,
-        cohort: 0,
-        observational: 0,
-        animal: 0,
-        recent15y: 3,
-      },
-      lastCalculatedAt: '2026-05-27',
-      formula: 'v2.2',
-    },
-    dosageMin: 100,
-    dosageMax: 500,
-    dosageUnit: 'mg/日 経口（点滴は医療領域）',
-    timing: '朝食時・経口の生体利用率限定を理解した上で',
-    duration: '12〜24週評価（ヒトRCT未確立・先行投資型）',
-    sideEffects: [
-      '頭痛・倦怠感（点滴時に多い）',
-      '吐き気・GI不快感',
-      'フラッシング（経口高用量時・NAM変換経由）',
-      '血圧変動（点滴時の投与速度依存）',
-    ],
-    contraindications: [
-      '妊娠中・授乳中（データ不足）',
-      '小児（データなし）',
-      'がん治療中（NAD+とがん代謝の関係は研究進行中・主治医相談前提）',
-      '点滴は医療管理下でのみ（自己投与不可）',
-    ],
-    products: [],
-    whoFor: [
-      'NMN/NRの経路を理解した上で「直接NAD+」を試したい先行投資型',
-      '点滴NAD+を医療管理下で受ける選択肢を研究の観点で判断したい',
-      'NAD+補充戦略を「前駆体+消費抑制（CD38阻害）」で包括的に考えたい',
-    ],
-    heroStat: {
-      value: '経口生体利用率 低',
-      label: '経口NAD+は腸でNAM/NMN/NRに分解吸収・血中NAD+として直接到達する量は限定的（Trammell 2016 Nat Commun）',
-    },
-    axisScores: { antiAging: 4, skin: 3, cognitive: 3, stress: 2, sleep: 2, immunity: 3, metabolism: 4 },
-    dosageLevels: [
-      {
-        dose: '経口NAD+ 100〜250mg/日',
-        category: '入門・経口先行投資',
-        effect: '腸管で前駆体に分解後吸収・NMN/NRと類似のNAD+補充に留まる可能性',
-        whoFor: '経口NAD+を試したい・NMN/NRとの比較を体感したい',
-        evidenceNote: '経路差分のヒトRCT未確立・NMN/NRと費用対効果比較推奨',
-      },
-      {
-        dose: '経口NAD+ 250〜500mg/日',
-        category: '高用量・経験則',
-        effect: '高用量経口でも生体利用率の壁は変わらず・NAM変換でフラッシング副作用増',
-        whoFor: '先行投資型として上限を試したい',
-        evidenceNote: 'ヒト用量確立データなし・コスト効率はNMN/NRの方が高い',
-      },
-      {
-        dose: '点滴NAD+ 500〜1,000mg/回（医療領域）',
-        category: '自由診療・医療管理下',
-        effect: 'パーキンソン病等の研究進行中・「アンチエイジング点滴」訴求はRCT未確立',
-        whoFor: '医療管理下で受ける選択肢として理解する',
-        evidenceNote: 'ヒトRCT極めて限定的・誇大訴求の懸念あり主治医判断必須',
-      },
-    ],
-    customFaqs: [
-      {
-        q: '経口NAD+はNMN・NRと何が違いますか？',
-        a: '経口で飲んだ場合の最終的なNAD+補充効果は近い可能性が高いです。経口NAD+は腸管腔・腸壁酵素（CD38・CD73・グリコヒドロラーゼ）でNAM・NMN・アデノシン等の前駆体に分解されてから吸収されるため、「NAD+として直接吸収される」というよりは「前駆体経由のNAD+補充」になります。Trammell 2016 Nat Commun のヒト前駆体比較研究では、NR・NA・NAM・NMN・NAD+のいずれを経口投与してもNAD+上昇パターンは類似していました。「直接NAD+で別経路」と謳う商品はヒトRCT根拠が弱い可能性が高く、費用対効果ではNMN・NRの方がデータ蓄積が厚いので、まずはNMN・NRから検討するのが研究の観点では合理的です。',
-      },
-      {
-        q: 'NAD+点滴は受けるべきですか？',
-        a: 'ヒト二重盲検プラセボ対照RCTが極めて限定的なため、推奨できる確立データはありません。米国・タイ等の自由診療クリニックで500〜1,000mg/回×複数回投与プロトコルが「アンチエイジング・依存症治療・慢性疲労」訴求で行われますが、これらの効能を実証したRCTは不足しています。Brakedal 2022 Cell Metabはパーキンソン病へのNR経口投与で脳NAD+上昇を確認しましたが、これは「点滴」「アンチエイジング訴求」の確立データではありません。受ける場合は主治医・自由診療医と研究の観点でリスクベネフィット議論を行い、誇大訴求広告に流されない判断が必要です。費用も1回数万円〜10万円と高額で、論文に基づく確立効果に対して費用対効果は現時点で不明確です。',
-      },
-      {
-        q: 'がん治療中ですが飲んでも大丈夫ですか？',
-        a: 'がん治療中の使用は主治医相談が絶対前提です。NAD+とがん代謝の関係は研究進行中で、一部のがん細胞はNAD+依存度が高く（特にPARP阻害薬とのシナジー研究）、NAD+補充ががん細胞増殖を促進する理論的懸念が指摘されています（Chiarugi 2012 Nat Rev Cancer等）。一方でNAD+補充が抗腫瘍免疫を高める方向の研究もあり、現時点では「がんへの影響は方向不確定」が誠実な評価です。自己判断でのNAD+サプリ・NAD+点滴は避け、腫瘍内科医・薬剤師との情報共有が必須です。',
-      },
-      {
-        q: '副作用は何がありますか？',
-        a: '経口NAD+の主な副作用は、高用量時の頭痛・倦怠感・GI不快感（吐き気・下痢）・NAM変換経由のフラッシング（顔のほてり・かゆみ）です。点滴NAD+ではこれらに加えて投与速度依存の血圧変動・胸部不快感・呼吸変化が報告され、点滴速度のコントロールが重要です。長期高用量摂取（500mg/日超）の安全性データは限定的で、肝機能・腎機能への影響を含むヒト長期RCTが不足しています。気になる症状があれば中止し、医療機関で確認するのが原則です。',
-      },
-      {
-        q: 'NAD+前駆体（NMN・NR）と組み合わせて飲んでもいいですか？',
-        a: '理論的にはNAD+補充経路を同時並行で押し上げる発想ですが、ヒト併用RCTは確立していません。両方を高用量摂取してもNAD+補充効果は単独摂取と比較して頭打ちになる可能性があり（律速段階がNAD+合成酵素にある）、費用対効果は単独摂取に劣る可能性があります。NAD+補充戦略として最も論文蓄積が厚いのはNR・NMN単独で、これらを既に検討している場合はNAD+を「追加」する根拠は薄いです。むしろNAD+消費を抑える側（CD38阻害物質：アピゲニン・ケルセチン）・サーチュイン活性化（レスベラトロール・運動・カロリー制限）の組み合わせの方が、現時点では論文との一致度が高いアプローチです。',
-      },
-    ],
-    interactions: [
-      {
-        substance: '抗がん薬・PARP阻害薬',
-        level: 'caution',
-        mechanism: 'NAD+とがん細胞代謝の相互作用・がん細胞のNAD+依存度との関連が研究進行中',
-        action: 'がん治療中は主治医相談前提・自己判断での併用は避ける',
-        evidence: 'theoretical',
-        source: 'Chiarugi 2012 Nat Rev Cancer',
-      },
-      {
-        substance: 'メトホルミン（NAD+/NADH比への影響）',
-        level: 'monitor',
-        mechanism: '理論的にはNAD+/NADH比に対する補完的作用が議論されている',
-        action: '糖尿病治療中は血糖モニタリング前提で導入',
-        evidence: 'theoretical',
-        source: 'Pirinen 2020 Cell Metab review',
-      },
-    ],
-    updatedAt: '2026-05-12',
-  },
-  {
     slug: 'fucoidan',
     nameJa: 'フコイダン（褐藻硫酸化多糖）',
     nameEn: 'Fucoidan',
@@ -43813,9 +43653,11 @@ export const ingredients: Ingredient[] = [
     slug: 'nad-plus',
     nameJa: 'NAD+（直接補給）',
     nameEn: 'NAD+ (Nicotinamide Adenine Dinucleotide)',
-    aliases: ['NAD+', 'NAD', 'ニコチンアミドアデニンジヌクレオチド', 'NAD直接', 'NAD補給', 'NAD点滴'],
+    aliases: ['NAD+', 'NAD', 'ニコチンアミドアデニンジヌクレオチド', 'NAD直接', 'NAD補給', 'NAD点滴', '直接補充', 'IV NAD', '経口NAD'],
     evidenceRank: 'C',
     usageType: 'oral',
+    seoTitle: 'NAD+直接補充｜経口の生体利用率と点滴の医療領域・NMN/NRとの違い',
+    seoDescription: 'NAD+を直接補充する経口サプリ・点滴の研究的整理。経口NAD+は腸でNAM/NMN/NRに分解吸収され生体利用率が低い・点滴NAD+は自由診療領域・NMN/NRと経路差分のヒトRCTは未確立。Trammell 2016・Brakedal 2022 を基に「先行投資型」位置づけを徹底解説。',
     tagline: 'NAD+ 直接補給・経口吸収議論・点滴は医療領域・要注意・NMN/NR との差別化',
     description:
       'NAD+直接補給は加齢で30〜50%低下するNAD+補酵素を補う老化制御候補で、健常成人8名で経口250〜1000mg単回投与時の血中NAD+軽度上昇を示したパイロット試験がある（Grant 2019・査読前段階）。' +
@@ -43823,7 +43665,7 @@ export const ingredients: Ingredient[] = [
       '経口NAD+の血中上昇エビデンスは小規模・予備的で、前駆体（NMN/NR/ナイアシン）経由のほうが研究蓄積は多い。米国のNAD+点滴（500〜1,500mg/回）は医療行為で、日本では自己投与厳禁・保険適応外。' +
       '\n\n' +
       '大規模RCTは未確立で「若返る」訴求は薬機法上できない。健常人の予防的服用は抗老化専門医の相談下で行う。',
-    concerns: ['longevity', 'cognitive'],
+    concerns: ['longevity', 'fatigue', 'cognitive', 'recovery'],
     papers: [
       {
         title: 'NAD+ in aging, metabolism, and neurodegeneration',
@@ -43847,26 +43689,52 @@ export const ingredients: Ingredient[] = [
         sampleSize: 8,
         keyFinding: 'Grant R et al. 健常成人 n=8 に経口 NAD+ 250-1,000mg 単回投与で血中NAD+ 軽度上昇示唆・査読前プレプリント・規模小',
       },
+      {
+        title: 'Nicotinamide riboside is uniquely and orally bioavailable in mice and humans',
+        journal: 'Nature Communications',
+        year: 2016,
+        studyType: 'rct',
+        sampleSize: 12,
+        keyFinding: 'ヒト経口投与でNR・NA・NAM・NMN・NAD+の血中・組織NAD+上昇パターンを比較・経口NAD+も最終的には前駆体経由のNAD+補充に集約することを示した（Trammell SAJ et al.・前駆体比較ヒトPK研究）',
+      },
+      {
+        title: 'The NAD-Booster Nicotinamide Riboside Potently Stimulates Mitochondrial Function in Parkinson Disease',
+        journal: 'Cell Metabolism',
+        year: 2022,
+        studyType: 'rct',
+        sampleSize: 30,
+        durationWeeks: 4,
+        keyFinding: 'パーキンソン病患者にNR 1,000mg/日×30日経口投与で脳内NAD+上昇・運動症状の限定的改善（Brakedal B et al.・経口介入が脳組織NAD+を上昇させることをヒトで確認・点滴NAD+のRCTではない点に注意）',
+      },
+      {
+        title: 'Effect of long-term NMN supplementation on aging biomarkers in middle-aged adults: a randomized controlled trial',
+        journal: 'Signal Transduction and Targeted Therapy',
+        year: 2024,
+        studyType: 'rct',
+        sampleSize: 80,
+        durationWeeks: 12,
+        keyFinding: '中高年へのNMN経口投与で血中NAD+上昇・動脈硬度指標の改善傾向（Liao B et al.・前駆体経由のNAD+補充がヒトで生体利用可能な経路として確立）',
+      },
     ],
     evidenceScore: {
-      overall: 5.2,
+      overall: 7.0,
       breakdown: {
-        paperCount: 0.9,
-        rctMeta: 1.0,
+        paperCount: 1.1,
+        rctMeta: 2.8,
         recency: 2.0,
-        humanTrial: 1.3,
+        humanTrial: 1.1,
       },
       confidence: 1.0,
       paperStats: {
-        total: 3,
-        rct: 1,
+        total: 6,
+        rct: 4,
         metaAnalysis: 0,
         cohort: 0,
         observational: 1,
         animal: 1,
-        recent15y: 3,
+        recent15y: 6,
       },
-      lastCalculatedAt: '2026-05-27',
+      lastCalculatedAt: '2026-06-14',
       formula: 'v2.2',
     },
     dosageMin: 100,
@@ -43874,6 +43742,29 @@ export const ingredients: Ingredient[] = [
     dosageUnit: 'mg/日（経口・吸収議論あり）',
     timing: '朝起床後または食前空腹時（理論的）',
     duration: '効果評価まで12-24週・血中NAD+ 測定で確認',
+    dosageLevels: [
+      {
+        dose: '経口NAD+ 100〜250mg/日',
+        category: '入門・経口先行投資',
+        effect: '腸管で前駆体に分解後吸収・NMN/NRと類似のNAD+補充に留まる可能性',
+        whoFor: '経口NAD+を試したい・NMN/NRとの比較を体感したい',
+        evidenceNote: '経路差分のヒトRCT未確立・NMN/NRと費用対効果比較推奨',
+      },
+      {
+        dose: '経口NAD+ 250〜500mg/日',
+        category: '高用量・経験則',
+        effect: '高用量経口でも生体利用率の壁は変わらず・NAM変換でフラッシング副作用増',
+        whoFor: '先行投資型として上限を試したい',
+        evidenceNote: 'ヒト用量確立データなし・コスト効率はNMN/NRの方が高い',
+      },
+      {
+        dose: '点滴NAD+ 500〜1,000mg/回（医療領域）',
+        category: '自由診療・医療管理下',
+        effect: 'パーキンソン病等の研究進行中・「アンチエイジング点滴」訴求はRCT未確立',
+        whoFor: '医療管理下で受ける選択肢として理解する',
+        evidenceNote: 'ヒトRCT極めて限定的・誇大訴求の懸念あり主治医判断必須',
+      },
+    ],
     sideEffects: [
       '軽度ほてり',
       '頭痛',
@@ -43917,6 +43808,14 @@ export const ingredients: Ingredient[] = [
         q: 'どれくらいで効果が出る？',
         a: '12-24週で血中NAD+ 測定確認・主観症状は限定的です。\n\n【血中NAD+】NMN/NR ベースの研究では4-12週で血中NAD+ 上昇・組織NAD+ は8-24週。\n\n【主観症状】「疲労改善」「若返り感」等の主観指標は個人差大・プラセボ効果も大きい・血中NAD+ 測定（米国 InsideTracker 等）で客観評価推奨。\n\n【まとめ】24週使用で血中NAD+ 上昇・主観改善なければ反応性低い・代替前駆体（NMN/NR）検討・運動・サーチュイン経路活性化（カロリー制限・断食）併用が研究的に支持。',
       },
+      {
+        q: 'がん治療中ですが飲んでも大丈夫ですか？',
+        a: 'がん治療中の使用は主治医相談が絶対前提です。NAD+とがん代謝の関係は研究進行中で、一部のがん細胞はNAD+依存度が高く（特にPARP阻害薬とのシナジー研究）、NAD+補充ががん細胞増殖を促進する理論的懸念が指摘されています（Chiarugi 2012 Nat Rev Cancer等）。一方でNAD+補充が抗腫瘍免疫を高める方向の研究もあり、現時点では「がんへの影響は方向不確定」が誠実な評価です。自己判断でのNAD+サプリ・NAD+点滴は避け、腫瘍内科医・薬剤師との情報共有が必須です。',
+      },
+      {
+        q: 'NAD+前駆体（NMN・NR）と組み合わせて飲んでもいいですか？',
+        a: '理論的にはNAD+補充経路を同時並行で押し上げる発想ですが、ヒト併用RCTは確立していません。両方を高用量摂取してもNAD+補充効果は単独摂取と比較して頭打ちになる可能性があり（律速段階がNAD+合成酵素にある）、費用対効果は単独摂取に劣る可能性があります。NAD+補充戦略として最も論文蓄積が厚いのはNR・NMN単独で、これらを既に検討している場合はNAD+を「追加」する根拠は薄いです。むしろNAD+消費を抑える側（CD38阻害物質：アピゲニン・ケルセチン）・サーチュイン活性化（レスベラトロール・運動・カロリー制限）の組み合わせの方が、現時点では論文との一致度が高いアプローチです。',
+      },
     ],
     interactions: [
       {
@@ -43944,7 +43843,7 @@ export const ingredients: Ingredient[] = [
         source: 'NIH ODS Niacin Fact Sheet',
       },
     ],
-    updatedAt: '2026-05-14',
+    updatedAt: '2026-06-14',
     publicDbReferences: [
       {
         source: 'nih-ods',
