@@ -15021,7 +15021,11 @@ export const ingredients: Ingredient[] = [
     slug: 'myo-inositol',
     nameJa: 'ミオイノシトール',
     nameEn: 'Myo-Inositol',
+    aliases: ['ミオ-イノシトール', 'myo-Ino', 'ビタミンB様物質'],
     evidenceRank: 'A',
+    usageType: 'oral',
+    seoTitle: 'ミオイノシトール｜2g・PCOS・不安・インスリン感受性・論文',
+    seoDescription: 'ミオイノシトール（myo-inositol）のPCOS・インスリン感受性・不安への効果を論文で整理。Unfer 2017メタ解析でPCOSの排卵率・月経周期改善、Mukai 2014 RCTでパニック障害の症状改善を確認。1日2〜4gを2分割で12週以上継続が研究プロトコル。｜SciBase',
     tagline: '女性のホルモンバランス・インスリン感受性への効果がメタ解析で確認されている',
     description:
       'ミオイノシトールは女性のホルモンバランス・インスリン感受性のイノシトール糖質成分で、PCOS女性で月経周期・排卵率・インスリン感受性・アンドロゲン値を有意改善したメタ解析がある（2-4g/日12週・n=640・2016）。' +
@@ -15051,26 +15055,68 @@ export const ingredients: Ingredient[] = [
         keyFinding:
           'ミオイノシトール投与により排卵率・卵の質が有意に改善。LH・テストステロン・インスリン値も低下',
       },
+      {
+        title: 'Myo-inositol effects in women with PCOS: a meta-analysis of randomized controlled trials',
+        journal: 'Endocrine Connections',
+        year: 2017,
+        studyType: 'meta-analysis',
+        sampleSize: 1000,
+        keyFinding: 'Unfer 2017メタ解析。ミオイノシトール4g/日 12〜24週でPCOSの排卵率・月経周期・HOMA-IR・テストステロンの有意改善（n=1000）',
+      },
+      {
+        title: 'Inositol treatment of obsessive-compulsive disorder',
+        journal: 'American Journal of Psychiatry',
+        year: 2014,
+        studyType: 'rct',
+        sampleSize: 13,
+        durationWeeks: 6,
+        keyFinding: 'ミオイノシトール18g/日 6週でOCD症状の有意改善（小規模パイロット）',
+      },
+      {
+        title: 'Inositol treatment of panic disorder',
+        journal: 'Journal of Clinical Psychopharmacology',
+        year: 1995,
+        studyType: 'rct',
+        sampleSize: 21,
+        durationWeeks: 4,
+        keyFinding: 'ミオイノシトール12g/日 4週でパニック発作頻度・症状重症度の有意低下',
+      },
+      {
+        title: 'Effect of myo-inositol on gestational diabetes prevention',
+        journal: 'Diabetes Care',
+        year: 2013,
+        studyType: 'rct',
+        sampleSize: 220,
+        durationWeeks: 24,
+        keyFinding: 'ミオイノシトール4g/日が妊娠糖尿病ハイリスク群で発症率を50%以上低下（n=220）',
+      },
+      {
+        title: 'Inositol Fact Sheet',
+        journal: 'NIH Office of Dietary Supplements',
+        year: 2022,
+        studyType: 'guideline',
+        keyFinding: 'ミオイノシトール2〜4g/日は健常成人で安全プロファイル良好、高用量（18g/日）は精神科領域の研究用量',
+      },
     ],
     evidenceScore: {
-      overall: 5.2,
+      overall: 7.1,
       breakdown: {
-        paperCount: 0.7,
-        rctMeta: 2.5,
-        recency: 0.7,
-        humanTrial: 1.3,
+        paperCount: 1.2,
+        rctMeta: 2.7,
+        recency: 1.6,
+        humanTrial: 1.6,
       },
-      confidence: 0.67,
+      confidence: 1.0,
       paperStats: {
-        total: 2,
-        rct: 1,
-        metaAnalysis: 1,
+        total: 7,
+        rct: 4,
+        metaAnalysis: 2,
         cohort: 0,
         observational: 0,
         animal: 0,
-        recent15y: 1,
+        recent15y: 5,
       },
-      lastCalculatedAt: '2026-05-27',
+      lastCalculatedAt: '2026-06-14',
       formula: 'v2.2',
     },
     dosageMin: 2000,
@@ -15191,8 +15237,29 @@ export const ingredients: Ingredient[] = [
           '\n\n' +
           'サプリだけで自己対処せず、PCOSと診断された場合は婦人科を受診し、「医療薬・サプリ・基礎栄養・体重コントロール・避妊計画」の5軸を主治医と整理する流れが現実的です。',
       },
+      {
+        q: 'PCOSにはミオイノシトール単独と40:1 myo+DCI、どちらが良いですか？',
+        a:
+          '研究蓄積はミオイノシトール単独の方が長い一方（Unfer 2017メタ解析）、2015年以降は40:1 myo:DCI比率（健常人の血漿比率に近い）が標準プロトコルとして確立しています。' +
+          '\n\n' +
+          '実用的には40:1の組み合わせ（myo 4g + DCI 100mg）が現代の第一選択、ミオイノシトール単独（4g/日）はコスト重視時の代替という位置づけです。両者で有効性に大差はなく、価格とエビデンスの好みで選び分けるのが現実的です。',
+      },
+      {
+        q: 'パニック障害の薬の代わりになりますか？',
+        a:
+          'なりません。Mukai 1995・2014 RCTで12〜18g/日の研究用量で効果が確認されていますが、これは標準治療（SSRI・ベンゾジアゼピン）と比較した研究ではありません。' +
+          '\n\n' +
+          '位置づけは「補助療法」として標準治療と併用するか、軽症で薬を始めたくない段階で試す程度です。中等度〜重度のパニック障害は精神科医の評価と処方が前提です。',
+      },
+      {
+        q: '妊娠中に飲んでも大丈夫ですか？',
+        a:
+          '妊娠糖尿病予防のRCT（Diabetes Care 2013・n=220）で妊娠糖尿病ハイリスク群の妊婦が4g/日 24週使用し、安全性が確認されています。むしろ妊娠糖尿病の発症率を50%以上低下させる予防効果も報告されています。' +
+          '\n\n' +
+          'PCOSの妊娠継続支援目的で産科医が処方する場合もあります。ただし自己判断ではなく、PCOS・妊娠糖尿病ハイリスクの診断下で医師相談が前提です。',
+      },
     ],
-    updatedAt: '2026-04-21',
+    updatedAt: '2026-06-14',
   },
   {
     slug: 'akkermansia',
@@ -68104,172 +68171,6 @@ export const ingredients: Ingredient[] = [
         a: '健常成人で40g/日までの長期安全性が確認されている。重篤な副作用報告は乏しく、軽度胃腸症状（軟便・腹部不快）が主。' +
           '\n\n' +
           '注意は腎機能低下・肝機能障害のある方（用量調整必要）、化学療法中（理論的注意）、てんかん治療中（理論的注意）、妊娠中・授乳中の高用量データ限定。健常人で「とりあえず多く飲む」より「目的に応じた期間限定の高用量」が現実的な使い方だ。',
-      },
-    ],
-    updatedAt: '2026-05-22',
-  },
-  {
-    slug: 'inositol-myo',
-    nameJa: 'ミオイノシトール（myo-inositol）',
-    nameEn: 'Myo-Inositol',
-    aliases: ['ミオ-イノシトール', 'myo-Ino', 'ビタミンB様物質'],
-    evidenceRank: 'A',
-    usageType: 'oral',
-    seoTitle: 'ミオイノシトール｜2g・PCOS・不安・インスリン感受性・論文',
-    seoDescription: 'ミオイノシトール（myo-inositol）のPCOS・インスリン感受性・不安への効果を論文で整理。Unfer 2017メタ解析でPCOSの排卵率・月経周期改善、Mukai 2014 RCTでパニック障害の症状改善を確認。1日2〜4gを2分割で12週以上継続が研究プロトコル。｜SciBase',
-    tagline: 'PCOS排卵改善・パニック障害でRCTエビデンス・1日2〜4gが研究用量',
-    description:
-      'ミオイノシトール（myo-inositol）はPCOS排卵改善・パニック障害でRCTエビデンスのイノシトール糖質成分で、PCOS患者の排卵率・月経周期・HOMA-IR・テストステロンを有意改善したメタ解析がある（4g/日12-24週・n=1000・2017）。' +
-      '\n\n' +
-      'Unfer 2017メタ解析でPCOSの排卵率・月経周期・卵巣機能改善（4g/日 12〜24週）、Mukai 2014 RCTでパニック障害・OCDの症状改善（12〜18g/日）を確認。インスリン感受性改善で2型糖尿病前期にも研究軸あり。' +
-      '\n\n' +
-      '一般的な安全性は高い。妊娠中はPCOS妊婦のRCTで安全性確認されているが医師相談下が前提。双極性障害では躁転リスクの理論的懸念。',
-    concerns: ['fertility', 'stress', 'inflammation'],
-    whoFor: [
-      'PCOS（多嚢胞性卵巣症候群）で月経周期・排卵を整えたい女性',
-      '不安・パニック発作の補助療法を探している成人',
-      'インスリン感受性改善を試したい糖尿病前期の方',
-    ],
-    papers: [
-      {
-        title: 'Myo-inositol effects in women with PCOS: a meta-analysis of randomized controlled trials',
-        journal: 'Endocrine Connections',
-        year: 2017,
-        studyType: 'meta-analysis',
-        sampleSize: 1000,
-        keyFinding: 'ミオイノシトール4g/日 12〜24週でPCOSの排卵率・月経周期・HOMA-IR・テストステロンの有意改善',
-      },
-      {
-        title: 'Inositol treatment of obsessive-compulsive disorder',
-        journal: 'American Journal of Psychiatry',
-        year: 2014,
-        studyType: 'rct',
-        sampleSize: 13,
-        durationWeeks: 6,
-        keyFinding: 'ミオイノシトール18g/日 6週でOCD症状の有意改善（小規模パイロット）',
-      },
-      {
-        title: 'Inositol treatment of panic disorder',
-        journal: 'Journal of Clinical Psychopharmacology',
-        year: 1995,
-        studyType: 'rct',
-        sampleSize: 21,
-        durationWeeks: 4,
-        keyFinding: 'ミオイノシトール12g/日 4週でパニック発作頻度・症状重症度の有意低下',
-      },
-      {
-        title: 'Effect of myo-inositol on gestational diabetes prevention',
-        journal: 'Diabetes Care',
-        year: 2013,
-        studyType: 'rct',
-        sampleSize: 220,
-        durationWeeks: 24,
-        keyFinding: 'ミオイノシトール4g/日が妊娠糖尿病ハイリスク群で発症率を50%以上低下',
-      },
-      {
-        title: 'Inositol Fact Sheet',
-        journal: 'NIH Office of Dietary Supplements',
-        year: 2022,
-        studyType: 'guideline',
-        keyFinding: 'ミオイノシトール2〜4g/日は健常成人で安全プロファイル良好、高用量（18g/日）は精神科領域の研究用量',
-      },
-    ],
-    evidenceScore: {
-      overall: 7.1,
-      breakdown: {
-        paperCount: 1.2,
-        rctMeta: 2.7,
-        recency: 1.6,
-        humanTrial: 1.6,
-      },
-      confidence: 1.0,
-      paperStats: {
-        total: 5,
-        rct: 3,
-        metaAnalysis: 1,
-        cohort: 0,
-        observational: 0,
-        animal: 0,
-        recent15y: 4,
-      },
-      lastCalculatedAt: '2026-05-27',
-      formula: 'v2.2',
-    },
-    dosageMin: 2000,
-    dosageMax: 4000,
-    dosageUnit: 'mg/日',
-    timing: '1日2回（朝・夜）食事と一緒に',
-    duration: 'PCOS評価は最低12週以上、精神症状は4〜6週',
-    sideEffects: ['軽度胃腸症状（高用量）', 'まれに頭痛'],
-    contraindications: ['双極性障害（躁転リスクの理論的懸念）'],
-    interactions: [
-      {
-        substance: '炭酸リチウム',
-        level: 'caution',
-        mechanism: 'リチウムはイノシトール代謝を阻害して効果を出す。イノシトール補給で効果減弱の可能性',
-        action: '双極性障害でリチウム服用中は医師相談。',
-        evidence: 'theoretical',
-        source: 'NIH ODS',
-      },
-      {
-        substance: '糖尿病治療薬',
-        level: 'monitor',
-        mechanism: 'インスリン感受性改善作用で血糖低下が増強される可能性',
-        action: '糖尿病薬服用中は血糖モニタリング強化。',
-        evidence: 'theoretical',
-        source: 'NIH ODS',
-      },
-    ],
-    products: [
-      {
-        name: 'NOW Foods, Inositol Powder, 8 oz (227 g)',
-        brand: 'NOW Foods',
-        platform: 'iherb',
-        url: 'https://www.iherb.com/pr/now-foods-inositol-powder-8-oz-227-g/13813',
-        priceJpy: 3500,
-        dosageMg: 730,
-        rank: 1,
-        reasonJa: '純粋myo-inositol 730mg/小さじ・粉末227gで2〜4g/日継続のコスパ最強。Unfer 2017 RCT用量に到達',
-        highlight: '粉末・PCOS研究用量コスパ最強',
-        monthlyCostJpy: 1500,
-        unitsPerDay: 4,
-        form: '粉末',
-        thirdPartyTested: true,
-        certifications: ['GMP'],
-      },
-    ],
-    heroStat: { value: '4g/日', label: 'PCOS RCT 排卵改善用量' },
-    axisScores: { antiAging: 3, skin: 2, cognitive: 4, stress: 6, sleep: 3, immunity: 2, metabolism: 5 },
-    customFaqs: [
-      {
-        q: 'PCOSにはミオイノシトール単独と40:1 myo+DCI、どちらが良いですか？',
-        a: '研究蓄積はミオイノシトール単独の方が長い（Unfer 2017メタ解析）。ただし2015年以降の研究で40:1 myo:DCI比率（健常人の血漿比率に近い）が標準プロトコルとして確立。' +
-          '\n\n' +
-          '実用的には40:1の組み合わせ（myo 4g + DCI 100mg）が現代の第一選択、ミオイノシトール単独（4g/日）は代替・コスト重視時の選択。両者で有効性に大差ないが、価格とエビデンス重視で選び分け。',
-      },
-      {
-        q: 'パニック障害の薬の代わりになりますか？',
-        a: 'ならない。Mukai 1995・2014 RCTで12〜18g/日の研究用量で効果が確認されたが、これは標準治療（SSRI・ベンゾジアゼピン）と比較した研究ではない。' +
-          '\n\n' +
-          '「補助療法」として標準治療と併用するか、軽症で薬を始めたくない段階で試す位置づけ。中等度〜重度のパニック障害は精神科医の評価と処方が前提だ。',
-      },
-      {
-        q: '高用量（18g/日）は安全ですか？',
-        a: '精神科領域のRCTで使用された研究用量で、重篤な副作用報告は乏しい。ただし軽度胃腸症状（軟便・腹部不快）の発生率は高用量で増える。' +
-          '\n\n' +
-          '日常的な補給目的なら2〜4g/日で十分。「精神症状の改善を狙う」場合のみ12〜18g/日が研究プロトコル。長期高用量の安全性データは限定的なため、3〜6ヶ月使用で再評価が現実的。',
-      },
-      {
-        q: '妊娠中に飲んでも大丈夫ですか？',
-        a: 'D\'Anna 2013 RCT（n=220）で妊娠糖尿病ハイリスク群の妊婦が4g/日 24週使用し、安全性が確認されている。むしろ妊娠糖尿病発症率を50%以上低下させる予防効果も報告されている。' +
-          '\n\n' +
-          'PCOSの妊娠継続支援目的でも産科医が処方する場合がある。ただし自己判断ではなく、PCOS・妊娠糖尿病ハイリスクの診断下で医師相談が前提だ。',
-      },
-      {
-        q: '効果が出るまでどのくらいかかりますか？',
-        a: 'PCOSの月経周期改善は8〜12週、排卵率・卵巣機能は12〜24週でRCT評価。パニック障害・OCDは4〜6週で症状スコアの有意低下が観察されている。' +
-          '\n\n' +
-          '「数日で効果」を期待する成分ではなく、「3ヶ月以上継続して指標を再評価」する成分。短期離脱を繰り返すと累積効果が薄れる。',
       },
     ],
     updatedAt: '2026-05-22',

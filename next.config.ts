@@ -51,6 +51,11 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/citicoline',
         permanent: true,
       },
+      {
+        source: '/ingredients/inositol-myo',
+        destination: '/ingredients/myo-inositol',
+        permanent: true,
+      },
     ]
   },
 }
