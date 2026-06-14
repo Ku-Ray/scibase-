@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         destination: '/ingredients/trimethylglycine-tmg',
         permanent: true,
       },
+      // 成分DB 重複統合 A群（2026-06-14・名称完全一致ペアの統合）
+      {
+        source: '/ingredients/citicoline-cdp-choline',
+        destination: '/ingredients/citicoline',
+        permanent: true,
+      },
     ]
   },
 }

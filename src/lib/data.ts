@@ -27239,7 +27239,7 @@ export const ingredients: Ingredient[] = [
     slug: 'citicoline',
     nameJa: 'シチコリン（CDP-コリン）',
     nameEn: 'Citicoline (CDP-Choline)',
-    aliases: ['シチコリン', 'CDP-コリン', 'CDP-Choline', 'シチコリンナトリウム', 'シトコリン', 'Cognizin', 'シチジン二リン酸コリン', 'コリンサプリ'],
+    aliases: ['シチコリン', 'CDP-コリン', 'CDP-Choline', 'シチコリンナトリウム', 'シトコリン', 'Cognizin', 'シチジン二リン酸コリン', 'コリンサプリ', 'Citicoline', 'CDP-choline', 'cytidine diphosphocholine', 'コグニジン', 'シチジン5′-二リン酸コリン'],
     evidenceRank: 'A',
     usageType: 'oral',
     seoTitle: 'シチコリン（CDP-Choline）｜注意・記憶・脳代謝・Cognizin RCT',
@@ -27277,6 +27277,15 @@ export const ingredients: Ingredient[] = [
         studyType: 'meta-analysis',
         keyFinding: '高齢者の慢性脳血管障害に対するシチコリンRCT 14本（n=884）のCochraneレビューで、記憶・行動・全般評価の改善を支持（Fioravanti M & Yanagi M）',
       },
+      {
+        title: 'Citicoline preserves cognitive function in patients with mild vascular cognitive impairment',
+        journal: 'Journal of Neurological Sciences',
+        year: 2023,
+        studyType: 'rct',
+        sampleSize: 269,
+        durationWeeks: 52,
+        keyFinding: 'Yamashita N et al. 軽度血管性認知機能低下の患者でシチコリン500mg/日 12ヶ月が記憶・注意・実行機能の維持を有意に示した（n=269）',
+      },
     ],
     evidenceScore: {
       overall: 6.6,
@@ -27288,15 +27297,15 @@ export const ingredients: Ingredient[] = [
       },
       confidence: 1.0,
       paperStats: {
-        total: 3,
-        rct: 2,
+        total: 4,
+        rct: 3,
         metaAnalysis: 1,
         cohort: 0,
         observational: 0,
         animal: 0,
-        recent15y: 1,
+        recent15y: 2,
       },
-      lastCalculatedAt: '2026-05-27',
+      lastCalculatedAt: '2026-06-14',
       formula: 'v2.2',
     },
     dosageMin: 250,
@@ -27316,7 +27325,40 @@ export const ingredients: Ingredient[] = [
       '妊娠中・授乳中（人間データ限定）',
       'コリン代謝異常症',
     ],
-    products: [],
+    products: [
+      {
+        name: "Doctor's Best Cognizin Citicoline 250mg 60 Veggie Caps",
+        brand: "Doctor's Best",
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=cognizin+citicoline+250',
+        priceJpy: 2800,
+        dosageMg: 250,
+        unitsPerDay: 1,
+        rank: 1,
+        reasonJa: 'Cognizin®規格化原料採用・250mg/カプセル。McGlade 2012・2014 RCT用量と一致。1日1粒で研究標準量',
+        highlight: 'Cognizin規格化・RCT準拠用量',
+        monthlyCostJpy: 2800,
+        form: 'ベジカプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+      },
+      {
+        name: 'Jarrow Formulas Citicoline 250mg 60 Capsules',
+        brand: 'Jarrow Formulas',
+        platform: 'iherb',
+        url: 'https://www.iherb.com/search?kw=jarrow+citicoline+250',
+        priceJpy: 2400,
+        dosageMg: 250,
+        unitsPerDay: 1,
+        rank: 2,
+        reasonJa: 'Cognizin®採用・1日1粒で250mg。Doctor\'s Bestより若干安価',
+        highlight: 'コスパ重視',
+        monthlyCostJpy: 2400,
+        form: 'カプセル',
+        thirdPartyTested: true,
+        certifications: ['GMP'],
+      },
+    ],
     whoFor: [
       '脳梗塞・脳出血既往のリハビリ補助・認知機能低下の自覚がある50代以上',
       '軽度認知低下・記憶ぼけの高齢期サポート',
@@ -27367,6 +27409,15 @@ export const ingredients: Ingredient[] = [
         q: '日本でドラッグストアで買えますか？',
         a: '日本では現在シチコリンを含む医薬品（過去のニコリン注射剤等）は限定的で、ドラッグストアの一般用医薬品としては流通していません。食品扱いのシチコリンサプリは輸入品（iHerb等の海外通販）が主流で、Cognizin®規格を採用した米国製品が選択肢の中心です。国内製造のサプリでもシチコリン配合品が増えており、Kyowa Hakko Bio（協和発酵バイオ）が原料サプライヤーとして日本企業に供給しています。',
       },
+      {
+        q: '認知症の予防になりますか？',
+        a:
+          'Fioravanti 2005 Cochrane reviewで「すでに認知機能低下のある高齢者」の認知機能維持・改善は確認されていますが、健常人の認知症発症予防エビデンスは限定的です。' +
+          '\n\n' +
+          'Yamashita 2023の12ヶ月RCTで軽度血管性認知機能低下（軽度認知障害の血管性タイプ）への効果が確認されており、50代以降で記憶力低下を自覚し始めた段階での12ヶ月評価が現実的な使い方です。' +
+          '\n\n' +
+          '「予防」より「軽度低下に気づいた段階の維持」が研究軸で、健常な30〜40代の予防的服用は研究的裏付けがまだ薄い段階です。基礎の生活習慣（睡眠・運動・地中海食）を整えた上で追加する位置づけが現実的です。',
+      },
     ],
     interactions: [
       {
@@ -27385,8 +27436,16 @@ export const ingredients: Ingredient[] = [
         evidence: 'theoretical',
         source: '一般薬学レビュー',
       },
+      {
+        substance: 'アセチルコリンエステラーゼ阻害薬（ドネペジル等）',
+        level: 'caution',
+        mechanism: '相加的なコリン作動性増強、消化器症状・徐脈リスク',
+        action: 'アルツハイマー治療薬服用中は医師相談',
+        evidence: 'theoretical',
+        source: 'NIH ODS / Cochrane review 2005',
+      },
     ],
-    updatedAt: '2026-05-11',
+    updatedAt: '2026-06-14',
     publicDbReferences: [
       {
         source: 'nih-ods',
@@ -77826,214 +77885,6 @@ export const ingredients: Ingredient[] = [
       },
     ],
     updatedAt: '2026-06-07',
-  },
-  {
-    slug: 'citicoline-cdp-choline',
-    nameJa: 'シチコリン（CDP-コリン）',
-    nameEn: 'Citicoline (CDP-Choline)',
-    aliases: ['Citicoline', 'CDP-choline', 'シチコリン', 'CDP-コリン', 'cytidine diphosphocholine', 'Cognizin', 'コグニジン', 'シチジン5′-二リン酸コリン'],
-    evidenceRank: 'A',
-    usageType: 'oral',
-    seoTitle: 'シチコリン（CDP-コリン）｜250mg・α-GPCとの違い・認知・論文',
-    seoDescription: 'シチコリン（CDP-コリン）はBBB通過率が高いコリン誘導体で、α-GPCと並ぶ認知機能サプリの主要形態。Fioravanti 2005 Cochrane reviewで血管性認知障害、McGlade 2012で青年期注意力改善、Yamashita 2023で軽度認知機能低下への効果を確認。α-GPCはアセチルコリン前駆体寄り、CDP-コリンは膜リン脂質合成寄りで使い分け。250〜500mg/日が研究標準。｜SciBase',
-    tagline: '膜リン脂質合成型のコリン補給。α-GPC（運動研究）と並ぶ認知系の主要形態',
-    description:
-      'シチコリン（CDP-コリン）は膜リン脂質合成型のコリン補給成分で、高齢者の慢性脳血管障害で記憶・行動を有意改善した Cochrane システマティックレビューがある（14 RCT・n=1372・Fioravanti 2005・α-GPCと並ぶ認知系主要形態）。商標Cognizin®は規格化原料。' +
-      '\n\n' +
-      'Fioravanti 2005 Cochrane reviewで血管性認知障害の認知機能改善、McGlade 2012 RCTで青年期の持続注意・運動応答時間改善、Yamashita 2023で軽度認知機能低下の記憶・注意改善が報告された。研究準拠は250〜500mg/日を朝食後に。' +
-      '\n\n' +
-      'まれに頭痛・胃腸症状・不眠。妊娠中・授乳中はデータ限定。アルツハイマー治療薬（ドネペジル等）併用は相加コリン作動性に注意。',
-    concerns: ['cognitive'],
-    papers: [
-      {
-        title: 'Cytidinediphosphocholine (CDP-choline) for cognitive and behavioural disturbances associated with chronic cerebral disorders in the elderly',
-        journal: 'Cochrane Database of Systematic Reviews',
-        year: 2005,
-        studyType: 'systematic-review',
-        sampleSize: 1372,
-        keyFinding: 'Fioravanti M, Yanagi M. 高齢者の慢性脳血管障害でCDP-コリンが記憶・行動の有意な改善を示した。Cochrane review・14 RCT統合',
-      },
-      {
-        title: 'The effect of citicoline supplementation on motor speed and attention in adolescent males',
-        journal: 'Journal of Attention Disorders',
-        year: 2012,
-        studyType: 'rct',
-        sampleSize: 75,
-        durationWeeks: 4,
-        keyFinding: 'McGlade E et al. 健常青年男性でCognizin 250〜500mg/日 28日が持続注意・運動応答時間を有意改善',
-      },
-      {
-        title: 'Citicoline preserves cognitive function in patients with mild vascular cognitive impairment',
-        journal: 'Journal of Neurological Sciences',
-        year: 2023,
-        studyType: 'rct',
-        sampleSize: 269,
-        durationWeeks: 52,
-        keyFinding: 'Yamashita N et al. 軽度血管性認知機能低下の患者でシチコリン500mg/日 12ヶ月が記憶・注意・実行機能の維持を有意に示した',
-      },
-      {
-        title: 'A randomized, double-blind, placebo-controlled study of citicoline in adolescent women',
-        journal: 'Food and Nutrition Sciences',
-        year: 2014,
-        studyType: 'rct',
-        sampleSize: 60,
-        durationWeeks: 4,
-        keyFinding: 'McGlade E et al. 健常成人女性でCognizin 250mg/日 28日が持続注意・処理速度を有意改善',
-      },
-      {
-        title: 'Citicoline in addictive disorders: a review of the literature',
-        journal: 'American Journal of Drug and Alcohol Abuse',
-        year: 2014,
-        studyType: 'systematic-review',
-        sampleSize: 0,
-        keyFinding: 'Wignall ND, Brown ES. シチコリンの依存症・脳卒中後リハへの応用研究レビュー。神経保護機序を整理',
-      },
-    ],
-    evidenceScore: {
-      overall: 5.8,
-      breakdown: {
-        paperCount: 1.2,
-        rctMeta: 1.8,
-        recency: 1.6,
-        humanTrial: 1.2,
-      },
-      confidence: 1.0,
-      paperStats: {
-        total: 5,
-        rct: 3,
-        metaAnalysis: 0,
-        cohort: 0,
-        observational: 0,
-        animal: 0,
-        recent15y: 4,
-      },
-      lastCalculatedAt: '2026-05-27',
-      formula: 'v2.2',
-    },
-    dosageMin: 250,
-    dosageMax: 500,
-    dosageUnit: 'mg/日',
-    timing: '朝食後（不眠予防のため夕食後以降は避ける）',
-    duration: '4週で注意・運動応答の改善、12週以上で記憶・実行機能の評価',
-    sideEffects: ['まれに頭痛', '胃腸症状', 'まれに不眠'],
-    contraindications: ['妊娠中・授乳中（データ限定）'],
-    interactions: [
-      {
-        substance: 'アセチルコリンエステラーゼ阻害薬（ドネペジル等）',
-        level: 'caution',
-        mechanism: '相加的なコリン作動性増強、消化器症状・徐脈リスク',
-        action: 'アルツハイマー治療薬服用中は医師相談',
-        evidence: 'theoretical',
-        source: 'NIH ODS / Cochrane review 2005',
-      },
-      {
-        substance: 'L-DOPA（パーキンソン病治療薬）',
-        level: 'monitor',
-        mechanism: 'シチコリンはL-DOPAの作用を増強する可能性が古い研究で示唆',
-        action: 'パーキンソン病治療中は医師相談（用量調整可能性）',
-        evidence: 'theoretical',
-        source: 'Eberhardt 1990 et al.',
-      },
-    ],
-    products: [
-      {
-        name: "Doctor's Best Cognizin Citicoline 250mg 60 Veggie Caps",
-        brand: "Doctor's Best",
-        platform: 'iherb',
-        url: 'https://www.iherb.com/search?kw=cognizin+citicoline+250',
-        priceJpy: 2800,
-        dosageMg: 250,
-        unitsPerDay: 1,
-        rank: 1,
-        reasonJa: 'Cognizin®規格化原料採用・250mg/カプセル。McGlade 2012・2014 RCT用量と一致。1日1粒で研究標準量',
-        highlight: 'Cognizin規格化・RCT準拠用量',
-        monthlyCostJpy: 2800,
-        form: 'ベジカプセル',
-        thirdPartyTested: true,
-        certifications: ['GMP'],
-      },
-      {
-        name: 'Jarrow Formulas Citicoline 250mg 60 Capsules',
-        brand: 'Jarrow Formulas',
-        platform: 'iherb',
-        url: 'https://www.iherb.com/search?kw=jarrow+citicoline+250',
-        priceJpy: 2400,
-        dosageMg: 250,
-        unitsPerDay: 1,
-        rank: 2,
-        reasonJa: 'Cognizin®採用・1日1粒で250mg。Doctor\'s Bestより若干安価',
-        highlight: 'コスパ重視',
-        monthlyCostJpy: 2400,
-        form: 'カプセル',
-        thirdPartyTested: true,
-        certifications: ['GMP'],
-      },
-    ],
-    whoFor: [
-      '50代以降で記憶・注意の維持を意識する成人',
-      '青年期・成人期の集中力・処理速度を高めたい方',
-      'α-GPCから別のコリン形態を試したい方',
-    ],
-    heroStat: { value: '250mg/日', label: 'McGlade 2012・2014 RCT用量' },
-    axisScores: { antiAging: 4, skin: 1, cognitive: 8, stress: 2, sleep: 2, immunity: 1, metabolism: 3 },
-    emerging: false,
-    customFaqs: [
-      {
-        q: 'シチコリンとα-GPCの違いと使い分けは？',
-        a:
-          '両方とも脳血液関門通過率が高いコリン誘導体ですが、代謝経路と研究軸が異なります。α-GPCはアセチルコリン前駆体寄りで運動研究（最大筋力・パワー出力）に強く、シチコリンは膜リン脂質合成寄りで血管性認知障害・脳卒中後リハ・青年期注意力研究に強いです。' +
-          '\n\n' +
-          '記憶・注意・処理速度改善を狙うならシチコリン、運動前のフォーカス・最大パワー出力を狙うならα-GPCが研究準拠の選び分けです。両者を併用する研究は少なく、どちらか1つで6ヶ月単位で評価するのが現実的です。' +
-          '\n\n' +
-          'シチコリンはCognizin®というKyowa Hakkoの規格化原料を採用した製品が研究で使われており、製品ラベルにCognizinの記載があると研究準拠の品質が担保されます。',
-      },
-      {
-        q: '効果が出るまでどのくらいかかりますか？',
-        a:
-          '注意・処理速度の改善は4週、記憶・実行機能の改善は12週以上の継続が目安です。McGlade 2012・2014 RCTでは250〜500mg/日 4週で持続注意・運動応答時間の有意改善が確認されています。' +
-          '\n\n' +
-          '記憶や実行機能の改善はYamashita 2023の12ヶ月試験のように長期継続で評価されます。「飲んですぐ集中力が変わった」という体感は個体差が大きく、客観評価では4週単位で見るのが研究準拠の見方です。' +
-          '\n\n' +
-          '不眠が出る場合は夕食後以降の摂取を避け朝食後に統一してください。シチコリンは覚醒系神経伝達も活性化する可能性があるため、夜の摂取で寝つきに影響することがあります。',
-      },
-      {
-        q: '認知症の予防になりますか？',
-        a:
-          'Fioravanti 2005 Cochrane reviewで「すでに認知機能低下のある高齢者」の認知機能維持・改善は確認されていますが、健常人の認知症発症予防エビデンスは限定的です。' +
-          '\n\n' +
-          'Yamashita 2023の12ヶ月RCTで軽度血管性認知機能低下（軽度認知障害の血管性タイプ）への効果が確認されており、50代以降で記憶力低下を自覚し始めた段階での12ヶ月評価が現実的な使い方です。' +
-          '\n\n' +
-          '「予防」より「軽度低下に気づいた段階の維持」が研究軸で、健常な30〜40代の予防的服用は研究的裏付けがまだ薄い段階です。基礎の生活習慣（睡眠・運動・地中海食）を整えた上で追加する位置づけが現実的です。',
-      },
-      {
-        q: '副作用や注意点は？',
-        a:
-          '健常成人で重篤な副作用は稀で、軽度頭痛・胃腸症状・まれに不眠が主です。Cochrane review・大規模RCT（n=1372・n=269等）でも重大事象は報告されていません。' +
-          '\n\n' +
-          '理論的注意はアルツハイマー治療薬（ドネペジル等）併用時の相加的コリン作動性、L-DOPA併用時の作用増強、妊娠中・授乳中の安全性データ限定です。該当する方は医師相談が前提です。' +
-          '\n\n' +
-          '不眠が出る場合は朝食後の1回摂取に統一し、夕方以降は避けてください。500mg/日で消化器症状が出る場合は250mg/日に減量するのが現実的です。',
-      },
-      {
-        q: 'Cognizin®と一般のシチコリンは違いますか？',
-        a:
-          'Cognizin®はKyowa Hakkoが製造する規格化シチコリン原料で、McGlade 2012・Yamashita 2023等の主要RCTで使用されている品質基準です。一般のシチコリン原料との純度・安定性の差が研究の再現性に関わります。' +
-          '\n\n' +
-          '製品ラベルにCognizin®の記載があると、研究で使われた原料と同等品質が担保されています。Doctor\'s Best・Jarrow Formulas・Natrol等の主要ブランドはCognizin®採用品を販売しています。' +
-          '\n\n' +
-          'Cognizin®非採用の安価品も流通していますが、純度・含量のばらつきが研究データの再現性を保証しない可能性があります。研究準拠で選ぶならCognizin®採用品が現実解です。',
-      },
-    ],
-    updatedAt: '2026-05-27',
-    publicDbReferences: [
-      {
-        source: 'nih-ods',
-        fullName: 'NIH ODS (Office of Dietary Supplements) HealthProfessional Fact Sheet',
-        url: 'https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/',
-        accessedAt: '2026-06-01',
-        note: 'NIH ODS HealthProfessional版。AI・上限量3.5g、肝機能・神経伝達物質前駆体',
-      },
-    ],
   },
   {
     slug: 'senolytic-quercetin-dasatinib',
