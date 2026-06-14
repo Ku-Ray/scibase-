@@ -7,7 +7,7 @@
 サイト: https://scibase.app
 案内図: https://scibase.app/llms.txt
 最終生成: 2026-06-14
-成分 517 種 / 比較ペア 305 / エビデンスランク内訳 S=15 / A=182 / B=244 / C=76
+成分 513 種 / 比較ペア 305 / エビデンスランク内訳 S=15 / A=180 / B=244 / C=74
 
 ## 注目の評価ガイド（深掘り記事）
 
@@ -265,11 +265,6 @@ LDL軽度低下と消化不良症状改善のRCT・キク科系の補助層
 URL: https://scibase.app/ingredients/astaxanthin
 皮膚老化・酸化ストレスへのRCTで有効性が確認されているカロテノイド
 代表論文: RCT · Marine Drugs 2018 · n=65 · 16週 — 経口4mg/日のアスタキサンチンが皮膚弾力・水分量を有意に改善し、シワ深度を低下させた（p<0.05）
-
-### アスタキサンチン（ヘマトコッカス由来）（Astaxanthin (Haematococcus pluvialis)） — エビデンスランク A
-URL: https://scibase.app/ingredients/astaxanthin-haematococcus
-Haematococcus藻由来・研究で標準使用される天然型アスタキサンチン
-代表論文: RCT · Sangyo Eiseigaku Zasshi 2011 · n=49 · 4週 — アスタキサンチン6mg/日でVDT作業者の調節機能・眼精疲労症状指標の改善（p<0.05）
 
 ### アセチルカルニチン心血管（Cardiovascular Acetyl-L-Carnitine） — エビデンスランク A
 URL: https://scibase.app/ingredients/carnitine-acetyl-cardio
@@ -555,11 +550,6 @@ URL: https://scibase.app/ingredients/tranexamic-acid
 URL: https://scibase.app/ingredients/niacin
 NAD+合成の前駆体。脂質プロファイル改善・エネルギー代謝をRCTで確認
 代表論文: メタ解析 · Journal of the American College of Cardiology 2014 · n=6748 · 24週 — ナイアシン高用量でHDLが平均+23%増加、LDL-25%低下、中性脂肪-22%低下（いずれもp<0.001）
-
-### ナイアシン（ビタミンB3・ニコチン酸）（Niacin (Vitamin B3)） — エビデンスランク A
-URL: https://scibase.app/ingredients/vitamin-b3-niacin
-高用量で脂質改善が確立。ただしフラッシュと肝障害リスクで処方薬グレードの議論
-代表論文: メタ解析 · JAMA 2000 · n=30000 · 24週 — ニコチン酸1,500-3,000mg/日でHDL+20-25%・LDL-15-20%・トリグリセリド-25-35%の脂質改善
 
 ### ナイアシンアミド（Niacinamide） — エビデンスランク A
 URL: https://scibase.app/ingredients/niacinamide
@@ -1526,7 +1516,7 @@ URL: https://scibase.app/ingredients/choline-bitartrate
 IOM 設定必須栄養素・神経膜PC基質・妊娠中胎児神経発達
 代表論文: RCT · FASEB Journal 2012 · n=26 · 12週 — 妊娠後期女性26名にコリン 480 vs 930mg/日×12週で母児のコリン代謝マーカー・妊娠転帰改善傾向（Yan J et al.）
 
-### コルジセプス（冬虫夏草）（Cordyceps Militaris） — エビデンスランク B
+### コルジセプス（冬虫夏草）（Cordyceps (Cordyceps sinensis)） — エビデンスランク B
 URL: https://scibase.app/ingredients/cordyceps
 ATP産生促進・酸素利用効率改善・疲労軽減がRCTで確認されているアダプトゲン系キノコ
 代表論文: RCT · Journal of Dietary Supplements 2016 · n=28 · 3週 — 成人28名のRCT（3週間）でコルジセプス摂取群のVO2maxが有意に向上し、高強度運動への耐性が改善（p<0.05）。
@@ -2291,11 +2281,6 @@ URL: https://scibase.app/ingredients/nad-plus
 NAD+ 直接補給・経口吸収議論・点滴は医療領域・要注意・NMN/NR との差別化
 代表論文: RCT · BioRxiv (preprint) 2019 · n=8 — Grant R et al. 健常成人 n=8 に経口 NAD+ 250-1,000mg 単回投与で血中NAD+ 軽度上昇示唆・査読前プレプリント・規模小
 
-### NAD+（直接補充・経口/点滴）（NAD+ (Direct Supplementation)） — エビデンスランク C
-URL: https://scibase.app/ingredients/nad-direct
-経口NAD+の生体利用率は限定的・点滴は医療領域・NMN/NRと経路差分のヒトRCTは未確立な先行投資型
-代表論文: RCT · Nature Communications 2016 · n=12 — ヒト経口投与でNR・NA・NAM・NMN・NAD+を投与時の血中・組織NAD+上昇パターンを比較・経口NAD+も最終的には前駆体経由のNAD+補充に集約することが示された（Trammell SAJ et al.・前駆体比較ヒトPK研究）
-
 ### NMNH（還元型NMN）（Reduced NMN (NMNH)） — エビデンスランク C
 URL: https://scibase.app/ingredients/nmnh-reduced
 動物試験でNMNより2-3倍のNAD+上昇を示すが、ヒト長期安全性データは未確立のフロンティア
@@ -2535,11 +2520,6 @@ URL: https://scibase.app/ingredients/huperzine-a
 URL: https://scibase.app/ingredients/pregnenolone
 神経ステロイド前駆体・統合失調症補助 RCT・要注意・処方医相談必須
 代表論文: RCT · Journal of Clinical Psychiatry 2014 · n=120 — Marx CE et al. 統合失調症患者 120名にプレグネノロン 500mg/日 8週投与で BACS 認知機能スコア・SANS 陰性症状改善を報告・補助療法として有意
-
-### プレグネノロン（経口）（Pregnenolone Supplement） — エビデンスランク C
-URL: https://scibase.app/ingredients/pregnenolone-supplement
-全ステロイドホルモン前駆体・米国OTC・日本未承認医薬品扱い・WADA禁止物質（特に重要な注意）
-代表論文: RCT · Psychopharmacology Bulletin 1995 · n=24 · 1週 — 健常成人24名・プレグネノロン500mg単回投与で言語記憶課題の有意改善（Roberts 1995）。
 
 ### ベタイン塩酸塩（胃酸補助）（Betaine HCl） — エビデンスランク C
 URL: https://scibase.app/ingredients/betaine-hcl
@@ -2909,7 +2889,7 @@ URL: https://scibase.app/ingredients/low-dose-naltrexone
 - taurine vs creatine: https://scibase.app/compare/taurine-vs-creatine
 - l-tyrosine vs rhodiola: https://scibase.app/compare/l-tyrosine-vs-rhodiola
 - zinc vs vitamin-d: https://scibase.app/compare/zinc-vs-vitamin-d
-- vitamin-b3-niacin vs red-yeast-rice: https://scibase.app/compare/vitamin-b3-niacin-vs-red-yeast-rice
+- niacin vs red-yeast-rice: https://scibase.app/compare/niacin-vs-red-yeast-rice
 - potassium vs magnesium: https://scibase.app/compare/potassium-vs-magnesium
 - lutein-zeaxanthin-meso vs lutein: https://scibase.app/compare/lutein-zeaxanthin-meso-vs-lutein
 - tudca vs milk-thistle: https://scibase.app/compare/tudca-vs-milk-thistle
