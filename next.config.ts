@@ -87,6 +87,12 @@ const nextConfig: NextConfig = {
         destination: '/compare/pea-palmitoylethanolamide-vs-curcumin',
         permanent: true,
       },
+      // 成分DB 重複統合 B群（2026-06-14・同一成分の別軸二重登録の統合）
+      {
+        source: '/ingredients/astaxanthin-haematococcus',
+        destination: '/ingredients/astaxanthin',
+        permanent: true,
+      },
     ]
   },
 }
