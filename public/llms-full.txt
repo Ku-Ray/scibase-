@@ -1,0 +1,2950 @@
+# SciBase — 全成分エビデンス要約（LLM 引用用コーパス）
+
+> 化粧品メーカー現役研究者が査読論文を独立評価した成分データベース。各成分は
+> エビデンスランク（S/A/B/C）と代表論文（PMID 付き）で要約。
+> 数値や評価を引用する際は、併記された論文情報（ジャーナル・年・PMID）も明示してください。
+
+サイト: https://scibase.app
+案内図: https://scibase.app/llms.txt
+最終生成: 2026-06-14
+成分 524 種 / 比較ペア 305 / エビデンスランク内訳 S=15 / A=186 / B=245 / C=78
+
+## 注目の評価ガイド（深掘り記事）
+
+- [NMN おすすめランキング｜50 銘柄から 5 つの判断軸で絞った 5 本](https://scibase.app/articles/nmn-recommended-ranking-guide): NMN おすすめランキング。
+- [NMN サプリの効果はどこまで本当か｜NAD+ は上がる・体感は銘柄次第](https://scibase.app/articles/nmn-supplement-effects-buying-guide): NMN の効果はどこまで論文で確認されているか。
+- [NMN の若返りに「危険性」はあるのか｜5 つの不安を一次論文で検証](https://scibase.app/articles/nmn-side-effects-safety-guide): NMN の若返りに危険性はあるのか。
+- [妊活サプリは葉酸だけで足りる？論文で選ぶ女性の5軸](https://scibase.app/articles/fertility-supplement-guide): 妊活サプリの選び方を論文で整理。
+- [腸内フローラ検査は意味ある？論文で見る「測る価値がある人」](https://scibase.app/articles/gut-microbiome-test-guide): 腸内フローラ検査は意味ないのか、おすすめは何かを論文ベースで整理。
+- [遺伝子検査ダイエットは意味ある？論文が出した「合う食事」の答え](https://scibase.app/articles/genetic-diet-test-guide): 遺伝子検査ダイエットは意味ないのか、おすすめは何かを論文ベースで整理。
+- [セラミドは飲んで効くのか——論文で見る「内側からの保湿」の可能性と限界](https://scibase.app/articles/ceramide-oral-beauty-guide): セラミドの効果は「外用」と「経口（飲む）」で分かれる。
+
+## 成分データベース（エビデンスランク順）
+
+### アシュワガンダ（Ashwagandha） — エビデンスランク S
+URL: https://scibase.app/ingredients/ashwagandha
+コルチゾール−27.9%・8週RCTで確認されたストレス指標の改善
+代表論文: メタ解析 · Medicine (Baltimore) 2021 · n=590 · 8週 — ストレス・不安スコアの有意な改善とコルチゾール関連指標への影響が複数のRCTで示されている（p<0.05）
+
+### アダパレン0.1%（外用）（Adapalene 0.1% Topical） — エビデンスランク S
+URL: https://scibase.app/ingredients/adapalene-01pct-topical
+第三世代レチノイドの外用ニキビ薬。トレチノインと同等効果・刺激性が低いがレチノイド催奇形性は同じ
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2014 · n=4900 — 外用レチノイド31 RCT統合でアダパレンとトレチノインは病変数減少効果が同等で、アダパレンは皮膚刺激スコアが有意低（Otberg 2014）
+
+### オメガ3（EPA・DHA）（Omega-3 (EPA/DHA)） — エビデンスランク S
+URL: https://scibase.app/ingredients/omega3
+EPAは抗炎症、DHAは脳・網膜。役割の違いがメタ解析で確認されている
+代表論文: メタ解析 · Biochemical Society Transactions 2017 · n=5000 — EPA・DHAが炎症性サイトカイン（IL-6、TNF-α）を有意に低下させることが複数のRCTで確認
+
+### クレアチン（Creatine） — エビデンスランク S
+URL: https://scibase.app/ingredients/creatine
+筋力だけじゃない。睡眠不足時の認知機能改善もメタ解析で確認されている
+代表論文: メタ解析 · Journal of Strength and Conditioning Research 2020 · n=22000 · 12週 — 筋力・除脂肪体重・無酸素運動パフォーマンスへの有意な効果がメタ解析で確定的に示された（100以上のRCT統合）
+
+### サイリウム（オオバコ食物繊維）（Psyllium Husk (Plantago ovata)） — エビデンスランク S
+URL: https://scibase.app/ingredients/psyllium
+便通改善・LDL−6.7%・食後血糖抑制をメタ解析が支持・FDA健康強調表示成分
+代表論文: メタ解析 · American Journal of Clinical Nutrition 2000 · n=2800 — 高コレステロール血症患者2,800名を含む8本の対照試験メタ解析で、サイリウム 10g/日 が LDL −6.7%・総コレステロール −4.0%（p<0.001・Anderson JW et al.）
+
+### トレチノイン（外用処方）（Tretinoin (topical, prescription)） — エビデンスランク S
+URL: https://scibase.app/ingredients/tretinoin-topical
+レチノイド外用ゴールドスタンダード・処方箋・日本未承認・既 retinol と区別・重要な注意
+代表論文: RCT · Journal of the American Academy of Dermatology 1986 · n=40 · 16週 — Kligman LH et al. 光老化 n=40 RCT で Tretinoin 0.05% 16週でシワ・色素沈着・ハリ・キメ改善・光老化適応エビデンス基盤
+
+### ビタミンC（経口）（Vitamin C (Oral)） — エビデンスランク S
+URL: https://scibase.app/ingredients/vitamin-c-oral
+欠乏すると壊血病が生じるほど確立された成分。Cochrane n=11,306で検証
+代表論文: メタ解析 · Nutrients 2017 · n=12000 — 免疫細胞の機能維持・活性化酸素除去・抗感染効果をサポートすることがメタ解析・RCT群で確認
+
+### ビタミンD（Vitamin D） — エビデンスランク S
+URL: https://scibase.app/ingredients/vitamin-d
+メタ解析n=11,321で呼吸器感染リスク低下を確認（BMJ 2017）
+代表論文: メタ解析 · BMJ 2017 · n=11321 · 16週 — 急性呼吸器感染症のリスクが補給群で有意に低下（OR 0.88）。
+
+### フィナステリド（経口処方）（Finasteride (oral, prescription)） — エビデンスランク S
+URL: https://scibase.app/ingredients/finasteride-oral
+AGA経口ゴールドスタンダード・処方薬・5α還元酵素阻害・性的副作用・特に重要な注意
+代表論文: メタ解析 · Archives of Dermatology 2010 — Mella JM et al. AGA フィナステリド メタ解析 12 RCT 統合・男性 AGA 治療確立度最高水準・性的副作用プロファイル整理
+
+### マグネシウム（Magnesium） — エビデンスランク S
+URL: https://scibase.app/ingredients/magnesium
+日本人の平均摂取量は推奨量より約100mg/日不足。睡眠の質改善のRCTあり
+代表論文: メタ解析 · European Journal of Clinical Nutrition 2020 · n=1800 · 12週 — 欠乏状態の人への補給でインスリン抵抗性・血圧・CRP（炎症指標）の改善が確認された
+
+### ミノキシジル（外用）（Minoxidil (topical)） — エビデンスランク S
+URL: https://scibase.app/ingredients/minoxidil-topical
+AGA外用ゴールドスタンダード・FDA 男女承認・日本第1類医薬品・要注意
+代表論文: RCT · Journal of the American Academy of Dermatology 2002 · n=393 · 48週 — Olsen EA et al. 男性 AGA n=393 RCT で ミノキシジル 5% vs 2% 48週・5% で頭頂部毛髪数 18.6本/cm² 増加・2% より優位
+
+### メラトニン（Melatonin） — エビデンスランク S
+URL: https://scibase.app/ingredients/melatonin
+入眠時間短縮・時差ぼけへの効果がメタ解析で確認されている
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2002 · n=1200 — 時差ぼけの予防・治療に0.5〜5mgのメラトニンが有効。
+
+### 過酸化ベンゾイル2.5%（外用）（Benzoyl Peroxide 2.5%） — エビデンスランク S
+URL: https://scibase.app/ingredients/benzoyl-peroxide-25pct
+C. acnes耐性化を回避する第一選択外用薬。2.5%と5%は効果同等・刺激性が低い2.5%が初心者向け
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2020 · n=12352 — 52 RCT・12,352名統合でBPO単剤がプラセボより炎症性・非炎症性病変を有意減少（リスク比0.65・Yang 2020 Cochrane更新版）
+
+### 鉄（Iron） — エビデンスランク S
+URL: https://scibase.app/ingredients/iron
+日本女性の20〜30%が潜在的鉄欠乏。非貧血でも疲労改善のRCTあり
+代表論文: RCT · CMAJ 2012 · n=198 · 12週 — 非貧血の鉄欠乏女性に80mg/日の補充で疲労スコアが有意に改善（p<0.001）。
+
+### 葉酸（Folic Acid / Folate） — エビデンスランク S
+URL: https://scibase.app/ingredients/folic-acid
+メタ解析n=2,398で認知機能スコア・ホモシステイン値の改善を確認
+代表論文: メタ解析 · Ageing Research Reviews 2016 · n=2398 · 24週 — 葉酸補充により認知機能スコアとホモシステイン値が有意に改善（p<0.05）。
+
+### 2'-FL HMO（2'-Fucosyllactose (Human Milk Oligosaccharide)） — エビデンスランク A
+URL: https://scibase.app/ingredients/human-milk-oligosaccharide-2fl
+母乳に最多含有のHMOで乳幼児腸内環境RCTが多数・成人研究も進む先進プレバイオ
+代表論文: RCT · Journal of Pediatric Gastroenterology and Nutrition 2015 · n=200 — 2&apos;-FL添加ミルク群で母乳栄養児に類似した腸内環境・免疫マーカー
+
+### 25(OH)ビタミンD（検査マーカー）（25-Hydroxyvitamin D） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-d-25oh-marker
+日本人の80%が不足域。サプリ用量を決める根拠としての検査値の読み方
+代表論文: RCT · Journal of Clinical Endocrinology & Metabolism 2014 · n=211 · 12週 — D3 1,000IU/日で血清25(OH)D約10ng/mL上昇・2,000IU/日で約15ng/mL上昇・反応性は個人差大
+
+### B. infantis 35624（Bifidobacterium infantis 35624） — エビデンスランク A
+URL: https://scibase.app/ingredients/probiotic-strain-b-infantis-35624
+IBS研究のゴールドスタンダード株でWhorwell 2006大規模RCT報告
+代表論文: メタ解析 · World Journal of Gastroenterology 2014 · n=950 — 機能性消化管障害でIBS症状スコア改善が一貫して確認
+
+### BCAA（BCAA (Branched-Chain Amino Acids)） — エビデンスランク A
+URL: https://scibase.app/ingredients/bcaa
+筋トレ前後5〜10gで筋肉痛・筋損傷マーカーの軽減がメタ解析で確認されている
+代表論文: メタ解析 · Applied Physiology, Nutrition, and Metabolism 2021 · n=350 · 4週 — BCAA補給群でクレアチンキナーゼ（CK）・乳酸脱水素酵素（LDH）の上昇が有意に抑制され、筋肉痛スコアの軽減が確認された
+
+### BCAA 2:1:1（標準比率）（BCAA 2:1:1 Ratio） — エビデンスランク A
+URL: https://scibase.app/ingredients/bcaa-2-1-1
+研究蓄積が最も厚い2:1:1比率・DOMS改善のメタ解析支持
+代表論文: メタ解析 · Nutrition 2016 · n=218 · 4週 — BCAA 5〜10g/日で運動持続時間と運動時脂質酸化の改善・運動誘発筋ダメージマーカーの軽度改善
+
+### BCM-95クルクミン（BCM-95 Curcumin (Biocurcumax)） — エビデンスランク A
+URL: https://scibase.app/ingredients/turmeric-high-curcumin-bcm-95
+標準クルクミンの生体利用率7倍をAntony 2008が確認した規格品
+代表論文: RCT · Indian Journal of Pharmaceutical Sciences 2008 · n=11 · 1週 — BCM-95 500mg vs 標準クルクミン vs クルクミン+ピペリン+レシチン：BCM-95の血中濃度は標準クルクミンの約6.93倍（Antony B et al.）
+
+### CoQ10（心血管用・分2投与）（CoQ10 Cardiovascular BID Dosing） — エビデンスランク A
+URL: https://scibase.app/ingredients/coq10-cardiovascular-bid
+Q-SYMBIO心不全死亡率有意低下・スタチン関連筋症の研究で支持
+代表論文: メタ解析 · American Journal of Cardiology 2014 · n=575 · 12週 — スタチン関連筋症状（筋肉痛・脱力）への弱〜中等度の改善効果（SMD -0.53）
+
+### D-キロイノシトール（D-Chiro Inositol） — エビデンスランク A
+URL: https://scibase.app/ingredients/inositol-d-chiro
+PCOS患者で体内DCI濃度が低下し、補給でインスリン感受性が回復するRCT報告
+代表論文: メタ解析 · European Review for Medical and Pharmacological Sciences 2017 — PCOS介入でDCIとMyo-Inositolは異なる経路を補完・併用研究も増加
+
+### D-マンノース（D-Mannose） — エビデンスランク A
+URL: https://scibase.app/ingredients/d-mannose
+UTI 再発予防の研究ベース第一選択糖類・E.coli FimH 線毛接着阻害
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2015 — カランベリー含む UTI 予防選択肢のレビュー・D-マンノースを含む複数アプローチの位置づけ（Jepson RG et al.）
+
+### DIM（クロシフェ抽出）（DIM (Cruciferous-Sourced)） — エビデンスランク A
+URL: https://scibase.app/ingredients/dim-cruciferous
+エストロゲン代謝経路を2-OH優位に・ホルモン依存疾患は医師相談前提
+代表論文: RCT · Nutrition and Cancer 2017 · n=130 · 24週 — DIM 150mg/日24週間で2-OH/16α-OHエストロゲン比が有意に改善（保護的代謝物優位へ）
+
+### EAA（必須アミノ酸）（EAA (Essential Amino Acids)） — エビデンスランク A
+URL: https://scibase.app/ingredients/eaa
+10〜15g/回で筋たんぱく質合成が最大化される。BCAA単独より効果サイズが大きい
+代表論文: RCT · American Journal of Physiology-Endocrinology and Metabolism 2002 · n=6 · 1週 — 運動後のEAA 6g摂取で筋たんぱく質合成が安静時の約3倍に増加。
+
+### EGCG（緑茶カテキン）（EGCG (Epigallocatechin Gallate)） — エビデンスランク A
+URL: https://scibase.app/ingredients/egcg
+抗酸化・脂肪代謝・認知機能への関与がメタ解析で示されている
+代表論文: メタ解析 · Nutrients 2022 · n=2470 · 12週 — EGCG摂取が認知機能・注意力の改善に有意に関与。
+
+### FOS（フラクトオリゴ糖）（Fructooligosaccharide） — エビデンスランク A
+URL: https://scibase.app/ingredients/fos-fructooligosaccharide
+ビフィズス菌増加と便通改善で研究蓄積が厚い植物由来プレバイオ
+代表論文: メタ解析 · Alimentary Pharmacology & Therapeutics 2016 · n=470 — IBS-Cの便通改善は確認されたがIBS-Dでは症状悪化の可能性
+
+### GOS（ガラクトオリゴ糖）（Galactooligosaccharide） — エビデンスランク A
+URL: https://scibase.app/ingredients/gos-galactooligosaccharide
+便通改善とビフィズス菌増加で乳幼児・高齢者研究が豊富なプレバイオ
+代表論文: メタ解析 · Beneficial Microbes 2017 · n=1208 — 乳幼児ミルクへのGOS添加でビフィズス菌・腸内環境改善
+
+### GS4 ジムネマ（GS4 Gymnema Sylvestre） — エビデンスランク A
+URL: https://scibase.app/ingredients/gymnema-sylvestre-gs4
+ギムネマ酸25%規格・論文用量を確実に取れる古典的規格
+代表論文: メタ解析 · Journal of Clinical Pharmacy and Therapeutics 2015 · n=503 — 10試験のメタ解析でジムネマ投与群がHbA1cと空腹時血糖を有意に低下
+
+### HMB（β-ヒドロキシ-β-メチル酪酸）（HMB (Beta-Hydroxy Beta-Methylbutyrate)） — エビデンスランク A
+URL: https://scibase.app/ingredients/hmb
+高齢者の筋肉量・筋力維持への効果がメタ解析で確認されている抗サルコペニア成分
+代表論文: メタ解析 · Journal of Cachexia, Sarcopenia and Muscle 2019 · n=287 · 12週 — 高齢者においてHMB補給は除脂肪体重の有意な維持・増加と下肢筋力の改善をメタ解析で確認（p<0.05）
+
+### L-カルニチン（L-Carnitine） — エビデンスランク A
+URL: https://scibase.app/ingredients/l-carnitine
+脂肪酸のミトコンドリア輸送・エネルギー代謝・男性生殖機能への関与がメタ解析で確認
+代表論文: メタ解析 · Nutrients 2018 — L-カルニチン補給が体組成（体脂肪率低下）・疲労感軽減・運動後回復時間の改善に関連することをメタ解析で確認。
+
+### L-カルニチン酒石酸塩（LCLT）（L-Carnitine L-Tartrate） — エビデンスランク A
+URL: https://scibase.app/ingredients/carnitine-tartrate
+高強度運動後の筋ダメージマーカー改善・LCLT形態は運動研究の標準
+代表論文: メタ解析 · Journal of the International Society of Sports Nutrition 2018 · n=200 · 4週 — LCLT・遊離型L-カルニチン併合解析で運動誘発筋ダメージマーカーの中等度改善
+
+### L-テアニン（L-Theanine） — エビデンスランク A
+URL: https://scibase.app/ingredients/l-theanine
+リラックス・ストレス軽減・睡眠の質への関与がRCTで確認されている
+代表論文: メタ解析 · Nutritional Neuroscience 2021 · n=380 · 4週 — L-テアニン（単独またはカフェインとの組み合わせ）が注意・記憶・反応速度を有意に改善。
+
+### L-トリプトファン（L-Tryptophan） — エビデンスランク A
+URL: https://scibase.app/ingredients/l-tryptophan
+セロトニン・メラトニン・NAD+の共通前駆体。入眠改善がメタ解析で確認された必須アミノ酸
+代表論文: メタ解析 · Nutrients 2021 — トリプトファン摂取増加が入眠潜時の有意な短縮・睡眠効率の改善に関連することをメタ解析で確認（p<0.05）。
+
+### L. casei Shirota（Lactobacillus casei Shirota） — エビデンスランク A
+URL: https://scibase.app/ingredients/probiotic-strain-l-casei-shirota
+便通・免疫NK活性・ストレス下指標改善で日本最大の研究蓄積を持つ乳酸菌株
+代表論文: RCT · Bioscience of Microbiota, Food and Health 2014 · n=78 — シロタ株摂取で排便頻度・便性状の有意改善
+
+### L. plantarum 299v（Lactobacillus plantarum 299v） — エビデンスランク A
+URL: https://scibase.app/ingredients/probiotic-strain-lp299v
+IBS症状改善RCTと鉄吸収補助研究で研究蓄積がある植物乳酸菌株
+代表論文: メタ解析 · World Journal of Gastroenterology 2017 · n=569 — IBS症状スコア・腹痛頻度の改善が複数RCTで一貫
+
+### Lシトルリン（L-Citrulline） — エビデンスランク A
+URL: https://scibase.app/ingredients/l-citrulline
+経口吸収率の高いNO産生アミノ酸。疲労軽減・運動パフォーマンスをRCTで確認
+代表論文: RCT · Journal of Strength and Conditioning Research 2010 · n=41 · 2週 — シトルリンマレート8gで筋肉痛が40%以上軽減。
+
+### N-アセチルシステイン（NAC）（N-Acetylcysteine (NAC)） — エビデンスランク A
+URL: https://scibase.app/ingredients/n-acetylcysteine
+世界処方薬実績・グルタチオン前駆体・気道粘液溶解+アセトアミノフェン解毒
+代表論文: メタ解析 · European Respiratory Review 2015 · n=4155 — COPD・慢性気管支炎患者対象 13 RCT 統合メタで NAC 600-1,200mg/日で急性増悪リスク 25% 低下（Cazzola M et al.）
+
+### NAC（N-アセチルシステイン）（N-Acetyl Cysteine） — エビデンスランク A
+URL: https://scibase.app/ingredients/nac
+グルタチオン前駆体として細胞内抗酸化を底上げ。酸化ストレス・慢性炎症軽減がRCTで確認
+代表論文: メタ解析 · International Journal of Chronic Obstructive Pulmonary Disease 2018 — NACの抗酸化作用（グルタチオン上昇・MDA低下）をメタ解析で確認。
+
+### Permixon ノコギリヤシ（Permixon Saw Palmetto） — エビデンスランク A
+URL: https://scibase.app/ingredients/saw-palmetto-permixon
+タムスロシン0.4mgと同等の前立腺肥大症エビデンス（Vela-Navarrete 2018）
+代表論文: メタ解析 · BJU International 2018 · n=5800 · 24週 — BPH患者RCT・観察研究27件のメタ解析（n=5,800超）：Permixon 320mg/日はタムスロシン0.4mgと同等のIPSS改善・性機能副作用は少ない（Vela-Navarrete R et al.）
+
+### R-αリポ酸（R-ALA）（R-Alpha-Lipoic Acid (R-ALA)） — エビデンスランク A
+URL: https://scibase.app/ingredients/r-alpha-lipoic-acid
+DL 体の約2倍の血漿濃度・天然異性体・糖尿病性ニューロパチー RCT
+代表論文: メタ解析 · International Journal of Endocrinology 2012 · n=653 — 糖尿病性ニューロパチー対象 4 RCT 統合・ALA 600mg/日で TSS スコア有意改善・神経症候（しびれ・疼痛・反射）改善（Mijnhout GS et al.）
+
+### R型αリポ酸（R-Alpha Lipoic Acid (RALA)） — エビデンスランク A
+URL: https://scibase.app/ingredients/alpha-lipoic-acid-r-form
+S型を含む混合品より活性型・同量で取れるバイオアベイラビリティが高い
+代表論文: メタ解析 · European Review for Medical and Pharmacological Sciences 2017 · n=2089 — 11試験のメタ解析でαリポ酸投与によりHbA1c・空腹時血糖・インスリン抵抗性指標HOMA-IRの軽度改善
+
+### SAM-e（安定型）（SAM-e Stabilized） — エビデンスランク A
+URL: https://scibase.app/ingredients/sam-e-stabilized
+うつ・変形性関節症の両方でメタ解析報告があるメチル供与体
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2016 · n=934 — 中等度うつ症状で標準抗うつ薬と同等の効果が複数RCTで確認
+
+### Superbaクリルオイル（Superba Krill Oil） — エビデンスランク A
+URL: https://scibase.app/ingredients/krill-oil-superba
+リン脂質結合で吸収が良い・Superba規格は研究で使われた標準化品
+代表論文: RCT · Nutrition Research 2015 · n=300 · 12週 — Superbaクリルオイル1-3g/日12週間で中性脂肪が用量依存的に低下しオメガ3インデックスが上昇 [PMID:26095934 https://pubmed.ncbi.nlm.nih.gov/26095934/]
+
+### TMG（トリメチルグリシン）（Trimethylglycine） — エビデンスランク A
+URL: https://scibase.app/ingredients/trimethylglycine-tmg
+ホモシステイン低下・運動パフォーマンス補助の両RCT報告があるメチル供与体
+代表論文: メタ解析 · Journal of the International Society of Sports Nutrition 2011 · n=410 — 2.5g/日ベタインで筋持久力・パワー出力の有意な改善
+
+### UC-II 未変性 II 型コラーゲン（Undenatured Type II Collagen (UC-II)） — エビデンスランク A
+URL: https://scibase.app/ingredients/collagen-uc-ii
+鶏軟骨由来・経口免疫寛容で膝関節改善・40mg/日でG+Cを上回るRCT
+代表論文: RCT · Nutrition Journal 2016 · n=191 · 26週 — 膝 OA 患者 191 名で UC-II 40mg/日 vs glucosamine 1500mg+chondroitin 1200mg/日 vs プラセボ×180 日 RCT で UC-II 群が WOMAC 総スコア・VAS 疼痛・Lequesne 機能指数のすべてで G+C…
+
+### UC-II（非変性II型コラーゲン）（UC-II (Undenatured Type II Collagen)） — エビデンスランク A
+URL: https://scibase.app/ingredients/uc-ii
+わずか 40mg/日でグルコサミン+CS 1,500mg と同等の関節快適性 RCT
+代表論文: RCT · Journal of the International Society of Sports Nutrition / Nutrition Journal 2013 · n=52 · 13週 — 膝 OA 患者52名に UC-II 40mg/日 vs グルコサミン1,500mg+CS 1,200mg×90日：UC-II 群で WOMAC 総合スコアが グルコサミン+CS 群より33%強く改善（Lugo JP et al.）
+
+### アーティチョーク シナリン（Artichoke Cynarin） — エビデンスランク A
+URL: https://scibase.app/ingredients/artichoke-cynarin
+LDL軽度低下と消化不良症状改善のRCT・キク科系の補助層
+代表論文: メタ解析 · Alimentary Pharmacology & Therapeutics 2003 · n=247 — 機能性消化不良への系統的レビューで膨満感・胃部不快感の有意改善傾向
+
+### アスタキサンチン（Astaxanthin） — エビデンスランク A
+URL: https://scibase.app/ingredients/astaxanthin
+皮膚老化・酸化ストレスへのRCTで有効性が確認されているカロテノイド
+代表論文: RCT · Marine Drugs 2018 · n=65 · 16週 — 経口4mg/日のアスタキサンチンが皮膚弾力・水分量を有意に改善し、シワ深度を低下させた（p<0.05）
+
+### アスタキサンチン（ヘマトコッカス由来）（Astaxanthin (Haematococcus pluvialis)） — エビデンスランク A
+URL: https://scibase.app/ingredients/astaxanthin-haematococcus
+Haematococcus藻由来・研究で標準使用される天然型アスタキサンチン
+代表論文: RCT · Sangyo Eiseigaku Zasshi 2011 · n=49 · 4週 — アスタキサンチン6mg/日でVDT作業者の調節機能・眼精疲労症状指標の改善（p<0.05）
+
+### アセチルカルニチン心血管（Cardiovascular Acetyl-L-Carnitine） — エビデンスランク A
+URL: https://scibase.app/ingredients/carnitine-acetyl-cardio
+ミトコンドリア脂肪酸輸送・心筋エネルギー代謝補助・高用量3回分割
+代表論文: メタ解析 · European Journal of Vascular and Endovascular Surgery 2011 · n=832 — メタ解析でアセチルカルニチン投与により間欠性跛行患者の歩行距離が有意に延長
+
+### アゼライン酸（Azelaic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/azelaic-acid
+色素沈着・ニキビ・酒さへの効果がRCTで確認されている多機能成分
+代表論文: RCT · Archives of Dermatology 2006 · n=251 · 12週 — アゼライン酸15%ゲルで酒さの炎症性病変数が有意に減少（p<0.001）。
+
+### アデノシン（Adenosine） — エビデンスランク A
+URL: https://scibase.app/ingredients/adenosine
+日本の化粧品規制で承認された有効成分。しわ改善効果をRCTで確認
+代表論文: RCT · Journal of Dermatological Science 2008 · n=102 · 24週 — アデノシン0.1%外用で目元・口元のしわ深度が有意に減少（p<0.05）。
+
+### アルファリポ酸（ALA）（Alpha-Lipoic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/alpha-lipoic-acid
+水溶性・脂溶性どちらにも作用する「万能抗酸化物質」。ミトコンドリア機能を守る
+代表論文: メタ解析 · Obesity Reviews 2019 — ALA投与でHbA1c −0.4%、空腹時血糖 −8.5 mg/dLの改善（複数RCTのメタ解析）
+
+### アンドログラフィス（センシンレン）（Andrographis (Andrographis paniculata)） — エビデンスランク A
+URL: https://scibase.app/ingredients/andrographis
+上気道感染症の症状期間短縮・症状重症度低下のメタ解析で確立・「インドのキングオブビターズ」
+代表論文: メタ解析 · PLoS One 2017 · n=2200 — 急性上気道感染症2,200名を含む33本のRCTメタ解析で、アンドログラフィス（単独・複合製剤）が症状期間 −1〜2日・症状重症度（咳・喉痛・鼻水・倦怠感）の有意改善（Hu XY et al.）
+
+### アンドログラホライド（Andrographolide） — エビデンスランク A
+URL: https://scibase.app/ingredients/andrographolide
+風邪症状改善と期間短縮のメタ解析報告があるアーユルヴェーダハーブ
+代表論文: メタ解析 · Chinese Journal of Integrative Medicine 2017 · n=807 — 風邪症状重症度の有意改善・症状期間の平均1.6日短縮
+
+### イチョウ葉エキス（Ginkgo Biloba） — エビデンスランク A
+URL: https://scibase.app/ingredients/ginkgo-biloba
+認知機能・脳血流への関与がメタ解析で示されているロングセラー成分
+代表論文: メタ解析 · Journal of Alzheimer's Disease 2014 · n=2372 · 22週 — EGb761 240mg/日で認知機能スコア・日常生活機能が有意に改善（p<0.001）。
+
+### イチョウ葉エキス高用量規格品（EGb761等）（Ginkgo Biloba Standardized Extract High Dose） — エビデンスランク A
+URL: https://scibase.app/ingredients/ginkgo-biloba-extract-high
+24/6規格240mg/日が認知機能RCTの研究用量・標準60mgとは別物
+代表論文: メタ解析 · Human Psychopharmacology 2009 · n=1628 — EGb761 240mg/日のメタ解析で軽度認知障害の認知機能スコアと日常生活動作の改善
+
+### イヌリン（Inulin / Prebiotic Fiber） — エビデンスランク A
+URL: https://scibase.app/ingredients/inulin
+代表的なプレバイオティクス。腸内ビフィズス菌を選択的に増やすRCTエビデンス
+代表論文: メタ解析 · Journal of Nutrition 2017 · n=2100 · 8週 — イヌリン摂取でビフィズス菌が有意に増加（p<0.001）。
+
+### イノシトール40:1ブレンド（Myo/D-Chiro Inositol 40:1 Blend） — エビデンスランク A
+URL: https://scibase.app/ingredients/inositol-40-1-blend
+体内のMyo/DCI生理比率と一致する40:1ブレンドが単独投与より卵子の質を改善するRCT報告
+代表論文: メタ解析 · Journal of Ovarian Research 2021 — PCOS介入で40:1ブレンドが現在最もエビデンスが厚い処方として推奨
+
+### エルダーベリーエキス（Elderberry Extract） — エビデンスランク A
+URL: https://scibase.app/ingredients/elderberry-extract
+風邪症状の期間を平均2日短縮するメタ解析報告がある抗ウイルスハーブ
+代表論文: メタ解析 · Complementary Therapies in Medicine 2019 · n=180 — Hawkins J et al. 4 RCT統合・上気道感染症状の有意短縮（平均-2.0日）・特にインフルエンザでの差大
+
+### オメガ9（オレイン酸）（Oleic Acid (Omega-9)） — エビデンスランク A
+URL: https://scibase.app/ingredients/omega-9-oleic-acid
+サプリより食事で取るのが研究準拠・地中海食の主役脂肪酸
+代表論文: メタ解析 · BMJ 2014 · n=841211 — オリーブオイル摂取量と心血管イベント・脳卒中リスクの逆相関を示すメタ解析
+
+### オリーブリーフ高オレウロペイン（High-Oleuropein Olive Leaf Extract） — エビデンスランク A
+URL: https://scibase.app/ingredients/olive-leaf-oleuropein
+20%オレウロペイン規格で血圧降下がACE阻害薬と非劣性のRCT報告
+代表論文: メタ解析 · Nutrients 2018 — メタボリック症候群の血圧・血糖・脂質指標を多面的に改善傾向
+
+### オルニチン（Ornithine） — エビデンスランク A
+URL: https://scibase.app/ingredients/ornithine
+尿素回路でアンモニア代謝補助・疲労感軽減のRCTがある日本人気のアミノ酸
+代表論文: RCT · Nutrition Research 2008 · n=17 · 1週 — 400mg/日のオルニチンで運動後の疲労感VAS・血中アンモニア低下
+
+### カゼインプロテイン（Casein Protein） — エビデンスランク A
+URL: https://scibase.app/ingredients/casein-protein
+緩徐吸収で就寝前摂取の夜間筋タンパク合成RCTが確認されている乳タンパク
+代表論文: メタ解析 · European Journal of Clinical Nutrition 2016 · n=460 — 筋トレ併用で除脂肪体重増加が確認・ホエイとの直接比較では大差なしと整理
+
+### カリウム（Potassium） — エビデンスランク A
+URL: https://scibase.app/ingredients/potassium
+日本人の平均摂取量は推奨量より低い。血圧・脳卒中リスクへの介入経路として研究が厚い
+代表論文: メタ解析 · BMJ 2013 · n=128000 — カリウム摂取量増（90-120mmol/日相当3,500-4,700mg）で収縮期血圧-3.5mmHg・脳卒中リスク-24%
+
+### カルシウム（Calcium） — エビデンスランク A
+URL: https://scibase.app/ingredients/calcium
+骨密度維持・神経伝達・筋収縮。骨粗鬆症予防でRCTエビデンスが確立
+代表論文: RCT · New England Journal of Medicine 2006 · n=36282 · 364週 — カルシウム1000mg＋ビタミンD400IUの補充で股関節骨密度が有意に維持（p=0.003）
+
+### カルシウムHMB（Ca-HMB）（Calcium HMB） — エビデンスランク A
+URL: https://scibase.app/ingredients/calcium-hmb
+研究蓄積が最も厚いHMB形態・高齢者サルコペニア対策の標準
+代表論文: メタ解析 · Journal of the American Medical Directors Association 2015 · n=400 · 12週 — Ca-HMB 3g/日で高齢者の筋量保持と握力改善・サルコペニア指標の中等度改善
+
+### カルボニル鉄（徐放性元素鉄）（Carbonyl Iron） — エビデンスランク A
+URL: https://scibase.app/ingredients/carbonyl-iron
+徐放性で胃腸耐性が高い・硫酸鉄が続かない方の現実的代替
+代表論文: メタ解析 · Drugs 2015 · n=1200 — 徐放性鉄剤は通常型硫酸鉄より胃腸症状の発生率が低く脱落率も少ない、効果は同等
+
+### カワラタケ（ターキーテイル）（Turkey Tail） — エビデンスランク A
+URL: https://scibase.app/ingredients/turkey-tail
+PSK/PSP の β-グルカン複合体・がん補助療法の処方薬実績・免疫サポートのメタ解析
+代表論文: メタ解析 · Journal of Cancer Research and Clinical Oncology 2012 — PSK/PSP のがん補助療法での生存率改善・QOL 改善を統合メタで支持（Eliza WL et al.）
+
+### クエン酸カルシウム（Calcium Citrate） — エビデンスランク A
+URL: https://scibase.app/ingredients/calcium-citrate
+低胃酸・PPI服用中でも吸収維持。炭酸Caより1日の錠数は増えるが胃部刺激は少ない
+代表論文: メタ解析 · JAMA 2010 · n=70000 — PPI長期服用で骨折リスク25%上昇・低胃酸によるCa吸収低下が機序として議論
+
+### クエン酸マグネシウム（Magnesium Citrate） — エビデンスランク A
+URL: https://scibase.app/ingredients/magnesium-citrate
+吸収率はオキシドの約7倍。便秘改善+全身Mg補給の中庸的選択
+代表論文: RCT · Magnesium Research 2003 · n=46 · 8週 — 尿中Mg排泄量で評価した吸収率はクエン酸Mg約30% vs 酸化Mg約4% vs アスパラギン酸Mg約30%・クロスオーバー試験
+
+### クランベリーエキス（Cranberry Extract） — エビデンスランク A
+URL: https://scibase.app/ingredients/cranberry-extract
+再発性膀胱炎の予防的補助。Cochrane レビューと複数RCTでPAC含量36mg/日が研究の中心
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2012 · n=4473 — 24 RCT・4,473名統合でクランベリー製品が再発性UTIの相対リスクを約14％低下（女性再発例で効果が明確・短期治療には無効）（Jepson 2012）
+
+### グリコール酸（AHA）（Glycolic Acid (AHA)） — エビデンスランク A
+URL: https://scibase.app/ingredients/glycolic-acid
+角質ターンオーバー促進・毛穴・色素改善がRCTで確認されている
+代表論文: RCT · Journal of Cosmetic Dermatology 2019 · n=60 · 12週 — 35%グリコール酸ピールを4週おきに3回施術でMASIスコア（肝斑）が有意に低下（p<0.001）
+
+### グリシン（Glycine） — エビデンスランク A
+URL: https://scibase.app/ingredients/glycine
+睡眠の質・深睡眠の増加がRCTで確認されているアミノ酸
+代表論文: RCT · Sleep and Biological Rhythms 2007 · n=19 · 1週 — 就寝前3gのグリシン摂取で翌朝の疲労感・眠気が有意に改善。
+
+### クリルオイル（Krill Oil） — エビデンスランク A
+URL: https://scibase.app/ingredients/krill-oil
+PL 型オメガ3 で吸収率高・アスタキサンチン含有・LDL/中性脂肪改善 RCT 蓄積
+代表論文: RCT · Alternative Medicine Review 2004 · n=120 · 12週 — 高脂血症患者120名にクリルオイル 1-3g/日×12週で総コレ・LDL・TG・HDL の用量依存改善（Bunea R et al.）
+
+### クルクミン（Curcumin） — エビデンスランク A
+URL: https://scibase.app/ingredients/curcumin
+慢性炎症・Inflammaging抑制のメタ解析が複数存在する抗炎症成分
+代表論文: メタ解析 · Critical Reviews in Food Science and Nutrition 2021 · n=1657 · 12週 — CRP・IL-6・TNF-αなど主要炎症マーカーがプラセボ比で有意に低下（p<0.001）。
+
+### グルコサミン硫酸塩2KCl（Glucosamine Sulfate 2KCl） — エビデンスランク A
+URL: https://scibase.app/ingredients/glucosamine-sulfate-2kcl
+1500mg/日×3年で関節裂隙狭小化を抑制したRCTがある形態
+代表論文: RCT · Lancet 2001 · n=212 · 156週 — 膝OA患者212名にグルコサミン硫酸塩1,500mg/日×3年：プラセボ群で関節裂隙幅が0.31mm狭小化したのに対し、介入群は変化なし。
+
+### グルコマンナン（蒟蒻芋）（Glucomannan (Konjac)） — エビデンスランク A
+URL: https://scibase.app/ingredients/glucomannan
+3-4g/日でLDL-10%・体重-2kg・空腹時血糖改善のメタ解析エビデンス（Sood 2008）
+代表論文: メタ解析 · American Journal of Clinical Nutrition 2008 · n=531 · 8週 — グルコマンナン3〜4g/日×4〜12週でLDLコレステロール-10%・総コレ-7%・空腹時血糖-7%・体重-2kgの有意改善をn=531の14 RCT統合メタ解析で確認（Sood 2008・主要起点論文）
+
+### クロムピコリン酸（Chromium Picolinate） — エビデンスランク A
+URL: https://scibase.app/ingredients/chromium-picolinate
+インスリン感受性改善・2型糖尿病補助の RCT 蓄積・GTF クロム
+代表論文: メタ解析 · Diabetology & Metabolic Syndrome 2015 · n=622 — 2型糖尿病患者対象 14 RCT 統合メタでクロム補給 200-1,000μg/日で HbA1c -0.55%・FBG -1.06 mmol/L 有意改善（Yin RV, Phung OJ）
+
+### コウジ酸（Kojic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/kojic-acid
+チロシナーゼ阻害による美白効果がRCTで確認されている麹由来成分
+代表論文: RCT · Journal of the American Academy of Dermatology 2019 · n=60 · 12週 — 1%コウジ酸クリームで肝斑のMASIスコアが有意に低下（p<0.05）。
+
+### コエンザイムQ10（Coenzyme Q10） — エビデンスランク A
+URL: https://scibase.app/ingredients/coq10
+ミトコンドリア機能・酸化ストレス低減への関与がRCTで確認されている
+代表論文: RCT · JACC: Heart Failure 2014 · n=420 · 104週 — Q10群で主要心血管イベントが有意に減少（p=0.003）。
+
+### コラーゲン II型（Type II Collagen） — エビデンスランク A
+URL: https://scibase.app/ingredients/collagen-type-ii
+非変性II型コラーゲン（UC-II）による関節軟骨保護・可動域改善がRCTで確認
+代表論文: RCT · Journal of the International Society of Sports Nutrition 2013 · n=55 · 12週 — 健康成人55名のRCT（UC-II 40mg/日×12週）で膝の伸展可動域・運動後の疼痛が有意に改善（p<0.05）。
+
+### コラーゲンペプチド（Collagen Peptide） — エビデンスランク A
+URL: https://scibase.app/ingredients/collagen-peptide
+プロリン-ヒドロキシプロリンが血中到達・皮膚弾力28%改善のRCTで確認された経口美容成分
+代表論文: RCT · Skin Pharmacology and Physiology 2014 · n=69 · 8週 — 2.5〜5gのコラーゲンペプチド摂取群で皮膚弾力性が有意に改善（p<0.05）。
+
+### コリンアルフォセラート（α-GPC）（Choline Alphoscerate (Alpha-GPC)） — エビデンスランク A
+URL: https://scibase.app/ingredients/choline-alphoscerate
+脳血液関門通過率高・運動研究と認知症RCTで両軸エビデンス
+代表論文: システマティックレビュー · CNS Drug Reviews 2006 · n=1500 — α-GPC・CDP-コリン両形態で血管性認知症の認知機能改善、用量・期間で効果差
+
+### コンドロイチン硫酸（Chondroitin Sulfate） — エビデンスランク A
+URL: https://scibase.app/ingredients/chondroitin-sulfate
+関節軟骨GAG・OA エビデンスの定番成分・グルコサミン併用
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2015 · n=4962 — OA 患者対象 43 RCT 統合メタで CS 800-1,200mg/日×6ヶ月以上で疼痛改善（VAS -10mm）・関節構造保護傾向（Singh JA et al.）
+
+### サッカロミセス・ブラウディ（Saccharomyces boulardii） — エビデンスランク A
+URL: https://scibase.app/ingredients/s-boulardii
+AAD予防メタ解析で発症率を約半減・抗生剤と一緒に飲んでも自身は死なない「酵母」プロバイオティクスの代表
+代表論文: メタ解析 · Alimentary Pharmacology & Therapeutics 2015 · n=4780 · 4週 — 抗生剤関連下痢（AAD）予防を対象とした21 RCTのメタ解析n=4,780で、S. boulardii投与によりAAD発症率が約半減（RR約0.5）したと報告された（Szajewska H, Kołodziej M et al.）
+
+### サフラン（クロシン規格化）（Saffron Active Crocin Standardized） — エビデンスランク A
+URL: https://scibase.app/ingredients/saffron-active-crocin
+クロシン2%以上規格化・抑うつスコア改善はSSRI同等の効果サイズ
+代表論文: メタ解析 · Journal of Integrative Medicine 2014 · n=197 · 8週 — サフラン30mg/日で抑うつスコア（Hamilton-D）の偽薬比有意改善・SSRI同等の効果サイズ（SMD -0.99）
+
+### サフラン抽出（クロシン・サフラナール）（Saffron Extract (Crocus sativus)） — エビデンスランク A
+URL: https://scibase.app/ingredients/saffron-extract
+軽中等度うつ・PMS・加齢黄斑変性のRCT蓄積・SSRI併用は慎重・affron®等規格化30mg/日が目安
+代表論文: メタ解析 · Journal of Affective Disorders 2018 — サフラン抽出 28〜30mg/日 が軽中等度うつでSSRI（フルオキセチン・シタロプラム等）と同等の効果を示した複数RCTを整理（Lopresti AL, Drummond PD・抗うつ補完療法としての臨床的位置づけ確立）
+
+### サフラン抽出物（Saffron） — エビデンスランク A
+URL: https://scibase.app/ingredients/saffron
+クロシン・サフラナール 28-30mg/日・軽中等度うつ SSRI 同等水準メタ・気分・睡眠
+代表論文: メタ解析 · Human Psychopharmacology 2014 · n=230 — Lopresti AL et al. メタ解析 5 RCT 統合・サフラン 30mg/日 6-8週で軽中等度うつ症状を SSRI（フルオキセチン・イミプラミン）同等水準改善・プラセボ比有意
+
+### サラシア レティキュラータ（Salacia Reticulata） — エビデンスランク A
+URL: https://scibase.app/ingredients/salacia-reticulata
+日本でも機能性表示食品で採用・食前に飲むタイプの補助層
+代表論文: メタ解析 · Phytotherapy Research 2018 · n=408 — 5試験のメタ解析でサラシア属投与により食後血糖が有意に抑制
+
+### サリチル酸（BHA）（Salicylic Acid (BHA)） — エビデンスランク A
+URL: https://scibase.app/ingredients/salicylic-acid
+ニキビ・毛穴詰まりへの改善効果がRCTで繰り返し確認されている
+代表論文: RCT · Cutis 2004 · n=60 · 8週 — 2%サリチル酸で面疱（白ニキビ・黒ニキビ）数が有意に減少。
+
+### システアミン（外用）（Cysteamine (Topical)） — エビデンスランク A
+URL: https://scibase.app/ingredients/cysteamine
+5% × 4ヶ月でハイドロキノン同等の肝斑改善RCT・白斑リスクなしの「第3世代」美白成分
+代表論文: RCT · British Journal of Dermatology 2015 · n=50 · 16週 — 肝斑女性50名対象のRCTで、システアミン5%クリーム × 4ヶ月でmMASIスコア（肝斑面積×重症度）が有意改善（プラセボ比 −38%）。
+
+### シチコリン（CDP-コリン）（Citicoline (CDP-Choline)） — エビデンスランク A
+URL: https://scibase.app/ingredients/citicoline
+注意・処理速度・記憶のRCT複数・脳卒中後認知のメタ解析支持・Cognizin®規格が代表
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2005 — 高齢者の慢性脳血管障害に対するシチコリンRCT 14本（n=884）のCochraneレビューで、記憶・行動・全般評価の改善を支持（Fioravanti M & Yanagi M）
+
+### シチコリン（CDP-コリン）（Citicoline (CDP-Choline)） — エビデンスランク A
+URL: https://scibase.app/ingredients/citicoline-cdp-choline
+膜リン脂質合成型のコリン補給。α-GPC（運動研究）と並ぶ認知系の主要形態
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2005 · n=1372 — Fioravanti M, Yanagi M. 高齢者の慢性脳血管障害でCDP-コリンが記憶・行動の有意な改善を示した。
+
+### シトルリンマレート（Citrulline Malate） — エビデンスランク A
+URL: https://scibase.app/ingredients/citrulline-malate
+6-8gで筋持久力・反復回数の有意な増加がRCTで確認されたパンプ補助
+代表論文: メタ解析 · European Journal of Nutrition 2020 · n=380 — シトルリン6g以上で筋持久力・反復回数・パンプ感の有意な改善
+
+### ジンジャーエキス（規格化生姜抽出物）（Ginger Extract (Standardized)） — エビデンスランク A
+URL: https://scibase.app/ingredients/ginger-extract
+OA メタ・つわりメタ・運動誘発筋痛 RCT・ジンゲロール5%規格化
+代表論文: メタ解析 · Osteoarthritis and Cartilage 2015 · n=593 — OA 患者対象 5 RCT 統合メタでジンジャーエキスがプラセボより疼痛 SMD -0.30 有意改善・GI 副作用わずか OR 2.33（Bartels EM et al.）
+
+### スルフォラファン（ミロシナーゼ併用）（Sulforaphane + Myrosinase） — エビデンスランク A
+URL: https://scibase.app/ingredients/sulforaphane-glucoraphanin-myrosinase
+グルコラファニン+ミロシナーゼで吸収率35%・腸内細菌依存の不安定さを解消
+代表論文: RCT · PLOS One 2015 · n=16 · 1週 — グルコラファニン単体 vs グルコラファニン+ミロシナーゼ：併用品で尿中ジチオカルバメート排泄が35%以上・単独で10%程度（Fahey JW et al.）
+
+### ゼアキサンチン（Zeaxanthin） — エビデンスランク A
+URL: https://scibase.app/ingredients/zeaxanthin
+目の黄斑部に集積するカロテノイド。加齢黄斑変性の予防効果が大規模RCTで確認されている
+代表論文: RCT · JAMA Ophthalmology 2014 · n=4203 · 260週 — ルテイン10mg＋ゼアキサンチン2mg補給により中等度AMDからの進行リスクが26%低下（p<0.001）
+
+### セラミド（Ceramide） — エビデンスランク A
+URL: https://scibase.app/ingredients/ceramide
+皮膚バリア機能の修復・水分保持への関与がRCTで確認されている
+代表論文: RCT · Journal of Allergy and Clinical Immunology 2014 · n=124 · 32週 — 出生直後からの保湿剤（セラミド含有）使用でアトピー性皮膚炎の発症リスクが50%低下（p=0.017）
+
+### セラミド（経口）（Oral Ceramide） — エビデンスランク A
+URL: https://scibase.app/ingredients/ceramide-oral
+肌の水分保持・バリア機能を内側から強化。小麦・米由来のグルコシルセラミドがRCTで確認
+代表論文: RCT · Skin Pharmacology and Physiology 2009 · n=51 · 4週 — グルコシルセラミド12mg/日×4週で皮膚水分量が有意改善（p<0.01）。
+
+### セレン（Selenium） — エビデンスランク A
+URL: https://scibase.app/ingredients/selenium
+甲状腺機能・抗酸化酵素（グルタチオンペルオキシダーゼ）に必須のミネラル
+代表論文: メタ解析 · Thyroid 2020 · n=876 · 24週 — 200μg/日のセレン補充で橋本病（抗TPO抗体）が有意に低下。
+
+### ソイプロテイン（Soy Protein Isolate） — エビデンスランク A
+URL: https://scibase.app/ingredients/soy-protein-isolate
+植物性で大豆イソフラボン併存・更年期世代の女性に研究蓄積が厚いプロテイン
+代表論文: メタ解析 · Menopause 2007 · n=1196 — 更年期女性でホットフラッシュ頻度・重症度の有意な低下（SMD -0.39, p<0.01）
+
+### タルトチェリー（モンモランシー）（Tart Cherry (Montmorency)） — エビデンスランク A
+URL: https://scibase.app/ingredients/tart-cherry
+運動後筋肉痛軽減・睡眠時間延長・関節痛改善のRCT集中・アントシアニン+天然メラトニン豊富
+代表論文: RCT · Scandinavian Journal of Medicine & Science in Sports 2010 · n=20 · 1週 — マラソンランナー20名対象RCTで、タルトチェリージュース 240ml×2/日×8日（レース前後）により筋力回復・IL-6・筋肉痛VASの有意改善（Howatson G et al.）
+
+### チェストベリー（ヴィテックス）（Chasteberry (Vitex agnus-castus)） — エビデンスランク A
+URL: https://scibase.app/ingredients/chasteberry-vitex
+PMS症状指標がn=170のRCTで有意改善・PMS研究の代表ハーブ
+代表論文: メタ解析 · Planta Medica 2013 · n=1300 · 12週 — PMS・月経前不快気分障害（PMDD）・乳房痛・周期性ニキビへの効果が複数RCTで支持
+
+### トコトリエノール（Tocotrienols） — エビデンスランク A
+URL: https://scibase.app/ingredients/tocotrienols
+200mg×2年で脳の白質病変進行を有意に抑制したRCT・α-トコフェロールより細胞内移行能が約50倍とされる「スーパービタミンE」
+代表論文: RCT · Atherosclerosis 2003 · n=32 · 16週 — 高コレステロール血症被験者32名対象のRCTで、混合トコトリエノール（パーム由来）100mg/日 × 4ヶ月でLDL-C −23%・総コレステロール −21%・トリグリセリド −12%が観察された
+
+### トラネキサム酸（Tranexamic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/tranexamic-acid
+肝斑・色素沈着へのRCTで有効性が示されている美白成分
+代表論文: メタ解析 · Journal of the American Academy of Dermatology 2020 · n=561 · 12週 — 経口250mg/日で肝斑スコア（mMASI）が有意に改善。
+
+### ナイアシン（ニコチン酸）（Niacin / Nicotinic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/niacin
+NAD+合成の前駆体。脂質プロファイル改善・エネルギー代謝をRCTで確認
+代表論文: メタ解析 · Journal of the American College of Cardiology 2014 · n=6748 · 24週 — ナイアシン高用量でHDLが平均+23%増加、LDL-25%低下、中性脂肪-22%低下（いずれもp<0.001）
+
+### ナイアシン（ビタミンB3・ニコチン酸）（Niacin (Vitamin B3)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-b3-niacin
+高用量で脂質改善が確立。ただしフラッシュと肝障害リスクで処方薬グレードの議論
+代表論文: メタ解析 · JAMA 2000 · n=30000 · 24週 — ニコチン酸1,500-3,000mg/日でHDL+20-25%・LDL-15-20%・トリグリセリド-25-35%の脂質改善
+
+### ナイアシンアミド（Niacinamide） — エビデンスランク A
+URL: https://scibase.app/ingredients/niacinamide
+シミ予防だけじゃない。皮脂・しわ・バリアの4効能がRCTで確認されている
+代表論文: RCT · British Journal of Dermatology 2002 · n=18 · 4週 — 外用ナイアシンアミドがメラノソームの転移を約35〜68%抑制することがin vitro・RCTで示されている
+
+### ナトリウム（食塩）（Sodium） — エビデンスランク A
+URL: https://scibase.app/ingredients/sodium
+日本人の最大の食事性課題。サプリで足すのではなく食事で減らす方向の整理
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2013 · n=3230 · 52週 — 食塩4-5g/日減で高血圧者の収縮期-4.0/拡張期-2.0mmHg・正常血圧者-1.4/-0.4mmHg低下
+
+### ニコチンアミド（経口・光老化/皮膚癌予防）（Nicotinamide (Oral, Photoprotection)） — エビデンスランク A
+URL: https://scibase.app/ingredients/nicotinamide-oral-photo
+NEJM Phase 3 RCT・高リスク群NMSC -23%・経口500mg×2/日
+代表論文: RCT · New England Journal of Medicine 2015 · n=386 · 52週 — 過去5年以内NMSC既往の高リスク群386名にニコチンアミド500mg×2/日 vs プラセボ12ヶ月で新規NMSC発生 -23%（95%CI 4-38%・p=0.02）・SCC -30%・BCC -20%・光線角化症数も有意減少。
+
+### バイオペリン（ピペリン）（BioPerine / Piperine） — エビデンスランク A
+URL: https://scibase.app/ingredients/bioperine
+他成分の吸収率を劇的に高める「生物学的増幅剤」。クルクミンの吸収を2000%向上させる
+代表論文: RCT · Planta Medica 1998 · n=8 — ピペリン20mgとクルクミンを同時摂取することでクルクミンの血中濃度が2000%（20倍）向上。
+
+### ハイドロキノン（外用）（Hydroquinone (topical)） — エビデンスランク A
+URL: https://scibase.app/ingredients/hydroquinone-topical
+美白外用ゴールドスタンダード・日本4%以上処方・2%まで化粧品・重要な注意
+代表論文: RCT · Journal of Dermatological Treatment 2000 · n=48 · 12週 — Ennes SB et al. 肝斑 n=48 RCT で HQ 4% クリーム 12週で MASI スコア 70% 改善・コウジ酸 0.75% より優位
+
+### バコパ（Bacopa Monnieri） — エビデンスランク A
+URL: https://scibase.app/ingredients/bacopa-monnieri
+アーユルヴェーダ由来の脳機能ハーブ。記憶力・処理速度改善をメタ解析で確認
+代表論文: メタ解析 · Journal of Ethnopharmacology 2014 · n=437 · 12週 — 記憶回想速度・視覚情報処理が有意に改善（p<0.05）。
+
+### バナバ1%コロソリン酸（Banaba 1% Corosolic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/banaba-corosolic-1pct
+コロソリン酸1%規格・48mg/日の論文用量を確実に取れる規格
+代表論文: RCT · Journal of Health Science 2006 · n=31 · 2週 — コロソリン酸10mg/日2週間で軽度2型糖尿病の食後血糖が有意改善
+
+### パルミトイルエタノラミド（PEA）（Palmitoylethanolamide (PEA)） — エビデンスランク A
+URL: https://scibase.app/ingredients/palmitoylethanolamide-pea
+内因性脂肪酸アミド・慢性疼痛のメタ解析あり・日本流通は限定的
+代表論文: メタ解析 · Pain Physician 2016 · n=1484 — 16試験のメタ解析でPEA 600-1200mg/日が慢性疼痛VASスコアをプラセボ・対照群より有意に低下 [PMID:26815247 https://pubmed.ncbi.nlm.nih.gov/26815247/]
+
+### パルミトイルペプチド（Pal-KTTKS等）（Palmitoyl Peptides） — エビデンスランク A
+URL: https://scibase.app/ingredients/palmitoyl-tripeptide
+コラーゲン産生シグナルを外側から届けるペプチド。しわ改善で複数RCT確認
+代表論文: RCT · International Journal of Cosmetic Science 2003 · n=93 · 12週 — Pal-KTTKS 4ppm外用×12週で目尻・額のしわスコアが有意改善（プラセボ比−36%）
+
+### パンテノール（プロビタミンB5）（Panthenol / Pro-Vitamin B5） — エビデンスランク A
+URL: https://scibase.app/ingredients/panthenol
+皮膚でパントテン酸に変換される保湿・バリア修復成分。RCTで乾燥・刺激を改善
+代表論文: メタ解析 · International Journal of Cosmetic Science 2019 · n=1800 · 8週 — パンテノール外用で皮膚水分量が有意に増加、経表皮水分散失（TEWL）が低下。
+
+### パントテン酸（ビタミンB5）（Pantothenic Acid (Vitamin B5)） — エビデンスランク A
+URL: https://scibase.app/ingredients/pantothenic-acid
+副腎機能・コエンザイムA産生・皮膚バリア修復の三役をこなすビタミン
+代表論文: RCT · Dermatology and Therapy 2014 · n=48 · 12週 — パントテン酸2.2g/日×12週でニキビ数が有意減少（プラセボ比−67.5%）。
+
+### ビーツ（赤ビート）（Beetroot） — エビデンスランク A
+URL: https://scibase.app/ingredients/beetroot
+天然硝酸塩→NO産生→血圧-4.4 mmHg・運動耐容能改善のメタ解析で確立成分
+代表論文: メタ解析 · Journal of Nutrition 2013 · n=254 · 2週 — ビーツ由来硝酸塩 5.1-23mmol/日×3-15日で収縮期血圧 -4.4 mmHg・拡張期血圧 -1.1 mmHg 有意低下をn=254の16 RCT統合メタ解析で確認（Siervo 2013）
+
+### ビーツ粉末（硝酸塩）（Beetroot Powder） — エビデンスランク A
+URL: https://scibase.app/ingredients/beetroot-powder
+硝酸塩 6.4-12.8mmol/日・NO 経路・運動 RCT メタ・血圧低下 SBP -4.4 mmHg
+代表論文: メタ解析 · Nutrients 2017 · n=200 — Domínguez R et al. メタ解析 14 RCT 統合・ビーツジュース硝酸塩補給で持久運動パフォーマンス（time-to-exhaustion・タイムトライアル時間）有意改善・運動経済性改善
+
+### ピクノジェノール（フランス海岸松樹皮抽出物）（Pycnogenol (French Maritime Pine Bark Extract)） — エビデンスランク A
+URL: https://scibase.app/ingredients/pycnogenol
+慢性静脈不全・血流改善・血圧軽度低下・更年期症状のRCT集中・OPC複合体
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2012 — ピクノジェノールに関する15本のRCTのCochraneレビュー。
+
+### ピジウム（Pygeum africanum）（Pygeum Africanum） — エビデンスランク A
+URL: https://scibase.app/ingredients/pygeum-africanum
+Wilt 2002 Cochrane メタ解析（18 RCT）でBPH症状改善・夜間頻尿軽減
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2002 · n=1562 · 8週 — BPH RCT 18件のCochraneメタ解析（n=1,562）：ピジウムで夜間頻尿19%減・尿流量23%増・残尿24%減（Wilt T et al.）
+
+### ビタミンA（経口）（Vitamin A） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-a
+免疫と視覚の必須栄養。ただし過剰摂取は致命的・妊娠初期は耐容上限を必ず確認
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2017 · n=261000 · 52週 — 6か月-5歳児の全死亡率を24%低下（RR 0.76, 95%CI 0.69-0.83）。
+
+### ビタミンA（目向け）（Vitamin A for Eye Health） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-a-eye
+夜盲症・ドライアイのRCT支持・妊娠初期は催奇形性の閾値YMYL
+代表論文: メタ解析 · WHO Guidelines 2011 · n=5000 — ビタミンA欠乏地域での妊娠中ビタミンA補給は夜盲症改善効果。
+
+### ビタミンB1（チアミン）（Vitamin B1 (Thiamine)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-b1
+糖代謝・神経の補酵素TPPの基質・脂溶性誘導体ベンフォチアミンが吸収優位
+代表論文: RCT · Experimental and Clinical Endocrinology & Diabetes 2008 · n=165 · 6週 — 糖尿病性多発神経障害患者対象のRCTで、ベンフォチアミン高用量群（600mg/日）はプラセボに対しNeuropathy Symptom Score（NSS）の有意な低下を示した（p=0.033）。
+
+### ビタミンB12（Vitamin B12 / Cobalamin） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-b12
+神経系・DNA合成・赤血球形成に不可欠。欠乏で認知機能低下・疲労が起こる
+代表論文: メタ解析 · Nutritional Neuroscience 2020 · n=1500 · 24週 — B12欠乏のある高齢者への補充で認知機能スコアが有意に改善。
+
+### ビタミンB2（リボフラビン）（Vitamin B2 (Riboflavin)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-b2
+FAD・FMNを補酵素とするエネルギー代謝のハブ・片頭痛予防のRCTエビデンスあり
+代表論文: RCT · Neurology 1998 · n=55 · 12週 — 片頭痛患者対象のRCT。
+
+### ビタミンB6（Vitamin B6 / Pyridoxine） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-b6
+セロトニン・ドーパミン合成に関与。ストレス・PMS・認知機能にRCTエビデンス
+代表論文: メタ解析 · Journal of Obstetrics and Gynaecology 2017 · n=864 · 12週 — ビタミンB6（50mg/日）でPMSスコアが有意に改善（OR 2.32, 95% CI 1.95-2.69）
+
+### ビタミンC誘導体（外用）（Topical Vitamin C (L-Ascorbic Acid)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-c-topical
+コラーゲン合成促進・美白・抗酸化がRCTで確認されている外用成分
+代表論文: RCT · Dermatologic Surgery 2005 · n=60 · 12週 — 10〜20% L-アスコルビン酸外用でシミ・光老化スコアの有意な改善。
+
+### ビタミンD3+K2併用（Vitamin D3 + K2） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-d3-k2-combo
+D3はCaを腸から血へ・K2はCaを血から骨へ。Ca動態の上流下流を一緒に整える設計
+代表論文: RCT · Osteoporosis International 2013 · n=244 · 156週 — MK-7 180μg/日3年間で椎体骨密度（L1-L4）・大腿骨頸部骨密度・骨強度（FE Analysis）の有意改善・閉経後女性
+
+### ビタミンE（Vitamin E (Tocopherol)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-e
+脂溶性の抗酸化ビタミン。細胞膜の酸化損傷を防ぐ基本的抗老化成分
+代表論文: メタ解析 · Free Radical Biology and Medicine 2019 · n=18000 — 高用量（>400IU）では心血管リスクへの好影響は限定的。
+
+### ビタミンK2（Vitamin K2 (MK-7)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-k2
+骨密度維持・動脈石灰化予防へのRCTが複数存在するビタミン
+代表論文: メタ解析 · Osteoporosis International 2009 · n=6759 · 104週 — MK-7型K2の継続摂取で骨密度が有意に維持・改善。
+
+### ビタミンK2 MK-4 高用量（15〜45mg）（Vitamin K2 MK-4 High Dose (15-45mg)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-k2-mk4-high-dose
+日本の骨粗鬆症診療で45mg/日が処方標準・サプリは15mgが現実域
+代表論文: メタ解析 · Nutrition Reviews 2009 · n=6759 — MK-4 45mg/日のメタ解析で椎体骨折60%・大腿骨頸部骨折77%・全骨折81%のリスク低下
+
+### ビタミンK2 MK-7 高用量（100〜180μg）（Vitamin K2 MK-7 High Dose (100-180mcg)） — エビデンスランク A
+URL: https://scibase.app/ingredients/vitamin-k2-mk7-high-dose
+3年RCTでPWV改善・閉経後骨密度の維持に高用量MK-7が研究蓄積
+代表論文: システマティックレビュー · Nutrients 2020 · n=1500 — MK-7 100μg超で心血管疾患リスク低下の傾向、用量依存性が示唆される
+
+### ビフィズス菌BB-12（Bifidobacterium lactis BB-12） — エビデンスランク A
+URL: https://scibase.app/ingredients/probiotic-strain-bb12
+便秘改善RCTと呼吸器感染リスク低下メタ解析で研究蓄積が厚いビフィズス菌株
+代表論文: メタ解析 · British Journal of Nutrition 2014 · n=3720 — BB-12を含む乳酸菌株が小児・高齢者の上気道感染リスクを有意に低下
+
+### フェルラ酸（Ferulic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/ferulic-acid
+ビタミンC・Eの安定化と抗酸化力を高める相乗効果。UV誘発肌老化をRCTで抑制
+代表論文: RCT · Journal of Investigative Dermatology 2005 · n=10 · 4週 — フェルラ酸＋ビタミンC・Eの組み合わせでUVによる皮膚損傷が8倍低下。
+
+### ぶどう種子（プロアントシアニジンB規格）（Grape Seed Proanthocyanidin (PCB)） — エビデンスランク A
+URL: https://scibase.app/ingredients/grape-seed-pcb
+プロアントシアニジン95%規格化・収縮期血圧改善のメタ解析
+代表論文: メタ解析 · Journal of the American Society of Hypertension 2016 · n=810 · 8週 — GSE PCB 100〜300mg/日で収縮期血圧 -6.1mmHg・拡張期 -2.8mmHgの有意低下
+
+### ブドウ種子抽出物（OPC）（Grape Seed Extract） — エビデンスランク A
+URL: https://scibase.app/ingredients/grape-seed-extract
+血圧低下・抗酸化のメタ解析エビデンス・OPC 95%以上標準化品が研究と整合
+代表論文: メタ解析 · Journal of the American Dietetic Association 2011 · n=800 — ブドウ種子抽出補給で収縮期血圧・心拍数・LDL の有意改善を統合メタで確認（Feringa HH et al.）
+
+### ブラックコホシュ（Black Cohosh） — エビデンスランク A
+URL: https://scibase.app/ingredients/black-cohosh
+更年期Kupperman指数がメタ解析で有意改善・肝障害症例報告ありの慎重運用
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2012 · n=2027 · 12週 — 16件のRCT統合・更年期症状全般への効果は研究間でばらつきあり、ホットフラッシュ頻度への効果サイズは小〜中等度
+
+### ブロッコリースプラウトエキス（Broccoli Sprout Extract） — エビデンスランク A
+URL: https://scibase.app/ingredients/broccoli-sprout-extract
+通常ブロッコリーの50倍のスルフォラファンを含むスプラウト由来の原料
+代表論文: RCT · Cancer Prevention Research 2014 · n=291 · 12週 — 大気汚染地域住民291名にブロッコリースプラウト飲料×12週：ベンゼン代謝物61%増・アクロレイン代謝物23%増（解毒能上昇・Egner PA et al.）
+
+### プロバイオティクス（Probiotics） — エビデンスランク A
+URL: https://scibase.app/ingredients/probiotics
+腸内環境・免疫機能への関与がRCTで確認されているが菌株特異性に注意
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2019 · n=4555 — 抗生物質関連下痢の予防に特定の菌株（LGG・S.boulardii）が有意な効果を示した（RR 0.45）
+
+### プロピオニル-L-カルニチン（PLC）（Propionyl-L-Carnitine） — エビデンスランク A
+URL: https://scibase.app/ingredients/carnitine-propionyl
+PAD歩行距離改善・既存カルニチン形態と異なる血管特化型
+代表論文: メタ解析 · Vascular Medicine 2011 · n=730 · 24週 — PLC 1〜2g/日でPAD患者の最大歩行距離・初発跛行距離の有意改善（SMD 0.36）
+
+### ブロメライン（Bromelain） — エビデンスランク A
+URL: https://scibase.app/ingredients/bromelain
+パイナップル由来酵素・OA / 術後浮腫の RCT 蓄積・抗炎症レイヤー
+代表論文: RCT · Journal of Alternative and Complementary Medicine 2004 · n=42 · 12週 — 中等度〜重度膝 OA 患者42名にブロメライン×12週で WOMAC 痛み・剛性スコア改善・ジクロフェナクと同等（Brien S et al.）
+
+### ヘスペリジン（Hesperidin） — エビデンスランク A
+URL: https://scibase.app/ingredients/hesperidin
+柑橘ポリフェノールの代表・冷え性・血管機能改善の RCT 蓄積
+代表論文: メタ解析 · Critical Reviews in Food Science and Nutrition 2015 — 柑橘・りんごポリフェノール（主にヘスペリジン）の血管・認知・気分への効果統合レビュー。
+
+### ヘム鉄（Heme Iron） — エビデンスランク A
+URL: https://scibase.app/ingredients/heme-iron
+非ヘム鉄の副作用ゼロが最大の差別化。価格は2-3倍でも続けやすい
+代表論文: メタ解析 · American Journal of Clinical Nutrition 2010 — ヘム鉄と非ヘム鉄の吸収率差・食事成分との相互作用の総括メタ解析
+
+### ベルガモットBPF（柑橘ベルガモット由来）（Citrus Bergamot Polyphenolic Fraction (BPF)） — エビデンスランク A
+URL: https://scibase.app/ingredients/citrus-bergamot-bpf
+Mollace 2011 n=237でLDL-36%・TG-39%改善のRCT。スタチン補助としてのエビデンス
+代表論文: メタ解析 · Journal of the American College of Nutrition 2020 · n=765 · 12週 — BPF経口投与のメタ解析。
+
+### ベルガモットBPF高用量（1,000mg）（High-Dose Bergamot BPF） — エビデンスランク A
+URL: https://scibase.app/ingredients/bergamot-bpf-1000mg
+1,000mg/日でLDL−36%・500mg/日（−24%）より明確な用量反応のRCT
+代表論文: メタ解析 · Critical Reviews in Food Science and Nutrition 2019 · n=1000 · 12週 — ベルガモット研究12件のメタ解析：用量500-1,500mg/日で総コレステロール・LDL・トリグリセリド低下・HDL上昇のエビデンスを統合（Lamiquiz-Moneo I et al.）
+
+### ベルベリン（Berberine） — エビデンスランク A
+URL: https://scibase.app/ingredients/berberine
+血糖・脂質代謝への関与がメタ解析で示されている「植物性メトホルミン」
+代表論文: メタ解析 · Evidence-Based Complementary and Alternative Medicine 2012 · n=1068 · 12週 — 空腹時血糖・HbA1c・トリグリセリドがプラセボ比で有意に低下。
+
+### ベンフォチアミン（脂溶性B1）（Benfotiamine） — エビデンスランク A
+URL: https://scibase.app/ingredients/benfotiamine
+チアミンの脂溶性誘導体で吸収率5倍・糖尿病性神経障害のRCTでNSSスコア改善
+代表論文: RCT · Experimental and Clinical Endocrinology & Diabetes 2008 · n=165 · 24週 — Stracke H et al. 糖尿病性末梢神経障害165例で600mg/日 24週投与・NSS（神経障害症状スコア）有意改善
+
+### ホエイプロテインアイソレート（Whey Protein Isolate） — エビデンスランク A
+URL: https://scibase.app/ingredients/whey-protein-isolate
+吸収速度の速さとBCAA含量の高さで筋タンパク合成RCTが豊富な精製ホエイ
+代表論文: メタ解析 · Journal of the American College of Nutrition 2014 · n=1863 — 筋トレ併用でのホエイ補給がプラセボに比べ除脂肪体重を平均0.8kg増加させた
+
+### ホースチェスナット（西洋トチノキ）（Horse Chestnut (Aesculus hippocastanum)） — エビデンスランク A
+URL: https://scibase.app/ingredients/horse-chestnut
+慢性静脈不全（CVI）Cochrane エビデンス・むくみ・下肢循環改善
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2012 · n=1051 — CVI 患者対象 17 RCT 統合メタで下肢痛・浮腫・かゆみの有意改善・着圧ストッキングと同等の効果（Pittler MH, Ernst E）
+
+### ホーソンエキス（サンザシ）（Hawthorn Extract） — エビデンスランク A
+URL: https://scibase.app/ingredients/hawthorn-extract
+Pittler 2008 Cochrane メタ解析（10 RCT・n=855）で心不全症状改善
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2008 · n=855 · 16週 — 慢性心不全RCT 14件のCochraneメタ解析：ホーソン標準化エキスで最大酸素摂取量・運動耐容能・症状スコア有意改善（Pittler MH et al.）
+
+### ホーソンベリー（サンザシ）（Hawthorn Berry (Crataegus)） — エビデンスランク A
+URL: https://scibase.app/ingredients/hawthorn-berry
+900mg/日で軽度心不全（NYHA II）の運動耐容能改善が複数RCTで確認
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2008 · n=855 · 12週 — ホーソン抽出物がNYHA I-IIIの心不全患者で運動耐容能・最大運動仕事量・心症状（息切れ・疲労感）を有意改善することをn=855の14 RCT統合メタ解析で確認（Pittler 2008）
+
+### ボスウェリア（インド乳香）（Boswellia Serrata） — エビデンスランク A
+URL: https://scibase.app/ingredients/boswellia
+5-LOX阻害による強力な抗炎症作用。関節炎・炎症性疾患への効果がメタ解析で確認
+代表論文: メタ解析 · Advances in Experimental Medicine and Biology 2016 — ボスウェリン酸（5-LOX阻害）が変形性関節症・関節リウマチ・喘息などの炎症性疾患に対して有意な症状改善効果を示すことをメタ解析で確認。
+
+### ホスファチジルセリン（Phosphatidylserine (PS)） — エビデンスランク A
+URL: https://scibase.app/ingredients/phosphatidylserine
+脳のリン脂質。認知機能・記憶・ストレス応答への関与がRCTで確認
+代表論文: メタ解析 · Nutrients 2015 · n=567 · 12週 — 記憶・学習・集中力が複数のRCTでプラセボ比有意改善。
+
+### ボバインコロストラム（Bovine Colostrum） — エビデンスランク A
+URL: https://scibase.app/ingredients/colostrum-bovine
+上気道感染リスク低下と腸バリア補助がメタ解析・RCTで確認されている初乳タンパク
+代表論文: メタ解析 · Nutrients 2021 · n=1009 · 12週 — 上気道感染症の罹患日数が有意に短縮（SMD -0.30, p<0.01）。
+
+### マグネシウムグリシネート（Magnesium Glycinate） — エビデンスランク A
+URL: https://scibase.app/ingredients/magnesium-glycinate
+吸収率が高く胃腸への負担が少ないマグネシウム形態。睡眠・ストレスへのエビデンスが最も充実している
+代表論文: メタ解析 · Nutrients 2017 · n=380 · 12週 — マグネシウム欠乏が軽度の不安・ストレスに対して補給が有効であることが複数のRCTから示唆されている
+
+### ミオイノシトール（Myo-Inositol） — エビデンスランク A
+URL: https://scibase.app/ingredients/myo-inositol
+女性のホルモンバランス・インスリン感受性への効果がメタ解析で確認されている
+代表論文: メタ解析 · International Journal of Endocrinology 2016 · n=640 · 12週 — PCOS女性においてミオイノシトール補給は月経周期・排卵率・インスリン感受性・アンドロゲン値を有意に改善
+
+### ミオイノシトール（myo-inositol）（Myo-Inositol） — エビデンスランク A
+URL: https://scibase.app/ingredients/inositol-myo
+PCOS排卵改善・パニック障害でRCTエビデンス・1日2〜4gが研究用量
+代表論文: メタ解析 · Endocrine Connections 2017 · n=1000 — ミオイノシトール4g/日 12〜24週でPCOSの排卵率・月経周期・HOMA-IR・テストステロンの有意改善
+
+### メチルフォレート（5-MTHF）（Methylfolate (5-MTHF / L-5-MTHF)） — エビデンスランク A
+URL: https://scibase.app/ingredients/methyl-folate
+MTHFR 多型でも吸収・活性型葉酸・SSRI 抵抗うつアドオン
+代表論文: メタ解析 · Clinical Pharmacokinetics 2010 — 5-MTHF は folic acid と比較して血漿活性葉酸濃度を 70〜80% 高く・MTHFR 多型でも吸収影響なし（Pietrzik K et al.）
+
+### メリババクルクミン（Meriva）（Meriva Curcumin Phytosome） — エビデンスランク A
+URL: https://scibase.app/ingredients/turmeric-meriva
+phytosome技術で標準クルクミンの生体利用率29倍を達成した規格品
+代表論文: RCT · Alternative Medicine Review 2010 · n=100 · 12週 — 膝OA患者100名にMeriva 1,000mg/日×3か月：WOMAC総合スコア58%改善・歩行試験距離・C反応性蛋白も有意改善（Belcaro G et al.）
+
+### モリブデン（Molybdenum） — エビデンスランク A
+URL: https://scibase.app/ingredients/molybdenum
+IOM 設定必須微量元素・3つの補因子酵素・硫黄/プリン代謝
+代表論文: 観察研究 · Current Opinion in Chemical Biology 2011 — モリブデン補因子化学・3つの補因子酵素（XO/SO/AO）の機能・モリブデン補因子欠損症レビュー（Reiss J）
+
+### ヤギソウ（淫羊藿・イカリソウ）（Horny Goat Weed (Epimedium)） — エビデンスランク A
+URL: https://scibase.app/ingredients/horny-goat-weed
+閉経後女性85名2年RCTで大腿骨頸部BMD+1.6%・12RCTメタ解析で骨密度改善確立のメギ科ハーブ
+代表論文: メタ解析 · Pharmacology & Therapeutics 2016 · n=1017 · 24週 — Indran IR 2016 中高年骨粗鬆症患者1017名・12 RCT統合メタ解析でエピメディウム単独製剤がカルシウム併用条件で骨密度改善・骨減少抑制を確認
+
+### ヨウ素（Iodine） — エビデンスランク A
+URL: https://scibase.app/ingredients/iodine
+甲状腺ホルモンの必須元素。日本人は不足より過剰摂取（耐容上限3000μg）が論点
+代表論文: メタ解析 · American Journal of Clinical Nutrition 2009 · n=4000 — ヨウ素欠乏地域での妊婦ヨウ素補給は児のIQ・神経発達・甲状腺機能に有益。
+
+### ラクトバチルス・ラムノサスGG（Lactobacillus rhamnosus GG） — エビデンスランク A
+URL: https://scibase.app/ingredients/l-rhamnosus-gg
+小児AAD/急性胃腸炎メタ解析n=3,818で発症率・下痢期間が有意短縮・「最も研究されたプロバイオティクス株」ATCC 53103
+代表論文: メタ解析 · Alimentary Pharmacology & Therapeutics 2013 · n=3818 · 2週 — 小児の急性胃腸炎・抗生剤関連下痢を対象とした15 RCTのメタ解析n=3,818で、LGG投与により下痢期間が約24時間短縮・抗生剤関連下痢の発症率が有意に低下したと報告された（Szajewska H et al.）
+
+### ラクトフェリン（Lactoferrin） — エビデンスランク A
+URL: https://scibase.app/ingredients/lactoferrin
+免疫・鉄吸収補助・抗菌の3軸でヒトRCTが確認されている多機能タンパク質
+代表論文: メタ解析 · Nutrients 2021 · n=850 — 鉄欠乏性貧血で硫酸鉄補充に比べ消化器症状が少なく、ヘモグロビン上昇が同等または優位と報告された
+
+### ラメルテオン（経口処方）（Ramelteon (oral, prescription)） — エビデンスランク A
+URL: https://scibase.app/ingredients/ramelteon
+入眠困難処方薬・MT1/MT2受容体アゴニスト・依存性なし・本サイト推奨スタンスなし（処方薬）
+代表論文: RCT · Journal of Clinical Sleep Medicine 2007 · n=405 · 5週 — Zammit G et al. 慢性不眠症成人 n=405 RCT で ラメルテオン 8mg/日 5週で入眠潜時短縮（プラセボ群比較で有意）・主観的睡眠の質改善・依存性形成の所見なし
+
+### ルテイン（Lutein） — エビデンスランク A
+URL: https://scibase.app/ingredients/lutein
+黄斑色素を構成するカロテノイド。加齢黄斑変性・ブルーライトへの関与がRCTで確認
+代表論文: RCT · JAMA 2013 · n=4203 · 260週 — ルテイン10mg＋ゼアキサンチン2mgで加齢黄斑変性の進行リスクが有意に低下（p<0.05）。
+
+### ルテイン＋ゼアキサンチン＋meso-ゼアキサンチン（Lutein + Zeaxanthin + Meso-Zeaxanthin） — エビデンスランク A
+URL: https://scibase.app/ingredients/lutein-zeaxanthin-meso
+網膜中心黄斑の主要キサントフィルmeso-ゼアキサンチン配合・AMD研究の最新型
+代表論文: RCT · JAMA Ophthalmology 2013 · n=4203 · 260週 — ルテイン10mg+ゼアキサンチン2mg/日で進行AMDへの移行リスクへの効果・β-カロチン代替として安全
+
+### レジスタントスターチ（Resistant Starch） — エビデンスランク A
+URL: https://scibase.app/ingredients/resistant-starch
+腸内発酵で酪酸産生・インスリン感受性・血糖コントロール
+代表論文: メタ解析 · Microbiome 2015 — RS の大腸発酵で酪酸（butyrate）産生が顕著・腸管バリア・炎症マーカー改善の機序統合レビュー（Bindels LB et al.）
+
+### レチナール（レチンアルデヒド）（Retinal / Retinaldehyde） — エビデンスランク A
+URL: https://scibase.app/ingredients/retinal
+レチノールより約11倍の変換効率を持つ上位ビタミンA誘導体
+代表論文: RCT · Journal of Cosmetic Dermatology 2005 · n=125 · 18週 — 0.05%レチナール外用で光老化スコア（シワ・くすみ・弾力）の有意な改善。
+
+### レチノール（Retinol） — エビデンスランク A
+URL: https://scibase.app/ingredients/retinol
+光老化・シワへの改善効果がRCTで繰り返し確認されている外用成分
+代表論文: RCT · Archives of Dermatology 2007 · n=36 · 24週 — 0.4%レチノール外用でコラーゲン産生の有意な増加と細かいシワの改善を確認（p<0.001）。
+
+### レッドクローバーイソフラボン（Red Clover Isoflavones） — エビデンスランク A
+URL: https://scibase.app/ingredients/red-clover-isoflavones
+ホットフラッシュ頻度がメタ解析で軽度〜中等度改善・大豆イソフラボン代替
+代表論文: メタ解析 · Avicenna Journal of Phytomedicine 2016 · n=638 · 12週 — 8件のRCT統合・1日のホットフラッシュ頻度が偽薬群より有意減少（平均-1.7回/日）
+
+### ロイシン（Leucine） — エビデンスランク A
+URL: https://scibase.app/ingredients/leucine
+高齢者MPSメタ解析n=370で1回2〜3gのロイシン閾値が確立・mTOR経路を直接起動する「アナボリック・トリガー」必須アミノ酸
+代表論文: メタ解析 · Journal of Nutrition 2018 · n=370 · 24週 — 60歳以上の高齢者を対象とした複数RCTのメタ解析n=370で、レジスタンストレーニング＋ロイシン強化タンパク質摂取（1食2.5〜3g）で除脂肪体重・筋力の改善効果が単独運動より有意に大きいと報告された（Devries MC et al.）
+
+### ロイシンBCAA（Leucine-Rich BCAA） — エビデンスランク A
+URL: https://scibase.app/ingredients/bcaa-leucine-rich
+ロイシン高配合でトレ中・トレ後の筋タンパク合成シグナルを補助するBCAA
+代表論文: メタ解析 · Journal of Sports Sciences 2017 · n=480 — 高強度運動後の筋損傷マーカー（CK・LDH）・遅発性筋肉痛をBCAAが軽減
+
+### ロジオラ・ロゼア（紅景天）（Rhodiola Rosea） — エビデンスランク A
+URL: https://scibase.app/ingredients/rhodiola
+シベリア原産のアダプトゲン。精神的疲労・ストレス・認知機能の改善がRCTで最も強く確認された成分
+代表論文: RCT · Phytomedicine 2010 · n=101 · 4週 — 夜間勤務の医師（101名）でロジオラSHR-5 170mg/日×4週が精神疲労・認知テスト（計算誤り率）を有意改善
+
+### ロディオラ・ロゼア抽出物（SHR-5）（Rhodiola rosea Extract (SHR-5)） — エビデンスランク A
+URL: https://scibase.app/ingredients/rhodiola-rosea-extract
+SHR-5 規格化・ロサビン3%/サリドロサイド1%・慢性ストレス GAD RCT
+代表論文: RCT · Planta Medica 2009 · n=60 · 4週 — ストレス関連疲労者60名に SHR-5 576mg/日×28日 vs プラセボで Pines Burnout Scale・注意力・コルチゾール覚醒応答有意改善（Olsson EM et al.）
+
+### 亜鉛（Zinc） — エビデンスランク A
+URL: https://scibase.app/ingredients/zinc
+ニキビ・皮膚の修復・免疫機能への関与がRCTで確認されている
+代表論文: メタ解析 · Dermatology 2020 · n=1024 · 12週 — 亜鉛経口補給でニキビスコアが有意に改善。
+
+### 亜麻仁油（ALA・植物オメガ3）（Flaxseed Oil） — エビデンスランク A
+URL: https://scibase.app/ingredients/flaxseed-oil
+ALA（植物オメガ3）55-60%含有・血圧低下・脂質改善 RCT・ヴィーガン対応
+代表論文: メタ解析 · American Journal of Clinical Nutrition 2012 · n=251049 — ALA 高摂取群で心血管疾患リスク -10%・冠動脈疾患 -20%（前向きコホート統合メタ・Pan A et al.）
+
+### 還元型ユビキノール200mg（高用量）（High-Dose Ubiquinol 200mg） — エビデンスランク A
+URL: https://scibase.app/ingredients/coq10-ubiquinol-200mg
+心不全死亡率を42%低下させたQ-SYMBIO RCTで使われた高用量プロトコル
+代表論文: メタ解析 · Mayo Clinic Proceedings 2018 · n=575 · 12週 — スタチン誘発筋痛RCT 12件メタ解析：CoQ10 200mg/日前後で筋痛強度・筋疲労が有意改善（Qu H et al.）
+
+### 桑葉DNJ（1-デオキシノジリマイシン）（Mulberry Leaf DNJ (1-Deoxynojirimycin)） — エビデンスランク A
+URL: https://scibase.app/ingredients/mulberry-leaf-dnj
+食前に飲むと食後血糖ピークが下がる・α-グルコシダーゼ阻害の天然成分
+代表論文: RCT · Journal of Clinical Biochemistry and Nutrition 2010 · n=20 — 食前にDNJ含有桑葉エキス（DNJ換算約3mg）を摂取することでショ糖負荷後の血糖ピーク・インスリンピークがプラセボより有意に低下 [PMID:20485594 https://pubmed.ncbi.nlm.nih.gov/20485594/]
+
+### 紅麹（ベニコウジ・モナコリンK）（Red Yeast Rice (Monacolin K)） — エビデンスランク A
+URL: https://scibase.app/ingredients/red-yeast-rice
+【特に重要な注意】モナコリンK＝天然スタチン（ロバスタチン同一物質）・EU 2022年規制
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2019 · n=8535 · 24週 — 紅麹RCTのCochrane systematic review。
+
+### 酵母β-グルカン（Yeast Beta-Glucan） — エビデンスランク A
+URL: https://scibase.app/ingredients/beta-glucan-yeast
+酵母由来β-1,3/1,6グルカンで上気道感染リスク低下RCTがある免疫サプリ
+代表論文: メタ解析 · Nutrients 2019 · n=580 — アスリートで上気道感染症発症率の有意低下が確認
+
+### 高シリマリン ミルクシスル（High-Silymarin Milk Thistle） — エビデンスランク A
+URL: https://scibase.app/ingredients/silymarin-milk-thistle-high
+80%規格を選ばないと論文用量に届かない・肝臓系の補助層
+代表論文: メタ解析 · Forschende Komplementärmedizin 2007 · n=1850 — システマティックレビューで420-600mg/日のシリマリンがアルコール性・薬剤性肝障害のALT・AST改善傾向を示す [PMID:17703082 https://pubmed.ncbi.nlm.nih.gov/17703082/]
+
+### 高純度DHA魚油（High-Purity DHA Fish Oil） — エビデンスランク A
+URL: https://scibase.app/ingredients/fish-oil-pure-dha
+DHA中心で脳・網膜・胎児に振り切った製品・認知機能RCTあり
+代表論文: メタ解析 · Pediatrics 2012 · n=1949 — 妊娠期・授乳期のDHA補給が乳児の視力発達指標に正の関連を示すメタ解析
+
+### 高純度EPA魚油（High-Purity EPA Fish Oil） — エビデンスランク A
+URL: https://scibase.app/ingredients/fish-oil-pure-epa
+混合フィッシュオイルからDHAを抜きEPAだけ高濃度化・心血管RCTのEPA量を狙いやすい
+代表論文: メタ解析 · JAMA 2018 · n=68680 — 83試験のメタ解析でEPA中心の高用量介入が心血管・代謝指標に独立した効果を示すことを示唆
+
+### 高麗人参（パナックスジンセン）（Panax Ginseng / Korean Ginseng） — エビデンスランク A
+URL: https://scibase.app/ingredients/panax-ginseng
+世界最古の薬用植物のひとつ。疲労・ストレス・認知機能・免疫への効果をRCTで確認
+代表論文: メタ解析 · Nutrients 2021 · n=878 · 12週 — 高麗人参摂取群で精神的疲労スコアと認知機能テストスコアが有意に改善（p<0.05）
+
+### 酸化マグネシウム（Magnesium Oxide） — エビデンスランク A
+URL: https://scibase.app/ingredients/magnesium-oxide
+日本の便秘処方薬の代表。吸収率4%の低さが便秘改善の機序を作る
+代表論文: RCT · Journal of the Neurogastroenterology and Motility 2014 · n=120 · 4週 — 酸化Mg 1,500mg/日とPEG 13.7g/日で便回数改善・両者で同等効果・酸化Mgはコスト優位
+
+### 熟成黒ニンニク抽出物（AGE）（Aged Garlic Extract (AGE)） — エビデンスランク A
+URL: https://scibase.app/ingredients/aged-garlic-extract
+20ヶ月熟成水抽出ニンニク。Kyolic®規格化AGEで降圧・脂質・免疫RCTメタ多数
+代表論文: メタ解析 · Journal of Clinical Hypertension 2016 · n=970 · 12週 — AGEを含むガーリックサプリ（240〜2,400mg/日）が収縮期血圧を平均-8.7 mmHg・拡張期血圧を-5.5 mmHg有意低下させることをn=970の20+ RCT統合メタ解析で確認（Ried 2016）
+
+### 藻類オイル（ヴィーガン DHA/EPA）（Algal Oil） — エビデンスランク A
+URL: https://scibase.app/ingredients/algal-oil
+ヴィーガンDHA/EPA・魚油同等 RCT・水銀ゼロ・コスト魚油比2-3倍
+代表論文: メタ解析 · British Journal of Nutrition 2022 · n=600 — Lane KE et al. メタ解析 12 RCT 統合・藻類オイル DHA/EPA 補給で血中 omega-3 index（EPA+DHA% in RBC）が魚油同等水準上昇を確認
+
+### 低用量紅麹（モナコリンK 600mg錠）（Low-Dose Red Yeast Rice） — エビデンスランク A
+URL: https://scibase.app/ingredients/red-yeast-rice-low-dose
+スタチンに準じる LDL 低下のRCT・小林製薬事件後の第三者検査必須
+代表論文: RCT · Annals of Internal Medicine 2009 · n=62 · 24週 — スタチン不耐性高コレステロール血症患者62名に紅麹1,800mg/日×24週：LDL 27%有意低下・筋肉痛発生率はプラセボと同等（Becker DJ et al.）
+
+### 乳酸（Lactic Acid） — エビデンスランク A
+URL: https://scibase.app/ingredients/lactic-acid
+AHAの中でも刺激が少なく、保湿効果も持つピーリング成分
+代表論文: RCT · Journal of Cosmetic Dermatology 2018 · n=40 · 12週 — 5%乳酸外用が角質水分量・皮膚弾力・色素沈着に有意な改善を示した。
+
+### 必須アミノ酸（EAA）（Essential Amino Acids） — エビデンスランク A
+URL: https://scibase.app/ingredients/eaa-essential-amino
+BCAAより筋タンパク合成シグナルが優位とレビューされる9種必須アミノ酸
+代表論文: RCT · American Journal of Physiology 2002 · n=6 — トレ後の6gのEAAが筋タンパク合成を2〜3倍に上昇させた
+
+### 緑茶エキス（経口・規格化抽出）（Green Tea Extract (Oral)） — エビデンスランク A
+URL: https://scibase.app/ingredients/green-tea-extract-oral
+カテキン類複合・体重・脂質 RCT・EGCG 単体と差別化・USP 800mg/日警告
+代表論文: メタ解析 · International Journal of Obesity 2009 · n=600 — Hursel R et al. メタ解析 11 RCT 統合・緑茶カテキン+カフェイン併用で体重・腹囲・体脂肪率有意低下・カフェイン単独より有意
+
+### α-アルブチン（Alpha-Arbutin） — エビデンスランク A
+URL: https://scibase.app/ingredients/arbutin
+チロシナーゼ阻害によるメラニン産生抑制がRCTで確認されている美白成分
+代表論文: メタ解析 · Journal of Cosmetic Dermatology 2021 · n=486 · 12週 — α-アルブチン外用でメラニン指数・ITA値（肌の明るさ）が有意に改善。
+
+### β-シトステロール（Beta-Sitosterol） — エビデンスランク A
+URL: https://scibase.app/ingredients/beta-sitosterol
+Wilt 1999 Cochrane メタ解析で前立腺肥大症の症状改善エビデンス
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 1999 · n=519 · 18週 — BPH RCT 4件のCochraneメタ解析（n=519）：β-シトステロール60-130mg/日でIPSS・尿流量改善が有意（Wilt T et al.）
+
+### βアラニン（ベータアラニン）（Beta-Alanine） — エビデンスランク A
+URL: https://scibase.app/ingredients/beta-alanine
+筋肉内カルノシン+40-80%・1-6分高強度運動 +2-3% パフォーマンス改善のメタ解析
+代表論文: メタ解析 · Amino Acids 2012 · n=360 · 8週 — βアラニン 3.2-6.4g/日×4-10週で 1-4分間の高強度運動パフォーマンスがプラセボ比 +2.85%（n=360・15 RCT統合・p<0.01）・60秒未満および10分超運動には効果限定的（Hobson 2012）
+
+### βグルカン（Beta-Glucan） — エビデンスランク A
+URL: https://scibase.app/ingredients/beta-glucan
+免疫機能の活性化と上気道感染症リスク低下がメタ解析で確認されている多糖類
+代表論文: メタ解析 · European Journal of Clinical Nutrition 2021 · n=1500 · 12週 — 16件のRCTを統合し、酵母βグルカン摂取が上気道感染症の罹患率・重症度を有意に低下させることを確認
+
+### 5-HTP（5-Hydroxytryptophan） — エビデンスランク B
+URL: https://scibase.app/ingredients/5-htp
+トリプトファン→セロトニン→メラトニンの前駆体。気分・睡眠改善にコホート研究
+代表論文: RCT · European Neuropsychopharmacology 2018 · n=110 · 8週 — 5-HTP 100mg/日でPSQI（睡眠品質指数）が有意に改善（p<0.05）。
+
+### 5-HTP（グリフォニア由来）（5-HTP from Griffonia simplicifolia） — エビデンスランク B
+URL: https://scibase.app/ingredients/5-htp-griffonia
+Griffonia 種子由来・天然5-HTP・気分・睡眠補助・SSRI 併用は避けるべき・要注意
+代表論文: RCT · American Journal of Clinical Nutrition 1992 · n=20 — Cangiano C et al. 肥満女性 20名に 5-HTP 8mg/kg/日 12週投与で食欲低下・体重減少・食事順守度向上
+
+### AHCC（Active Hexose Correlated Compound） — エビデンスランク B
+URL: https://scibase.app/ingredients/ahcc
+HPV感染除去促進RCTと肝臓がん補完療法研究がある日本発免疫素材
+代表論文: RCT · Frontiers in Oncology 2019 · n=50 · 26週 — AHCC 3g/日で高リスクHPV感染除去率が有意に高かった
+
+### BCAA 4:1:1（ロイシン強化）（BCAA 4:1:1 Leucine-Enhanced） — エビデンスランク B
+URL: https://scibase.app/ingredients/bcaa-4-1-1
+ロイシン強化比率・mTORC1トリガー研究で開発された新型
+代表論文: RCT · American Journal of Clinical Nutrition 2003 · n=12 · 1週 — 高齢者ではロイシン2.5g/食以上で筋タンパク合成のトリガーが入る閾値が確認
+
+### CBD オイル（カンナビジオール）（CBD Oil） — エビデンスランク B
+URL: https://scibase.app/ingredients/cbd-oil
+産業用ヘンプ由来・THC 不検出・不安・睡眠補助・FDA 処方薬は別軸・要注意
+代表論文: RCT · Neuropsychopharmacology 2011 · n=24 — Bergamaschi MM et al. 社交不安障害患者 24名に CBD 600mg 単回投与・公開講演ストレス試験で不安・血圧・心拍数・主観的不安有意低下
+
+### CLA（共役リノール酸）（Conjugated Linoleic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/cla
+体脂肪量・体組成のメタ解析エビデンス・Tonalin/Clarinol 規格化品が研究と整合
+代表論文: メタ解析 · American Journal of Clinical Nutrition 2007 · n=438 · 12週 — CLA 3.2g/日×平均12週でプラセボ比 体脂肪量 -0.09kg/週（小規模 RCT 統合メタ）（Whigham LD et al.）
+
+### D-リボース（D-Ribose） — エビデンスランク B
+URL: https://scibase.app/ingredients/d-ribose
+線維筋痛・慢性疲労・心不全の補助療法でATP再合成促進・健常人の運動効果は確認されない
+代表論文: RCT · European Journal of Heart Failure 2003 · n=15 · 3週 — 慢性うっ血性心不全患者15名対象クロスオーバーRCTで、D-リボース 5g×3/日×3週により左室拡張機能・QOL指標の有意改善（Omran H et al.）
+
+### D-リボース（心血管用量）（D-Ribose Cardiovascular Doses） — エビデンスランク B
+URL: https://scibase.app/ingredients/d-ribose-cardio-doses
+心不全患者の心筋ATP回復に5g×3回/日・既存d-riboseより高用量
+代表論文: RCT · European Journal of Applied Physiology 2003 · n=8 · 1週 — D-リボース10g×6回で運動後の心筋ATP回復速度の有意改善（小規模パイロット）
+
+### DHEA（デヒドロエピアンドロステロン）（DHEA (Dehydroepiandrosterone)） — エビデンスランク B
+URL: https://scibase.app/ingredients/dhea-supplement
+米国OTC・日本未承認医薬品扱い・乳がん前立腺がん既往禁忌・WADA禁止物質の規制境界成分
+代表論文: メタ解析 · Maturitas 2011 — 閉経後女性のDHEA補充メタで性機能改善を確認・骨密度・気分・QOLへの効果は試験間でばらつき（Panjari M, Davis SR・更年期領域での効果整理）
+
+### DHEA（デヒドロエピアンドロステロン）（DHEA） — エビデンスランク B
+URL: https://scibase.app/ingredients/dhea
+副腎ホルモン前駆体・DHEAge 試験 n=280・更年期・低T・要注意・処方医相談
+代表論文: RCT · PNAS 2000 · n=280 — Baulieu EE et al. DHEAge試験・60-79歳 280名に DHEA 50mg/日 12ヶ月投与・骨密度（女性）・性機能・皮膚厚・気分改善示唆・健常若年者には推奨されない明示
+
+### DIM（ジインドリルメタン）（Diindolylmethane (DIM)） — エビデンスランク B
+URL: https://scibase.app/ingredients/dim-diindolylmethane
+アブラナ科野菜由来I3C代謝物。エストロゲン代謝バランスを2-OH優位にシフト
+代表論文: RCT · Breast Cancer Research and Treatment 2014 · n=130 · 52週 — タモキシフェン服用中の乳がんサバイバー130名にBR-DIM 150mg×2/日×12ヶ月で2-OH/16α-OHエストロゲン比が有意上昇・タモキシフェン代謝物4-OH-NDM濃度上昇（Thomson 2017の続報・SWOG S0709）
+
+### EGCG外用（緑茶ポリフェノール外用）（EGCG Topical (Epigallocatechin Gallate)） — エビデンスランク B
+URL: https://scibase.app/ingredients/egcg-topical
+紫外線UV照射後のサンバーン細胞・MMP-9活性化を有意抑制・経口とは別の独自エビデンス体系を持つ抗酸化外用素材
+代表論文: RCT · Photochemistry and Photobiology 2001 · n=6 · 1週 — ヒト健常者6名の前腕にEGCG 1mg/cm²塗布後UVB照射、サンバーン細胞・好中球浸潤・MPO活性が有意抑制（Katiyar SK et al. J Am Acad Dermatol 2001類縁原典）
+
+### GABA（GABA (Gamma-Aminobutyric Acid)） — エビデンスランク B
+URL: https://scibase.app/ingredients/gaba
+ストレス軽減・睡眠改善の効果がRCTで示されているが機序に議論あり
+代表論文: RCT · Journal of Nutritional Science and Vitaminology 2014 · n=40 · 4週 — 100mg GABAの就寝前摂取で入眠潜時が有意に短縮（p<0.05）。
+
+### GHK-Cu（銅トリペプチド）（GHK-Cu (Copper Tripeptide-1)） — エビデンスランク B
+URL: https://scibase.app/ingredients/ghk-cu
+銅トリペプチド・GHK 配列+銅イオン・コラーゲン産生促進・既 copper-peptide 特化版
+代表論文: RCT · Journal of Cosmetic Science 2002 · n=70 · 12週 — Leyden JJ et al. GHK-Cu クリーム RCT n=70 12週で目元シワ・肌弾力・色素沈着 改善示唆
+
+### GPLC（Glycine Propionyl L-Carnitine） — エビデンスランク B
+URL: https://scibase.app/ingredients/glycine-propionyl-l-carnitine
+L-カルニチンより吸収改善とNO産生補助が報告される研究形態
+代表論文: メタ解析 · European Heart Journal 2011 · n=750 — 末梢動脈疾患（PAD）患者で歩行距離・症状改善が報告された
+
+### HMB（フリー酸型・HMB-FA）（HMB Free Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/hmb-free-acid
+Ca-HMBより血中濃度ピーク2倍・フリー酸型は新しい吸収特性
+代表論文: メタ解析 · Journal of Strength and Conditioning Research 2015 · n=200 · 8週 — HMB 3g/日で筋ダメージマーカー・回復指標の中等度改善・効果サイズはトレーニング状況依存
+
+### I3C（インドール-3-カルビノール）（Indole-3-Carbinol） — エビデンスランク B
+URL: https://scibase.app/ingredients/indole-3-carbinol
+DIMの前駆体・胃酸下で複数代謝物に変換される複雑な作用
+代表論文: RCT · Journal of the National Cancer Institute 1997 · n=60 · 12週 — I3C 400mg/日で2-OHE:16α-OHE比が有意に上昇（エストロゲン代謝経路シフト）
+
+### IP6（フィチン酸・イノシトールヘキサリン酸）（IP6 (Inositol Hexaphosphate / Phytate)） — エビデンスランク B
+URL: https://scibase.app/ingredients/ip-6-inositol-hexaphosphate
+鉄キレートと腎結石予防が研究軸。myo-inositolとは別系統の抗酸化用途
+代表論文: システマティックレビュー · Anticancer Research 2003 — Vucenik I, Shamsuddin AK レビュー。
+
+### JNKA認証ナットウキナーゼ（JNKA-Certified Nattokinase） — エビデンスランク B
+URL: https://scibase.app/ingredients/nattokinase-jnka-grade
+FU値で規格化されたナットウキナーゼ・一般品との品質差を可視化した認証
+代表論文: RCT · Hypertension Research 2008 · n=86 · 8週 — 前-高血圧/I 度高血圧患者86名にナットウキナーゼ2000FU/日×8週：収縮期血圧が5.55mmHg、拡張期血圧が2.84mmHg有意低下（Kim JY et al.）
+
+### L-グルタミン（L-Glutamine） — エビデンスランク B
+URL: https://scibase.app/ingredients/l-glutamine
+腸管バリア機能と免疫細胞のエネルギー源として複数のRCTで研究されている
+代表論文: RCT · Gut 2019 · n=106 · 8週 — 感染後IBS患者において、L-グルタミン補給群はプラセボ群に比べ腸管透過性・症状スコアが有意に改善（p<0.05）
+
+### L-グルタミン高用量（運動回復・腸バリア用量）（L-Glutamine High Dose (Recovery)） — エビデンスランク B
+URL: https://scibase.app/ingredients/glutamine-recovery
+集中トレ期10〜30g/日で感染リスク低下・腸バリア修復用途
+代表論文: メタ解析 · Nutrition 2017 · n=1200 — 重症患者でL-グルタミン経腸投与（0.3〜0.5g/kg/日）で腸管バリア機能改善・感染症発生率低下
+
+### L-チロシン（L-Tyrosine） — エビデンスランク B
+URL: https://scibase.app/ingredients/l-tyrosine
+ストレス下の認知パフォーマンス改善 RCT・カテコールアミン+甲状腺ホルモン前駆体
+代表論文: RCT · Brain Research Bulletin 1989 · n=20 · 1週 — 軍事訓練下の兵士20名にチロシン 100mg/kg×4日で寒冷・低酸素ストレス下の認知パフォーマンス維持（Banderet LE et al.）
+
+### LJ100 トンカットアリ（LJ100 Tongkat Ali） — エビデンスランク B
+URL: https://scibase.app/ingredients/tongkat-ali-lj-100
+100:1濃縮・22% Eurypeptides標準化・Tambi 2012 RCTで使用された規格
+代表論文: RCT · Andrologia 2012 · n=76 · 4週 — 加齢性男性ホルモン低下症患者76名にトンカットアリ200mg/日×1か月：テストステロン値・男性更年期症状スコアが有意改善（Tambi MI et al.）
+
+### LP9657（ベリー菌）（Lactobacillus paracasei LP9657） — エビデンスランク B
+URL: https://scibase.app/ingredients/probiotic-strain-lp-9657
+スギ花粉症症状改善RCT報告がある国内産植物乳酸菌株
+代表論文: メタ解析 · Pediatric Allergy and Immunology 2015 · n=1100 — プロバイオティクス全体でアレルギー性鼻炎の症状スコア改善が示された
+
+### Lアルギニン（L-Arginine） — エビデンスランク B
+URL: https://scibase.app/ingredients/l-arginine
+一酸化窒素（NO）産生を介した血流改善・免疫サポート。コホート研究で関連確認
+代表論文: メタ解析 · Nutrition Reviews 2019 · n=930 · 8週 — Lアルギニン補充で内皮機能（FMD）が有意に改善（p<0.001）。
+
+### MCT C10（カプリン酸）（MCT C10 (Capric Acid)） — エビデンスランク B
+URL: https://scibase.app/ingredients/mct-c10-pure
+C8より緩やかで持続型のケトン応答・混合MCT油の主成分で速効型C8と相補
+代表論文: RCT · Current Developments in Nutrition 2017 · n=9 — C10（カプリン酸）単独はC8単独より弱いが、ココナッツオイル・長鎖脂肪酸より強い血中BHB上昇を確認（Vandenberghe C et al.・クロスオーバー試験）
+
+### MCT C8純度100%（カプリル酸特化）（MCT C8 100% (Pure Caprylic Acid)） — エビデンスランク B
+URL: https://scibase.app/ingredients/mct-c8-pure
+通常MCTより血中ケトン体応答が約3倍強い・C8純度100%品
+代表論文: RCT · Current Developments in Nutrition 2017 · n=9 — C8（カプリル酸）単独がC10混合品・ココナッツオイルより約3倍強い血中BHB上昇を観察（Vandenberghe C et al.・クロスオーバー試験）
+
+### MCTオイル（中鎖脂肪酸トリグリセリド）（MCT Oil (Medium-chain Triglycerides)） — エビデンスランク B
+URL: https://scibase.app/ingredients/mct-oil
+肝臓で速やかにβ酸化されケトン体を生成・MCI/AD・体組成・運動パフォーマンスRCTで支持
+代表論文: RCT · Alzheimer's & Dementia 2020 · n=83 · 26週 — MCI患者83名対象RCTで、MCTケトジェニック飲料 30g/日×6ヶ月によりADAS-Cog・エピソード記憶・脳ケトン代謝率の有意改善（Cunnane SC et al.）
+
+### MSM（メチルスルフォニルメタン）（MSM (Methylsulfonylmethane)） — エビデンスランク B
+URL: https://scibase.app/ingredients/msm
+変形性膝関節症のWOMAC痛みスコア改善・運動後筋肉痛軽減を3g/日×12週前後のRCTで報告
+代表論文: メタ解析 · Osteoarthritis and Cartilage 2008 — OA膝に対するMSM 6本のRCTを統合したシステマティックレビュー。
+
+### NAC徐放型（Extended-Release NAC） — エビデンスランク B
+URL: https://scibase.app/ingredients/nac-extended-release
+1/3速放+2/3徐放の二層錠で1日1錠・通常型の半減期5.6時間を補う設計
+代表論文: 観察研究 · Current Opinion in Pharmacology 2007 — NAC包括レビュー：半減期5.6時間・分割投与の必要性・徐放化の意義を整理（Atkuri KR et al.）
+
+### NADH（還元型）（NADH (Reduced Nicotinamide Adenine Dinucleotide)） — エビデンスランク B
+URL: https://scibase.app/ingredients/nadh-supplement
+舌下投与でNAD+前駆体の遠回りを避け、ATP生成と慢性疲労症候群への改善RCT報告
+代表論文: RCT · Annals of Allergy, Asthma & Immunology 1999 · n=26 · 4週 — Forsyth LM et al. 慢性疲労症候群RCTでNADH 10mg/日 4週投与で症状スコア有意改善（プラセボ比31% vs 8%）
+
+### NMN（Nicotinamide Mononucleotide） — エビデンスランク B
+URL: https://scibase.app/ingredients/nmn
+NAD+は上がる。体の指標はほぼ変わらない（12RCT・n=513・2024）
+代表論文: メタ解析 · Tandfonline Systematic Review 2024 · n=513 · 12週 — 血中NAD+は有意に上昇するが、血糖・脂質・その他代謝指標ではほぼ有意差なし。
+
+### NR（ニコチンアミドリボシド）（Nicotinamide Riboside (NR)） — エビデンスランク B
+URL: https://scibase.app/ingredients/nicotinamide-riboside
+NMNと同じNAD+前駆体。ヒト臨床試験でNAD+レベル上昇が確認されている
+代表論文: RCT · Nature Communications 2018 · n=120 · 6週 — 1日1回250mgのNRで全血NAD+が最大60%上昇。
+
+### Nrf2アクティベーターブレンド（Nrf2 Activator Blend） — エビデンスランク B
+URL: https://scibase.app/ingredients/nrf2-activator-blend
+スルフォラファン+クルクミン+EGCGで抗酸化遺伝子を起動するブレンド設計
+代表論文: 観察研究 · Oxidative Medicine and Cellular Longevity 2019 — Nrf2活性化のレビュー：複数成分組み合わせの相加効果・標的経路の幅・臨床応用の現状を整理（Houghton CA）
+
+### PCSO-524（緑イ貝Lyprinol）（Lyprinol PCSO-524） — エビデンスランク B
+URL: https://scibase.app/ingredients/green-lipped-mussel-pcso-524
+緑イ貝由来ETA含有マリンリピッド・フィッシュオイル超のOA RCTが存在
+代表論文: RCT · Allergie et Immunologie 2003 · n=60 · 8週 — OA患者60名にLyprinol 210mg/日×8週：53-80%の患者で関節痛・こわばり・身体機能スコア改善（Cho SH et al.）
+
+### PDRN（ポリデオキシリボヌクレオチド）（PDRN (Polydeoxyribonucleotide)） — エビデンスランク B
+URL: https://scibase.app/ingredients/pdrn
+注射医療から外用へ。コラーゲン産生促進・創傷治癒・皮膚再生への関与がRCTで示されている
+代表論文: RCT · Journal of Cosmetic Dermatology 2021 · n=40 · 8週 — 外用PDRN配合ジェルを8週間使用した群でプラセボ群に比べ、シワスコアが有意に改善（p<0.05）。
+
+### PEA（パルミトイルエタノールアミド）（Palmitoylethanolamide (PEA)） — エビデンスランク B
+URL: https://scibase.app/ingredients/pea-palmitoylethanolamide
+内因性脂肪酸アミド・PPAR-α活性化による神経炎症・慢性疼痛抑制が複数RCTで確認
+代表論文: メタ解析 · Pain Physician 2017 · n=1484 · 12週 — PEA経口投与（600〜1,200mg/日）が慢性疼痛（坐骨神経痛・線維筋痛・糖尿病性神経障害・帯状疱疹後神経痛等）の疼痛スコア（VAS）を有意に低下させることをn=1,484の複数RCT統合で確認
+
+### PHA（グルコノラクトン）（PHA Gluconolactone） — エビデンスランク B
+URL: https://scibase.app/ingredients/pha-gluconolactone
+AHAの皮膚刺激が課題な敏感肌・酒さの代替選択肢。分子量が大きく緩やかに作用
+代表論文: RCT · Cutis 2009 · n=40 · 12週 — 光老化皮膚患者40名にPHA 8% vs グリコール酸8%×12週で、キメ改善・小じわ改善はほぼ同等・皮膚刺激スコアはPHAが有意低（Green 2009）
+
+### PQQ（ピロロキノリンキノン）（Pyrroloquinoline Quinone (PQQ)） — エビデンスランク B
+URL: https://scibase.app/ingredients/pqq
+ミトコンドリア新生を促進する補酵素。認知・疲労・エネルギー産生への効果を研究で確認
+代表論文: RCT · Journal of Nutritional Science and Vitaminology 2016 · n=71 · 12週 — PQQ 20mg/日で高齢者の記憶・注意力スコアが有意に改善（p<0.05）。
+
+### S-アデノシルメチオニン（SAMe）（S-Adenosyl-L-Methionine (SAMe)） — エビデンスランク B
+URL: https://scibase.app/ingredients/sam-e
+メチル供与体・関節OA NSAIDs同等・SSRI抵抗うつアドオン
+代表論文: メタ解析 · Journal of Family Practice 2002 · n=1442 — OA 患者対象 11 RCT 統合メタで SAMe 1,200mg/日と NSAIDs の疼痛・機能改善が同等・副作用 SAMe で有意に少（Soeken KL et al.）
+
+### SCFAmix（Short-Chain Fatty Acid Mix） — エビデンスランク B
+URL: https://scibase.app/ingredients/short-chain-fatty-acid-mix
+腸上皮のエネルギー源で抗炎症作用が報告される腸内発酵代謝産物
+代表論文: 観察研究 · Cell 2016 — SCFAの腸上皮エネルギー供給・抗炎症・腸-脳相関への作用を体系レビュー
+
+### TUDCA（タウロウルソデオキシコール酸）（TUDCA） — エビデンスランク B
+URL: https://scibase.app/ingredients/tudca
+胆汁酸誘導体・小胞体ストレス調節・肝保護 RCT・新興バイオハック領域
+代表論文: RCT · Hepatology 1996 · n=23 — Crosignani A et al. PBC 患者 23名に TUDCA 500-1,500mg/日 6ヶ月投与で肝機能（AST・ALT・γGTP・ALP）改善・用量依存性確認・処方薬 UDCA 同等水準
+
+### UDP（ウリジン二リン酸）（UDP (Uridine Diphosphate)） — エビデンスランク B
+URL: https://scibase.app/ingredients/uridine-disodium-phosphate-udp
+記憶・シナプス形成に関わるピリミジン代謝中間体・経口は腸内でウリジンに分解
+代表論文: RCT · Bipolar Disorders 2009 · n=11 · 6週 — Kondo DG et al. 双極性うつ症状の若年患者11例でウリジン500mg/日 6週間が抑うつスコア改善
+
+### XOS（キシロオリゴ糖）（Xylooligosaccharide） — エビデンスランク B
+URL: https://scibase.app/ingredients/xos-xylooligosaccharide
+1.4g/日の少量でビフィズス菌増加RCTが確認されている低用量プレバイオ
+代表論文: RCT · British Journal of Nutrition 2014 · n=32 · 3週 — XOS 1.4g/日でビフィズス菌数の有意増加
+
+### アーティチョーク葉抽出（シナリン）（Artichoke Leaf Extract (Cynara scolymus)） — エビデンスランク B
+URL: https://scibase.app/ingredients/artichoke-leaf
+脂質改善・消化不良補助のRCTあり・胆道閉塞/胆石症は絶対禁忌（利胆作用）の伝統的肝臓ハーブ
+代表論文: メタ解析 · Pharmacological Research 2018 · n=300 — アーティチョーク葉抽出 1,400〜1,920mg/日 が総コレステロール・LDL・トリグリセリドを有意低下（複数RCT統合メタ解析・n=300以上・Sahebkar A et al.・脂質改善エビデンスとして確立度高い）
+
+### アカシアファイバー（Acacia Fiber） — エビデンスランク B
+URL: https://scibase.app/ingredients/acacia-fiber
+FODMAP対応・低発酵・IBS でも続けやすい水溶性繊維
+代表論文: RCT · British Journal of Nutrition 2008 · n=54 · 4週 — 健常成人54名にアラビアガム 5/10/15/40g/日×4週でビフィズス菌・乳酸菌の用量依存的増加（Calame W et al.）
+
+### アガリクス・ブラゼイ（Agaricus Blazei） — エビデンスランク B
+URL: https://scibase.app/ingredients/agaricus-blazei
+ブラジル医療キノコ・β-グルカン主成分・免疫補助 RCT・がん予防標榜 NG
+代表論文: RCT · PLoS ONE 2015 · n=40 — Tangen JM et al. 多発性骨髄腫患者 40名・自家幹細胞移植前後にアガリクス AndoSan™ 60 ml/日 7週投与で Treg 細胞割合・サイトカインプロフィール（IL-1Ra・IL-5・IL-7 等）有意変化
+
+### アシアチコシド（センテラアジアチカ由来）（Asiaticoside） — エビデンスランク B
+URL: https://scibase.app/ingredients/asiaticoside
+0.1%×8週で創傷治癒指標・コラーゲン産生有意改善・センテラアジアチカ抽出物（TECA/TTFCA）の主活性成分
+代表論文: RCT · Dermatologic Surgery 2008 · n=20 · 8週 — 光老化女性20名対象のRCTで、Centella asiatica抽出物（アシアチコシド+マデカッソシド規格化）含有クリーム×8週で皮膚弾性・コラーゲン定量・しわスコアが有意改善
+
+### アストラガルス（黄耆）（Astragalus Membranaceus） — エビデンスランク B
+URL: https://scibase.app/ingredients/astragalus
+テロメラーゼ活性化・免疫強化・老化細胞除去への関与がヒト試験で確認されている長寿ハーブ
+代表論文: メタ解析 · Evidence-Based Complementary and Alternative Medicine 2021 — 免疫疾患・心血管疾患・慢性疲労へのアストラガルス補助療法の効果をメタ解析で確認。
+
+### アセチルLカルニチン（Acetyl-L-Carnitine (ALCAR)） — エビデンスランク B
+URL: https://scibase.app/ingredients/acetyl-l-carnitine
+脳血液関門を通過するカルニチン。認知機能・神経保護・アンチエイジングに関与
+代表論文: メタ解析 · Acta Neurologica Scandinavica 2010 · n=1204 · 24週 — ALCARで軽度認知機能障害・アルツハイマー早期において認知機能スコアが統計的に有意な改善
+
+### アセチルグルタチオン（Acetylated Glutathione） — エビデンスランク B
+URL: https://scibase.app/ingredients/glutathione-reduced-acetyl
+S-アセチル化で胃酸保護・通常経口型より血中GSH上昇する設計
+代表論文: RCT · BMC Pharmacology and Toxicology 2015 · n=24 · 4週 — 健常人24名にS-アセチルグルタチオン100mg×2回/日×4週：血中総GSH・還元型GSH比率が有意上昇（Schmitt B et al.）
+
+### アッカーマンシア（Akkermansia muciniphila） — エビデンスランク B
+URL: https://scibase.app/ingredients/akkermansia
+腸の粘液層を守る常在菌。代謝・腸管バリア・老化への関与がヒト試験で示されている
+代表論文: RCT · Nature Medicine 2019 · n=32 · 12週 — 過熱殺菌Akkermansia摂取群でインスリン感受性・総コレステロール・腸管透過性マーカーが有意に改善。
+
+### アピゲニン（Apigenin） — エビデンスランク B
+URL: https://scibase.app/ingredients/apigenin
+CD38阻害によるNAD+節約・抗炎症作用が動物実験とin vitroで確認。ヒト試験は進行中
+代表論文: 観察研究 · Evidence-Based Complementary and Alternative Medicine 2019 — アピゲニンの抗炎症（NF-κB経路抑制）・抗酸化・GABA-A受容体への弱い親和性（軽度鎮静）をin vitroおよび動物実験で確認。
+
+### アフラピン（Boswellia規格品）（Aflapin (Boswellia serrata)） — エビデンスランク B
+URL: https://scibase.app/ingredients/boswellia-aflapin
+AKBA 20%濃縮・1日1粒100mgで標準エキス1/10量で5-LOX阻害
+代表論文: RCT · International Journal of Medical Sciences 2010 · n=60 · 4週 — 膝OA患者60名にアフラピン100mg/日 vs 5-Loxin250mg vs プラセボ×30日：両Boswellia群でWOMAC改善・アフラピン群は7日目から有意差（Sengupta K et al.）
+
+### アムラ（インディアングーズベリー）（Amla (Indian Gooseberry)） — エビデンスランク B
+URL: https://scibase.app/ingredients/amla
+アーユルヴェーダ三大果実・天然 VitC + タンニン・脂質代謝補助の RCT
+代表論文: RCT · Indian Journal of Pharmacology 2008 · n=60 · 6週 — 健常成人60名にアムラ 500-1,000mg/日×6週で総コレステロール・LDL の用量依存的有意改善（Antony B et al.）
+
+### アラキドン酸（AA）（Arachidonic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/arachidonic-acid
+ω-3過剰摂取で枯渇しやすい必須ω-6・運動シグナル経路への研究
+代表論文: メタ解析 · Sports Medicine 2020 · n=100 · 8週 — AA 1〜1.5g/日で筋量・無酸素パフォーマンス指標の小〜中等度改善・効果サイズは個人差大
+
+### アラントイン（Allantoin） — エビデンスランク B
+URL: https://scibase.app/ingredients/allantoin
+皮膚再生・角質軟化・抗炎症の三役をこなすマルチ成分。低刺激で広く使用
+代表論文: コホート研究 · Cosmetics 2020 · n=450 · 8週 — アラントイン配合外用剤で皮膚の保水・修復指標が改善。
+
+### アルギニンAKG（Arginine Alpha-Ketoglutarate） — エビデンスランク B
+URL: https://scibase.app/ingredients/arginine-akg
+アルギニンとAKG結合で吸収改善を主張するが、シトルリン優位とする研究も
+代表論文: RCT · Journal of the International Society of Sports Nutrition 2006 · n=35 · 8週 — 12g/日AAKGで1RM・パワー出力に有意な改善が報告された
+
+### アルジュナ樹皮（テルミナリアアルジュナ）（Arjuna Bark (Terminalia arjuna)） — エビデンスランク B
+URL: https://scibase.app/ingredients/arjuna-bark
+アーユルヴェーダで2,500年・心臓強壮としての伝統的使用と小規模RCTの整理
+代表論文: RCT · International Journal of Cardiology 1995 · n=12 · 12週 — 難治性心不全患者12名にアルジュナ樹皮500mg×3回/日×12週：NYHAクラス・左室駆出率・運動耐容能の改善傾向（Bharani A et al.）
+
+### アルジレリン（アセチルヘキサペプチド-8）（Argireline (Acetyl Hexapeptide-8)） — エビデンスランク B
+URL: https://scibase.app/ingredients/argireline
+10%・15日でしわ深度約30%減少のRCT・「ボトックス類似」と呼ばれる表情ジワ向けペプチド
+代表論文: RCT · International Journal of Cosmetic Science 2002 · n=10 · 4週 — 健康女性10名対象のRCTで、アルジレリン10%エマルジョン外用×30日で目尻のしわ深度が最大30%減少。
+
+### アルファGPC（Alpha-GPC (Alpha-Glycerophosphocholine)） — エビデンスランク B
+URL: https://scibase.app/ingredients/alpha-gpc
+脳に届くコリン供給源。アセチルコリン産生を促進し記憶・集中力に関与
+代表論文: コホート研究 · Annals of Clinical and Translational Neurology 2021 · n=2044 · 24週 — アルファGPC（400mg×3回/日）で認知機能スコアが有意に改善。
+
+### イデベノン（Idebenone） — エビデンスランク B
+URL: https://scibase.app/ingredients/idebenone
+1%外用×6週で光老化指標が有意改善・コエンザイムQ10より抗酸化能が高いとされる短鎖キノン
+代表論文: RCT · Journal of Cosmetic Dermatology 2005 · n=41 · 6週 — 中等度光老化肌41名対象RCTで、0.5%群でしわ・肌の粗さ・色素沈着が改善（−26〜29%）、1%群でさらに大きな改善（−27〜37%）。
+
+### イブニングプリムローズオイル（高GLA）（High-GLA Evening Primrose Oil） — エビデンスランク B
+URL: https://scibase.app/ingredients/evening-primrose-oil-gla-rich
+GLA含有率10-15%規格・PMSと乳房痛指標で中等度効果
+代表論文: メタ解析 · British Journal of Obstetrics and Gynaecology 1996 · n=414 · 12週 — EPO 1-3g/日で周期性乳房痛指標の改善・偽薬群より有意（p<0.05）
+
+### ウルソル酸（ロスマリン酸由来）（Ursolic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/ursolic-acid
+動物試験で筋萎縮抑制示唆・ヒトでも小規模RCT支持
+代表論文: RCT · Journal of Functional Foods 2014 · n=16 · 8週 — ウルソル酸450mg/日（分3）で筋量・1RM・除脂肪体重の改善傾向（小規模パイロット）
+
+### ウロリチンA（Urolithin A） — エビデンスランク B
+URL: https://scibase.app/ingredients/urolithin-a
+ザクロ由来のポリフェノール代謝物。ミトコンドリア品質管理（マイトファジー）を活性化
+代表論文: RCT · JAMA Network Open 2022 · n=88 · 16週 — 中年成人（40〜65歳）n=88・Mitopure® 500または1,000mg/日×16週間で太もも筋力（hamstring・leg extension）の有意改善・血漿ミトコンドリア生合成マーカー（アシルカルニチン）の改善が確認された
+
+### エクオール（Equol） — エビデンスランク B
+URL: https://scibase.app/ingredients/equol
+腸内細菌が産生する大豆イソフラボン代謝物。肌老化・更年期症状に日本人向けエビデンス
+代表論文: RCT · Menopause 2013 · n=126 · 12週 — エクオール10mg/日で更年期スコア（Kupperman指数）が有意に低下。
+
+### エックロニアカヴァ（カジメ）（Ecklonia cava） — エビデンスランク B
+URL: https://scibase.app/ingredients/ecklonia-cava
+韓国・日本沿岸海藻・フロロタンニン抗酸化・血管・認知補助・Seanol® 規格
+代表論文: RCT · Phytotherapy Research 2012 · n=97 · 12週 — Shin HC et al. メタボリック症候群患者 n=97 RCT で Seanol® 144mg/日 12週で動脈硬化指標・脂質改善示唆
+
+### エラグ酸（ザクロエキス・経口）（Ellagic Acid (Pomegranate Extract, Oral)） — エビデンスランク B
+URL: https://scibase.app/ingredients/ellagic-acid-pomegranate
+ザクロ由来ポリフェノール・UV誘発色素沈着抑制RCT・100-200mg/日
+代表論文: RCT · Journal of Nutritional Science and Vitaminology 2006 · n=39 · 4週 — 健康女性20-40代39名を3群（プラセボ・エラグ酸100mg/日・200mg/日）にランダム割付4週間でUV照射部位L値低下を低用量1.35%・高用量1.73%抑制。
+
+### エラスチンペプチド（経口）（Elastin Peptide (Oral)） — エビデンスランク B
+URL: https://scibase.app/ingredients/elastin-peptide-oral
+カツオ由来の弾性線維素材。コラーゲンが満たすハリ以外の弾力性に焦点が当たる研究進行中
+代表論文: RCT · Journal of the Society of Cosmetic Chemists of Japan 2016 · n=24 · 12週 — 中年女性24名にカツオ由来エラスチンペプチド75mg/日×12週で頬部の皮膚弾力（cutometer R2/R7）と肌キメスコアがプラセボ群より有意改善（Shiratsuchi 2016）
+
+### エルゴチオネイン（Ergothioneine） — エビデンスランク B
+URL: https://scibase.app/ingredients/ergothioneine
+OCTN1トランスポーターで細胞内に選択輸送される含硫アミノ酸。血中半減期約1ヶ月
+代表論文: メタ解析 · British Journal of Nutrition 2023 — EGTのヒト介入研究を統合。
+
+### エルゴチオネイン（キノコ抽出）（Mushroom-Derived Ergothioneine） — エビデンスランク B
+URL: https://scibase.app/ingredients/ergothioneine-mushroom
+キノコ由来 vs 酵母発酵合成・天然マトリクスでの摂取軸
+代表論文: コホート研究 · Antioxidants 2020 · n=470 — シンガポール高齢者470名の血中エルゴチオネイン濃度測定：低エルゴチオネイン群で軽度認知障害リスクが有意に高い（Cheah IK et al.）
+
+### エレウテロ（シベリア人参）（Eleuthero (Eleutherococcus senticosus)） — エビデンスランク B
+URL: https://scibase.app/ingredients/eleuthero
+疲労・運動耐容能・免疫サポートのRCT・朝鮮人参とは別属の「シベリアアダプトゲン」
+代表論文: RCT · Psychological Medicine 2004 · n=76 · 8週 — 慢性疲労患者76名対象RCTで、エレウテロ 1g×2/日×2ヶ月によりサブグループ解析（軽度〜中等度疲労）で疲労スコア有意改善・重度疲労群では効果なし（Hartz AJ et al.）
+
+### オメガ7（パルミトレイン酸）（Palmitoleic Acid (Omega-7)） — エビデンスランク B
+URL: https://scibase.app/ingredients/omega-7-palmitoleic
+CRPとHDLにアプローチする一価不飽和脂肪酸・補助層として位置づけ
+代表論文: RCT · Journal of Clinical Lipidology 2014 · n=60 · 30週 — 精製パルミトレイン酸210mg/日30日間でCRPの有意低下とHDLコレステロールの有意上昇 [PMID:25271838 https://pubmed.ncbi.nlm.nih.gov/25271838/]
+
+### オリーブ葉エキス（オレウロペイン）（Olive Leaf Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/olive-leaf-extract
+オレウロペインによる血圧・血糖・抗酸化への関与がRCTで確認。地中海長寿食の活性成分
+代表論文: メタ解析 · Nutrients 2019 — オリーブ葉エキス摂取が収縮期・拡張期血圧の有意な低下と関連することをRCTのメタ解析で確認（p<0.01）。
+
+### オレウロペイン（オリーブ葉エキス）（Oleuropein (Olive Leaf Extract)） — エビデンスランク B
+URL: https://scibase.app/ingredients/oleuropein
+地中海食の代表ポリフェノール・血圧・血糖補助の RCT 蓄積
+代表論文: RCT · Phytomedicine 2011 · n=232 · 8週 — ステージ1高血圧患者232名にオリーブ葉エキス 500mg×2回/日×8週で SBP -11.5mmHg・DBP -4.8mmHg・カプトプリルと同等（Susalit E et al.）
+
+### オロチン酸マグネシウム（Magnesium Orotate） — エビデンスランク B
+URL: https://scibase.app/ingredients/magnesium-orotate
+心不全RCTで1年生存率改善（Stepura 2009）。心臓特異的Mg輸送のニッチ形態
+代表論文: RCT · International Journal of Cardiology 2009 · n=79 · 52週 — 重症心不全（NYHA IV）患者にオロチン酸Mg 6g/日12週投与で1年生存率76% vs プラセボ52%・症状改善も有意
+
+### カカオフラバノール（Cocoa Flavanols） — エビデンスランク B
+URL: https://scibase.app/ingredients/cocoa-flavanols
+エピカテキン主成分・血管内皮機能 RCT・COSMOS試験 21k・認知改善示唆
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2017 · n=1804 — Ried K et al. メタ解析 35 RCT 統合 n=1,804・カカオフラバノール 30-1,218mg/日 2-18週で収縮期血圧 -1.8 mmHg・拡張期血圧 -1.8 mmHg 有意低下
+
+### カシス（ブラックカラント）アントシアニン（Blackcurrant Anthocyanin） — エビデンスランク B
+URL: https://scibase.app/ingredients/blackcurrant-anthocyanin
+日本市場の目サプリ素材・暗順応改善のRCTを日本企業が主導
+代表論文: RCT · Alternative Medicine Review 2000 · n=12 · 4週 — カシスアントシアニン50mg/日で暗順応指標・VDT作業中の屈折変化への改善（小規模パイロット）
+
+### カラナスオイル（環境配慮型オメガ3）（Calanus Oil (from Calanus finmarchicus)） — エビデンスランク B
+URL: https://scibase.app/ingredients/calanus-oil-omega-3
+北大西洋カイアシ類由来・wax ester結合omega3 + SDA + 天然アスタキサンチン・iHerb流通限定
+代表論文: RCT · Regulatory Toxicology and Pharmacology 2016 · n=117 · 52週 — 健常成人117名にカラナスオイル2g/日×12ヶ月で長期安全性・忍容性が確認・有害事象群間差なし（Cook CM et al.・長期RCT）
+
+### カルシウムD-グルカル酸（Calcium D-Glucarate） — エビデンスランク B
+URL: https://scibase.app/ingredients/calcium-d-glucarate
+腸肝循環を断つβ-グルクロニダーゼ阻害。エストロゲン代謝サポートの研究領域
+代表論文: レビュー · Cancer Detection and Prevention 1997 — β-グルクロニダーゼ阻害によるホルモン依存性がん予防機序の総説・ヒト試験の必要性を提起
+
+### カルシウムD-グルカル酸（カルシウムD-サッカレート）（Calcium D-Glucarate (Calcium D-Saccharate)） — エビデンスランク B
+URL: https://scibase.app/ingredients/calcium-d-saccharate
+β-グルクロニダーゼ阻害・第II相代謝サポートの研究軸
+代表論文: 観察研究 · Carcinogenesis 1990 — D-グルカル酸が動物試験で肝臓・腎臓β-グルクロニダーゼ活性を有意阻害・代謝物排泄促進
+
+### カルノシン（Carnosine） — エビデンスランク B
+URL: https://scibase.app/ingredients/carnosine
+糖化（AGEs）の抑制・テロメア保護・脳機能への関与が研究で確認されている
+代表論文: RCT · Nutrition Research 2015 · n=30 · 12週 — 2型糖尿病患者でのRCT。
+
+### キノコβ-グルカンブレンド（Mushroom Beta-Glucan Blend） — エビデンスランク B
+URL: https://scibase.app/ingredients/beta-glucan-mushroom-blend
+霊芝・マイタケ等の伝統免疫キノコβ-グルカン配合・補完療法での研究蓄積
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2016 · n=373 — がん補完療法で免疫指標の改善は報告されたが、生存率改善は限定的
+
+### ギムネマ（ギムネマシルベスタ）（Gymnema Sylvestre） — エビデンスランク B
+URL: https://scibase.app/ingredients/gymnema
+血糖低下・甘味抑制の RCT・「砂糖を壊す」アーユルヴェーダの伝統的血糖ハーブ
+代表論文: RCT · Journal of Ethnopharmacology 1990 · n=22 · 80週 — 2型糖尿病患者22名に GS4（ギムネマ抽出）400mg/日×18-20ヶ月で空腹時血糖・HbA1c 改善・抗糖尿病薬減量可能（Baskaran K et al.）
+
+### クコの実（ゴジベリー・眼科特化）（Goji Berry (Lycium barbarum, Eye-Health Focus)） — エビデンスランク B
+URL: https://scibase.app/ingredients/lycium-goji-eye
+ゼアキサンチン高含有・90日RCTで黄斑色素保護・抗酸化能+57%
+代表論文: RCT · Optometry and Vision Science 2011 · n=150 · 13週 — 健常高齢者150名（65-70歳・active 75 + placebo 75）にLacto-Wolfberry（クコの実ミルクベース製剤）13.7g/日 90日摂取でplacebo群は黄斑色素 hypopigmentation・soft drusen蓄積を示しLWB群は維持。
+
+### グリーンコーヒー豆エキス（Green Coffee Bean Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/green-coffee-bean-extract
+クロロゲン酸を取れる成分・体重への効果は限定的で主成分ではなく補助
+代表論文: メタ解析 · Gastroenterology Research and Practice 2011 · n=142 — 5試験のメタ解析で体重がプラセボ群より平均約2.47kg低下したが、含まれた試験のバイアスリスクは高いとレビュー著者が結論で明記 [PMID:21861726 https://pubmed.ncbi.nlm.nih.gov/21861726/]
+
+### グリーンリップマッセル（ニュージーランド緑イ貝）（Green-lipped Mussel） — エビデンスランク B
+URL: https://scibase.app/ingredients/green-lipped-mussel
+ETA含有海洋脂質・OA 膝痛改善 RCT・omega3 とは別経路抗炎症
+代表論文: メタ解析 · QJM: An International Journal of Medicine 2008 · n=360 — Brien S et al. SR・OA 患者 4 RCT 統合で WOMAC 疼痛・身体機能 stiffness 指標で改善傾向報告・大規模 RCT 不足の限界も明記
+
+### グリコマクロペプチド（GMP）（Glycomacropeptide (GMP)） — エビデンスランク B
+URL: https://scibase.app/ingredients/glycomacropeptide
+乳清由来64aaペプチド・フェニルアラニンフリー・PKU医療食で確立 + 満腹感サポート研究中
+代表論文: RCT · Journal of Inherited Metabolic Disease 2010 · n=11 · 4週 — PKU成人11名にGMP医療食 vs 従来のアミノ酸式医療食 4週クロスオーバーRCTで遵守率・嗜好性・満腹感が有意改善（MacLeod EL et al.・クロスオーバーRCT）
+
+### グルコサミン（Glucosamine） — エビデンスランク B
+URL: https://scibase.app/ingredients/glucosamine
+軟骨・関節の構成成分。変形性関節症の疼痛緩和にコホート研究エビデンス
+代表論文: RCT · New England Journal of Medicine 2006 · n=1583 · 24週 — 重度の膝痛サブグループでグルコサミン＋コンドロイチン併用が疼痛スコアを有意に改善（p=0.002）
+
+### グルコサミン塩酸塩（Glucosamine HCl） — エビデンスランク B
+URL: https://scibase.app/ingredients/glucosamine-hcl
+ベジタリアン・甲殻類アレルギー対応のグルコサミン形態
+代表論文: メタ解析 · Arthritis & Rheumatism 2007 · n=2200 · 24週 — 硫酸塩 vs 塩酸塩のメタ比較：硫酸塩2KCl型でのみ有意な痛み改善・塩酸塩型は有意差なしと整理（Vlad SC et al.）
+
+### グルコラファニン（ブロッコリースプラウト）（Glucoraphanin） — エビデンスランク B
+URL: https://scibase.app/ingredients/glucoraphanin
+スルフォラファン前駆体・腸内ミロシナーゼ依存・環境汚染物質排泄 RCT
+代表論文: RCT · Cancer Prevention Research 2014 · n=291 · 12週 — 中国大気汚染地域成人291名にブロッコリースプラウト飲料（グルコラファニン600μmol/日）×3ヶ月でベンゼン代謝物（S-PMA）尿中排泄61%上昇・アクロレイン代謝物23%上昇・解毒促進（Egner PA et al.）
+
+### グルタチオン（Glutathione） — エビデンスランク B
+URL: https://scibase.app/ingredients/glutathione
+体内最強の抗酸化物質。経口摂取でも血中濃度上昇と皮膚明度改善がRCTで確認されている
+代表論文: RCT · Clinical, Cosmetic and Investigational Dermatology 2014 · n=60 · 12週 — 還元型グルタチオン500mg/日を12週間経口摂取した群でプラセボ群と比べ、皮膚の明度（L値）が有意に改善。
+
+### グレープフルーツ（Citrus × paradisi）（Grapefruit (Citrus × paradisi)） — エビデンスランク B
+URL: https://scibase.app/ingredients/grapefruit
+【最重要注意】CYP3A4 強阻害でスタチン・Ca拮抗薬・ベンゾジアゼピン等多剤と相互作用
+代表論文: RCT · The Lancet 1991 · n=6 — 健常成人 6 名にグレープフルーツジュース 200mL 経口でフェロジピン血中濃度が水と比較し 2.84 倍上昇・グレープフルーツと薬物相互作用を初めて報告（Bailey DG, Spence JD, Munoz C, Arnold JM）
+
+### クロム（クロミウム）（Chromium） — エビデンスランク B
+URL: https://scibase.app/ingredients/chromium
+インスリン感受性改善・血糖スパイク抑制・食欲調節への関与がRCTで確認されているミネラル
+代表論文: メタ解析 · Diabetes Technology & Therapeutics 2014 — クロム補給が2型糖尿病患者のHbA1c・空腹時血糖を有意に改善することをメタ解析（25 RCT）で確認（p<0.01）。
+
+### クロムグリシネート（Chromium Glycinate Chelate） — エビデンスランク B
+URL: https://scibase.app/ingredients/chromium-glycinate
+Albionアミノ酸キレート形態・ピコリン酸高用量を避けたい層の選択肢
+代表論文: RCT · Diabetes 1997 · n=180 · 16週 — 中国人2型糖尿病患者180名にクロムピコリン酸1,000μg/日×4ヶ月でHbA1c・空腹時血糖・インスリン感受性の有意改善（Anderson RA et al.）。
+
+### クロレラ（Chlorella vulgaris）（Chlorella vulgaris） — エビデンスランク B
+URL: https://scibase.app/ingredients/chlorella-vulgaris
+破壊細胞壁加工で消化吸収・タンパク質55-65%含有の緑藻
+代表論文: メタ解析 · Clinical Nutrition 2018 · n=419 · 12週 — クロレラRCT 19件メタ解析（n=419）：総コレステロール・LDL・収縮期血圧の軽度有意低下（Fallah AA et al.）
+
+### ケイ素（タケ由来）（Silicon (Bamboo Extract)） — エビデンスランク B
+URL: https://scibase.app/ingredients/silicon-bamboo
+結合組織コラーゲン合成補助・タケ由来 70%以上シリカ含有
+代表論文: RCT · BMC Musculoskeletal Disorders 2008 · n=136 · 52週 — 骨減少症女性136名に ch-OSA® 6mg+Ca/VitD3×52週で骨形成マーカー（PINP）有意改善・大腿骨頸部 BMD 改善傾向（Spector TD et al.）
+
+### ケトンエステル（外因性ケトン体）（Exogenous Ketone Ester） — エビデンスランク B
+URL: https://scibase.app/ingredients/exogenous-ketone-ester
+BHB salts より血中βHB上昇が優位・運動研究の独自切り口
+代表論文: RCT · Cell Metabolism 2016 · n=39 · 1週 — ケトンエステル250mg/kg + 炭水化物併用で持久運動パフォーマンス（30分タイムトライアル）が約2%向上
+
+### ゲラチン化高濃度マカ（Gelatinized High-Concentration Maca） — エビデンスランク B
+URL: https://scibase.app/ingredients/maca-gelatinized-high-conc
+加熱処理で澱粉除去・6:1濃縮で1g≈生マカ6g相当
+代表論文: RCT · Menopause 2008 · n=14 · 12週 — 閉経後女性14名にゲラチン化マカ3.5g/日×6週：心理症状・性機能スコア改善（Brooks NA et al.）
+
+### ケルセチン（Quercetin） — エビデンスランク B
+URL: https://scibase.app/ingredients/quercetin
+老化細胞（ゾンビ細胞）の除去に関与する可能性が示されているフラボノイド
+代表論文: メタ解析 · British Journal of Nutrition 2016 · n=884 · 8週 — CRP・TNF-αが有意に低下（p<0.05）。
+
+### ゴツコラ（ツボクサ）（Gotu Kola） — エビデンスランク B
+URL: https://scibase.app/ingredients/gotu-kola
+CICA スキンケア主原料・コラーゲン合成促進・創傷治癒+微小循環
+代表論文: RCT · Angiology 2001 · n=50 · 4週 — CVI 患者50名にゴツコラトリテルペノイド 60-180mg/日×4週で微小循環・浮腫・下肢症状の有意改善（Incandela L et al.）
+
+### コラーゲンタイプI（Type I Collagen） — エビデンスランク B
+URL: https://scibase.app/ingredients/collagen-type-1
+皮膚・骨・腱の主要構造タンパクで弾力・水分量RCTがあるコラーゲン
+代表論文: RCT · Journal of Cosmetic Dermatology 2019 · n=64 · 12週 — タイプI主体5g/日でプラセボに比べ皮膚水分量・弾力指標が有意改善
+
+### コラーゲンタイプIII（Type III Collagen） — エビデンスランク B
+URL: https://scibase.app/ingredients/collagen-type-3
+血管壁と若い皮膚に多いタイプで弾力・密度指標RCTが報告されるコラーゲン
+代表論文: RCT · Skin Pharmacology and Physiology 2015 · n=69 · 8週 — タイプI/III混合5g/日で皮膚水分量・弾力・コラーゲン密度が有意改善
+
+### コリンクエン酸塩（Choline Citrate） — エビデンスランク B
+URL: https://scibase.app/ingredients/choline-citrate
+水溶性高・吸収速い・パフォーマンス志向のコリン補給形態
+代表論文: 観察研究 · Nutrition Reviews 2009 — コリンの必須栄養素位置づけと神経・肝臓代謝の包括レビュー・米国成人90%が AI 不足（Zeisel SH）
+
+### コリン酒石酸塩（Choline Bitartrate） — エビデンスランク B
+URL: https://scibase.app/ingredients/choline-bitartrate
+IOM 設定必須栄養素・神経膜PC基質・妊娠中胎児神経発達
+代表論文: RCT · FASEB Journal 2012 · n=26 · 12週 — 妊娠後期女性26名にコリン 480 vs 930mg/日×12週で母児のコリン代謝マーカー・妊娠転帰改善傾向（Yan J et al.）
+
+### コルジセプス（冬虫夏草）（Cordyceps Militaris） — エビデンスランク B
+URL: https://scibase.app/ingredients/cordyceps
+ATP産生促進・酸素利用効率改善・疲労軽減がRCTで確認されているアダプトゲン系キノコ
+代表論文: RCT · Journal of Dietary Supplements 2016 · n=28 · 3週 — 成人28名のRCT（3週間）でコルジセプス摂取群のVO2maxが有意に向上し、高強度運動への耐性が改善（p<0.05）。
+
+### コルディセプス・ミリタリス（蛹虫草）（Cordyceps militaris） — エビデンスランク B
+URL: https://scibase.app/ingredients/cordyceps-militaris
+人工培養冬虫夏草・コルジセピン高含有・持久力 VO2max RCT
+代表論文: RCT · Journal of Dietary Supplements 2017 · n=28 · 3週 — 健常成人28名に C. militaris 4g/日×3週で高強度運動 VO2peak・換気閾値・TTE（time to exhaustion）改善（Hirsch KR et al.）
+
+### コロストラム免疫グロブリン（Colostrum Immunoglobulin） — エビデンスランク B
+URL: https://scibase.app/ingredients/colostrum-immunoglobulin
+IgG濃度を規格化したコロストラム濃縮品・粘膜免疫補助の研究蓄積
+代表論文: メタ解析 · Nutrients 2020 · n=380 — 腸透過性指標・腸内炎症マーカーの改善が複数RCTで一貫して報告された
+
+### コロソリン酸（Corosolic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/corosolic-acid
+コロソリン酸 10mg/日・食後血糖 RCT・GLUT4 機序・処方医の指導の下補助
+代表論文: メタ解析 · Phytotherapy Research 2012 — Stohs SJ et al. ペンタサイクリック・トリテルペノイド（コロソリン酸・ウルソール酸）の血糖代謝への影響をレビュー・小規模 RCT・動物実験統合
+
+### コンドロイチン（Chondroitin Sulfate） — エビデンスランク B
+URL: https://scibase.app/ingredients/chondroitin
+軟骨の水分保持・弾力性に関与。グルコサミンとの組み合わせで関節ケアに
+代表論文: メタ解析 · Seminars in Arthritis and Rheumatism 2020 · n=4962 · 24週 — コンドロイチン硫酸で膝OA疼痛スコアが有意に低下（SMD -0.18, p<0.001）
+
+### コンブチャ（postbiotic）（Kombucha Postbiotic） — エビデンスランク B
+URL: https://scibase.app/ingredients/kombucha-postbiotic
+発酵代謝産物（postbiotic）の腸内環境補助でレビュー報告される伝統発酵飲料
+代表論文: 観察研究 · Comprehensive Reviews in Food Science and Food Safety 2018 — コンブチャの発酵プロセス・代謝産物・健康機能性をレビュー
+
+### サトウキビポリコサノール（Sugarcane Policosanol） — エビデンスランク B
+URL: https://scibase.app/ingredients/policosanol-sugarcane
+キューバ単独研究 vs 西側独立試験で結果が大きく異なる希少成分
+代表論文: RCT · Journal of Medicinal Food 2003 · n=244 · 24週 — 高コレステロール血症患者244名にポリコサノール10mg/日×6か月：LDL21.0%低下・HDL11.3%上昇（Castano G et al.キューバ研究）
+
+### シイタケエキス（レンチナン）（Shiitake Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/shiitake-extract
+レンチナン（β-1,3-D-グルカン）・日本で胃がん補助処方薬・免疫サポートの長期実績
+代表論文: RCT · Journal of the American College of Nutrition 2015 · n=52 · 4週 — 健常成人52名に LEM 5-10g/日×4週で NK細胞活性・血清 CRP の有意改善（Dai X et al.）
+
+### シーバックソーン（サジー）（Sea Buckthorn） — エビデンスランク B
+URL: https://scibase.app/ingredients/sea-buckthorn
+オメガ7（パルミトレイン酸）+ カロテノイド + 抗酸化ビタミン 複合・粘膜・ドライアイ RCT
+代表論文: RCT · Journal of Nutrition 2010 · n=86 · 12週 — ドライアイ症状成人86名にシーバックソーン油 2g/日×3ヶ月で涙液浸透圧・眼の主観症状の有意改善（Larmo PS et al.）
+
+### シザンドラ（五味子）（Schisandra (Schisandra chinensis)） — エビデンスランク B
+URL: https://scibase.app/ingredients/schisandra
+肝機能酵素改善・運動耐容能・疲労のRCT・CYP3A4阻害で薬物相互作用に注意が必要なアダプトゲン
+代表論文: 観察研究 · Journal of Ethnopharmacology 2008 — シザンドラの薬理学レビュー。
+
+### シナモン抽出物（カシア／セイロン）（Cinnamon Extract (Cassia / Ceylon)） — エビデンスランク B
+URL: https://scibase.app/ingredients/cinnamon-extract
+空腹時血糖・HbA1c・LDLの軽度改善をメタ解析で示す一方、カシア種クマリンの肝毒性が高用量長期で課題
+代表論文: メタ解析 · Annals of Family Medicine 2013 · n=543 — 2型糖尿病/前糖尿病患者543名を含む10本のRCTメタ解析で、シナモン（120mg〜6g/日）が空腹時血糖−24.6mg/dL・LDL−9.4mg/dL・TG−29.6mg/dL・HbA1c −0.16%の有意改善（Allen RW et al.）
+
+### ジャオグーラン（アマチャヅル・gypenosides）（Jiaogulan (Gynostemma pentaphyllum / Gypenosides)） — エビデンスランク B
+URL: https://scibase.app/ingredients/jiaogulan-gypenosides
+不老長寿草と呼ばれるアダプトゲン・Park 2014で12週450mg×2回/日体脂肪減少RCT
+代表論文: RCT · Obesity 2014 · n=80 · 12週 — 過体重成人80名でアクトポネックス450mg×2回/日12週により体脂肪・腹部脂肪・BMIが有意減少（Park SH et al.・標準化エキスRCT）
+
+### シャタバリ（Shatavari） — エビデンスランク B
+URL: https://scibase.app/ingredients/shatavari
+アーユルヴェーダ女性ハーブの代表・PMS+更年期+授乳補助の研究蓄積
+代表論文: RCT · Journal of Alternative and Complementary Medicine 2015 · n=60 · 8週 — PMS 女性60名にシャタバリ 500mg×2回/日×8週で身体症状・気分症状の有意改善（Pandey AK et al.）
+
+### シラジット・フルボ酸（PrimaVie®）（Shilajit Fulvic Acid (PrimaVie®)） — エビデンスランク B
+URL: https://scibase.app/ingredients/shilajit-fulvic
+PrimaVie® 規格化抽出・フルボ酸50%・男性テストステロン RCT
+代表論文: RCT · Andrologia 2015 · n=60 · 12週 — 健常男性60名（45-55歳）に精製シラジット（PrimaVie®）500mg/日 vs プラセボ×90日で総テストステロン・遊離テストステロン・DHEA-S 有意上昇（Pandit S et al.）
+
+### シラジット（ヒマラヤ樹脂）（Shilajit） — エビデンスランク B
+URL: https://scibase.app/ingredients/shilajit
+伝統的にミネラル・フルボ酸豊富・男性テストステロン研究進行・重金属汚染リスクで第三者検査済品のみ推奨
+代表論文: RCT · Andrologia 2010 · n=60 · 12週 — 男性不妊（精子数低下）患者へのPurified Shilajit 100mg×2/日×90日で精子数・運動率・形態の改善・テストステロン・LH上昇（Biswas TK et al.・男性生殖機能補助としての臨床根拠）
+
+### シリカ（ケイ素・二酸化ケイ素）（Silica / Silicon） — エビデンスランク B
+URL: https://scibase.app/ingredients/silica
+コラーゲン合成補助・骨密度・爪・毛髪の強化への関与が研究で確認されているミネラル
+代表論文: RCT · Journal of Cosmetic Dermatology 2017 · n=50 · 24週 — シリカ+コラーゲンペプチドの組み合わせRCT（24週間）で皮膚弾力・水分量の有意な改善を確認（p<0.05）。
+
+### シリビン（Silybin-Phytosome®）（Silybin (Silybin-Phytosome®)） — エビデンスランク B
+URL: https://scibase.app/ingredients/silybin
+ミルクシスル主活性成分・Phytosome®で吸収率10倍・NAFLD RCT
+代表論文: RCT · Digestive Diseases and Sciences / Free Radical Biology and Medicine 2012 · n=138 · 52週 — NAFLD 患者138名にシリビン-VitE-PC 複合 376mg/日×12ヶ月 vs プラセボで AST/ALT 正常化率・HOMA-IR・肝線維化マーカー有意改善（Loguercio C et al.）
+
+### スクワラン（Squalane） — エビデンスランク B
+URL: https://scibase.app/ingredients/squalane
+皮脂類似構造の保湿成分。肌なじみが良く刺激性が低い
+代表論文: 観察研究 · Cosmetics 2019 — スクワランがTEWLを有意に低下させ、角質水分量を改善。
+
+### スネイルムチン（カタツムリ分泌液濾過物）（Snail Mucin (Snail Secretion Filtrate)） — エビデンスランク B
+URL: https://scibase.app/ingredients/snail-mucin
+8%含有クリーム×14週で光老化指標が有意改善・韓国Kビューティの主流成分
+代表論文: RCT · Dermatologic Surgery 2009 · n=25 · 14週 — 中等度光老化肌の女性25名対象のRCTで、SCA（Helix aspersa分泌液濾過物）8%含有クリーム×14週で目尻のしわ深度・きめ・光老化スコアが有意改善。
+
+### スピルリナ（Spirulina） — エビデンスランク B
+URL: https://scibase.app/ingredients/spirulina
+タンパク質・β-カロテン・鉄を高濃度で含む藍藻類。免疫・炎症・代謝改善に研究
+代表論文: メタ解析 · Nutrients 2019 · n=520 · 12週 — スピルリナで空腹時血糖・LDLコレステロール・炎症マーカー（CRP）が有意に改善（p<0.05）
+
+### スペアミント茶（経口・抗アンドロゲン）（Spearmint Tea (Oral, Anti-Androgen)） — エビデンスランク B
+URL: https://scibase.app/ingredients/spearmint-anti-androgen
+PCOS女性遊離テストステロン低下RCT・抗アンドロゲン茶・1日2杯30日
+代表論文: RCT · Phytotherapy Research 2010 · n=42 · 4週 — PCOS女性42名にスペアミント茶2杯/日 vs プラセボ茶30日間で遊離テストステロン有意低下・総テストステロン低下・LH/FSH上昇（p<0.05）。
+
+### スペルミジン（Spermidine） — エビデンスランク B
+URL: https://scibase.app/ingredients/spermidine
+オートファジーを誘導し、細胞の「自己浄化」を促す長寿研究の注目成分
+代表論文: コホート研究 · American Journal of Clinical Nutrition 2018 · n=829 — 食事からのスペルミジン摂取量が高い群で全死亡リスクが有意に低下（HR 0.60）。
+
+### スルフォラファン（Sulforaphane） — エビデンスランク B
+URL: https://scibase.app/ingredients/sulforaphane
+ブロッコリー由来のNrf2活性化成分。抗炎症・解毒酵素誘導がヒト試験で確認されている
+代表論文: RCT · Redox Biology 2022 · n=65 · 16週 — 肥満成人においてスルフォラファン群はプラセボ比で肝脂肪・ALT・酸化ストレスマーカーが有意に改善
+
+### スルブチアミン（BBB通過型B1）（Sulbutiamine） — エビデンスランク B
+URL: https://scibase.app/ingredients/sulbutiamine
+2分子チアミンのジスルフィド結合で脳血液関門通過・慢性疲労RCTで症状スコア改善
+代表論文: RCT · Journal of Chronic Fatigue Syndrome 1999 · n=326 · 4週 — Tiev KP et al. 慢性感染後疲労326例で400〜600mg/日 4週投与・症状スコアと社会機能で有意改善
+
+### セラチオペプチダーゼ（Serratiopeptidase (Serrapeptase)） — エビデンスランク B
+URL: https://scibase.app/ingredients/serratiopeptidase
+日本で40年処方薬として使われた経緯と販売中止の研究的整理
+代表論文: RCT · Journal of Maxillofacial and Oral Surgery 2013 · n=64 · 1週 — 智歯抜歯後患者64名にセラチオペプチダーゼ10mg×3回 vs ジクロフェナク50mg×3回：両群で痛み・腫脹同等軽減・酵素群GI副作用少（Bhagat S et al.）
+
+### センテラアジアティカ（Centella Asiatica (Cica)） — エビデンスランク B
+URL: https://scibase.app/ingredients/centella-asiatica
+コラーゲン合成促進とバリア修復への関与が研究で示されている
+代表論文: メタ解析 · Journal of Ethnopharmacology 2021 — バリア機能改善・創傷治癒・抗炎症効果が複数の試験で確認。
+
+### タウリン（Taurine） — エビデンスランク B
+URL: https://scibase.app/ingredients/taurine
+2023年Science誌で長寿・老化抑制への関与が示された注目成分
+代表論文: 観察研究 · Science 2023 — タウリン濃度は加齢とともに低下（ヒトで60歳までに80%低下）。
+
+### チモシンα1（Thymosin Alpha-1） — エビデンスランク B
+URL: https://scibase.app/ingredients/thymosin-alpha-1
+Zadaxin® 商標薬・FDA・PMDA 一部承認・免疫調整・肝炎/がん補助・特に重要な注意
+代表論文: RCT · Journal of Hepatology 2001 · n=99 · 24週 — Andreone P et al. B型肝炎 n=99 RCT で Tα1 0.9mg 皮下注 2回/週 6ヶ月で HBV-DNA 低下・HBeAg セロコンバージョン示唆
+
+### デビルズクロー（ハルパゴフィタム）（Devil's Claw） — エビデンスランク B
+URL: https://scibase.app/ingredients/devils-claw
+ハルパゴサイド 50-100mg/日・OA 疼痛 NSAIDs 同等水準・抗凝固併用注意
+代表論文: メタ解析 · BMC Complementary and Alternative Medicine 2006 · n=1500 — Brien S et al. デビルズクロー単独・複合製剤 12 RCT 統合で OA 膝・股関節・慢性腰痛 WOMAC・VAS 疼痛指標で NSAIDs 同等水準の改善を報告
+
+### トランス型レスベラトロール（純度規格品）（trans-Resveratrol (High Purity)） — エビデンスランク B
+URL: https://scibase.app/ingredients/resveratrol-trans-pure
+trans型99%純度品でcis/trans混合より活性が高い・Witte 2014で高齢者記憶機能改善RCT
+代表論文: RCT · Journal of Neuroscience 2014 · n=46 · 26週 — 健康な高齢者46名でtrans-resveratrol 200mg/日26週により言語記憶テストスコアと海馬機能的結合性の有意改善・HbA1c低下を確認（Witte AV et al.）
+
+### トリファラ（Triphala） — エビデンスランク B
+URL: https://scibase.app/ingredients/triphala
+アーユルヴェーダ整腸処方・3果実シナジー・整腸+抗酸化
+代表論文: 観察研究 · Iranian Journal of Pharmacology and Therapeutics 2006 — トリファラの便秘改善・腹部不快・GI 機能・抗酸化への伝統使用と現代臨床エビデンス統合レビュー（Mukherjee PK et al.）
+
+### トンカットアリ（Tongkat Ali） — エビデンスランク B
+URL: https://scibase.app/ingredients/tongkat-ali
+遅発性男性更年期76名RCTで遊離テストステロン関連指標の改善が報告される東南アジア由来アダプトゲン・Physta規格品200mg/日が標準
+代表論文: RCT · Andrologia 2012 · n=76 · 4週 — 遅発性男性更年期（LOH）疑い76名対象の臨床試験で、Physta水抽出物200mg/日 × 1ヶ月で遊離テストステロン関連指標の正常域到達率が大きく上昇したと報告された（Tambi MI et al.）
+
+### ナットウキナーゼ（Nattokinase） — エビデンスランク B
+URL: https://scibase.app/ingredients/nattokinase
+納豆から発見された線溶酵素。血流・血圧への関与がRCTで報告されている
+代表論文: RCT · Hypertension Research 2008 · n=86 · 8週 — 高血圧傾向の成人において、ナットウキナーゼ摂取群は収縮期血圧−5.5mmHg・拡張期血圧−2.8mmHgの有意な低下を示した
+
+### ナリンゲニン（Naringenin） — エビデンスランク B
+URL: https://scibase.app/ingredients/naringenin
+グレープフルーツの苦味成分由来・脂質代謝補助・薬物相互作用の代表
+代表論文: 観察研究 · Foods 2019 — ナリンゲニンの抗酸化・抗炎症・脂質代謝・抗腫瘍・神経保護の研究と臨床試験レビュー・抗酸化メカニズム支持的（Salehi B et al.）
+
+### ネトル根エキス（Stinging Nettle Root Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/nettle-root-extract
+BPH症状指標がn=620のRCTで改善・前立腺サポート研究の代表ハーブ
+代表論文: メタ解析 · BJU International 2013 · n=1486 · 24週 — 6件のRCT統合・BPH症状改善への適度なエビデンス。
+
+### ノコギリヤシ（ソーパルメット）（Saw Palmetto） — エビデンスランク B
+URL: https://scibase.app/ingredients/saw-palmetto
+5α還元酵素阻害によるDHT低下・男性型脱毛（AGA）への関与がRCTで確認されているハーブ
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2018 — ノコギリヤシは前立腺症状に対してプラセボより有意に改善するが、フィナステリドと比較して効果は限定的であることをCochraneメタ解析で確認。
+
+### ノパル（ウチワサボテン）（Nopal (Prickly Pear)） — エビデンスランク B
+URL: https://scibase.app/ingredients/nopal
+メキシコ食文化 + 血糖管理 + 二日酔い予防の RCT 蓄積
+代表論文: RCT · Diabetes Care 1988 · n=14 — 2型糖尿病患者14名にノパル 500g 単回経口で空腹時血糖の有意低下・インスリン感受性改善（Frati-Munari AC et al.）
+
+### バクチオール（Bakuchiol） — エビデンスランク B
+URL: https://scibase.app/ingredients/bakuchiol
+レチノールと類似の光老化改善が示されているが研究数はまだ少ない
+代表論文: RCT · British Journal of Dermatology 2019 · n=44 · 12週 — 0.5%バクチオール（2回/日）と0.5%レチノール（1回/日）を比較。
+
+### バチルス・コアグランス（Bacillus coagulans） — エビデンスランク B
+URL: https://scibase.app/ingredients/b-coagulans
+芽胞形成で胃酸・熱・抗生剤に耐性・運動回復RCTで筋ダメージ指標を改善する「タフな」プロバイオティクス
+代表論文: RCT · PeerJ 2016 · n=29 · 2週 — レジスタンストレーニング経験者29名対象のRCTで、B. coagulans GBI-30, 6086 10億CFU/日 × 2週で運動誘発筋ダメージ指標（CK等）の改善・回復促進が報告された（Jäger R et al.・カゼインプロテイン同時摂取条件）
+
+### バッファードビタミンC（エスターC型）（Buffered Vitamin C (Ester-C)） — エビデンスランク B
+URL: https://scibase.app/ingredients/vitamin-c-buffered-ester
+カルシウム緩衝で胃酸刺激を中和・胃の弱い方の現実的な代替
+代表論文: ガイドライン · NIH Office of Dietary Supplements 2021 — 成人男性90mg/日・女性75mg/日が推奨量、耐容上限2000mg/日。
+
+### バレリアン根（標準化抽出物）（Valerian Root Standardized Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/valerian-root-standardized
+GABA系作用の伝統ハーブ・メタ解析で睡眠の質改善・翌日持ち越し少
+代表論文: メタ解析 · Journal of Evidence-Based Integrative Medicine 2020 · n=6894 — 60試験n=6,894の系統的レビュー・メタ解析。
+
+### パンプキンシードオイル（経口・育毛）（Pumpkin Seed Oil (Oral, Hair)） — エビデンスランク B
+URL: https://scibase.app/ingredients/pumpkin-seed-oil-hair
+5α-リダクターゼ阻害想定・AGA男性RCTで毛数+40%・経口育毛サプリの選択肢
+代表論文: RCT · Evidence-Based Complementary and Alternative Medicine 2014 · n=76 · 24週 — 軽度〜中等度AGA男性76名にPSO 400mg/日 vs プラセボ24週間で毛数+40%（PSO群）vs +10%（プラセボ群）（p<0.001）・自己評価・満足度も有意改善・副作用は両群差なし（Cho YH, Lee SY, Jeong DW, et al.）
+
+### ヒアルロン酸（外用）（Hyaluronic Acid (Topical)） — エビデンスランク B
+URL: https://scibase.app/ingredients/hyaluronic-acid
+表皮の水分保持に働くが、真皮への浸透は分子量に依存する
+代表論文: RCT · Journal of Clinical and Aesthetic Dermatology 2011 · n=76 · 8週 — ナノHA（低分子）外用で皮膚水分量と弾力が有意に改善。
+
+### ヒアルロン酸（経口摂取）（Oral Hyaluronic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/hyaluronic-acid-oral
+経口ヒアルロン酸の皮膚水分量・乾燥・シワへの関与がRCTで確認されている
+代表論文: RCT · Clinical, Cosmetic and Investigational Dermatology 2017 · n=60 · 12週 — 低分子ヒアルロン酸120mg/日×12週間のRCTで皮膚弾力・水分量・小じわの有意な改善を確認（p<0.05, n=60）。
+
+### ピープロテイン（Pea Protein） — エビデンスランク B
+URL: https://scibase.app/ingredients/pea-protein
+アレルゲンフリーで筋タンパク合成RCTがホエイ同等の植物プロテイン
+代表論文: RCT · Sports 2019 · n=15 · 8週 — ホエイと同等の筋厚増加と1RM向上が確認された
+
+### ピコリン酸亜鉛（Zinc Picolinate） — エビデンスランク B
+URL: https://scibase.app/ingredients/zinc-picolinate
+小規模RCTで吸収率優位（Barrie 1987）。Zn各形態のニッチ高吸収オプション
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2013 · n=1387 — Zn lozenge 75mg以上/日で風邪罹病期間1-2日短縮・形態はグルコン酸・酢酸が主・ピコリン酸の優位性データなし
+
+### ビサボロール（α-ビサボロール）（Alpha-Bisabolol） — エビデンスランク B
+URL: https://scibase.app/ingredients/bisabolol
+0.5%外用×4週で赤み・乾燥スコア有意改善・敏感肌のリカバリー素材として確立する植物由来モノテルペン
+代表論文: RCT · Journal of Cosmetic Dermatology 2014 · n=60 · 4週 — 慢性湿疹患者60名対象のRCTで、bisabolol 0.5%含有クリーム×4週で紅斑・乾燥・痒みスコアがプラセボ比で有意改善（p<0.05）
+
+### ビスグリシン酸亜鉛（Zinc Bisglycinate） — エビデンスランク B
+URL: https://scibase.app/ingredients/zinc-bisglycinate
+空腹時でも胃部不快なし。Zn各形態で耐容性最良のキレート型
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2013 · n=1387 — Zn lozenge 75mg以上/日で風邪罹病期間1-2日短縮・形態間アウトカム差は未確立
+
+### ビスグリシン酸鉄（Iron Bisglycinate） — エビデンスランク B
+URL: https://scibase.app/ingredients/iron-bisglycinate
+硫酸鉄の半分量で同等効果・副作用は60%少ない（Coplin 1991）
+代表論文: RCT · Clinical Therapeutics 1991 · n=72 · 4週 — ビスグリシン酸鉄25mg/日は硫酸鉄50mg/日と同等のフェリチン上昇・消化器症状60%少ない
+
+### ピセアタンノール（パッションフルーツ種子由来）（Piceatannol (from Passion Fruit Seed)） — エビデンスランク B
+URL: https://scibase.app/ingredients/piceatannol
+パッションフルーツ種子由来レスベラトロール代謝物・小規模RCTで代謝・皮膚改善
+代表論文: RCT · Nutrients 2017 · n=39 · 8週 — 過体重男性ではピセアタンノール20mg/日8週でインスリン値・HOMA-IR・血圧・心拍が有意低下・女性では有意変化なし（Kitada M et al.・RCT）
+
+### ビターメロン（ゴーヤ）（Bitter Melon） — エビデンスランク B
+URL: https://scibase.app/ingredients/bitter-melon
+血糖低下の小規模 RCT・チャランチン+ポリペプチド-p などインスリン様化合物含有
+代表論文: RCT · Journal of Medicinal Food 2018 · n=24 · 12週 — 2型糖尿病患者24名にビターメロン抽出 2,000mg/日×12週で空腹時血糖・インスリン分泌指標・HbA1c 改善（Cortez-Navarrete M et al.）
+
+### ビタミンE外用（α-トコフェロール外用）（Tocopherol Topical (Alpha-Tocopherol)） — エビデンスランク B
+URL: https://scibase.app/ingredients/tocopherol-topical
+ビタミンC併用×4日でMED（最小紅斑量）4倍上昇・脂溶性抗酸化の代表格でビタミンC外用と相乗作用が確立
+代表論文: RCT · Journal of the American Academy of Dermatology 2003 · n=9 · 1週 — ヒト9名前腕でビタミンC 15% + ビタミンE 1% 4日塗布後UV照射、MED（最小紅斑量）4倍上昇・サンバーン細胞・チミンダイマー有意減少（Lin JY, Pinnell SR et al.）
+
+### ビフィドバクテリウム・ロンガム1714（Bifidobacterium longum 1714） — エビデンスランク B
+URL: https://scibase.app/ingredients/b-longum-1714
+Translational Psychiatry 2016 RCTで急性ストレス時のコルチゾール覚醒応答低下・気分改善が報告された「サイコバイオティクス」特定株
+代表論文: RCT · Translational Psychiatry 2016 · n=22 · 4週 — 健常男性22名対象のクロスオーバーRCTで、B. longum 1714 10億CFU/日 × 4週で急性社会的ストレス時のコルチゾール覚醒応答（CAR）低下・主観的ストレス低下・遅延記憶課題改善が報告された（Allen AP et al.）
+
+### ヒマワリレシチン（Sunflower Lecithin） — エビデンスランク B
+URL: https://scibase.app/ingredients/lecithin-sunflower
+大豆アレルギー対応・非GMO・低温機械圧搾抽出・新興リン脂質
+代表論文: RCT · Journal of the American College of Nutrition 2003 · n=23 · 8週 — 高コレステロール患者に大豆 PC 3g/日×8週で改善（ヒマワリ PC でも理論的に同等の効果が期待される）（Spilburg CA et al.）
+
+### ビルベリー（アントシアニン25%規格）（Bilberry 25% Anthocyanin Standardized） — エビデンスランク B
+URL: https://scibase.app/ingredients/bilberry-anthocyanin-25
+アントシアニン25%規格・ヨーロッパ野生種・眼精疲労研究の標準形態
+代表論文: メタ解析 · Survey of Ophthalmology 2004 · n=175 · 4週 — 12件のRCT統合・夜間視力への効果は研究間でばらつき大・偽薬と比較した確定的効果は限定的
+
+### ビルベリー＋イチョウ葉ブレンド（Bilberry + Ginkgo Eye Blend） — エビデンスランク B
+URL: https://scibase.app/ingredients/bilberry-ginkgo-eye
+ビルベリー目+イチョウ葉末梢循環の補完配合・別経路アプローチ
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2009 · n=2500 · 24週 — イチョウ葉エキス120〜240mg/日で軽度認知障害・血管性認知症への効果は研究間でばらつき
+
+### ビルベリー抽出物（Bilberry Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/bilberry-extract
+アントシアニン25%標準化抽出（Mirtoselect®等）で眼精疲労・暗順応のRCT複数
+代表論文: メタ解析 · Critical Reviews in Food Science and Nutrition 2020 · n=1492 · 12週 — ビルベリー由来を含むアントシアニン製剤（80〜320mg/日）が総コレ・LDL・血糖・収縮期血圧を有意改善することをn=1,492の32 RCT統合メタ解析で確認
+
+### ビンポセチン（Vinpocetine） — エビデンスランク B
+URL: https://scibase.app/ingredients/vinpocetine
+ハンガリー処方薬実績・脳血流改善・FDA は妊娠中サプリ警告
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2008 — ビンポセチンの認知症・MCI への効果評価レビュー。
+
+### フィセチン（Fisetin） — エビデンスランク B
+URL: https://scibase.app/ingredients/fisetin
+老化細胞を選択的に除去するポリフェノール。長寿研究最前線の成分
+代表論文: RCT · EBioMedicine 2019 — セノリティクス（ダサチニブ+ケルセチン）が線維症患者の身体機能を改善。
+
+### フェニルエチルレゾルシノール（SymWhite 377）（Phenylethyl Resorcinol (SymWhite 377)） — エビデンスランク B
+URL: https://scibase.app/ingredients/phenylethyl-resorcinol
+チロシナーゼ阻害IC50 4.7μMと最強クラス・「ハイドロキノンの代替」として欧州皮膚科で注目される美白成分
+代表論文: RCT · Journal of the European Academy of Dermatology and Venereology 2013 · n=40 · 12週 — 色素沈着部位を持つ被験者40名対象RCTで、フェニルエチルレゾルシノール0.5%含有美容液 × 12週で色素沈着スコア（メラニンインデックス）が有意改善。
+
+### フェヌグリーク（コロハ）（Fenugreek） — エビデンスランク B
+URL: https://scibase.app/ingredients/fenugreek
+血糖・男性テストステロン・PMS の RCT・Testofen® 規格化が研究と整合
+代表論文: メタ解析 · International Journal of Diabetes in Developing Countries 2014 — 2型糖尿病患者へのフェヌグリーク種子補給で空腹時血糖・HbA1c・LDL 有意改善（Sharma RD et al. メタ）
+
+### フコイダン（褐藻硫酸化多糖）（Fucoidan） — エビデンスランク B
+URL: https://scibase.app/ingredients/fucoidan
+免疫調節・がん補助の研究蓄積はあるが大規模ヒトRCT限定的・抗凝固薬caution・補助的な位置づけ位置づけ
+代表論文: メタ解析 · Marine Drugs 2017 — フコイダンの抗腫瘍・抗炎症・抗酸化メカニズムを動物・in vitro 試験で整理・ヒト確立RCTは限定的・補助療法位置づけが妥当（Lin Y et al.）
+
+### プテロスチルベン（Pterostilbene） — エビデンスランク B
+URL: https://scibase.app/ingredients/pterostilbene
+レスベラトロールより生物利用率が高い類似体。SIRT1活性・血糖・脂質への関与がRCTで確認
+代表論文: RCT · Journal of Clinical Lipidology 2012 · n=80 · 6週 — 80名のメタボリックシンドローム患者へのRCT（125mg/日×6〜8週間）で血圧・LDLコレステロールの有意な改善を確認（p<0.05）。
+
+### プラセンタ（豚・馬）（Placenta Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/placenta
+日本で多くの臨床試験が行われてきた成分。更年期疲労・肌への関与が報告されている
+代表論文: RCT · Journal of Traditional and Complementary Medicine 2018 · n=60 · 12週 — 更年期女性において、プラセンタエキス摂取群はプラセボ群に比べ疲労感・ほてり・睡眠の質が有意に改善
+
+### ブラックカラント種子油（経口・GLA+ALA）（Black Currant Seed Oil (Oral, GLA+ALA)） — エビデンスランク B
+URL: https://scibase.app/ingredients/black-currant-seed-oil-gla
+GLA+ALA混合の唯一油源・RA症状RCT・乳児アトピー予防RCT・500mg×2/日
+代表論文: RCT · British Journal of Rheumatology 1994 · n=38 · 24週 — RA活動性滑膜炎患者38名にBCSO 10.5g/日 vs プラセボ24週RCTでBCSO群の症状（朝のこわばり・関節圧痛・関節腫脹）有意改善（p<0.05）・プラセボ群は変化なし。
+
+### ブラックシードオイル（ニゲラ・サティバ）（Black Seed Oil） — エビデンスランク B
+URL: https://scibase.app/ingredients/black-seed-oil
+チモキノンによる抗炎症・免疫調節・血糖・血圧改善がメタ解析で確認されているスパイス由来オイル
+代表論文: メタ解析 · Complementary Therapies in Medicine 2018 — ニゲラ・サティバ摂取が体重・腹囲・BMI・空腹時血糖・HbA1c・LDLコレステロールを有意に改善することをメタ解析（17 RCT）で確認。
+
+### ブルーベリーアントシアニン（Blueberry Anthocyanin） — エビデンスランク B
+URL: https://scibase.app/ingredients/blueberry-anthocyanin
+北米野生種・認知機能と血管内皮機能の研究で蓄積
+代表論文: メタ解析 · Nutrients 2017 · n=1000 · 8週 — アントシアニン摂取と血圧・脂質・血管機能指標の改善の弱〜中等度な相関
+
+### プレバイオチン（Prebiotin (Inulin-FOS Blend)） — エビデンスランク B
+URL: https://scibase.app/ingredients/prebiotin
+イヌリン・FOSブレンドで大腸全域への発酵基質供給を目指したプレバイオ
+代表論文: RCT · Journal of Nutritional Science 2014 · n=60 · 4週 — イヌリン・FOSブレンド5g/日でビフィズス菌増加・便通改善
+
+### プロアントシアニジン（OPC）（Proanthocyanidin (OPC)） — エビデンスランク B
+URL: https://scibase.app/ingredients/proanthocyanidin
+カテキン重合体の強力な抗酸化・尿路と血管への RCT 蓄積
+代表論文: メタ解析 · Phytochemistry 2005 — カランベリー A型プロアントシアニジン（A-type OPC）の尿路病原性大腸菌付着阻害作用・UTI 予防機序のレビュー（Howell AB）
+
+### プロシアニジンC1（Procyanidin C1 (PCC1)） — エビデンスランク B
+URL: https://scibase.app/ingredients/procyanidin-c1
+ぶどう種子由来。マウスでsenolytic（老化細胞除去）作用と寿命延長が報告されている
+代表論文: 観察研究 · Nature Metabolism 2021 — マウスに高齢期から間欠投与（週1回・2週おき）で寿命中央値約9%延長。
+
+### プロテオグリカン（鮭由来）（Proteoglycan (Salmon Cartilage-Derived)） — エビデンスランク B
+URL: https://scibase.app/ingredients/proteoglycan-salmon
+鮭軟骨由来の希少糖タンパク。肌弾力・水分の小規模RCTと関節補助の研究が進行中
+代表論文: RCT · Journal of Functional Foods 2017 · n=21 · 8週 — 健常女性21名にサケ鼻軟骨由来プロテオグリカン10mg/日×8週で皮膚弾力（cutometer R2値）と角層水分量がプラセボ群より有意改善（Kakizaki 2017）
+
+### プロピオン酸（Propionate） — エビデンスランク B
+URL: https://scibase.app/ingredients/propionate
+食欲抑制・体重維持研究で報告される短鎖脂肪酸の1種
+代表論文: RCT · Gut 2015 · n=20 · 24週 — IPE 10g/日で空腹感・カロリー摂取量・体重維持に有意な改善
+
+### プロポリス（Propolis） — エビデンスランク B
+URL: https://scibase.app/ingredients/propolis
+口腔ケア・歯肉炎・免疫サポートのRCT複数・フラボノイド+精油の天然防御物質
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2014 · n=600 · 4週 — プロポリスが化学療法誘発口内炎の重症度・持続時間を有意低下させることをn=600の8 RCT統合で確認（Hwu 2014）
+
+### ブロメライン+パパイン複合酵素（Bromelain + Papain Blend） — エビデンスランク B
+URL: https://scibase.app/ingredients/bromelain-papain-blend
+空腹時で全身炎症・食事併用で消化サポートの使い分けが可能
+代表論文: 観察研究 · Evidence-Based Complementary and Alternative Medicine 2006 — OA研究9件のレビュー：ブロメライン90-540mg/日×4-8週でWOMAC・痛みVAS改善の限定的エビデンス（Brien S et al.）
+
+### ヘキシルレゾルシノール（Hexylresorcinol） — エビデンスランク B
+URL: https://scibase.app/ingredients/hexylresorcinol
+0.5%×12週で色素沈着・しわ・全体評価改善のRCT・「美白＋抗炎症の二重作用」レゾルシノール
+代表論文: RCT · Journal of Drugs in Dermatology 2013 · n=30 · 12週 — 肝斑患者30名対象RCTで、ヘキシルレゾルシノール1%とハイドロキノン2%を12週比較。
+
+### ベタイン無水物（Betaine Anhydrous） — エビデンスランク B
+URL: https://scibase.app/ingredients/betaine-anhydrous
+メチル基ドナー・ホモシステイン低下・運動パフォーマンス補助の RCT 蓄積
+代表論文: RCT · Journal of the International Society of Sports Nutrition 2013 · n=23 · 6週 — 抵抗運動トレーニング男性23名にベタイン 2.5g/日×6週で除脂肪体重・腕筋断面積・スクワット最大筋力の有意改善（Cholewa JM et al.）
+
+### ホウ素（Boron） — エビデンスランク B
+URL: https://scibase.app/ingredients/boron
+6mg/日 7日でテストステロン上昇・SHBG低下のRCT・男性ホルモン系の隠れ柱
+代表論文: RCT · Journal of Trace Elements in Medicine and Biology 2011 · n=8 · 1週 — 健康成人男性対象のRCTで、ホウ素6mg/日を7日投与した結果、遊離テストステロンの増加・SHBG低下・エストラジオール低下・炎症性サイトカイン（hsCRP・TNF-α・IL-6）低下が観察された。
+
+### ホースラディッシュ抽出物（西洋わさび）（Horseradish Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/horseradish-extract
+ドイツ承認 URI 補助・抗菌AITC・ナスツルチウム複合非劣性 RCT
+代表論文: RCT · Arzneimittelforschung (Drug Research) 2007 · n=858 · 2週 — 急性副鼻腔炎・気管支炎・尿路感染の小児・成人858名に Angocin（ホースラディッシュ80mg+ナスツルチウム200mg）×3-6回/日 vs 標準抗菌薬で症状改善同等・副作用率 Angocin 群で有意低（Goos KH et al.）
+
+### ホーリーバジル（ツルシ）（Holy Basil (Tulsi / Ocimum sanctum)） — エビデンスランク B
+URL: https://scibase.app/ingredients/holy-basil
+ストレススコア・コルチゾール・血糖の軽度改善RCT・アユルヴェーダのアダプトゲン
+代表論文: メタ解析 · Journal of Ayurveda and Integrative Medicine 2017 — ツルシのヒト試験24本のシステマティックレビューで、代謝・心血管・免疫・神経機能・精神健康における有益効果を支持・サンプル数の制約と再現性の課題を指摘（Jamshidi N & Cohen MM）
+
+### ホスファチジルコリン（PC）（Phosphatidylcholine） — エビデンスランク B
+URL: https://scibase.app/ingredients/phosphatidylcholine
+細胞膜の主要構成成分。肝保護・認知機能・脂質代謝に関与するコリン源
+代表論文: RCT · Clinical Nutrition 2020 · n=60 · 12週 — PC補給12週で高齢者の記憶・処理速度が有意改善。
+
+### ホスファチジン酸（PA）（Phosphatidic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/phosphatidic-acid
+ロイシン経路と並列のmTOR活性化研究・PA独自の経路
+代表論文: メタ解析 · Nutrients 2019 · n=110 · 8週 — 5件のRCT統合・PA 750mg/日で筋量への小〜中等度改善・確定的優位とは言えない
+
+### ボラージ油（高GLA）（Borage Oil GLA） — エビデンスランク B
+URL: https://scibase.app/ingredients/borage-oil-gla
+GLA含有率20-26%・EPOより少量で同等のGLA量・関節リウマチ研究で使用
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2011 · n=297 · 24週 — GLA系（EPO・ボラージ・カシス油）の関節リウマチ症状改善への弱〜中等度の支持
+
+### ポリコサノール（Policosanol） — エビデンスランク B
+URL: https://scibase.app/ingredients/policosanol
+サトウキビ蝋由来長鎖アルコール混合物。キューバ研究 vs 他国否定試験の温度差が論争
+代表論文: メタ解析 · Atherosclerosis 2018 · n=6000 · 12週 — ポリコサノールの脂質改善メタ解析。
+
+### ボロングリシネート（Boron Glycinate） — エビデンスランク B
+URL: https://scibase.app/ingredients/boron-glycinate
+10mg/日×7日でテストステロン+28%（Naghii 2011 RCT）
+代表論文: RCT · Journal of Trace Elements in Medicine and Biology 2011 · n=8 · 1週 — 健常男性8名にホウ素10mg/日×7日：血清テストステロン+28%・遊離テストステロン+11.5%・E2 −39%（Naghii MR et al.）
+
+### ホワイトウィロー樹皮（白柳）（White Willow Bark） — エビデンスランク B
+URL: https://scibase.app/ingredients/white-willow-bark
+サリシン由来の天然抗炎症成分・腰痛・OA膝の RCT 蓄積
+代表論文: RCT · American Journal of Medicine 2000 · n=210 · 4週 — 慢性腰痛患者210名にホワイトウィロー樹皮抽出（サリシン120/240mg/日）×4週で疼痛改善・用量依存（Chrubasik S et al.）
+
+### マイタケ（舞茸）（Maitake） — エビデンスランク B
+URL: https://scibase.app/ingredients/maitake
+D-fraction（β-グルカン複合体）・血糖改善+免疫サポート・日本食キノコ
+代表論文: RCT · Journal of Medicinal Food 2001 · n=8 · 8週 — 2型糖尿病患者8名へのD-fraction 0.5mg/kg×8週で空腹時血糖・HbA1c の有意改善（小規模パイロット・Konno S et al.）
+
+### マイトキュー（MitoQ）（Mitoquinol Mesylate (MitoQ)） — エビデンスランク B
+URL: https://scibase.app/ingredients/mitoquinol
+CoQ10をミトコンドリア膜に1000倍濃縮する設計。内皮機能改善が小規模RCTで報告
+代表論文: RCT · Aging Cell 2018 · n=20 · 6週 — 60〜79歳の健康成人にMitoQ 20mg/日6週間摂取で上腕動脈血流依存性血管拡張（FMD）が42%改善・酸化ストレスマーカー低下
+
+### マカ（ペルー産）（Maca (Lepidium meyenii)） — エビデンスランク B
+URL: https://scibase.app/ingredients/maca
+アンデス高地原産のアダプトゲン。性機能・精力・更年期症状・エネルギーへの関与がRCTで確認
+代表論文: メタ解析 · BMC Complementary and Alternative Medicine 2010 — 4つのRCTのシステマティックレビューで、マカが性機能改善に有意な効果を示すことを確認。
+
+### マカ（黒・赤・黄色別）（Black/Red/Yellow Maca） — エビデンスランク B
+URL: https://scibase.app/ingredients/maca-black-red-yellow
+黒・赤・黄の色別で薬理活性が異なる・Gonzales 2002以降の研究蓄積
+代表論文: RCT · Asian Journal of Andrology 2001 · n=9 · 16週 — 男性9名にマカ1,500-3,000mg/日×16週：精子数・運動率が有意に増加（Gonzales GF et al.）
+
+### マカ＋フェヌグリーク＋トリブルス（Maca + Fenugreek + Tribulus Blend） — エビデンスランク B
+URL: https://scibase.app/ingredients/maca-w-fenugreek-tribulus
+3ハーブ複合配合・活力指標の改善傾向が小規模RCTで報告される類型
+代表論文: メタ解析 · Maturitas 2014 · n=400 · 12週 — トリブルスの活力指標研究は男女ともサンプル数限定的・効果サイズも研究間で割れる
+
+### マグネシウムLスレオネート（Magnesium L-Threonate (Magtein)） — エビデンスランク B
+URL: https://scibase.app/ingredients/magnesium-l-threonate
+脳内マグネシウム濃度を選択的に上昇させる新型形態。小規模RCTで認知機能改善
+代表論文: RCT · Sleep Medicine X 2024 · n=80 · 3週 — Magtein 1g/日21日間摂取で睡眠の質スコア（PSQI）・日中機能・エネルギーレベルがプラセボ比で有意改善
+
+### マグネシウムタウレート（Magnesium Taurate） — エビデンスランク B
+URL: https://scibase.app/ingredients/magnesium-taurate
+Mg+タウリンの結合型・心血管領域で支持されるが単独大規模RCTは未実施
+代表論文: メタ解析 · Hypertension 2016 · n=2028 — Mgサプリ介入RCT 34件・n=2,028のメタ解析で、収縮期血圧 -2.00mmHg、拡張期血圧 -1.78mmHgの低下が報告された（中央値368mg/日・3ヶ月以上）。
+
+### マグネシウムマレート（Magnesium Malate） — エビデンスランク B
+URL: https://scibase.app/ingredients/magnesium-malate
+リンゴ酸（マレート）はTCA回路中間体・疲労・線維筋痛で検討された数少ないMg形態
+代表論文: RCT · Journal of Rheumatology 1995 · n=24 · 4週 — 線維筋痛症患者対象のクロスオーバーRCT。
+
+### マグノリア樹皮(ホノキオール+マグノロール)（Magnolia Bark Extract (Honokiol + Magnolol)） — エビデンスランク B
+URL: https://scibase.app/ingredients/magnolia-bark-honokiol
+GABA受容体モジュレーター・Relora®配合RCTでコルチゾール低下・夜のストレス向け
+代表論文: RCT · Journal of the International Society of Sports Nutrition 2013 · n=56 · 4週 — 軽度ストレス被験者56名にRelora®（Magnolia + Phellodendron配合）500mg×2回/日4週間摂取で唾液コルチゾール有意低下・POMS気分状態スケール改善（Talbott SM, Talbott JA, Pugh M）
+
+### マヌカハニー（高MGO）（Manuka Honey (High MGO)） — エビデンスランク B
+URL: https://scibase.app/ingredients/manuka-honey-mg-rich
+メチルグリオキサール（MGO）含量で抗菌力が決まる稀少蜂蜜。喉ケア・創傷の補助に研究蓄積
+代表論文: メタ解析 · BMJ Open 2020 · n=1761 — 上気道感染症への蜂蜜（マヌカ含む）使用14 RCT統合で、咳症状の頻度・重症度を抗菌薬・標準ケアと同等以上に改善（Abuelgasim 2020 BMJ Open）
+
+### マリンコラーゲントリペプチド（Marine Collagen Tripeptide） — エビデンスランク B
+URL: https://scibase.app/ingredients/marine-collagen-tripeptide
+魚由来3アミノ酸単位の高吸収形態で皮膚水分量・弾力RCT報告
+代表論文: RCT · Marine Drugs 2016 · n=85 · 8週 — トリペプチド3g/日で皮膚水分量・弾力指標が有意改善
+
+### マンガン（Manganese） — エビデンスランク B
+URL: https://scibase.app/ingredients/manganese
+ミトコンドリア抗酸化酵素MnSODの補因子・日常食で不足はまれで過剰の方が問題
+代表論文: 観察研究 · Annual Review of Nutrition 2015 — マンガンの神経機能における二相性（必須栄養素としての役割と過剰時の神経毒性）を基礎研究・疫学から包括レビュー。
+
+### マンゴスチン（α-マンゴスチン）（Mangosteen (Alpha-Mangostin)） — エビデンスランク B
+URL: https://scibase.app/ingredients/mangosteen
+果皮に含まれるキサントンが抗炎症・抗酸化・血糖降下を複数機序で発揮
+代表論文: RCT · Nutrition 2023 · n=44 · 8週 — 過体重成人でのマンゴスチンエキス8週間投与。
+
+### マンデル酸（Mandelic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/mandelic-acid
+大分子AHAで刺激が少ない。色素沈着・毛穴・ニキビをゆっくり改善
+代表論文: コホート研究 · Journal of Cosmetic Dermatology 2019 · n=60 · 12週 — マンデル酸ピーリングでニキビスコアとメラニン指数が有意に低下（p<0.05）。
+
+### ミックストコフェロール（ビタミンE）（Mixed Tocopherols） — エビデンスランク B
+URL: https://scibase.app/ingredients/vitamin-e-tocopherol-mixed
+α単独はSELECT試験で前立腺がんリスク増。食事と同じα:γ比を再現するミックス型の意義
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2013 · n=96762 — ビタミンEサプリ（主にα単独）の心血管イベント・がん・全死亡率への有意な予防効果は確認されず
+
+### ミネラル型シリカ（Silica (Mineral Form)） — エビデンスランク B
+URL: https://scibase.app/ingredients/silica-mineral-form
+コラーゲン・エラスチン合成補因子で皮膚・髪・爪指標RCTがあるミネラル
+代表論文: RCT · Archives of Dermatological Research 2005 · n=50 · 20週 — OSA 10mg ケイ素/日で皮膚弾力・しわ深さ・爪の脆さが有意改善
+
+### ミルクシスル（シリマリン）（Milk Thistle） — エビデンスランク B
+URL: https://scibase.app/ingredients/milk-thistle
+シリマリン成分による肝細胞保護・グルタチオン増加・抗酸化作用がRCTで確認
+代表論文: メタ解析 · Phytotherapy Research 2016 — シリマリン補給が肝酵素（ALT・AST）を有意に低下させることを複数のRCTのメタ解析で確認。
+
+### ムクナ（黒豆・八升豆）（Mucuna Pruriens） — エビデンスランク B
+URL: https://scibase.app/ingredients/mucuna-pruriens
+天然 L-DOPA 含有・パーキンソン病処方薬境界・男性ホルモン補助
+代表論文: RCT · Journal of Neurology, Neurosurgery & Psychiatry 2004 · n=8 — PD 患者8名にムクナ HP-200（L-DOPA 15-30mg）と処方薬レボドパの比較で同等の運動症状改善・副作用少（Katzenschlager R et al.）
+
+### メチオニン亜鉛（ZMA）（Zinc Monomethionine） — エビデンスランク B
+URL: https://scibase.app/ingredients/zinc-monomethionine
+スポーツ文脈の代表形態。ただし「テストステロンが上がる」エビデンスは確立していない
+代表論文: RCT · Journal of the International Society of Sports Nutrition 2004 · n=42 · 8週 — ZMA 8週投与でレジスタンストレーニング選手のテストステロン・除脂肪体重・1RMでプラセボとの有意差なし
+
+### ヤマブシタケ（ライオンズメイン）（Lion's Mane (Hericium erinaceus)） — エビデンスランク B
+URL: https://scibase.app/ingredients/lions-mane
+NGF産生促進・認知機能改善への関与がRCTで示されているキノコ由来成分
+代表論文: RCT · Phytotherapy Research 2009 · n=30 · 16週 — ヤマブシタケ粉末1g×3回/日でMMSE認知機能スコアが有意に改善。
+
+### ラクトバチルス・プランタラム（Lactobacillus plantarum） — エビデンスランク B
+URL: https://scibase.app/ingredients/l-plantarum
+IBS RCT n=204で腹痛・便通スコアの有意改善・非ヘム鉄吸収を約50%増やす植物性発酵食品由来の特定株
+代表論文: RCT · World Journal of Gastroenterology 2012 · n=204 · 4週 — IBS患者204名対象のRCTで、L. plantarum 299v 100億CFU/日 × 4週で腹痛・便通スコア・QOLが有意に改善したと報告された（Ducrotté P et al.）
+
+### ラクトバチルス・ロイテリ（Lactobacillus reuteri） — エビデンスランク B
+URL: https://scibase.app/ingredients/l-reuteri
+乳児疝痛メタ解析でプラセボより泣き時間が有意短縮・「乳児・口腔・GI」3領域でエビデンスが揃う特定株
+代表論文: メタ解析 · JAMA Pediatrics 2014 · n=589 · 12週 — 乳児を対象とした複数RCTのメタ解析n=589で、L. reuteri DSM 17938 1億CFU/日が乳児疝痛（コリック）の泣き時間・嘔吐・機能性便秘の改善に有効と報告された（Indrio F et al.）
+
+### リポソーマルグルタチオン（Liposomal Glutathione） — エビデンスランク B
+URL: https://scibase.app/ingredients/glutathione-liposomal
+Sinha 2018 RCTで血中GSH 40%・NK活性400%上昇・経口で確実に吸収
+代表論文: RCT · European Journal of Clinical Nutrition 2018 · n=54 · 8週 — 健常人54名にリポソーマルGSH 500/1,000mg/日×8週：1,000mg群で血中GSH +40%・赤血球GSH +30%・NK細胞活性+400%（Sinha R et al.）
+
+### リポソーム型ビタミンC（Liposomal Vitamin C） — エビデンスランク B
+URL: https://scibase.app/ingredients/vitamin-c-liposomal
+リン脂質二重膜で吸収率約2倍。通常型1,000mg超で下痢になりやすい方の選択肢
+代表論文: システマティックレビュー · Cochrane Database of Systematic Reviews 2013 · n=11306 — 200mg/日以上のビタミンC定期摂取で風邪罹病期間が成人8%・小児14%短縮・予防効果は限定的（形態は通常型）
+
+### リン（Phosphorus） — エビデンスランク B
+URL: https://scibase.app/ingredients/phosphorus
+日本人で不足はまれ・むしろ加工食品由来のリン酸塩過剰が骨と血管のリスクに
+代表論文: メタ解析 · Kidney International 2018 · n=25000 — CKD患者で血清P値0.5mg/dL上昇あたり心血管死亡率1.18倍・全死亡率1.13倍上昇
+
+### ルテオリン（Luteolin） — エビデンスランク B
+URL: https://scibase.app/ingredients/luteolin
+抗炎症・神経保護・老化細胞除去の三刀流フラボノイド
+代表論文: 観察研究 · Neuropharmacology 2021 — ルテオリンが神経保護・抗炎症作用を持つことを複数機序から確認
+
+### レスベラトロール外用（Resveratrol Topical） — エビデンスランク B
+URL: https://scibase.app/ingredients/resveratrol-topical
+1%外用×12週で皮膚弾性・しわ深度有意改善・SIRT1経路活性化を期待されるスチルベン系ポリフェノール
+代表論文: RCT · Photochemistry and Photobiology 2008 · n=12 · 1週 — ヒト健常者12名前腕にtrans-resveratrol 1%含有エマルジョン塗布後UVB照射、紅斑・サンバーン細胞・酸化マーカーが有意低下（Baxter RA et al. 類縁原典）
+
+### ローズマリーエキス（Rosemary Extract） — エビデンスランク B
+URL: https://scibase.app/ingredients/rosemary-extract
+伝統的「記憶のハーブ」・カルノシン酸の抗酸化・認知補助の RCT
+代表論文: RCT · Journal of Medicinal Food 2012 · n=28 — 高齢者28名にローズマリー粉末 750mg 単回経口で短期記憶テストの有意改善（用量依存）（Pengelly A et al.）
+
+### ローズマリーオイル（外用・育毛）（Rosemary Oil (Topical, Hair)） — エビデンスランク B
+URL: https://scibase.app/ingredients/rosemary-oil-topical
+精油外用・minoxidil 2%と同等の発毛RCT・掻痒感少・1日2回頭皮塗布
+代表論文: RCT · SKINmed 2015 · n=100 · 26週 — 男性AGA 100名（rosemary oil 50・minoxidil 2% 50）に6ヶ月外用で6ヶ月後の毛数増加は両群とも有意増加・群間差なし。
+
+### ローヤルゼリー（Royal Jelly） — エビデンスランク B
+URL: https://scibase.app/ingredients/royal-jelly
+更年期症状改善・脂質代謝改善のRCT・10-HDA活性指標で蜂産物の中で最も研究蓄積が多い
+代表論文: メタ解析 · Complementary Therapies in Medicine 2021 · n=400 · 12週 — ローヤルゼリーのメタボリック症候群関連指標メタ解析。
+
+### ロスマリン酸（Rosmarinic Acid） — エビデンスランク B
+URL: https://scibase.app/ingredients/rosmarinic-acid
+ローズマリー・ペリラ由来の抗炎症・神経保護ポリフェノール。認知機能・アレルギー・皮膚老化に関与
+代表論文: メタ解析 · Nutrients 2021 — 抗炎症・抗酸化・神経保護・抗アレルギー効果を示す複数RCT・コホートをメタ解析。
+
+### 加水分解ケラチン（経口・Cynatine HNS）（Hydrolyzed Keratin (Oral, Cynatine HNS)） — エビデンスランク B
+URL: https://scibase.app/ingredients/keratin-oral-hydrolyzed
+Cynatine HNS規格・90日RCTで毛/爪強度改善・経口タンパク補給アプローチ
+代表論文: RCT · The Scientific World Journal 2014 · n=50 · 13週 — 女性50名（active 25 + placebo 25）にCynatine HNS 500mg×2カプセル/日＝1000mg/日 90日でhair loss・hair growth・hair strength・amino acid composition・hair luster…
+
+### 外因性ケトン体（BHB塩）（Beta-Hydroxybutyrate (BHB) Salts） — エビデンスランク B
+URL: https://scibase.app/ingredients/beta-hydroxybutyrate-bhb-salts
+外因性ケトン体・血中BHB濃度の急性上昇は確認・長期効果はまだ研究中
+代表論文: RCT · Frontiers in Physiology 2017 · n=15 — BHB塩12g単回摂取で血中BHB濃度が約30分で1mM前後まで急性上昇・約3時間で消失（Stubbs BJ et al.・クロスオーバー試験） [PMID:29089898 https://pubmed.ncbi.nlm.nih.gov/29089898/]
+
+### 甘草・リコリス（Glycyrrhiza glabra）（Licorice (Glycyrrhiza glabra)） — エビデンスランク B
+URL: https://scibase.app/ingredients/licorice
+【偽アルドステロン症リスク】高血圧・低カリウム・降圧薬と利尿薬で増悪
+代表論文: RCT · Journal of Hypertension 2001 · n=30 — 健常成人 30 名にグリチルリチン 50/100/200mg/日を 4 週投与・収縮期血圧が 3.1/5.5/14.4 mmHg と用量依存的に上昇・血漿レニン・アルドステロン抑制も確認（Sigurjónsdóttir HA, Franzson L, Manhem K, Ragn…
+
+### 経口フィトセラミド（小麦由来）（Oral Phytoceramide (Wheat-Derived)） — エビデンスランク B
+URL: https://scibase.app/ingredients/phytoceramide-wheat-oral
+小麦由来グルコシルセラミド・60日RCTで肌水分・弾力改善・ブランド規格特化
+代表論文: RCT · Cosmetics (MDPI) 2017 · n=60 · 9週 — 乾燥肌の成人60名にWPLC配合品（小麦由来グルコシルセラミド1.7mg + ジガラクトシルジグリセリド11.5mg）オイルまたは粉末形態60日間摂取で肌水分・弾力・滑らかさの有意改善・TEWL/粗さ低下（Bizot V, Cestone E, Michelotti A, Nob…
+
+### 月見草オイル（イブニングプリムローズ）（Evening Primrose Oil） — エビデンスランク B
+URL: https://scibase.app/ingredients/evening-primrose-oil
+GLA（γリノレン酸）を豊富に含む植物油。肌バリア・炎症・PMS症状に研究
+代表論文: メタ解析 · Journal of Dermatological Treatment 2019 · n=1207 · 12週 — 月見草オイルでアトピー症状スコア（SCORAD）が改善傾向。
+
+### 玄米プロテイン（Brown Rice Protein） — エビデンスランク B
+URL: https://scibase.app/ingredients/brown-rice-protein
+グルテンフリーでホエイ同等の筋肥大RCT報告がある米由来植物プロテイン
+代表論文: RCT · Nutrition Journal 2013 · n=24 · 8週 — 48g/日の玄米プロテインがホエイ同用量と除脂肪体重・1RMで有意差なし
+
+### 高分子コンドロイチン硫酸（High-MW Chondroitin Sulfate） — エビデンスランク B
+URL: https://scibase.app/ingredients/chondroitin-sulfate-high-mw
+分子量50kDa超の規格化CS・低分子型より純度の差が大きい論文
+代表論文: RCT · Annals of the Rheumatic Diseases 2017 · n=604 · 26週 — 膝OA患者604名にCS 800mg/日×6か月 vs セレコキシブ200mg：軟骨体積減少率に有意差なし・CS群はNSAID並みの構造保護（Reginster JY et al.）
+
+### 高用量DHA（眼科特化・1000mg）（High-Dose DHA (Eye-Health Focus, 1000mg)） — エビデンスランク B
+URL: https://scibase.app/ingredients/dha-eye-amd-high
+AREDS2はnull結果・メカニズム面で網膜DHA必須性・既存omega3と差別化
+代表論文: RCT · JAMA 2013 · n=4203 · 260週 — 50-85歳・AMD進行高リスク4,203名を5年追跡。
+
+### 高用量トコトリエノール（High-Dose Tocotrienols） — エビデンスランク B
+URL: https://scibase.app/ingredients/vitamin-e-tocotrienol-high
+トコフェロールとは別物質・抗酸化活性40-60倍・コレステロール降下と骨密度の研究
+代表論文: RCT · Journal of Nutrition Health and Aging 2018 · n=89 · 12週 — アンナットー由来トコトリエノール（DeltaGold）300mg/日12週で閉経後女性の肝・腎機能マーカー異常なし・QoL・体組成への許容範囲を確認。
+
+### 高用量ビオチン（High-Dose Biotin (Vitamin B7)） — エビデンスランク B
+URL: https://scibase.app/ingredients/vitamin-b7-biotin-high
+MS進行抑制研究で議論される300mg/日。健常人の毛髪目的での高用量は別問題
+代表論文: RCT · Multiple Sclerosis Journal 2016 · n=154 · 48週 — 進行型MSに対しビオチン300mg/日でEDSS or T25-FW改善達成率が12.6%（プラセボ0%）・小規模RCTで初期の希望を示した
+
+### 高用量フィセチン（senolyticパルス）（High-Dose Fisetin (Senolytic Pulse)） — エビデンスランク B
+URL: https://scibase.app/ingredients/senolytic-fisetin-high-dose
+Mayo Clinic AFFIRM-LITEで検証中の老化細胞除去パルス投与プロトコル
+代表論文: 観察研究 · Mayo Clinic Proceedings 2021 · n=36 — Hickson LJ et al. 高齢女性36例のフィセチン20mg/kg×2日パルス安全性・耐容性確認・有効性評価試験進行中
+
+### 全身プロテアーゼ酵素（Wobenzym型）（Systemic Proteolytic Enzymes） — エビデンスランク B
+URL: https://scibase.app/ingredients/proteolytic-enzymes-systemic
+NSAIDs代替を狙うWobenzym N が関節炎・術後浮腫に29か国で承認
+代表論文: RCT · Arthritis 2015 · n=150 · 12週 — 膝OA患者150名にWobenzymタイプ酵素複合 vs プラセボ×12週：WOMAC痛みスコア有意改善（Bolten WW et al.）
+
+### 大豆イソフラボン（Soy Isoflavones） — エビデンスランク B
+URL: https://scibase.app/ingredients/soy-isoflavones
+植物性エストロゲン様物質。骨密度維持・肌の老化・更年期症状にコホート研究
+代表論文: メタ解析 · Nutrients 2021 · n=1200 · 24週 — 大豆イソフラボン補充で肌水分量・弾力・コラーゲン密度が有意に改善。
+
+### 大豆レシチン（Soy Lecithin） — エビデンスランク B
+URL: https://scibase.app/ingredients/lecithin-soy
+PC 供給で神経・肝臓・脂質代謝・伝統的サプリ
+代表論文: RCT · Journal of the American College of Nutrition 2003 · n=23 · 8週 — 高コレステロール患者23名に大豆 PC 3g/日×8週で総コレステロール・LDL の有意改善（Spilburg CA et al.）
+
+### 銅（ミネラル）（Copper） — エビデンスランク B
+URL: https://scibase.app/ingredients/copper-mineral
+鉄代謝・コラーゲン架橋・SOD1の補因子・亜鉛サプリと一緒に管理する隠れミネラル
+代表論文: 観察研究 · Medicina (Kaunas) 2019 — ヒト集団研究を統合し、Zn:Cu比のアンバランス（高Zn・低Cu）が血圧上昇・心血管リスクと関連することを観察研究レベルで報告。
+
+### 銅キレート（ビスグリシン酸銅）（Copper Chelate (Copper Bisglycinate)） — エビデンスランク B
+URL: https://scibase.app/ingredients/copper-chelate
+亜鉛長期摂取で起こる銅欠乏予防・8:1〜10:1の併用が標準
+代表論文: システマティックレビュー · Critical Reviews in Food Science and Nutrition 2020 · n=800 — 銅欠乏でT細胞機能・好中球機能の低下、サプリ補正で改善・健常人での追加効果は限定的
+
+### 銅ペプチド（GHK-Cu）（Copper Peptide (GHK-Cu)） — エビデンスランク B
+URL: https://scibase.app/ingredients/copper-peptide
+コラーゲン・エラスチン産生促進が試験で示されている再生系ペプチド
+代表論文: RCT · Journal of Cosmetic Dermatology 2018 · n=67 · 12週 — GHK-Cu含有クリームがシワ深度・皮膚弾力の改善においてレチノールクリームと同等の効果を示した
+
+### 白いんげん豆エキス（White Kidney Bean Extract (Phaseolus vulgaris)） — エビデンスランク B
+URL: https://scibase.app/ingredients/white-kidney-bean-phaseolus
+デンプン分解酵素を一時的に阻害・主成分ではなく食前の補助
+代表論文: メタ解析 · British Journal of Nutrition 2011 · n=245 — 6試験のメタ解析でPhase 2規格エキス1500-3000mg投与により体重低下傾向が示されたが効果サイズは小さく、臨床的意義は限定的と結論
+
+### 部分加水分解グアーガム（PHGG）（Partially Hydrolyzed Guar Gum） — エビデンスランク B
+URL: https://scibase.app/ingredients/phgg
+低発酵で腹部膨満を起こしにくい水溶性繊維・IBS-D/-C 両方対応
+代表論文: RCT · Nutrients 2019 · n=44 · 4週 — 日本人慢性便秘者44名に PHGG 5g/日×4週で排便回数・便量・腹部不快の有意改善（Yasukawa Z et al.）
+
+### 酪酸・酪酸菌（Butyrate / Clostridium butyricum） — エビデンスランク B
+URL: https://scibase.app/ingredients/butyrate
+腸管バリアの燃料となる短鎖脂肪酸。腸炎・免疫・脳腸相関への関与が研究で確認
+代表論文: メタ解析 · Journal of Crohn's and Colitis 2021 · n=800 · 16週 — 酪酸サプリ補充でIBD症状スコア・腸管炎症マーカーが有意に低下。
+
+### 霊芝（レイシ）（Reishi Mushroom） — エビデンスランク B
+URL: https://scibase.app/ingredients/reishi
+免疫調節・抗腫瘍・ストレス対処・睡眠改善への関与がRCTおよびコホートで確認されているアダプトゲン
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2016 — 霊芝は腫瘍関連免疫細胞（NK細胞・T細胞）を有意に増加させることをメタ解析で確認。
+
+### αケトグルタル酸（AKG）（Alpha-Ketoglutarate (AKG)） — エビデンスランク B
+URL: https://scibase.app/ingredients/alpha-ketoglutarate
+クレブス回路の中間体。マウスで寿命延伸・人での生物学的年齢低下が観察研究で報告されている
+代表論文: 観察研究 · Cell Metabolism 2020 · n=183 — C57BL/6マウス183匹にCa-AKGを経口補充、雌で有意な寿命延長（p=0.0064）。
+
+### γ-トコフェロール（Gamma-Tocopherol） — エビデンスランク B
+URL: https://scibase.app/ingredients/gamma-tocopherol
+α-tocopherolにはない窒素ラジカル捕捉。食事性ビタミンE量的主役の単独サプリ
+代表論文: RCT · American Journal of Clinical Nutrition 2004 · n=30 · 6週 — γ-tocopherol 100mg/日6週で血漿γ濃度有意上昇・α濃度低下なし・血小板凝集抑制・抗酸化マーカー改善
+
+### γ-リノレン酸（GLA）（Gamma-linolenic Acid (GLA)） — エビデンスランク B
+URL: https://scibase.app/ingredients/gla
+関節炎・湿疹・PMS の RCT 蓄積・抗炎症性プロスタグランジン PGE1 前駆体
+代表論文: メタ解析 · Reproductive Medicine 2009 — PMS 女性への GLA 補給で乳房圧痛・身体症状の改善傾向を統合レビューで支持（Bayles BR）
+
+### Amuc1100（A. muciniphila 外膜タンパク）（Amuc1100 (A. muciniphila outer membrane protein)） — エビデンスランク C
+URL: https://scibase.app/ingredients/gut-microbiome-amuc-1100
+動物試験で腸内バリア機能とGLP-1分泌を改善する次世代プロバイオの主要活性成分
+代表論文: RCT · Nature Medicine 2019 · n=32 · 12週 — Depommier C et al. 過体重肥満ヒト32例でA. muciniphila低温殺菌品 3ヶ月投与によりインスリン感受性・LPS低下
+
+### BPC-157（修復ペプチド）（BPC-157 (Body Protection Compound 157)） — エビデンスランク C
+URL: https://scibase.app/ingredients/bpc-157
+ラット試験で腱・腸管・関節修復作用が多数報告される一方、人間でのRCTは現時点でほぼ確認されていない「研究段階」ペプチド・日本では未承認医薬品扱い
+代表論文: 観察研究 · Current Pharmaceutical Design 2018 — BPC-157の20年動物研究レビュー。
+
+### BSA（牛血清アルブミン）（Bovine Serum Albumin） — エビデンスランク C
+URL: https://scibase.app/ingredients/bovine-serum-albumin-bsa
+経口サプリとしての臨床エビデンスは限定的・研究用途が主体の議論型素材
+代表論文: 観察研究 · Nutrients 2018 — 経口サプリエビデンスは限定的・研究用試薬としての用途が主体
+
+### C15:0（ペンタデカン酸）（C15:0 (Pentadecanoic Acid)） — エビデンスランク C
+URL: https://scibase.app/ingredients/c15
+乳製品・魚に含まれる奇数鎖脂肪酸。細胞老化マーカー改善の動物実験データが報告される新興成分
+代表論文: メタ解析 · Frontiers in Nutrition 2022 · n=11000 — 複数の疫学研究で血中C15:0濃度が高い群で2型糖尿病・心血管疾患・全死亡率の低下と関連が示された（観察研究のため因果関係は確定せず）
+
+### C60フラーレン（議論型・動物実験段階）（C60 Fullerene (Buckminsterfullerene)） — エビデンスランク C
+URL: https://scibase.app/ingredients/c60-fullerene
+Baati 2012でラット寿命2倍が報告・ヒトRCTは存在しない動物実験段階の議論型成分
+代表論文: 観察研究 · Biomaterials 2012 · n=18 — ラット18匹を3群に分け、オリーブ油溶解C60を経口投与した群で対照群の約1.7〜2倍の寿命延長を観察（Baati T et al.・動物試験・ヒトでの再現性未確認） [PMID:22417680 https://pubmed.ncbi.nlm.nih.gov/22417680/]
+
+### D+Q（ダサチニブ+ケルセチン）コンボプロトコル（D+Q (Dasatinib + Quercetin) Senolytic Protocol） — エビデンスランク C
+URL: https://scibase.app/ingredients/senolytic-quercetin-dasatinib
+Mayo Clinic主導のsenolyticコンボ研究プロトコル。ヒトはPhase 1段階で自己実施は強く非推奨
+代表論文: RCT · EBioMedicine 2019 · n=14 · 3週 — Justice JN et al. 特発性肺線維症患者n=14でD+Q 3週投与（オープンラベルPhase 1）が6分間歩行距離・機能スコア改善を示唆
+
+### GDF11（成長分化因子11・フロンティア）（GDF11 (Growth Differentiation Factor 11)） — エビデンスランク C
+URL: https://scibase.app/ingredients/gdf11
+老化マウスで機能回復を示した「若返り因子」候補・反証論文もあり議論中の基礎研究段階
+代表論文: 観察研究 · Cell 2013 · n=20 — 老化マウスへの異種共生（heterochronic parabiosis）でGDF11が心肥大の機能回復に関与する可能性が報告された（Loffredo FS et al.・基礎研究）
+
+### IP-6（フィチン酸）（IP-6 (Inositol Hexaphosphate / Phytic Acid)） — エビデンスランク C
+URL: https://scibase.app/ingredients/ip-6
+穀物・豆由来フィチン酸・キレート・抗酸化・がん補助候補・ミネラル吸収干渉注意・新興
+代表論文: 観察研究 · BJU International / Urology 2006 — Grases F et al. 腎結石患者 観察研究で IP-6 摂取とシュウ酸カルシウム結晶化抑制関連・尿中 IP-6 濃度測定
+
+### KPV ペプチド（KPV Peptide (Lysine-Proline-Valine)） — エビデンスランク C
+URL: https://scibase.app/ingredients/kpv-peptide
+α-MSH 由来トリペプチド・抗炎症・腸管炎症候補・予備的・FDA 未承認・重要な注意
+代表論文: RCT · Journal of Crohns and Colitis 2018 — Ben-Shabat S et al. UC 患者対象ナノキャリア封入 KPV 経口 Phase 1 試験・安全性・薬物動態評価・有効性は別段階
+
+### L. rhamnosus SP1（経口・成人ニキビ）（Lactobacillus rhamnosus SP1 (Oral, Adult Acne)） — エビデンスランク C
+URL: https://scibase.app/ingredients/lactobacillus-acne-strain
+成人ニキビ用パイロットRCT・皮膚IGF1遺伝子発現-32%・12週
+代表論文: RCT · Beneficial Microbes 2016 · n=20 · 12週 — 成人女性14・男性6名（平均33.7歳）にLSP1 3×10⁹CFU/日 vs プラセボ12週パイロットRCTで皮膚IGF1遺伝子発現-32%・FOXO1 +65%（p<0.001）・医師評価改善 OR 28.4（95%CI 2.2-411.1・p<0.05）。
+
+### LL-37（抗菌ペプチド）（LL-37 (Cathelicidin Antimicrobial Peptide)） — エビデンスランク C
+URL: https://scibase.app/ingredients/ll-37
+ヒト内因性抗菌ペプチド・カテリシジン・免疫補助候補・FDA 未承認・特に重要な注意
+代表論文: 観察研究 · Cellular and Molecular Life Sciences 2006 — Dürr UH et al. LL-37 抗菌・抗ウイルス・免疫調整・LPS 中和・創傷治癒の機序の整理・自然免疫研究基盤
+
+### LP-OKI（Lactobacillus plantarum LP-OKI） — エビデンスランク C
+URL: https://scibase.app/ingredients/probiotic-strain-lp-okinawa
+植物乳酸菌の国内産株・大規模ヒトRCTは限定的な議論型株
+代表論文: 観察研究 · Beneficial Microbes 2018 — 植物由来乳酸菌の胃酸耐性・腸内環境への研究蓄積をレビュー
+
+### MOTS-c（ミトコンドリア由来ペプチド）（MOTS-c (Mitochondrial-derived peptide)） — エビデンスランク C
+URL: https://scibase.app/ingredients/mots-c
+動物試験でAMPK活性化・インスリン感受性改善・運動耐容能向上が報告される一方、人間試験は2020年代Phase I/II段階で長期効果・安全性未確立
+代表論文: 観察研究 · Nature Communications 2021 · n=16 — ヒト健常者16名対象の急性運動試験で、自転車エルゴメーター運動により血中MOTS-c濃度が運動直後に有意上昇。
+
+### NAD+（直接補給）（NAD+ (Nicotinamide Adenine Dinucleotide)） — エビデンスランク C
+URL: https://scibase.app/ingredients/nad-plus
+NAD+ 直接補給・経口吸収議論・点滴は医療領域・要注意・NMN/NR との差別化
+代表論文: RCT · BioRxiv (preprint) 2019 · n=8 — Grant R et al. 健常成人 n=8 に経口 NAD+ 250-1,000mg 単回投与で血中NAD+ 軽度上昇示唆・査読前プレプリント・規模小
+
+### NAD+（直接補充・経口/点滴）（NAD+ (Direct Supplementation)） — エビデンスランク C
+URL: https://scibase.app/ingredients/nad-direct
+経口NAD+の生体利用率は限定的・点滴は医療領域・NMN/NRと経路差分のヒトRCTは未確立な先行投資型
+代表論文: RCT · Nature Communications 2016 · n=12 — ヒト経口投与でNR・NA・NAM・NMN・NAD+を投与時の血中・組織NAD+上昇パターンを比較・経口NAD+も最終的には前駆体経由のNAD+補充に集約することが示された（Trammell SAJ et al.・前駆体比較ヒトPK研究）
+
+### NMNH（還元型NMN）（Reduced NMN (NMNH)） — エビデンスランク C
+URL: https://scibase.app/ingredients/nmnh-reduced
+動物試験でNMNより2-3倍のNAD+上昇を示すが、ヒト長期安全性データは未確立のフロンティア
+代表論文: 観察研究 · Nutrients 2023 — NMNH作用機序レビュー・酸化ストレス悪化リスクの理論的懸念を整理・ヒトデータ不足を明示
+
+### TB-500（チモシンβ4類縁ペプチド）（TB-500 (Thymosin Beta-4 fragment)） — エビデンスランク C
+URL: https://scibase.app/ingredients/tb-500
+動物試験で創傷治癒・心筋修復作用が報告される一方、人間RCTは眼科領域に限定・スポーツ薬物規制（WADA禁止）・日本では未承認医薬品扱い
+代表論文: RCT · JAMA Ophthalmology 2020 · n=65 · 4週 — 神経栄養性角膜潰瘍患者65名対象の眼科RCTで、Tβ4 0.1%点眼×4週で角膜上皮欠損の閉鎖率・治癒時間が有意改善（Sosne G et al. RegeneRx RGN-259）
+
+### trans-プテロスチルベン酢酸エステル（フロンティア）（trans-Pterostilbene Acetate） — エビデンスランク C
+URL: https://scibase.app/ingredients/trans-pterostilbene-acetate
+プテロスチルベンの酢酸エステル化体・吸収性向上は基礎研究で示唆・大規模ヒト試験なし
+代表論文: RCT · Journal of Toxicology 2014 · n=80 · 8週 — 健康成人80名でプテロスチルベン125〜250mg/日8週間により脂質・血圧指標の改善傾向と良好な安全性プロファイルが報告された（Riche DM et al.・プテロスチルベン本体のRCT）
+
+### アカルボース（オフラベル抗老化）（Acarbose (off-label longevity)） — エビデンスランク C
+URL: https://scibase.app/ingredients/acarbose
+2型糖尿病処方薬・NIA-ITP マウス寿命延長・抗老化オフラベル・重要な注意
+代表論文: RCT · The Lancet 2003 · n=1429 · 158週 — Chiasson JL et al. 糖尿病予兆者 n=1,429 RCT で アカルボース 300mg/日 3年・2型糖尿病発症 25% 低下・心血管イベント 49% 低下
+
+### アグマチン（Agmatine） — エビデンスランク C
+URL: https://scibase.app/ingredients/agmatine
+【規制境界・先行投資型】L-アルギニン代謝物・神経保護とNMDA調節の多経路エビデンス進行中
+代表論文: RCT · Pain Medicine 2010 · n=61 · 6週 — 腰椎椎間板関連神経根障害患者 61名にアグマチン硫酸塩 1,335-2,675mg/日×42日でVAS疼痛スコア・QOL指標が有意改善・重篤副作用なし（Keynan 2010）
+
+### アストラガロサイドIV（Astragaloside IV） — エビデンスランク C
+URL: https://scibase.app/ingredients/astragaloside-iv
+黄耆（Astragalus）主活性サポニン・cycloastragenol 前駆体・抗炎症・心保護・新興
+代表論文: RCT · Phytomedicine 2014 · n=58 · 24週 — Liu ZH et al. 慢性心不全患者 n=58 RCT で 24週 AS-IV 補助投与・NYHA クラス改善・LVEF 改善示唆
+
+### アポイクオリン（Apoaequorin） — エビデンスランク C
+URL: https://scibase.app/ingredients/apoaequorin
+Prevagen® 商標成分・FTC 訴訟史明示・記憶補助マーケティング・エビデンス論争・要注意
+代表論文: RCT · Advances in Mind-Body Medicine 2016 · n=218 · 13週 — Moran DL et al. 50歳以上 n=218 RCT で 10mg/日 90日・主要評価項目で有意差なし・サブ群解析のみ示唆・FTC 訴訟争点
+
+### イパモレリン（GHRP・成長ホルモン分泌促進ペプチド）（Ipamorelin） — エビデンスランク C
+URL: https://scibase.app/ingredients/ipamorelin
+GHRP-6/2と比較してプロラクチン・コルチゾール上昇が少ないと報告される一方、長期効果・安全性の人間RCTは限定的・Novo Nordisk開発中止・WADA禁止物質
+代表論文: RCT · Diseases of the Colon and Rectum 2012 · n=114 · 1週 — 腹部術後イレウス患者114名対象のRCTで、イパモレリン10μg/kg IV×7日で胃排出回復まで時間の主要評価項目は有意差なし。
+
+### ウリジン一リン酸（UMP）（Uridine Monophosphate） — エビデンスランク C
+URL: https://scibase.app/ingredients/uridine-monophosphate
+神経膜PC合成基質・Souvenaid®（アルツハイマー医療用食品）配合成分
+代表論文: RCT · Alzheimers & Dementia 2010 · n=225 · 12週 — 軽度アルツハイマー患者225名に Souvenaid®（UMP+DHA+コリン配合医療用食品）×12週で言語記憶改善（Scheltens P et al.）
+
+### エクジステロン（20-Hydroxyecdysone）（Ecdysterone (20-Hydroxyecdysone)） — エビデンスランク C
+URL: https://scibase.app/ingredients/ecdysterone
+Isenmann 2019で除脂肪体重増加示唆・再現性は議論中の議論型
+代表論文: RCT · Archives of Toxicology 2019 · n=46 · 10週 — エクジステロン200〜1000mg/日でレジスタンス運動後の除脂肪体重・1RM増加傾向（Isenmann RCT）
+
+### エピタロン（4アミノ酸テトラペプチド）（Epitalon） — エビデンスランク C
+URL: https://scibase.app/ingredients/epitalon
+動物試験でテロメラーゼ活性化・寿命延長が報告される一方、独立した複数研究グループでの再現性が乏しい・人間RCT限定・日本未承認
+代表論文: 観察研究 · Neuroendocrinology Letters 2003 — ロシア高齢者266名対象の長期観察研究で、エピタロン+チモリン併用12年で死亡率がプラセボ比有意低下と報告（Khavinson VKh et al.・対照群設定が不十分でRCT基準は満たさず）
+
+### エフェドラ（麻黄・マオウ / Ephedra sinica）（Ephedra (Ephedra sinica / Ma huang)） — エビデンスランク C
+URL: https://scibase.app/ingredients/ephedra
+【FDA 販売禁止 2004】心毒性で死亡例・降圧薬で高血圧クライシス・MAOI と致死的相互作用
+代表論文: メタ解析 · JAMA 2003 · n=16000 — 52 RCT/コホートと 16,000 件超の副作用報告統合メタで、エフェドラ／エフェドリンは短期 0.9kg/月の減量効果あるが精神・自律神経・消化器・心血管副作用がプラセボの 2-3 倍・心筋梗塞・脳卒中・死亡例報告（Shekelle PG, Hardy ML, Morton…
+
+### オキサロ酢酸（benaGene）（Oxaloacetate (benaGene)） — エビデンスランク C
+URL: https://scibase.app/ingredients/oxaloacetate
+線虫寿命延長25%・カロリー制限模倣の研究軸
+代表論文: 観察研究 · Aging Cell 2009 — 線虫モデルでOAA摂取により寿命が25%延長・AMPK経路活性化が機序
+
+### オキシレスベラトロール（桑由来・2,3',4,5'-tetrahydroxystilbene）（Oxyresveratrol (Morus alba derived)） — エビデンスランク C
+URL: https://scibase.app/ingredients/oxyresveratrol-mulberry
+桑由来レスベラトロール類縁体・抗チロシナーゼと脳虚血神経保護が動物試験で報告
+代表論文: 動物試験 · Journal of Biological Chemistry 2002 — オキシレスベラトロールがチロシナーゼ活性をレスベラトロールの32倍強力に阻害することを酵素学的に確認（Shin NH et al.・基礎研究）
+
+### オラパリブ（オフラベルsenolytic研究）（Olaparib (off-label senolytic, investigational)） — エビデンスランク C
+URL: https://scibase.app/ingredients/olaparib-senolytic
+BRCA変異卵巣がん治療薬・基礎研究のsenolytic候補・健常者投与は致死リスクの処方薬
+代表論文: RCT · New England Journal of Medicine 2018 · n=391 · 156週 — Moore K et al. BRCA変異進行卵巣がんでオラパリブ維持療法が無増悪生存期間を3倍以上延長
+
+### オロト酸リチウム（低用量）（Lithium Orotate (Low-Dose)） — エビデンスランク C
+URL: https://scibase.app/ingredients/lithium-orotate
+元素換算5%・処方薬の数百mgとは桁違いに低用量・気分認知サポートの予備研究段階
+代表論文: メタ解析 · British Journal of Psychiatry 2020 · n=1000 — Memon A 2020 飲料水リチウム濃度と自殺・気分関連の研究9本統合・統計的有意傾向あるが質はばらつき・低用量リチウム長期影響は要追加研究
+
+### カバ（Piper methysticum）（Kava (Piper methysticum)） — エビデンスランク C
+URL: https://scibase.app/ingredients/kava
+【重要な注意】肝毒性 WHO 警告・短期不安 RCT あり・自己判断 NG
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2003 · n=619 — GAD・不安症対象 12 RCT 統合メタでカバラクトン 70-280mg/日が HAM-A スコアを有意改善（WMD -3.9）・効果サイズ中等度・副作用報告少（Pittler MH, Ernst E）
+
+### カムカム（Camu Camu） — エビデンスランク C
+URL: https://scibase.app/ingredients/camu-camu
+ビタミンC 100gあたり2,800mg・抗酸化・炎症マーカー改善 RCT・小規模
+代表論文: RCT · Journal of Cardiology 2008 · n=20 — Inoue T et al. 喫煙者 20名にカムカムジュース 70 ml/日 70日投与でビタミンC 同量補給より顕著な酸化ストレスマーカー（8-OHdG）・炎症マーカー（IL-6, TNF-α, hs-CRP）改善・小規模 RCT
+
+### ガルシニア・カンボジア（Garcinia cambogia / HCA）（Garcinia cambogia (HCA)） — エビデンスランク C
+URL: https://scibase.app/ingredients/garcinia-cambogia
+【肝毒性報告】減量効果は乏しい・SSRI でセロトニン症候群症例
+代表論文: メタ解析 · Journal of Obesity (JOM) 2011 · n=706 — 12 RCT 統合メタで Garcinia 抽出物（HCA）の減量効果は -0.88kg（95%CI -1.75 to -0.00）と統計的有意だが臨床的に意味のあるレベルではなく、消化器・頭痛副作用報告あり（Onakpoya I, Hung SK, Perry R, Wider…
+
+### カロリー制限模倣ブレンド（CRM）（Calorie Restriction Mimetic Blend (CRM)） — エビデンスランク C
+URL: https://scibase.app/ingredients/calorie-restriction-mimetic-blend
+SIRT1・AMPK・mTOR三方向アプローチの複合配合・研究は限定的
+代表論文: 観察研究 · Nature Reviews Drug Discovery 2014 — カロリー制限模倣物質（CRM）の分子機序・SIRT1/AMPK/mTOR三方向アプローチの体系化レビュー
+
+### グネチンC（メリンジョ由来・フロンティア）（Gnetin C (from Melinjo Seed)） — エビデンスランク C
+URL: https://scibase.app/ingredients/gnetin-c
+メリンジョ由来レスベラトロール二量体・小規模試験は存在するが大規模RCTは未実施
+代表論文: RCT · Journal of Functional Foods 2018 · n=21 · 2週 — 健康成人男性21名でメリンジョ種子抽出物（グネチンC含有）150mg/日2週間により血中尿酸値が有意低下（Tatemichi N et al.・小規模試験）
+
+### コンフリー（ヒレハリソウ / Symphytum officinale）（Comfrey (Symphytum officinale)） — エビデンスランク C
+URL: https://scibase.app/ingredients/comfrey
+【内服 FDA 禁止 2001】PA で肝静脈閉塞症・肝硬変・肝癌リスク・外用のみ
+代表論文: 観察研究 · Public Health Nutrition 2000 — コンフリー含有ピロリジジンアルカロイド（PA）の肝毒性レビュー・肝静脈閉塞症（VOD）・肝硬変・肝癌の症例集積を解析・内服は安全用量を設定不可能と結論（Stickel F, Seitz HK）
+
+### シーモス（アイリッシュモス）（Sea Moss (Irish Moss)） — エビデンスランク C
+URL: https://scibase.app/ingredients/sea-moss
+紅藻スーパーフード・ヨウ素・カラギーナン含有・橋本病/バセドウ病注意
+代表論文: 観察研究 · Journal of the Academy of Nutrition and Dietetics 2015 — 紅藻・褐藻のミネラル・ヨウ素・抗酸化成分の包括レビュー・「ミネラル92種」訴求の科学的背景は限定的（Bouga M, Combet E）
+
+### ジェロビタール H3（プロカイン塩）（Gerovital H3 (Procaine HCl)） — エビデンスランク C
+URL: https://scibase.app/ingredients/gerovital-h3
+1950年代以降の論争成分・MAOI類縁構造・自己判断使用は非推奨YMYL
+代表論文: 観察研究 · Journal of Anti-Aging Medicine 2003 — GH3の1950年代以降の研究歴史と論争・MAO-A阻害機序の整理
+
+### シクロアストラジェノール（Cycloastragenol） — エビデンスランク C
+URL: https://scibase.app/ingredients/cycloastragenol
+TA-65® 主成分・テロメラーゼ活性化候補・小規模試験・要注意・新興バイオハック
+代表論文: RCT · Rejuvenation Research 2016 · n=29 · 24週 — Salvador L et al. 高齢者 n=29 RCT で TA-65 4-6ヶ月でテロメア長軽度延長・CD8+CD28- T細胞分画改善
+
+### セノリティクス併用プロトコル（ケルセチン+フィセチン+ピペリン）（Senolytics Combination Protocol (Quercetin + Fisetin + Piperine)） — エビデンスランク C
+URL: https://scibase.app/ingredients/senolytics-combo
+老化細胞除去のパルス投与プロトコル・ヒトRCTはパイロット段階・先行投資型
+代表論文: RCT · EBioMedicine 2019 · n=9 — 糖尿性腎症患者9名にD+Q（ダサチニブ100mg+ケルセチン1,000mg）×3日連続パルス投与で皮下脂肪・脂肪組織の老化細胞マーカー（p16INK4a・SASP因子）が有意低下（Hickson LJ et al.・ヒトでの senolytics 有効性を世界で初めて示したパイロ…
+
+### セルモレリン（GHRH 1-29・成長ホルモン放出促進）（Sermorelin） — エビデンスランク C
+URL: https://scibase.app/ingredients/sermorelin
+1997年FDA承認→2008年商用撤回・GH分泌のパルス性を保持する機序的優位はあるが、商用医薬品としては流通せず・WADA禁止物質・日本では未承認医薬品扱い
+代表論文: RCT · Hormone Research 1999 · n=110 · 52週 — 小児GH欠乏症患者110名対象のRCTで、セルモレリン30μg/kg/日SC×12ヶ月で身長増加速度が有意改善。
+
+### セントジョーンズワート（西洋オトギリソウ / Hypericum perforatum）（St. John's Wort (Hypericum perforatum)） — エビデンスランク C
+URL: https://scibase.app/ingredients/st-johns-wort
+【最重要禁忌】SSRI/SNRI でセロトニン症候群・CYP3A4 強誘導で多数薬と相互作用
+代表論文: メタ解析 · Cochrane Database of Systematic Reviews 2008 · n=5489 — 29 RCT 統合メタで軽度〜中等度大うつ病に対しプラセボ優位・標準抗うつ薬（TCA/SSRI）と短期同等効果・副作用は標準薬より少ない（Linde K, Berner MM, Kriston L・PMID 18843608）
+
+### ダサチニブ（senolytic オフラベル）（Dasatinib (off-label senolytic)） — エビデンスランク C
+URL: https://scibase.app/ingredients/dasatinib-senolytic
+抗がん剤・senolytic オフラベル研究・D+Q プロトコル・FDA 未承認用途・特に重要な注意
+代表論文: RCT · EBioMedicine 2019 · n=14 · 3週 — Justice JN et al. 特発性肺線維症 n=14 Phase 1 試験で D+Q 3週投与・運動機能（6分間歩行）・機能スコア改善示唆
+
+### ダンデライオン根（タンポポ根）（Dandelion Root (Taraxacum officinale)） — エビデンスランク C
+URL: https://scibase.app/ingredients/dandelion-root
+欧州伝統「肝の友」・利尿・肝サポート小規模RCTで研究蓄積中・月¥1,200で導入可
+代表論文: RCT · Journal of Alternative and Complementary Medicine 2009 · n=17 · 1週 — 健常成人17名にタラクサクム葉抽出物4ml×3回/日単日で尿量増加が有意（Clare BA et al.・小規模RCT）
+
+### チモシンβ4（TB-500 と区別）（Thymosin Beta-4） — エビデンスランク C
+URL: https://scibase.app/ingredients/thymosin-beta-4
+43アミノ酸ペプチド・組織修復・自己投与厳禁・FDA 未承認・特に重要な注意・既 TB-500 と用語整理
+代表論文: RCT · Clinical Ophthalmology 2010 · n=72 · 4週 — Ruff D et al. 慢性角膜潰瘍 n=72 RCT で Tβ4 点眼治癒促進・標準ケア比較で改善示唆
+
+### チャーガ（カバノアナタケ）（Chaga (Inonotus obliquus)） — エビデンスランク C
+URL: https://scibase.app/ingredients/chaga
+βグルカン・メラニン・ベツリン酸豊富で抗酸化・免疫の研究進行中・人間RCTは限定的な先行投資型
+代表論文: 観察研究 · BioFactors 2007 — in vitro試験でチャーガ水抽出物がリンパ球DNA酸化損傷（comet assay）を有意低下・抗酸化マーカー改善（Najafzadeh M et al.・ヒト細胞 in vitro・ヒトRCT未確立）
+
+### トゥルケステロン（Ajuga turkestanica）（Turkesterone (Ajuga turkestanica)） — エビデンスランク C
+URL: https://scibase.app/ingredients/turkesterone-ajuga
+動物試験で筋肥大示唆・ヒトRCTは限定的なエクジステロイド系
+代表論文: 観察研究 · Journal of Steroid Biochemistry and Molecular Biology 2008 — 動物試験でエクジステロイド（トゥルケステロン・エクジステロン）の筋タンパク合成促進が観察
+
+### トリゴネリン（Trigonelline） — エビデンスランク C
+URL: https://scibase.app/ingredients/riboside-trigonelline
+動物試験で筋肉老化を逆転させた、コーヒー・フェヌグリーク由来のNAD+前駆体
+代表論文: 観察研究 · Phytochemistry Reviews 2021 — コーヒー・フェヌグリーク由来のトリゴネリンが抗糖尿病・神経保護・抗炎症の多面的作用を示す体系レビュー
+
+### トリブラステレストリス（Tribulus Terrestris） — エビデンスランク C
+URL: https://scibase.app/ingredients/tribulus-terrestris
+テストステロン上昇は複数のRCTで明確に否定される一方、性機能・気分関連の改善は別系統で報告される「期待を更新すべき」古参ハーブ
+代表論文: RCT · Journal of Strength and Conditioning Research 2007 · n=22 · 5週 — エリートラグビー選手22名対象のRCTで、Tribulus terrestris 450mg/日 × 5週でテストステロン・筋力・体組成いずれもプラセボと有意差なしと報告された（Rogerson S et al.）
+
+### トリメチル化プテロスチルベン（フロンティア・3,5,4'-trimethoxystilbene）（Trimethylated Pterostilbene (3,5,4'-Trimethoxystilbene / TMS)） — エビデンスランク C
+URL: https://scibase.app/ingredients/pterostilbene-trimethylated
+プテロスチルベン骨格にメトキシ基をさらに付加した修飾型・ヒトRCTは未実施で動物中心
+代表論文: 動物試験 · Journal of Agricultural and Food Chemistry 2008 — 3,5,4'-trimethoxystilbene（TMS）が他のメチル化スチルベン類縁体より強力なNF-κB抑制・抗炎症活性をマウスマクロファージ細胞で示した（Pan MH et al.・基礎研究）
+
+### トレハロース（Trehalose） — エビデンスランク C
+URL: https://scibase.app/ingredients/trehalose
+オートファジー誘導糖・タンパク質凝集抑制・神経保護の研究蓄積
+代表論文: RCT · Journal of the Neurological Sciences 2017 · n=10 · 12週 — PSP 患者10名にトレハロース 10g/日×12週で PSP Rating Scale 安定化傾向（Honjo Y et al.）
+
+### パッションフラワー抽出物（Passionflower Extract） — エビデンスランク C
+URL: https://scibase.app/ingredients/passionflower-extract
+GABA系ハーブ・短期RCTで主観的睡眠の質を改善・軽症不眠向け
+代表論文: RCT · Phytotherapy Research 2011 · n=41 · 1週 — 健常成人41名（18-35歳）に1日1杯のパッションフラワー茶7日間摂取で主観的睡眠の質（PSQI）有意改善・睡眠オンセット・覚醒後睡眠の改善。
+
+### バナジウム（Vanadium） — エビデンスランク C
+URL: https://scibase.app/ingredients/vanadium
+必須微量元素候補・インスリン様作用・ヒト RCT は限定的
+代表論文: RCT · Journal of Clinical Endocrinology and Metabolism 1995 · n=6 · 4週 — 2型糖尿病患者6名にバナジルサルフェート 100mg/日×4週で空腹時血糖低下・末梢インスリン感受性軽度改善（Goldfine AB et al.）
+
+### バナバ（オオバナサルスベリ）（Banaba） — エビデンスランク C
+URL: https://scibase.app/ingredients/banaba
+コロソリン酸 18-48mg/日・GLUT4 活性化で血糖示唆・小規模 RCT のみ
+代表論文: RCT · Journal of Ethnopharmacology 2003 · n=10 — Judy WV et al. 2型糖尿病患者 10名にバナバ葉抽出物 Glucosol（コロソリン酸 18-48mg/日）2週投与で空腹時血糖値の用量依存的低下を報告・小規模 RCT
+
+### ビーガンコラーゲンブースター（Vegan Collagen Booster） — エビデンスランク C
+URL: https://scibase.app/ingredients/vegan-collagen-booster
+植物にコラーゲンは存在せず、合成補因子の配合製品である点に注意
+代表論文: 観察研究 · Nutrients 2017 — ビタミンCがコラーゲン合成酵素の補因子としての機能を体系レビュー
+
+### ビオチン（Biotin） — エビデンスランク C
+URL: https://scibase.app/ingredients/biotin
+欠乏者への効果は確実だが、通常食の人への「美容効果」は論文で否定されている
+代表論文: 観察研究 · Skin Appendage Disorders 2017 — ビオチンによる発毛効果を示したケースレポートは全て欠乏状態または基礎疾患のある患者。
+
+### ヒューマニン・MOTS-c（ミトコンドリア由来ペプチド）（Humanin & MOTS-c (Mitochondrial-Derived Peptides)） — エビデンスランク C
+URL: https://scibase.app/ingredients/humanin-mots-c
+加齢で減少するミトコンドリア由来ペプチド・動物試験段階で経口吸収性も限定的
+代表論文: 観察研究 · Nature Communications 2021 — 高齢マウスへのMOTS-c投与で運動持久力・骨格筋機能・代謝の改善が報告された（Reynolds JC et al.・基礎研究）
+
+### ファドギア・アグレスティス（Fadogia Agrestis） — エビデンスランク C
+URL: https://scibase.app/ingredients/fadogia-agrestis
+ラット試験でテストステロン関連指標の上昇が報告される一方、人間でのRCTは現時点でほぼ確認されていない「先行投資型」サプリ
+代表論文: 観察研究 · Phytotherapy Research 2019 — Fadogia agrestisを含む植物性アフロディジアックの総説。
+
+### フィランサスニルリ（チャンカピエドラ）（Phyllanthus niruri） — エビデンスランク C
+URL: https://scibase.app/ingredients/phyllanthus-niruri
+アマゾン伝統「石を砕く草」・腎結石・肝サポート小規模RCTで研究蓄積中
+代表論文: RCT · Phytomedicine 2003 · n=57 · 4週 — 急性B型肝炎HBsAgキャリア57名にフィランサスニルリ抽出物900mg/日×4週でHBsAg早期陰性化率・肝酵素（ALT・AST）改善（Naik AD & Juvekar AR）
+
+### ブプレウルム（柴胡）（Bupleurum (Bupleurum chinense)） — エビデンスランク C
+URL: https://scibase.app/ingredients/bupleurum
+小柴胡湯主成分・saikosaponin活性・インターフェロン併用で間質性肺炎警告のYMYL重
+代表論文: 観察研究 · Journal of Ethnopharmacology 2017 — ブプレウルム属の植物化学・薬理学レビュー。
+
+### フペルジンA（Huperzine A） — エビデンスランク C
+URL: https://scibase.app/ingredients/huperzine-a
+【特に重要な注意】中国でアルツハイマー処方薬・AChE 阻害・サプリ用量は処方域に近い・自己判断回避
+代表論文: メタ解析 · PLoS One 2013 · n=474 · 12週 — 軽中等度 AD 患者のフペルジンA 200-500μg/日でMMSE・ADL・行動評価の改善（中国 RCT 統合メタ・Yang G et al.）
+
+### プレグネノロン（Pregnenolone） — エビデンスランク C
+URL: https://scibase.app/ingredients/pregnenolone
+神経ステロイド前駆体・統合失調症補助 RCT・要注意・処方医相談必須
+代表論文: RCT · Journal of Clinical Psychiatry 2014 · n=120 — Marx CE et al. 統合失調症患者 120名にプレグネノロン 500mg/日 8週投与で BACS 認知機能スコア・SANS 陰性症状改善を報告・補助療法として有意
+
+### プレグネノロン（経口）（Pregnenolone Supplement） — エビデンスランク C
+URL: https://scibase.app/ingredients/pregnenolone-supplement
+全ステロイドホルモン前駆体・米国OTC・日本未承認医薬品扱い・WADA禁止物質（特に重要な注意）
+代表論文: RCT · Psychopharmacology Bulletin 1995 · n=24 · 1週 — 健常成人24名・プレグネノロン500mg単回投与で言語記憶課題の有意改善（Roberts 1995）。
+
+### ベタイン塩酸塩（胃酸補助）（Betaine HCl） — エビデンスランク C
+URL: https://scibase.app/ingredients/betaine-hcl
+低胃酸補助・胃 pH 一時低下 RCT・処方医療補助・要注意
+代表論文: RCT · Molecular Pharmaceutics 2013 · n=12 — 健常成人12名にラベプラゾール（PPI）誘発低胃酸状態でベタイン HCl 1,500mg 経口投与で胃内 pH を一時的に低下・薬物吸収影響を確認（Yago MR et al.）
+
+### メチルゲンチセート（ゲンチジン酸メチル）（Methyl Gentisate） — エビデンスランク C
+URL: https://scibase.app/ingredients/methyl-gentisate
+in vitroでコウジ酸より強いチロシナーゼ阻害が報告される一方、安全性プロファイルと色素脱失リスクから化粧品採用が広がらなかった「研究段階」素材
+代表論文: 観察研究 · Biochemical Pharmacology 1999 — メラノサイト由来チロシナーゼに対する in vitro阻害試験で、メチルゲンチセートのIC50がコウジ酸・アルブチン・α-アルブチン等より低く（より強力）報告された（Curto EV et al.）
+
+### メチレンブルー（低用量）（Methylene Blue (low-dose)） — エビデンスランク C
+URL: https://scibase.app/ingredients/methylene-blue
+高用量は処方薬・低用量バイオハック新興・SSRI 併用は絶対に避けるべき・要注意
+代表論文: RCT · Radiology 2016 · n=22 — Rodriguez P et al. 健常成人 n=22 RCT で低用量 MB 4mg/kg 単回経口・脳血流・短期記憶課題改善示唆
+
+### メチレンブルー低用量（ミトコンドリア研究）（Methylene Blue Low Dose） — エビデンスランク C
+URL: https://scibase.app/ingredients/methylene-blue-low-dose
+ミトコンドリア研究の独自切り口・処方薬境界・サプリ流通なし
+代表論文: RCT · Radiology 2017 · n=26 · 1週 — 健常成人にメチレンブルー280mg単回投与で記憶課題中の脳活動増加、認知機能改善傾向
+
+### メトホルミン（オフラベル抗老化）（Metformin (off-label longevity)） — エビデンスランク C
+URL: https://scibase.app/ingredients/metformin-longevity
+2型糖尿病処方薬・TAME 試験進行中・抗老化オフラベル・FDA 未承認用途・特に重要な注意
+代表論文: 観察研究 · Diabetes, Obesity and Metabolism 2014 · n=78000 · 132週 — Bannister CA et al. UK CPRD 観察 n=78,000・T2DM 患者メトホルミン群が非糖尿病健常対照より死亡率 15% 低い・「抗老化エビデンス」基盤
+
+### モリンガ（ワサビノキ）（Moringa oleifera） — エビデンスランク C
+URL: https://scibase.app/ingredients/moringa-oleifera
+スーパーフード・栄養豊富葉・血糖補助の限定RCT・期待値調整型
+代表論文: RCT · Journal of Dietary Supplements 2014 · n=30 · 12週 — 閉経後女性30名にモリンガ葉粉末1.5g/日×3ヶ月で血清抗酸化マーカー（GSH・SOD）改善・MDA 低下（Kushwaha S et al.）
+
+### ヨヒンビン（ヨヒンベ / Pausinystalia yohimbe）（Yohimbine (Pausinystalia yohimbe)） — エビデンスランク C
+URL: https://scibase.app/ingredients/yohimbine
+【MAOI/SSRI/降圧薬 禁忌】α2 拮抗で血圧変動・パニック発作・興奮
+代表論文: 観察研究 · Pharmacology & Therapeutics / Clinical Toxicology 2001 — ヨヒンビン関連副作用症例集積レビュー・高血圧・頻脈・パニック発作・不整脈・痙攣・腎不全の重篤事例を解析・α2 受容体拮抗による交感神経過剰活性が機序（Tam SW, Worcel M, Wyllie M et al.）
+
+### ラキソジェニン（5-α-ヒドロキシラキソジェニン）（Laxogenin (5α-Hydroxy Laxogenin)） — エビデンスランク C
+URL: https://scibase.app/ingredients/laxogenin
+動物試験のみ・ヒトRCTほぼ存在しない議論型サプリ
+代表論文: 観察研究 · Journal of Ethnopharmacology 2009 — 動物試験でラキソジェニン関連スピロスタンの抗カタボリック・タンパク合成促進が観察
+
+### ラパマイシン（オフラベル抗老化）（Rapamycin (Sirolimus, off-label longevity)） — エビデンスランク C
+URL: https://scibase.app/ingredients/rapamycin
+mTOR 阻害処方薬・抗老化オフラベル・FDA 未承認用途・抗老化専門医処方下のみ・特に重要な注意
+代表論文: RCT · Science Translational Medicine 2014 · n=218 · 6週 — Mannick JB et al. 高齢者 n=218 RCT で everolimus（mTOR 阻害薬）6週で B型肝炎ワクチン反応改善・免疫機能改善示唆
+
+### レスベラトロール（Resveratrol） — エビデンスランク C
+URL: https://scibase.app/ingredients/resveratrol
+動物実験では有望だが、ヒトでの抗老化効果はまだ確認されていない
+代表論文: 観察研究 · Ageing Research Reviews 2020 — 動物実験での長寿効果・サーチュイン活性化は確認されているが、ヒトRCTでの有意な抗老化効果は現時点で確認されていない
+
+### レモンバーム（メリッサ）（Lemon Balm (Melissa officinalis)） — エビデンスランク C
+URL: https://scibase.app/ingredients/lemon-balm-melissa
+GABA代謝阻害ハーブ・Cyracos®で不眠42%低下・短期ストレス向け
+代表論文: 観察研究 · Mediterranean Journal of Nutrition and Metabolism 2011 · n=20 · 2週 — 軽度〜中等度の不安・睡眠障害を持つ20名にCyracos® 600mg/日（300mg×2回）15日間摂取で不安症状-18%・関連症状-15%・不眠-42%（p<0.01）。
+
+### 何首烏（フォーティ）（He Shou Wu (Fo-Ti)） — エビデンスランク C
+URL: https://scibase.app/ingredients/he-shou-wu
+中国伝統薬「何首烏」・生品は肝障害高リスク・処理品（製何首烏）でも医師の管理下
+代表論文: 観察研究 · Evidence-Based Complementary and Alternative Medicine 2015 — 何首烏関連肝障害76症例の系統的レビュー・急性肝炎・胆汁うっ滞・肝不全症例・生品摂取・長期高用量で重篤化リスク（Lei X et al.）
+
+### 何首烏（ホーショーウー）（He Shou Wu） — エビデンスランク C
+URL: https://scibase.app/ingredients/ho-shou-wu
+TCM 白髪・若返りハーブ・WHO/Health Canada 肝毒性警告・特に重要な注意
+代表論文: 観察研究 · Phytotherapy Research 2018 · n=200 — Lin L et al. SR 200+ 肝毒性症例統合・急性肝障害・肝不全・肝移植症例報告・生何首烏で頻度高・処方何首烏でも報告ありで安全性懸念明示
+
+### 低用量ナルトレキソン（LDN）（Low-Dose Naltrexone (LDN)） — エビデンスランク C
+URL: https://scibase.app/ingredients/low-dose-naltrexone
+オピオイド拮抗薬・低用量オフラベル・自己免疫補助候補・FDA 未承認用途・重要な注意
+代表論文: RCT · American Journal of Gastroenterology 2007 · n=17 · 12週 — Smith JP et al. 活動期クローン病 n=17 RCT で LDN 4.5mg/日 12週で寛解率・症状改善示唆・予備的
+
+## 比較ペア（305）
+
+- retinol vs bakuchiol: https://scibase.app/compare/retinol-vs-bakuchiol
+- retinol vs retinal: https://scibase.app/compare/retinol-vs-retinal
+- vitamin-c-topical vs niacinamide: https://scibase.app/compare/vitamin-c-topical-vs-niacinamide
+- hyaluronic-acid vs ceramide: https://scibase.app/compare/hyaluronic-acid-vs-ceramide
+- arbutin vs azelaic-acid: https://scibase.app/compare/arbutin-vs-azelaic-acid
+- myo-inositol vs zinc: https://scibase.app/compare/myo-inositol-vs-zinc
+- nmn vs nicotinamide-riboside: https://scibase.app/compare/nmn-vs-nicotinamide-riboside
+- resveratrol vs quercetin: https://scibase.app/compare/resveratrol-vs-quercetin
+- nmn vs coq10: https://scibase.app/compare/nmn-vs-coq10
+- collagen-peptide vs vitamin-c-oral: https://scibase.app/compare/collagen-peptide-vs-vitamin-c-oral
+- hyaluronic-acid vs collagen-peptide: https://scibase.app/compare/hyaluronic-acid-vs-collagen-peptide
+- nmn vs urolithin-a: https://scibase.app/compare/nmn-vs-urolithin-a
+- spermidine vs fisetin: https://scibase.app/compare/spermidine-vs-fisetin
+- ashwagandha vs rhodiola: https://scibase.app/compare/ashwagandha-vs-rhodiola
+- ashwagandha vs l-theanine: https://scibase.app/compare/ashwagandha-vs-l-theanine
+- ashwagandha vs panax-ginseng: https://scibase.app/compare/ashwagandha-vs-panax-ginseng
+- melatonin vs glycine: https://scibase.app/compare/melatonin-vs-glycine
+- melatonin vs magnesium-glycinate: https://scibase.app/compare/melatonin-vs-magnesium-glycinate
+- magnesium-glycinate vs magnesium: https://scibase.app/compare/magnesium-glycinate-vs-magnesium
+- glycine vs magnesium: https://scibase.app/compare/glycine-vs-magnesium
+- creatine vs hmb: https://scibase.app/compare/creatine-vs-hmb
+- creatine vs l-citrulline: https://scibase.app/compare/creatine-vs-l-citrulline
+- nattokinase vs vitamin-k2: https://scibase.app/compare/nattokinase-vs-vitamin-k2
+- omega3 vs vitamin-k2: https://scibase.app/compare/omega3-vs-vitamin-k2
+- astaxanthin vs omega3: https://scibase.app/compare/astaxanthin-vs-omega3
+- vitamin-d vs magnesium: https://scibase.app/compare/vitamin-d-vs-magnesium
+- vitamin-d vs vitamin-k2: https://scibase.app/compare/vitamin-d-vs-vitamin-k2
+- zinc vs vitamin-c-oral: https://scibase.app/compare/zinc-vs-vitamin-c-oral
+- probiotics vs inulin: https://scibase.app/compare/probiotics-vs-inulin
+- probiotics vs akkermansia: https://scibase.app/compare/probiotics-vs-akkermansia
+- lions-mane vs bacopa-monnieri: https://scibase.app/compare/lions-mane-vs-bacopa-monnieri
+- coq10 vs pqq: https://scibase.app/compare/coq10-vs-pqq
+- retinol vs niacinamide: https://scibase.app/compare/retinol-vs-niacinamide
+- salicylic-acid vs glycolic-acid: https://scibase.app/compare/salicylic-acid-vs-glycolic-acid
+- glycolic-acid vs lactic-acid: https://scibase.app/compare/glycolic-acid-vs-lactic-acid
+- arbutin vs kojic-acid: https://scibase.app/compare/arbutin-vs-kojic-acid
+- tranexamic-acid vs arbutin: https://scibase.app/compare/tranexamic-acid-vs-arbutin
+- niacinamide vs azelaic-acid: https://scibase.app/compare/niacinamide-vs-azelaic-acid
+- ferulic-acid vs vitamin-c-topical: https://scibase.app/compare/ferulic-acid-vs-vitamin-c-topical
+- ceramide vs panthenol: https://scibase.app/compare/ceramide-vs-panthenol
+- pdrn vs retinol: https://scibase.app/compare/pdrn-vs-retinol
+- centella-asiatica vs niacinamide: https://scibase.app/compare/centella-asiatica-vs-niacinamide
+- palmitoyl-tripeptide vs retinol: https://scibase.app/compare/palmitoyl-tripeptide-vs-retinol
+- pantothenic-acid vs niacinamide: https://scibase.app/compare/pantothenic-acid-vs-niacinamide
+- ceramide-oral vs collagen-peptide: https://scibase.app/compare/ceramide-oral-vs-collagen-peptide
+- resveratrol vs pterostilbene: https://scibase.app/compare/resveratrol-vs-pterostilbene
+- fisetin vs quercetin: https://scibase.app/compare/fisetin-vs-quercetin
+- spermidine vs resveratrol: https://scibase.app/compare/spermidine-vs-resveratrol
+- alpha-lipoic-acid vs coq10: https://scibase.app/compare/alpha-lipoic-acid-vs-coq10
+- glutathione vs nac: https://scibase.app/compare/glutathione-vs-nac
+- urolithin-a vs coq10: https://scibase.app/compare/urolithin-a-vs-coq10
+- lions-mane vs alpha-gpc: https://scibase.app/compare/lions-mane-vs-alpha-gpc
+- ginkgo-biloba vs bacopa-monnieri: https://scibase.app/compare/ginkgo-biloba-vs-bacopa-monnieri
+- phosphatidylserine vs alpha-gpc: https://scibase.app/compare/phosphatidylserine-vs-alpha-gpc
+- 5-htp vs l-tryptophan: https://scibase.app/compare/5-htp-vs-l-tryptophan
+- melatonin vs l-theanine: https://scibase.app/compare/melatonin-vs-l-theanine
+- l-theanine vs gaba: https://scibase.app/compare/l-theanine-vs-gaba
+- ashwagandha vs magnesium-glycinate: https://scibase.app/compare/ashwagandha-vs-magnesium-glycinate
+- creatine vs l-glutamine: https://scibase.app/compare/creatine-vs-l-glutamine
+- l-arginine vs l-citrulline: https://scibase.app/compare/l-arginine-vs-l-citrulline
+- probiotics vs beta-glucan: https://scibase.app/compare/probiotics-vs-beta-glucan
+- berberine vs chromium: https://scibase.app/compare/berberine-vs-chromium
+- glucosamine vs chondroitin: https://scibase.app/compare/glucosamine-vs-chondroitin
+- saw-palmetto vs biotin: https://scibase.app/compare/saw-palmetto-vs-biotin
+- biotin vs zinc: https://scibase.app/compare/biotin-vs-zinc
+- creatine vs magnesium: https://scibase.app/compare/creatine-vs-magnesium
+- tmg vs nmn: https://scibase.app/compare/tmg-vs-nmn
+- kojic-acid vs vitamin-c-topical: https://scibase.app/compare/kojic-acid-vs-vitamin-c-topical
+- niacinamide vs collagen-peptide: https://scibase.app/compare/niacinamide-vs-collagen-peptide
+- acetyl-l-carnitine vs creatine: https://scibase.app/compare/acetyl-l-carnitine-vs-creatine
+- l-theanine vs magnesium: https://scibase.app/compare/l-theanine-vs-magnesium
+- equol vs collagen-peptide: https://scibase.app/compare/equol-vs-collagen-peptide
+- bakuchiol vs niacinamide: https://scibase.app/compare/bakuchiol-vs-niacinamide
+- arbutin vs niacinamide: https://scibase.app/compare/arbutin-vs-niacinamide
+- l-carnitine vs creatine: https://scibase.app/compare/l-carnitine-vs-creatine
+- l-citrulline vs creatine: https://scibase.app/compare/l-citrulline-vs-creatine
+- glutathione vs niacinamide: https://scibase.app/compare/glutathione-vs-niacinamide
+- tranexamic-acid vs niacinamide: https://scibase.app/compare/tranexamic-acid-vs-niacinamide
+- pdrn vs hyaluronic-acid: https://scibase.app/compare/pdrn-vs-hyaluronic-acid
+- maca vs ashwagandha: https://scibase.app/compare/maca-vs-ashwagandha
+- vitamin-c-oral vs vitamin-c-topical: https://scibase.app/compare/vitamin-c-oral-vs-vitamin-c-topical
+- folic-acid vs iron: https://scibase.app/compare/folic-acid-vs-iron
+- folic-acid vs vitamin-b12: https://scibase.app/compare/folic-acid-vs-vitamin-b12
+- vitamin-d vs calcium: https://scibase.app/compare/vitamin-d-vs-calcium
+- niacinamide vs palmitoyl-tripeptide: https://scibase.app/compare/niacinamide-vs-palmitoyl-tripeptide
+- lutein vs zeaxanthin: https://scibase.app/compare/lutein-vs-zeaxanthin
+- ramelteon vs melatonin: https://scibase.app/compare/ramelteon-vs-melatonin
+- tranexamic-acid vs vitamin-c-topical: https://scibase.app/compare/tranexamic-acid-vs-vitamin-c-topical
+- curcumin vs boswellia: https://scibase.app/compare/curcumin-vs-boswellia
+- vitamin-d vs omega3: https://scibase.app/compare/vitamin-d-vs-omega3
+- pdrn vs collagen-peptide: https://scibase.app/compare/pdrn-vs-collagen-peptide
+- lutein vs astaxanthin: https://scibase.app/compare/lutein-vs-astaxanthin
+- bakuchiol vs tranexamic-acid: https://scibase.app/compare/bakuchiol-vs-tranexamic-acid
+- hyaluronic-acid vs ceramide-oral: https://scibase.app/compare/hyaluronic-acid-vs-ceramide-oral
+- glutathione vs vitamin-c-oral: https://scibase.app/compare/glutathione-vs-vitamin-c-oral
+- zinc vs azelaic-acid: https://scibase.app/compare/zinc-vs-azelaic-acid
+- retinol vs vitamin-e: https://scibase.app/compare/retinol-vs-vitamin-e
+- ferulic-acid vs niacinamide: https://scibase.app/compare/ferulic-acid-vs-niacinamide
+- centella-asiatica vs panthenol: https://scibase.app/compare/centella-asiatica-vs-panthenol
+- azelaic-acid vs vitamin-c-topical: https://scibase.app/compare/azelaic-acid-vs-vitamin-c-topical
+- s-boulardii vs l-rhamnosus-gg: https://scibase.app/compare/s-boulardii-vs-l-rhamnosus-gg
+- inulin vs psyllium: https://scibase.app/compare/inulin-vs-psyllium
+- butyrate vs resistant-starch: https://scibase.app/compare/butyrate-vs-resistant-starch
+- l-glutamine vs carnosine: https://scibase.app/compare/l-glutamine-vs-carnosine
+- akkermansia vs inulin: https://scibase.app/compare/akkermansia-vs-inulin
+- beta-alanine vs l-citrulline: https://scibase.app/compare/beta-alanine-vs-l-citrulline
+- tongkat-ali vs ashwagandha: https://scibase.app/compare/tongkat-ali-vs-ashwagandha
+- tribulus-terrestris vs tongkat-ali: https://scibase.app/compare/tribulus-terrestris-vs-tongkat-ali
+- creatine vs beta-alanine: https://scibase.app/compare/creatine-vs-beta-alanine
+- fadogia-agrestis vs tongkat-ali: https://scibase.app/compare/fadogia-agrestis-vs-tongkat-ali
+- alpha-gpc vs citicoline: https://scibase.app/compare/alpha-gpc-vs-citicoline
+- magnesium-l-threonate vs magnesium-glycinate: https://scibase.app/compare/magnesium-l-threonate-vs-magnesium-glycinate
+- 5-htp vs saffron: https://scibase.app/compare/5-htp-vs-saffron
+- ginkgo-biloba vs alpha-gpc: https://scibase.app/compare/ginkgo-biloba-vs-alpha-gpc
+- folic-acid vs methyl-folate: https://scibase.app/compare/folic-acid-vs-methyl-folate
+- iron vs vitamin-c-oral: https://scibase.app/compare/iron-vs-vitamin-c-oral
+- methyl-folate vs vitamin-b12: https://scibase.app/compare/methyl-folate-vs-vitamin-b12
+- tranexamic-acid vs glutathione: https://scibase.app/compare/tranexamic-acid-vs-glutathione
+- niacinamide vs ceramide: https://scibase.app/compare/niacinamide-vs-ceramide
+- centella-asiatica vs bisabolol: https://scibase.app/compare/centella-asiatica-vs-bisabolol
+- panthenol vs bisabolol: https://scibase.app/compare/panthenol-vs-bisabolol
+- retinol vs tranexamic-acid: https://scibase.app/compare/retinol-vs-tranexamic-acid
+- ceramide vs bisabolol: https://scibase.app/compare/ceramide-vs-bisabolol
+- spermidine vs urolithin-a: https://scibase.app/compare/spermidine-vs-urolithin-a
+- pterostilbene vs fisetin: https://scibase.app/compare/pterostilbene-vs-fisetin
+- nmn vs spermidine: https://scibase.app/compare/nmn-vs-spermidine
+- sulforaphane vs quercetin: https://scibase.app/compare/sulforaphane-vs-quercetin
+- melatonin vs magnesium-l-threonate: https://scibase.app/compare/melatonin-vs-magnesium-l-threonate
+- bacopa-monnieri vs rhodiola: https://scibase.app/compare/bacopa-monnieri-vs-rhodiola
+- lions-mane vs citicoline: https://scibase.app/compare/lions-mane-vs-citicoline
+- phosphatidylserine vs citicoline: https://scibase.app/compare/phosphatidylserine-vs-citicoline
+- dhea vs pregnenolone: https://scibase.app/compare/dhea-vs-pregnenolone
+- holy-basil vs ashwagandha: https://scibase.app/compare/holy-basil-vs-ashwagandha
+- mucuna-pruriens vs tongkat-ali: https://scibase.app/compare/mucuna-pruriens-vs-tongkat-ali
+- saffron vs ashwagandha: https://scibase.app/compare/saffron-vs-ashwagandha
+- iron vs vitamin-b12: https://scibase.app/compare/iron-vs-vitamin-b12
+- nicotinamide-riboside vs resveratrol: https://scibase.app/compare/nicotinamide-riboside-vs-resveratrol
+- hesperidin vs quercetin: https://scibase.app/compare/hesperidin-vs-quercetin
+- omega3 vs coq10: https://scibase.app/compare/omega3-vs-coq10
+- probiotics vs l-rhamnosus-gg: https://scibase.app/compare/probiotics-vs-l-rhamnosus-gg
+- akkermansia vs s-boulardii: https://scibase.app/compare/akkermansia-vs-s-boulardii
+- butyrate vs akkermansia: https://scibase.app/compare/butyrate-vs-akkermansia
+- niacinamide vs bisabolol: https://scibase.app/compare/niacinamide-vs-bisabolol
+- tranexamic-acid vs ferulic-acid: https://scibase.app/compare/tranexamic-acid-vs-ferulic-acid
+- arbutin vs tranexamic-acid: https://scibase.app/compare/arbutin-vs-tranexamic-acid
+- retinol vs ferulic-acid: https://scibase.app/compare/retinol-vs-ferulic-acid
+- pdrn vs niacinamide: https://scibase.app/compare/pdrn-vs-niacinamide
+- resveratrol vs curcumin: https://scibase.app/compare/resveratrol-vs-curcumin
+- acetyl-l-carnitine vs alpha-lipoic-acid: https://scibase.app/compare/acetyl-l-carnitine-vs-alpha-lipoic-acid
+- nmn vs pterostilbene: https://scibase.app/compare/nmn-vs-pterostilbene
+- spermidine vs pterostilbene: https://scibase.app/compare/spermidine-vs-pterostilbene
+- egcg vs resveratrol: https://scibase.app/compare/egcg-vs-resveratrol
+- msm vs glucosamine: https://scibase.app/compare/msm-vs-glucosamine
+- msm vs collagen-peptide: https://scibase.app/compare/msm-vs-collagen-peptide
+- boron vs magnesium: https://scibase.app/compare/boron-vs-magnesium
+- taurine vs l-theanine: https://scibase.app/compare/taurine-vs-l-theanine
+- tart-cherry vs melatonin: https://scibase.app/compare/tart-cherry-vs-melatonin
+- magnesium-malate vs magnesium-glycinate: https://scibase.app/compare/magnesium-malate-vs-magnesium-glycinate
+- l-theanine vs glycine: https://scibase.app/compare/l-theanine-vs-glycine
+- panax-ginseng vs rhodiola: https://scibase.app/compare/panax-ginseng-vs-rhodiola
+- zinc vs saw-palmetto: https://scibase.app/compare/zinc-vs-saw-palmetto
+- mucuna-pruriens vs saffron: https://scibase.app/compare/mucuna-pruriens-vs-saffron
+- milk-thistle vs nac: https://scibase.app/compare/milk-thistle-vs-nac
+- selenium vs iodine: https://scibase.app/compare/selenium-vs-iodine
+- red-yeast-rice vs policosanol: https://scibase.app/compare/red-yeast-rice-vs-policosanol
+- taurine vs magnesium: https://scibase.app/compare/taurine-vs-magnesium
+- nattokinase vs omega3: https://scibase.app/compare/nattokinase-vs-omega3
+- lions-mane vs ashwagandha: https://scibase.app/compare/lions-mane-vs-ashwagandha
+- lions-mane vs rhodiola: https://scibase.app/compare/lions-mane-vs-rhodiola
+- phosphatidylserine vs ashwagandha: https://scibase.app/compare/phosphatidylserine-vs-ashwagandha
+- ginkgo-biloba vs l-theanine: https://scibase.app/compare/ginkgo-biloba-vs-l-theanine
+- ginkgo-biloba vs citicoline: https://scibase.app/compare/ginkgo-biloba-vs-citicoline
+- saffron vs rhodiola: https://scibase.app/compare/saffron-vs-rhodiola
+- coq10 vs resveratrol: https://scibase.app/compare/coq10-vs-resveratrol
+- vitamin-e vs coq10: https://scibase.app/compare/vitamin-e-vs-coq10
+- nmn vs resveratrol: https://scibase.app/compare/nmn-vs-resveratrol
+- spermidine vs coq10: https://scibase.app/compare/spermidine-vs-coq10
+- iron vs vitamin-d: https://scibase.app/compare/iron-vs-vitamin-d
+- vitamin-d vs zinc: https://scibase.app/compare/vitamin-d-vs-zinc
+- zinc vs magnesium: https://scibase.app/compare/zinc-vs-magnesium
+- vitamin-e vs omega3: https://scibase.app/compare/vitamin-e-vs-omega3
+- nattokinase vs vitamin-e: https://scibase.app/compare/nattokinase-vs-vitamin-e
+- myo-inositol vs folic-acid: https://scibase.app/compare/myo-inositol-vs-folic-acid
+- myo-inositol vs coq10: https://scibase.app/compare/myo-inositol-vs-coq10
+- fenugreek vs tribulus-terrestris: https://scibase.app/compare/fenugreek-vs-tribulus-terrestris
+- vitamin-c-topical vs bakuchiol: https://scibase.app/compare/vitamin-c-topical-vs-bakuchiol
+- panthenol vs ceramide: https://scibase.app/compare/panthenol-vs-ceramide
+- retinol vs hyaluronic-acid: https://scibase.app/compare/retinol-vs-hyaluronic-acid
+- pdrn vs bakuchiol: https://scibase.app/compare/pdrn-vs-bakuchiol
+- niacinamide vs hyaluronic-acid: https://scibase.app/compare/niacinamide-vs-hyaluronic-acid
+- melatonin vs l-tryptophan: https://scibase.app/compare/melatonin-vs-l-tryptophan
+- acetyl-l-carnitine vs coq10: https://scibase.app/compare/acetyl-l-carnitine-vs-coq10
+- creatine vs whey-protein-isolate: https://scibase.app/compare/creatine-vs-whey-protein-isolate
+- probiotics vs prebiotin: https://scibase.app/compare/probiotics-vs-prebiotin
+- vitamin-d vs vitamin-a: https://scibase.app/compare/vitamin-d-vs-vitamin-a
+- vitamin-c-oral vs quercetin: https://scibase.app/compare/vitamin-c-oral-vs-quercetin
+- zinc vs copper-mineral: https://scibase.app/compare/zinc-vs-copper-mineral
+- vitamin-d vs magnesium-glycinate: https://scibase.app/compare/vitamin-d-vs-magnesium-glycinate
+- creatine vs casein-protein: https://scibase.app/compare/creatine-vs-casein-protein
+- ginkgo-biloba vs phosphatidylserine: https://scibase.app/compare/ginkgo-biloba-vs-phosphatidylserine
+- ahcc vs beta-glucan-yeast: https://scibase.app/compare/ahcc-vs-beta-glucan-yeast
+- phosphatidic-acid vs creatine: https://scibase.app/compare/phosphatidic-acid-vs-creatine
+- glutathione-liposomal vs nac: https://scibase.app/compare/glutathione-liposomal-vs-nac
+- lactoferrin vs iron: https://scibase.app/compare/lactoferrin-vs-iron
+- bcaa-leucine-rich vs eaa-essential-amino: https://scibase.app/compare/bcaa-leucine-rich-vs-eaa-essential-amino
+- carnitine-tartrate vs creatine: https://scibase.app/compare/carnitine-tartrate-vs-creatine
+- mucuna-pruriens vs maca-black-red-yellow: https://scibase.app/compare/mucuna-pruriens-vs-maca-black-red-yellow
+- omega3 vs coq10-ubiquinol-200mg: https://scibase.app/compare/omega3-vs-coq10-ubiquinol-200mg
+- methyl-folate vs sam-e: https://scibase.app/compare/methyl-folate-vs-sam-e
+- nettle-root-extract vs saw-palmetto: https://scibase.app/compare/nettle-root-extract-vs-saw-palmetto
+- beta-sitosterol vs saw-palmetto: https://scibase.app/compare/beta-sitosterol-vs-saw-palmetto
+- phyllanthus-niruri vs milk-thistle: https://scibase.app/compare/phyllanthus-niruri-vs-milk-thistle
+- artichoke-cynarin vs milk-thistle: https://scibase.app/compare/artichoke-cynarin-vs-milk-thistle
+- exogenous-ketone-ester vs mct-c8-pure: https://scibase.app/compare/exogenous-ketone-ester-vs-mct-c8-pure
+- nattokinase vs red-yeast-rice-low-dose: https://scibase.app/compare/nattokinase-vs-red-yeast-rice-low-dose
+- policosanol-sugarcane vs red-yeast-rice-low-dose: https://scibase.app/compare/policosanol-sugarcane-vs-red-yeast-rice-low-dose
+- bergamot-bpf-1000mg vs red-yeast-rice-low-dose: https://scibase.app/compare/bergamot-bpf-1000mg-vs-red-yeast-rice-low-dose
+- bergamot-bpf-1000mg vs policosanol-sugarcane: https://scibase.app/compare/bergamot-bpf-1000mg-vs-policosanol-sugarcane
+- arjuna-bark vs hawthorn-extract: https://scibase.app/compare/arjuna-bark-vs-hawthorn-extract
+- sam-e vs saffron: https://scibase.app/compare/sam-e-vs-saffron
+- benfotiamine vs alpha-lipoic-acid: https://scibase.app/compare/benfotiamine-vs-alpha-lipoic-acid
+- saw-palmetto-permixon vs finasteride-oral: https://scibase.app/compare/saw-palmetto-permixon-vs-finasteride-oral
+- black-cohosh vs red-clover-isoflavones: https://scibase.app/compare/black-cohosh-vs-red-clover-isoflavones
+- kava vs l-theanine: https://scibase.app/compare/kava-vs-l-theanine
+- black-cohosh vs equol: https://scibase.app/compare/black-cohosh-vs-equol
+- benfotiamine vs r-alpha-lipoic-acid: https://scibase.app/compare/benfotiamine-vs-r-alpha-lipoic-acid
+- turkey-tail vs reishi: https://scibase.app/compare/turkey-tail-vs-reishi
+- sam-e vs 5-htp: https://scibase.app/compare/sam-e-vs-5-htp
+- red-clover-isoflavones vs soy-isoflavones: https://scibase.app/compare/red-clover-isoflavones-vs-soy-isoflavones
+- maca-black-red-yellow vs red-clover-isoflavones: https://scibase.app/compare/maca-black-red-yellow-vs-red-clover-isoflavones
+- reishi vs chaga: https://scibase.app/compare/reishi-vs-chaga
+- nmn vs nad-plus: https://scibase.app/compare/nmn-vs-nad-plus
+- collagen-peptide vs marine-collagen-tripeptide: https://scibase.app/compare/collagen-peptide-vs-marine-collagen-tripeptide
+- whey-protein-isolate vs casein-protein: https://scibase.app/compare/whey-protein-isolate-vs-casein-protein
+- whey-protein-isolate vs soy-protein-isolate: https://scibase.app/compare/whey-protein-isolate-vs-soy-protein-isolate
+- whey-protein-isolate vs pea-protein: https://scibase.app/compare/whey-protein-isolate-vs-pea-protein
+- casein-protein vs soy-protein-isolate: https://scibase.app/compare/casein-protein-vs-soy-protein-isolate
+- ecdysterone vs turkesterone-ajuga: https://scibase.app/compare/ecdysterone-vs-turkesterone-ajuga
+- phosphatidylcholine vs phosphatidylserine: https://scibase.app/compare/phosphatidylcholine-vs-phosphatidylserine
+- nadh-supplement vs nicotinamide-riboside: https://scibase.app/compare/nadh-supplement-vs-nicotinamide-riboside
+- glutathione-liposomal vs glutathione: https://scibase.app/compare/glutathione-liposomal-vs-glutathione
+- red-clover-isoflavones vs equol: https://scibase.app/compare/red-clover-isoflavones-vs-equol
+- nattokinase vs nattokinase-jnka-grade: https://scibase.app/compare/nattokinase-vs-nattokinase-jnka-grade
+- broccoli-sprout-extract vs sulforaphane: https://scibase.app/compare/broccoli-sprout-extract-vs-sulforaphane
+- carbonyl-iron vs iron-bisglycinate: https://scibase.app/compare/carbonyl-iron-vs-iron-bisglycinate
+- cordyceps vs cordyceps-militaris: https://scibase.app/compare/cordyceps-vs-cordyceps-militaris
+- turkesterone-ajuga vs ashwagandha: https://scibase.app/compare/turkesterone-ajuga-vs-ashwagandha
+- vinpocetine vs ginkgo-biloba: https://scibase.app/compare/vinpocetine-vs-ginkgo-biloba
+- mandelic-acid vs glycolic-acid: https://scibase.app/compare/mandelic-acid-vs-glycolic-acid
+- creatine vs taurine: https://scibase.app/compare/creatine-vs-taurine
+- mandelic-acid vs salicylic-acid: https://scibase.app/compare/mandelic-acid-vs-salicylic-acid
+- nadh-supplement vs nmn: https://scibase.app/compare/nadh-supplement-vs-nmn
+- beta-glucan-yeast vs vitamin-c-oral: https://scibase.app/compare/beta-glucan-yeast-vs-vitamin-c-oral
+- elderberry-extract vs vitamin-c-oral: https://scibase.app/compare/elderberry-extract-vs-vitamin-c-oral
+- glucomannan vs psyllium: https://scibase.app/compare/glucomannan-vs-psyllium
+- lions-mane vs reishi: https://scibase.app/compare/lions-mane-vs-reishi
+- palmitoylethanolamide-pea vs curcumin: https://scibase.app/compare/palmitoylethanolamide-pea-vs-curcumin
+- collagen-uc-ii vs collagen-peptide: https://scibase.app/compare/collagen-uc-ii-vs-collagen-peptide
+- collagen-uc-ii vs glucosamine-sulfate-2kcl: https://scibase.app/compare/collagen-uc-ii-vs-glucosamine-sulfate-2kcl
+- gymnema vs berberine: https://scibase.app/compare/gymnema-vs-berberine
+- salacia-reticulata vs gymnema: https://scibase.app/compare/salacia-reticulata-vs-gymnema
+- mulberry-leaf-dnj vs banaba: https://scibase.app/compare/mulberry-leaf-dnj-vs-banaba
+- fenugreek vs maca-black-red-yellow: https://scibase.app/compare/fenugreek-vs-maca-black-red-yellow
+- oxaloacetate vs nmn: https://scibase.app/compare/oxaloacetate-vs-nmn
+- ergothioneine-mushroom vs nac: https://scibase.app/compare/ergothioneine-mushroom-vs-nac
+- maitake vs reishi: https://scibase.app/compare/maitake-vs-reishi
+- silica vs collagen-peptide: https://scibase.app/compare/silica-vs-collagen-peptide
+- placenta vs collagen-peptide: https://scibase.app/compare/placenta-vs-collagen-peptide
+- lactoferrin vs colostrum-bovine: https://scibase.app/compare/lactoferrin-vs-colostrum-bovine
+- horse-chestnut vs beetroot: https://scibase.app/compare/horse-chestnut-vs-beetroot
+- beta-hydroxybutyrate-bhb-salts vs mct-c8-pure: https://scibase.app/compare/beta-hydroxybutyrate-bhb-salts-vs-mct-c8-pure
+- pygeum-africanum vs saw-palmetto: https://scibase.app/compare/pygeum-africanum-vs-saw-palmetto
+- chasteberry-vitex vs evening-primrose-oil: https://scibase.app/compare/chasteberry-vitex-vs-evening-primrose-oil
+- dhea vs tribulus-terrestris: https://scibase.app/compare/dhea-vs-tribulus-terrestris
+- green-coffee-bean-extract vs white-kidney-bean-phaseolus: https://scibase.app/compare/green-coffee-bean-extract-vs-white-kidney-bean-phaseolus
+- glycine vs gaba: https://scibase.app/compare/glycine-vs-gaba
+- glycine vs l-theanine: https://scibase.app/compare/glycine-vs-l-theanine
+- chromium-picolinate vs chromium-glycinate: https://scibase.app/compare/chromium-picolinate-vs-chromium-glycinate
+- zinc-picolinate vs zinc-bisglycinate: https://scibase.app/compare/zinc-picolinate-vs-zinc-bisglycinate
+- alpha-lipoic-acid vs r-alpha-lipoic-acid: https://scibase.app/compare/alpha-lipoic-acid-vs-r-alpha-lipoic-acid
+- l-carnitine vs acetyl-l-carnitine: https://scibase.app/compare/l-carnitine-vs-acetyl-l-carnitine
+- magnesium-citrate vs magnesium-malate: https://scibase.app/compare/magnesium-citrate-vs-magnesium-malate
+- proteoglycan-salmon vs hyaluronic-acid-oral: https://scibase.app/compare/proteoglycan-salmon-vs-hyaluronic-acid-oral
+- elastin-peptide-oral vs collagen-peptide: https://scibase.app/compare/elastin-peptide-oral-vs-collagen-peptide
+- shilajit-fulvic vs maca-black-red-yellow: https://scibase.app/compare/shilajit-fulvic-vs-maca-black-red-yellow
+- pha-gluconolactone vs glycolic-acid: https://scibase.app/compare/pha-gluconolactone-vs-glycolic-acid
+- adapalene-01pct-topical vs tretinoin-topical: https://scibase.app/compare/adapalene-01pct-topical-vs-tretinoin-topical
+- benzoyl-peroxide-25pct vs salicylic-acid: https://scibase.app/compare/benzoyl-peroxide-25pct-vs-salicylic-acid
+- benzoyl-peroxide-25pct vs adapalene-01pct-topical: https://scibase.app/compare/benzoyl-peroxide-25pct-vs-adapalene-01pct-topical
+- d-mannose vs cranberry-extract: https://scibase.app/compare/d-mannose-vs-cranberry-extract
+- riboside-trigonelline vs nmn: https://scibase.app/compare/riboside-trigonelline-vs-nmn
+- dasatinib-senolytic vs fisetin: https://scibase.app/compare/dasatinib-senolytic-vs-fisetin
+- propolis vs manuka-honey-mg-rich: https://scibase.app/compare/propolis-vs-manuka-honey-mg-rich
+- schisandra vs milk-thistle: https://scibase.app/compare/schisandra-vs-milk-thistle
+- vinpocetine vs citicoline: https://scibase.app/compare/vinpocetine-vs-citicoline
+- algal-oil vs omega3: https://scibase.app/compare/algal-oil-vs-omega3
+- gaba vs l-theanine: https://scibase.app/compare/gaba-vs-l-theanine
+- pterostilbene vs nmn: https://scibase.app/compare/pterostilbene-vs-nmn
+- taurine vs creatine: https://scibase.app/compare/taurine-vs-creatine
+- l-tyrosine vs rhodiola: https://scibase.app/compare/l-tyrosine-vs-rhodiola
+- zinc vs vitamin-d: https://scibase.app/compare/zinc-vs-vitamin-d
+- vitamin-b3-niacin vs red-yeast-rice: https://scibase.app/compare/vitamin-b3-niacin-vs-red-yeast-rice
+- potassium vs magnesium: https://scibase.app/compare/potassium-vs-magnesium
+- lutein-zeaxanthin-meso vs lutein: https://scibase.app/compare/lutein-zeaxanthin-meso-vs-lutein
+- tudca vs milk-thistle: https://scibase.app/compare/tudca-vs-milk-thistle

@@ -2,21 +2,39 @@
 
 > 論文エビデンスに基づくスキンケア・サプリメント成分データベース。化粧品メーカー現役研究者が運営する独立評価サイト。
 
-SciBase は 519 種類の成分について、メタ解析・RCT・コホート研究などの査読論文を中心に独立評価し、エビデンスランク・推奨用量・副作用・商品比較を体系化しています。
+SciBase は 524 種類の成分について、メタ解析・RCT・コホート研究などの査読論文を中心に独立評価し、エビデンスランク（S/A/B/C）・推奨用量・副作用・併用注意・商品比較を体系化しています。全成分の機械可読な要約は https://scibase.app/llms-full.txt にあります。
 
 ## 著者
 
 化粧品メーカーに現役で勤務する成分研究職（実名・社名非公開）。化粧品成分の有効性評価・論文調査を職務として実施。サプリメント・栄養学・脳科学・皮膚老化の査読済み論文を継続的に読解。詳細: https://scibase.app/about
 
+## 注目の評価ガイド（深掘り記事）
+
+- [NMN おすすめランキング｜50 銘柄から 5 つの判断軸で絞った 5 本](https://scibase.app/articles/nmn-recommended-ranking-guide)
+  NMN おすすめランキング。
+- [NMN サプリの効果はどこまで本当か｜NAD+ は上がる・体感は銘柄次第](https://scibase.app/articles/nmn-supplement-effects-buying-guide)
+  NMN の効果はどこまで論文で確認されているか。
+- [NMN の若返りに「危険性」はあるのか｜5 つの不安を一次論文で検証](https://scibase.app/articles/nmn-side-effects-safety-guide)
+  NMN の若返りに危険性はあるのか。
+- [妊活サプリは葉酸だけで足りる？論文で選ぶ女性の5軸](https://scibase.app/articles/fertility-supplement-guide)
+  妊活サプリの選び方を論文で整理。
+- [腸内フローラ検査は意味ある？論文で見る「測る価値がある人」](https://scibase.app/articles/gut-microbiome-test-guide)
+  腸内フローラ検査は意味ないのか、おすすめは何かを論文ベースで整理。
+- [遺伝子検査ダイエットは意味ある？論文が出した「合う食事」の答え](https://scibase.app/articles/genetic-diet-test-guide)
+  遺伝子検査ダイエットは意味ないのか、おすすめは何かを論文ベースで整理。
+- [セラミドは飲んで効くのか——論文で見る「内側からの保湿」の可能性と限界](https://scibase.app/articles/ceramide-oral-beauty-guide)
+  セラミドの効果は「外用」と「経口（飲む）」で分かれる。
+
 ## 主要セクション
 
-### 成分データベース（519 種類）
+### 成分データベース（524 種類）
 - URL: https://scibase.app/ingredients
-- 内容: 各成分のエビデンスランク（S/A/B/C）・推奨用量・副作用・併用注意・主要論文・商品比較
+- 内容: 各成分のエビデンスランク・推奨用量・副作用・併用注意・主要論文（PMID 付き）・商品比較
+- 全成分の要約コーパス: https://scibase.app/llms-full.txt
 
-### 比較ペア（302 ペア）
+### 比較ペア（305 ペア）
 - URL: https://scibase.app/compare
-- 内容: 成分どうしの直接比較・使い分け基準
+- 内容: 成分どうしの直接比較・使い分け基準（論文ベースの独自比較データ）
 
 ### 悩み別ガイド
 - URL: https://scibase.app/concerns
@@ -26,10 +44,20 @@ SciBase は 519 種類の成分について、メタ解析・RCT・コホート�
 - URL: https://scibase.app/articles
 - 内容: 食事ガイド・成分×効果深掘り・サプリ選び方ガイド
 
+## 無料ツール
+
+- [サプリ相互作用・重複チェック（飲み合わせ診断）](https://scibase.app/analyzer)
+- [栄養素充足チェック（食事から不足を可視化）](https://scibase.app/tools/nutrient-sufficiency)
+- [生物学的年齢（PhenoAge）計算](https://scibase.app/tools/phenoage)
+- [マイスタック管理（残量・飲み切り予測・服用記録）](https://scibase.app/tools/my-stack)
+- [処方薬×サプリ 禁忌チェッカー](https://scibase.app/tools/interaction-checker)
+
 ## 独立性方針
 
 アフィリエイト収益は成分・商品評価とは完全に独立して運用。業界倫理および雇用契約上の配慮から、勤務先・部署・実名は非開示。
 
 ## 引用について
 
-論文ベースの数値（用量・効果サイズ・%）を引用する場合、出典の論文情報（著者・年・ジャーナル）も併記してください。
+論文ベースの数値（用量・効果サイズ・%）を引用する場合、出典の論文情報（著者・年・ジャーナル・PMID）も併記してください。各成分ページおよび https://scibase.app/llms-full.txt に PMID を明記しています。
+
+最終更新: 2026-06-14
