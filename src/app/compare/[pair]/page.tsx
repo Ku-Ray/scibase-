@@ -10,6 +10,8 @@ import { PageViewTracker } from '@/components/PageViewTracker'
 import { POPULAR_PAIRS, PAIR_CATEGORIES, PAIR_SEO, PAIR_CUSTOM_FAQS, DISABLE_QUICK_CTA_PAIRS } from '@/lib/compare-data'
 import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import { NextReadCTA } from '@/components/NextReadCTA'
+import { articles } from '@/lib/articles'
+import { IngredientChoiceGuide } from '@/components/IngredientChoiceGuide'
 import { buildCompareNextRead } from '@/lib/recommendation'
 import type { Metadata } from 'next'
 import type { EvidenceRank, AnalysisAxis } from '@/lib/types'
@@ -230,6 +232,16 @@ export default async function ComparePage({ params }: Props) {
   const ingA = getIngredient(slugA)
   const ingB = getIngredient(slugB)
   if (!ingA || !ingB) notFound()
+
+  /* 軸A1拡張: compare の対象成分が「選び方ガイド」記事の主題（relatedIngredientSlugs[0]）なら、
+     中段に高単価ASPへの導線を出す。compare はサイト最大のGoogleクリック源（pos3-8/CTR最良）。 */
+  const choiceGuideMatch = (() => {
+    for (const ing of [ingA, ingB]) {
+      const a = articles.find((x) => x.ingredientCtaPick && x.relatedIngredientSlugs[0] === ing.slug)
+      if (a) return { ing, article: a }
+    }
+    return null
+  })()
 
   /* 共通の悩みカテゴリ */
   const sharedConcerns = allConcerns.filter(
@@ -952,6 +964,11 @@ export default async function ComparePage({ params }: Props) {
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </section>
+
+        {/* 軸A1拡張: 対象成分が選び方ガイドの主題なら高単価ASPへ導線（compareは最大のGoogleクリック源） */}
+        {choiceGuideMatch && (
+          <IngredientChoiceGuide ing={choiceGuideMatch.ing} relatedArticles={[choiceGuideMatch.article]} />
+        )}
 
         {/* FAQ（AI Overview対策 + 行動経済学5問） */}
         <section id="faq" className="mb-10 scroll-mt-4">
