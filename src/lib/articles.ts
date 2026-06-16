@@ -3703,6 +3703,7 @@ GMP は原料の受け入れから出荷までの品質管理基準。重金属�
   // ── 3-B. NMN おすすめランキング記事 ─────────────────────────────
   {
     slug: 'nmn-recommended-ranking-guide',
+    ingredientCtaPick: 'GAAH（国産GMP・純度99%以上）',
     title: 'NMN おすすめランキング｜50 銘柄から 5 つの判断軸で絞った 5 本',
     seoTitle: 'NMN おすすめランキング｜50 銘柄を 5 軸で絞った 5 本｜SciBase',
     description:

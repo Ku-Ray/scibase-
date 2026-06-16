@@ -15,6 +15,7 @@ import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { IngredientTestKitCTACard } from '@/components/product/IngredientTestKitCTACard'
+import { IngredientChoiceGuide } from '@/components/IngredientChoiceGuide'
 import { ComparisonTable } from '@/components/product/ComparisonTable'
 import { scoreProduct, computeAxisLeaders } from '@/lib/productScore'
 import type { TocSection } from '@/components/TableOfContents'
@@ -1095,6 +1096,9 @@ export default async function IngredientPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* 中段CTA — 流入のある成分ページから「選び方ガイド」記事＋高単価ASPへ動線（軸A1） */}
+        <IngredientChoiceGuide ing={ing} relatedArticles={relatedArticles} />
 
         {/* FAQ — アコーディオン（最初の1問をデフォルト展開・損失回避フレーミング） */}
         <section id="faq" className="mb-10 scroll-mt-20">

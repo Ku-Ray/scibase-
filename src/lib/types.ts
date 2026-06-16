@@ -473,6 +473,9 @@ export interface Article {
   faqs: ArticleFAQ[]
   relatedIngredientSlugs: string[]
   relatedArticleSlugs?: string[]
+  /** 成分ページ中段の「選び方」CTA（軸A1）で誘導する代表ピック表記（例: 'GAAH（国産GMP・高純度NMN）'）。
+   *  設定された記事のみ、その記事を relatedIngredientSlugs に持つ成分ページの中段に導線が出る。 */
+  ingredientCtaPick?: string
   /** 関連する悩みカテゴリ（concern slug）。悩みページの「関連記事」表示で使用 */
   concerns?: string[]
   /** 著者署名（E-E-A-T／Article JSON-LD author 用・省略時はデフォルト編集者を採用） */
