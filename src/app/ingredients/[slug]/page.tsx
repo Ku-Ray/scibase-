@@ -16,6 +16,7 @@ import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { IngredientTestKitCTACard } from '@/components/product/IngredientTestKitCTACard'
 import { IngredientChoiceGuide } from '@/components/IngredientChoiceGuide'
+import { IngredientQuickBuy } from '@/components/IngredientQuickBuy'
 import { ComparisonTable } from '@/components/product/ComparisonTable'
 import { scoreProduct, computeAxisLeaders } from '@/lib/productScore'
 import type { TocSection } from '@/components/TableOfContents'
@@ -1097,8 +1098,12 @@ export default async function IngredientPage({ params }: Props) {
           </section>
         )}
 
-        {/* 中段CTA — 流入のある成分ページから「選び方ガイド」記事＋高単価ASPへ動線（軸A1） */}
-        <IngredientChoiceGuide ing={ing} relatedArticles={relatedArticles} />
+        {/* 中段CTA（軸A1/A3）— ガイドがあれば選び方記事＋高単価ASPへ、無ければ評価1位製品へ。中段で収益動線を確保 */}
+        {relatedArticles.some((a) => a.ingredientCtaPick) ? (
+          <IngredientChoiceGuide ing={ing} relatedArticles={relatedArticles} />
+        ) : heroProduct ? (
+          <IngredientQuickBuy ing={ing} product={heroProduct} />
+        ) : null}
 
         {/* FAQ — アコーディオン（最初の1問をデフォルト展開・損失回避フレーミング） */}
         <section id="faq" className="mb-10 scroll-mt-20">
