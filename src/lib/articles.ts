@@ -22525,6 +22525,7 @@ Silventoinen 2003 の遺伝80%+環境20%は、『サプリでは身長は伸び�
 
   {
     slug: 'fertility-supplement-guide',
+    ingredientCtaPick: 'CiQoni（葉酸＋鉄・1日¥166〜）',
     title: '妊活サプリは葉酸だけで足りる？論文で選ぶ女性の5軸',
     seoTitle: '妊活サプリのおすすめと選び方｜葉酸だけで足りる？論文で選ぶ女性の5軸と夫婦ケア｜SciBase',
     description:
@@ -24235,6 +24236,7 @@ A の土台にアッカーマンシア100億個/日を追加する。
   },
   {
     slug: 'gut-microbiome-test-guide',
+    ingredientCtaPick: 'chatFLORA（腸内フローラ検査・まず測って選ぶ）',
     title: '腸内フローラ検査は意味ある？論文で見る「測る価値がある人」',
     seoTitle: '腸内フローラ検査は意味ない？論文で見る境界線｜SciBase',
     description:
@@ -32249,6 +32251,7 @@ KSM-66 600mg/日 × 8〜12 週続けて変化が薄ければ、Sensoril 125〜25
 
   {
     slug: 'ceramide-oral-beauty-guide',
+    ingredientCtaPick: 'ディフェンセラ（トクホ・飲むセラミド）',
     title: 'セラミドは飲んで効くのか——論文で見る「内側からの保湿」の可能性と限界',
     seoTitle: 'セラミド効果は飲んでも出る？経口vs外用を論文で比較｜SciBase',
     description:
