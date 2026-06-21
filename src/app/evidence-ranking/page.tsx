@@ -322,6 +322,7 @@ export default function EvidenceRankingPage() {
 
         {/* 関連導線 */}
         <nav className="border-t border-border pt-8 flex flex-wrap gap-4 text-[13px]">
+          <Link href="/cost-performance" className="text-accent hover:underline">コスパランキング →</Link>
           <Link href="/ranking" className="text-accent hover:underline">悩み別ランキング →</Link>
           <Link href="/ingredients" className="text-accent hover:underline">成分一覧 →</Link>
           <Link href="/compare" className="text-accent hover:underline">成分を比較する →</Link>
