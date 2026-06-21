@@ -149,6 +149,10 @@ ${moneyLines.join('\n')}
 - URL: ${BASE}/articles
 - 内容: 食事ガイド・成分×効果深掘り・サプリ選び方ガイド
 
+### 成分エビデンスランキング（独自データ）
+- URL: ${BASE}/evidence-ranking
+- 内容: 全 ${ingredients.length} 成分を論文エビデンス指数（PEI・0〜10）で横断ランキング。効果の強さではなく査読論文での裏付け（量と質）の順。RCT・メタ解析の有無を一覧化した独自データ資産
+
 ## 無料ツール
 
 ${toolLines.join('\n')}

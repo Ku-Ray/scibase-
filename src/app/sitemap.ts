@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ingredients`,   lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE_URL}/concerns`,      lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE_URL}/ranking`,       lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/evidence-ranking`, lastModified: latestIngredient, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE_URL}/compare`,       lastModified: latestIngredient, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE_URL}/articles`,      lastModified: latestArticle,    changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE_URL}/analyzer`,      lastModified: '2026-04-20',     changeFrequency: 'monthly', priority: 0.8 },

@@ -6,8 +6,8 @@
 
 サイト: https://scibase.app
 案内図: https://scibase.app/llms.txt
-最終生成: 2026-06-14
-成分 513 種 / 比較ペア 305 / エビデンスランク内訳 S=15 / A=180 / B=244 / C=74
+最終生成: 2026-06-21
+成分 513 種 / 比較ペア 307 / エビデンスランク内訳 S=15 / A=180 / B=244 / C=74
 
 ## 注目の評価ガイド（深掘り記事）
 
@@ -2586,7 +2586,7 @@ URL: https://scibase.app/ingredients/low-dose-naltrexone
 オピオイド拮抗薬・低用量オフラベル・自己免疫補助候補・FDA 未承認用途・重要な注意
 代表論文: RCT · American Journal of Gastroenterology 2007 · n=17 · 12週 — Smith JP et al. 活動期クローン病 n=17 RCT で LDN 4.5mg/日 12週で寛解率・症状改善示唆・予備的
 
-## 比較ペア（305）
+## 比較ペア（307）
 
 - retinol vs bakuchiol: https://scibase.app/compare/retinol-vs-bakuchiol
 - retinol vs retinal: https://scibase.app/compare/retinol-vs-retinal
@@ -2893,3 +2893,5 @@ URL: https://scibase.app/ingredients/low-dose-naltrexone
 - potassium vs magnesium: https://scibase.app/compare/potassium-vs-magnesium
 - lutein-zeaxanthin-meso vs lutein: https://scibase.app/compare/lutein-zeaxanthin-meso-vs-lutein
 - tudca vs milk-thistle: https://scibase.app/compare/tudca-vs-milk-thistle
+- nmn vs pqq: https://scibase.app/compare/nmn-vs-pqq
+- probiotics vs butyrate: https://scibase.app/compare/probiotics-vs-butyrate

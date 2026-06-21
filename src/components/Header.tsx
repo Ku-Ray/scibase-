@@ -8,6 +8,7 @@ import { SearchModal } from './SearchModal'
 const CONTENT_LINKS = [
   { href: '/concerns',    label: '悩みから探す' },
   { href: '/ranking',     label: 'ランキング'   },
+  { href: '/evidence-ranking', label: 'エビデンス順' },
   { href: '/ingredients', label: '成分一覧'     },
   { href: '/articles',    label: 'コラム'       },
   { href: '/compare',     label: '比較'         },

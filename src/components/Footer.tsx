@@ -50,6 +50,7 @@ export function Footer() {
             <Link href="/concerns"    className="hover:text-foreground transition-colors">悩みから探す</Link>
             <Link href="/ingredients" className="hover:text-foreground transition-colors">成分一覧</Link>
             <Link href="/ranking"     className="hover:text-foreground transition-colors">ランキング</Link>
+            <Link href="/evidence-ranking" className="hover:text-foreground transition-colors">エビデンスランキング</Link>
             <Link href="/compare"     className="hover:text-foreground transition-colors">成分比較</Link>
             <Link href="/articles"    className="hover:text-foreground transition-colors">コラム</Link>
             <Link href="/analyzer"    className="hover:text-foreground transition-colors">サプリ診断</Link>

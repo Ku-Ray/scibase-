@@ -595,6 +595,7 @@ export default function EvidenceScoringPage() {
 
         {/* 関連リンク */}
         <div className="mt-10 pt-8 border-t border-border flex flex-wrap gap-4 text-[13px]">
+          <Link href="/evidence-ranking" className="text-accent hover:underline">成分エビデンスランキング（PEI順）→</Link>
           <Link href="/about" className="text-accent hover:underline">SciBase について →</Link>
           <Link href="/ingredients" className="text-accent hover:underline">成分一覧 →</Link>
           <Link href="/concerns" className="text-accent hover:underline">悩みから探す →</Link>
