@@ -1,12 +1,15 @@
 import Link from 'next/link'
 import type { Ingredient } from '@/lib/types'
 import { EvidenceBadge, EvidenceBar } from './EvidenceBadge'
+import { EvidenceBreakdown } from './EvidenceBreakdown'
 import { concerns as allConcerns } from '@/lib/data'
 
 interface Props {
   ingredient:   Ingredient
   rank?:        number
   showConcerns?: boolean
+  /** PEI・RCT数・メタ解析数の内訳を表示（既定 false。悩み別逆引き面で opt-in） */
+  showEvidence?: boolean
 }
 
 const rankBorderColor: Record<string, string> = {
@@ -39,7 +42,7 @@ const usageLabel: Record<string, string> = {
   topical: '外用', oral: '経口', both: '外用・経口',
 }
 
-export function IngredientCard({ ingredient: ing, rank, showConcerns = true }: Props) {
+export function IngredientCard({ ingredient: ing, rank, showConcerns = true, showEvidence = false }: Props) {
   const relatedConcerns = showConcerns
     ? allConcerns.filter(c => ing.concerns.includes(c.slug)).slice(0, 2)
     : []
@@ -96,6 +99,7 @@ export function IngredientCard({ ingredient: ing, rank, showConcerns = true }: P
             </span>
           </div>
           <EvidenceBar rank={ing.evidenceRank} />
+          {showEvidence && <EvidenceBreakdown ingredient={ing} className="mt-2" />}
         </div>
 
         {/* Footer tags */}

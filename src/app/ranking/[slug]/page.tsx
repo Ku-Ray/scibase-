@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ChevronRight, Trophy, ArrowLeft, FlaskConical, ExternalLink } from 'lucide-react'
 import { getConcern, getIngredientsByConcern, concerns } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
+import { EvidenceBreakdown } from '@/components/EvidenceBreakdown'
 import { IngredientCard } from '@/components/IngredientCard'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import type { Metadata } from 'next'
@@ -243,8 +244,9 @@ export default async function RankingPage({ params }: Props) {
                         </div>
                       </div>
 
+                      <EvidenceBreakdown ingredient={ing} className="mb-2" />
+
                       <div className="flex items-center gap-3 text-[12px] text-muted-foreground">
-                        <span>論文 {ing.papers.length}件</span>
                         {ing.usageType && (
                           <span className="bg-white/60 border border-border/50
                             rounded px-2 py-0.5 text-[11px]">

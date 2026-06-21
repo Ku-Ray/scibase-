@@ -8,6 +8,7 @@ import { concernGuides } from '@/lib/concern-guide-data'
 import { SUPPLEMENT_GUIDE_SUFFIX } from '@/lib/concern-guide-utils'
 import { IngredientCard } from '@/components/IngredientCard'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
+import { EvidenceBreakdown } from '@/components/EvidenceBreakdown'
 import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { InteractionCheckerCta } from '@/components/InteractionCheckerCta'
 import type { Metadata } from 'next'
@@ -466,19 +467,18 @@ export default async function ConcernPage({ params }: Props) {
                     {' '}<span className="opacity-70">{top.heroStat.label}</span>
                   </p>
                 )}
-                {top.dosageMin && (
-                  <div className="mt-4 pt-4 border-t border-black/10 flex flex-wrap gap-4
-                    text-[12px] text-muted-foreground">
-                    <span>
+                <div className="mt-4 pt-4 border-t border-black/10 space-y-2">
+                  <EvidenceBreakdown ingredient={top} />
+                  {top.dosageMin && (
+                    <p className="text-[12px] text-muted-foreground">
                       有効量:&nbsp;
                       <strong className="text-foreground">
                         {top.dosageMin}{top.dosageMax && top.dosageMax !== top.dosageMin
                           ? `〜${top.dosageMax}` : ''}&nbsp;{top.dosageUnit}
                       </strong>
-                    </span>
-                    <span>論文: <strong className="text-foreground">{top.papers.length}件</strong></span>
-                  </div>
-                )}
+                    </p>
+                  )}
+                </div>
               </Link>
 
               {/* Dual CTA bar */}
@@ -536,6 +536,7 @@ export default async function ConcernPage({ params }: Props) {
                           <p className="text-[11px] text-muted-foreground truncate">
                             {ing.tagline}
                           </p>
+                          <EvidenceBreakdown ingredient={ing} className="mt-1.5" />
                         </div>
                         <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                       </Link>
@@ -654,6 +655,7 @@ export default async function ConcernPage({ params }: Props) {
                         key={ing.slug}
                         ingredient={ing}
                         rank={all.indexOf(ing) + 1}
+                        showEvidence
                       />
                     ))}
                   </div>
