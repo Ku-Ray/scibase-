@@ -5,14 +5,19 @@ import { useState, useEffect } from 'react'
 import { ChevronDown, CircleUser, Search } from 'lucide-react'
 import { SearchModal } from './SearchModal'
 
+const PRIMARY_LINK = { href: '/concerns', label: '悩みから探す' }
+
+/* ランキング系は1つのドロップダウンに集約（トップナビのミニマル維持） */
+const RANKING_LINKS = [
+  { href: '/ranking',          label: '🏆 悩み別ランキング', desc: '悩みに効く成分をエビデンス順に' },
+  { href: '/evidence-ranking', label: '📊 エビデンス順',     desc: '全成分を論文の裏付けの強さで' },
+  { href: '/cost-performance', label: '💰 コスパ',           desc: '有効量あたりの月額が安い順' },
+]
+
 const CONTENT_LINKS = [
-  { href: '/concerns',    label: '悩みから探す' },
-  { href: '/ranking',     label: 'ランキング'   },
-  { href: '/evidence-ranking', label: 'エビデンス順' },
-  { href: '/cost-performance', label: 'コスパ' },
-  { href: '/ingredients', label: '成分一覧'     },
-  { href: '/articles',    label: 'コラム'       },
-  { href: '/compare',     label: '比較'         },
+  { href: '/ingredients', label: '成分一覧' },
+  { href: '/articles',    label: 'コラム'   },
+  { href: '/compare',     label: '比較'     },
 ]
 
 const TOOL_GROUPS = [
@@ -99,6 +104,43 @@ export function Header() {
 
           {/* Nav (desktop) */}
           <nav className="hidden sm:flex items-center gap-0.5 ml-auto">
+            {/* 悩みから探す（一次導線） */}
+            <Link
+              href={PRIMARY_LINK.href}
+              className="text-[13px] text-muted-foreground px-2.5 py-1.5 rounded-md whitespace-nowrap
+                hover:bg-secondary hover:text-foreground transition-colors"
+            >
+              {PRIMARY_LINK.label}
+            </Link>
+
+            {/* Ranking dropdown（悩み別 / エビデンス順 / コスパ を集約） */}
+            <div className="relative group">
+              <button
+                type="button"
+                className="flex items-center gap-0.5 text-[13px] text-muted-foreground px-2.5 py-1.5 rounded-md whitespace-nowrap
+                  hover:bg-secondary hover:text-foreground transition-colors
+                  group-focus-within:bg-secondary group-focus-within:text-foreground"
+              >
+                📊 ランキング
+                <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="invisible absolute right-0 top-full z-50 pt-2 opacity-0 transition-all duration-150
+                group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="w-64 rounded-xl border border-border bg-card p-1.5 shadow-lg">
+                  {RANKING_LINKS.map(({ href, label, desc }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="block rounded-lg px-3 py-2 transition-colors hover:bg-secondary"
+                    >
+                      <div className="text-[13px] font-medium text-foreground">{label}</div>
+                      <div className="text-[11px] text-muted-foreground">{desc}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {CONTENT_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
