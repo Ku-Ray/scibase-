@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Trophy, ArrowRight } from 'lucide-react'
-import { concerns, getIngredientsByConcern } from '@/lib/data'
+import { concerns, getIngredientsByConcern, ingredients } from '@/lib/data'
 import { EvidenceBadge } from '@/components/EvidenceBadge'
 import type { Metadata } from 'next'
 
@@ -77,6 +77,42 @@ export default function RankingIndexPage() {
           口コミや人気ではなく、論文エビデンスの強さで成分を順位付け。
           悩みを選ぶと、その悩みに効果が確認されている成分ランキングが確認できます。
         </p>
+      </div>
+
+      {/* 横断ランキング（独自データ資産）への導線 */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-12">
+        <Link
+          href="/evidence-ranking"
+          className="group border border-border rounded-2xl p-5 bg-card
+            hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-[18px] leading-none">📊</span>
+            <h2 className="font-semibold text-[15px] text-foreground group-hover:text-accent transition-colors">
+              エビデンスランキング
+            </h2>
+            <ArrowRight className="w-4 h-4 opacity-40 ml-auto flex-shrink-0 group-hover:opacity-80 transition-opacity" />
+          </div>
+          <p className="text-[12px] text-muted-foreground leading-relaxed">
+            悩みに関係なく、全{ingredients.length}成分を「論文の裏付けの強さ（PEI）」で横断ランキング。
+          </p>
+        </Link>
+        <Link
+          href="/cost-performance"
+          className="group border border-border rounded-2xl p-5 bg-card
+            hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-[18px] leading-none">💰</span>
+            <h2 className="font-semibold text-[15px] text-foreground group-hover:text-accent transition-colors">
+              コスパランキング
+            </h2>
+            <ArrowRight className="w-4 h-4 opacity-40 ml-auto flex-shrink-0 group-hover:opacity-80 transition-opacity" />
+          </div>
+          <p className="text-[12px] text-muted-foreground leading-relaxed">
+            有効量で飲んだときの月額が安い順。エビデンスと「両取り」できる成分が一目で。
+          </p>
+        </Link>
       </div>
 
       {/* Category groups */}

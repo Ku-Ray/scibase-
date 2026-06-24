@@ -723,12 +723,28 @@ export default async function IngredientPage({ params }: Props) {
                     <span className="text-muted-foreground">両者は別軸として読みます。</span>
                   </p>
 
-                  <Link
-                    href="/about/evidence-scoring"
-                    className="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline"
-                  >
-                    → PEI（論文エビデンス指数）の計算方法を見る
-                  </Link>
+                  <div className="pt-1 space-y-1.5">
+                    <Link
+                      href="/about/evidence-scoring"
+                      className="block w-fit text-[12px] text-blue-700 hover:underline"
+                    >
+                      → PEI（論文エビデンス指数）の計算方法を見る
+                    </Link>
+                    <Link
+                      href="/evidence-ranking"
+                      className="block w-fit text-[12px] text-blue-700 hover:underline"
+                    >
+                      → エビデンスランキングで全成分と比べる
+                    </Link>
+                    {ing.usageType !== 'topical' && (
+                      <Link
+                        href="/cost-performance"
+                        className="block w-fit text-[12px] text-blue-700 hover:underline"
+                      >
+                        → コスパランキングで有効量あたりの価格を比べる
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
                 </div>

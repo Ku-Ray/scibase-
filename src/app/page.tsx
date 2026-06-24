@@ -557,6 +557,47 @@ export default function Home() {
               </Link>
             ))}
           </div>
+
+          {/* 横断ランキング（独自データ資産）への導線 */}
+          <div className="mt-8 pt-8 border-t border-border">
+            <p className="text-[13px] text-muted-foreground mb-4">
+              悩みをまたいで全成分を横断する独自ランキングもあります。
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <Link
+                href="/evidence-ranking"
+                className="group bg-background border border-border rounded-2xl p-5
+                  hover:border-accent/50 hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-[16px] leading-none">📊</span>
+                  <h3 className="font-semibold text-[15px] text-foreground group-hover:text-accent transition-colors">
+                    エビデンスランキング
+                  </h3>
+                  <ArrowRight className="w-4 h-4 opacity-40 ml-auto flex-shrink-0 group-hover:opacity-80 transition-opacity" />
+                </div>
+                <p className="text-[12px] text-muted-foreground leading-relaxed">
+                  全{ingredients.length}成分を論文の裏付けの強さ（PEI）で横断。「Sランクは何成分か」が分かる。
+                </p>
+              </Link>
+              <Link
+                href="/cost-performance"
+                className="group bg-background border border-border rounded-2xl p-5
+                  hover:border-accent/50 hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-[16px] leading-none">💰</span>
+                  <h3 className="font-semibold text-[15px] text-foreground group-hover:text-accent transition-colors">
+                    コスパランキング
+                  </h3>
+                  <ArrowRight className="w-4 h-4 opacity-40 ml-auto flex-shrink-0 group-hover:opacity-80 transition-opacity" />
+                </div>
+                <p className="text-[12px] text-muted-foreground leading-relaxed">
+                  有効量で飲んだときの月額が安い順。安さとエビデンスの両取り成分が分かる。
+                </p>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
