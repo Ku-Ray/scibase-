@@ -1,5 +1,10 @@
 import { ExternalLink, Check, Crown } from 'lucide-react'
 import type { AspOffer } from '@/lib/types'
+import { OutboundProductLink } from './OutboundProductLink'
+
+/* 現状の aspOffers は全て A8.net 案件。将来別ASP（moshimo/afb等）を足す場合はここを分岐。
+ * rel=sponsored を保つため、必ず OutboundProductLink の sponsored 対象 program を渡すこと。 */
+const ASP_PROGRAM = 'a8'
 
 /**
  * ASP サービス（検査キット等・data.ts 成分でない外部 ASP 商品）用のカード。
@@ -46,10 +51,11 @@ export function AspOfferCard({ offer }: { offer: AspOffer }) {
 
         {/* バナー画像（クリック可能・トラッキング維持のため <img>） */}
         {offer.imageUrl && (
-          <a
+          <OutboundProductLink
             href={offer.url}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
+            platform="asp"
+            aspProgram={ASP_PROGRAM}
+            aspId={offer.id}
             className="block mb-3.5 no-underline"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -61,7 +67,7 @@ export function AspOfferCard({ offer }: { offer: AspOffer }) {
               loading="lazy"
               className={`w-full h-auto mx-auto rounded-xl border border-border ${hi ? 'max-w-[320px]' : 'max-w-[260px]'}`}
             />
-          </a>
+          </OutboundProductLink>
         )}
 
         <h4 className={`font-bold text-foreground leading-snug ${hi ? 'text-[19px] sm:text-[20px]' : 'text-[16px] sm:text-[17px]'}`}>
@@ -91,10 +97,11 @@ export function AspOfferCard({ offer }: { offer: AspOffer }) {
           <p className="text-[12px] text-foreground/55 mt-3 tabular-nums">{offer.priceNote}</p>
         )}
 
-        <a
+        <OutboundProductLink
           href={offer.url}
-          target="_blank"
-          rel="sponsored noopener noreferrer"
+          platform="asp"
+          aspProgram={ASP_PROGRAM}
+          aspId={offer.id}
           className={`mt-4 flex w-full items-center justify-center gap-2 font-bold text-white bg-emerald-600
             hover:bg-emerald-700 rounded-xl shadow-sm transition-colors no-underline ${
               hi ? 'text-[15px] px-6 py-4' : 'text-[14px] px-5 py-3.5'
@@ -107,7 +114,7 @@ export function AspOfferCard({ offer }: { offer: AspOffer }) {
             )}
           </span>
           <ExternalLink className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-        </a>
+        </OutboundProductLink>
       </div>
     </div>
   )
