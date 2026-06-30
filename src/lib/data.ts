@@ -312,7 +312,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['ナイアシン', 'ニコチン酸アミド', 'B3', 'ビタミンB3', 'nicotinamide', 'ナイアシンアミド おすすめ', 'ナイアシンアミド 化粧水', 'ナイアシンアミド 美容液', 'ナイアシンアミド クリーム', 'ナイアシンアミド サプリ'],
     evidenceRank: 'A',
     usageType: 'topical',
-    seoTitle: 'ナイアシンアミド｜2-10%濃度別・外用/経口の論文｜SciBase',
+    seoTitle: 'ナイアシンアミド｜2-10%濃度別・外用/経口の論文',
     seoDescription: 'ナイアシンアミドはビタミンB3の一形態。2〜10%外用でメラニン抑制（35〜68%）・皮脂・しわ・バリアの4効能がRCTで確認されている。配合濃度は表示されないことが多い。濃度別効果、化粧水/美容液/クリーム形態別の選び方、経口（サプリ）の位置づけ、ビタミンC・レチノール併用、副作用を査読済み論文で解説。',
     tagline: 'シミ予防だけじゃない。皮脂・しわ・バリアの4効能がRCTで確認されている',
     description:
@@ -1462,7 +1462,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['コラーゲン', 'コラペプ', 'collagen', '加水分解コラーゲン', 'ジペプチド', 'プロリン-ヒドロキシプロリン', 'Pro-Hyp', '低分子コラーゲン', 'マリンコラーゲン', '海洋コラーゲン', 'フィッシュコラーゲン', '魚由来コラーゲン', '豚由来コラーゲン', 'ブタコラーゲン', 'ウシコラーゲン', '牛由来コラーゲン', 'タイプIコラーゲン', 'タイプIIコラーゲン', 'Type I Collagen', 'Type II Collagen'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'コラーゲンペプチド｜何ヶ月で効果？2.5-10gの論文｜SciBase',
+    seoTitle: 'コラーゲンペプチド｜何ヶ月で効果？2.5-10gの論文',
     seoDescription: 'コラーゲンペプチドはコラーゲンを酵素的に加水分解した分子量1,000-3,000Daの低分子ペプチド混合物。プロリン-ヒドロキシプロリン（Pro-Hyp）ジペプチドとして腸管から吸収され血中到達するヒト試験あり（Iwai 2005 J Agric Food Chem）。2.5〜10g/日で皮膚弾力28%改善（Proksch 2014 RCT n=69・8週）・水分量・コラーゲン密度の有意改善（Bolke 2019 J Cosmet Dermatol）がRCTで確認。何ヶ月で効果が出るか、魚由来vs豚由来vs牛由来の違い、低分子化の意味、ビタミンC併用の根拠、飲むタイミング、副作用・アレルギーを研究の観点で解説。',
     tagline: 'プロリン-ヒドロキシプロリンが血中到達・皮膚弾力28%改善のRCTで確認された経口美容成分',
     description:
@@ -1677,7 +1677,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Coenzyme Q10',
     aliases: ['Q10', 'CoQ10', 'コエンザイム', 'ユビキノン', 'ユビキノール', 'CoQ10 おすすめ', 'コエンザイムQ10 サプリ', 'CoQ10 効果が出るまで', 'コエンザイムq10 効果', 'コエンザイムq10 飲み方'],
     evidenceRank: 'A',
-    seoTitle: 'コエンザイムQ10｜効果はいつから？用量の論文｜SciBase',
+    seoTitle: 'コエンザイムQ10｜効果はいつから？用量の論文',
     seoDescription: 'コエンザイムQ10はミトコンドリア電子伝達系の補酵素。100〜300mg/日で心機能・運動疲労・加齢性エネルギー低下への関与がメタ解析で示されている。効果が出るまで4〜12週、還元型ユビキノール（吸収率3〜4倍）と酸化型ユビキノンの違い、スタチン系脂質異常症薬服用時の補充意義、ワルファリン併用注意、副作用、Kaneka QH原料の選び方を査読済み論文で解説。',
     tagline: 'ミトコンドリア機能・酸化ストレス低減への関与がRCTで確認されている',
     description:
@@ -2438,7 +2438,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Resveratrol',
     aliases: ['レス', 'リスベラトロール', 'ポリフェノール', '赤ワインポリフェノール', 'resveratrol'],
     evidenceRank: 'C',
-    seoTitle: 'レスベラトロール｜NMNとどっち？使い分けの論文｜SciBase',
+    seoTitle: 'レスベラトロール｜NMNとどっち？使い分けの論文',
     seoDescription: 'レスベラトロールはブドウ由来ポリフェノール。150〜500mg/日で炎症・血管機能への関与がRCTで示されているが「抗老化」効果の臨床エビデンスは限定的。サーチュイン仮説、有効量論争、副作用を査読済み論文で解説。',
     tagline: '動物実験では有望だが、ヒトでの抗老化効果はまだ確認されていない',
     description:
@@ -3324,7 +3324,7 @@ export const ingredients: Ingredient[] = [
         evidenceNote: '医薬部外品 有効成分配合製品域。皮膚科医相談下で使用するのが現実解。',
       },
     ],
-    seoTitle: 'セラミド｜外用と経口どっち？1-3%バリア改善の論文｜SciBase',
+    seoTitle: 'セラミド｜外用と経口どっち？1-3%バリア改善の論文',
     seoDescription: 'セラミドは角層の主要脂質。外用 1-3% で経皮水分蒸散量（TEWL）低下とバリア機能改善が RCT で示されている。Simpson 2014 では出生直後からのセラミド含有保湿剤使用で乳児アトピー性皮膚炎の発症リスク 50% 低下を確認（n=124・32 週）。乾燥・アトピー様肌への使い方、配合濃度、3 種混合（1/3/6-II）規格、ヒアルロン酸との違い、妊娠中授乳中・敏感肌対応を査読済み研究の観点で解説。｜SciBase',
     interactions: [],
     customFaqs: [
@@ -3697,7 +3697,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['アゼライン酸', 'アゼライン', 'azelaic', 'アゼライン酸 ニキビ', 'アゼライン酸 セラム', 'アゼライン酸 クリーム', 'アゼライン酸 シミ', 'アゼライン酸 酒さ', 'アゼライン酸 妊娠中', 'AzA'],
     evidenceRank: 'A',
     usageType: 'topical',
-    seoTitle: 'アゼライン酸とは｜ニキビ・酒さ・色素沈着の論文｜SciBase',
+    seoTitle: 'アゼライン酸とは｜ニキビ・酒さ・色素沈着の論文',
     seoDescription: 'アゼライン酸は穀物由来のジカルボン酸。15〜20%外用でニキビ・酒さ・色素沈着への効果が複数のRCTで示されている。推奨濃度・刺激リスク・トラネキサム酸との比較を査読済み論文で解説。',
     tagline: '色素沈着・ニキビ・酒さへの効果がRCTで確認されている多機能成分',
     description:
@@ -4178,7 +4178,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Zinc',
     aliases: ['Zn', 'ジンク', '亜鉛 おすすめ', '亜鉛 サプリ', '亜鉛 副作用', '亜鉛 飲み方', '亜鉛 形態', 'ピコリン酸亜鉛', 'グルコン酸亜鉛', 'グリシン酸亜鉛', '酸化亜鉛', 'OptiZinc', 'Zinc Picolinate', 'Zinc Glycinate'],
     evidenceRank: 'A',
-    seoTitle: '亜鉛サプリ｜10/30mg・3形態の差・髪と肌のRCT｜SciBase',
+    seoTitle: '亜鉛サプリ｜10/30mg・3形態の差・髪と肌のRCT',
     seoDescription: '亜鉛は必須ミネラル。8〜30mg/日で皮膚代謝・免疫機能・テストステロン維持・ニキビ改善への関与がメタ解析で確認されている。ピコリン酸・グルコン酸・グリシン酸・酸化型の吸収率の違い、副作用（高用量での銅欠乏・嘔気）、飲み方（食後30分・抗菌薬と2時間以上ずらす）、ニキビ・薄毛との関係、男性のテストステロン、市販ネイチャーメイドとiHerb（Thorne/NOW/Doctor\'s Best）の違いを査読済み論文で解説。',
     usageType: 'oral',
     tagline: 'ニキビ・皮膚の修復・免疫機能への関与がRCTで確認されている',
@@ -4716,7 +4716,7 @@ export const ingredients: Ingredient[] = [
         evidenceNote: 'RCT 使用量上限。降圧薬併用中は過度な血圧低下の理論的リスクで医師相談前提。',
       },
     ],
-    seoTitle: 'L-テアニン｜集中とリラックス両用？200mgの論文｜SciBase',
+    seoTitle: 'L-テアニン｜集中とリラックス両用？200mgの論文',
     seoDescription: '100-400mg/日（RCT中央値200mg）・ストレス目的は日中、睡眠目的は就寝30-60分前。Nutritional Neuroscience 2021 メタ解析(n=380)で注意・記憶・反応速度・ストレス応答が有意改善。副作用は安全性プロファイル極めて高く、まれに頭痛・消化器症状（C）。降圧薬・中枢刺激薬との併用は理論的相互作用で医師相談（A）。カフェイン併用比率(テアニン:カフェイン=2:1)、グリシン・GABAとの使い分けも研究の観点で解説。',
     interactions: [
       {
@@ -4797,7 +4797,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['グリ', 'glycine'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'グリシン｜就寝前3g/睡眠の質/副作用｜SciBase',
+    seoTitle: 'グリシン｜就寝前3g/睡眠の質/副作用',
     seoDescription: 'グリシンの副作用と効果を論文で整理。就寝30分前3g摂取で深部体温低下・入眠潜時短縮・徐波睡眠増加のRCTが確認されている。副作用は消化器症状（軽度・まれ）で安全性プロファイル良好。何g・何分前に摂るか、マグネシウムとの併用、コラーゲン産生への関与、長期摂取の注意点を査読済み論文で解説。',
     tagline: '睡眠の質・深睡眠の増加がRCTで確認されているアミノ酸',
     description:
@@ -5453,7 +5453,7 @@ export const ingredients: Ingredient[] = [
         a: 'メラトニンは睡眠誘導以外にも抗酸化・免疫調整・概日リズム同期など全身性のホルモン作用が報告されている多機能シグナル分子です。\n\n「睡眠だけのホルモンではない」という整理が現代の具体的な理解です。4点で整理します。\n\nA 睡眠誘導：MT1・MT2受容体（視交叉上核SCN）への結合で入眠潜時を平均7.06分短縮（Ferracioli-Oda 2013 PLOS ONE メタ解析 n=1,683）、睡眠効率・総睡眠時間も改善。これが最も確立されたエビデンス領域です。\n\nB 抗酸化作用：Reiter 2014 J Pineal Res ほかで、メラトニン自体および代謝物（AFMK・AMK）がROS（活性酸素種）スカベンジャーとして機能。ミトコンドリア内での抗酸化が特に注目されており、皮膚老化研究領域でも光老化抑制の文脈で議論されています。\n\nC 免疫調整：Carrillo-Vico 2013 Curr Opin Pharmacol で、メラトニンが免疫細胞（T細胞・NK細胞）にも受容体を持ち、サイトカイン産生調整・免疫恒常性維持に関与すると報告されています。ただし疾患治療への臨床応用は研究段階です。\n\nD 概日リズム同期：松果体からの夜間分泌が体内時計（SCN）の主要マーカーで、シフト勤務・長距離渡航による概日リズム破綻の修正に低用量メラトニンが活用されます。「メラトニン＝睡眠サプリ」というのは正確ではなく、全身性ホルモンとしての多機能性が現実的に確立しつつあるのが現状です。なお、これらの効果はサプリでの大量摂取で「強化される」とは限らず、生理的用量（0.5〜1mg）の役割が中心という整理が論文では支配的です。化粧品メーカー視点では、皮膚老化・酸化ストレス対策の文脈でメラトニンとその誘導体の研究が進んでいますが、サプリでの抗酸化目的の大量摂取を支持する強い臨床エビデンスは確立していません。'
       },
     ],
-    seoTitle: 'メラトニン｜サプリ/3mg/時差ぼけの論文｜SciBase',
+    seoTitle: 'メラトニン｜サプリ/3mg/時差ぼけの論文',
     seoDescription: 'メラトニンの効果・副作用・時差ぼけ・子供への使用を論文で整理。0.5/1/3/5mgの用量別RCT、入眠時間平均7分短縮（n=1683 メタ解析）、時差ぼけCochraneレビュー（東向き0.5-3mg/西向き3-5mg）、米国FDA小児中毒5倍増の動向、SSRI/抗凝固薬併用注意、日本では医薬品扱いで海外サプリ個人輸入が前提。低用量から開始する科学的根拠を化粧品メーカー視点で解説。',
     interactions: [
       {
@@ -6455,7 +6455,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'lactic-acid',
-    seoTitle: '乳酸｜疲労物質神話とAHA 5-10%の論文｜SciBase',
+    seoTitle: '乳酸｜疲労物質神話とAHA 5-10%の論文',
     nameJa: '乳酸',
     nameEn: 'Lactic Acid',
     aliases: ['乳酸', 'AHA', 'lactic acid'],
@@ -6968,7 +6968,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'curcumin',
-    seoTitle: 'クルクミン｜ウコンの効果？吸収率の論文｜SciBase',
+    seoTitle: 'クルクミン｜ウコンの効果？吸収率の論文',
     nameJa: 'クルクミン',
     nameEn: 'Curcumin',
     aliases: ['ウコン', 'クルクミン', 'ターメリック', 'curcumin'],
@@ -7235,7 +7235,7 @@ export const ingredients: Ingredient[] = [
     evidenceRank: 'B',
     usageType: 'oral',
     emerging: true,
-    seoTitle: 'タウリン｜疲れに効く？1g/日と動物研究の論文｜SciBase',
+    seoTitle: 'タウリン｜疲れに効く？1g/日と動物研究の論文',
     seoDescription: 'タウリンの副作用と効果を論文で整理。2023年Science誌でマウス・サル寿命延長の動物実験あり。1日3-6gまでの摂取で重篤副作用報告は少ないが、消化器症状・大量摂取での血圧低下に注意。心臓病既往・降圧薬服用中は医師相談必須。エナジードリンクとの違い、有効量、ヒト試験の現状を査読済み論文で解説。',
     tagline: '2023年Science誌で長寿・老化抑制への関与が示された注目成分',
     description:
@@ -8349,7 +8349,7 @@ export const ingredients: Ingredient[] = [
   // ── Batch 4: 新興・長寿系 ────────────────────────────────────────────
   {
     slug: 'quercetin',
-    seoTitle: 'ケルセチン｜花粉に効く？500mgと吸収率の論文｜SciBase',
+    seoTitle: 'ケルセチン｜花粉に効く？500mgと吸収率の論文',
     nameJa: 'ケルセチン',
     nameEn: 'Quercetin',
     aliases: ['クェルセチン', 'ポリフェノール', 'quercetin', 'Quercetin', 'ケルセチン サプリ', 'ケルセチン 効果', 'ケルセチン 副作用', 'フラボノイド', 'フラボノール', 'Quercefit', 'senolytic', '老化細胞除去'],
@@ -9439,7 +9439,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['Fe', '鉄分', 'アイアン', 'ヘム鉄', '非ヘム鉄', 'グリシン酸鉄', 'フェロケル', 'Ferrochel', '硫酸鉄', 'フマル酸鉄'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: '鉄サプリ｜女性疲労とヘム/非ヘム/妊婦の論文｜SciBase',
+    seoTitle: '鉄サプリ｜女性疲労とヘム/非ヘム/妊婦の論文',
     seoDescription: '鉄サプリの選び方を研究の観点で解説。日本女性の20〜30%が潜在的鉄欠乏（フェリチン<30ng/mL の「隠れ貧血」）。非貧血でも疲労改善のRCT（CMAJ n=198）。ヘム鉄と非ヘム鉄の吸収率差（15-35% vs 2-20%）、ビスグリシン酸鉄キレート（Ferrochel）の優位性、妊婦・子供・男性の用量目安、フェリチン基準（12-30ng/mLが「隠れ貧血」）、飲むタイミング、効果が出るまでの期間、ビタミンC併用で2-3倍吸収、甲状腺薬・抗菌薬との相互作用まで査読済みエビデンスでカバー。',
     tagline: '日本女性の20〜30%が潜在的鉄欠乏。非貧血でも疲労改善のRCTあり',
     description:
@@ -10089,7 +10089,7 @@ export const ingredients: Ingredient[] = [
     ],
     axisScores: { antiAging: 6, skin: 2, cognitive: 2, stress: 0, sleep: 0, immunity: 3, metabolism: 1 },
     aliases: ['ルテイン', 'lutein', 'FloraGLO', 'マリーゴールド抽出物', 'カロテノイド'],
-    seoTitle: 'ルテイン｜サプリで眼に効く？10mgと黄斑保護の論文｜SciBase',
+    seoTitle: 'ルテイン｜サプリで眼に効く？10mgと黄斑保護の論文',
     seoDescription: 'ルテイン10-20mg/日（脂質と一緒に食後摂取）・AREDS2試験 JAMA 2013（n=4,203・5年）で加齢黄斑変性の進行リスク有意低下。副作用は高用量（40mg/日超）での皮膚黄色化（C・まれ）・消化器症状（C・まれ）が中心。ゼアキサンチン10:2比併用が標準、ブルーライト・スマホ眼疲労・コントラスト感度・MPOD（黄斑色素光学密度）向上、抗凝固薬・脂質吸収阻害薬との併用注意も研究の観点で解説。',
     interactions: [],
     customFaqs: [
@@ -10123,7 +10123,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['ビタミンB9', '5-MTHF', 'メチル葉酸', 'メチルフォレート', 'プテロイルモノグルタミン酸', 'Quatrefolic', 'Metafolin', 'L-メチルフォレート'],
     evidenceRank: 'S',
     usageType: 'oral',
-    seoTitle: '葉酸｜妊活0.4mg/食べ物/鉄併用の論文｜SciBase',
+    seoTitle: '葉酸｜妊活0.4mg/食べ物/鉄併用の論文',
     seoDescription: '葉酸サプリの選び方を研究の観点で解説。妊活は3-6ヶ月前から400μg/日（神経管閉鎖障害予防の臨界期は妊娠4週まで）。適切な量は通常成人400μg/日・妊婦400-800μg/日・上限1,000μg/日。MTHFR遺伝子多型C677T（日本人10-15%保有）と5-MTHF（Quatrefolic/Metafolin）の活性型推奨根拠、メチル葉酸とモノグルタミン酸型の違い、市販ドラッグストアとiHerb（NaturesPlus/Doctor\'s Best）の選び分け、鉄との併用タイミング、不妊・男性妊活への意味、葉酸以外の妊活サプリ、抗てんかん薬・メトトレキサート相互作用までCochrane・メタ解析n=2,398でカバー。',
     tagline: 'メタ解析n=2,398で認知機能スコア・ホモシステイン値の改善を確認',
     description:
@@ -10406,7 +10406,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'calcium',
-    seoTitle: 'カルシウム｜サプリで足す？1 日の必要量の論文｜SciBase',
+    seoTitle: 'カルシウム｜サプリで足す？1 日の必要量の論文',
     nameJa: 'カルシウム',
     nameEn: 'Calcium',
     aliases: ['Ca', 'Calcium', 'カルシウムサプリ', 'カルシウム サプリ', 'カルシウム おすすめ', 'クエン酸カルシウム', '炭酸カルシウム', 'カルシウム 1日', 'カルシウム 一日', 'Calcium Citrate', 'カルシウムサプリメント'],
@@ -10638,7 +10638,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Vitamin B12 / Cobalamin',
     aliases: ['B12', 'コバラミン', 'メチルコバラミン', 'シアノコバラミン', 'アデノシルコバラミン', 'ヒドロキソコバラミン', 'メチルB12', 'シアノB12', 'B12 舌下', 'B12 おすすめ', 'ビタミンB12 サプリ', 'ビタミンB12 効果', 'Methylcobalamin', 'Cyanocobalamin'],
     evidenceRank: 'A',
-    seoTitle: 'ビタミンB12｜食べ物で足りる？必要量の論文｜SciBase',
+    seoTitle: 'ビタミンB12｜食べ物で足りる？必要量の論文',
     seoDescription: 'ビタミンB12は神経・DNA合成・赤血球形成に必須の水溶性ビタミン。500〜1,000μg/日で認知機能・疲労・ホモシステイン値の改善がメタ解析で確認されている。メチルコバラミン（活性型）とシアノコバラミン（合成型）の違い、舌下錠と通常錠剤の吸収差、ヴィーガン・高齢者・メトホルミン/PPI長期服用者の欠乏リスク、市販ネイチャーメイドとiHerb（Jarrow/Solgar/Thorne）の選び方を査読済み論文で解説。',
     usageType: 'oral',
     tagline: '神経系・DNA合成・赤血球形成に不可欠。欠乏で認知機能低下・疲労が起こる',
@@ -11858,7 +11858,7 @@ export const ingredients: Ingredient[] = [
     nameEn: 'Soy Isoflavones',
     aliases: ['大豆イソフラボン', 'イソフラボン', 'isoflavone', 'Soy Isoflavones', 'ゲニステイン', 'ダイゼイン', 'エクオール', 'アグリコン', 'フィトエストロゲン'],
     evidenceRank: 'B',
-    seoTitle: 'イソフラボン｜更年期に効く？エクオールと用量の論文｜SciBase',
+    seoTitle: 'イソフラボン｜更年期に効く？エクオールと用量の論文',
     usageType: 'oral',
     seoDescription: '大豆イソフラボン 50-100mg/日（アグリコン換算）のメタ解析で閉経後女性の肌水分量・コラーゲン密度の改善が報告。エクオール産生菌を持つ人は効果が出やすく、ソイチェック検査で判定可能。エストロゲン受容体陽性乳がん既往・タモキシフェン併用は使用回避、ワルファリン・レボチロキシンとの併用注意、食事換算（豆腐1/2丁=15-20mg・納豆1パック=30-40mg）と上限 75mg/日（食安委）を研究の観点で解説。',
     tagline: '植物性エストロゲン様物質。骨密度維持・肌の老化・更年期症状にコホート研究',
@@ -15466,7 +15466,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     slug: 'zeaxanthin',
-    seoTitle: 'ゼアキサンチンとは｜ルテインとの違い・黄斑の論文｜SciBase',
+    seoTitle: 'ゼアキサンチンとは｜ルテインとの違い・黄斑の論文',
     nameJa: 'ゼアキサンチン',
     nameEn: 'Zeaxanthin',
     aliases: ['ゼアキサンチン', 'zeaxanthin', 'メソゼアキサンチン', 'mesozeaxanthin', 'カロテノイド', 'マリーゴールド由来', 'ゼアキサンチン サプリ', 'ゼアキサンチン ルテイン', 'ゼアキサンチン 黄斑変性', 'ゼアキサンチン 効果', 'ゼアキサンチン 副作用'],
@@ -15847,7 +15847,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['GSH', 'グルタチオン', 'glutathione'],
     evidenceRank: 'B',
     usageType: 'both',
-    seoTitle: 'グルタチオン｜サプリは効く？吸収の論文｜SciBase',
+    seoTitle: 'グルタチオン｜サプリは効く？吸収の論文',
     seoDescription: 'グルタチオン（GSH）は細胞内の主要抗酸化物質。経口500〜1000mg/日で血中濃度上昇・皮膚明度改善のRCTが報告される一方、点滴注射剤との吸収率の違いが論争になっている。経口vs注射の比較、美白効果のエビデンス、リポソーム型の吸収率、副作用を査読済み論文で解説。',
     tagline: '体内最強の抗酸化物質。経口摂取でも血中濃度上昇と皮膚明度改善がRCTで確認されている',
     description:
@@ -17533,7 +17533,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['霊芝', 'リシ', 'reishi', 'ganoderma', 'マンネンタケ', 'Ganoderma lucidum', '霊芝 効果', '霊芝 副作用', '霊芝 免疫', '霊芝 睡眠', 'アダプトゲン キノコ'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: '霊芝（レイシ）とは｜アシュワガンダとの違い・免疫の論文｜SciBase',
+    seoTitle: '霊芝（レイシ）とは｜アシュワガンダとの違い・免疫の論文',
     tagline: '免疫調節・抗腫瘍・ストレス対処・睡眠改善への関与がRCTおよびコホートで確認されているアダプトゲン',
     description:
       '霊芝はβ-グルカン・トリテルペンを含むアダプトゲン系キノコで、腫瘍関連 NK 細胞・T 細胞の有意な増加を示した Cochrane メタ解析がある（Cochrane 2016）。\\n\\n' +
@@ -19181,7 +19181,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['セラミド', 'スフィンゴ脂質', 'ceramide', '経口セラミド', 'セラミドサプリ', 'グルコシルセラミド', '米セラミド', '小麦セラミド', 'こんにゃくセラミド', 'フィトセラミド'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: '経口セラミドとは｜外用との違い・効果と用量の論文｜SciBase',
+    seoTitle: '経口セラミドとは｜外用との違い・効果と用量の論文',
     seoDescription: '6-30mg/日（グルコシルセラミド換算）・食事と一緒に摂取。Skin Pharmacology and Physiology 2009 RCT(n=51・12mg/日・4週)で皮膚水分量有意改善（p<0.01）・Journal of Cosmetic Dermatology 2022 RCT(n=64・12週)で角質水分量・TEWL改善。副作用は食品由来で安全性高い（C）が、小麦由来製品はグルテン不耐性・セリアック病の方は米由来選択（A）。経口×外用の役割分担、コラーゲンペプチドとの使い分けも化粧品メーカー視点で研究ベースに解説。',
     tagline: '肌の水分保持・バリア機能を内側から強化。小麦・米由来のグルコシルセラミドがRCTで確認',
     description:
@@ -20984,7 +20984,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['ヨード', 'iodide', 'ヨウ化物', 'ヨウ素サプリ', 'ヨードサプリ', '海藻ヨウ素', '昆布ヨウ素', 'ヨウ素剤'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: 'ヨウ素・ヨードとは｜甲状腺と過剰摂取の論文｜SciBase',
+    seoTitle: 'ヨウ素・ヨードとは｜甲状腺と過剰摂取の論文',
     seoDescription: 'ヨウ素は甲状腺ホルモンの必須構成元素。日本人は海藻摂取で世界平均より多く、不足より過剰摂取（耐容上限3000μg）が論点。妊婦の必要量、橋本病・バセドウ病でのリスク、ヨード制限食を査読済み論文で解説。',
     tagline: '甲状腺ホルモンの必須元素。日本人は不足より過剰摂取（耐容上限3000μg）が論点',
     description:
@@ -27107,7 +27107,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['MCT', 'MCTオイル', '中鎖脂肪酸', '中鎖トリグリセリド', 'カプリル酸', 'カプリン酸', 'C8', 'C10', 'MCT oil', 'ココナッツオイル抽出'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'MCTオイル｜使い方・C8/C10・下痢の論文｜SciBase',
+    seoTitle: 'MCTオイル｜使い方・C8/C10・下痢の論文',
     seoDescription: 'MCTオイル（中鎖脂肪酸トリグリセリド）は肝臓で速やかにβ酸化されケトン体を生成。Cunnane 2020 Alzheimer Dement の軽度認知障害RCT・St-Onge 2008 Obesity の体組成RCT・Vandenberghe 2017 のケトン体応答試験が主要エビデンス。C8（カプリル酸）優位品の選び方・下痢を避ける用量階段（5g→15g→30g）・糖尿病薬連動を整理。',
     tagline: '肝臓で速やかにβ酸化されケトン体を生成・MCI/AD・体組成・運動パフォーマンスRCTで支持',
     description:
@@ -50989,7 +50989,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['P', 'Phosphorus', 'リン酸塩', 'リン 摂りすぎ', '加工食品 リン', 'リン酸', '高リン血症', 'CKD リン制限', 'Ca:P 比'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'リン｜実は摂りすぎ・加工食品と骨の論文｜SciBase',
+    seoTitle: 'リン｜実は摂りすぎ・加工食品と骨の論文',
     seoDescription: 'リン（P）の推奨量・過剰摂取リスクを論文で整理。日本人推奨は男性1,000・女性800mg/日・耐容上限3,000mg/日。加工食品・清涼飲料水のリン酸塩で平均摂取は約1,000-1,100mg/日と過剰傾向。Calvo 2014レビューで腎機能正常者でも長期高P摂取は骨密度低下・血管石灰化リスクと報告。「不足より過剰」の文脈での整理が必要｜SciBase',
     tagline: '日本人で不足はまれ・むしろ加工食品由来のリン酸塩過剰が骨と血管のリスクに',
     description:
@@ -68551,7 +68551,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['EPA', 'エイコサペンタエン酸', 'eicosapentaenoic acid', 'ピュアEPA'],
     evidenceRank: 'A',
     usageType: 'oral',
-    seoTitle: '高純度EPA｜混合と何が違う？1.8g 心血管の論文｜SciBase',
+    seoTitle: '高純度EPA｜混合と何が違う？1.8g 心血管の論文',
     seoDescription: '高純度EPA魚油は混合フィッシュオイルからDHAを除きEPAを高濃度（85%以上）に精製した製品。1.8-4g/日で中性脂肪低下と心血管イベント抑制（REDUCE-IT 2019・n=8179）がRCTで報告された。既存omega3とは別エントリで、EPA単独効果に注目したい人向けに整理。｜SciBase',
     tagline: '混合フィッシュオイルからDHAを抜きEPAだけ高濃度化・心血管RCTのEPA量を狙いやすい',
     description:
@@ -70410,7 +70410,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['C8 100%', 'カプリル酸100%', 'C8 MCT', 'pure C8'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'MCT C8 100%｜混合とどう違う？ケトン応答3倍の論文｜SciBase',
+    seoTitle: 'MCT C8 100%｜混合とどう違う？ケトン応答3倍の論文',
     seoDescription: 'MCT C8 100%（カプリル酸特化）は通常のC8/C10混合MCTより血中ケトン応答が約3倍強い。Vandenberghe 2017のクロスオーバー試験で確認。認知補助・ケトジェニックダイエット導入期の使い方、下痢を避ける用量階段（5g→15g）を査読済み論文で解説。｜SciBase',
     tagline: '通常MCTより血中ケトン体応答が約3倍強い・C8純度100%品',
     description:
@@ -76811,7 +76811,7 @@ export const ingredients: Ingredient[] = [
     aliases: ['C10', 'カプリン酸', 'C10 MCT', 'capric acid', 'Decanoic acid', 'デカン酸'],
     evidenceRank: 'B',
     usageType: 'oral',
-    seoTitle: 'MCT C10｜C8とどう違う？持続型ケトンの論文｜SciBase',
+    seoTitle: 'MCT C10｜C8とどう違う？持続型ケトンの論文',
     seoDescription: 'MCT C10（カプリン酸）はC8（カプリル酸）より緩やかなケトン体応答を示す中鎖脂肪酸。Vandenberghe 2017のクロスオーバー試験でC8単独より弱いが、ココナッツオイルより強い血中BHB上昇を確認。混合MCT油の主成分でC8と組み合わせると持続性が出る。下痢を避ける用量階段、ケトジェニックダイエットでの位置づけを査読済み論文で解説。｜SciBase',
     tagline: 'C8より緩やかで持続型のケトン応答・混合MCT油の主成分で速効型C8と相補',
     description:

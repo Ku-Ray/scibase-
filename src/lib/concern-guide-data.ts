@@ -414,7 +414,7 @@ const concernGuides: ConcernGuide[] = [
       'niacinamide-vs-peptide-guide',
     ],
 
-    seoTitle: 'シミに効くサプリの選び方｜論文で見る 4 成分｜SciBase',
+    seoTitle: 'シミに効くサプリの選び方｜論文で見る 4 成分',
     metaDescription:
       'シミは肝斑・紫外線シミ・炎症後色素沈着の3タイプで効く成分が違う。研究で支持があるBEST PICKと典型的な失敗パターンを化粧品メーカー現役が解説。8週で評価する選び方。',
     priceAnchor:
@@ -1370,7 +1370,7 @@ const concernGuides: ConcernGuide[] = [
       'situation-supplement-decision-guide',
     ],
 
-    seoTitle: '疲労に効くサプリの選び方｜HPA軸/ミトコンドリア/鉄欠乏の3タイプ別BEST PICK｜SciBase',
+    seoTitle: '疲労に効くサプリの選び方｜HPA軸/ミトコンドリア/鉄欠乏の3タイプ別BEST PICK',
     metaDescription:
       '慢性的な疲労に効くサプリを研究データから選ぶ完全ガイド。HPA軸ストレス型・ミトコンドリア型・鉄欠乏栄養型の3タイプ別BEST PICK。アシュワガンダKSM-66 600mg・CoQ10 Ubiquinol 200mg・Ferrochel鉄36mg＋B12 1000mcgの推奨用量と継続期間を化粧品メーカー現役が解説。',
     priceAnchor:
@@ -1736,7 +1736,7 @@ const concernGuides: ConcernGuide[] = [
       'stress-cortisol-aging',
     ],
 
-    seoTitle: '更年期サプリの選び方｜論文で見る 5 軸｜SciBase',
+    seoTitle: '更年期サプリの選び方｜論文で見る 5 軸',
     metaDescription:
       '更年期症状を3タイプ（エストロゲン低下／自律神経／アンドロゲン）に分けて、効く成分を化粧品メーカー現役が整理。エクオール・大豆イソフラボン・アシュワガンダの研究と、婦人科HRT・心療内科オンラインの境界線を解説。',
     priceAnchor:
