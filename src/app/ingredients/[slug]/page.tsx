@@ -16,8 +16,10 @@ import { OutboundProductLink } from '@/components/OutboundProductLink'
 import { ProductOfferCard } from '@/components/product/ProductOfferCard'
 import { IngredientTestKitCTACard } from '@/components/product/IngredientTestKitCTACard'
 import { IngredientChoiceGuide } from '@/components/IngredientChoiceGuide'
+import { IngredientQuickAnswer } from '@/components/IngredientQuickAnswer'
 import { IngredientQuickBuy } from '@/components/IngredientQuickBuy'
 import { ComparisonTable } from '@/components/product/ComparisonTable'
+import { POPULAR_PAIRS } from '@/lib/compare-data'
 import { scoreProduct, computeAxisLeaders } from '@/lib/productScore'
 import type { TocSection } from '@/components/TableOfContents'
 import type { Metadata } from 'next'
@@ -162,6 +164,19 @@ export default async function IngredientPage({ params }: Props) {
         .map(i => [i.slug, i])
     ).values()
   ].slice(0, 6)
+
+  /* FV クイックアンサーの「→ ◯◯と比較」導線：POPULAR_PAIRS に当該成分を含むペアが
+     あれば採用（当該成分が subject＝先頭のペアを優先）。無ければ比較リンクは非表示。 */
+  const quickAnswerPair =
+    POPULAR_PAIRS.find(([a]) => a === ing.slug) ??
+    POPULAR_PAIRS.find(([, b]) => b === ing.slug)
+  const quickAnswerCompare = (() => {
+    if (!quickAnswerPair) return null
+    const otherSlug = quickAnswerPair[0] === ing.slug ? quickAnswerPair[1] : quickAnswerPair[0]
+    const other = getIngredient(otherSlug)
+    if (!other) return null
+    return { href: `/compare/${quickAnswerPair[0]}-vs-${quickAnswerPair[1]}`, label: other.nameJa }
+  })()
 
   /* ── Phase 5-B: 同一商品 iHerb/Amazon 集約 ──────────────────
      name 末尾の「（Amazon版）」「（iHerb版）」「（楽天版）」を削除して正規化し、
@@ -635,6 +650,14 @@ export default async function IngredientPage({ params }: Props) {
               </div>
             )
           })()}
+
+          {/* クイックアンサー：検索主意図（効果・有効量・副作用・注意）に FV で即答（効能/PEI より前） */}
+          <IngredientQuickAnswer
+            ingredient={ing}
+            compareHref={quickAnswerCompare?.href}
+            compareLabel={quickAnswerCompare?.label}
+            className="mt-6 max-w-lg"
+          />
 
           {/* Quick CTA — 診断に追加 / お気に入り */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
