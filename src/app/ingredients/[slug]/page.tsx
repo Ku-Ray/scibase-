@@ -651,11 +651,14 @@ export default async function IngredientPage({ params }: Props) {
             )
           })()}
 
-          {/* クイックアンサー：検索主意図（効果・有効量・副作用・注意）に FV で即答（効能/PEI より前） */}
+          {/* クイックアンサー：検索主意図（効果・有効量・副作用・注意）に FV で即答（効能/PEI より前）
+              商品アンカー（T4）: 結論ボックスと同じ heroScore/heroProduct から数字を渡す（矛盾回避） */}
           <IngredientQuickAnswer
             ingredient={ing}
             compareHref={quickAnswerCompare?.href}
             compareLabel={quickAnswerCompare?.label}
+            heroRating={heroScore?.recommendationScore}
+            heroCost1dJpy={heroProduct?.monthlyCostJpy != null ? Math.round(heroProduct.monthlyCostJpy / 30) : undefined}
             className="mt-6 max-w-lg"
           />
 

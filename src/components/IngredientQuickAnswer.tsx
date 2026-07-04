@@ -7,6 +7,10 @@ interface Props {
   compareHref?: string
   /** 比較相手の成分名（例: 'ケルセチン'）。compareHref とセットで使う */
   compareLabel?: string
+  /** 当サイト評価1位（heroProduct）の SciBase 推奨度。無い成分（cosme のみ等）では数値を添えず商品アンカーだけ出す */
+  heroRating?: number
+  /** 同・1日あたりコスト（円）。monthlyCostJpy が無い商品では省略 */
+  heroCost1dJpy?: number
   className?: string
 }
 
@@ -18,7 +22,9 @@ type QaRow = { label: string; value: string; tone: 'neutral' | 'caution' }
  *
  * 背景：成分ページは検索着地の主要面だが、FV が効能/PEI 一色で「副作用」目的の来訪者が
  * 5-10 秒で直帰していた（fisetin/procyanidin-c1/lions-mane で実測）。ここで効果・有効量・
- * 副作用・注意を先出しし、回遊（→ 論文 / → 比較）へ繋いで商品カード到達率を上げる。
+ * 副作用・注意を先出しし、回遊（→ 論文 / → 比較 / → 商品）へ繋いで商品カード到達率を上げる。
+ * 商品行はページ内アンカー（#products）のみ — FV に商品カード実体は置かない（直帰リスク・
+ * 情報枠の中立性維持）。ページ内リンクのため PR 表記は着地先 #products 冒頭の既存表記で足りる。
  *
  * すべて既存フィールド（tagline / dosage / sideEffects / contraindications / interactions /
  * sectionSummaries）から自動生成し、全成分に一律適用する（手書きしない）。情報が無い行は
@@ -29,6 +35,8 @@ export function IngredientQuickAnswer({
   ingredient: ing,
   compareHref,
   compareLabel,
+  heroRating,
+  heroCost1dJpy,
   className = '',
 }: Props) {
   const isConcentration = ing.dosageUnit.includes('濃度')
@@ -67,6 +75,15 @@ export function IngredientQuickAnswer({
   ]
 
   const hasSafety = Boolean(sideEffectText || cautionText)
+
+  // 商品アンカーの補足数字（興味ドクトリン: 具体×正直・最大2個）。「評価1位」は QuickBuy と同一表現。
+  // heroRating が無い（= heroProduct 不在）成分では数字なしのプレーンなアンカーに落とす（graceful）
+  const productSuffix =
+    heroRating != null
+      ? heroCost1dJpy != null
+        ? `（評価1位 ★${heroRating.toFixed(1)}・1日¥${heroCost1dJpy.toLocaleString()}）`
+        : `（評価1位 ★${heroRating.toFixed(1)}）`
+      : ''
 
   return (
     <section
@@ -120,6 +137,15 @@ export function IngredientQuickAnswer({
           >
             → {compareLabel}と比較
           </Link>
+        )}
+        {/* #products と同一の表示条件（page.tsx の ing.products.length > 0）— 着地先が無いアンカーを出さない */}
+        {ing.products.length > 0 && (
+          <a
+            href="#products"
+            className="inline-flex min-h-[44px] items-center text-[12px] font-medium text-blue-700 hover:underline"
+          >
+            → おすすめ商品を見る{productSuffix}
+          </a>
         )}
       </div>
     </section>
